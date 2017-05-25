@@ -1,0 +1,26 @@
+<template>
+    <div class="bcc-instance bcc-main-wrap main-wrap-new">
+        <div class="content-wrap">
+            <p class="breadcrumb">
+                <slot name="breadcrumb"></slot>
+            </p>
+            <div class="list-content">
+                <slot name="tab"></slot>
+                <h2 class="h2-text" style="display: none;">实例</h2>
+                <div class="table-full-wrap">
+                    <div class="operation-wrap">
+                        <div class="buttons-wrap">
+                            <slot name="batch"></slot>
+                        </div>
+                        <div class="buttons-quick-wrap">
+                        </div>
+                    </div>
+                    <slot></slot>
+                    <div class="ui-row clearfix">
+                        <esui-pager count="{{100}}" urlTemplate="#page=${page}&amp;pageSize=${pageSize}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
