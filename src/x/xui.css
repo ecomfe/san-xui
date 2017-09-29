@@ -1,0 +1,74 @@
+.ui-breadcrumbs {
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+}
+.ui-breadcrumbs-item {
+    float: left;
+}
+.ui-breadcrumbs-divider {
+    padding: 0 5px;
+}
+
+.ui-bulk-actions {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui-bulk-actions-item {
+    float: left;
+    margin-right: 5px;
+}
+
+.ui-select-x {
+    display: inline-block;
+    min-width: 100px;
+    position: relative;
+    overflow: visible;
+}
+.ui-select-layer-x {
+    width: 200px;
+    left: 0;
+}
+
+.ui-dialog-x {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.ui-table-hcell-sel,
+.ui-table-cell-sel {
+    width: 30px;
+}
+.ui-table-hcell:last-child .ui-table-hcell-text {
+    border-right: none;
+}
+
+.ui-table-hcell-text {
+    border-right-color: #fff;
+    font-size: 12px;
+}
+
+.ui-table-hcell-sel .ui-table-hcell-text {
+    border-right: none;
+}
+
+.ui-table-hcell-sort:hover {
+    cursor: pointer;
+}
+
+.ui-table-row {
+    border-bottom: 1px solid #eceff8;
+}
+.ui-table-row:hover {
+    background: #F5FBFF;
+}
+
+.ui-table-error,
+.ui-table-loading {
+    text-align: center;
+    padding: 25px 0;
+}
+
