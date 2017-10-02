@@ -15,6 +15,7 @@ import Switch from './components/Switch';
 import Select from './components/Select';
 import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
+import Calendar from './components/Calendar';
 import RangeCalendar from './components/RangeCalendar';
 
 const Row = defineComponent({
@@ -110,11 +111,21 @@ const App = defineComponent({
         </x-section>
         <x-section label="xui-monthview">
             <xui-monthview value="{=monthview.value=}" />
-            Value is: {{monthview.value | datetime}}
+            <strong class="large">
+                Value is: {{monthview.value | datetime('YYYY-MM-DD')}}
+            </strong>
+        </x-section>
+        <x-section label="xui-calendar">
+            <xui-calendar value="{=calendar.value=}" />
+            <strong class="large">
+                Value is: {{calendar.value | datetime('YYYY-MM-DD')}}
+            </strong>
         </x-section>
         <x-section label="xui-rangecalendar">
             <xui-rangecalendar value="{=rangecalendar.value=}" />
-            Value is: {{rangecalendar.value.begin | datetime}} - {{rangecalendar.value.end | datetime}}
+            <strong class="large">
+                Value is: {{rangecalendar.value.begin | datetime('YYYY-MM-DD')}} - {{rangecalendar.value.end | datetime('YYYY-MM-DD')}}
+            </strong>
         </x-section>
         <x-section label="xui-uploader">TODO</x-section>
         <x-section label="xui-select">
@@ -131,8 +142,8 @@ const App = defineComponent({
     </template>`,
 
     filters: {
-        datetime(value) {
-            return moment(value).format('YYYY-MM-DD HH:mm:ss');
+        datetime(value, f = 'YYYY-MM-DD HH:mm:ss') {
+            return moment(value).format(f);
         }
     },
 
@@ -143,6 +154,7 @@ const App = defineComponent({
         'xui-button': Button,
         'xui-textbox': TextBox,
         'xui-monthview': MonthView,
+        'xui-calendar': Calendar,
         'xui-rangecalendar': RangeCalendar,
         'xui-table': Table,
         'xui-pager': Pager,
@@ -201,6 +213,9 @@ const App = defineComponent({
             },
             monthview: {
                 value: new Date()
+            },
+            calendar: {
+                value: null
             },
             rangecalendar: {
                 value: {
