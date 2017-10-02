@@ -16,6 +16,7 @@ import Select from './components/Select';
 import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
 import Calendar from './components/Calendar';
+import Toast from './components/Toast';
 import RangeCalendar from './components/RangeCalendar';
 
 const Row = defineComponent({
@@ -27,7 +28,7 @@ const Row = defineComponent({
 
 const Section = defineComponent({
     template: `<fieldset class="x-section">
-        <legend s-if="label" on-click="toggleViewport">{{label}}</legend>
+        <legend s-if="label" on-click="toggleViewport">{{open ? '[-]' : '[+]'}}{{label}}</legend>
         <div s-if="open"><slot/></div>
     </fieldset>`,
 
@@ -48,6 +49,7 @@ const App = defineComponent({
         <x-section label="xui-button">
             <xui-button>Hello xui-button</xui-button>
             <xui-button skin="primary">primary skin</xui-button>
+            <xui-button skin="danger">danger skin</xui-button>
             <xui-button disabled skin="primary">disabled button</xui-button>
         </x-section>
 
@@ -73,6 +75,13 @@ const App = defineComponent({
                 page="{{pager.page}}"
                 count="{{pager.count}}"
                 on-change="onPagerChange($event)" />
+            <br/>
+            <xui-pager size="{{pager.size}}"
+                page="{{pager.page}}"
+                count="{{pager.count}}"
+                back-text="<"
+                forward-text=">"
+                on-change="onPagerChange($event)" />
         </x-section>
 
         <x-section label="xui-dialog">
@@ -90,6 +99,7 @@ const App = defineComponent({
         <x-section label="xui-switch">
             <xui-switch checked="{=switch.checked=}" />
             <xui-switch checked="{{false}}" />
+            <xui-switch checked="{{false}}" disabled />
             <xui-button disabled="{{!switch.checked}}">Hello xui-switch</xui-button>
         </x-section>
         <x-section label="xui-textbox">
@@ -117,12 +127,14 @@ const App = defineComponent({
         </x-section>
         <x-section label="xui-calendar">
             <xui-calendar value="{=calendar.value=}" />
+            <xui-calendar value="{=calendar.value=}" disabled />
             <strong class="large">
                 Value is: {{calendar.value | datetime('YYYY-MM-DD')}}
             </strong>
         </x-section>
         <x-section label="xui-rangecalendar">
             <xui-rangecalendar value="{=rangecalendar.value=}" />
+            <xui-rangecalendar value="{=rangecalendar.value=}" disabled />
             <strong class="large">
                 Value is: {{rangecalendar.value.begin | datetime('YYYY-MM-DD')}} - {{rangecalendar.value.end | datetime('YYYY-MM-DD')}}
             </strong>
@@ -137,7 +149,12 @@ const App = defineComponent({
         </x-section>
         <x-section label="xui-tabs">TODO</x-section>
         <x-section label="xui-loading">TODO</x-section>
-        <x-section label="xui-toast">TODO</x-section>
+        <x-section label="xui-toast">
+            <xui-button on-click="showToast('success')">Success Toast</xui-button>
+            <xui-button on-click="showToast('info')">Info Toast</xui-button>
+            <xui-button on-click="showToast('warning')">Warning Toast</xui-button>
+            <xui-button on-click="showToast('error')">Error Toast</xui-button>
+        </x-section>
         <x-section label="xui-tips">TODO</x-section>
     </template>`,
 
@@ -241,6 +258,16 @@ const App = defineComponent({
     },
     closeTheDialog() {
         this.data.set('dialog.showDialog', false);
+    },
+
+    showToast(level) {
+        if (typeof Toast[level] === 'function') {
+            const message = 'This is a toast message';
+            Toast[level](message);
+        }
+        else {
+            alert('Unsupported toast level = ' + level);
+        }
     },
 
     onPressEnterOnTextBox() {

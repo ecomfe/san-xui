@@ -32,10 +32,53 @@
     left: 0;
 }
 
+.ui-toast-container {
+    position: fixed;
+    z-index: 99999;
+    top: 10px;
+    right: 10px;
+}
+.ui-toast-container .ui-toast-x {
+    position: static;
+    margin-bottom: 10px;
+}
+.ui-toast-x {
+    color: #fff;
+    font-size: 14px;
+    width: 200px;
+    height: auto;
+    top: 0;
+    right: 0;
+    padding: 20px 50px;
+}
+.ui-toast-success {
+    background: #51a351;
+}
+.ui-toast-info {
+    background: #2f96b4;
+}
+.ui-toast-warning {
+    background: #f89406;
+}
+.ui-toast-error {
+    background: #bd362f;
+}
+
 .ui-dialog-x {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+}
+
+.ui-calendar-x-disabled:hover,
+.ui-calendar-x-disabled {
+    color: #999999;
+    background: #f6f7fb;
+}
+.ui-calendar-x-disabled .ui-calendar-arrow,
+.ui-calendar-x-disabled .ui-calendar-arrow:after,
+.ui-calendar-x-disabled .ui-calendar-text {
+    color: #999999;
 }
 
 .ui-monthview-x .ui-select-x {

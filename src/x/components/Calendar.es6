@@ -46,6 +46,7 @@ export default defineComponent({
             if (disabled) {
                 klass.push('state-disabled');
                 klass.push(cx('disabled'));
+                klass.push(cx('x-disabled'));
             }
             return klass;
         }

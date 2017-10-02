@@ -45,6 +45,11 @@ export default defineComponent({
         }
     },
     toggleSwitch() {
+        const disabled = this.data.get('disabled');
+        if (disabled) {
+            return;
+        }
+
         const checked = this.data.get('checked');
         this.data.set('checked', !checked);
         this.fire('change');
