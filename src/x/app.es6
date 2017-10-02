@@ -17,6 +17,7 @@ import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
 import Calendar from './components/Calendar';
 import Toast from './components/Toast';
+import Tip from './components/Tip';
 import RangeCalendar from './components/RangeCalendar';
 
 const Row = defineComponent({
@@ -51,6 +52,23 @@ const App = defineComponent({
             <xui-button skin="primary">primary skin</xui-button>
             <xui-button skin="danger">danger skin</xui-button>
             <xui-button disabled skin="primary">disabled button</xui-button>
+        </x-section>
+
+        <x-section label="xui-tips">
+            <x-row label="position=lt">
+                <xui-tip message="hello world" />
+                <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
+                <xui-tip><xui-monthview /></xui-tip>
+            </x-row>
+            <x-row label="position=tc">
+                <xui-tip message="hello world" position="tc" />
+            </x-row>
+            <x-row label="position=rt">
+                <xui-tip message="hello world" position="rt" />
+            </x-row>
+            <x-row label="position=bc">
+                <xui-tip message="hello world" position="bc" />
+            </x-row>
         </x-section>
 
         <x-section label="xui-table">
@@ -155,7 +173,6 @@ const App = defineComponent({
             <xui-button on-click="showToast('warning')">Warning Toast</xui-button>
             <xui-button on-click="showToast('error')">Error Toast</xui-button>
         </x-section>
-        <x-section label="xui-tips">TODO</x-section>
     </template>`,
 
     filters: {
@@ -177,7 +194,8 @@ const App = defineComponent({
         'xui-pager': Pager,
         'xui-dialog': Dialog,
         'xui-switch': Switch,
-        'xui-select': Select
+        'xui-select': Select,
+        'xui-tip': Tip
     },
 
     initData() {

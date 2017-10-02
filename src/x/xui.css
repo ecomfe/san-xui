@@ -32,6 +32,10 @@
     left: 0;
 }
 
+.ui-tiplayer-x {
+    min-width: 100px;
+}
+
 .ui-toast-container {
     position: fixed;
     z-index: 99999;
