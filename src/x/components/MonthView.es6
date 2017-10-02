@@ -35,7 +35,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}">
                 <tr s-for="row in rows">
                     <td s-for="cell in row" class="{{cell | cellClass}}" on-click="onCellClick(cell)">{{cell.date}}</td>
                 </tr>
-                <tr>
+                <tr s-if="{{false}}">
                     <td colspan="7" class="${cx('shortcut')}"><ui-button on-click="onTodayClick()">今天</ui-button></td>
                 </tr>
             </tbody>
@@ -57,7 +57,7 @@ export default defineComponent({
             const klass = [cx(), cx('x')];
             if (skin) {
                 klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-button');
+                klass.push('skin-' + skin + '-monthview');
             }
             if (disabled) {
                 klass.push('state-disabled');
@@ -126,14 +126,15 @@ export default defineComponent({
         this.data.set('monthDs.value', month);
     },
     inited() {
-        this.initYearOptions();
-        this.initMonthOptions();
+        const valueWatcher = () => {
+            this.initYearOptions();
+            this.initMonthOptions();
+        };
+        this.watch('value', valueWatcher);
+        valueWatcher();
     },
     onTodayClick() {
-        const now = new Date();
-        this.data.set('value', now);
-        this.data.set('monthDs.value', now.getMonth());
-        this.data.set('yearDs.value', now.getFullYear());
+        this.data.set('value', new Date());
     },
     onCellClick(item) {
         if (item.disabled || item.virtual) {

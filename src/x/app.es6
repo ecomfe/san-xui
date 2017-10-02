@@ -15,6 +15,7 @@ import Switch from './components/Switch';
 import Select from './components/Select';
 import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
+import RangeCalendar from './components/RangeCalendar';
 
 const Row = defineComponent({
     template: `<div class="x-row">
@@ -111,6 +112,10 @@ const App = defineComponent({
             <xui-monthview value="{=monthview.value=}" />
             Value is: {{monthview.value | datetime}}
         </x-section>
+        <x-section label="xui-rangecalendar">
+            <xui-rangecalendar value="{=rangecalendar.value=}" />
+            Value is: {{rangecalendar.value.begin | datetime}} - {{rangecalendar.value.end | datetime}}
+        </x-section>
         <x-section label="xui-uploader">TODO</x-section>
         <x-section label="xui-select">
             <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
@@ -138,6 +143,7 @@ const App = defineComponent({
         'xui-button': Button,
         'xui-textbox': TextBox,
         'xui-monthview': MonthView,
+        'xui-rangecalendar': RangeCalendar,
         'xui-table': Table,
         'xui-pager': Pager,
         'xui-dialog': Dialog,
@@ -195,6 +201,12 @@ const App = defineComponent({
             },
             monthview: {
                 value: new Date()
+            },
+            rangecalendar: {
+                value: {
+                    begin: new Date(2017, 9, 19),   // 2017-10-19
+                    end: new Date(2018, 0, 12)      // 2018-01-12
+                }
             },
             'switch': {
                 checked: true

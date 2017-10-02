@@ -34,6 +34,10 @@ export default defineComponent({
         }
         $(document).on('mousedown', this.autoHideHandler);
         $(this.el).on('mousedown', returnFalse);
+        const pc = this.parentComponent;
+        if (pc && pc.el) {
+            $(pc.el).on('mousedown', returnFalse);
+        }
     },
     inited() {
         this.autoHideHandler = () => this.data.set('open', false);
@@ -60,5 +64,9 @@ export default defineComponent({
     disposed() {
         $(document).off('mousedown', this.autoHideHandler);
         $(this.el).off('mousedown', returnFalse);
+        const pc = this.parentComponent;
+        if (pc && pc.el) {
+            $(pc.el).off('mousedown', returnFalse);
+        }
     }
 });

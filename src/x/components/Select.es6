@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import $ from 'jquery';
 import {defineComponent} from 'san';
 
 import {create} from './util';
@@ -12,10 +11,6 @@ import ScrollIntoView from './ScrollIntoView';
 
 const cx = create('ui-select');
 const kDefaultLabel = '请选择';
-
-function returnFalse() {
-    return false;
-}
 
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
@@ -92,13 +87,6 @@ export default defineComponent({
             }
             return klass;
         }
-    },
-    attached() {
-        // 避免隐藏 layer 的问题
-        $(this.el).on('mousedown', returnFalse);
-    },
-    disposed() {
-        $(this.el).off('mousedown', returnFalse);
     },
     selectItem(e, item) {
         if (item.disabled) {
