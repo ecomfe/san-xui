@@ -38,6 +38,14 @@
     transform: translateY(-50%) translateX(-50%);
 }
 
+.ui-monthview-x .ui-select-x {
+    min-width: 0;
+    width: 100%;
+}
+.ui-monthview-shortcut .ui-button {
+    display: block;
+}
+
 .ui-table-hcell-sel,
 .ui-table-cell-sel {
     width: 30px;

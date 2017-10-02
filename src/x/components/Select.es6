@@ -8,17 +8,23 @@ import {defineComponent} from 'san';
 
 import {create} from './util';
 import Layer from './Layer';
+import ScrollIntoView from './ScrollIntoView';
 
 const cx = create('ui-select');
 const kDefaultLabel = '请选择';
 
+function returnFalse() {
+    return false;
+}
+
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label}}</span>
-    <ui-layer open="{=active=}">
+    <ui-layer open="{=active=}" ref="layer">
         <ul class="${cx('layer')} ${cx('layer-x')}">
             <li on-click="selectItem($event, item)" class="{{item | itemClass}}" s-for="item in datasource">
-                <span>{{item.text}}</span>
+                <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
+                <span s-else>{{item.text}}</span>
             </li>
         </ul>
     </ui-layer>
@@ -28,12 +34,12 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
 export default defineComponent({
     template,
     components: {
-        'ui-layer': Layer
+        'ui-layer': Layer,
+        'ui-siv': ScrollIntoView
     },
     initData() {
         return {
             active: false,
-            selectedItem: null,
             value: ''
         };
     },
@@ -41,6 +47,18 @@ export default defineComponent({
         label() {
             const selectedItem = this.data.get('selectedItem');
             return selectedItem ? selectedItem.text : kDefaultLabel;
+        },
+        selectedItem() {
+            const value = this.data.get('value');
+            const datasource = this.data.get('datasource');
+            if (value != null && datasource) {
+                for (let i = 0; i < datasource.length; i++) {
+                    if (datasource[i] && datasource[i].value === value) {
+                        return datasource[i];
+                    }
+                }
+            }
+            return null;
         },
         mainClass() {
             const skin = this.data.get('skin');
@@ -75,31 +93,23 @@ export default defineComponent({
             return klass;
         }
     },
-    inited() {
-        const value = this.data.get('value');
-        const datasource = this.data.get('datasource');
-        if (value && datasource) {
-            for (let i = 0; i < datasource.length; i++) {
-                if (datasource[i] && datasource[i].value === value) {
-                    this.data.set('selectedItem', datasource[i]);
-                    break;
-                }
-            }
-        }
+    attached() {
+        // 避免隐藏 layer 的问题
+        $(this.el).on('mousedown', returnFalse);
+    },
+    disposed() {
+        $(this.el).off('mousedown', returnFalse);
     },
     selectItem(e, item) {
-        const $e = $.event.fix(e);
-        $e.stopPropagation();
         if (item.disabled) {
             return;
         }
-        this.data.set('selectedItem', item);
         this.data.set('value', item.value);
         this.data.set('active', false);
+
+        this.fire('change', {selectedItem: item});
     },
     toggleLayer(e) {
-        const $e = $.event.fix(e);
-        $e.stopPropagation();
         const disabled = this.data.get('disabled');
         if (disabled) {
             return;

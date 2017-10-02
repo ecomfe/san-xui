@@ -4,6 +4,7 @@
  */
 
 /* eslint-disable */
+import moment from 'moment';
 import {defineComponent} from 'san';
 
 import Button from './components/Button';
@@ -12,6 +13,15 @@ import Pager from './components/Pager';
 import Dialog from './components/Dialog';
 import Switch from './components/Switch';
 import Select from './components/Select';
+import TextBox from './components/TextBox';
+import MonthView from './components/MonthView';
+
+const Row = defineComponent({
+    template: `<div class="x-row">
+        <div class="label" s-if="label">{{label}}</div>
+        <div class="content"><slot/></div>
+    </div>`
+});
 
 const Section = defineComponent({
     template: `<fieldset class="x-section">
@@ -80,8 +90,27 @@ const App = defineComponent({
             <xui-switch checked="{{false}}" />
             <xui-button disabled="{{!switch.checked}}">Hello xui-switch</xui-button>
         </x-section>
-        <x-section label="xui-input">TODO</x-section>
-        <x-section label="xui-time">TODO</x-section>
+        <x-section label="xui-textbox">
+            <x-row label="type=text">
+                <xui-textbox placeholder="This is placeholder" value="{=text.value=}" on-enter="onPressEnterOnTextBox" />
+                <xui-textbox disabled placeholder="This is disabled textbox" />
+                Value is: {{text.value}}
+            </x-row>
+            <x-row label="type=password">
+                <xui-textbox width="{{100}}" type="password" placeholder="This is placeholder" value="{=password.value=}" />
+                <xui-textbox disabled width="300px" type="password" placeholder="This is disabled textbox" />
+                Password is: {{password.value}}
+            </x-row>
+            <x-row label="multiline">
+                <xui-textbox multiline placeholder="This is placeholder" value="{=textarea.value=}" />
+                <xui-textbox multiline disabled placeholder="This is disabled textbox" />
+                Value is: {{textarea.value}}
+            </x-row>
+        </x-section>
+        <x-section label="xui-monthview">
+            <xui-monthview value="{=monthview.value=}" />
+            Value is: {{monthview.value | datetime}}
+        </x-section>
         <x-section label="xui-uploader">TODO</x-section>
         <x-section label="xui-select">
             <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
@@ -96,10 +125,19 @@ const App = defineComponent({
         <x-section label="xui-tips">TODO</x-section>
     </template>`,
 
+    filters: {
+        datetime(value) {
+            return moment(value).format('YYYY-MM-DD HH:mm:ss');
+        }
+    },
+
     components: {
         'x-section': Section,
+        'x-row': Row,
 
         'xui-button': Button,
+        'xui-textbox': TextBox,
+        'xui-monthview': MonthView,
         'xui-table': Table,
         'xui-pager': Pager,
         'xui-dialog': Dialog,
@@ -146,6 +184,18 @@ const App = defineComponent({
                     {text: 'abc0', value: 'abc0'}
                 ]
             },
+            text: {
+                value: ''
+            },
+            textarea: {
+                value: ''
+            },
+            password: {
+                value: ''
+            },
+            monthview: {
+                value: new Date()
+            },
             'switch': {
                 checked: true
             }
@@ -165,6 +215,10 @@ const App = defineComponent({
     closeTheDialog() {
         this.data.set('dialog.showDialog', false);
     },
+
+    onPressEnterOnTextBox() {
+        alert('Press enter');
+    }
 });
 
 export function start() {

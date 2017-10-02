@@ -4,6 +4,7 @@
  */
 
 import _ from 'lodash';
+import moment from 'moment';
 import {defineComponent} from 'san';
 
 export function create(prefix) {
@@ -62,6 +63,37 @@ export function P(template, options) {  // eslint-disable-line
     const uuid = `i${nextZindex()}`;
     owner.temporaryChilds[uuid] = new ComponentClass(options);
     return `<div id="${uuid}"></div>`;
+}
+
+export function buildMonths(year, month, date) {
+    let repeater = new Date(year, month, 1);
+    let nextMonth = new Date(year, month + 1, 1);
+    let begin = 1 - (repeater.getDay() + 6) % 7;
+    repeater.setDate(begin);
+
+    let index = 0;
+    let rows = [];
+    let cells = [];
+    rows.push(cells);
+    while (nextMonth - repeater > 0 || index % 7 !== 0) {
+        if (begin > 1 && index % 7 === 0) {
+            cells = [];
+            rows.push(cells);
+        }
+        const virtual = repeater.getMonth() !== month;
+        const active = moment(date).isSame(repeater, 'day');
+        const disabled = false;
+        cells.push({
+            year: repeater.getFullYear(),
+            month: repeater.getMonth(),
+            date: repeater.getDate(),
+            virtual, active, disabled
+        });
+        repeater = new Date(year, month, ++begin);
+        index++;
+    }
+
+    return rows;
 }
 
 export function buildPagerItems({size, page, count, backCount, backText, forwardCount, forwardText, cx}) {

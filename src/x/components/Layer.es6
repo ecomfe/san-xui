@@ -32,10 +32,11 @@ export default defineComponent({
         if (this.el.parentNode !== document.body) {
             document.body.appendChild(this.el);
         }
-        $(document).on('mousedown', () => this.data.set('open', false));
+        $(document).on('mousedown', this.autoHideHandler);
         $(this.el).on('mousedown', returnFalse);
     },
     inited() {
+        this.autoHideHandler = () => this.data.set('open', false);
         this.watch('open', open => {
             const auto = this.data.get('auto');
             if (auto && open) {
@@ -56,7 +57,8 @@ export default defineComponent({
             top: (top + height) + 'px'
         });
     },
-    disabled() {
+    disposed() {
+        $(document).off('mousedown', this.autoHideHandler);
         $(this.el).off('mousedown', returnFalse);
     }
 });
