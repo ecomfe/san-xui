@@ -2,6 +2,7 @@
  * @file Toast.es6
  * @author leeight
  */
+import $ from 'jquery';
 import {defineComponent} from 'san';
 
 import {create} from './util';
@@ -36,12 +37,18 @@ const Toast = defineComponent({   // eslint-disable-line
     initData() {
         return {
             message: null,
-            duration: 3000,
+            duration: 5000,
             level: 'success'    // 'success' | 'info' | 'warning' | 'error'
         };
     },
     attached() {
-        setTimeout(() => this.dispose(), this.data.get('duration'));
+        setTimeout(() => {
+            $(this.el).fadeOut({
+                duration: 1000,
+                easing: 'swing',
+                complete: () => this.dispose()
+            });
+        }, this.data.get('duration'));
     }
 });
 
