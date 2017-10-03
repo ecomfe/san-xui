@@ -127,3 +127,73 @@
     padding: 25px 0;
 }
 
+
+.ui-bos-uploader-list {
+    width: 500px;
+    margin-top: 10px;
+}
+.ui-bos-uploader-list table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.ui-bos-uploader-list th,
+.ui-bos-uploader-list td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.ui-bos-uploader-list th {
+    text-align: center;
+    white-space: nowrap;
+}
+.ui-bos-uploader-list td > div {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ui-bos-uploader-col-name {
+    width: 185px;
+}
+.ui-bos-uploader-col-size,
+.ui-bos-uploader-col-status {
+    width: 65px;
+}
+.ui-bos-uploader-col-progress {
+    width: 55px;
+}
+.ui-bos-uploader-col-time {
+    width: 30px;
+}
+.ui-bos-uploader-speed-info {
+    display: inline-block;
+}
+.ui-bos-uploader-status {
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+}
+.ui-bos-uploader-status:before {
+    font-family: "iconfont";
+    content: "\e632";
+    font-size: inherit;
+    position: relative;
+    margin-right: 2px;
+}
+.ui-bos-uploader-status-pending {
+    color: #999;
+}
+.ui-bos-uploader-status-uploading {
+    color: #F4B329;
+}
+.ui-bos-uploader-status-upload-success {
+    color: #2CB663;
+}
+.ui-bos-uploader-status-upload-error {
+    color: #EB5252;
+}
+.ui-bos-uploader-error {
+    color: #EB5252;
+}

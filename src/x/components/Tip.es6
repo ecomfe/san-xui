@@ -2,7 +2,6 @@
  * @file Tip.es6
  * @author leeight
  */
-import $ from 'jquery';
 import dom from 'esui/lib/dom';
 import {nextTick, defineComponent} from 'san';
 
@@ -13,7 +12,7 @@ const cx = create('ui-tip');
 const cx2 = create('ui-tiplayer');
 
 const Ghost = defineComponent({
-    template: `<div><slot/></div>`
+    template: '<div><slot/></div>'
 });
 
 /* eslint-disable */
@@ -129,8 +128,8 @@ export default defineComponent({   // eslint-disable-line
         }
         this.timer = setTimeout(
             () => {
-              this.timer = null;
-              this.data.set('active', false)
+                this.timer = null;
+                this.data.set('active', false);
             },
             this.data.get('duration')
         );

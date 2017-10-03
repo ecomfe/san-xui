@@ -18,6 +18,8 @@ import MonthView from './components/MonthView';
 import Calendar from './components/Calendar';
 import Toast from './components/Toast';
 import Tip from './components/Tip';
+import Icon from './components/Icon';
+import BosUploader from './components/BosUploader';
 import RangeCalendar from './components/RangeCalendar';
 
 const Row = defineComponent({
@@ -69,6 +71,17 @@ const App = defineComponent({
             <x-row label="position=bc">
                 <xui-tip message="hello world" position="bc" />
             </x-row>
+        </x-section>
+
+        <x-section label="xui-icon">
+            <table width="100%" class="icons">
+                <tr>
+                    <td s-for="icon in icons"><xui-icon name="{{icon.name}}" /></td>
+                </tr>
+                <tr>
+                    <td s-for="icon in icons">{{icon.name}}</td>
+                </tr>
+            </table>
         </x-section>
 
         <x-section label="xui-table">
@@ -157,7 +170,35 @@ const App = defineComponent({
                 Value is: {{rangecalendar.value.begin | datetime('YYYY-MM-DD')}} - {{rangecalendar.value.end | datetime('YYYY-MM-DD')}}
             </strong>
         </x-section>
-        <x-section label="xui-uploader">TODO</x-section>
+        <x-section label="xui-uploader">
+            TODO
+        </x-section>
+        <x-section label="xui-bos-uploader">
+            <x-row label="initialize error">
+                <xui-bos-uploader />
+            </x-row>
+
+            <x-row label="normal">
+                <xui-bos-uploader
+                    bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
+                    uptoken-url="https://cloud.baidu.com/api/authorization" />
+            </x-row>
+
+            <x-row label="auto-start=true">
+                <xui-bos-uploader
+                    auto-start
+                    bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
+                    uptoken-url="https://cloud.baidu.com/api/authorization" />
+            </x-row>
+
+            <x-row label="disabled">
+                <xui-bos-uploader
+                    disabled
+                    auto-start
+                    bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
+                    uptoken-url="https://cloud.baidu.com/api/authorization" />
+            </x-row>
+        </x-section>
         <x-section label="xui-select">
             <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
             <xui-select datasource="{{select.datasource}}"  />
@@ -195,11 +236,32 @@ const App = defineComponent({
         'xui-dialog': Dialog,
         'xui-switch': Switch,
         'xui-select': Select,
+        'xui-bos-uploader': BosUploader,
+        'xui-icon': Icon,
         'xui-tip': Tip
     },
 
     initData() {
         return {
+            icons: [
+                {name: 'bae'},
+                {name: 'bdl'},
+                {name: 'bos'},
+                {name: 'eip'},
+                {name: 'blb'},
+                {name: 'vpc'},
+                {name: 'cdn'},
+                {name: 'scs'},
+                {name: 'dts'},
+                {name: 'cas'},
+                {name: 'ses'},
+                {name: 'sms'},
+                {name: 'cds'},
+                {name: 'bmr'},
+                {name: 'bml'},
+                {name: 'bcc'},
+                {name: 'rds'}
+            ],
             table: {
                 select: 'multi',
                 selectedIndex: [1],

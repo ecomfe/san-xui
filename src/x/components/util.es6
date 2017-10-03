@@ -33,6 +33,10 @@ export function nextZindex() {
     return zindex++;
 }
 
+export function nexUuid() {
+    return nextZindex();
+}
+
 export function findAllEvents(aNode, events) {
     _.each(aNode.childs, child => {
         _.each(child.events, event => {
