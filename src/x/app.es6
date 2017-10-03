@@ -9,6 +9,7 @@ import {defineComponent} from 'san';
 
 import Button from './components/Button';
 import BoxGroup from './components/BoxGroup';
+import CheckBox from './components/CheckBox';
 import Table from './components/Table';
 import Pager from './components/Pager';
 import Dialog from './components/Dialog';
@@ -55,6 +56,17 @@ const App = defineComponent({
             <xui-button skin="primary">primary skin</xui-button>
             <xui-button skin="danger">danger skin</xui-button>
             <xui-button disabled skin="primary">disabled button</xui-button>
+        </x-section>
+
+        <x-section label="xui-checkbox">
+            <x-row label="checked=true">
+                <xui-checkbox checked="{=checkbox.checked=}" title="the label" />
+                <xui-switch checked="{=checkbox.checked=}" />
+            </x-row>
+            <x-row label="[default]checked=false">
+                <xui-checkbox />
+                <xui-checkbox disabled />
+            </x-row>
         </x-section>
 
         <x-section label="xui-boxgroup">
@@ -248,6 +260,7 @@ const App = defineComponent({
 
         'xui-button': Button,
         'xui-boxgroup': BoxGroup,
+        'xui-checkbox': CheckBox,
         'xui-textbox': TextBox,
         'xui-monthview': MonthView,
         'xui-calendar': Calendar,
@@ -301,6 +314,9 @@ const App = defineComponent({
                 size: 10,
                 page: 1,
                 count: 111
+            },
+            checkbox: {
+                checked: true
             },
             boxgroup: {
                 datasource: [
