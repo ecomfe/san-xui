@@ -74,6 +74,7 @@ const App = defineComponent({
             <xui-radioselect
                 value="{=radioselect.value=}"
                 datasource="{{radioselect.datasource}}" />
+            <br/>
             <strong class="large">
                 Value is: {{radioselect.value}}
             </strong>
@@ -342,15 +343,11 @@ const App = defineComponent({
                     {text: 'bar', value: 'bar'},
                     {text: '123', value: '123', disabled: true},
                     {text: 'abc1', value: 'abc1'},
-                    {text: 'abc2', value: 'abc2'},
-                    {text: 'abc3', value: 'abc3'},
-                    {text: 'abc4', value: 'abc4'},
-                    {text: 'abc5', value: 'abc5'},
                     {text: 'abc6', value: 'abc6'},
                     {text: 'abc7', value: 'abc7'},
-                    {text: 'abc8', value: 'abc8'},
-                    {text: 'abc9', value: 'abc9'},
-                    {text: 'abc0', value: 'abc0'}
+                    {text: 'abc8', value: 'abc8', tip: '注：购买1年8.3折'},
+                    {text: 'abc9', value: 'abc9', tip: '注：购买1年8.3折'},
+                    {text: 'abc0', value: 'abc0', tip: '注：购买1年8.3折'}
                 ]
             },
             boxgroup: {
