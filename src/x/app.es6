@@ -10,6 +10,7 @@ import {defineComponent} from 'san';
 import Button from './components/Button';
 import BoxGroup from './components/BoxGroup';
 import CheckBox from './components/CheckBox';
+import RadioSelect from './components/RadioSelect';
 import Table from './components/Table';
 import Pager from './components/Pager';
 import Dialog from './components/Dialog';
@@ -67,6 +68,21 @@ const App = defineComponent({
                 <xui-checkbox />
                 <xui-checkbox disabled />
             </x-row>
+        </x-section>
+
+        <x-section label="xui-radioselect">
+            <xui-radioselect
+                value="{=radioselect.value=}"
+                datasource="{{radioselect.datasource}}" />
+            <strong class="large">
+                Value is: {{radioselect.value}}
+            </strong>
+            <br />
+            <br />
+            <xui-radioselect
+                disabled
+                value="{=radioselect.value=}"
+                datasource="{{radioselect.datasource}}" />
         </x-section>
 
         <x-section label="xui-boxgroup">
@@ -260,6 +276,7 @@ const App = defineComponent({
 
         'xui-button': Button,
         'xui-boxgroup': BoxGroup,
+        'xui-radioselect': RadioSelect,
         'xui-checkbox': CheckBox,
         'xui-textbox': TextBox,
         'xui-monthview': MonthView,
@@ -317,6 +334,24 @@ const App = defineComponent({
             },
             checkbox: {
                 checked: true
+            },
+            radioselect: {
+                value: 'abc1',
+                datasource: [
+                    {text: 'foo', value: 'foo'},
+                    {text: 'bar', value: 'bar'},
+                    {text: '123', value: '123', disabled: true},
+                    {text: 'abc1', value: 'abc1'},
+                    {text: 'abc2', value: 'abc2'},
+                    {text: 'abc3', value: 'abc3'},
+                    {text: 'abc4', value: 'abc4'},
+                    {text: 'abc5', value: 'abc5'},
+                    {text: 'abc6', value: 'abc6'},
+                    {text: 'abc7', value: 'abc7'},
+                    {text: 'abc8', value: 'abc8'},
+                    {text: 'abc9', value: 'abc9'},
+                    {text: 'abc0', value: 'abc0'}
+                ]
             },
             boxgroup: {
                 datasource: [
