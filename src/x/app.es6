@@ -9,6 +9,7 @@ import {defineComponent} from 'san';
 
 import Button from './components/Button';
 import BoxGroup from './components/BoxGroup';
+import Clipboard from './components/Clipboard';
 import CheckBox from './components/CheckBox';
 import RadioSelect from './components/RadioSelect';
 import Table from './components/Table';
@@ -68,6 +69,12 @@ const App = defineComponent({
                 <xui-checkbox />
                 <xui-checkbox disabled />
             </x-row>
+        </x-section>
+
+        <x-section label="xui-clipboard">
+            <xui-clipboard text="Hello World">
+                <xui-button>点我复制</xui-button>
+            </xui-clipboard>
         </x-section>
 
         <x-section label="xui-radioselect">
@@ -277,6 +284,7 @@ const App = defineComponent({
 
         'xui-button': Button,
         'xui-boxgroup': BoxGroup,
+        'xui-clipboard': Clipboard,
         'xui-radioselect': RadioSelect,
         'xui-checkbox': CheckBox,
         'xui-textbox': TextBox,

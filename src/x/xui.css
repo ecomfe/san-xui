@@ -197,3 +197,7 @@
 .ui-bos-uploader-error {
     color: #EB5252;
 }
+
+.ui-clipboard-x {
+    display: inline-block;
+}
