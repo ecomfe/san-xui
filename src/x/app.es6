@@ -8,6 +8,7 @@ import moment from 'moment';
 import {defineComponent} from 'san';
 
 import Button from './components/Button';
+import BoxGroup from './components/BoxGroup';
 import Table from './components/Table';
 import Pager from './components/Pager';
 import Dialog from './components/Dialog';
@@ -54,6 +55,26 @@ const App = defineComponent({
             <xui-button skin="primary">primary skin</xui-button>
             <xui-button skin="danger">danger skin</xui-button>
             <xui-button disabled skin="primary">disabled button</xui-button>
+        </x-section>
+
+        <x-section label="xui-boxgroup">
+            <x-row label="radio">
+                <xui-boxgroup
+                    box-type="radio"
+                    datasource="{{boxgroup.datasource}}"
+                    value="{=boxgroup.radio=}"
+                    />
+                Value is: {{boxgroup.radio}}
+            </x-row>
+
+            <x-row label="checkbox">
+                <xui-boxgroup
+                    box-type="checkbox"
+                    datasource="{{boxgroup.datasource}}"
+                    value="{=boxgroup.checkbox=}"
+                    />
+                Value is: {{boxgroup.checkbox}}
+            </x-row>
         </x-section>
 
         <x-section label="xui-tips">
@@ -194,7 +215,6 @@ const App = defineComponent({
             <x-row label="disabled">
                 <xui-bos-uploader
                     disabled
-                    auto-start
                     bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
                     uptoken-url="https://cloud.baidu.com/api/authorization" />
             </x-row>
@@ -227,6 +247,7 @@ const App = defineComponent({
         'x-row': Row,
 
         'xui-button': Button,
+        'xui-boxgroup': BoxGroup,
         'xui-textbox': TextBox,
         'xui-monthview': MonthView,
         'xui-calendar': Calendar,
@@ -280,6 +301,23 @@ const App = defineComponent({
                 size: 10,
                 page: 1,
                 count: 111
+            },
+            boxgroup: {
+                datasource: [
+                    {text: 'foo', value: 'foo'},
+                    {text: 'bar', value: 'bar'},
+                    {text: '123', value: '123', disabled: true},
+                    {text: 'abc1', value: 'abc1'},
+                    {text: 'abc2', value: 'abc2'},
+                    {text: 'abc3', value: 'abc3'},
+                    {text: 'abc4', value: 'abc4'},
+                    {text: 'abc5', value: 'abc5'},
+                    {text: 'abc6', value: 'abc6'},
+                    {text: 'abc7', value: 'abc7'},
+                    {text: 'abc8', value: 'abc8'},
+                    {text: 'abc9', value: 'abc9'},
+                    {text: 'abc0', value: 'abc0'}
+                ]
             },
             select: {
                 value: 'bar',
