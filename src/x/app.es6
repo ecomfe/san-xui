@@ -72,8 +72,8 @@ const App = defineComponent({
         </x-section>
 
         <x-section label="xui-clipboard">
-            <xui-clipboard text="Hello World">
-                <xui-button>点我复制</xui-button>
+            <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
+                <xui-button label="{{clipboard.btnText}}" />
             </xui-clipboard>
         </x-section>
 
@@ -414,6 +414,9 @@ const App = defineComponent({
                     end: new Date(2018, 0, 12)      // 2018-01-12
                 }
             },
+            clipboard: {
+                btnText: '点我复制'
+            },
             'switch': {
                 checked: true
             }
@@ -446,6 +449,10 @@ const App = defineComponent({
 
     onPressEnterOnTextBox() {
         alert('Press enter');
+    },
+
+    onAfterCopy() {
+        this.data.set('clipboard.btnText', '复制成功');
     }
 });
 
