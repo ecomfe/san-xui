@@ -12,7 +12,7 @@ const cx = create('ui-button');
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}">
     <span class="${cx('label')}" san-if="label">{{label}}</span>
-    <slot san-else></slot>
+    <div san-else><slot /></div>
 </div>`;
 /* eslint-enable */
 

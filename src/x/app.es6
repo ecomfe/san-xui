@@ -73,7 +73,7 @@ const App = defineComponent({
 
         <x-section label="xui-clipboard">
             <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
-                <xui-button label="{{clipboard.btnText}}" />
+                <xui-button>{{clipboard.btnText}}</xui-button>
             </xui-clipboard>
         </x-section>
 
