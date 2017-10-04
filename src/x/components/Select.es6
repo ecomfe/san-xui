@@ -15,8 +15,8 @@ const kDefaultLabel = '请选择';
 
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
-    <span class="${cx('text')}" s-if="multi">{{multiLabel}}</span>
-    <span class="${cx('text')}" s-else>{{label}}</span>
+    <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
+    <span class="${cx('text')}" s-else>{{label|raw}}</span>
     <ui-layer open="{=active=}" ref="layer">
         <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi">
             <li class="{{item | itemClass}}"

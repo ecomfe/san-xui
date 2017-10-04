@@ -12,6 +12,7 @@ import BoxGroup from './components/BoxGroup';
 import Clipboard from './components/Clipboard';
 import CheckBox from './components/CheckBox';
 import Dragger from './components/Dragger';
+import Loading from './components/Loading';
 import RadioSelect from './components/RadioSelect';
 import Table from './components/Table';
 import Pager from './components/Pager';
@@ -22,6 +23,7 @@ import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
 import Calendar from './components/Calendar';
 import Toast from './components/Toast';
+import ToastLabel from './components/ToastLabel';
 import Tip from './components/Tip';
 import Icon from './components/Icon';
 import BosUploader from './components/BosUploader';
@@ -305,12 +307,33 @@ const App = defineComponent({
             </x-row>
         </x-section>
         <x-section label="xui-tabs">TODO</x-section>
-        <x-section label="xui-loading">TODO</x-section>
+        <x-section label="xui-loading">
+            <x-row label="[default]size=normal">
+                <xui-loading />
+            </x-row>
+            <x-row label="[default]size=middle">
+                <xui-loading size="middle" />
+            </x-row>
+            <x-row label="[default]size=small">
+                <xui-loading size="small" />
+            </x-row>
+        </x-section>
         <x-section label="xui-toast">
             <xui-button on-click="showToast('success')">Success Toast</xui-button>
             <xui-button on-click="showToast('info')">Info Toast</xui-button>
             <xui-button on-click="showToast('warning')">Warning Toast</xui-button>
             <xui-button on-click="showToast('error')">Error Toast</xui-button>
+        </x-section>
+        <x-section label="xui-toastlabel">
+            <x-row label="[default]level=alert">
+                <xui-toastlabel text="hello toastlabel" />
+            <x-row>
+            <x-row label="level=normal">
+                <xui-toastlabel text="hello toastlabel" level="normal" />
+            <x-row>
+            <x-row label="level=error">
+                <xui-toastlabel text="hello toastlabel" level="error" />
+            <x-row>
         </x-section>
     </template>`,
 
@@ -328,6 +351,7 @@ const App = defineComponent({
         'xui-boxgroup': BoxGroup,
         'xui-clipboard': Clipboard,
         'xui-dragger': Dragger,
+        'xui-loading': Loading,
         'xui-radioselect': RadioSelect,
         'xui-checkbox': CheckBox,
         'xui-textbox': TextBox,
@@ -341,7 +365,8 @@ const App = defineComponent({
         'xui-select': Select,
         'xui-bos-uploader': BosUploader,
         'xui-icon': Icon,
-        'xui-tip': Tip
+        'xui-tip': Tip,
+        'xui-toastlabel': ToastLabel
     },
 
     initData() {
