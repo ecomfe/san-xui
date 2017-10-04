@@ -205,6 +205,10 @@
 .ui-dragger input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
+.ui-dragger .ui-textbox-addon {
+    position: relative;
+    top: -10px;
+}
 
 .ui-dragger-bar-selected,
 .ui-dragger-control-bar {

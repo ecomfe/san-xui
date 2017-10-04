@@ -28,6 +28,8 @@ const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainSty
         </div>
     </ui-ghost>
     <ui-textbox
+        addon="{{unit}}"
+        addon-position="end"
         type="number"
         width="60px"
         value="{=value=}"
