@@ -11,6 +11,7 @@ import Button from './components/Button';
 import BoxGroup from './components/BoxGroup';
 import Clipboard from './components/Clipboard';
 import CheckBox from './components/CheckBox';
+import Dragger from './components/Dragger';
 import RadioSelect from './components/RadioSelect';
 import Table from './components/Table';
 import Pager from './components/Pager';
@@ -75,6 +76,12 @@ const App = defineComponent({
             <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
                 <xui-button>{{clipboard.btnText}}</xui-button>
             </xui-clipboard>
+        </x-section>
+
+        <x-section label="xui-dragger">
+            <xui-dragger />
+            <br/>
+            <xui-dragger disabled />
         </x-section>
 
         <x-section label="xui-radioselect">
@@ -285,6 +292,7 @@ const App = defineComponent({
         'xui-button': Button,
         'xui-boxgroup': BoxGroup,
         'xui-clipboard': Clipboard,
+        'xui-dragger': Dragger,
         'xui-radioselect': RadioSelect,
         'xui-checkbox': CheckBox,
         'xui-textbox': TextBox,

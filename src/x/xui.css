@@ -201,3 +201,11 @@
 .ui-clipboard-x {
     display: inline-block;
 }
+
+.ui-dragger-bar-selected,
+.ui-dragger-control-bar {
+    transition: all 0.2s ease-out;
+}
+.ui-dragger-disabled .ui-dragger-control-bar-horizontal:before {
+    background: #f6f7fb !important;
+}

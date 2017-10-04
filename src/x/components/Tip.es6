@@ -7,13 +7,10 @@ import {nextTick, defineComponent} from 'san';
 
 import {create} from './util';
 import Layer from './Layer';
+import Ghost from './Ghost';
 
 const cx = create('ui-tip');
 const cx2 = create('ui-tiplayer');
-
-const Ghost = defineComponent({
-    template: '<div><slot/></div>'
-});
 
 /* eslint-disable */
 const template = `<template>

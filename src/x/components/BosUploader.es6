@@ -139,9 +139,9 @@ export default defineComponent({
             max_retries: 2,
             max_file_size: '50Gb',
             init: {
-                FilesFilter: (_, files) => {
+                FilesFilter: (_, files) => {  // eslint-disable-line
                 },
-                FilesAdded: (_, files) => {
+                FilesAdded: (_, files) => {   // eslint-disable-line
                     for (let i = 0; i < files.length; i++) {
                         const item = files[i];
                         const uuid = nexUuid();
@@ -162,7 +162,7 @@ export default defineComponent({
                         this.data.set('finished', false);
                     }
                 },
-                BeforeUpload: (_, file) => {
+                BeforeUpload: (_, file) => {    // eslint-disable-line
                     const idx = this.findById(file.__id);
                     if (idx === -1) {
                         return;
@@ -171,14 +171,14 @@ export default defineComponent({
                     this.data.set(`files[${idx}].__startTime`, new Date().getTime());
                     this.data.set(`files[${idx}].status`, kStatus.UPLOADING);
                 },
-                UploadProgress: (_, file, progress, event) => {
+                UploadProgress: (_, file, progress, event) => {   // eslint-disable-line
                     const idx = this.findById(file.__id);
                     if (idx === -1) {
                         return;
                     }
                     this.data.set(`files[${idx}].progress`, (progress * 100).toFixed(2) + '%');
                 },
-                FileUploaded: (_, file, info) => {
+                FileUploaded: (_, file, info) => {    // eslint-disable-line
                     const idx = this.findById(file.__id);
                     if (idx === -1) {
                         return;
@@ -188,7 +188,7 @@ export default defineComponent({
                     this.data.set(`files[${idx}].time`, time);
                     this.data.set(`files[${idx}].status`, kStatus.UPLOAD_SUCCESS);
                 },
-                NetworkSpeed: (_, bytes, time, pendings) => {
+                NetworkSpeed: (_, bytes, time, pendings) => {   // eslint-disable-line
                     const speed = bytes / (time / 1000);
                     let html = '上传速度：' + humanize.filesize(speed) + '/s';
                     const seconds = pendings / speed;
@@ -202,25 +202,25 @@ export default defineComponent({
                     }
                     this.data.set('speedInfo', html);
                 },
-                Aborted: (_, error, file) => {
+                Aborted: (_, error, file) => {    // eslint-disable-line
                     const idx = this.findById(file.__id);
                     if (idx === -1) {
                         return;
                     }
                     this.data.set(`files[${idx}].status`, kStatus.UPLOAD_ERROR);
                 },
-                Error: (_, error, file) => {
+                Error: (_, error, file) => {    // eslint-disable-line
                     const idx = this.findById(file.__id);
                     if (idx === -1) {
                         return;
                     }
                     this.data.set(`files[${idx}].status`, kStatus.UPLOAD_ERROR);
                 },
-                UploadComplete: () => {
+                UploadComplete: () => {   // eslint-disable-line
                     this.data.set('speedInfo', null);
                     this.data.set('finished', true);
                 },
-                Key: (_, file) => {
+                Key: (_, file) => {   // eslint-disable-line
                     const date = new Date();
                     const year = date.getFullYear();
 
