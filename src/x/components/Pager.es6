@@ -13,7 +13,9 @@ const cx = create('ui-pager');
 const template = `<template>
 <div class="${cx()}">
     <ul class="${cx('main')}">
-        <li on-click="onPagerItemClick(item)" class="${cx('item')} {{item.className}}" san-for="item in items">{{item.label}}</li>
+        <li on-click="onPagerItemClick(item)"
+            class="${cx('item')} {{item.className}}"
+            san-for="item in items">{{item.label|raw}}</li>
     </ul>
 </div>
 </template>`;
