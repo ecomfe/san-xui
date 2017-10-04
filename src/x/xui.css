@@ -248,3 +248,14 @@
 .ui-loading-x {
     background: url(https://cdn.bdstatic.com/console/dist/009bbae/dep/inf-style/0.0.0/img/process.gif) center center no-repeat;
 }
+
+.ui-tab-x .ui-tab-navigator {
+    background-color: #f5f5f5;
+}
+.ui-tab-x .ui-tab-navigator .ui-tab-item {
+    line-height: 50px;
+}
+.ui-tab-x .ui-tab-navigator .ui-tab-item-active {
+    background-color: #fff;
+}
+

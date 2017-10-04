@@ -25,6 +25,8 @@ import Calendar from './components/Calendar';
 import Toast from './components/Toast';
 import ToastLabel from './components/ToastLabel';
 import Tip from './components/Tip';
+import Tab from './components/Tab';
+import TabPanel from './components/TabPanel';
 import Icon from './components/Icon';
 import BosUploader from './components/BosUploader';
 import RangeCalendar from './components/RangeCalendar';
@@ -306,7 +308,22 @@ const App = defineComponent({
                 </strong>
             </x-row>
         </x-section>
-        <x-section label="xui-tabs">TODO</x-section>
+        <x-section label="xui-tabs">
+            <xui-tab>
+                <xui-tab-panel title="图片处理">
+                    <xui-button>图片处理</xui-button>
+                </xui-tab-panel>
+                <xui-tab-panel title="图像审核">
+                    <xui-button>图像审核</xui-button>
+                </xui-tab-panel>
+                <xui-tab-panel title="音视频处理">
+                    <xui-button>音视频处理</xui-button>
+                </xui-tab-panel>
+                <xui-tab-panel title="Android批量打包">
+                    <xui-button>Android批量打包</xui-button>
+                </xui-tab-panel>
+            </xui-tab>
+        </x-section>
         <x-section label="xui-loading">
             <x-row label="[default]size=normal">
                 <xui-loading />
@@ -366,6 +383,8 @@ const App = defineComponent({
         'xui-bos-uploader': BosUploader,
         'xui-icon': Icon,
         'xui-tip': Tip,
+        'xui-tab': Tab,
+        'xui-tab-panel': TabPanel,
         'xui-toastlabel': ToastLabel
     },
 
