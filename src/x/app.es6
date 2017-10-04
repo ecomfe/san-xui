@@ -284,11 +284,25 @@ const App = defineComponent({
             </x-row>
         </x-section>
         <x-section label="xui-select">
-            <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
-            <xui-select datasource="{{select.datasource}}"  />
-            <xui-select datasource="{{select.datasource}}" disabled />
-
-            Selected value: {{select.value}}
+            <x-row label="[default]">
+                <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
+                <xui-select datasource="{{select.datasource}}"  />
+                <xui-select datasource="{{select.datasource}}" disabled />
+                <br/>
+                <strong class="large">
+                    Selected value: {{select.value}}
+                </strong>
+            </x-row>
+            <x-row label="multi=true">
+                <xui-select
+                    multi
+                    value="{=select.multi.value=}"
+                    datasource="{{select.datasource}}" />
+                <br/>
+                <strong class="large">
+                    Selected value: {{select.multi.value}}
+                </strong>
+            </x-row>
         </x-section>
         <x-section label="xui-tabs">TODO</x-section>
         <x-section label="xui-loading">TODO</x-section>
@@ -406,6 +420,9 @@ const App = defineComponent({
             },
             select: {
                 value: 'bar',
+                multi: {
+                    value: ['foo', 'bar', 'abc1', 'abc2']
+                },
                 datasource: [
                     {text: 'foo', value: 'foo'},
                     {text: 'bar', value: 'bar'},

@@ -3,6 +3,7 @@
  * @author leeight
  */
 
+import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {create} from './util';
@@ -14,10 +15,26 @@ const kDefaultLabel = '请选择';
 
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
-    <span class="${cx('text')}">{{label}}</span>
+    <span class="${cx('text')}" s-if="multi">{{multiLabel}}</span>
+    <span class="${cx('text')}" s-else>{{label}}</span>
     <ui-layer open="{=active=}" ref="layer">
-        <ul class="${cx('layer')} ${cx('layer-x')}">
-            <li on-click="selectItem($event, item)" class="{{item | itemClass}}" s-for="item in datasource">
+        <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi">
+            <li class="{{item | itemClass}}"
+                s-for="item in datasource">
+                <label>
+                    <input type="checkbox"
+                        value="{{item.value}}"
+                        class="${cx('selected-box')}"
+                        disabled="{{item.disabled}}"
+                        checked="{=value=}" />
+                    <span>{{item.text}}</span>
+                </label>
+            </li>
+        </ul>
+        <ul class="${cx('layer')} ${cx('layer-x')}" s-else>
+            <li on-click="selectItem($event, item)"
+                class="{{item | itemClass}}"
+                s-for="item in datasource">
                 <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
                 <span s-else>{{item.text}}</span>
             </li>
@@ -35,10 +52,23 @@ export default defineComponent({
     initData() {
         return {
             active: false,
-            value: ''
+            multi: false,   // 是否支持多选，也就是之前的 MultiSelect 的功能
+            value: ''       // any | any[]
         };
     },
     computed: {
+        multiLabel() {
+            const datasource = this.data.get('datasource');
+            const values = this.data.get('value');
+            const labels = [];
+            u.each(datasource, item => {
+                if (u.indexOf(values, item.value) !== -1) {
+                    labels.push(item.text);
+                }
+            });
+
+            return labels.length > 0 ? labels.join(',') : kDefaultLabel;
+        },
         label() {
             const selectedItem = this.data.get('selectedItem');
             return selectedItem ? selectedItem.text : kDefaultLabel;
@@ -78,6 +108,7 @@ export default defineComponent({
     filters: {
         itemClass(item) {
             const value = this.data.get('value');
+            const multi = this.data.get('multi');
             const klass = [cx('item')];
             if (item.value === value) {
                 klass.push(cx('item-selected'));
@@ -85,7 +116,17 @@ export default defineComponent({
             if (item.disabled) {
                 klass.push(cx('item-disabled'));
             }
+            if (multi) {
+                klass.push(cx('item-multi'));
+            }
             return klass;
+        }
+    },
+    inited() {
+        const {multi, value} = this.data.get();
+        if (multi && !u.isArray(value)) {
+            // 转化一下格式
+            this.data.set('value', []);
         }
     },
     selectItem(e, item) {
