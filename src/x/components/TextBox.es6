@@ -11,6 +11,7 @@ const cx = create('ui-textbox');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
+    <div s-if="addon && addonPosition === 'begin'" class="${cx('addon')}">{{addon}}</div>
     <textarea s-if="multiline"
         on-input="onInput"
         on-keypress="onKeyPress($event)"
@@ -26,6 +27,7 @@ const template = `<div class="{{mainClass}}">
         disabled="{{disabled}}"
         placeholder="{{placeholder}}"
         style="{{textboxStyle}}" />
+    <div s-if="addon && addonPosition === 'end'" class="${cx('addon', 'addon-end')}">{{addon}}</div>
 </div>`;
 /* eslint-enable */
 
@@ -72,6 +74,8 @@ export default defineComponent({
             multiline: false,
             skin: '',
             placeholder: '',
+            addon: '',
+            addonPosition: 'begin',   // 'begin' | 'end'
             width: null,
             height: null
         };

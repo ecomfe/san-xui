@@ -79,9 +79,15 @@ const App = defineComponent({
         </x-section>
 
         <x-section label="xui-dragger">
-            <xui-dragger />
-            <br/>
-            <xui-dragger disabled />
+            <x-row label="[default]">
+                <xui-dragger max="{{200}}" value="{{35}}"/>
+            </x-row>
+            <x-row label="length=500,max=300,value=135">
+                <xui-dragger length="{{500}}" max="{{300}}" value="{{135}}"/>
+            </x-row>
+            <x-row label="disabled">
+                <xui-dragger disabled />
+            </x-row>
         </x-section>
 
         <x-section label="xui-radioselect">
@@ -207,6 +213,21 @@ const App = defineComponent({
                 <xui-textbox width="{{100}}" type="password" placeholder="This is placeholder" value="{=password.value=}" />
                 <xui-textbox disabled width="300px" type="password" placeholder="This is disabled textbox" />
                 Password is: {{password.value}}
+            </x-row>
+            <x-row label="type=text,addon=@_@">
+                <xui-textbox
+                    addon="@_@"
+                    placeholder="This is placeholder"
+                    value="{=text.value=}"
+                    on-enter="onPressEnterOnTextBox" />
+            </x-row>
+            <x-row label="type=text,addon=@_@,addon-position=end">
+                <xui-textbox
+                    addon="@_@"
+                    addon-position="end"
+                    placeholder="This is placeholder"
+                    value="{=text.value=}"
+                    on-enter="onPressEnterOnTextBox" />
             </x-row>
             <x-row label="multiline">
                 <xui-textbox multiline placeholder="This is placeholder" value="{=textarea.value=}" />
@@ -456,7 +477,7 @@ const App = defineComponent({
     },
 
     onPressEnterOnTextBox() {
-        alert('Press enter');
+        Toast.info('Enter pressed');
     },
 
     onAfterCopy() {

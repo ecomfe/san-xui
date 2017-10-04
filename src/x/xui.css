@@ -202,10 +202,34 @@
     display: inline-block;
 }
 
+.ui-dragger input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
 .ui-dragger-bar-selected,
 .ui-dragger-control-bar {
     transition: all 0.2s ease-out;
 }
+.ui-dragger-bar-middle {
+    left: 50%;
+    transform: translateX(-50%);
+}
 .ui-dragger-disabled .ui-dragger-control-bar-horizontal:before {
     background: #f6f7fb !important;
+}
+
+.ui-textbox-addon {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #e9ecef;
+    border: 1px solid rgba(0,0,0,.15);
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    border-right: none;
+}
+.ui-textbox-addon-end {
+    border-left: none;
+    border-right: 1px solid rgba(0,0,0,.15);
 }

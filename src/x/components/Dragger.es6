@@ -20,14 +20,20 @@ const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainSty
         style="{{controlBarStyle}}"></ui-ghost>
     <ui-ghost class="${cx('bar', 'bar-horizontal')}" s-ref="bar" on-click="onBarClick($event)">
         <div class="${cx('bar-selected', 'bar-selected-horizontal')}" style="{{selectedBarStyle}}"></div>
-        <div class="${cx('bar-left')}">1Mbps</div>
-        <div class="${cx('bar-middle')}" style="left: 166.5px;">100Mbps</div>
-        <div class="${cx('bar-right')}">200Mbps</div>
+        <div class="${cx('bar-left')}">{{min}}{{unit}}</div>
+        <div class="${cx('bar-middle')}">{{(max - min) / 2}}{{unit}}</div>
+        <div class="${cx('bar-right')}">{{max}}{{unit}}</div>
         <div class="${cx('ruling-box')}">
             <div class="${cx('ruling', 'ruling-horizontal')}"></div>
         </div>
     </ui-ghost>
-    <ui-textbox width="60px" value="{=value=}" disabled="{{disabled}}" />
+    <ui-textbox
+        type="number"
+        width="60px"
+        value="{=value=}"
+        disabled="{{disabled}}"
+        style="{{textboxStyle}}"
+        />
 </div>`;
 /* eslint-enable */
 
@@ -44,6 +50,7 @@ export default defineComponent({
             value: 0,   // [min, max]
             min: 0,
             max: 100,
+            unit: 'Mbps',
             skin: ''
         };
     },
@@ -52,6 +59,12 @@ export default defineComponent({
             const style = this.data.get('controlBarStyle');
             return {
                 width: style.left
+            };
+        },
+        textboxStyle() {
+            const length = this.data.get('length');
+            return {
+                left: `${length + 35}px`
             };
         },
         controlBarStyle() {
@@ -89,6 +102,19 @@ export default defineComponent({
             return klass;
         }
     },
+    inited() {
+        this.watch('value', value => {
+            const {min, max} = this.data.get();
+            if (value < min || value > max) {
+                if (value < min) {
+                    this.data.set('value', min);
+                }
+                else if (value > max) {
+                    this.data.set('value', max);
+                }
+            }
+        });
+    },
     attached() {
         const controlBar = this.ref('control-bar');
         $(controlBar.el).on('mousedown', e => {
@@ -120,7 +146,8 @@ export default defineComponent({
             value = max;
         }
 
-        this.data.set('value', value);
+        // TODO(leeight) 需要小数的支持
+        this.data.set('value', ~~value);
     },
     onReleaseMouse(e) {
         $(document).off('mousemove.dragger');
@@ -143,7 +170,7 @@ export default defineComponent({
         else if (value >= max) {
             value = max;
         }
-        this.data.set('value', value);
+        this.data.set('value', ~~value);
     },
     onClick() {
         const disabled = this.data.get('disabled');
