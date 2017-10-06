@@ -8,7 +8,8 @@ import moment from 'moment';
 import {defineComponent} from 'san';
 
 export function create(prefix) {
-    return (...args) => {
+    const type = prefix.replace(/^ui\-/, '');
+    const cx = (...args) => {
         if (args.length) {
             return _(args)
                 .map(value => value ? `${prefix}-${value}` : '')        // eslint-disable-line
@@ -18,6 +19,22 @@ export function create(prefix) {
         }
         return prefix;
     };
+    cx.mainClass = comp => {
+        const skin = comp.data.get('skin');
+        const disabled = comp.data.get('disabled');
+        const klass = [cx()];
+        if (skin) {
+            klass.push('skin-' + skin);
+            klass.push('skin-' + skin + '-' + type);
+        }
+        if (disabled) {
+            klass.push('state-disabled');
+            klass.push(cx('disabled'));
+        }
+        return klass;
+    };
+
+    return cx;
 }
 
 export function isComponent(node) {

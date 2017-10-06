@@ -9,6 +9,7 @@ import {defineComponent} from 'san';
 
 import Button from './components/Button';
 import BoxGroup from './components/BoxGroup';
+import BuyBucket from './components/BuyBucket';
 import Clipboard from './components/Clipboard';
 import CheckBox from './components/CheckBox';
 import Dragger from './components/Dragger';
@@ -22,6 +23,7 @@ import Select from './components/Select';
 import TextBox from './components/TextBox';
 import MonthView from './components/MonthView';
 import Calendar from './components/Calendar';
+import Progress from './components/Progress';
 import Toast from './components/Toast';
 import ToastLabel from './components/ToastLabel';
 import Tip from './components/Tip';
@@ -320,7 +322,7 @@ const App = defineComponent({
                     <xui-button>音视频处理</xui-button>
                 </xui-tab-panel>
                 <xui-tab-panel title="Android批量打包">
-                    <xui-button>Android批量打包</xui-button>
+                    <xui-monthview />
                 </xui-tab-panel>
             </xui-tab>
         </x-section>
@@ -344,13 +346,37 @@ const App = defineComponent({
         <x-section label="xui-toastlabel">
             <x-row label="[default]level=alert">
                 <xui-toastlabel text="hello toastlabel" />
-            <x-row>
+            </x-row>
             <x-row label="level=normal">
                 <xui-toastlabel text="hello toastlabel" level="normal" />
-            <x-row>
+            </x-row>
             <x-row label="level=error">
                 <xui-toastlabel text="hello toastlabel" level="error" />
-            <x-row>
+            </x-row>
+        </x-section>
+        <x-section label="xui-buybucket">
+            <x-row label="[default],previous">
+                <xui-buybucket
+                    previous
+                    datasource="{{buybucket.datasource}}" />
+            </x-row>
+
+            <x-row label="disabled,tip=This is a tip message">
+                <xui-buybucket
+                    disabled
+                    previous
+                    tip="This is a tip message"
+                    datasource="{{buybucket.datasource}}" />
+            </x-row>
+        </x-section>
+
+        <x-section label="xui-progress">
+            <x-row label="[default],value=20">
+                <xui-progress value="{{20}}" />
+            </x-row>
+            <x-row label="value=50,width=300">
+                <xui-progress value="{{50}}" width="{{300}}" />
+            </x-row>
         </x-section>
     </template>`,
 
@@ -366,6 +392,7 @@ const App = defineComponent({
 
         'xui-button': Button,
         'xui-boxgroup': BoxGroup,
+        'xui-buybucket': BuyBucket,
         'xui-clipboard': Clipboard,
         'xui-dragger': Dragger,
         'xui-loading': Loading,
@@ -385,7 +412,8 @@ const App = defineComponent({
         'xui-tip': Tip,
         'xui-tab': Tab,
         'xui-tab-panel': TabPanel,
-        'xui-toastlabel': ToastLabel
+        'xui-toastlabel': ToastLabel,
+        'xui-progress': Progress
     },
 
     initData() {
@@ -509,6 +537,16 @@ const App = defineComponent({
             },
             'switch': {
                 checked: true
+            },
+            buybucket: {
+                datasource: [
+                    {title: '地域', content: '华北 - 北京'},
+                    {title: '可用区', content: '可用区A'},
+                    {title: '购买配置', content: 'CPU：1核、内存：1GB、本地磁盘：20GB、公网带宽1Mbps'},
+                    {title: '购买配额', content: '1台 * 1月'},
+                    {title: '购买配额(2)', content: '2台 * 2月', hidden: true},
+                    {title: '配置费用', content: '￥1296.00'}
+                ]
             }
         };
     },

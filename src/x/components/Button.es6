@@ -20,6 +20,10 @@ export default defineComponent({
     template,
     computed: {
         mainClass() {
+            // TODO(leeight) 如果调用 cx.mainClass(this) 的话，无法自动识别依赖关系了
+            // this.data.get('skin');
+            // this.data.get('disabled');
+            // return cx.mainClass(this);
             const skin = this.data.get('skin');
             const disabled = this.data.get('disabled');
             const klass = [cx()];

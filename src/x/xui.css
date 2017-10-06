@@ -259,3 +259,12 @@
     background-color: #fff;
 }
 
+
+.ui-buybucket-x .ui-button {
+    line-height: 38px;
+}
+.ui-buybucket-x .ui-buybucket-tip {
+    padding: 0 18px;
+    margin-top: -8px;
+    padding-bottom: 12px;
+}
