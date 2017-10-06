@@ -11,6 +11,7 @@ const cx = create('ui-button');
 
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}">
+    <i class="{{'iconfont icon-' + icon}}" s-if="icon"></i>
     <span class="${cx('label')}" san-if="label">{{label}}</span>
     <div san-else><slot /></div>
 </div>`;
@@ -42,6 +43,7 @@ export default defineComponent({
         return {
             disabled: false,
             skin: '',
+            icon: '',
             label: ''
         };
     },

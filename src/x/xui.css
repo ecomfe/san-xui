@@ -268,3 +268,7 @@
     margin-top: -8px;
     padding-bottom: 12px;
 }
+
+.ui-smscode input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
