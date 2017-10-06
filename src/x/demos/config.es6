@@ -75,7 +75,7 @@ export const blocks = [
                 text: 'xui-uploader'
             },
             {
-                text: 'xui-bos-uploader'
+                text: 'xui-bosuploader'
             },
             {
                 text: 'xui-loading'
@@ -94,6 +94,9 @@ export const blocks = [
             },
             {
                 text: 'xui-smscode'
+            },
+            {
+                text: 'xui-richtexteditor'
             }
         ]
     }

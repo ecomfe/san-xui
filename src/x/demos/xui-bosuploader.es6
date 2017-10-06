@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-bos-uploader.es6
+ * @file demos/xui-bosuploader.es6
  * @author leeight
  */
 
@@ -11,24 +11,24 @@ import Row from './Row';
 /* eslint-disable */
 const template = `<template>
 <x-row label="initialize error">
-    <xui-bos-uploader />
+    <xui-bosuploader />
 </x-row>
 
 <x-row label="normal">
-    <xui-bos-uploader
+    <xui-bosuploader
         bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
         uptoken-url="https://cloud.baidu.com/api/authorization" />
 </x-row>
 
 <x-row label="auto-start=true">
-    <xui-bos-uploader
+    <xui-bosuploader
         auto-start
         bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
         uptoken-url="https://cloud.baidu.com/api/authorization" />
 </x-row>
 
 <x-row label="disabled">
-    <xui-bos-uploader
+    <xui-bosuploader
         disabled
         bos-endpoint="https://bce-bos-uploader.cdn.bcebos.com"
         uptoken-url="https://cloud.baidu.com/api/authorization" />
@@ -40,7 +40,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
-        'xui-bos-uploader': BosUploader
+        'xui-bosuploader': BosUploader
     },
     initData() {
         return {
