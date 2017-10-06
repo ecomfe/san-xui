@@ -33,6 +33,10 @@ export default defineComponent({
         const collapse = this.data.get(key);
         this.data.set(key, !collapse);
     },
+    attached() {
+        const blocks = this.data.get('blocks');
+        this.onClick(blocks[0].items[0]);
+    },
     onClick(item) {
         this.data.set('activedItem', item);
         this.fire('item-selected', item);
