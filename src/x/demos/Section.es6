@@ -9,6 +9,7 @@ export default defineComponent({
     template: `<fieldset class="x-section">
         <legend s-if="label" on-click="toggleViewport">{{open ? '[-]' : '[+]'}}{{label}}</legend>
         <div style="{{viewportStyle}}"><slot/></div>
+        <div s-if="!open" on-click="toggleViewport" class="view-more">View more...</div>
     </fieldset>`,
 
     computed: {

@@ -119,21 +119,23 @@ export default defineComponent({
     },
     attached() {
         const controlBar = this.ref('control-bar');
-        $(controlBar.el).on('mousedown', e => {
-            const disabled = this.data.get('disabled');
-            if (disabled) {
-                return false;
-            }
+        if (controlBar && controlBar.el) {
+            $(controlBar.el).on('mousedown', e => {
+                const disabled = this.data.get('disabled');
+                if (disabled) {
+                    return false;
+                }
 
-            this.startPosition = {
-                x: e.clientX,
-                y: e.clientY,
-                originalValue: this.data.get('value')
-            };
-            $(document).on('mousemove.dragger', e => this.onMoveControlBar(e));
-            $(document).on('mouseup.dragger', e => this.onReleaseMouse(e));
-            return false;
-        });
+                this.startPosition = {
+                    x: e.clientX,
+                    y: e.clientY,
+                    originalValue: this.data.get('value')
+                };
+                $(document).on('mousemove.dragger', e => this.onMoveControlBar(e));
+                $(document).on('mouseup.dragger', e => this.onReleaseMouse(e));
+                return false;
+            });
+        }
     },
     onMoveControlBar(e) {
         const {x, originalValue} = this.startPosition;
@@ -183,7 +185,9 @@ export default defineComponent({
     },
     disposed() {
         const controlBar = this.ref('control-bar');
-        $(controlBar.el).off('mousedown');
+        if (controlBar && controlBar.el) {
+            $(controlBar.el).off('mousedown');
+        }
         $(document).off('mousemove.dragger');
         $(document).off('mouseup.dragger');
     }

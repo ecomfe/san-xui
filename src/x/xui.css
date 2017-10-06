@@ -272,3 +272,7 @@
 .ui-smscode input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
+
+.ui-hljs {
+    font-family: monospace;
+}

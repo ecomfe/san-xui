@@ -11,13 +11,17 @@ import {blocks} from './demos/config';
 
 /* eslint-disable */
 const template = `<div class="showcase">
-    <ui-aside on-item-selected="onItemSelected($event)" blocks="{{blocks}}" />
-    <ui-explorer
-        title="{{explorer.title}}"
-        loading="{{explorer.loading}}"
-        error="{{explorer.error}}"
-        comp="{{explorer.comp}}"
-    />
+    <h1>San UI Library</h1>
+    <main>
+        <ui-aside on-item-selected="onItemSelected($event)" blocks="{{blocks}}" />
+        <ui-explorer
+            title="{{explorer.title}}"
+            loading="{{explorer.loading}}"
+            error="{{explorer.error}}"
+            comp="{{explorer.comp}}"
+            code="{{explorer.code}}"
+        />
+    </main>
 </div>`;
 /* eslint-enable */
 
@@ -48,6 +52,10 @@ const App = defineComponent({
         const moduleId = item.moduleId || `inf-ui/x/demos/${item.text}`;
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
+        const sourceUrl = window.require.toUrl(moduleId) + '.es6';
+        fetch(sourceUrl)
+            .then(response => response.text())
+            .then(code => this.data.set('explorer.code', code));
         window.require([moduleId], CompCtor => {
             this.disposeComponent();
             this.data.set('explorer.loading', false);

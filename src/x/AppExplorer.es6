@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 import Loading from 'inf-ui/x/components/Loading';
 import Ghost from 'inf-ui/x/components/Ghost';
+import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Section from './demos/Section';
 
@@ -16,6 +17,9 @@ const template = `<div class="app-explorer">
         <ui-loading s-if="loading" />
         <ui-ghost s-ref="ghost" />
     </x-section>
+    <x-section label="Source Code" s-if="code" open="{{false}}">
+        <ui-hljs code="{{code}}" />
+    </x-section>
 </div>`;
 /* eslint-enable */
 
@@ -24,6 +28,7 @@ export default defineComponent({
     components: {
         'ui-loading': Loading,
         'ui-ghost': Ghost,
+        'ui-hljs': SyntaxHighlighter,
         'x-section': Section
     },
     initData() {
