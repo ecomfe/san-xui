@@ -41,7 +41,7 @@ export default defineComponent({
                 toolbars: [
                     [
                         'fullscreen', 'source', '|', 'undo', 'redo', '|',
-                        'bold', 'italic', 'underline', 'fontborder', 'strikethrough',
+                        'bold', 'italic', 'underline', 'fontborder', 'strikethrough'
                     ]
                 ]
             }
