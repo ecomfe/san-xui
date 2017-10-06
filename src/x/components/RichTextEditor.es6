@@ -71,6 +71,15 @@ export default defineComponent({
             options: null
         };
     },
+    inited() {
+        /** TODO(leeight) 暂时不支持在运行时动态的修改 editor 的内容
+        this.watch('value', value => {
+            if (this.editor) {
+                this.editor.setContent(value);
+            }
+        });
+        */
+    },
     attached() {
         window.require(['zeroclipboard', 'inf-ria/js!ueditor/ueditor.all.min.js'], ZeroClipboard => {
             this.data.set('loading', false);
@@ -79,13 +88,18 @@ export default defineComponent({
             window.ZeroClipboard = ZeroClipboard;
 
             const editorOptions = this.data.get('editorOptions');
-            const content = this.data.get('content');
+            const value = this.data.get('value');
 
             this.editor = new UE.ui.Editor(editorOptions);
             this.editor.render(this.ref('ghost').el);
-            if (content) {
-                this.editor.addListener('ready', () => this.editor.setContent(content));
+            if (value) {
+                this.editor.addListener('ready', () => this.editor.setContent(value));
             }
+            this.editor.addListener('contentchange', () => {
+                const value = this.editor.getContent();
+                // FIXME(leeight) 递归的问题如何处理呢？
+                this.data.set('value', value);
+            });
         });
     },
     disposed() {
