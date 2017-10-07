@@ -38,22 +38,7 @@ export default defineComponent({
             return cx.mainClass(this);
         },
         textboxStyle() {
-            const style = {};
-
-            const width = this.data.get('width');
-            const height = this.data.get('height');
-            if (width != null) {
-                style.width = typeof width === 'string'
-                    ? width
-                    : width + 'px';
-            }
-            if (height != null) {
-                style.height = typeof height === 'string'
-                    ? height
-                    : height + 'px';
-            }
-
-            return style;
+            return cx.mainStyle(this);
         }
     },
     initData() {

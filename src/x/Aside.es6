@@ -3,12 +3,17 @@
  * @author leeight
  */
 
+import u from 'lodash';
 import {defineComponent} from 'san';
+import SearchBox from 'inf-ui/x/components/SearchBox';
 
 /* eslint-disable */
 const template = `<div class="aside">
-    <dl s-for="block, i in blocks">
-        <dt on-click="toggleItems(i)">{{block.title}}<span>[{{block.collapse ? '+' : '-'}}]</span></dt>
+    <div class="searchbox">
+        <ui-searchbox value="{=keyword=}" width="115" placeholder="请输入关键字" />
+    </div>
+    <dl s-for="block, i in filteredBlocks">
+        <dt>{{block.title}}</dt>
         <dd s-if="!block.collapse">
             <ul>
                 <li on-click="onClick(item)"
@@ -22,11 +27,38 @@ const template = `<div class="aside">
 
 export default defineComponent({
     template,
+    components: {
+        'ui-searchbox': SearchBox
+    },
     initData() {
         return {
             activedItem: null,
+            keyword: '',
             blocks: []
         };
+    },
+    computed: {
+        filteredBlocks() {
+            const keyword = this.data.get('keyword');
+            const blocks = this.data.get('blocks');
+            const filteredBlocks = [];
+            u.each(blocks, block => {
+                const items = [];
+                u.each(block.items, item => {
+                    if (item.text.indexOf(keyword) !== -1) {
+                        items.push(item);
+                    }
+                });
+                if (items.length) {
+                    filteredBlocks.push({
+                        title: block.title,
+                        items
+                    });
+                }
+            });
+
+            return filteredBlocks;
+        }
     },
     toggleItems(bi) {
         const key = `blocks[${bi}].collapse`;

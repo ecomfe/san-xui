@@ -13,7 +13,13 @@ const cx = create('ui-searchbox');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
-    <ui-textbox on-enter="onSearch" placeholder="{{placeholder}}" value="{=value=}" disabled="{{disabled}}" />
+    <ui-textbox
+        on-enter="onSearch"
+        placeholder="{{placeholder}}"
+        value="{=value=}"
+        disabled="{{disabled}}"
+        width="{{width}}"
+        />
     <ui-button on-click="onSearch" icon="magnifier" disabled="{{disabled}}" />
 </div>`;
 /* eslint-enable */
@@ -28,7 +34,8 @@ export default defineComponent({
         return {
             disabled: false,
             value: '',
-            placeholder: ''
+            placeholder: '',
+            width: null
         };
     },
     computed: {

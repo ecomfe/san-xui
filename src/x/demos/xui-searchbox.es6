@@ -19,6 +19,9 @@ const template = `<template>
 <x-row label="placeholder=请输入实例名称进行搜索">
     <xui-searchbox placeholder="请输入实例名称进行搜索" />
 </x-row>
+<x-row label="width=100,placeholder=请输入实例名称进行搜索">
+    <xui-searchbox width="100" placeholder="请输入实例名称进行搜索" />
+</x-row>
 </template>`;
 /* eslint-enable */
 
