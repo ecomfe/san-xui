@@ -22,7 +22,7 @@ export function create(prefix) {
     cx.mainClass = comp => {
         const skin = comp.data.get('skin');
         const disabled = comp.data.get('disabled');
-        const klass = [cx()];
+        const klass = [cx(), cx('x')];
         if (skin) {
             klass.push('skin-' + skin);
             klass.push('skin-' + skin + '-' + type);
@@ -30,6 +30,7 @@ export function create(prefix) {
         if (disabled) {
             klass.push('state-disabled');
             klass.push(cx('disabled'));
+            klass.push(cx('x-disabled'));
         }
         return klass;
     };

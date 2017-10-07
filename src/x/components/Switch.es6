@@ -25,18 +25,8 @@ export default defineComponent({
     },
     computed: {
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
+            const klass = cx.mainClass(this);
             const checked = this.data.get('checked');
-            const klass = [cx()];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-button');
-            }
-            if (disabled) {
-                klass.push('state-disabled');
-                klass.push(cx('disabled'));
-            }
             if (checked) {
                 klass.push('state-checked');
                 klass.push(cx('checked'));

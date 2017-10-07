@@ -86,18 +86,8 @@ export default defineComponent({
             return null;
         },
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
+            const klass = cx.mainClass(this);
             const active = this.data.get('active');
-            const klass = [cx(), cx('x')];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-button');
-            }
-            if (disabled) {
-                klass.push('state-disabled');
-                klass.push(cx('disabled'));
-            }
             if (active) {
                 klass.push('state-active');
                 klass.push(cx('active'));

@@ -87,18 +87,7 @@ export default defineComponent({
             return false;
         },
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
-            const klass = [cx()];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-bos-uploader');
-            }
-            if (disabled) {
-                klass.push('state-disabled');
-                klass.push(cx('disabled'));
-            }
-            return klass;
+            return cx.mainClass(this);
         }
     },
     filters: {

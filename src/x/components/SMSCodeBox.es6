@@ -36,18 +36,8 @@ export default defineComponent({
     },
     computed: {
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
+            const klass = cx.mainClass(this);
             const freezed = this.data.get('freezed');
-            const klass = [cx(), cx('x')];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-smscode');
-            }
-            if (disabled) {
-                klass.push('state-disabled');
-                klass.push(cx('disabled'));
-            }
             if (freezed) {
                 klass.push('state-freezed');
                 klass.push(cx('freezed'));

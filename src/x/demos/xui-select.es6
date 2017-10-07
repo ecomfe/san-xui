@@ -39,7 +39,7 @@ export default defineComponent({
     initData() {
         return {
             select: {
-                value: 'bar',
+                value: 'abc7',
                 multi: {
                     value: ['foo', 'bar', 'abc1', 'abc2']
                 },

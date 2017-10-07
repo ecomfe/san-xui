@@ -45,21 +45,11 @@ export default defineComponent({
     },
     computed: {
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
+            const klass = cx.mainClass(this);
             const orientation = this.data.get('orientation');
-            const klass = [cx()];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-boxgroup');
-            }
             if (orientation) {
                 klass.push(cx(orientation));
                 klass.push('state-' + orientation);
-            }
-            if (disabled) {
-                klass.push(cx('disabled'));
-                klass.push('state-disabled');
             }
             return klass;
         }

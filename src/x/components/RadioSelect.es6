@@ -27,18 +27,7 @@ export default defineComponent({
     template,
     computed: {
         mainClass() {
-            const skin = this.data.get('skin');
-            const disabled = this.data.get('disabled');
-            const klass = [cx()];
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-radioselect');
-            }
-            if (disabled) {
-                klass.push(cx('disabled'));
-                klass.push('state-disabled');
-            }
-            return klass;
+            return cx.mainClass(this);
         }
     },
     filters: {
