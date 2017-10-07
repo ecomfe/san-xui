@@ -3,6 +3,7 @@
  * @author leeight
  */
 
+import u from 'lodash';
 import {defineComponent} from 'san';
 
 /* eslint-disable */
@@ -33,9 +34,28 @@ export default defineComponent({
         const collapse = this.data.get(key);
         this.data.set(key, !collapse);
     },
-    attached() {
+    getItemByText(text) {
         const blocks = this.data.get('blocks');
-        this.onClick(blocks[0].items[0]);
+
+        for (let i = 0; i < blocks.length; i++) {
+            const items = blocks[i].items;
+            for (let j = 0; j < items.length; j++) {
+                const item = items[j];
+                if (item.text === text) {
+                    return item;
+                }
+            }
+        }
+
+        return blocks[0].items[0];
+    },
+    inited() {
+        this.watch('selectedItemText', selectedItemText => {
+            let activedItem = this.getItemByText(selectedItemText);
+            this.onClick(activedItem);
+        });
+    },
+    attached() {
     },
     onClick(item) {
         this.data.set('activedItem', item);

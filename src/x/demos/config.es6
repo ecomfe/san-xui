@@ -96,6 +96,9 @@ export const blocks = [
                 text: 'xui-smscode'
             },
             {
+                text: 'xui-searchbox'
+            },
+            {
                 text: 'xui-richtexteditor'
             },
             {

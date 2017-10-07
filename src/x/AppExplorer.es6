@@ -17,7 +17,7 @@ const template = `<div class="app-explorer">
         <ui-loading s-if="loading" />
         <ui-ghost s-ref="ghost" />
     </x-section>
-    <x-section label="Source Code" s-if="code" open="{{false}}">
+    <x-section label="Source Code" s-if="code" open="{=open=}">
         <ui-hljs code="{{code}}" />
     </x-section>
 </div>`;
@@ -33,13 +33,15 @@ export default defineComponent({
     },
     initData() {
         return {
-            comp: null
+            comp: null,
+            open: false
         };
     },
     inited() {
         this.watch('comp', comp => {
             const container = this.ref('ghost').el;
             comp.attach(container);
+            this.data.set('open', false);
         });
     }
 });

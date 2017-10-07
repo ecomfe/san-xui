@@ -13,7 +13,10 @@ import {blocks} from './demos/config';
 const template = `<div class="showcase">
     <h1>San UI Library</h1>
     <main>
-        <ui-aside on-item-selected="onItemSelected($event)" blocks="{{blocks}}" />
+        <ui-aside
+            on-item-selected="onItemSelected($event)"
+            selected-item-text="{{selectedItemText}}"
+            blocks="{{blocks}}" />
         <ui-explorer
             title="{{explorer.title}}"
             loading="{{explorer.loading}}"
@@ -48,6 +51,12 @@ const App = defineComponent({
             comp.dispose();
         }
     },
+    attached() {
+        if (/^#comp=/.test(location.hash)) {
+            const text = location.hash.replace(/^#comp=/, '');
+            this.data.set('selectedItemText', text);
+        }
+    },
     onItemSelected(item) {
         const moduleId = item.moduleId || `inf-ui/x/demos/${item.text}`;
         this.data.set('explorer.title', item.text);
@@ -60,6 +69,7 @@ const App = defineComponent({
             this.disposeComponent();
             this.data.set('explorer.loading', false);
             this.data.set('explorer.comp', new CompCtor());
+            location.hash = 'comp=' + item.text;
         });
     }
 });

@@ -276,3 +276,7 @@
 .ui-hljs {
     font-family: monospace;
 }
+
+.ui-searchbox-x .ui-textbox-x {
+    margin-right: -4px;
+}
