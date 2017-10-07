@@ -21,6 +21,7 @@
     margin-right: 5px;
 }
 
+/* ui-select */
 .ui-select-x {
     display: inline-block;
     min-width: 100px;
@@ -39,10 +40,12 @@
     vertical-align: middle;
 }
 
+/* ui-tip */
 .ui-tiplayer-x {
     min-width: 100px;
 }
 
+/* ui-toast */
 .ui-toast-container {
     position: fixed;
     z-index: 99999;
@@ -75,12 +78,14 @@
     background: #bd362f;
 }
 
+/* ui-dialog */
 .ui-dialog-x {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
 
+/* ui-calendar */
 .ui-calendar-x-disabled:hover,
 .ui-calendar-x-disabled {
     color: #999999;
@@ -92,6 +97,7 @@
     color: #999999;
 }
 
+/* ui-monthview */
 .ui-monthview-x .ui-select-x {
     min-width: 0;
     width: 100%;
@@ -100,6 +106,7 @@
     display: block;
 }
 
+/* ui-table */
 .ui-table-hcell-sel,
 .ui-table-cell-sel {
     width: 30px;
@@ -134,7 +141,7 @@
     padding: 25px 0;
 }
 
-
+/* ui-bos-uploader */
 .ui-bos-uploader-list {
     width: 500px;
     margin-top: 10px;
@@ -205,10 +212,12 @@
     color: #EB5252;
 }
 
+/* ui-clipboard */
 .ui-clipboard-x {
     display: inline-block;
 }
 
+/* ui-dragger */
 .ui-dragger input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
@@ -229,6 +238,7 @@
     background: #f6f7fb !important;
 }
 
+/* ui-textbox */
 .ui-textbox-addon {
     display: inline-block;
     font-size: 12px;
@@ -245,10 +255,12 @@
     border-right: 1px solid rgba(0,0,0,.15);
 }
 
+/* ui-loading */
 .ui-loading-x {
     background: url(https://cdn.bdstatic.com/console/dist/009bbae/dep/inf-style/0.0.0/img/process.gif) center center no-repeat;
 }
 
+/* ui-tab */
 .ui-tab-x .ui-tab-navigator {
     background-color: #f5f5f5;
 }
@@ -259,7 +271,7 @@
     background-color: #fff;
 }
 
-
+/* ui-buybucket */
 .ui-buybucket-x .ui-button {
     line-height: 38px;
 }
@@ -269,18 +281,22 @@
     padding-bottom: 12px;
 }
 
+/* ui-smscode */
 .ui-smscode input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
 
+/* ui-hljs */
 .ui-hljs {
     font-family: monospace;
 }
 
+/* ui-searchbox */
 .ui-searchbox-x .ui-textbox-x {
     margin-right: -4px;
 }
 
+/* ui-button-menu */
 .ui-button-menu {
     display: inline-block;
 }
@@ -288,10 +304,9 @@
     font-size: 12px;
     margin-left: 10px;
 }
-/*
-.ui-button-menu-active .icon-downarrow:before {
-    transform: rotate(180deg);
-    transition: all 0.3s;
+
+/* ui-viewprogress */
+.ui-viewprogress-x .percent {
+    top: 0;
 }
-*/
 

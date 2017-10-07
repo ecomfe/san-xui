@@ -1,9 +1,13 @@
 /**
- * @file form/FormItem.js
+ * @file forms/FormItem.es6
  * @author leeight
  */
 
 import {defineComponent} from 'san';
+
+import {create} from '../components/util';
+
+const cx = create('ui-form-item');
 
 function isComponent(node) {
     return node && node._type === 'san-cmpt';
@@ -18,28 +22,42 @@ function getEventName(tagName) {
     }
 }
 
-const template = '<div class="{{name ? \'san-form-item san-form-item-\' + name : \'san-form-item\'}}">'
-    + '<div class="san-form-item-label" s-if="label">{{label}}</div>'
-    + '<div class="{{error ? \'san-form-item-content invalid\' : \'san-form-item-content\'}}">'
-    + '<slot/>'
-    + '<label class="invalid-label" s-if="error">{{error}}</label>'
-    + '</div>'
-    + '</div>';
+const template = `<div class="{{mainClass}}">
+    <div class="${cx('label')}" s-if="label">{{label}}</div>
+    <div class="${cx('content')}">
+        <slot/>
+        <label class="${cx('invalid-label')}" s-if="error">{{error}}</label>
+    </div>
+</div>`;
 export default defineComponent({
     role: 'FormItem',
     template,
+    computed: {
+        mainClass() {
+            const klass = [cx()];
+            const name = this.data.get('name');
+            const error = this.data.get('error');
+            if (name) {
+                klass.push(cx(name));
+            }
+            if (error) {
+                klass.push(cx('invalid'));
+            }
+            return klass;
+        }
+    },
     attached() {
         const name = this.data.get('name');
         if (!name) {
             return;
         }
         const child = this.slotChilds[0].childs[0];
-        const valueExpr = child.props.get('value');
-        if (!valueExpr) {
-            return;
-        }
         if (!isComponent(child)
             && /input|select|textarea/.test(child.tagName)) {
+            const valueExpr = child.props.get('value');
+            if (!valueExpr) {
+                return;
+            }
             child._onEl(getEventName(child.tagName), () => {
                 this.dispatch('form-element-changed', {
                     name: name,
@@ -51,9 +69,10 @@ export default defineComponent({
             child.on('input', () => {
                 this.dispatch('form-element-changed', {
                     name: name,
-                    value: child.evalExpr(valueExpr.expr)
+                    value: child.data.get('value')
                 });
             });
         }
     }
 });
+

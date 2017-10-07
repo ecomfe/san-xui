@@ -13,8 +13,15 @@ const cx = create('ui-smscode');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
-    <ui-textbox type="number" placeholder="{{placeholder}}" value="{=value=}" disabled="{{freezed || disabled}}" />
-    <ui-button on-click="onBtnClick" disabled="{{freezed || disabled}}">{{btnText}}</ui-button>
+    <ui-textbox type="number"
+        on-input="onInput"
+        placeholder="{{placeholder}}"
+        width="{{width}}"
+        value="{=value=}"
+        disabled="{{disabled}}" />
+    <ui-button on-click="onBtnClick"
+        width="{{60}}"
+        disabled="{{freezed || disabled}}">{{btnText}}</ui-button>
 </div>`;
 /* eslint-enable */
 
@@ -31,7 +38,8 @@ export default defineComponent({
             freezeTime: 60,
             btnText: '获取验证码',
             value: '',
-            placeholder: '请输入手机号'
+            width: null,
+            placeholder: '请输入验证码'
         };
     },
     computed: {
@@ -45,6 +53,9 @@ export default defineComponent({
             return klass;
         }
     },
+    onInput() {
+        this.fire('input');
+    },
     onBtnClick() {
         this.fire('click');
         this.data.set('freezed', true);
@@ -55,7 +66,7 @@ export default defineComponent({
                 this.data.set('btnText', '获取验证码');
             }
             else {
-                this.data.set('btnText', '重新发送(' + freezeTime-- + ')秒');
+                this.data.set('btnText', '剩余 ' + freezeTime-- + ' 秒');
                 setTimeout(countdown, 1000);
             }
         };

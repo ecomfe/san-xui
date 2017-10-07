@@ -1,12 +1,21 @@
 /**
- * @file form/Form.js
+ * @file forms/Form.es6
  * @author leeight
  */
 
 import {defineComponent} from 'san';
 
+import {create} from '../components/util';
+
+const cx = create('ui-form');
+
 export default defineComponent({
-    template: '<form class="san-form"><slot/></form>',
+    template: '<form class="{{mainClass}}"><slot/></form>',
+    computed: {
+        mainClass() {
+            return cx.mainClass(this);
+        }
+    },
     messages: {
         'form-element-changed'(arg) {
             const formItem = arg.target;

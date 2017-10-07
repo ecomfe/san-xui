@@ -10,7 +10,7 @@ import {create} from './util';
 const cx = create('ui-button');
 
 /* eslint-disable */
-const template = `<div on-click="onClick" class="{{mainClass}}">
+const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainStyle}}">
     <i class="{{'iconfont icon-' + icon}}" s-if="icon"></i>
     <span class="${cx('label')}" san-if="label">{{label}}</span>
     <div san-else><slot /></div>
@@ -22,6 +22,9 @@ export default defineComponent({
     computed: {
         mainClass() {
             return cx.mainClass(this);
+        },
+        mainStyle() {
+            return cx.mainStyle(this);
         }
     },
     initData() {

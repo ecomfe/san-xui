@@ -88,6 +88,14 @@ export const blocks = [
         ]
     },
     {
+        title: '表单',
+        items: [
+            {
+                text: 'xui-form'
+            }
+        ]
+    },
+    {
         title: '文件上传',
         items: [
             {
