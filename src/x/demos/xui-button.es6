@@ -6,24 +6,32 @@
 import {defineComponent} from 'san';
 import Button from 'inf-ui/x/components/Button';
 
+import Row from './Row';
+
 /* eslint-disable */
 const template = `<template>
-<xui-button>Hello xui-button</xui-button>
-<xui-button skin="primary">primary skin</xui-button>
-<xui-button skin="danger">danger skin</xui-button>
-<xui-button disabled skin="primary">disabled button</xui-button>
-<xui-button icon="refresh" />
-<xui-button icon="refresh" disabled />
-<xui-button icon="download" />
-<xui-button icon="download" disabled />
-<xui-button icon="sdk" />
-<xui-button icon="sdk" disabled />
+<x-row label="[default]">
+    <xui-button>Hello xui-button</xui-button>
+    <xui-button skin="primary">primary skin</xui-button>
+    <xui-button skin="danger">danger skin</xui-button>
+    <xui-button disabled skin="primary">disabled button</xui-button>
+</x-row>
+
+<x-row label="icon">
+    <xui-button icon="refresh" />
+    <xui-button icon="refresh" disabled />
+    <xui-button icon="download" />
+    <xui-button icon="download" disabled />
+    <xui-button icon="sdk" />
+    <xui-button icon="sdk" disabled />
+</x-row>
 </template>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
     components: {
+        'x-row': Row,
         'xui-button': Button
     }
 });

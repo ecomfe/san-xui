@@ -5,7 +5,7 @@
 import $ from 'jquery';
 import {defineComponent} from 'san';
 
-import {create} from './util';
+import {nextZindex, create} from './util';
 
 const cx = create('ui-layer');
 
@@ -64,8 +64,9 @@ export default defineComponent({
         const {left, top} = $pce.offset();
         const height = $pce.height();
         this.data.set('style', {
-            left: left + 'px',
-            top: (top + height) + 'px'
+            'z-index': nextZindex(),
+            'left': left + 'px',
+            'top': (top + height) + 'px'
         });
     },
     disposed() {

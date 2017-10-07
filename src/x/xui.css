@@ -280,3 +280,18 @@
 .ui-searchbox-x .ui-textbox-x {
     margin-right: -4px;
 }
+
+.ui-button-menu {
+    display: inline-block;
+}
+.ui-button-menu .iconfont {
+    font-size: 12px;
+    margin-left: 10px;
+}
+/*
+.ui-button-menu-active .icon-downarrow:before {
+    transform: rotate(180deg);
+    transition: all 0.3s;
+}
+*/
+

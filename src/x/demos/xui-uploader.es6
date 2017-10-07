@@ -8,7 +8,7 @@ import {defineComponent} from 'san';
 
 /* eslint-disable */
 const template = `<template>
-TODO
+还未实现
 </template>`;
 /* eslint-enable */
 

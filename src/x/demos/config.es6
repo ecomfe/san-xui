@@ -11,6 +11,9 @@ export const blocks = [
                 text: 'xui-button'
             },
             {
+                text: 'xui-button-menu'
+            },
+            {
                 text: 'xui-textbox'
             },
             {
@@ -85,6 +88,17 @@ export const blocks = [
         ]
     },
     {
+        title: '文件上传',
+        items: [
+            {
+                text: 'xui-uploader'
+            },
+            {
+                text: 'xui-bosuploader'
+            }
+        ]
+    },
+    {
         title: '业务组件',
         items: [
             {
@@ -95,12 +109,6 @@ export const blocks = [
             },
             {
                 text: 'xui-tip'
-            },
-            {
-                text: 'xui-uploader'
-            },
-            {
-                text: 'xui-bosuploader'
             },
             {
                 text: 'xui-loading'
