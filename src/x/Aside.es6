@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import u from 'lodash';
 import {defineComponent} from 'san';
 
 /* eslint-disable */
@@ -49,13 +48,15 @@ export default defineComponent({
 
         return blocks[0].items[0];
     },
+    activeItemByText(text) {
+        let activedItem = this.getItemByText(text);
+        this.onClick(activedItem);
+    },
     inited() {
-        this.watch('selectedItemText', selectedItemText => {
-            let activedItem = this.getItemByText(selectedItemText);
-            this.onClick(activedItem);
-        });
+        this.watch('selectedItemText', text => this.activeItemByText(text));
     },
     attached() {
+        this.activeItemByText(this.data.get('selectedItemText'));
     },
     onClick(item) {
         this.data.set('activedItem', item);
