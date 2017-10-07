@@ -111,6 +111,9 @@ export const blocks = [
             },
             {
                 text: 'xui-hljs'
+            },
+            {
+                text: 'xui-go'
             }
         ]
     }

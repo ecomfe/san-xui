@@ -3,6 +3,7 @@
  * @author leeight
  */
 
+import $ from 'jquery';
 import {defineComponent} from 'san';
 
 import Aside from './Aside';
@@ -51,11 +52,18 @@ const App = defineComponent({
             comp.dispose();
         }
     },
-    attached() {
-        if (/^#comp=/.test(location.hash)) {
-            const text = location.hash.replace(/^#comp=/, '');
-            this.data.set('selectedItemText', text);
-        }
+    inited() {
+        const hashchangeHandler = () => {
+            if (/^#comp=/.test(location.hash)) {
+                const text = location.hash.replace(/^#comp=/, '');
+                this.data.set('selectedItemText', text);
+            }
+        };
+        $(window).on('hashchange', hashchangeHandler);
+        hashchangeHandler();
+    },
+    disposed() {
+        $(window).off('hashchange');
     },
     onItemSelected(item) {
         const moduleId = item.moduleId || `inf-ui/x/demos/${item.text}`;

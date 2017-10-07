@@ -48,6 +48,7 @@ const kDefaultEditorOptions = {
 const template = `<template>
 <div class="${cx()}">
     <ui-loading s-if="loading" />
+    <div class="${cx('error')}" s-if="error">{{error}}</div>
     <ui-ghost s-ref="ghost" />
 </div>
 </template>`;
@@ -68,6 +69,7 @@ export default defineComponent({
     initData() {
         return {
             loading: true,
+            error: null,
             options: null
         };
     },
@@ -89,14 +91,20 @@ export default defineComponent({
 
             const editorOptions = this.data.get('editorOptions');
             const value = this.data.get('value');
+            const ghost = this.ref('ghost');
 
-            this.editor = new UE.ui.Editor(editorOptions);
-            this.editor.render(this.ref('ghost').el);
-            if (value) {
-                this.editor.addListener('ready', () => this.editor.setContent(value));
+            if (!ghost || !ghost.el) {
+                this.data.set('error', new Error('RichTextEditor初始化失败'));
+                return;
             }
-            this.editor.addListener('contentchange', () => {
-                const value = this.editor.getContent();
+
+            const editor = this.editor = new UE.ui.Editor(editorOptions);
+            editor.render(ghost.el);
+            if (value) {
+                editor.addListener('ready', () => editor.setContent(value));
+            }
+            editor.addListener('contentchange', () => {
+                const value = editor.getContent();
                 // FIXME(leeight) 递归的问题如何处理呢？
                 this.data.set('value', value);
             });
@@ -104,7 +112,11 @@ export default defineComponent({
     },
     disposed() {
         if (this.editor) {
-            this.editor.destroy();
+            try {
+                this.editor.destroy();
+            }
+            catch (ex) {
+            }
         }
     }
 });
