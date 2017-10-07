@@ -49,7 +49,7 @@ const template = `<template>
 <div class="${cx()}">
     <ui-loading s-if="loading" />
     <div class="${cx('error')}" s-if="error">{{error}}</div>
-    <ui-ghost s-ref="ghost" />
+    <ui-ghost s-ref="ghost" style="{{mainStyle}}" />
 </div>
 </template>`;
 /* eslint-enable */
@@ -61,6 +61,12 @@ export default defineComponent({
         'ui-loading': Loading
     },
     computed: {
+        mainStyle() {
+            const loading = this.data.get('loading');
+            const style = cx.mainStyle(this);
+            style.display = loading ? 'none' : 'block';
+            return style;
+        },
         editorOptions() {
             const options = this.data.get('options');
             return u.extend({}, kDefaultEditorOptions, options);
@@ -70,6 +76,8 @@ export default defineComponent({
         return {
             loading: true,
             error: null,
+            width: '100%',
+            height: 100,
             options: null
         };
     },

@@ -68,6 +68,17 @@ export const blocks = [
         ]
     },
     {
+        title: '编辑器相关',
+        items: [
+            {
+                text: 'xui-richtexteditor'
+            },
+            {
+                text: 'xui-aceeditor'
+            }
+        ]
+    },
+    {
         title: '业务组件',
         items: [
             {
@@ -105,12 +116,6 @@ export const blocks = [
             },
             {
                 text: 'xui-searchbox'
-            },
-            {
-                text: 'xui-richtexteditor'
-            },
-            {
-                text: 'xui-aceeditor'
             },
             {
                 text: 'xui-hljs'
