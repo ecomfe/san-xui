@@ -21,7 +21,7 @@ export default defineComponent({
     computed: {
         mainClass() {
             const level = this.data.get('level');
-            const klass = [cx(), cx(level)];
+            const klass = [cx(), cx('x'), cx(level)];
             return klass;
         }
     },
