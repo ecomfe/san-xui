@@ -11,8 +11,6 @@ import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
 const template = `<template>
 <xui-rangecalendar value="{=rangecalendar.value=}" />
 <xui-rangecalendar value="{=rangecalendar.value=}" disabled />
-<br/>
-<br/>
 <strong class="large">
     Value is: {{rangecalendar.value.begin | datetime('YYYY-MM-DD')}} - {{rangecalendar.value.end | datetime('YYYY-MM-DD')}}
 </strong>

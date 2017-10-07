@@ -14,7 +14,6 @@ const template = `<template>
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-select datasource="{{select.datasource}}"  />
     <xui-select datasource="{{select.datasource}}" disabled />
-    <br/>
     <strong class="large">
         Selected value: {{select.value}}
     </strong>
@@ -24,7 +23,6 @@ const template = `<template>
         multi
         value="{=select.multi.value=}"
         datasource="{{select.datasource}}" />
-    <br/>
     <strong class="large">
         Selected value: {{select.multi.value}}
     </strong>

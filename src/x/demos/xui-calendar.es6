@@ -11,8 +11,6 @@ import Calendar from 'inf-ui/x/components/Calendar';
 const template = `<template>
 <xui-calendar value="{=calendar.value=}" />
 <xui-calendar value="{=calendar.value=}" disabled />
-<br/>
-<br/>
 <strong class="large">
     Value is: {{calendar.value | datetime('YYYY-MM-DD')}}
 </strong>

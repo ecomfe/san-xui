@@ -18,8 +18,6 @@ const template = `<template>
     <xui-richtexteditor
         options="{{options}}"
         value="{=value=}" />
-    <br />
-    <br />
     <strong class="large">
         Value is: {{value}}
     </strong>

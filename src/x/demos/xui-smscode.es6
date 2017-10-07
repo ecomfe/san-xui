@@ -11,8 +11,6 @@ const template = `<template>
 <xui-smscode
     value="{=smscode.mobile=}"
     freeze-time="{{10}}" />
-<br/>
-<br/>
 <strong class="large">
     Value is: {{smscode.mobile}}
 </strong>

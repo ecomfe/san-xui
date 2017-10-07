@@ -11,12 +11,9 @@ const template = `<template>
 <xui-radioselect
     value="{=radioselect.value=}"
     datasource="{{radioselect.datasource}}" />
-<br/>
 <strong class="large">
     Value is: {{radioselect.value}}
 </strong>
-<br />
-<br />
 <xui-radioselect
     disabled
     value="{=radioselect.value=}"

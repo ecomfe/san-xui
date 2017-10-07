@@ -10,8 +10,6 @@ import MonthView from 'inf-ui/x/components/MonthView';
 /* eslint-disable */
 const template = `<template>
 <xui-monthview value="{=monthview.value=}" />
-<br/>
-<br/>
 <strong class="large">
     Value is: {{monthview.value | datetime('YYYY-MM-DD')}}
 </strong>
