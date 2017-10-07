@@ -110,6 +110,9 @@ export const blocks = [
                 text: 'xui-richtexteditor'
             },
             {
+                text: 'xui-aceeditor'
+            },
+            {
                 text: 'xui-hljs'
             },
             {

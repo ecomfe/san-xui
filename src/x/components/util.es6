@@ -7,6 +7,10 @@ import _ from 'lodash';
 import moment from 'moment';
 import {defineComponent} from 'san';
 
+function hasUnit(value) {
+    return /%|px/.test(value);
+}
+
 export function create(prefix) {
     const type = prefix.replace(/^ui\-/, '');
     const cx = (...args) => {
@@ -19,9 +23,24 @@ export function create(prefix) {
         }
         return prefix;
     };
-    cx.mainClass = comp => {
-        const skin = comp.data.get('skin');
-        const disabled = comp.data.get('disabled');
+    cx.mainStyle = self => {
+        const style = {};
+
+        const width = self.data.get('width');
+        const height = self.data.get('height');
+
+        if (width != null) {
+            style.width = hasUnit(width) ? width : `${width}px`;
+        }
+        if (height != null) {
+            style.height = hasUnit(height) ? height : `${height}px`;
+        }
+
+        return style;
+    };
+    cx.mainClass = self => {
+        const skin = self.data.get('skin');
+        const disabled = self.data.get('disabled');
         const klass = [cx(), cx('x')];
         if (skin) {
             klass.push('skin-' + skin);
