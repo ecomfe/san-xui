@@ -325,3 +325,8 @@
     top: 5px;
 }
 
+
+/* ui-numbertextline */
+.ui-numbertextline-x .ui-textbox-x {
+    margin: 0 -4px;
+}

@@ -17,6 +17,9 @@ export const blocks = [
                 text: 'xui-textbox'
             },
             {
+                text: 'xui-numbertextline'
+            },
+            {
                 text: 'xui-checkbox'
             },
             {
