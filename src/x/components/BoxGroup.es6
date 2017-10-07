@@ -17,15 +17,17 @@ const cx = create('ui-boxgroup');
 const template = `
 <template>
 <div class="{{mainClass}}">
-    <label class="${cx('radio', 'wrapper')}" title="{{item|title}}" san-for="item in datasource">
-        <input san-if="boxType == 'radio'"
-            type="radio" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
-            title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
-        <input san-else
-            type="checkbox" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
-            title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
-        <span>{{item|title}}</span>
-    </label>
+    <div class="${cx('group')}" s-for="datasource, i in groupedDatasource">
+        <label class="${cx('radio', 'wrapper')}" title="{{item|title}}" san-for="item in datasource">
+            <input san-if="boxType == 'radio'"
+                type="radio" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
+                title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
+            <input san-else
+                type="checkbox" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
+                title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
+            <span>{{item|title}}</span>
+        </label>
+    </div>
 </div>
 </template>
 `;
@@ -39,11 +41,34 @@ export default defineComponent({
             disabled: false,
             orientation: 'horizontal',  // 'vertical' | 'horizontal'
             value: null,
+            colCount: 0,                // 展示N列
             name: 'esui' + nexUuid(),
             boxType: 'radio'            // 'radio' | 'checkbox'
         };
     },
     computed: {
+        groupedDatasource() {
+            const datasource = this.data.get('datasource');
+            const colCount = this.data.get('colCount');
+            if (!colCount) {
+                return [datasource];
+            }
+            const itemsCount = datasource.length;
+            const groups = [];
+            const groupCount = Math.ceil(itemsCount / colCount);
+
+            for (let i = 0; i < groupCount; i++) {
+                const group = [];
+                const startIndex = i * colCount;
+                const endIndex = Math.min(itemsCount, (i + 1) * colCount);
+                for (let j = startIndex; j < endIndex; j++) {
+                    group.push(datasource[j]);
+                }
+                groups.push(group);
+            }
+
+            return groups;
+        },
         mainClass() {
             const klass = cx.mainClass(this);
             const orientation = this.data.get('orientation');

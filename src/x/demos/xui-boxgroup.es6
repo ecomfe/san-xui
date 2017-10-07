@@ -16,7 +16,9 @@ const template = `<template>
         datasource="{{boxgroup.datasource}}"
         value="{=boxgroup.radio=}"
         />
+    <strong class="large">
     Value is: {{boxgroup.radio}}
+    </strong>
 </x-row>
 
 <x-row label="checkbox">
@@ -25,7 +27,18 @@ const template = `<template>
         datasource="{{boxgroup.datasource}}"
         value="{=boxgroup.checkbox=}"
         />
+    <strong class="large">
     Value is: {{boxgroup.checkbox}}
+    </strong>
+</x-row>
+
+<x-row label="checkbox,col-count=3">
+    <xui-boxgroup
+        box-type="checkbox"
+        col-count="{{3}}"
+        datasource="{{boxgroup.datasource}}"
+        value="{=boxgroup.checkbox=}"
+        />
 </x-row>
 </template>`;
 /* eslint-enable */
