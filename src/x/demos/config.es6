@@ -42,6 +42,12 @@ export const blocks = [
             },
             {
                 text: 'xui-tab'
+            },
+            {
+                text: 'xui-toast'
+            },
+            {
+                text: 'xui-toastlabel'
             }
         ]
     },
@@ -98,12 +104,6 @@ export const blocks = [
             },
             {
                 text: 'xui-loading'
-            },
-            {
-                text: 'xui-toast'
-            },
-            {
-                text: 'xui-toastlabel'
             },
             {
                 text: 'xui-buybucket'

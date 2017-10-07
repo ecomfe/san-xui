@@ -12,7 +12,7 @@ const cx = create('ui-toastlabel');
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
     <span s-if="text" class="${cx('content')}">{{text}}</span>
-    <div s-else><slot/></div>
+    <div s-else class="${cx('content')}"><slot/></div>
 </div>`;
 /* eslint-enable */
 
