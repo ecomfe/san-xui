@@ -32,6 +32,16 @@ export default defineComponent({
             style: {}
         };
     },
+    inited() {
+        const autoHide = this.data.get('autoHide');
+        this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
+        this.watch('open', open => {
+            const autoPosition = this.data.get('autoPosition');
+            if (autoPosition && open) {
+                this.selfPosition();
+            }
+        });
+    },
     attached() {
         if (this.el.parentNode !== document.body) {
             document.body.appendChild(this.el);
@@ -44,16 +54,6 @@ export default defineComponent({
         if (pc && pc.el) {
             $(pc.el).on('mousedown', returnFalse);
         }
-    },
-    inited() {
-        const autoHide = this.data.get('autoHide');
-        this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
-        this.watch('open', open => {
-            const autoPosition = this.data.get('autoPosition');
-            if (autoPosition && open) {
-                this.selfPosition();
-            }
-        });
     },
     selfPosition() {
         const pc = this.parentComponent;
@@ -73,10 +73,11 @@ export default defineComponent({
         if (this.autoHideHandler) {
             $(document).off('mousedown', this.autoHideHandler);
         }
-        $(this.el).off('mousedown', returnFalse);
         const pc = this.parentComponent;
         if (pc && pc.el) {
             $(pc.el).off('mousedown', returnFalse);
         }
+        $(this.el).off('mousedown', returnFalse);
+        $(this.el).remove();
     }
 });

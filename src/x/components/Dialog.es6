@@ -2,7 +2,7 @@
  * @file components/Dialog.es6
  * @author leeight
  */
-
+import $ from 'jquery';
 import {defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
@@ -92,5 +92,8 @@ export default defineComponent({
         if (this.el.parentNode !== document.body) {
             document.body.appendChild(this.el);
         }
+    },
+    disposed() {
+        $(this.el).remove();
     }
 });
