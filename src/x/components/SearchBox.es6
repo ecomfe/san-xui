@@ -3,16 +3,24 @@
  * @author leeight
  */
 
+import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {create} from './util';
 import Button from './Button';
 import TextBox from './TextBox';
+import Select from './Select';
 
 const cx = create('ui-searchbox');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
+    <ui-select
+        s-if="datasource"
+        on-change="onKeywordTypeChanged($event)"
+        datasource="{{datasource}}"
+        value="{=keywordType=}"
+        />
     <ui-textbox
         on-enter="onSearch"
         placeholder="{{placeholder}}"
@@ -27,6 +35,7 @@ const template = `<div class="{{mainClass}}">
 export default defineComponent({
     template,
     components: {
+        'ui-select': Select,
         'ui-textbox': TextBox,
         'ui-button': Button
     },
@@ -35,6 +44,8 @@ export default defineComponent({
             disabled: false,
             value: '',
             placeholder: '',
+            datasource: null,
+            keywordType: null,
             width: null
         };
     },
@@ -42,6 +53,20 @@ export default defineComponent({
         mainClass() {
             return cx.mainClass(this);
         }
+    },
+    attached() {
+        const datasource = this.data.get('datasource');
+        const keywordType = this.data.get('keywordType');
+        if (datasource && keywordType) {
+            u.each(datasource, item => {
+                if (item.value === keywordType) {
+                    this.onKeywordTypeChanged({selectedItem: item});
+                }
+            });
+        }
+    },
+    onKeywordTypeChanged({selectedItem}) {
+        this.data.set('placeholder', `请输入${selectedItem.text}进行搜索`);
     },
     onSearch() {
         this.fire('search');

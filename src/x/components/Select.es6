@@ -103,7 +103,7 @@ export default defineComponent({
         multiLabel() {
             // const datasource = this.data.get('datasource');
             const values = this.data.get('value');
-            return values.length > 0 ? `您已经选择了${values.length}项` : kDefaultLabel;
+            return values && values.length > 0 ? `您已经选择了${values.length}项` : kDefaultLabel;
             /**
             const labels = [];
             u.each(datasource, item => {

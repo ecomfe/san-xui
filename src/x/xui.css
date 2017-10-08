@@ -304,6 +304,7 @@
 }
 
 /* ui-searchbox */
+.ui-searchbox-x .ui-select-x,
 .ui-searchbox-x .ui-textbox-x {
     margin-right: -4px;
 }

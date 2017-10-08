@@ -13,6 +13,16 @@ const template = `<template>
 <x-row label="[default]">
     <xui-searchbox />
 </x-row>
+<x-row label="[default],datasource">
+    <xui-searchbox
+        value="{=searchbox.keyword=}"
+        keyword-type="{=searchbox.keywordType=}"
+        datasource="{{searchbox.keywordTypes}}"
+        />
+    <strong class="large">
+    Keyword Type: {{searchbox.keywordType}}, Keyword: {{searchbox.keyword}}
+    </strong>
+</x-row>
 <x-row label="disabled">
     <xui-searchbox disabled />
 </x-row>
@@ -20,7 +30,13 @@ const template = `<template>
     <xui-searchbox placeholder="请输入实例名称进行搜索" />
 </x-row>
 <x-row label="width=100,placeholder=请输入实例名称进行搜索">
-    <xui-searchbox width="100" placeholder="请输入实例名称进行搜索" />
+    <xui-searchbox
+        width="100"
+        placeholder="请输入实例名称进行搜索"
+        value="{=searchbox.keyword=}"
+        keyword-type="{=searchbox.keywordType=}"
+        datasource="{{searchbox.keywordTypes}}"
+    />
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -33,6 +49,14 @@ export default defineComponent({
     },
     initData() {
         return {
+            searchbox: {
+                keyword: '',
+                keywordType: 'ID',
+                keywordTypes: [
+                    {text: '实例名称', value: 'NAME'},
+                    {text: '实例ID', value: 'ID'}
+                ]
+            }
         };
     }
 });

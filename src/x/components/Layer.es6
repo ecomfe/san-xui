@@ -56,6 +56,7 @@ export default defineComponent({
         }
         if (this.autoHideHandler) {
             $(document).on('mousedown', this.autoHideHandler);
+            // $(window).on('scroll', this.autoHideHandler);
         }
         $(this.el).on('mousedown', returnFalse);
         const pc = this.parentComponent;
@@ -80,6 +81,7 @@ export default defineComponent({
     disposed() {
         if (this.autoHideHandler) {
             $(document).off('mousedown', this.autoHideHandler);
+            // $(window).off('scroll', this.autoHideHandler);
         }
         const pc = this.parentComponent;
         if (pc && pc.el) {

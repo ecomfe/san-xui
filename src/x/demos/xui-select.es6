@@ -5,11 +5,14 @@
 
 import {defineComponent} from 'san';
 import Select from 'inf-ui/x/components/Select';
+import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
 import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
+<xui-toastlabel>Layer 暂时还不支持多级菜单的情况，不过控制台现在存在这种用法</xui-toastlabel>
+
 <x-row label="[default]">
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-select datasource="{{select.datasource}}"  />
@@ -27,7 +30,7 @@ const template = `<template>
         Selected value: {{select.multi.value}}
     </strong>
 </x-row>
-<x-row label="multi=true,filter=true">
+<x-row label="multi=true,filter=true,layer-width=300">
     <xui-select
         multi
         filter
@@ -46,6 +49,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-toastlabel': ToastLabel,
         'xui-select': Select
     },
     initData() {
