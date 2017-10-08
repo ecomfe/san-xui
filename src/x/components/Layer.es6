@@ -15,7 +15,15 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-function returnFalse() {
+function returnFalse(e) {
+    // FIXME(leeight) This is a hack for xui-select[multi=true,filter=true]
+    const nodeName = e.target.nodeName;
+    if (nodeName === 'INPUT') {
+        if (typeof e.target.focus === 'function') {
+            e.target.focus();
+        }
+    }
+
     return false;
 }
 

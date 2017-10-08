@@ -8,7 +8,7 @@ import moment from 'moment';
 import {defineComponent} from 'san';
 
 function hasUnit(value) {
-    return /%|px/.test(value);
+    return /%|px|auto/.test(value);
 }
 
 export function create(prefix) {

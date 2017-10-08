@@ -32,6 +32,12 @@
     width: 200px;
     left: 0;
 }
+.ui-select-layer-x .ui-textbox-x {
+    padding: 10px;
+}
+.ui-textbox-x + .ui-select-item-all {
+    margin-top: -10px;
+}
 .ui-select-item-multi > label {
     display: block;
 }

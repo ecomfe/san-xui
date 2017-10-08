@@ -9,18 +9,52 @@ import {defineComponent} from 'san';
 import {create} from './util';
 import Layer from './Layer';
 import ScrollIntoView from './ScrollIntoView';
+import TextBox from './TextBox';
 
 const cx = create('ui-select');
 const kDefaultLabel = '请选择';
+
+function hasUnit(value) {
+    return /%|px|auto/.test(value);
+}
+
+function defaultFilter(datasource, keyword) {
+    if (!keyword) {
+        return datasource;
+    }
+
+    const rv = [];
+    u.each(datasource, item => {
+        if (item.text && item.text.indexOf(keyword) !== -1) {
+            rv.push(item);
+        }
+    });
+    return rv;
+}
 
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
     <ui-layer open="{=active=}" ref="layer">
-        <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi">
+        <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi" style="{{layerStyle}}">
+            <ui-textbox s-if="filter"
+                value="{=keyword=}"
+                placeholder="{{filterPlaceholder}}"
+                width="{{layerWidth - 50}}"
+                />
+            <li class="${cx('item', 'item-all')}" s-if="filteredDatasource.length">
+                <label>
+                    <input type="checkbox"
+                        on-change="onToggleAll"
+                        value="on"
+                        checked="{=allValue=}"
+                        />
+                    全选/全不选
+                </label>
+            </li>
             <li class="{{item | itemClass}}"
-                s-for="item in datasource">
+                s-for="item in filteredDatasource">
                 <label>
                     <input type="checkbox"
                         value="{{item.value}}"
@@ -31,7 +65,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                 </label>
             </li>
         </ul>
-        <ul class="${cx('layer')} ${cx('layer-x')}" s-else>
+        <ul class="${cx('layer')} ${cx('layer-x')}" s-else style="{{layerStyle}}">
             <li on-click="selectItem($event, item)"
                 class="{{item | itemClass}}"
                 s-for="item in datasource">
@@ -46,6 +80,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
 export default defineComponent({
     template,
     components: {
+        'ui-textbox': TextBox,
         'ui-layer': Layer,
         'ui-siv': ScrollIntoView
     },
@@ -53,13 +88,23 @@ export default defineComponent({
         return {
             active: false,
             multi: false,   // 是否支持多选，也就是之前的 MultiSelect 的功能
-            value: ''       // any | any[]
+            layerWidth: 200,
+
+            filter: false,  // 是否支持搜索过滤
+            filterPlaceholder: '',    // filter textbox placeholder
+            filterCallback: defaultFilter,
+            keyword: '',    // 过滤的关键词
+
+            value: '',      // any | any[]
+            allValue: []
         };
     },
     computed: {
         multiLabel() {
-            const datasource = this.data.get('datasource');
+            // const datasource = this.data.get('datasource');
             const values = this.data.get('value');
+            return values.length > 0 ? `您已经选择了${values.length}项` : kDefaultLabel;
+            /**
             const labels = [];
             u.each(datasource, item => {
                 if (u.indexOf(values, item.value) !== -1) {
@@ -68,10 +113,18 @@ export default defineComponent({
             });
 
             return labels.length > 0 ? labels.join(',') : kDefaultLabel;
+            */
         },
         label() {
             const selectedItem = this.data.get('selectedItem');
             return selectedItem ? selectedItem.text : kDefaultLabel;
+        },
+        filteredDatasource() {
+            // XXX(leeight) https://github.com/ecomfe/san/issues/97
+            const keyword = this.data.get('keyword');
+            const datasource = this.data.get('datasource');
+            const filterCallback = this.data.get('filterCallback') || defaultFilter;
+            return filterCallback(datasource, keyword);
         },
         selectedItem() {
             const value = this.data.get('value');
@@ -84,6 +137,14 @@ export default defineComponent({
                 }
             }
             return null;
+        },
+        layerStyle() {
+            const style = {};
+            const layerWidth = this.data.get('layerWidth');
+            if (layerWidth != null) {
+                style.width = hasUnit(layerWidth) ? layerWidth : `${layerWidth}px`;
+            }
+            return style;
         },
         mainClass() {
             const klass = cx.mainClass(this);
@@ -100,6 +161,7 @@ export default defineComponent({
             const value = this.data.get('value');
             const multi = this.data.get('multi');
             const klass = [cx('item')];
+            // TODO(leeight) 针对 multi 的情况，还未处理
             if (item.value === value) {
                 klass.push(cx('item-selected'));
             }
@@ -127,6 +189,22 @@ export default defineComponent({
         this.data.set('active', false);
 
         this.fire('change', {selectedItem: item});
+    },
+    onToggleAll() {
+        const allValue = this.data.get('allValue');
+        if (allValue.length === 1 && allValue[0] === 'on') {
+            const datasource = this.data.get('filteredDatasource');
+            const value = [];
+            u.each(datasource, item => {
+                if (!item.disabled) {
+                    value.push(item.value);
+                }
+            });
+            this.data.set('value', value);
+        }
+        else if (allValue.length === 0) {
+            this.data.set('value', []);
+        }
     },
     toggleLayer(e) {
         const disabled = this.data.get('disabled');
