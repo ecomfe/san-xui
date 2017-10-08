@@ -17,7 +17,7 @@ const template = `<div class="aside">
         <dd s-if="!block.collapse">
             <ul>
                 <li on-click="onClick(item)"
-                    class="{{item | itemClass}}"
+                    class="{{item === activedItem ? 'selected' : item.disabled ? 'disabled' : ''}}"
                     s-for="item in block.items">{{item.text}}</li>
             </ul>
         </dd>
@@ -36,19 +36,6 @@ export default defineComponent({
             keyword: '',
             blocks: []
         };
-    },
-    filters: {
-        itemClass(item) {
-            const klass = [];
-            const activedItem = this.data.get('activedItem');
-            if (activedItem === item) {
-                klass.push('selected');
-            }
-            if (item.disabled) {
-                klass.push('disabled');
-            }
-            return klass;
-        }
     },
     computed: {
         filteredBlocks() {

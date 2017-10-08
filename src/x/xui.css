@@ -245,6 +245,12 @@
 }
 
 /* ui-textbox */
+.ui-textbox input {
+    line-height: 1;
+}
+.ui-textbox textarea {
+    line-height: 1.5;
+}
 .ui-textbox-addon {
     display: inline-block;
     font-size: 12px;
