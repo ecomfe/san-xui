@@ -330,3 +330,8 @@
 .ui-numbertextline-x .ui-textbox-x {
     margin: 0 -4px;
 }
+
+/* ui-actionloader */
+.ui-actionloader-error {
+    color: #EB5252;
+}

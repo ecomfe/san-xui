@@ -141,6 +141,9 @@ export const blocks = [
             },
             {
                 text: 'xui-go'
+            },
+            {
+                text: 'xui-actionloader'
             }
         ]
     }
