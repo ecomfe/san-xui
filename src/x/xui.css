@@ -347,3 +347,8 @@
 .ui-actionloader-error {
     color: #EB5252;
 }
+
+/* ui-button */
+.ui-button-x .iconfont {
+    font-size: inherit;
+}

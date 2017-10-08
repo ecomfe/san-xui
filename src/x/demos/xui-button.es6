@@ -25,6 +25,10 @@ const template = `<template>
     <xui-button icon="sdk" />
     <xui-button icon="sdk" disabled />
 </x-row>
+<x-row label="icon,label">
+    <xui-button icon="refresh">刷新</xui-button>
+    <xui-button icon="plus" skin="primary">创建</xui-button>
+</x-row>
 </template>`;
 /* eslint-enable */
 
