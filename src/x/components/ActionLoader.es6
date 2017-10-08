@@ -116,10 +116,6 @@ export default defineComponent({
         }
 
         this.watch('url', url => {
-            const loading = this.data.get('loading');
-            if (loading && this.action && typeof this.action.abort === 'function') {
-                this.action.abort();
-            }
             this.disposeAction();
             this.data.set('loading', true);
             this.data.set('error', null);
@@ -141,10 +137,7 @@ export default defineComponent({
 
     actionMatched(e) {
         const ghost = this.ref('ghost');
-        if (!e.isChildAction || !ghost.el || e.container !== ghost.el.id) {
-            return false;
-        }
-        return true;
+        return (e.isChildAction && ghost && ghost.el && ghost.el.id === e.container);
     },
 
     reloadAction() {
