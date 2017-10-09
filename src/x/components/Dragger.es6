@@ -14,7 +14,7 @@ const cx = create('ui-dragger');
 
 function getValue(value, step) {
     if (step === 1) {
-        return value;
+        return ~~value;
     }
     value = Math.round(value / step) * step;
     return step < 1 ? parseFloat(value.toFixed(2)) : ~~value;
