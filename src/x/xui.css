@@ -92,6 +92,10 @@
 }
 
 /* ui-calendar */
+.ui-calendar-xx {
+    display: inline-block;
+}
+
 .ui-calendar-x-disabled:hover,
 .ui-calendar-x-disabled {
     color: #999999;

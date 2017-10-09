@@ -8,11 +8,14 @@ import {defineComponent} from 'san';
 import {create} from './util';
 import Layer from './Layer';
 import MonthView from './MonthView';
+import Button from './Button';
 
 const cx = create('ui-calendar');
 
 /* eslint-disable */
-const template = `<div on-click="toggleLayer" class="{{mainClass}}">
+const template = `<div class="${cx('xx')}">
+<ui-button on-click="prevDay" disabled="{{disabled}}" s-if="prev"><</ui-button>
+<div on-click="toggleLayer" class="{{mainClass}}">
     <div class="${cx('text')}">{{text}}</div>
     <div class="${cx('arrow')}"></div>
     <ui-layer open="{=active=}" ref="layer">
@@ -20,12 +23,16 @@ const template = `<div on-click="toggleLayer" class="{{mainClass}}">
             <ui-monthview value="{=value=}" />
         </div>
     </ui-layer>
-</div>`;
+</div>
+<ui-button on-click="nextDay" disabled="{{disabled}}" s-if="next">></ui-button>
+</div>
+`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
     components: {
+        'ui-button': Button,
         'ui-layer': Layer,
         'ui-monthview': MonthView
     },
@@ -42,6 +49,8 @@ export default defineComponent({
     initData() {
         return {
             value: new Date(),
+            prev: false,
+            next: false,
             active: false
         };
     },
@@ -51,6 +60,16 @@ export default defineComponent({
             value = new Date();
         }
         this.data.set('value', value);
+    },
+    nextDay() {
+        const value = this.data.get('value');
+        const newValue = moment(value).add(1, 'day').toDate();
+        this.data.set('value', newValue);
+    },
+    prevDay() {
+        const value = this.data.get('value');
+        const newValue = moment(value).subtract(1, 'day').toDate();
+        this.data.set('value', newValue);
     },
     toggleLayer() {
         const disabled = this.data.get('disabled');
