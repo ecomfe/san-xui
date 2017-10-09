@@ -10,7 +10,11 @@ import SearchBox from 'inf-ui/x/components/SearchBox';
 /* eslint-disable */
 const template = `<div class="aside">
     <div class="searchbox">
-        <ui-searchbox value="{=keyword=}" width="115" placeholder="请输入关键字" />
+        <ui-searchbox
+            search-btn="{{false}}"
+            value="{=keyword=}"
+            width="145"
+            placeholder="请输入关键字" />
     </div>
     <dl s-for="block, i in filteredBlocks">
         <dt>{{block.title}}</dt>

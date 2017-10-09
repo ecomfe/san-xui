@@ -28,7 +28,7 @@ const template = `<div class="{{mainClass}}">
         disabled="{{disabled}}"
         width="{{width}}"
         />
-    <ui-button on-click="onSearch" icon="magnifier" disabled="{{disabled}}" />
+    <ui-button on-click="onSearch" icon="magnifier" disabled="{{disabled}}" s-if="searchBtn" />
 </div>`;
 /* eslint-enable */
 
@@ -43,6 +43,7 @@ export default defineComponent({
         return {
             disabled: false,
             value: '',
+            searchBtn: true,
             placeholder: '',
             datasource: null,
             keywordType: null,
@@ -51,7 +52,12 @@ export default defineComponent({
     },
     computed: {
         mainClass() {
-            return cx.mainClass(this);
+            const klass = cx.mainClass(this);
+            const searchBtn = this.data.get('searchBtn');
+            if (!searchBtn) {
+                klass.push(cx('nobtn'));
+            }
+            return klass;
         }
     },
     attached() {

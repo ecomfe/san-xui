@@ -313,6 +313,24 @@
 .ui-searchbox-x .ui-textbox-x {
     margin-right: -4px;
 }
+.ui-searchbox-nobtn .ui-textbox-x {
+    position: relative;
+}
+.ui-searchbox-nobtn .ui-textbox-x input {
+    padding-right: 20px;
+}
+.ui-searchbox-nobtn .ui-textbox-x:after {
+    font-family: iconfont!important;
+    font-style: normal;
+    font-size: 12px;
+    color: #999;
+    content: "\e601";
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 /* ui-button-menu */
 .ui-button-menu {
@@ -379,7 +397,7 @@
     position: relative;
 }
 .ui-select-multipicker-layer .ui-select-item span {
-    padding-right: 5px;
+    padding-right: 15px;
 }
 .ui-select-multipicker-layer .ui-select-item-selected {
     background: #eaf6fe;
@@ -387,7 +405,7 @@
 .ui-select-multipicker-layer .iconfont {
     font-size: inherit;
     position: absolute;
-    right: 0;
+    right: 5px;
     color: #ccc;
 }
 

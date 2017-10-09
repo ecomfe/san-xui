@@ -26,6 +26,9 @@ const template = `<template>
 <x-row label="disabled">
     <xui-searchbox disabled />
 </x-row>
+<x-row label="search-btn=false">
+    <xui-searchbox search-btn="{{false}}" />
+</x-row>
 <x-row label="placeholder=请输入实例名称进行搜索">
     <xui-searchbox placeholder="请输入实例名称进行搜索" />
 </x-row>
