@@ -18,8 +18,8 @@ Go.setSwitchHandler((event, comp) => {
 /* eslint-disable */
 const template = `<template>
 <xui-toastlabel>
-在百度云控制台中，从 <code>服务A</code> 跳转到 <code>服务B</code> 的时候，有很复杂的加载机制。<br />
-直接用 &lt;a&gt; 是无法实现的，需要自定义处理一下，&lt;xui-go href=&quot;/billing/#/foo/bar&quot;&gt;...&lt;/xui-go&gt;。
+在百度云控制台中，从 <code>服务A</code> 跳转到 <code>服务B</code> 的时候，涉及到比较复杂的加载机制。<br />
+直接用 &lt;a&gt; 会导致公共的代码重复加载，所以这里特殊处理一下，&lt;xui-go href=&quot;/billing/#/foo/bar&quot;&gt;...&lt;/xui-go&gt;。
 </xui-toastlabel>
 <br />
 <xui-go href="#comp=xui-button">Goto xui-button</xui-go>
