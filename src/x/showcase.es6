@@ -10,9 +10,11 @@ import Aside from './Aside';
 import AppExplorer from './AppExplorer';
 import {blocks} from './demos/config';
 
+const kUrl = 'http://icode.baidu.com/repo/baidu%2Fbce-console%2Ffe-base/files/x-ui/tree/dep/inf-ui/0.0.0/src/x/';
+
 /* eslint-disable */
 const template = `<div class="showcase">
-    <h1>San UI Library</h1>
+    <h1><a href="${kUrl}" target="_blank">San UI Library</a></h1>
     <main>
         <ui-aside
             on-item-selected="onItemSelected($event)"
