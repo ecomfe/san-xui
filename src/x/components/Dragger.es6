@@ -12,6 +12,14 @@ import Ghost from './Ghost';
 
 const cx = create('ui-dragger');
 
+function getValue(value, step) {
+    if (step === 1) {
+        return value;
+    }
+    value = Math.round(value / step) * step;
+    return step < 1 ? parseFloat(value.toFixed(2)) : ~~value;
+}
+
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainStyle}}">
     <ui-ghost
@@ -52,7 +60,8 @@ export default defineComponent({
             value: 0,   // [min, max]
             min: 0,
             max: 100,
-            unit: 'Mbps',
+            step: 1,
+            unit: null,
             skin: ''
         };
     },
@@ -95,7 +104,7 @@ export default defineComponent({
     },
     inited() {
         this.watch('value', value => {
-            const {min, max} = this.data.get();
+            const {min, step, max} = this.data.get();
             if (value < min || value > max) {
                 if (value < min) {
                     this.data.set('value', min);
@@ -103,6 +112,9 @@ export default defineComponent({
                 else if (value > max) {
                     this.data.set('value', max);
                 }
+            }
+            else {
+                this.data.set('value', getValue(value, step));
             }
         });
     },
@@ -128,7 +140,7 @@ export default defineComponent({
     },
     onMoveControlBar(e) {
         const {x, originalValue} = this.startPosition;
-        const {min, length, max} = this.data.get();
+        const {min, length, step, max} = this.data.get();
         const deltaX = e.clientX - x;
 
         let value = originalValue + (deltaX * (max - min) / length);
@@ -139,15 +151,14 @@ export default defineComponent({
             value = max;
         }
 
-        // TODO(leeight) 需要小数的支持
-        this.data.set('value', ~~value);
+        this.data.set('value', getValue(value, step));
     },
     onReleaseMouse(e) {
         $(document).off('mousemove.dragger');
         $(document).off('mouseup.dragger');
     },
     onBarClick(e) {
-        const {disabled, min, length, max} = this.data.get();
+        const {disabled, step, min, length, max} = this.data.get();
         if (disabled) {
             return;
         }
@@ -163,7 +174,8 @@ export default defineComponent({
         else if (value >= max) {
             value = max;
         }
-        this.data.set('value', ~~value);
+
+        this.data.set('value', getValue(value, step));
     },
     onClick() {
         const disabled = this.data.get('disabled');

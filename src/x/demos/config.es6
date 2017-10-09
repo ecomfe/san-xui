@@ -23,6 +23,9 @@ export const blocks = [
                 text: 'xui-checkbox'
             },
             {
+                text: 'xui-dragger'
+            },
+            {
                 text: 'xui-select'
             },
             {
@@ -57,6 +60,10 @@ export const blocks = [
             },
             {
                 text: 'xui-toastlabel'
+            },
+            {
+                text: 'xui-tree',
+                disabled: true
             }
         ]
     },
@@ -118,9 +125,6 @@ export const blocks = [
         items: [
             {
                 text: 'xui-clipboard'
-            },
-            {
-                text: 'xui-dragger'
             },
             {
                 text: 'xui-tip'
