@@ -3,48 +3,73 @@
  * @author leeight
  */
 
+import u from 'lodash';
 import {defineComponent} from 'san';
 import Icon from 'inf-ui/x/components/Icon';
+import Loading from 'inf-ui/x/components/Loading';
+import TextBox from 'inf-ui/x/components/TextBox';
 
 /* eslint-disable */
 const template = `<template>
-<table width="100%" class="icons">
-    <tr>
-        <td s-for="icon in icons"><xui-icon name="{{icon.name}}" /></td>
-    </tr>
-    <tr>
-        <td s-for="icon in icons">{{icon.name}}</td>
-    </tr>
-</table>
+<xui-loading s-if="loading" />
+<div s-else>
+    <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />
+    Total count: {{filteredIcons.length}}
+    <br />
+    <div class="icons">
+        <div s-for="icon in filteredIcons">
+            <xui-icon name="{{icon}}" title="{{icon}}" /><br />{{icon}}
+        </div>
+    </div>
+</div>
 </template>`;
 /* eslint-enable */
+
+function getIcons() {
+    return fetch('https://cdn.bdstatic.com/iconfont/iconfont.css')
+        .then(response => response.text())
+        .then(response => {
+            // .icon-artec:before
+            const pattern = /\.icon\-([^:]+):before/g;
+            const icons = [];
+
+            let match = null;
+            while (match = pattern.exec(response)) {
+                icons.push(match[1]);
+            }
+
+            return icons;
+        });
+}
 
 export default defineComponent({
     template,
     components: {
+        'xui-loading': Loading,
+        'xui-textbox': TextBox,
         'xui-icon': Icon
     },
     initData() {
         return {
-            icons: [
-                {name: 'bae'},
-                {name: 'bdl'},
-                {name: 'bos'},
-                {name: 'eip'},
-                {name: 'blb'},
-                {name: 'vpc'},
-                {name: 'cdn'},
-                {name: 'scs'},
-                {name: 'dts'},
-                {name: 'cas'},
-                {name: 'ses'},
-                {name: 'sms'},
-                {name: 'cds'},
-                {name: 'bmr'},
-                {name: 'bml'},
-                {name: 'bcc'},
-                {name: 'rds'}
-            ]
+            loading: true,
+            keyword: '',
+            icons: []
         };
+    },
+    computed: {
+        filteredIcons() {
+            const keyword = this.data.get('keyword');
+            const icons = this.data.get('icons');
+            if (!keyword) {
+                return icons;
+            }
+            return u.filter(icons, icon => icon.indexOf(keyword) !== -1);
+        }
+    },
+    attached() {
+        getIcons().then(icons => {
+            this.data.set('icons', icons);
+            this.data.set('loading', false);
+        });
     }
 });
