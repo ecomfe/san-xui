@@ -127,6 +127,9 @@ export const blocks = [
                 text: 'xui-clipboard'
             },
             {
+                text: 'xui-viewstep'
+            },
+            {
                 text: 'xui-tip'
             },
             {

@@ -386,3 +386,11 @@
     right: 0;
     color: #ccc;
 }
+
+/* ui-viewstep */
+.ui-viewstep-x i {
+    font-style: normal;
+}
+.ui-viewstep-x > ul > li:last-child:after {
+    display: none;
+}
