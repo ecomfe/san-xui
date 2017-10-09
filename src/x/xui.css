@@ -367,11 +367,18 @@
 .ui-select-multipicker-layer > ul:first-child {
     border-left: none;
 }
+.ui-select-multipicker-layer .ui-select-item {
+    position: relative;
+}
+.ui-select-multipicker-layer .ui-select-item span {
+    padding-right: 5px;
+}
 .ui-select-multipicker-layer .ui-select-item-selected {
     background: #eaf6fe;
 }
 .ui-select-multipicker-layer .iconfont {
     font-size: inherit;
-    float: right;
+    position: absolute;
+    right: 0;
     color: #ccc;
 }

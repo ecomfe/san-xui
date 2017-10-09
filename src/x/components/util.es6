@@ -198,7 +198,27 @@ export function buildPagerItems({size, page, count, backCount, backText, forward
     return items;
 }
 
-export function arrayTreeFilter2(values, root, compactLevels) {
+export function arrayTreeFilter(children, filterFn, options = {}) {
+    const childrenKeyName = options.childrenKeyName || 'children';
+    const result = [];
+
+    let level = 0;
+    let filterCallback = item => filterFn(item, level);
+    do {
+        const foundItem = _.filter(children, filterCallback)[0];
+        if (!foundItem) {
+            break;
+        }
+        result.push(foundItem);
+        children = foundItem[childrenKeyName] || [];
+        level += 1;
+    }
+    while (children.length);
+
+    return result;
+}
+
+export function arrayTreeCompact(values, root, compactLevels) {
     const stack = [root];
     let level = 0;
     while (stack.length) {
@@ -214,6 +234,7 @@ export function arrayTreeFilter2(values, root, compactLevels) {
             const clonedItem = {
                 text: item.text,
                 value: item.value,
+                disabled: !!item.disabled,
                 active: item.value === value,
                 expandable: item.children && item.children.length > 0
             };

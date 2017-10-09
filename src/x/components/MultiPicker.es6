@@ -3,10 +3,10 @@
  * @author leeight
  */
 
-// import u from 'lodash';
+import u from 'lodash';
 import {defineComponent} from 'san';
 
-import {hasUnit, arrayTreeFilter2, create} from './util';
+import {hasUnit, arrayTreeFilter, arrayTreeCompact, create} from './util';
 import Layer from './Layer';
 import Icon from './Icon';
 
@@ -22,7 +22,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <ui-layer open="{=active=}" s-ref="layer">
         <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
             <ul s-for="datasource, levelIndex in compactLevels">
-                <li class="{{item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
+                <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
                     on-click="onItemSelected(item, levelIndex)"
                     on-mouseover="expandChildren(item, levelIndex)"
                     s-for="item in datasource">
@@ -58,7 +58,7 @@ export default defineComponent({
             const datasource = this.data.get('datasource');
             const compactLevels = [];
 
-            arrayTreeFilter2(values, datasource, compactLevels);
+            arrayTreeCompact(values, datasource, compactLevels);
 
             return compactLevels;
         },
@@ -81,7 +81,12 @@ export default defineComponent({
         },
         label() {
             const values = this.data.get(kValuesKey);
-            return values && values.length ? values.join(' / ') : kDefaultLabel;
+            const datasource = this.data.get('datasource');
+            const labels = u.map(
+                arrayTreeFilter(datasource, (item, level) => item.value === values[level]),
+                item => item.text
+            );
+            return labels.length ? labels.join(' / ') : kDefaultLabel;
         }
     },
     inited() {
@@ -90,11 +95,20 @@ export default defineComponent({
         this.watch(kValuesKey, values => this.data.set(kTmpValuesKey, values));
     },
     onItemSelected(item, index) {
+        if (item.disabled) {
+            return;
+        }
+
         this.data.set('active', false);
         const values = this.data.get(kTmpValuesKey);
         this.data.set(kValuesKey, values);
+        this.fire('input');
     },
     expandChildren(item, index) {
+        if (item.disabled) {
+            return;
+        }
+
         this.data.set(`${kTmpValuesKey}[${index}]`, item.value);
         const values = this.data.get(kTmpValuesKey);
         for (let i = index + 1; i < values.length; i++) {
@@ -106,6 +120,10 @@ export default defineComponent({
         if (disabled) {
             return;
         }
+        // 同步一下数据
+        const values = this.data.get(kValuesKey);
+        this.data.set(kTmpValuesKey, values);
+
         const active = this.data.get('active');
         this.data.set('active', !active);
     }
