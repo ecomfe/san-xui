@@ -94,13 +94,13 @@ const template = `<div on-click="toggleLayer" class="{{mainClass}}">
                 <div class="${cx('begin')}">
                     <div class="${cx('label')}"><h3>开始日期</h3></div>
                     <div class="${cx('begin-cal')}">
-                        <ui-monthview value="{=begin.value=}" />
+                        <ui-monthview value="{=begin.value=}" time="{{time}}" />
                     </div>
                 </div>
                 <div class="${cx('end')}">
                     <div class="${cx('label')}"><h3>结束日期</h3></div>
                     <div class="${cx('end-cal')}">
-                        <ui-monthview value="{=end.value=}" />
+                        <ui-monthview value="{=end.value=}" time="{{time}}" />
                     </div>
                 </div>
             </div>
@@ -137,6 +137,7 @@ export default defineComponent({
                 begin: new Date(),
                 end: new Date()
             },
+            time: null,
             // BEGIN 临时的数据
             begin: {
                 value: null

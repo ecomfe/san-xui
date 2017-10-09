@@ -115,6 +115,12 @@
 .ui-monthview-shortcut .ui-button {
     display: block;
 }
+.ui-monthview-x .ui-monthview-time {
+    text-align: center;
+}
+.ui-monthview-x .ui-monthview-time input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
 
 /* ui-table */
 .ui-table-hcell-sel,

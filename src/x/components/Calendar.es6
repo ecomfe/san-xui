@@ -20,7 +20,7 @@ const template = `<div class="${cx('xx')}">
     <div class="${cx('arrow')}"></div>
     <ui-layer open="{=active=}" ref="layer">
         <div class="${cx('layer')}">
-            <ui-monthview value="{=value=}" />
+            <ui-monthview value="{=value=}" time="{{time}}" />
         </div>
     </ui-layer>
 </div>
@@ -49,6 +49,7 @@ export default defineComponent({
     initData() {
         return {
             value: new Date(),
+            time: null,
             prev: false,
             next: false,
             active: false

@@ -19,10 +19,10 @@ const template = `<template>
     </strong>
 </x-row>
 
-<x-row label="prev,next">
-    <xui-calendar prev next value="{=calendar.value=}" />
+<x-row label="prev,next,time">
+    <xui-calendar prev next time value="{=calendar.value=}" />
     <strong class="large">
-        Value is: {{calendar.value | datetime('YYYY-MM-DD')}}
+        Value is: {{calendar.value | datetime('YYYY-MM-DD HH:mm:ss')}}
     </strong>
 </x-row>
 

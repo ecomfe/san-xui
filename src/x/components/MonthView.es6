@@ -7,6 +7,7 @@ import {defineComponent} from 'san';
 import {buildMonths, create} from './util';
 import Button from './Button';
 import Select from './Select';
+import TextBox from './TextBox';
 
 const cx = create('ui-monthview');
 
@@ -41,12 +42,20 @@ const template = `<div on-click="onClick" class="{{mainClass}}">
             </tbody>
         </table>
     </div>
+    <div class="${cx('time')}" s-if="time">
+        <ui-textbox type="number" value="{=hour=}" width="20" />
+        :
+        <ui-textbox type="number" value="{=minute=}" width="20" />
+        :
+        <ui-textbox type="number" value="{=second=}" width="20" />
+    </div>
 </div>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
     components: {
+        'ui-textbox': TextBox,
         'ui-button': Button,
         'ui-select': Select
     },
@@ -81,6 +90,12 @@ export default defineComponent({
         return {
             disabled: false,
             skin: '',
+
+            time: null,
+            hour: null,
+            minute: null,
+            second: null,
+
             value: new Date(),
             titles: ['一', '二', '三', '四', '五', '六', '日'],
             range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
@@ -115,12 +130,52 @@ export default defineComponent({
         this.data.set('monthDs.value', month);
     },
     inited() {
-        const valueWatcher = () => {
+        const valueWatcher = value => {
             this.initYearOptions();
             this.initMonthOptions();
+            const time = this.data.get('time');
+            if (value && time) {
+                this.data.set('hour', value.getHours());
+                this.data.set('minute', value.getMinutes());
+                this.data.set('second', value.getSeconds());
+            }
         };
         this.watch('value', valueWatcher);
-        valueWatcher();
+        valueWatcher(this.data.get('value'));
+
+        this.watch('hour', hour => {
+            const time = this.data.get('time');
+            if (time) {
+                if (!(hour >= 0 && hour <= 23)) {
+                    hour = 0;
+                }
+                const value = this.data.get('value');
+                value.setHours(+hour);
+                this.data.set('value', new Date(value));
+            }
+        });
+        this.watch('minute', minute => {
+            const time = this.data.get('time');
+            if (time) {
+                if (!(minute >= 0 && minute <= 59)) {
+                    minute = 0;
+                }
+                const value = this.data.get('value');
+                value.setMinutes(+minute);
+                this.data.set('value', new Date(value));
+            }
+        });
+        this.watch('second', second => {
+            const time = this.data.get('time');
+            if (time) {
+                if (!(second >= 0 && second <= 59)) {
+                    second = 0;
+                }
+                const value = this.data.get('value');
+                value.setSeconds(+second);
+                this.data.set('value', new Date(value));
+            }
+        });
     },
     onTodayClick() {
         this.data.set('value', new Date());
