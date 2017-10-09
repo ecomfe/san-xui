@@ -402,11 +402,26 @@
 .ui-select-multipicker-layer .ui-select-item {
     position: relative;
 }
+.ui-select-multipicker-layer .ui-select-item:hover {
+    background-color: #f7f7f7;
+}
 .ui-select-multipicker-layer .ui-select-item span {
     padding-right: 15px;
 }
+.ui-select-multipicker-layer .ui-select-item-disabled {
+    background-color: #fff !important;
+}
 .ui-select-multipicker-layer .ui-select-item-selected {
-    background: #eaf6fe;
+    background-color: #eaf6fe !important;
+    color: #108cee;
+}
+.ui-select-multipicker-layer .ui-loading-x {
+    font-size: inherit;
+    position: absolute;
+    display: inline-block;
+    top: 7px;
+    right: 5px;
+    color: #ccc;
 }
 .ui-select-multipicker-layer .iconfont {
     font-size: inherit;

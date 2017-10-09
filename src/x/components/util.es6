@@ -231,15 +231,15 @@ export function arrayTreeCompact(values, root, compactLevels) {
         const datasource = [];
         for (let i = 0; i < children.length; i++) {
             const item = children[i];
+            const active = item.value === value;
+            const {text, disabled, loading} = item;
+            const leaf = !item.children || item.children.length <= 0;
             const clonedItem = {
-                text: item.text,
-                value: item.value,
-                disabled: !!item.disabled,
-                active: item.value === value,
-                expandable: item.children && item.children.length > 0
+                text, disabled, active,
+                loading, leaf, value: item.value
             };
             datasource.push(clonedItem);
-            if (clonedItem.active) {
+            if (active) {
                 stack.push(item.children);
             }
         }

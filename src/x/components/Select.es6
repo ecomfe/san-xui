@@ -32,7 +32,7 @@ function defaultFilter(datasource, keyword) {
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
-    <ui-layer open="{=active=}" ref="layer">
+    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
         <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi" style="{{layerStyle}}">
             <ui-textbox s-if="filter"
                 value="{=keyword=}"

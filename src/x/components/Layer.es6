@@ -38,12 +38,15 @@ export default defineComponent({
             autoHide: true,
             // 是否自动定位到 parentComponent.el 的下面
             autoPosition: true,
+            offsetTop: 0,   // 有时候自动定位不准确，需要修正一下
+            offsetLeft: 0,  // 有时候自动定位不准确，需要修正一下
             style: {}
         };
     },
     inited() {
         const autoHide = this.data.get('autoHide');
         this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
+        this.scrollHandler = () => this.selfPosition(true);
         this.watch('open', open => {
             const autoPosition = this.data.get('autoPosition');
             if (autoPosition && open) {
@@ -57,7 +60,9 @@ export default defineComponent({
         }
         if (this.autoHideHandler) {
             $(document).on('mousedown', this.autoHideHandler);
-            // $(window).on('scroll', this.autoHideHandler);
+        }
+        if (this.scrollHandler) {
+            $(window).on('scroll', this.scrollHandler);
         }
         $(this.el).on('mousedown', returnFalse);
         const pc = this.parentComponent;
@@ -65,7 +70,7 @@ export default defineComponent({
             $(pc.el).on('mousedown', returnFalse);
         }
     },
-    selfPosition() {
+    selfPosition(kz) {
         const pc = this.parentComponent;
         if (!pc || !pc.el) {
             return;
@@ -73,16 +78,28 @@ export default defineComponent({
         const $pce = $(pc.el);
         const {left, top} = $pce.offset();
         const height = $pce.height();
-        this.data.set('style', {
-            'z-index': nextZindex(),
-            'left': left + 'px',
-            'top': (top + height) + 'px'
-        });
+        const offsetTop = this.data.get('offsetTop');
+        const offsetLeft = this.data.get('offsetLeft');
+        const leftValue = `${left + offsetLeft}px`;
+        const topValue = `${top + height + offsetTop}px`;
+        if (kz) {
+            this.data.set('style.left', leftValue);
+            this.data.set('style.top', topValue);
+        }
+        else {
+            this.data.set('style', {
+                'z-index': nextZindex(),
+                'left': leftValue,
+                'top': topValue
+            });
+        }
     },
     disposed() {
         if (this.autoHideHandler) {
             $(document).off('mousedown', this.autoHideHandler);
-            // $(window).off('scroll', this.autoHideHandler);
+        }
+        if (this.scrollHandler) {
+            $(window).off('scroll', this.scrollHandler);
         }
         const pc = this.parentComponent;
         if (pc && pc.el) {

@@ -9,6 +9,7 @@ import {defineComponent} from 'san';
 import {hasUnit, arrayTreeFilter, arrayTreeCompact, create} from './util';
 import Layer from './Layer';
 import Icon from './Icon';
+import Loading from './Loading';
 
 const cx = create('ui-select');
 
@@ -19,14 +20,17 @@ const kTmpValuesKey = '__values';
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer open="{=active=}" s-ref="layer">
+    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
         <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
             <ul s-for="datasource, levelIndex in compactLevels">
                 <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
-                    on-click="onItemSelected(item, levelIndex)"
-                    on-mouseover="expandChildren(item, levelIndex)"
+                    on-click="onItemClicked(item, levelIndex)"
                     s-for="item in datasource">
-                    <span>{{item.text}}<ui-icon name="arrow-right" s-if="item.expandable" /></span>
+                    <span>
+                        {{item.text}}
+                        <ui-loading size="small" s-if="item.loading" />
+                        <ui-icon name="arrow-right" s-elif="!item.leaf" />
+                    </span>
                 </li>
             </ul>
         </div>
@@ -37,6 +41,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
 export default defineComponent({
     template,
     components: {
+        'ui-loading': Loading,
         'ui-icon': Icon,
         'ui-layer': Layer
     },
@@ -94,15 +99,20 @@ export default defineComponent({
         this.data.set(kTmpValuesKey, values);
         this.watch(kValuesKey, values => this.data.set(kTmpValuesKey, values));
     },
-    onItemSelected(item, index) {
+    onItemClicked(item, index) {
         if (item.disabled) {
+            return;
+        }
+
+        this.expandChildren(item, index);
+        if (!item.leaf) {
             return;
         }
 
         this.data.set('active', false);
         const values = this.data.get(kTmpValuesKey);
         this.data.set(kValuesKey, values);
-        this.fire('input');
+        this.fire('change');
     },
     expandChildren(item, index) {
         if (item.disabled) {
