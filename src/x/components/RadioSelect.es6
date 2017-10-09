@@ -8,14 +8,15 @@ import {defineComponent} from 'san';
 import {create} from './util';
 
 const cx = create('ui-radioselect');
+const cx2 = create('ui-radio');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
     <ul>
         <li on-click="onItemClick(item, i)"
-            class="{{selectedIndex === i ? 'ui-radio-block ui-radio-selected' : 'ui-radio-block'}}"
+            class="{{item.disabled ? '${cx2('block', 'disabled')}' : selectedIndex === i ? '${cx2('block', 'selected')}' : '${cx2('block')}'}}"
             s-for="item, i in datasource">
-          <div class="ui-radio-item-hover" s-if="item.tip">{{item.tip}}<br/></div>
+          <div class="${cx2('item-hover')}" s-if="item.tip">{{item.tip}}<br/></div>
           <div class="arrow-down" s-if="item.tip"><i></i></div>
           {{item.text}}
         </li>
@@ -61,7 +62,7 @@ export default defineComponent({
     },
     onItemClick(item, selectedIndex) {
         const disabled = this.data.get('disabled');
-        if (disabled) {
+        if (item.disabled || disabled) {
             return;
         }
         this.data.set('value', item.value);

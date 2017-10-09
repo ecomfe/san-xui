@@ -394,3 +394,14 @@
 .ui-viewstep-x > ul > li:last-child:after {
     display: none;
 }
+
+/* ui-radioselect */
+.ui-radioselect-x {
+    overflow: visible;
+}
+.ui-radioselect-x .ui-radio-block {
+    position: relative;
+}
+.ui-radioselect-x .ui-radio-disabled {
+    background-color: #f6f7fb !important;
+}
