@@ -6,17 +6,13 @@
 import u from 'lodash';
 import {defineComponent} from 'san';
 
-import {create} from './util';
+import {hasUnit, create} from './util';
 import Layer from './Layer';
 import ScrollIntoView from './ScrollIntoView';
 import TextBox from './TextBox';
 
 const cx = create('ui-select');
 const kDefaultLabel = '请选择';
-
-function hasUnit(value) {
-    return /%|px|auto/.test(value);
-}
 
 function defaultFilter(datasource, keyword) {
     if (!keyword) {

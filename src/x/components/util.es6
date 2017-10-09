@@ -7,7 +7,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import {defineComponent} from 'san';
 
-function hasUnit(value) {
+export function hasUnit(value) {
     return /%|px|auto/.test(value);
 }
 
@@ -196,4 +196,32 @@ export function buildPagerItems({size, page, count, backCount, backText, forward
     items.push(nextPage);
 
     return items;
+}
+
+export function arrayTreeFilter2(values, root, compactLevels) {
+    const stack = [root];
+    let level = 0;
+    while (stack.length) {
+        const children = stack.shift();
+        const value = values[level++];
+        if (!children) {
+            break;
+        }
+
+        const datasource = [];
+        for (let i = 0; i < children.length; i++) {
+            const item = children[i];
+            const clonedItem = {
+                text: item.text,
+                value: item.value,
+                active: item.value === value,
+                expandable: item.children && item.children.length > 0
+            };
+            datasource.push(clonedItem);
+            if (clonedItem.active) {
+                stack.push(item.children);
+            }
+        }
+        compactLevels.push(datasource);
+    }
 }

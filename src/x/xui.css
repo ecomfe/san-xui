@@ -353,3 +353,25 @@
 .ui-button-x .iconfont {
     font-size: inherit;
 }
+
+/* ui-select-multipicker */
+.ui-select-multipicker-layer {
+    white-space: nowrap;
+}
+.ui-select-multipicker-layer > ul {
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: top;
+    border-left: 1px solid #eee;
+}
+.ui-select-multipicker-layer > ul:first-child {
+    border-left: none;
+}
+.ui-select-multipicker-layer .ui-select-item-selected {
+    background: #eaf6fe;
+}
+.ui-select-multipicker-layer .iconfont {
+    font-size: inherit;
+    float: right;
+    color: #ccc;
+}
