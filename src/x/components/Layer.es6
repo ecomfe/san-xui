@@ -21,6 +21,7 @@ function returnFalse(e) {
     if (nodeName === 'INPUT') {
         if (typeof e.target.focus === 'function') {
             e.target.focus();
+            e.target.select();
         }
     }
 

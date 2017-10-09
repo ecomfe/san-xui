@@ -159,6 +159,9 @@ export const blocks = [
             {
                 text: 'xui-sidebar',
                 disabled: true
+            },
+            {
+                text: 'xui-instanteditor'
             }
         ]
     }
