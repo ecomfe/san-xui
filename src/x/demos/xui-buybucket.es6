@@ -19,7 +19,7 @@ const template = `<template>
     <xui-buybucket
         disabled
         previous
-        tip="This is a tip message"
+        tip="{{buybucket.tip}}"
         datasource="{{buybucket.datasource}}" />
 </x-row>
 </template>`;
@@ -34,6 +34,7 @@ export default defineComponent({
     initData() {
         return {
             buybucket: {
+                tip: '温馨提示：按需计费类型的集群子节点已经售罄，百度云正在积极扩容中，建议您先购买包年包月类型的集群， 或者提<a href="javascript:void(0)">工单</a>申请按需资源，谢谢。',
                 datasource: [
                     {title: '地域', content: '华北 - 北京'},
                     {title: '可用区', content: '可用区A'},

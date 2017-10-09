@@ -288,6 +288,7 @@
     line-height: 38px;
 }
 .ui-buybucket-x .ui-buybucket-tip {
+    color: #f18d36;
     padding: 0 18px;
     margin-top: -8px;
     padding-bottom: 12px;
@@ -352,6 +353,9 @@
 /* ui-button */
 .ui-button-x .iconfont {
     font-size: inherit;
+}
+.ui-button-x .ui-button-label {
+    display: inline-block;
 }
 
 /* ui-select-multipicker */

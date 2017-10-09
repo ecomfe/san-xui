@@ -32,7 +32,7 @@ const template = `<div class="{{mainClass}}">
     <div class="${cx('bottom')}" s-else>
         <ui-button on-click="onConfirm" skin="primary" disabled="{{disabled}}">立即购买</ui-button>
     </div>
-    <div class="${cx('tip')}" s-if="tip">{{tip}}</div>
+    <div class="${cx('tip')}" s-if="tip">{{tip|raw}}</div>
 </div>`;
 /* eslint-enable */
 
