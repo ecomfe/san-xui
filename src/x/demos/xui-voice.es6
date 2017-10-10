@@ -5,12 +5,16 @@
 
 import {defineComponent} from 'san';
 import Button from 'inf-ui/x/components/Button';
+import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
 import Row from './Row';
 import Recorder from './voice';
 
 /* eslint-disable */
 const template = `<template>
+
+<xui-toastlabel>基于 vse.baidu.com 提供的服务实现语音识别，跟百度PC版本首页的实现方案一致。</xui-toastlabel>
+
 <x-row label="[default]">
     <xui-button icon="voice" on-click="start">Start</xui-button>
     <strong class="large">
@@ -24,6 +28,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-toastlabel': ToastLabel,
         'xui-button': Button
     },
     initData() {
