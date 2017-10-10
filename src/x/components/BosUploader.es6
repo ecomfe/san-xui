@@ -1,5 +1,5 @@
 /**
- * @file BosUploader.es6
+ * @file components/BosUploader.es6
  * @author leeight
  */
 
@@ -31,7 +31,11 @@ const template = `<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error">{{error}}</div>
     <div s-else>
         <ui-button disabled="{{disabled}}" s-ref="btn">选择文件</ui-button>
-        <ui-button s-if="!autoStart" on-click="startUpload" disabled="{{startDisabled}}" skin="primary">开始上传</ui-button>
+        <ui-button icon="paddle-upload"
+            s-if="!autoStart"
+            on-click="startUpload"
+            disabled="{{startDisabled}}"
+            skin="primary">开始上传</ui-button>
         <div class="${cx('speed-info')}" s-if="speedInfo">{{speedInfo | raw}}</div>
 
         <div class="${cx('list')}" s-if="files.length">
@@ -71,6 +75,7 @@ export default defineComponent({
         return {
             autoStart: false,
             finished: false,
+            multiple: false,
             speedInfo: null,
             error: null,
             files: []
@@ -116,10 +121,11 @@ export default defineComponent({
             return;
         }
 
+        const multiple = this.data.get('multiple');
         this.uploader = new baidubce.bos.Uploader({
             browse_button: this.ref('btn').el,
             auto_start: autoStart,
-            multi_selection: true,
+            multi_selection: multiple,
             bos_endpoint: bosEndpoint,
             bos_multipart_parallel: 5,
             bos_multipart_auto_continue: true,

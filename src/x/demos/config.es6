@@ -112,8 +112,7 @@ export const blocks = [
         title: '文件上传',
         items: [
             {
-                text: 'xui-uploader',
-                disabled: true
+                text: 'xui-webuploader'
             },
             {
                 text: 'xui-bosuploader'
