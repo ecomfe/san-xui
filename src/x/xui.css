@@ -385,6 +385,12 @@
 .ui-button-x .ui-button-label {
     display: inline-block;
 }
+.ui-button-x.ui-button-large {
+    height: 40px;
+    line-height: 40px;
+    min-width: 72px;
+    font-size: 14px;
+}
 
 /* ui-select-multipicker */
 .ui-select-multipicker-layer {

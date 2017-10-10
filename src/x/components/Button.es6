@@ -21,7 +21,12 @@ export default defineComponent({
     template,
     computed: {
         mainClass() {
-            return cx.mainClass(this);
+            const klass = cx.mainClass(this);
+            const size = this.data.get('size');
+            if (size) {
+                klass.push(cx(size));
+            }
+            return klass;
         },
         mainStyle() {
             return cx.mainStyle(this);
