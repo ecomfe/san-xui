@@ -29,7 +29,8 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                     <span>
                         {{item.text}}
                         <ui-loading size="small" s-if="item.loading" />
-                        <ui-icon name="arrow-right" s-elif="!item.leaf" />
+                        <ui-icon name="color-error" s-elif="item.error" />
+                        <ui-icon name="arrow-right" s-elif="item.expandable" />
                     </span>
                 </li>
             </ul>
@@ -50,9 +51,10 @@ export default defineComponent({
             disabled: false,
             active: false,
             layerWidth: 'auto',
+            loader: null,             // 数据异步加载的loader，逐步的填充 datasource 的内容
             datasource: [],
             [kValuesKey]: [],
-            [kTmpValuesKey]: []      // 临时的值，点击了之后，同步到 value 里面去
+            [kTmpValuesKey]: []       // 临时的值，点击了之后，同步到 value 里面去
         };
     },
     computed: {
@@ -61,9 +63,7 @@ export default defineComponent({
         compactLevels() {
             const values = this.data.get(kTmpValuesKey);
             const datasource = this.data.get('datasource');
-            const compactLevels = [];
-
-            arrayTreeCompact(values, datasource, compactLevels);
+            const compactLevels = arrayTreeCompact(values, datasource);
 
             return compactLevels;
         },
@@ -105,7 +105,7 @@ export default defineComponent({
         }
 
         this.expandChildren(item, index);
-        if (!item.leaf) {
+        if (item.expandable) {
             return;
         }
 
@@ -119,12 +119,84 @@ export default defineComponent({
             return;
         }
 
+        const loader = this.data.get('loader');
+        if (typeof loader === 'function') {
+            this.expandChildrenAync(item, index);
+        }
+        else {
+            this.expandChildrenInternal(item, index);
+        }
+    },
+
+    expandChildrenAync(item, index) {
+        const values = [...this.data.get(kTmpValuesKey)];
+        values[index] = item.value;
+        values.splice(index + 1);     // 删掉多余的数据
+        if (values.length <= 0) {
+            return;
+        }
+
+        const datasource = this.data.get('datasource');
+        const nodes = arrayTreeFilter(datasource, (item, level) => item.value === values[level]);
+
+        // XXX(leeight) 这个检查可能没有必要？
+        if (nodes.length !== values.length) {
+            return;
+        }
+
+        const lastNode = nodes[nodes.length - 1];
+        if (lastNode.children || !lastNode.expandable) {
+            // 之前已经加载过了 或者 是叶子节点
+            this.expandChildrenInternal(item, index);
+            return;
+        }
+
+        // 显示加载的icon
+        lastNode.loading = true;
+        lastNode.error = null;
+
+        // XXX(leeight) 合适么？Trigger the data change
+        this.data.set('datasource', [...datasource]);
+
+        const loader = this.data.get('loader');
+        return loader(values)
+            .then(children => {
+                lastNode.loading = false;
+
+                // 追加到 datasource 里面去
+                if (children.length <= 0) {
+                    lastNode.expandable = false;
+                }
+                else {
+                    lastNode.children = children;
+                }
+
+                // Trigger the data change again.
+                this.data.set('datasource', [...datasource]);
+                this.expandChildrenInternal(item, index);
+            })
+            .catch(error => {
+                lastNode.loading = false;
+                lastNode.error = error;
+                this.data.set('datasource', [...datasource]);
+            });
+    },
+
+    /**
+     * Expand the submenu
+     *
+     * @private
+     * @param {Object} item The selected item.
+     * @param {number} index The level index.
+     */
+    expandChildrenInternal(item, index) {
         this.data.set(`${kTmpValuesKey}[${index}]`, item.value);
         const values = this.data.get(kTmpValuesKey);
         for (let i = index + 1; i < values.length; i++) {
             this.data.removeAt(kTmpValuesKey, i);
         }
     },
+
     toggleLayer(e) {
         const disabled = this.data.get('disabled');
         if (disabled) {

@@ -429,6 +429,9 @@
     right: 5px;
     color: #ccc;
 }
+.ui-select-multipicker-layer .icon-color-error {
+    color: #EB5252;
+}
 
 /* ui-viewstep */
 .ui-viewstep-x i {

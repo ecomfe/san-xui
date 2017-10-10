@@ -218,9 +218,11 @@ export function arrayTreeFilter(children, filterFn, options = {}) {
     return result;
 }
 
-export function arrayTreeCompact(values, root, compactLevels) {
+export function arrayTreeCompact(values, root) {
+    const compactedTree = [];
     const stack = [root];
     let level = 0;
+
     while (stack.length) {
         const children = stack.shift();
         const value = values[level++];
@@ -232,17 +234,20 @@ export function arrayTreeCompact(values, root, compactLevels) {
         for (let i = 0; i < children.length; i++) {
             const item = children[i];
             const active = item.value === value;
-            const {text, disabled, loading} = item;
-            const leaf = !item.children || item.children.length <= 0;
+            const {text, disabled, error, loading} = item;
+            // 如果数据源里面有过相关的标记，那么就用这个标记就好了
+            const expandable = item.expandable || (item.children && item.children.length > 0);
             const clonedItem = {
-                text, disabled, active,
-                loading, leaf, value: item.value
+                text, disabled, active, error,
+                loading, expandable, value: item.value
             };
             datasource.push(clonedItem);
             if (active) {
                 stack.push(item.children);
             }
         }
-        compactLevels.push(datasource);
+        compactedTree.push(datasource);
     }
+
+    return compactedTree;
 }
