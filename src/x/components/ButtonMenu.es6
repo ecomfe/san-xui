@@ -21,7 +21,7 @@ const template = `<div class="{{mainClass}}">
         icon="{{icon}}"
         skin="{{skin}}"
     >{{label}}<ui-icon name="downarrow" /></ui-button>
-    <ui-layer open="{=open=}" ref="layer">
+    <ui-layer open="{=open=}" s-ref="layer">
         <ul class="${cx2('layer', 'layer-x')}">
             <li class="{{item.disabled ? '${cx2('item', 'item-disabled')}' : '${cx2('item')}'}}"
                 on-click="onItemClick(item)"

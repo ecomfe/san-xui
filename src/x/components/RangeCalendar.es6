@@ -83,7 +83,7 @@ function getLastQuarterValue() {
 const template = `<div on-click="toggleLayer" class="{{mainClass}}">
     <div class="${cx('text')}">{{text}}</div>
     <div class="${cx('arrow')}"></div>
-    <ui-layer open="{=active=}" ref="layer">
+    <ui-layer open="{=active=}" s-ref="layer">
         <div class="${cx('layer')}">
             <div class="${cx('shortcut')}" s-if="shortcut">
                 <span on-click="onShortcutSelect(item)"
