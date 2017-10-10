@@ -6,16 +6,11 @@
 import Promise from 'promise';
 import {defineComponent} from 'san';
 import MultiPicker from 'inf-ui/x/components/MultiPicker';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
 import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
-<xui-toastlabel>
-暂时还不支持异步加载数据，欢迎PR.
-</xui-toastlabel>
-
 <x-row label="[default]">
     <xui-multipicker
         datasource="{{mp.datasource}}"
@@ -99,7 +94,6 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
-        'xui-toastlabel': ToastLabel,
         'xui-multipicker': MultiPicker
     },
     initData() {
@@ -111,7 +105,7 @@ export default defineComponent({
                         setTimeout(() => {
                             if (values.length === 1) {
                                 const osType = values[0];
-                                if (Math.random() > .5) {
+                                if (Math.random() > .8) {
                                     reject(new Error('RANDOM error happened'));
                                     return;
                                 }
