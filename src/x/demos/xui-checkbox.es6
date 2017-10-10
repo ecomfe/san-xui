@@ -5,6 +5,7 @@
 
 import {defineComponent} from 'san';
 import CheckBox from 'inf-ui/x/components/CheckBox';
+import Switch from 'inf-ui/x/components/Switch';
 
 import Row from './Row';
 
@@ -25,6 +26,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-switch': Switch,
         'xui-checkbox': CheckBox
     },
     initData() {
