@@ -39,11 +39,10 @@ export default defineComponent({
     },
 
     start() {
-        const recorder = this.recorder = Recorder.init({url: 'https://sp3.baidu.com/6qUDsjip0QIZ8tyhnq/echo.fcgi'});
-        recorder
-            .done(vse => {
-                vse.openUI();
-                vse.onfinish(t => {
+        Recorder.init({url: 'https://sp3.baidu.com/6qUDsjip0QIZ8tyhnq/echo.fcgi'})
+            .done(recorder => {
+                recorder.openUI();
+                recorder.onfinish(t => {
                     const e = t.content.item[0];
                     const n = t && t.result ? t.result.corpus_no : '';
                     this.data.set('voiceText', e + ' / ' + n);
@@ -53,6 +52,5 @@ export default defineComponent({
                 });
             })
             .fail(() => alert('不能获得麦克风的权限'));
-
     }
 });
