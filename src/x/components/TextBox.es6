@@ -22,6 +22,8 @@ const template = `<div class="{{mainClass}}">
     <input s-else
         on-input="onInput"
         on-keypress="onKeyPress($event)"
+        on-focus="onFocus($event)"
+        on-blur="onBlur($event)"
         value="{=value=}"
         type="{{type}}"
         disabled="{{disabled}}"
@@ -56,6 +58,12 @@ export default defineComponent({
     },
     onInput() {
         this.fire('input');
+    },
+    onFocus(e) {
+        this.fire('focus', e);
+    },
+    onBlur(e) {
+        this.fire('blur', e);
     },
     onKeyPress(e) {
         const keyCode = e.which || e.keyCode;

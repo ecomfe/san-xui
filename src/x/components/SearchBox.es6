@@ -23,6 +23,8 @@ const template = `<div class="{{mainClass}}">
         />
     <ui-textbox
         on-enter="onSearch"
+        on-focus="onFocus"
+        on-blur="onBlur"
         placeholder="{{placeholder}}"
         value="{=value=}"
         disabled="{{disabled}}"
@@ -42,6 +44,7 @@ export default defineComponent({
     initData() {
         return {
             disabled: false,
+            active: false,
             value: '',
             searchBtn: true,
             placeholder: '',
@@ -56,6 +59,12 @@ export default defineComponent({
             const searchBtn = this.data.get('searchBtn');
             if (!searchBtn) {
                 klass.push(cx('nobtn'));
+            }
+            const active = this.data.get('active');
+            if (active) {
+                klass.push('state-active');
+                klass.push(cx('active'));
+                klass.push(cx('x-active'));
             }
             return klass;
         }
@@ -76,5 +85,11 @@ export default defineComponent({
     },
     onSearch() {
         this.fire('search');
+    },
+    onFocus() {
+        this.data.set('active', true);
+    },
+    onBlur() {
+        this.data.set('active', false);
     }
 });
