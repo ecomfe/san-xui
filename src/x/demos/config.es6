@@ -90,6 +90,12 @@ export const blocks = [
         ]
     },
     {
+        title: '语音识别',
+        items: [
+            {text: 'xui-voice'}
+        ]
+    },
+    {
         title: '编辑器相关',
         items: [
             {
