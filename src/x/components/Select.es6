@@ -43,8 +43,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                 <label>
                     <input type="checkbox"
                         on-change="onToggleAll"
-                        value="on"
-                        checked="{=allValue=}"
+                        checked="{=checkedAll=}"
                         />
                     全选/全不选
                 </label>
@@ -92,7 +91,7 @@ export default defineComponent({
             keyword: '',    // 过滤的关键词
 
             value: '',      // any | any[]
-            allValue: []
+            checkedAll: false
         };
     },
     computed: {
@@ -187,8 +186,8 @@ export default defineComponent({
         this.fire('change', {selectedItem: item});
     },
     onToggleAll() {
-        const allValue = this.data.get('allValue');
-        if (allValue.length === 1 && allValue[0] === 'on') {
+        const checkedAll = this.data.get('checkedAll');
+        if (checkedAll) {
             const datasource = this.data.get('filteredDatasource');
             const value = [];
             u.each(datasource, item => {
@@ -198,7 +197,7 @@ export default defineComponent({
             });
             this.data.set('value', value);
         }
-        else if (allValue.length === 0) {
+        else {
             this.data.set('value', []);
         }
     },
