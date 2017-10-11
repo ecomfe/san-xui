@@ -6,7 +6,7 @@
 import u from 'lodash';
 import {defineComponent} from 'san';
 
-import {hasUnit, arrayTreeFilter, arrayTreeCompact, create} from './util';
+import {hasUnit, arrayTreeFilter, arrayTreeFilterIndex, arrayTreeCompact, create} from './util';
 import Layer from './Layer';
 import Icon from './Icon';
 import Loading from './Loading';
@@ -22,10 +22,10 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
     <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
         <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
-            <ul s-for="datasource, levelIndex in compactLevels">
+            <ul s-for="datastore, levelIndex in compactLevels">
                 <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
                     on-click="onItemClicked(item, levelIndex)"
-                    s-for="item in datasource">
+                    s-for="item in datastore">
                     <span>
                         {{item.text}}
                         <ui-loading size="small" s-if="item.loading" />
@@ -87,10 +87,8 @@ export default defineComponent({
         label() {
             const values = this.data.get(kValuesKey);
             const datasource = this.data.get('datasource');
-            const labels = u.map(
-                arrayTreeFilter(datasource, (item, level) => item.value === values[level]),
-                item => item.text
-            );
+            const nodes = arrayTreeFilter(datasource, (item, level) => item.value === values[level]);
+            const labels = u.map(nodes, item => item.text);
             return labels.length ? labels.join(' / ') : kDefaultLabel;
         }
     },
@@ -137,49 +135,38 @@ export default defineComponent({
         }
 
         const datasource = this.data.get('datasource');
-        const nodes = arrayTreeFilter(datasource, (item, level) => item.value === values[level]);
+        const indexes = arrayTreeFilterIndex(datasource, (item, level) => item.value === values[level]);
+        const itemKey = u.map(indexes,
+            (v, i) => i === 0 ? `datasource[${v}]` : `children[${v}]`).join('.');   // eslint-disable-line
 
-        // XXX(leeight) 这个检查可能没有必要？
-        if (nodes.length !== values.length) {
-            return;
-        }
-
-        const lastNode = nodes[nodes.length - 1];
-        if (lastNode.children || !lastNode.expandable) {
+        const lastNode = this.data.get(itemKey);
+        if (!lastNode || lastNode.children || !lastNode.expandable) {
             // 之前已经加载过了 或者 是叶子节点
             this.expandChildrenInternal(item, index);
             return;
         }
 
         // 显示加载的icon
-        lastNode.loading = true;
-        lastNode.error = null;
-
-        // XXX(leeight) 合适么？Trigger the data change
-        this.data.set('datasource', [...datasource]);
+        this.data.set(`${itemKey}.loading`, true);
+        this.data.set(`${itemKey}.error`, null);
 
         const loader = this.data.get('loader');
-        return loader(values)
-            .then(children => {
-                lastNode.loading = false;
+        return loader(values).then(children => {
+            this.data.set(`${itemKey}.loading`, false);
 
-                // 追加到 datasource 里面去
-                if (children.length <= 0) {
-                    lastNode.expandable = false;
-                }
-                else {
-                    lastNode.children = children;
-                }
+            // 追加到 datasource 里面去
+            if (children.length <= 0) {
+                this.data.set(`${itemKey}.expandable`, false);
+            }
+            else {
+                this.data.set(`${itemKey}.children`, children);
+            }
 
-                // Trigger the data change again.
-                this.data.set('datasource', [...datasource]);
-                this.expandChildrenInternal(item, index);
-            })
-            .catch(error => {
-                lastNode.loading = false;
-                lastNode.error = error;
-                this.data.set('datasource', [...datasource]);
-            });
+            this.expandChildrenInternal(item, index);
+        }).catch(error => {
+            this.data.set(`${itemKey}.loading`, false);
+            this.data.set(`${itemKey}.error`, error);
+        });
     },
 
     /**

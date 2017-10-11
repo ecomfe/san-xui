@@ -198,24 +198,37 @@ export function buildPagerItems({size, page, count, backCount, backText, forward
     return items;
 }
 
-export function arrayTreeFilter(children, filterFn, options = {}) {
+export function arrayTreeFilterIndex(children, filterFn, options = {}) {
     const childrenKeyName = options.childrenKeyName || 'children';
-    const result = [];
+    const indexes = [];
 
     let level = 0;
     let filterCallback = item => filterFn(item, level);
     do {
-        const foundItem = _.filter(children, filterCallback)[0];
-        if (!foundItem) {
+        const index = _.findIndex(children, filterCallback);
+        if (index === -1) {
             break;
         }
-        result.push(foundItem);
-        children = foundItem[childrenKeyName] || [];
+        indexes.push(index);
+        children = children[index][childrenKeyName] || [];
         level += 1;
     }
     while (children.length);
 
-    return result;
+    return indexes;
+}
+
+export function arrayTreeFilter(children, filterFn, options = {}) {
+    const childrenKeyName = options.childrenKeyName || 'children';
+    const indexes = arrayTreeFilterIndex(children, filterFn, options);
+    const nodes = [];
+    for (let i = 0; children.length && i < indexes.length; i++) {
+        const index = indexes[i];
+        const node = children[index];
+        nodes.push(node);
+        children = node[childrenKeyName] || [];
+    }
+    return nodes;
 }
 
 export function arrayTreeCompact(values, root) {
