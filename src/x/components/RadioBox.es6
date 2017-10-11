@@ -15,7 +15,7 @@ const template = `<div class="{{mainClass}}">
         <input
             type="radio"
             checked="{=checked=}"
-            on-change="onChange($event)"
+            on-change="onChange"
             disabled="{{disabled}}" />
         <span s-if="title">{{title}}</span>
     </label>
@@ -37,10 +37,8 @@ export default defineComponent({
     },
     inited() {
     },
-    onChange(event) {
-        const checked = event.target.checked;
-        this.data.set('checked', checked);
-        this.fire('change', {checked});
+    onChange() {
+        this.fire('change');
     }
 });
 

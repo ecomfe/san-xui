@@ -1,5 +1,5 @@
 /**
- * @file CheckBox.es6
+ * @file components/CheckBox.es6
  * @author leeight
  */
 
@@ -15,7 +15,7 @@ const template = `<div class="{{mainClass}}">
         <input
             type="checkbox"
             checked="{=checked=}"
-            on-change="onChange($event)"
+            on-change="onChange"
             disabled="{{disabled}}" />
         <span s-if="title">{{title}}</span>
     </label>
@@ -37,10 +37,8 @@ export default defineComponent({
     },
     inited() {
     },
-    onChange(event) {
-        const checked = event.target.checked;
-        this.data.set('checked', checked);
-        this.fire('change', {checked});
+    onChange() {
+        this.fire('change');
     }
 });
 
