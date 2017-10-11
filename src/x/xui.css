@@ -325,9 +325,16 @@
 .ui-searchbox-x .ui-select-x,
 .ui-searchbox-x .ui-textbox-x {
     margin-right: -4px;
+    border: none;
+}
+.ui-searchbox-x .ui-button-x,
+.ui-searchbox-x .ui-select-x {
+    height: 28px;
+    line-height: 28px;
 }
 .ui-searchbox-x .ui-textbox-x input {
     border-color: transparent !important;
+    border: none;
 }
 .ui-searchbox-nobtn .ui-textbox-x {
     position: relative;
@@ -536,4 +543,22 @@
     cursor: not-allowed;
     color: #999999;
     background-color: #f6f7fb;
+}
+
+/* ui-checkbox */
+.ui-checkbox-x {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-checkbox-x input {
+    margin: 0;
+}
+
+/* ui-radiobox */
+.ui-radiobox-x {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-radiobox-x input {
+    margin: 0;
 }

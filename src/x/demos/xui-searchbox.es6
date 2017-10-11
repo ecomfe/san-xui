@@ -5,6 +5,7 @@
 
 import {defineComponent} from 'san';
 import SearchBox from 'inf-ui/x/components/SearchBox';
+import Button from 'inf-ui/x/components/Button';
 
 import Row from './Row';
 
@@ -28,9 +29,13 @@ const template = `<template>
 </x-row>
 <x-row label="search-btn=false">
     <xui-searchbox search-btn="{{false}}" />
+    <xui-button icon="refresh" />
+    <xui-button icon="download" />
 </x-row>
 <x-row label="placeholder=请输入实例名称进行搜索">
     <xui-searchbox placeholder="请输入实例名称进行搜索" />
+    <xui-button icon="refresh" />
+    <xui-button icon="download" />
 </x-row>
 <x-row label="width=100,placeholder=请输入实例名称进行搜索">
     <xui-searchbox
@@ -40,6 +45,8 @@ const template = `<template>
         keyword-type="{=searchbox.keywordType=}"
         datasource="{{searchbox.keywordTypes}}"
     />
+    <xui-button icon="refresh" />
+    <xui-button icon="download" />
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -48,6 +55,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-button': Button,
         'xui-searchbox': SearchBox
     },
     initData() {
