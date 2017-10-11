@@ -546,19 +546,18 @@
 }
 
 /* ui-checkbox */
+.ui-radiobox-x,
 .ui-checkbox-x {
     display: inline-block;
     vertical-align: middle;
 }
+.ui-radiobox-x input,
 .ui-checkbox-x input {
     margin: 0;
 }
 
-/* ui-radiobox */
-.ui-radiobox-x {
-    display: inline-block;
-    vertical-align: middle;
-}
-.ui-radiobox-x input {
-    margin: 0;
+.ui-radiobox-x label,
+.ui-checkbox-x label {
+    display: block;
+    line-height: 1;
 }

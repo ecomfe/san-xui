@@ -6,6 +6,8 @@
 import {defineComponent} from 'san';
 import SearchBox from 'inf-ui/x/components/SearchBox';
 import Button from 'inf-ui/x/components/Button';
+import CheckBox from 'inf-ui/x/components/CheckBox';
+import RadioBox from 'inf-ui/x/components/RadioBox';
 
 import Row from './Row';
 
@@ -45,6 +47,7 @@ const template = `<template>
         keyword-type="{=searchbox.keywordType=}"
         datasource="{{searchbox.keywordTypes}}"
     />
+    <xui-checkbox title="过滤0元账单" />
     <xui-button icon="refresh" />
     <xui-button icon="download" />
 </x-row>
@@ -55,6 +58,8 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-radiobox': RadioBox,
+        'xui-checkbox': CheckBox,
         'xui-button': Button,
         'xui-searchbox': SearchBox
     },
