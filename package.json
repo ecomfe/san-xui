@@ -1,5 +1,9 @@
 {
   "name": "inf-ui",
   "version": "0.0.0",
-  "library.type": "amd"
+  "library.type": "amd",
+  "library.ignore": [
+    "x/demos/**", "x/showcase",
+    "x/List", "x/Aside", "x/AppExplorer"
+  ]
 }
