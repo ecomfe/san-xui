@@ -10,7 +10,7 @@ import Aside from './Aside';
 import AppExplorer from './AppExplorer';
 import {blocks} from './demos/config';
 
-const kUrl = 'http://icode.baidu.com/repo/baidu%2Fbce-console%2Ffe-base/files/x-ui/tree/dep/inf-ui/0.0.0/src/x/';
+const kUrl = 'http://icode.baidu.com/repo/baidu%2Fbce-console%2Ffe-base/files/master/tree/dep/inf-ui/0.0.0/src/x/';
 
 /* eslint-disable */
 const template = `<div class="showcase">
