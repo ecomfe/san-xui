@@ -11,10 +11,15 @@ import Row from './Row';
 /* eslint-disable */
 const template = `<template>
 <x-row label="[default]">
-    <xui-button>Hello xui-button</xui-button>
+    <xui-button class="tooltipped tooltipped-e" aria-label="Success: The Travis CI build passed">Hello xui-button</xui-button>
     <xui-button skin="primary">primary skin</xui-button>
     <xui-button skin="danger">danger skin</xui-button>
-    <xui-button disabled skin="primary">disabled button</xui-button>
+    <xui-button
+        disabled
+        skin="primary"
+        class="tooltipped tooltipped-n" 
+        aria-label="Success: The Travis CI build passed"
+    >disabled button</xui-button>
 </x-row>
 
 <x-row label="[default],size=large">
