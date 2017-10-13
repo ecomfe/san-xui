@@ -17,8 +17,8 @@ const template = `<template>
     Total count: {{filteredIcons.length}}
     <br />
     <div class="icons">
-        <div s-for="icon in filteredIcons">
-            <xui-icon name="{{icon}}" title="{{icon}}" /><br />{{icon}}
+        <div s-for="icon in filteredIcons" class="tooltipped tooltipped-n" aria-label="{{icon}}">
+            <xui-icon name="{{icon}}" /><br />{{icon}}
         </div>
     </div>
 </div>

@@ -7,17 +7,26 @@ import {defineComponent} from 'san';
 import Clipboard from 'inf-ui/x/components/Clipboard';
 import Button from 'inf-ui/x/components/Button';
 
+import Row from './Row';
+
 /* eslint-disable */
 const template = `<template>
-<xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
-    <xui-button>{{clipboard.btnText}}</xui-button>
-</xui-clipboard>
+<x-row label="[default]">
+    <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
+        <xui-button>{{clipboard.btnText}}</xui-button>
+    </xui-clipboard>
+
+    <xui-clipboard text="Hello World">
+        <xui-button icon="copy" />
+    </xui-clipboard>
+</x-row>
 </template>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
     components: {
+        'x-row': Row,
         'xui-button': Button,
         'xui-clipboard': Clipboard
     },
