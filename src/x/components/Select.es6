@@ -49,6 +49,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                 </label>
             </li>
             <li class="{{item | itemClass}}"
+                aria-label="{{item.tip}}"
                 s-for="item in filteredDatasource">
                 <label>
                     <input type="checkbox"
@@ -63,6 +64,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
         <ul class="${cx('layer')} ${cx('layer-x')}" s-else style="{{layerStyle}}">
             <li on-click="selectItem($event, item)"
                 class="{{item | itemClass}}"
+                aria-label="{{item.tip}}"
                 s-for="item in datasource">
                 <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
                 <span s-else>{{item.text}}</span>
@@ -165,6 +167,9 @@ export default defineComponent({
             }
             if (multi) {
                 klass.push(cx('item-multi'));
+            }
+            if (item.tip) {
+                klass.push('tooltipped', 'tooltipped-n');
             }
             return klass;
         }

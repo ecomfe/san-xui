@@ -62,8 +62,8 @@ export default defineComponent({
                 datasource: [
                     {text: 'foo', value: 'foo'},
                     {text: 'bar', value: 'bar'},
-                    {text: '123', value: '123', disabled: true},
-                    {text: 'abc1', value: 'abc1'},
+                    {text: '123', value: '123', disabled: true, tip: 'Disabled item'},
+                    {text: 'abc1', value: 'abc1', tip: 'hello world'},
                     {text: 'abc2', value: 'abc2'},
                     {text: 'abc3', value: 'abc3'},
                     {text: 'abc4', value: 'abc4'},
