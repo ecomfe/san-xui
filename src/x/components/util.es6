@@ -57,8 +57,16 @@ export function create(prefix) {
     return cx;
 }
 
+const NodeType = {
+    TEXT: 1,
+    IF: 2,
+    FOR: 3,
+    ELEM: 4,
+    CMPT: 5,
+    SLOT: 6
+};
 export function isComponent(node) {
-    return node && node._type === 'san-cmpt';
+    return node && node._type === NodeType.CMPT;
 }
 
 export function isComponentBuilder(x) {

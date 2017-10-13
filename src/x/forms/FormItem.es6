@@ -5,13 +5,9 @@
 
 import {defineComponent} from 'san';
 
-import {create} from '../components/util';
+import {create, isComponent} from '../components/util';
 
 const cx = create('ui-form-item');
-
-function isComponent(node) {
-    return node && node._type === 'san-cmpt';
-}
 
 function getEventName(tagName) {
     switch (tagName) {
