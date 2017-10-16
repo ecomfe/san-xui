@@ -5,7 +5,7 @@
 
 import _ from 'lodash';
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {Component, defineComponent} from 'san';
 
 export function hasUnit(value) {
     return /%|px|auto/.test(value);
@@ -57,16 +57,8 @@ export function create(prefix) {
     return cx;
 }
 
-const NodeType = {
-    TEXT: 1,
-    IF: 2,
-    FOR: 3,
-    ELEM: 4,
-    CMPT: 5,
-    SLOT: 6
-};
 export function isComponent(node) {
-    return node && node._type === NodeType.CMPT;
+    return node instanceof Component;
 }
 
 export function isComponentBuilder(x) {
