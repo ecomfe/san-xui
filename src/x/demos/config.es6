@@ -41,6 +41,9 @@ export const blocks = [
                 text: 'xui-icon'
             },
             {
+                text: 'xui-tip'
+            },
+            {
                 text: 'xui-table'
             },
             {
@@ -133,9 +136,6 @@ export const blocks = [
             },
             {
                 text: 'xui-viewstep'
-            },
-            {
-                text: 'xui-tip'
             },
             {
                 text: 'xui-loading'
