@@ -4,15 +4,17 @@
  */
 
 import _ from 'lodash';
+import $ from 'jquery';
 import {defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
+import Loading from './Loading';
 
 const cx = create('ui-table');
 
 /* eslint-disable */
 const template = `<template>
-<div class="${cx()}">
+<div class="{{mainClass}}">
     <table cellpadding="0" cellspacing="0" width="100%">
         <thead class="${cx('head')}">
             <tr>
@@ -37,14 +39,7 @@ const template = `<template>
                 </th>
             </tr>
         </thead>
-        <tbody san-if="loading">
-            <tr>
-                <td colSpan="{{columnCount}}">
-                    <slot name="loading">加载中...</slot>
-                </td>
-            </tr>
-        </tbody>
-        <tbody san-else class="${cx('body')}">
+        <tbody class="${cx('body')}">
             <tr san-if="error">
                 <td colSpan="{{columnCount}}">
                     <slot name="error">{{error}}</slot>
@@ -69,13 +64,25 @@ const template = `<template>
             </tr>
         </tbody>
     </table>
+    <div class="${cx('loading')}" s-if="loading"><slot name="loading"><ui-loading /></slot></div>
 </div>
 </template>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
+    components: {
+        'ui-loading': Loading
+    },
     computed: {
+        mainClass() {
+            const klass = cx.mainClass(this);
+            const loading = this.data.get('loading');
+            if (loading) {
+                klass.push(cx('state-loading'));
+            }
+            return klass;
+        },
         columnCount() {
             const schema = this.data.get('schema');
             const select = this.data.get('select');
@@ -169,5 +176,16 @@ export default defineComponent({
         if (selectedIndex && selectedIndex.length) {
             this.dispatchEvent();
         }
+        $(this.el).on('click', 'a[data-command]', e => {
+            // 因为有 head 的存在，rowIndex 是从 1开始的
+            const rowIndex = $(e.target).parents('tr').prop('rowIndex');
+            const type = $(e.target).data('command');
+            const payload = this.data.get(`datasource[${rowIndex - 1}]`);
+            this.fire('command', {type, payload});
+        });
+    },
+
+    disposed() {
+        $(this.el).off('click');
     }
 });

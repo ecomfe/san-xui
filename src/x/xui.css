@@ -123,38 +123,53 @@
 }
 
 /* ui-table */
-.ui-table-hcell-sel,
-.ui-table-cell-sel {
+.ui-table-x {
+    position: relative;
+}
+.ui-table-x.ui-table-state-loading .ui-table-body {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+.ui-table-x .ui-table-hcell-sel,
+.ui-table-x .ui-table-cell-sel {
     width: 30px;
 }
-.ui-table-hcell:last-child .ui-table-hcell-text {
+.ui-table-x .ui-table-hcell:last-child .ui-table-hcell-text {
     border-right: none;
 }
 
-.ui-table-hcell-text {
+.ui-table-x .ui-table-hcell-text {
     border-right-color: #fff;
     font-size: 12px;
 }
 
-.ui-table-hcell-sel .ui-table-hcell-text {
+.ui-table-x .ui-table-hcell-sel .ui-table-hcell-text {
     border-right: none;
 }
 
-.ui-table-hcell-sort:hover {
+.ui-table-x .ui-table-hcell-sort:hover {
     cursor: pointer;
 }
 
-.ui-table-row {
+.ui-table-x .ui-table-row {
     border-bottom: 1px solid #eceff8;
 }
-.ui-table-row:hover {
+.ui-table-x .ui-table-row:hover {
     background: #F5FBFF;
 }
 
-.ui-table-error,
-.ui-table-loading {
+.ui-table-x .ui-table-error,
+.ui-table-x .ui-table-loading {
     text-align: center;
     padding: 25px 0;
+}
+.ui-table-x .ui-table-loading {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    top: 50px;
 }
 
 /* ui-bos-uploader */
@@ -255,10 +270,10 @@
 }
 
 /* ui-textbox */
-.ui-textbox input {
+.ui-textbox-x input {
     line-height: 1;
 }
-.ui-textbox textarea {
+.ui-textbox-x textarea {
     line-height: 1.5;
 }
 .ui-textbox-addon {
@@ -280,6 +295,7 @@
 /* ui-loading */
 .ui-loading-x {
     background: url(https://cdn.bdstatic.com/console/dist/009bbae/dep/inf-style/0.0.0/img/process.gif) center center no-repeat;
+    margin: 0 auto;
 }
 
 /* ui-tab */
