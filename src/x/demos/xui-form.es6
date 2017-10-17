@@ -23,6 +23,12 @@ const formValidator = new Schema({
         {min: 6, max: 32, message: '用户名长度必须是 6 到 32 个字符之间'},
         rules.noInvalidChar('用户名')
     ],
+    nativeInput: [
+        {required: true, message: '必填'}
+    ],
+    nativeSelect: [
+        {required: true, message: '必填'}
+    ],
     verifyCode: [
         {required: true, message: '短信验证码必填'}
     ],
@@ -50,6 +56,16 @@ const formValidator = new Schema({
 const template = `<template>
 <x-row label="[default]">
     <xui-form rules="{{rules}}" formData="{=formData=}" errors="{=formErrors=}">
+        <xui-item name="nativeInput">
+            <input type="text" value="{=formData.nativeInput=}" />
+        </xui-item>
+        <xui-item name="nativeSelect">
+            <select value="{=formData.nativeSelect=}">
+                <option value="">--</option>
+                <option value="foo">Foo</option>
+                <option value="bar">Bar</option>
+            </select>
+        </xui-item>
         <xui-item name="userName"><xui-textbox
             placeholder="用户名"
             type="text"

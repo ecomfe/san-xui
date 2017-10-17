@@ -48,16 +48,11 @@ export default defineComponent({
             return;
         }
         const child = this.slotChilds[0].childs[0];
-        if (!isComponent(child)
-            && /input|select|textarea/.test(child.tagName)) {
-            const valueExpr = child.props.get('value');
-            if (!valueExpr) {
-                return;
-            }
+        if (!isComponent(child) && /input|select|textarea/.test(child.tagName)) {
             child._onEl(getEventName(child.tagName), () => {
                 this.dispatch('form-element-changed', {
                     name: name,
-                    value: child.evalExpr(valueExpr.expr)
+                    value: child.el.value
                 });
             });
         }
