@@ -28,7 +28,7 @@ const template = `<template>
                 </th>
                 <th class="${cx('hcell', 'hcell-sel')}" san-if="select === 'single'">
                 </th>
-                <th class="${cx('hcell')} {{item.labelClassName}} {{item.sortable ? '${cx('hcell-sort')}' : ''}}"
+                <th class="{{item | hcellClass}}"
                     style="{{item.width ? 'width:' + item.width + 'px' : ''}}" san-for="item in schema">
                     <div class="${cx('hcell-text')}">
                         {{item.label}}
@@ -50,7 +50,7 @@ const template = `<template>
                     <slot name="error">{{error}}</slot>
                 </td>
             </tr>
-            <tr san-else class="${cx('row')} {{row % 2 === 0 ? '${cx('row-even')}' : '${cx('row-odd')}'}}" san-for="item, row in datasource">
+            <tr san-else class="{{item | rowClass(row)}}" san-for="item, row in datasource">
                 <td class="${cx('cell', 'cell-sel')}" san-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input checked="{= selectedIndex =}" value="{{row}}" type="checkbox" class="${cx('multi-select')}" />
@@ -63,7 +63,7 @@ const template = `<template>
                 </td>
                 <td class="${cx('cell')}" san-for="col in schema">
                     <div class="${cx('cell-text')}">
-                        {{item|content(col.name, col, row)|raw}}
+                        {{item | tableCell(col.name, col, row) | raw}}
                     </div>
                 </td>
             </tr>
@@ -103,7 +103,22 @@ export default defineComponent({
     },
 
     filters: {
-        content(item, key, col, row) {
+        rowClass(item, row) {
+            const klass = [cx('row')];
+            klass.push(cx(row % 2 === 0 ? 'row-even' : 'row-odd'));
+            return klass;
+        },
+        hcellClass(item) {
+            const klass = [cx('hcell')];
+            if (item.sortable) {
+                klass.push(cx('hcell-sort'));
+            }
+            if (item.labelClassName) {
+                klass.push(item.labelClassName);
+            }
+            return klass;
+        },
+        tableCell(item, key, col, row) {
             const cellBuilder = this.data.get('cellBuilder');
             if (typeof cellBuilder === 'function') {
                 return cellBuilder(item, key, col, row);
@@ -141,7 +156,6 @@ export default defineComponent({
     },
 
     inited() {
-        this.pendingComps = [];
         const selectedIndex = this.data.get('selectedIndex');
         if (selectedIndex && selectedIndex.length) {
             // 如果是 number 类型的话，匹配不上，需要转成 string 类型
