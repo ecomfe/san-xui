@@ -181,7 +181,7 @@ export default defineComponent({
             const rowIndex = $(e.target).parents('tr').prop('rowIndex');
             const type = $(e.target).data('command');
             const payload = this.data.get(`datasource[${rowIndex - 1}]`);
-            this.fire('command', {type, payload});
+            this.fire('command', {type, payload, rowIndex});
         });
     },
 

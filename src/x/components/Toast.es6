@@ -13,7 +13,7 @@ const kToastContainerId = cx('container') + '-' + new Date().getTime();
 /* eslint-disable */
 const template = `<template>
     <div class="{{mainClass}}" style="{{style}}">
-        {{message}}
+        {{message | raw}}
     </div>
 </template>`;
 /* eslint-enable */
@@ -64,8 +64,8 @@ function getToastContainer() {
 }
 
 function toastBuilder(level) {
-    return message => {
-        const comp = new Toast({data: {message, level}});
+    return (message, duration = 5000) => {
+        const comp = new Toast({data: {message, level, duration}});
         comp.attach(getToastContainer());
     };
 }

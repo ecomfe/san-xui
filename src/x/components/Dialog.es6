@@ -24,8 +24,8 @@ const template = `<template>
     </div>
     <div class="${cx('foot', 'foot-panel')}" san-if="foot">
         <slot name="foot">
+            <ui-button on-click="onConfirmDialog" skin="primary">确认</ui-button>
             <ui-button on-click="onCloseDialog">取消</ui-button>
-            <ui-button skin="primary">确认</ui-button>
         </slot>
     </div>
 </div>
@@ -58,6 +58,11 @@ export default defineComponent({
                 klass.push('state-draggable');
                 klass.push(cx('draggable'));
             }
+            const skin = this.data.get('skin');
+            if (skin) {
+                klass.push('skin-' + skin);
+                klass.push('skin-' + skin + '-dialog');
+            }
             return klass;
         },
         maskStyle() {
@@ -81,6 +86,10 @@ export default defineComponent({
     onCloseDialog() {
         this.data.set('open', false);
         this.fire('close');
+    },
+    onConfirmDialog() {
+        this.data.set('open', false);
+        this.fire('confirm');
     },
     onClickMask() {
         if (this.data.get('closeOnClickMask')) {

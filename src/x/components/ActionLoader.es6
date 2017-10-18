@@ -41,7 +41,7 @@ function attachAction(e) {
         action.on('*', delegateActionEvent, this);
     }
 
-    this.fire('actionattach');
+    this.fire('actionattach', e);
 }
 
 function notifyActionLoadComplete(e) {
@@ -51,7 +51,7 @@ function notifyActionLoadComplete(e) {
 
     this.data.set('loading', false);
     this.data.set('error', null);
-    this.fire('actionloaded');
+    this.fire('actionloaded', e);
 }
 
 function notifyActionLoadFailed(e) {
@@ -77,7 +77,7 @@ function notifyActionLoadAborted(e) {
 
     this.data.set('loading', false);
     this.data.set('error', new Error('Action Load Aborted'));
-    this.fire('actionloadabort');
+    this.fire('actionloadabort', e);
 }
 
 export default defineComponent({
