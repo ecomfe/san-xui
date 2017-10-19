@@ -90,7 +90,7 @@ export default defineComponent({
                 ],
                 datasource: [
                     {name: 'foo', age: 10, gender: 'M'},
-                    {name: 'bar', age: 20, gender: 'F'},
+                    {name: 'bar', age: 20, gender: 'F', xui__disabled: true},
                     {name: 'xxx', age: 20, gender: '未知'}
                 ]
             }

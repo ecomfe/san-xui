@@ -21,7 +21,7 @@ const template = `<template>
             <tr>
                 <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('hcell-text')}">
-                        <input disabled="{{loading}}"
+                        <input disabled="{{disabledSelectAll || loading}}"
                             checked="{= selectAll =}"
                             on-click="onSelectAllClicked($event)"
                             value="all"
@@ -55,12 +55,21 @@ const template = `<template>
             <tr s-else class="{{item | rowClass(row)}}" s-for="item, row in datasource">
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
-                        <input checked="{= selectedIndex =}" value="{{row}}" type="checkbox" class="${cx('multi-select')}" />
+                        <input disabled="{=item.xui__disabled=}"
+                            checked="{= selectedIndex =}"
+                            value="{{row}}"
+                            type="checkbox"
+                            class="${cx('multi-select')}" />
                     </div>
                 </td>
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'single'">
                     <div class="${cx('cell-text', 'cell-sel')}">
-                        <input checked="{= selectedIndex =}" value="{{row}}" name="{{radioName}}" type="radio" class="${cx('single-select')}" />
+                        <input disabled="{=item.xui__disabled=}"
+                            checked="{= selectedIndex =}"
+                            value="{{row}}"
+                            name="{{radioName}}"
+                            type="radio"
+                            class="${cx('single-select')}" />
                     </div>
                 </td>
                 <td class="${cx('cell')}" s-for="col in schema">
@@ -149,6 +158,7 @@ export default defineComponent({
             selectedIndex: [],
             cellBuilder: null,
             select: 'none',
+            disabledSelectAll: false,
             radioName: `e${nextZindex()}`,
             loading: false,
             emptyText: '暂无数据',
