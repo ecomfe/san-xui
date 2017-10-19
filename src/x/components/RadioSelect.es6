@@ -67,6 +67,7 @@ export default defineComponent({
         }
         this.data.set('value', item.value);
         this.data.set('selectedIndex', selectedIndex);
+        this.fire('change', item);
     }
 });
 
