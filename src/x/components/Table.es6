@@ -41,8 +41,13 @@ const template = `<template>
         </thead>
         <tbody class="${cx('body')}">
             <tr san-if="error">
-                <td colSpan="{{columnCount}}">
+                <td colSpan="{{columnCount}}" class="${cx('error')}">
                     <slot name="error">{{error}}</slot>
+                </td>
+            </tr>
+            <tr san-elif="!loading && !datasource.length">
+                <td colSpan="{{columnCount}}" class="${cx('empty')}">
+                    <slot name="empty">{{emptyText}}</slot>
                 </td>
             </tr>
             <tr san-else class="{{item | rowClass(row)}}" san-for="item, row in datasource">
@@ -143,6 +148,7 @@ export default defineComponent({
             select: 'none',
             radioName: `e${nextZindex()}`,
             loading: false,
+            emptyText: '暂无数据',
             error: null
         };
     },
