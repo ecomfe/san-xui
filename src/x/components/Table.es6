@@ -9,6 +9,7 @@ import {defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Loading from './Loading';
+import TableFilter from './TableFilter';
 
 const cx = create('ui-table');
 
@@ -18,7 +19,7 @@ const template = `<template>
     <table cellpadding="0" cellspacing="0" width="100%">
         <thead class="${cx('head')}">
             <tr>
-                <th class="${cx('hcell', 'hcell-sel')}" san-if="select === 'multi'">
+                <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('hcell-text')}">
                         <input disabled="{{loading}}"
                             checked="{= selectAll =}"
@@ -28,40 +29,41 @@ const template = `<template>
                             class="${cx('select-all')}" />
                     </div>
                 </th>
-                <th class="${cx('hcell', 'hcell-sel')}" san-if="select === 'single'">
+                <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'single'">
                 </th>
                 <th class="{{item | hcellClass}}"
-                    style="{{item.width ? 'width:' + item.width + 'px' : ''}}" san-for="item in schema">
+                    style="{{item.width ? 'width:' + item.width + 'px' : ''}}" s-for="item in schema">
                     <div class="${cx('hcell-text')}">
                         {{item.label}}
-                        <div class="${cx('hsort')}" san-if="item.sortable"></div>
+                        <div class="${cx('hsort')}" s-if="item.sortable"></div>
+                        <ui-table-filter on-change="onFilter($event, item)" s-if="item.filter" options="{{item.filter.options}}" />
                     </div>
                 </th>
             </tr>
         </thead>
         <tbody class="${cx('body')}">
-            <tr san-if="error">
+            <tr s-if="error">
                 <td colSpan="{{columnCount}}" class="${cx('error')}">
                     <slot name="error">{{error}}</slot>
                 </td>
             </tr>
-            <tr san-elif="!loading && !datasource.length">
+            <tr s-elif="!loading && !datasource.length">
                 <td colSpan="{{columnCount}}" class="${cx('empty')}">
                     <slot name="empty">{{emptyText}}</slot>
                 </td>
             </tr>
-            <tr san-else class="{{item | rowClass(row)}}" san-for="item, row in datasource">
-                <td class="${cx('cell', 'cell-sel')}" san-if="select === 'multi'">
+            <tr s-else class="{{item | rowClass(row)}}" s-for="item, row in datasource">
+                <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input checked="{= selectedIndex =}" value="{{row}}" type="checkbox" class="${cx('multi-select')}" />
                     </div>
                 </td>
-                <td class="${cx('cell', 'cell-sel')}" san-if="select === 'single'">
+                <td class="${cx('cell', 'cell-sel')}" s-if="select === 'single'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input checked="{= selectedIndex =}" value="{{row}}" name="{{radioName}}" type="radio" class="${cx('single-select')}" />
                     </div>
                 </td>
-                <td class="${cx('cell')}" san-for="col in schema">
+                <td class="${cx('cell')}" s-for="col in schema">
                     <div class="${cx('cell-text')}">
                         {{item | tableCell(col.name, col, row) | raw}}
                     </div>
@@ -77,6 +79,7 @@ const template = `<template>
 export default defineComponent({
     template,
     components: {
+        'ui-table-filter': TableFilter,
         'ui-loading': Loading
     },
     computed: {
@@ -175,6 +178,12 @@ export default defineComponent({
             this.data.set('selectedIndex', _.map(selectedIndex, String));
         }
         this.watch('selectedIndex', () => this.dispatchEvent());
+    },
+
+    onFilter(filterItem, colItem) {
+        const key = colItem.name;
+        const value = filterItem.value;
+        this.fire('filter', {[key]: value});
     },
 
     attached() {
