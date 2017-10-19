@@ -102,7 +102,7 @@ export default defineComponent({
             document.body.appendChild(this.el);
         }
     },
-    disposed() {
+    detached() {
         $(this.el).remove();
     }
 });
