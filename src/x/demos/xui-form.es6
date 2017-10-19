@@ -11,6 +11,8 @@ import Toast from 'inf-ui/x/components/Toast';
 import TextBox from 'inf-ui/x/components/TextBox';
 import SMSCodeBox from 'inf-ui/x/components/SMSCodeBox';
 import Button from 'inf-ui/x/components/Button';
+import Select from 'inf-ui/x/components/Select';
+import BoxGroup from 'inf-ui/x/components/BoxGroup';
 
 import Row from './Row';
 import * as rules from './rules';
@@ -27,6 +29,12 @@ const formValidator = new Schema({
         {required: true, message: '必填'}
     ],
     nativeSelect: [
+        {required: true, message: '必填'}
+    ],
+    select: [
+        {required: true, message: '必填'}
+    ],
+    boxgroup: [
         {required: true, message: '必填'}
     ],
     verifyCode: [
@@ -83,6 +91,18 @@ const template = `<template>
             type="number"
             name="mobile"
             value="{=formData.mobile=}" /></xui-item>
+        <xui-item name="select">
+            <xui-select
+                value="{=formData.select=}"
+                datasource="{{select.datasource}}" />
+        </xui-item>
+        <xui-item name="boxgroup">
+            <xui-boxgroup
+                box-type="checkbox"
+                datasource="{{boxgroup.datasource}}"
+                value="{=formData.boxgroup=}"
+                />
+        </xui-item>
         <xui-item name="verifyCode">
             <xui-smscode width="{{110}}" />
         </xui-item>
@@ -103,6 +123,8 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-select': Select,
+        'xui-boxgroup': BoxGroup,
         'xui-textbox': TextBox,
         'xui-smscode': SMSCodeBox,
         'xui-button': Button,
@@ -122,6 +144,8 @@ export default defineComponent({
                 && formData.confirmPassword
                 && formData.mobile
                 && formData.verifyCode
+                && formData.select
+                && formData.boxgroup
                 && !formErrors;
         }
     },
@@ -130,7 +154,21 @@ export default defineComponent({
             loading: false,
             rules: formValidator,
             formData: null,
-            formErrors: null
+            formErrors: null,
+            select: {
+                datasource: [
+                    {text: 'Empty', value: ''},
+                    {text: 'foo', value: 'foo'},
+                    {text: 'bar', value: 'bar'}
+                ]
+            },
+            boxgroup: {
+                datasource: [
+                    {text: 'foo', value: 'foo'},
+                    {text: 'bar', value: 'bar'},
+                    {text: '123', value: '123', disabled: true},
+                ]
+            }
         };
     },
     doSubmit() {

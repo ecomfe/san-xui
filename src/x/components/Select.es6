@@ -188,7 +188,7 @@ export default defineComponent({
         this.data.set('value', item.value);
         this.data.set('active', false);
 
-        this.fire('change', {selectedItem: item});
+        this.fire('change', item);
     },
     onToggleAll() {
         const checkedAll = this.data.get('checkedAll');

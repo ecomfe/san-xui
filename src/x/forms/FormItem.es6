@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {create, isComponent} from '../components/util';
 
@@ -57,10 +57,13 @@ export default defineComponent({
             });
         }
         else if (isComponent(child)) {
+            child.on('change', ({value}) => {
+                this.dispatch('form-element-changed', {name, value});
+            });
             child.on('input', () => {
-                this.dispatch('form-element-changed', {
-                    name: name,
-                    value: child.data.get('value')
+                nextTick(() => {
+                    const value = child.data.get('value');
+                    this.dispatch('form-element-changed', {name, value});
                 });
             });
         }

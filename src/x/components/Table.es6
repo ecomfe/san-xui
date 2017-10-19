@@ -22,7 +22,7 @@ const template = `<template>
                 <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('hcell-text')}">
                         <input disabled="{{disabledSelectAll || loading}}"
-                            checked="{= selectAll =}"
+                            checked="{=selectAll=}"
                             on-click="onSelectAllClicked($event)"
                             value="all"
                             type="checkbox"
@@ -56,7 +56,7 @@ const template = `<template>
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input disabled="{=item.xui__disabled=}"
-                            checked="{= selectedIndex =}"
+                            checked="{=selectedIndex=}"
                             value="{{row}}"
                             type="checkbox"
                             class="${cx('multi-select')}" />
@@ -65,7 +65,7 @@ const template = `<template>
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'single'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input disabled="{=item.xui__disabled=}"
-                            checked="{= selectedIndex =}"
+                            checked="{=selectedIndex=}"
                             value="{{row}}"
                             name="{{radioName}}"
                             type="radio"
