@@ -3,7 +3,7 @@
  * @file components/ActionLoader.es6
  * @author leeight
  */
-import {defineComponent} from 'san';
+import {Component, defineComponent} from 'san';
 import Deferred from 'er/Deferred';
 import events from 'er/events';
 import MiniEvent from 'mini-event';
@@ -173,7 +173,7 @@ export default defineComponent({
         }
     },
 
-    disposed() {
+    dispose(dontDetach) {
         this.disposeAction();
         events.un('enteraction', attachAction, this);
         events.un('enteractioncomplete', notifyActionLoadComplete, this);
@@ -182,5 +182,6 @@ export default defineComponent({
         events.un('actionfail', notifyActionLoadFailed, this);
         events.un('enteractionfail', notifyActionLoadFailed, this);
         events.un('actionabort', notifyActionLoadAborted, this);
+        Component.prototype.dispose.call(this, dontDetach);
     }
 });

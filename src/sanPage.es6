@@ -27,11 +27,7 @@ class SanView extends View {
     }
 
     dispose() {
-        try {
-            this.page.dispose();
-        }
-        catch (ex) {}
-
+        this.page.dispose();
         const container = this.getContainerElement();
         if (container) {
             container.innerHTML = '';
