@@ -3,7 +3,7 @@
  * @author leeight
  */
 import $ from 'jquery';
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {nextZindex, create} from './util';
 
@@ -38,6 +38,8 @@ export default defineComponent({
             autoHide: true,
             // 是否自动定位到 parentComponent.el 的下面
             autoPosition: true,
+            width: null,    // 外部传进来的宽度值
+            align: 'left',  // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
             offsetTop: 0,   // 有时候自动定位不准确，需要修正一下
             offsetLeft: 0,  // 有时候自动定位不准确，需要修正一下
             style: {}
@@ -50,7 +52,7 @@ export default defineComponent({
         this.watch('open', open => {
             const autoPosition = this.data.get('autoPosition');
             if (autoPosition && open) {
-                this.selfPosition();
+                nextTick(() => this.selfPosition());
             }
         });
     },
@@ -78,9 +80,14 @@ export default defineComponent({
         const $pce = $(pc.el);
         const {left, top} = $pce.offset();
         const height = $pce.height();
+        const width = $pce.width();
+        const layerWidth = this.data.get('width') || $(this.el).width();
         const offsetTop = this.data.get('offsetTop');
         const offsetLeft = this.data.get('offsetLeft');
-        const leftValue = `${left + offsetLeft}px`;
+        const align = this.data.get('align');
+        const leftValue = align === 'left'
+            ? `${left + offsetLeft}px`
+            : `${left - layerWidth + width + offsetLeft}px`;
         const topValue = `${top + height + offsetTop}px`;
         if (kz) {
             this.data.set('style.left', leftValue);
@@ -94,7 +101,7 @@ export default defineComponent({
             });
         }
     },
-    disposed() {
+    detached() {
         if (this.autoHideHandler) {
             $(document).off('mousedown', this.autoHideHandler);
         }

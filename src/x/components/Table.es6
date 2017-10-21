@@ -7,7 +7,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import {defineComponent} from 'san';
 
-import {create, nextZindex} from './util';
+import {create, hasUnit, nextZindex} from './util';
 import Loading from './Loading';
 import TableFilter from './TableFilter';
 
@@ -31,12 +31,13 @@ const template = `<template>
                 </th>
                 <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'single'">
                 </th>
-                <th class="{{item | hcellClass}}"
-                    style="{{item.width ? 'width:' + item.width + 'px' : ''}}" s-for="item in schema">
+                <th class="{{col | hcellClass}}"
+                    style="{{col | cellStyle}}"
+                    s-for="col in tableColumns">
                     <div class="${cx('hcell-text')}">
-                        {{item.label}}
-                        <div class="${cx('hsort')}" s-if="item.sortable"></div>
-                        <ui-table-filter on-change="onFilter($event, item)" s-if="item.filter" options="{{item.filter.options}}" />
+                        {{col.label}}
+                        <div class="${cx('hsort')}" s-if="col.sortable"></div>
+                        <ui-table-filter on-change="onFilter($event, col)" s-if="col.filter" options="{{col.filter.options}}" />
                     </div>
                 </th>
             </tr>
@@ -52,12 +53,12 @@ const template = `<template>
                     <slot name="empty">{{emptyText}}</slot>
                 </td>
             </tr>
-            <tr s-else class="{{item | rowClass(row)}}" s-for="item, row in datasource">
+            <tr s-else class="{{item | rowClass(rowIndex)}}" s-for="item, rowIndex in datasource">
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input disabled="{=item.xui__disabled=}"
                             checked="{=selectedIndex=}"
-                            value="{{row}}"
+                            value="{{rowIndex}}"
                             type="checkbox"
                             class="${cx('multi-select')}" />
                     </div>
@@ -66,15 +67,17 @@ const template = `<template>
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input disabled="{=item.xui__disabled=}"
                             checked="{=selectedIndex=}"
-                            value="{{row}}"
+                            value="{{rowIndex}}"
                             name="{{radioName}}"
                             type="radio"
                             class="${cx('single-select')}" />
                     </div>
                 </td>
-                <td class="${cx('cell')}" s-for="col in schema">
+                <td class="${cx('cell')}"
+                    style="{{col | cellStyle}}"
+                    s-for="col in tableColumns">
                     <div class="${cx('cell-text')}">
-                        {{item | tableCell(col.name, col, row) | raw}}
+                        {{item | tableCell(col.name, col, rowIndex) | raw}}
                     </div>
                 </td>
             </tr>
@@ -100,11 +103,15 @@ export default defineComponent({
             }
             return klass;
         },
-        columnCount() {
+        tableColumns() {
             const schema = this.data.get('schema');
+            const tableColumns = _.filter(schema, col => !col.xui__hidden);
+            return tableColumns;
+        },
+        columnCount() {
+            const tableColumns = this.data.get('tableColumns');
             const select = this.data.get('select');
-
-            return schema.length + (/^(multi|single)$/.test(select) ? 1 : 0);
+            return tableColumns.length + (/^(multi|single)$/.test(select) ? 1 : 0);
         },
         selectAll() {
             const loading = this.data.get('loading');
@@ -127,10 +134,18 @@ export default defineComponent({
     },
 
     filters: {
-        rowClass(item, row) {
+        rowClass(item, rowIndex) {
             const klass = [cx('row')];
-            klass.push(cx(row % 2 === 0 ? 'row-even' : 'row-odd'));
+            klass.push(cx(rowIndex % 2 === 0 ? 'row-even' : 'row-odd'));
             return klass;
+        },
+        cellStyle(item) {
+            const style = {};
+            // FIXME(leeight) 如果 item.width 发生了变化，实际上这里不会被调用的
+            if (item.width != null) {
+                style.width = hasUnit(item.width) ? item.width : item.width + 'px';
+            }
+            return style;
         },
         hcellClass(item) {
             const klass = [cx('hcell')];
@@ -142,10 +157,10 @@ export default defineComponent({
             }
             return klass;
         },
-        tableCell(item, key, col, row) {
+        tableCell(item, key, col, rowIndex) {
             const cellBuilder = this.data.get('cellBuilder');
             if (typeof cellBuilder === 'function') {
-                return cellBuilder(item, key, col, row);
+                return cellBuilder(item, key, col, rowIndex);
             }
             return item[key];
         }

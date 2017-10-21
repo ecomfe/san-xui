@@ -5,6 +5,8 @@
 
 import {defineComponent} from 'san';
 import Table from 'inf-ui/x/components/Table';
+import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
+import BoxGroup from 'inf-ui/x/components/BoxGroup';
 
 import Row from './Row';
 
@@ -24,6 +26,14 @@ const template = `<template>
 </x-row>
 
 <x-row label="select=multi">
+    <xui-table-column-toggle
+        on-change="toggleTableColumns"
+        layer-align="right"
+        value="{=tct.value=}"
+        datasource="{{tct.datasource}}"
+        />
+    <br>
+    <br>
     <xui-table select="multi"
         schema="{{table.schema}}"
         loading="{{table.loading}}"
@@ -64,10 +74,20 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
-        'xui-table': Table
+        'xui-boxgroup': BoxGroup,
+        'xui-table': Table,
+        'xui-table-column-toggle': TableColumnToggle
     },
     initData() {
         return {
+            tct: {
+                value: ['name', 'age', 'gender'],
+                datasource: [
+                    {text: 'name', value: 'name'},
+                    {text: 'age', value: 'age'},
+                    {text: 'gender', value: 'gender'}
+                ]
+            },
             table: {
                 selectedIndex: [1],
                 schema: [
@@ -98,5 +118,14 @@ export default defineComponent({
     },
     onTableRowSelected() {
         console.log('Table row selected');
+    },
+    toggleTableColumns() {
+        const columnNames = this.data.get('tct.value');
+        const schema = this.data.get('table.schema');
+        for (let i = 0; i < schema.length; i++) {
+            // 如果不存在，说明需要隐藏
+            const xuiHidden = columnNames.indexOf(schema[i].name) === -1;
+            this.data.set(`table.schema[${i}].xui__hidden`, xuiHidden);
+        }
     }
 });
