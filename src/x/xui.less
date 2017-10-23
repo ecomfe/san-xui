@@ -833,3 +833,24 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+/* ui-frozen-column-table */
+.ui-frozen-column-table .ui-table-hcell {
+    white-space: nowrap;
+}
+.ui-frozen-column-table-body > table {
+    table-layout: fixed;
+}
+.ui-frozen-column-table-cell {
+    vertical-align: top;
+}
+.ui-frozen-column-table-cell-left .ui-table-x {
+    margin-right: 0;
+}
+.ui-frozen-column-table-cell-right {
+    overflow-x: scroll;
+    overflow-y: visible;
+}
+.ui-frozen-column-table-cell-right .ui-table-head th:first-child > .ui-table-hcell-text {
+    border-left: 1px solid #fff
+}

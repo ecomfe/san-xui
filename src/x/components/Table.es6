@@ -14,9 +14,8 @@ import TableFilter from './TableFilter';
 const cx = create('ui-table');
 
 /* eslint-disable */
-const template = `<template>
-<div class="{{mainClass}}">
-    <table cellpadding="0" cellspacing="0" width="100%">
+const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
+    <table cellpadding="0" cellspacing="0" width="{{tableWidth}}">
         <thead class="${cx('head')}">
             <tr>
                 <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'multi'">
@@ -73,7 +72,7 @@ const template = `<template>
                             class="${cx('single-select')}" />
                     </div>
                 </td>
-                <td class="${cx('cell')}"
+                <td class="{{col | cellClass}}"
                     style="{{col | cellStyle}}"
                     s-for="col in tableColumns">
                     <div class="${cx('cell-text')}">
@@ -84,8 +83,7 @@ const template = `<template>
         </tbody>
     </table>
     <div class="${cx('loading')}" s-if="loading"><slot name="loading"><ui-loading /></slot></div>
-</div>
-</template>`;
+</div>`;
 /* eslint-enable */
 
 export default defineComponent({
@@ -95,15 +93,14 @@ export default defineComponent({
         'ui-loading': Loading
     },
     computed: {
+        mainStyle() {
+            return cx.mainStyle(this);
+        },
         mainClass() {
             const klass = cx.mainClass(this);
             const loading = this.data.get('loading');
             if (loading) {
                 klass.push(cx('state-loading'));
-            }
-            const freezed = this.data.get('freezed');
-            if (freezed) {
-                klass.push(cx('state-freezed'));
             }
             return klass;
         },
@@ -151,13 +148,14 @@ export default defineComponent({
             }
             return style;
         },
+        cellClass(item) {
+            const klass = [cx('cell')];
+            return klass;
+        },
         hcellClass(item) {
             const klass = [cx('hcell')];
             if (item.sortable) {
                 klass.push(cx('hcell-sort'));
-            }
-            if (item.freezed) {
-                klass.push(cx('hcell-freezed'));
             }
             if (item.labelClassName) {
                 klass.push(item.labelClassName);
@@ -179,11 +177,11 @@ export default defineComponent({
             datasource: [],
             selectedIndex: [],
             cellBuilder: null,
+            tableWidth: '100%',
             select: 'none',
             disabledSelectAll: false,
             radioName: `e${nextZindex()}`,
             loading: false,
-            freezed: false,
             emptyText: '暂无数据',
             error: null
         };
