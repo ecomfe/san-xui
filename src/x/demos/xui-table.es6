@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 import Table from 'inf-ui/x/components/Table';
 import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
+import SearchBox from 'inf-ui/x/components/SearchBox';
 import BoxGroup from 'inf-ui/x/components/BoxGroup';
 
 import Row from './Row';
@@ -26,14 +27,16 @@ const template = `<template>
 </x-row>
 
 <x-row label="select=multi">
-    <xui-table-column-toggle
-        on-change="toggleTableColumns"
-        layer-align="right"
-        value="{=tct.value=}"
-        datasource="{{tct.datasource}}"
-        />
-    <br>
-    <br>
+    <div class="xui-table-demo-toolbar">
+        <xui-searchbox search-btn="{{false}}" />
+        <xui-table-column-toggle
+            on-change="toggleTableColumns"
+            layer-align="right"
+            value="{=tct.value=}"
+            datasource="{{tct.datasource}}"
+            />
+    </div>
+
     <xui-table select="multi"
         schema="{{table.schema}}"
         loading="{{table.loading}}"
@@ -75,6 +78,7 @@ export default defineComponent({
     components: {
         'x-row': Row,
         'xui-boxgroup': BoxGroup,
+        'xui-searchbox': SearchBox,
         'xui-table': Table,
         'xui-table-column-toggle': TableColumnToggle
     },

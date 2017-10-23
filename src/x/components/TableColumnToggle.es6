@@ -13,7 +13,7 @@ const cx = create('ui-table-column-toggle');
 const cx2 = create('ui-select');
 
 /* eslint-disable */
-const template = `<template class="${cx()}">
+const template = `<div class="${cx()}">
 <ui-button disabled="{{disabled}}" icon="iot-device-list" on-click="toggleLayer" />
 <ui-layer
     open="{=active=}"
@@ -36,7 +36,7 @@ const template = `<template class="${cx()}">
         </li>
     </ul>
 </ui-layer>
-</template>`;
+</div>`;
 /* eslint-enable */
 
 export default defineComponent({
@@ -51,8 +51,8 @@ export default defineComponent({
             disabled: false,
             layerAlign: 'left',
             layerWidth: 200,
-            layerOffsetLeft: -5,
-            layerOffsetTop: 10,
+            layerOffsetLeft: 0,
+            layerOffsetTop: 0,
             // 0, 1, 2, 3
             value: [],
             // item.text, item.value, item.disabled
