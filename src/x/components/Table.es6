@@ -101,6 +101,10 @@ export default defineComponent({
             if (loading) {
                 klass.push(cx('state-loading'));
             }
+            const freezed = this.data.get('freezed');
+            if (freezed) {
+                klass.push(cx('state-freezed'));
+            }
             return klass;
         },
         tableColumns() {
@@ -152,6 +156,9 @@ export default defineComponent({
             if (item.sortable) {
                 klass.push(cx('hcell-sort'));
             }
+            if (item.freezed) {
+                klass.push(cx('hcell-freezed'));
+            }
             if (item.labelClassName) {
                 klass.push(item.labelClassName);
             }
@@ -176,6 +183,7 @@ export default defineComponent({
             disabledSelectAll: false,
             radioName: `e${nextZindex()}`,
             loading: false,
+            freezed: false,
             emptyText: '暂无数据',
             error: null
         };
