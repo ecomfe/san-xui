@@ -112,14 +112,14 @@ export default defineComponent({
                 schema: [
                     {name: 'name', label: '标签/tag', freezed: true, width: 200},
                     {name: 'DCC', label: '专属实例', freezed: true, width: 100},
-                    {name: 'BCC', label: 'BCC实例', width: 200},
-                    {name: 'abc', label: '专属子XX', width: 200},
-                    {name: 'CDS', label: '云磁盘', width: 200},
-                    {name: 'EIP', label: '弹性公网', width: 200},
-                    {name: 'BOS', label: '云存储', width: 200},
-                    {name: 'RDS', label: '关系型数据库', width: 200},
-                    {name: 'SG', label: '安全组', width: 200},
-                    {name: 'BLB', label: '负载均衡'}
+                    {name: 'BCC', label: 'BCC实例', width: 100},
+                    {name: 'abc', label: '专属子XX', width: 120},
+                    {name: 'CDS', label: '云磁盘', width: 130},
+                    {name: 'EIP', label: '弹性公网', width: 140},
+                    {name: 'BOS', label: '云存储', width: 150},
+                    {name: 'RDS', label: '关系型数据库', width: 500},
+                    {name: 'SG', label: '安全组', width: 500},
+                    {name: 'BLB', label: '负载均衡', width: 100}
                 ],
                 datasource: [
                     {name: 'tag1', DCC: 1, BCC: 1, abc: 1, CDS: 1, EIP: 1, BOS: 1, RDS: 1, SG: 1, BLB: 1},

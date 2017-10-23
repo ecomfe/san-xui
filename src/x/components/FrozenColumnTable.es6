@@ -96,6 +96,11 @@ export default defineComponent({
             for (let i = 0; i < schema.length; i++) {
                 const col = schema[i];
                 if (col.freezed) {
+                    if (col.width == null || hasUnit(col.width)) {
+                        // 必须要有宽度，如果没有设置，添加一个默认值
+                        // 不能设置 xx%, 40px 之类的，必须是一个 number 类型
+                        col.width = 100;
+                    }
                     leftSchema.push(col);
                 }
             }
@@ -142,15 +147,6 @@ export default defineComponent({
             }
         }
     },
-    inited() {
-        _.each(this.data.get('schema'), col => {
-            if (col.width == null || hasUnit(col.width)) {
-                // 必须要有宽度，如果没有设置，添加一个默认值
-                // 不能设置 xx%, 40px 之类的，必须是一个 number 类型
-                col.width = 100;
-            }
-        });
-    },
     onSelectedChange(event) {
         this.fire('on-selected-change', event);
     },
@@ -159,6 +155,8 @@ export default defineComponent({
     },
     onCommand(event) {
         this.fire('command', event);
+    },
+    inited() {
     },
     attached() {
         this.observer = new ResizeObserver(entries => this.__syncHeight());
