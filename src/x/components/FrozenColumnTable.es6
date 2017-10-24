@@ -5,18 +5,25 @@
  */
 import _ from 'lodash';
 import $ from 'jquery';
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import Table from './Table';
 import Loading from './Loading';
-import ResizeObserver from './ResizeObserver';
 
 const cx = create('ui-frozen-column-table');
-const kDefaultRightCellWidth = 500;
+
+function fixWidth(col) {
+    if (col.width == null || hasUnit(col.width)) {
+        // 必须要有宽度，如果没有设置，添加一个默认值
+        // 不能设置 xx%, 40px 之类的，必须是一个 number 类型
+        col.width = 100;
+    }
+}
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
+    <style type="text/css">{{__syncHeightStyles}}</style>
     <div class="${cx('loading')}" s-if="loading">
         <slot name="loading"><ui-loading /></slot>
     </div>
@@ -26,7 +33,7 @@ const template = `<div class="{{mainClass}}">
     <div class="${cx('body')}" s-if="!loading && !error">
         <table width="100%" cellspacing="0" cellpadding="0">
             <tr>
-                <td class="${cx('cell', 'cell-left')}" style="{{leftCellStyle}}">
+                <td class="${cx('cell', 'cell-left')}" style="{{leftCellStyle}}" s-if="leftSchema.length">
                     <ui-table
                         s-ref="left"
                         empty-text="{{emptyText}}"
@@ -42,7 +49,19 @@ const template = `<div class="{{mainClass}}">
                         on-command="onCommand($event)"
                         />
                 </td>
-                <td class="${cx('cell', 'cell-right')}">
+                <td class="${cx('cell', 'cell-middle')}" s-if="middleSchema.length">
+                    <ui-table
+                        s-ref="middle"
+                        empty-text="{{emptyText}}"
+                        cell-builder="{{cellBuilder}}"
+                        datasource="{{datasource}}"
+                        schema="{{middleSchema}}"
+
+                        on-filter="onFilter($event)"
+                        on-command="onCommand($event)"
+                        />
+                </td>
+                <td class="${cx('cell', 'cell-right')}" style="{{rightCellStyle}}" s-if="rightSchema.length">
                     <ui-table
                         s-ref="right"
                         empty-text="{{emptyText}}"
@@ -50,14 +69,12 @@ const template = `<div class="{{mainClass}}">
                         datasource="{{datasource}}"
                         schema="{{rightSchema}}"
 
-                        on-selected-change="onSelectedChange($event)"
                         on-filter="onFilter($event)"
                         on-command="onCommand($event)"
                         />
                 </td>
             </tr>
         </table>
-    </div>
     </div>
 </div>`;
 /* eslint-enable */
@@ -70,7 +87,7 @@ export default defineComponent({
     },
     initData() {
         return {
-            rightCellWidth: kDefaultRightCellWidth
+            __syncHeightStyles: ''
         };
     },
     computed: {
@@ -84,11 +101,23 @@ export default defineComponent({
             const width = _.reduce(leftSchema, (sum, col) => sum + col.width, initialValue);
             return width;
         },
+        rightCellWidth() {
+            const rightSchema = this.data.get('rightSchema');
+            const initialValue = 0;
+            const width = _.reduce(rightSchema, (sum, col) => sum + col.width, initialValue);
+            return width;
+        },
         leftCellStyle() {
-            const style = {};
             const width = this.data.get('leftCellWidth');
-            style.width = `${width}px`;
-            return style;
+            return {
+                width: `${width}px`
+            };
+        },
+        rightCellStyle() {
+            const width = this.data.get('rightCellWidth');
+            return {
+                width: `${width}px`
+            };
         },
         leftSchema() {
             const schema = this.data.get('schema');
@@ -96,15 +125,35 @@ export default defineComponent({
             for (let i = 0; i < schema.length; i++) {
                 const col = schema[i];
                 if (col.freezed) {
-                    if (col.width == null || hasUnit(col.width)) {
-                        // 必须要有宽度，如果没有设置，添加一个默认值
-                        // 不能设置 xx%, 40px 之类的，必须是一个 number 类型
-                        col.width = 100;
-                    }
+                    fixWidth(col);
                     leftSchema.push(col);
+                }
+                else {
+                    break;
                 }
             }
             return leftSchema;
+        },
+        middleSchema() {
+            const schema = this.data.get('schema');
+            const middleSchema = [];
+            for (let i = schema.length - 1; i >= 0; i--) {
+                const col = schema[i];
+                if (col.freezed) {
+                    if (middleSchema.length <= 0) {
+                        // 从后往前遍历，可能遇到右侧的冻结列了
+                        // 如果发现 middleSchema 还没东西，那么继续往前遍历
+                        continue;
+                    }
+                    else {
+                        // 如果 middleSchema 已经有东西了，说明碰到左侧的冻结列了，那么结束遍历吧
+                        break;
+                    }
+                }
+                fixWidth(col);
+                middleSchema.unshift(col);
+            }
+            return middleSchema;
         },
         rightSchema() {
             const schema = this.data.get('schema');
@@ -112,40 +161,74 @@ export default defineComponent({
             for (let i = schema.length - 1; i >= 0; i--) {
                 const col = schema[i];
                 if (col.freezed) {
+                    fixWidth(col);
+                    rightSchema.unshift(col);
+                }
+                else {
                     break;
                 }
-                rightSchema.unshift(col);
             }
             return rightSchema;
         }
     },
     __syncHeight() {
-        const left = this.ref('left');
-        const right = this.ref('right');
-        if (left.el && right.el) {
-            const leftRows = $(left.el).find('tbody tr');
-            const rightRows = $(right.el).find('tbody tr');
+        this.data.set('__syncHeightStyles', '');
+        nextTick(() => {
+            const left = this.ref('left');
+            const middle = this.ref('middle');
+            const right = this.ref('right');
+            if (left && left.el && middle && middle.el) {
+                const leftRows = $(left.el).find('tbody tr');
+                const middleRows = $(middle.el).find('tbody tr');
+                const rightRows = (right && right.el) ? $(right.el).find('tbody tr') : [];
 
-            for (let i = 0; i < leftRows.length; i++) {
-                const leftRow = leftRows[i];
-                const rightRow = rightRows[i];
-                let leftRowHeight = $(leftRow).height();
-                let rightRowHeight = $(rightRow).height();
-                if (leftRowHeight !== rightRowHeight) {
-                    $(leftRow).css({height: 'auto'});
-                    $(rightRow).css({height: 'auto'});
-                    leftRowHeight = $(leftRow).height();
-                    rightRowHeight = $(rightRow).height();
-                    const maxRowHeight = Math.max(leftRowHeight, rightRowHeight);
-                    if (leftRowHeight < maxRowHeight) {
-                        $(leftRow).css({height: maxRowHeight + 1});
+                const styles = [];
+
+                for (let i = 0; i < leftRows.length; i++) {
+                    const leftRow = leftRows[i];
+                    const middleRow = middleRows[i];
+                    const rightRow = rightRows[i];
+
+                    let leftRowHeight = $(leftRow).height();
+                    let middleRowHeight = $(middleRow).height();
+                    let rightRowHeight = rightRow ? $(rightRow).height() : 0;
+
+                    if (rightRow) {
+                        if (leftRowHeight === middleRowHeight
+                            && leftRowHeight === rightRowHeight) {
+                            continue;
+                        }
+                        const maxRowHeight = Math.max(leftRowHeight, middleRowHeight, rightRowHeight);
+                        if (leftRowHeight < maxRowHeight) {
+                            styles.push(`#${leftRow.id}{height: ${maxRowHeight + 1}px !important;}`);
+                        }
+                        if (middleRowHeight < maxRowHeight) {
+                            styles.push(`#${middleRow.id}{height: ${maxRowHeight + 1}px !important;}`);
+                        }
+                        if (rightRowHeight < maxRowHeight) {
+                            styles.push(`#${rightRow.id}{height: ${maxRowHeight + 1}px !important;}`);
+                        }
                     }
-                    else if (rightRowHeight < maxRowHeight) {
-                        $(rightRow).css({height: maxRowHeight + 1});
+                    else {
+                        if (leftRowHeight === middleRowHeight) {
+                            continue;
+                        }
+
+                        const maxRowHeight = Math.max(leftRowHeight, middleRowHeight);
+                        if (leftRowHeight < maxRowHeight) {
+                            styles.push(`#${leftRow.id}{height: ${maxRowHeight + 1}px !important;}`);
+                        }
+                        else if (middleRowHeight < maxRowHeight) {
+                            styles.push(`#${middleRow.id}{height: ${maxRowHeight + 1}px !important;}`);
+                        }
                     }
                 }
+
+                if (styles.length) {
+                    this.data.set('__syncHeightStyles', styles.join('\n'));
+                }
             }
-        }
+        });
     },
     onSelectedChange(event) {
         this.fire('on-selected-change', event);
@@ -157,19 +240,10 @@ export default defineComponent({
         this.fire('command', event);
     },
     inited() {
+        this.watch('datasource', () => this.__syncHeight());
     },
     attached() {
-        this.observer = new ResizeObserver(entries => this.__syncHeight());
-        this.observer.observe(this.el.parentNode);
         this.__syncHeight();
-    },
-    updated() {
-        this.__syncHeight();
-    },
-    disposed() {
-        if (this.observer) {
-            this.observer.disconnect();
-        }
     }
 });
 

@@ -2,7 +2,6 @@
  * @file RadioSelect.es6
  * @author leeight
  */
-import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {create} from './util';
