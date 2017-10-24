@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 
 import {create} from '../components/util';
+import Promise from 'promise';
 
 const cx = create('ui-form');
 
@@ -45,60 +46,70 @@ export default defineComponent({
         this.validateFormItem(name);
     },
     validateFormItem(name) {
-        const formData = this.data.get('formData');
-        if (!formData) {
-            return;
-        }
-        const validator = this.data.get('rules');
-        validator.validate(formData, (errors, fields) => {
-            if (!errors) {
-                errors = [];
+        return new Promise((resolve, reject) => {
+            const formData = this.data.get('formData');
+            if (!formData) {
+                reject();
+                return;
             }
-
-            let found = false;
-            for (let i = 0; i < errors.length; i++) {
-                const item = errors[i];
-                if (item.field === name) {
-                    found = true;
-                    this.data.set('errors.' + name, item.message);
-                    break;
+            const validator = this.data.get('rules');
+            validator.validate(formData, (errors, fields) => {
+                if (!errors) {
+                    errors = [];
                 }
-            }
-            if (!found) {
-                this.data.set('errors.' + name, null);
-            }
-
-            let hasError = false;
-            const formErrors = this.data.get('errors');
-            for (const key in formErrors) {
-                if (formErrors[key]) {
-                    hasError = true;
-                    break;
+    
+                let found = false;
+                for (let i = 0; i < errors.length; i++) {
+                    const item = errors[i];
+                    if (item.field === name) {
+                        found = true;
+                        this.data.set('errors.' + name, item.message);
+                        reject(name, item.message);
+                        break;
+                    }
                 }
-            }
-            if (!hasError) {
-                this.data.set('errors', null);
-            }
+                if (!found) {
+                    this.data.set('errors.' + name, null);
+                    resolve();
+                }
+    
+                let hasError = false;
+                const formErrors = this.data.get('errors');
+                for (const key in formErrors) {
+                    if (formErrors[key]) {
+                        hasError = true;
+                        break;
+                    }
+                }
+                if (!hasError) {
+                    this.data.set('errors', null);
+                }
+            });
         });
     },
     validateForm() {
-        const formData = this.data.get('formData');
-        if (!formData) {
-            return;
-        }
-        const validator = this.data.get('rules');
-        validator.validate(formData, (errors, fields) => {
-            if (!errors) {
-                this.data.set('errors', null);
+        return new Promise((resolve, reject) => {
+            const formData = this.data.get('formData');
+            if (!formData) {
+                reject();
                 return;
             }
-
-            const errorsMap = {};
-            for (let i = 0; i < errors.length; i++) {
-                const item = errors[i];
-                errorsMap[item.field] = item.message;
-            }
-            this.data.set('errors', errorsMap);
+            const validator = this.data.get('rules');
+            validator.validate(formData, (errors, fields) => {
+                if (!errors) {
+                    this.data.set('errors', null);
+                    resolve();
+                    return;
+                }
+    
+                const errorsMap = {};
+                for (let i = 0; i < errors.length; i++) {
+                    const item = errors[i];
+                    errorsMap[item.field] = item.message;
+                }
+                this.data.set('errors', errorsMap);
+                reject(errorsMap);
+            });
         });
     },
     inited() {
@@ -113,8 +124,5 @@ export default defineComponent({
                 formItem.data.set('error', errors ? errors[name] : null);
             }
         });
-    },
-    attached() {
-        this.validateForm();
     }
 });
