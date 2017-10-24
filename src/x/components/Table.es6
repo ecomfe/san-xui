@@ -52,7 +52,11 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
                     <slot name="empty">{{emptyText}}</slot>
                 </td>
             </tr>
-            <tr s-else class="{{item | rowClass(rowIndex)}}" s-for="item, rowIndex in datasource">
+            <tr s-else
+                class="{{item | rowClass(rowIndex)}}"
+                on-mouseenter="onEnterRow(item, rowIndex)"
+                on-mouseleave="onLeaveRow(item, rowIndex)"
+                s-for="item, rowIndex in datasource">
                 <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                     <div class="${cx('cell-text', 'cell-sel')}">
                         <input disabled="{=item.xui__disabled=}"
@@ -209,6 +213,14 @@ export default defineComponent({
             this.data.set('selectedIndex', _.map(selectedIndex, String));
         }
         this.watch('selectedIndex', () => this.dispatchEvent());
+    },
+
+    onEnterRow(item, rowIndex) {
+        this.fire('row-enter', {rowIndex});
+    },
+
+    onLeaveRow(item, rowIndex) {
+        this.fire('row-leave', {rowIndex});
     },
 
     onFilter(filterItem, colItem) {

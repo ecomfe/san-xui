@@ -44,6 +44,8 @@ const template = `<div class="{{mainClass}}">
                         datasource="{{datasource}}"
                         schema="{{leftSchema}}"
 
+                        on-row-enter="onEnterRow($event)"
+                        on-row-leave="onLeaveRow($event)"
                         on-selected-change="onSelectedChange($event)"
                         on-filter="onFilter($event)"
                         on-command="onCommand($event)"
@@ -57,6 +59,8 @@ const template = `<div class="{{mainClass}}">
                         datasource="{{datasource}}"
                         schema="{{middleSchema}}"
 
+                        on-row-enter="onEnterRow($event)"
+                        on-row-leave="onLeaveRow($event)"
                         on-filter="onFilter($event)"
                         on-command="onCommand($event)"
                         />
@@ -69,6 +73,8 @@ const template = `<div class="{{mainClass}}">
                         datasource="{{datasource}}"
                         schema="{{rightSchema}}"
 
+                        on-row-enter="onEnterRow($event)"
+                        on-row-leave="onLeaveRow($event)"
                         on-filter="onFilter($event)"
                         on-command="onCommand($event)"
                         />
@@ -230,6 +236,19 @@ export default defineComponent({
             }
         });
     },
+    __syncHoverState(rowIndex, add) {
+        const tables = [this.ref('left'), this.ref('middle'), this.ref('right')];
+        _.each(tables, table => {
+            if (table && table.el) {
+                if (add) {
+                    $(table.el).find(`tbody tr:nth-child(${rowIndex + 1})`).addClass('ui-table-row-hover');
+                }
+                else {
+                    $(table.el).find(`tbody tr:nth-child(${rowIndex + 1})`).removeClass('ui-table-row-hover');
+                }
+            }
+        });
+    },
     onSelectedChange(event) {
         this.fire('on-selected-change', event);
     },
@@ -238,6 +257,14 @@ export default defineComponent({
     },
     onCommand(event) {
         this.fire('command', event);
+    },
+    onEnterRow({rowIndex}) {
+        this.__syncHoverState(rowIndex, true);
+        this.fire('row-enter', {rowIndex});
+    },
+    onLeaveRow({rowIndex}) {
+        this.__syncHoverState(rowIndex, false);
+        this.fire('row-leave', {rowIndex});
     },
     inited() {
         this.watch('datasource', () => this.__syncHeight());
