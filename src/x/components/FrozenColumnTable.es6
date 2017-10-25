@@ -195,9 +195,12 @@ export default defineComponent({
                     const middleRow = middleRows[i];
                     const rightRow = rightRows[i];
 
-                    let leftRowHeight = $(leftRow).height();
-                    let middleRowHeight = $(middleRow).height();
-                    let rightRowHeight = rightRow ? $(rightRow).height() : 0;
+                    // XXX(user) 这里不能用 $(leftRow).height() 因为在 firefox 下面有兼容性问题，获取的值包含了 border-bottom 的宽度（chrome没这个问题）
+                    // 这里也不能用 $(leftRow).find('td:first-child').height()，因为在 chrome 下面也有问题，获取的值也包含了 border-bottom 的宽度（firefox没这个问题）
+                    // 所以改用了 prop('clientHeight') 目前看起来两种浏览器获取的值都是一样的
+                    let leftRowHeight = $(leftRow).find('td:first-child').prop('clientHeight');
+                    let middleRowHeight = $(middleRow).find('td:first-child').prop('clientHeight');
+                    let rightRowHeight = rightRow ? $(rightRow).find('td:first-child').prop('clientHeight') : 0;
 
                     if (rightRow) {
                         if (leftRowHeight === middleRowHeight
