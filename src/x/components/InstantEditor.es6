@@ -15,7 +15,7 @@ const cx = create('ui-instanteditor');
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer auto-hide="{{true}}" open="{=active=}" s-ref="layer">
+    <ui-layer auto-hide="{{true}}" open="{=active=}" offset-left="{{layerOffsetLeft}}" s-ref="layer">
         <div class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
             <div class="${cx('input-field')}">
                 <slot />
@@ -41,7 +41,8 @@ export default defineComponent({
             active: false,
             submiting: false,
             submitDisabled: false,
-            layerWidth: 'auto'
+            layerWidth: 'auto',
+            layerOffsetLeft: 0
         };
     },
     computed: {
@@ -72,18 +73,12 @@ export default defineComponent({
             return null;
         }
 
-        const slotChild = u.find(slotChilds, item => !item.lifeCycle.is('disposed'));
+        const slotChild = u.find(slotChilds, item => item.aNode != null && item.childs && item.childs.length > 0);
         if (!slotChild) {
             return null;
         }
 
-        const childs = slotChild.childs;
-        if (!childs || childs.length <= 0) {
-            return null;
-        }
-
-        const inputComp = childs[0];
-        return inputComp;
+        return slotChild.childs[0];
     },
     attached() {
     },
