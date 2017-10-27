@@ -5,7 +5,6 @@
 
 import $ from 'jquery';
 import humanize from 'humanize';
-import baidubce from 'baidubce';
 import {defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
@@ -112,7 +111,7 @@ export default defineComponent({
         }
         return -1;
     },
-    initializeUploader() {
+    initializeUploader(baidubce) {
         const autoStart = this.data.get('autoStart');
         const bosEndpoint = this.data.get('bosEndpoint');
         const uptokenUrl = this.data.get('uptokenUrl');
@@ -255,7 +254,7 @@ export default defineComponent({
         });
     },
     attached() {
-        this.initializeUploader();
+        window.require(['baidubce'], baidubce => this.initializeUploader(baidubce));
     },
     startUpload() {
         if (this.uploader) {
