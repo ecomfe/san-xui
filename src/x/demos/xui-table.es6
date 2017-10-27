@@ -18,6 +18,7 @@ const template = `<template>
 <x-row label="[default]">
     <xui-table
         schema="{{table.schema}}"
+        cell-builder="{{table.cellRenderer}}"
         loading="{{table.loading}}"
         error="{{table.error}}"
         datasource="{{table.datasource}}">
@@ -185,7 +186,13 @@ export default defineComponent({
                     {name: 'foo', age: 10, gender: 'M'},
                     {name: 'bar', age: 20, gender: 'F', xui__disabled: true},
                     {name: 'xxx', age: 20, gender: '未知'}
-                ]
+                ],
+                cellRenderer(item, key, col, rowIndex) {
+                    if (key === 'gender') {
+                        return '<a data-command="DELETE" href="javascript:void(0)">删除</a>';
+                    }
+                    return item[key];
+                }
             }
         };
     },
