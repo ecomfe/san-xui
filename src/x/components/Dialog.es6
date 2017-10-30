@@ -12,7 +12,8 @@ import Button from './Button';
 const cx = create('ui-dialog');
 
 /* eslint-disable */
-const template = `<template><div s-if="open" class="{{mainClass}}" style="{{dialogStyle}}">
+const template = `<template>
+<div s-if="open" class="{{mainClass}}" style="{{dialogStyle}}">
     <div class="${cx('head', 'head-panel')}" san-if="head">
         <div class="${cx('title')}">
             <slot name="head">Title</slot>
@@ -116,10 +117,12 @@ export default defineComponent({
         if (!open) {
             return;
         }
-        const main = this.el.firstChild;
-        const left = Math.max((lib.page.getViewWidth() - main.offsetWidth) / 2, 0);
-        const top = lib.page.getScrollTop() + Math.max((lib.page.getViewHeight() - main.offsetHeight) / 2, 0);
-        this.data.set('top', top + 'px');
+        nextTick(() => {
+            const main = $(this.el).find('> .ui-dialog-x');
+            const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
+            const top = lib.page.getScrollTop() + Math.max((lib.page.getViewHeight() - main.prop('offsetHeight')) / 2, 0);
+            this.data.set('top', top + 'px');
+        });
     },
     inited() {
         this.watch('open', () => this.__resize());
