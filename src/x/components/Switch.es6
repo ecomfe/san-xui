@@ -42,7 +42,7 @@ export default defineComponent({
 
         const checked = this.data.get('checked');
         this.data.set('checked', !checked);
-        this.fire('change');
+        this.fire('change', {value: !checked});
     }
 });
 
