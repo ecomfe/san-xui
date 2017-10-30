@@ -22,7 +22,7 @@ const template = `<div class="{{mainClass}}">
     <div class="${cx('label')}" s-if="label">{{label}}</div>
     <div class="${cx('content')}">
         <slot/>
-        <label class="${cx('invalid-label')}" s-if="error">{{error}}</label>
+        <slot name="error"><label class="${cx('invalid-label')}" s-if="error">{{error}}</label></slot>
     </div>
 </div>`;
 export default defineComponent({
