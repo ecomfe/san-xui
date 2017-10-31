@@ -28,8 +28,5 @@ export default defineComponent({
             const klass = [cx(), cx('x')];
             return klass;
         }
-    },
-    updated() {
-        console.log('TabPanel.updated');
     }
 });

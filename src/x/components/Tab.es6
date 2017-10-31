@@ -48,8 +48,6 @@ export default defineComponent({
         this.refreshTabs();
     },
     updated() {
-        console.log('sdfsdf');
-        // this.refreshTabs();
     },
     refreshTabs() {
         this.assertOK();
