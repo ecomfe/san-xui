@@ -117,7 +117,7 @@ export default defineComponent({
             const childs = this.slotChilds[0].childs;
             for (let i = 0; i < childs.length; i++) {
                 const formItem = childs[i];
-                const name = formItem.data.get('name');
+                const name = formItem.data && formItem.data.get('name');
                 if (!name) {
                     continue;
                 }
