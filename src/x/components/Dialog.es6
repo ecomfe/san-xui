@@ -119,7 +119,7 @@ export default defineComponent({
         }
         nextTick(() => {
             const main = $(this.el).find('> .ui-dialog-x');
-            const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
+            // const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
             const top = lib.page.getScrollTop() + Math.max((lib.page.getViewHeight() - main.prop('offsetHeight')) / 2, 0);
             this.data.set('top', top + 'px');
         });

@@ -166,7 +166,7 @@ export default defineComponent({
                 datasource: [
                     {text: 'foo', value: 'foo'},
                     {text: 'bar', value: 'bar'},
-                    {text: '123', value: '123', disabled: true},
+                    {text: '123', value: '123', disabled: true}
                 ]
             }
         };
