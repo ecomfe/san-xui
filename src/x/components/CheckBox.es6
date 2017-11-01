@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-checkbox');
 
@@ -22,7 +23,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const CheckBox = defineComponent({
     template,
     initData() {
         return {
@@ -42,3 +43,5 @@ export default defineComponent({
     }
 });
 
+
+export default asInput(CheckBox);

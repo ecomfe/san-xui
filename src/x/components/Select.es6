@@ -7,6 +7,7 @@ import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
+import {asInput} from './asInput';
 import Layer from './Layer';
 import ScrollIntoView from './ScrollIntoView';
 import TextBox from './TextBox';
@@ -74,7 +75,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const Select = defineComponent({    // eslint-disable-line
     template,
     components: {
         'ui-textbox': TextBox,
@@ -215,3 +216,5 @@ export default defineComponent({
         this.data.set('active', !active);
     }
 });
+
+export default asInput(Select);

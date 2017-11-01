@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-togglebutton');
 
@@ -16,7 +17,7 @@ const template = `<div on-click="toggleSwitch" class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const Switch = defineComponent({    // eslint-disable-line
     template,
     initData() {
         return {
@@ -46,3 +47,4 @@ export default defineComponent({
     }
 });
 
+export default asInput(Switch);

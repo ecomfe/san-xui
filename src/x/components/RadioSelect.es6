@@ -5,6 +5,7 @@
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-radioselect');
 const cx2 = create('ui-radio');
@@ -23,7 +24,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const RadioSelect = defineComponent({
     template,
     computed: {
         mainClass() {
@@ -62,4 +63,4 @@ export default defineComponent({
     }
 });
 
-
+export default asInput(RadioSelect);

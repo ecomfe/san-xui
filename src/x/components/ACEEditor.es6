@@ -9,6 +9,7 @@ import {nextTick, defineComponent} from 'san';
 
 import {create} from './util';
 import Loading from './Loading';
+import {asInput} from './asInput';
 import Ghost from './Ghost';
 
 const cx = create('ui-aceeditor');
@@ -22,7 +23,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const ACEEditor = defineComponent({
     template,
     components: {
         'ui-ghost': Ghost,
@@ -87,3 +88,5 @@ export default defineComponent({
         }
     }
 });
+
+export default asInput(ACEEditor);

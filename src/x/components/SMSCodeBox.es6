@@ -8,6 +8,7 @@ import {defineComponent} from 'san';
 import {create} from './util';
 import Button from './Button';
 import TextBox from './TextBox';
+import {asInput} from './asInput';
 
 const cx = create('ui-smscode');
 
@@ -25,7 +26,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const SMSCodeBox = defineComponent({
     template,
     components: {
         'ui-textbox': TextBox,
@@ -73,3 +74,5 @@ export default defineComponent({
         countdown();
     }
 });
+
+export default asInput(SMSCodeBox);

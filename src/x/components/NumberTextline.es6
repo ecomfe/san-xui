@@ -8,6 +8,7 @@ import {defineComponent} from 'san';
 import Button from './Button';
 import TextBox from './TextBox';
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-numbertextline');
 
@@ -19,7 +20,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const NumberTextline = defineComponent({
     template,
     components: {
         'ui-button': Button,
@@ -87,3 +88,5 @@ export default defineComponent({
         this.fire('input');
     }
 });
+
+export default asInput(NumberTextline);

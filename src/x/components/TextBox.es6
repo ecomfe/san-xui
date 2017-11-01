@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-textbox');
 
@@ -33,7 +34,7 @@ const template = `<div class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const TextBox = defineComponent({
     template,
     computed: {
         mainClass() {
@@ -73,3 +74,5 @@ export default defineComponent({
         this.fire('keypress', e);
     }
 });
+
+export default asInput(TextBox);

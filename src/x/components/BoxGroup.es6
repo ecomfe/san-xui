@@ -10,6 +10,7 @@ import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-boxgroup');
 
@@ -33,7 +34,7 @@ const template = `
 `;
 /* eslint-enable */
 
-export default defineComponent({
+const BoxGroup = defineComponent({
     template,
     initData() {
         return {
@@ -102,3 +103,4 @@ export default defineComponent({
     }
 });
 
+export default asInput(BoxGroup);

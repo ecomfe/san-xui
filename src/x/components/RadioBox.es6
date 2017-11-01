@@ -6,6 +6,7 @@
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 
 const cx = create('ui-radiobox');
 
@@ -15,14 +16,14 @@ const template = `<div class="{{mainClass}}">
         <input
             type="radio"
             checked="{=checked=}"
-            on-change="onChange"
+            on-change="onChange($event)"
             disabled="{{disabled}}" />
         <span s-if="title">{{title}}</span>
     </label>
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const RadioBox = defineComponent({
     template,
     initData() {
         return {
@@ -37,8 +38,9 @@ export default defineComponent({
     },
     inited() {
     },
-    onChange() {
-        this.fire('change');
+    onChange(e) {
+        this.fire('change', {value: e.target.checked});
     }
 });
 
+export default asInput(RadioBox);

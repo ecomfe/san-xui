@@ -7,6 +7,7 @@ import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {hasUnit, arrayTreeFilter, arrayTreeFilterIndex, arrayTreeCompact, create} from './util';
+import {asInput} from './asInput';
 import Layer from './Layer';
 import Icon from './Icon';
 import Loading from './Loading';
@@ -39,7 +40,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const MultiPicker = defineComponent({
     template,
     components: {
         'ui-loading': Loading,
@@ -198,3 +199,4 @@ export default defineComponent({
     }
 });
 
+export default asInput(MultiPicker);

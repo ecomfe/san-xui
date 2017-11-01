@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {create, isComponent} from '../components/util';
 
@@ -42,6 +42,14 @@ export default defineComponent({
             return klass;
         }
     },
+    messages: {
+        // 消息来自 InputComponent 的子类
+        'input-comp-value-changed'(arg) {
+            const payload = arg.value;
+            const name = this.data.get('name');
+            this.dispatch('form-element-changed', {name, value: payload.value});
+        }
+    },
     attached() {
         const name = this.data.get('name');
         if (!name) {
@@ -53,17 +61,6 @@ export default defineComponent({
                 this.dispatch('form-element-changed', {
                     name: name,
                     value: child.el.value
-                });
-            });
-        }
-        else if (isComponent(child)) {
-            child.on('change', ({value}) => {
-                this.dispatch('form-element-changed', {name, value});
-            });
-            child.on('input', () => {
-                nextTick(() => {
-                    const value = child.data.get('value');
-                    this.dispatch('form-element-changed', {name, value});
                 });
             });
         }
