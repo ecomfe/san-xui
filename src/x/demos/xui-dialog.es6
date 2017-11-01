@@ -4,6 +4,7 @@
  */
 
 import {defineComponent} from 'san';
+import Tip from 'inf-ui/x/components/Tip';
 import Dialog from 'inf-ui/x/components/Dialog';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
@@ -13,6 +14,7 @@ const template = `<template>
 <xui-button skin="primary" on-click="onShowDialog">Show Dialog</xui-button>
 
 <xui-dialog open="{=dialog.showDialog=}">
+    <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
     <xui-button on-click="closeTheDialog">关闭.</xui-button>
     <xui-button on-click="openNewDialog">打开一个新的Dialog.</xui-button>
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
@@ -27,6 +29,7 @@ const template = `<template>
 export default defineComponent({
     template,
     components: {
+        'xui-tip': Tip,
         'xui-select': Select,
         'xui-dialog': Dialog,
         'xui-button': Button

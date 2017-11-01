@@ -5,7 +5,7 @@
 import dom from 'esui/lib/dom';
 import {nextTick, defineComponent} from 'san';
 
-import {create} from './util';
+import {nextZindex, create} from './util';
 import Layer from './Layer';
 import Ghost from './Ghost';
 
@@ -85,7 +85,7 @@ export default defineComponent({   // eslint-disable-line
             const rect = this.el.getBoundingClientRect();
             const offset = dom.getOffset(this.el);
             const {offsetHeight, offsetWidth} = layerBody.el;
-            const style = {};
+            const style = {'z-index': nextZindex()};
             if (position === 'lt') {
                 style.top = (offset.top - (offsetHeight - rect.height) / 2) + 'px';
                 style.left = offset.right + 'px';
