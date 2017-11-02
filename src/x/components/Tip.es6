@@ -3,7 +3,7 @@
  * @author leeight
  */
 import dom from 'esui/lib/dom';
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {nextZindex, create} from './util';
 import Layer from './Layer';
