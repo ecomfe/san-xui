@@ -19,6 +19,7 @@ const template = `<template>
     <xui-table
         schema="{{table.schema}}"
         cell-builder="{{table.cellRenderer}}"
+        on-command="onCommand($event)"
         loading="{{table.loading}}"
         error="{{table.error}}"
         datasource="{{table.datasource}}">
@@ -198,6 +199,10 @@ export default defineComponent({
     },
     onTableRowSelected() {
         console.log('Table row selected');
+    },
+    onCommand({type, payload, rowIndex}) {
+        console.log(type, payload, rowIndex);
+        this.data.removeAt('table.datasource', rowIndex - 1);
     },
     toggleTableColumns() {
         const columnNames = this.data.get('tct.value');
