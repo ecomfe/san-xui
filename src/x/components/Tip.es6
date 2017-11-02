@@ -17,7 +17,7 @@ const template = `<template>
     <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">
         <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer">
             <ui-ghost class="{{tiplayerClass}}" s-ref="layer-body">
-                <div class="${cx2('body-panel')}">
+                <div class="${cx2('body-panel')}" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">
                     <div class="${cx2('body')}" s-if="message">
                         {{message}}
                     </div>
@@ -102,26 +102,36 @@ export default defineComponent({   // eslint-disable-line
                 style.left = (offset.left - (offsetWidth - rect.width) / 2) + 'px';
                 style.top = (offset.top - rect.height - offsetHeight) + 'px';
             }
-            layer.data.set('style', style);
+            layer.data.set('layerStyle', style);
+        }
+    },
+    updated() {
+        const active = this.data.get('active');
+        if (active) {
+            this.positionLayer();
         }
     },
     showLayer() {
-        if (this.timer) {
-            clearTimeout(this.timer);
-        }
+        this.cancelTimer();
         this.timer = setTimeout(
             () => {
                 this.timer = null;
                 this.data.set('active', true);
-                nextTick(() => this.positionLayer());
             },
             this.data.get('duration')
         );
     },
-    hideLayer() {
+    cancelTimer() {
         if (this.timer) {
             clearTimeout(this.timer);
             this.timer = null;
+        }
+    },
+    hideLayer() {
+        this.cancelTimer();
+        const active = this.data.get('active');
+        if (!active) {
+            return;
         }
         this.timer = setTimeout(
             () => {

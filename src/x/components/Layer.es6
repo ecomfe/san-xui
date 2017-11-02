@@ -11,7 +11,7 @@ const cx = create('ui-layer');
 
 /* eslint-disable */
 const template = `<template>
-    <div s-if="open" class="${cx()}" style="{{style}}"><slot/></div>
+    <div s-if="open" class="${cx()}" style="{{layerStyle}}"><slot/></div>
 </template>`;
 /* eslint-enable */
 
@@ -42,7 +42,7 @@ export default defineComponent({
             align: 'left',  // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
             offsetTop: 0,   // 有时候自动定位不准确，需要修正一下
             offsetLeft: 0,  // 有时候自动定位不准确，需要修正一下
-            style: {}
+            layerStyle: {}
         };
     },
     inited() {
@@ -90,11 +90,11 @@ export default defineComponent({
             : `${left - layerWidth + width + offsetLeft}px`;
         const topValue = `${top + height + offsetTop}px`;
         if (kz) {
-            this.data.set('style.left', leftValue);
-            this.data.set('style.top', topValue);
+            this.data.set('layerStyle.left', leftValue);
+            this.data.set('layerStyle.top', topValue);
         }
         else {
-            this.data.set('style', {
+            this.data.set('layerStyle', {
                 'z-index': nextZindex(),
                 'left': leftValue,
                 'top': topValue
