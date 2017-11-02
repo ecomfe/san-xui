@@ -14,8 +14,8 @@ const cx = create('ui-instanteditor');
 
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
-    <span class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer auto-hide="{{true}}" open="{=active=}" offset-left="{{layerOffsetLeft}}" s-ref="layer">
+    <span s-if="label" class="${cx('text')}">{{label|raw}}</span>
+    <ui-layer auto-hide="{{true}}" open="{=active=}" offset-left="{{layerOffsetLeft}}" layer-style="{{position}}" s-ref="layer">
         <div class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
             <div class="${cx('input-field')}">
                 <slot />
@@ -38,9 +38,11 @@ export default defineComponent({
     },
     initData() {
         return {
+            label: '编辑',
             active: false,
             submiting: false,
             submitDisabled: false,
+            position: {},
             layerWidth: 'auto',
             layerOffsetLeft: 0
         };
@@ -62,9 +64,6 @@ export default defineComponent({
                 style.width = hasUnit(layerWidth) ? layerWidth : `${layerWidth}px`;
             }
             return style;
-        },
-        label() {
-            return '编辑';
         }
     },
     getInputComp() {
