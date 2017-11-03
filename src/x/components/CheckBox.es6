@@ -16,7 +16,7 @@ const template = `<div class="{{mainClass}}">
         <input
             type="checkbox"
             checked="{=checked=}"
-            on-change="onChange"
+            on-change="onChange($event)"
             disabled="{{disabled}}" />
         <span s-if="title">{{title}}</span>
     </label>
@@ -38,8 +38,8 @@ const CheckBox = defineComponent({
     },
     inited() {
     },
-    onChange() {
-        this.fire('change');
+    onChange(e) {
+        this.fire('change', {value: e.target.checked});
     }
 });
 

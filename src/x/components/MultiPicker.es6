@@ -111,7 +111,7 @@ const MultiPicker = defineComponent({
         this.data.set('active', false);
         const values = this.data.get(kTmpValuesKey);
         this.data.set(kValuesKey, values);
-        this.fire('change');
+        this.fire('change', {[kValuesKey]: values});
     },
     expandChildren(item, index) {
         if (item.disabled) {
