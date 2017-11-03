@@ -19,9 +19,7 @@ function getEventName(tagName) {
 }
 
 const template = `<div class="{{mainClass}}">
-    <div class="${cx('label')}" s-if="label">
-        <slot name="label">{{label}}</slot>
-    </div>
+    <div class="${cx('label')}" s-if="label"><slot name="label">{{label}}</slot></div>
     <div class="${cx('content')}">
         <slot/>
         <slot name="error"><label class="${cx('invalid-label')}" s-if="error">{{error}}</label></slot>
