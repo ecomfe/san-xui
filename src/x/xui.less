@@ -849,20 +849,51 @@
 .ui-frozen-column-table .ui-table-hcell .ui-table-hcell-text {
     white-space: nowrap;
 }
-.ui-frozen-column-table-body > table {
-    table-layout: fixed;
+.ui-frozen-column-table-body {
+    position: relative;
+    overflow: auto;
+    overflow-x: hidden;
 }
-.ui-frozen-column-table-cell {
-    vertical-align: top;
+.ui-frozen-column-table-cell-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .ui-table-head th:last-child > .ui-table-hcell-text {
+        border-right: 1px solid #fff
+    }
 }
-.ui-frozen-column-table-cell-left .ui-table-x {
-    margin-right: 0;
+.ui-frozen-column-table-cell-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
 }
-.ui-frozen-column-table-cell-middle > .ui-table-x{
-    overflow-x: scroll;
-    overflow-y: visible;
+.ui-frozen-column-table-cell-middle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    > .ui-table-x {
+        overflow-x: scroll;
+        overflow-y: auto;
+    }
 }
-.ui-frozen-column-table-cell-right .ui-table-head th:first-child > .ui-table-hcell-text,
-.ui-frozen-column-table-cell-middle .ui-table-head th:first-child > .ui-table-hcell-text {
-    border-left: 1px solid #fff
+
+.ui-frozen-column-table-scroll-position-left .ui-frozen-column-table-cell-left {
+    box-shadow: none;
+}
+
+.ui-frozen-column-table-scroll-position-right .ui-frozen-column-table-cell-right {
+    box-shadow: none;
+}
+
+.ui-frozen-column-table-scroll-position-right .ui-frozen-column-table-cell-left,
+.ui-frozen-column-table-scroll-position-middle .ui-frozen-column-table-cell-left {
+    box-shadow: 6px 0 6px -4px rgba(0, 0, 0, .2);
+}
+
+.ui-frozen-column-table-scroll-position-left .ui-frozen-column-table-cell-right,
+.ui-frozen-column-table-scroll-position-middle .ui-frozen-column-table-cell-right {
+    box-shadow: -6px 0 6px -4px rgba(0, 0, 0, .2);
 }

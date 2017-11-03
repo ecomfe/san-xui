@@ -30,57 +30,62 @@ const template = `<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error">
         <slot name="error">{{error}}</slot>
     </div>
-    <div class="${cx('body')}" s-if="!loading && !error">
-        <table width="100%" cellspacing="0" cellpadding="0">
-            <tr>
-                <td class="${cx('cell', 'cell-left')}" style="{{leftCellStyle}}" s-if="leftSchema.length">
-                    <ui-table
-                        s-ref="left"
-                        empty-text="{{emptyText}}"
-                        disabled-select-all="{{disabledSelectAll}}"
-                        select="{{select}}"
-                        cell-builder="{{cellBuilder}}"
-                        selected-index="{=selectedIndex=}"
-                        datasource="{{datasource}}"
-                        schema="{{leftSchema}}"
+    <div
+        s-if="!loading && !error"
+        class="{{bodyClass}}"
+        style="{{bodyStyle}}"
+        >
+        <div class="${cx('cell', 'cell-left')}" style="{{leftCellStyle}}" s-if="leftSchema.length">
+            <ui-table
+                s-ref="left"
+                empty-text="{{emptyText}}"
+                disabled-select-all="{{disabledSelectAll}}"
+                select="{{select}}"
+                cell-builder="{{cellBuilder}}"
+                selected-index="{=selectedIndex=}"
+                datasource="{{datasource}}"
+                schema="{{leftSchema}}"
 
-                        on-row-enter="onEnterRow($event)"
-                        on-row-leave="onLeaveRow($event)"
-                        on-selected-change="onSelectedChange($event)"
-                        on-filter="onFilter($event)"
-                        on-command="onCommand($event)"
-                        />
-                </td>
-                <td class="${cx('cell', 'cell-middle')}" s-if="middleSchema.length">
-                    <ui-table
-                        s-ref="middle"
-                        empty-text="{{emptyText}}"
-                        cell-builder="{{cellBuilder}}"
-                        datasource="{{datasource}}"
-                        schema="{{middleSchema}}"
+                on-row-enter="onEnterRow($event)"
+                on-row-leave="onLeaveRow($event)"
+                on-selected-change="onSelectedChange($event)"
+                on-filter="onFilter($event)"
+                on-command="onCommand($event)"
+                />
+        </div>
+        <div class="${cx('cell', 'cell-middle')}" s-if="middleSchema.length">
+            <ui-table
+                s-ref="middle"
+                empty-text="{{emptyText}}"
+                disabled-select-all="{{disabledSelectAll}}"
+                select="{{select}}"
+                cell-builder="{{cellBuilder}}"
+                selected-index="{=selectedIndex=}"
+                datasource="{{datasource}}"
+                schema="{{middleSchema}}"
 
-                        on-row-enter="onEnterRow($event)"
-                        on-row-leave="onLeaveRow($event)"
-                        on-filter="onFilter($event)"
-                        on-command="onCommand($event)"
-                        />
-                </td>
-                <td class="${cx('cell', 'cell-right')}" style="{{rightCellStyle}}" s-if="rightSchema.length">
-                    <ui-table
-                        s-ref="right"
-                        empty-text="{{emptyText}}"
-                        cell-builder="{{cellBuilder}}"
-                        datasource="{{datasource}}"
-                        schema="{{rightSchema}}"
+                on-scroll="onScroll($event)"
+                on-row-enter="onEnterRow($event)"
+                on-row-leave="onLeaveRow($event)"
+                on-selected-change="onSelectedChange($event)"
+                on-filter="onFilter($event)"
+                on-command="onCommand($event)"
+                />
+        </div>
+        <div class="${cx('cell', 'cell-right')}" style="{{rightCellStyle}}" s-if="rightSchema.length">
+            <ui-table
+                s-ref="right"
+                empty-text="{{emptyText}}"
+                cell-builder="{{cellBuilder}}"
+                datasource="{{datasource}}"
+                schema="{{rightSchema}}"
 
-                        on-row-enter="onEnterRow($event)"
-                        on-row-leave="onLeaveRow($event)"
-                        on-filter="onFilter($event)"
-                        on-command="onCommand($event)"
-                        />
-                </td>
-            </tr>
-        </table>
+                on-row-enter="onEnterRow($event)"
+                on-row-leave="onLeaveRow($event)"
+                on-filter="onFilter($event)"
+                on-command="onCommand($event)"
+                />
+        </div>
     </div>
 </div>`;
 /* eslint-enable */
@@ -93,12 +98,28 @@ export default defineComponent({
     },
     initData() {
         return {
-            __syncHeightStyles: ''
+            __syncHeightStyles: '',
+            bodyHeight: 0,
+            scrollPosition: 'left'
         };
     },
     computed: {
         mainClass() {
             return cx.mainClass(this);
+        },
+        bodyClass() {
+            const klass = [cx('body')];
+            const scrollPosition = this.data.get('scrollPosition');
+            if (scrollPosition) {
+                klass.push(cx('scroll-position-' + scrollPosition));
+            }
+            return klass;
+        },
+        bodyStyle() {
+            const style = {
+                height: this.data.get('bodyHeight') + 'px'
+            };
+            return style;
         },
         leftCellWidth() {
             const leftSchema = this.data.get('leftSchema');
@@ -142,24 +163,8 @@ export default defineComponent({
         },
         middleSchema() {
             const schema = this.data.get('schema');
-            const middleSchema = [];
-            for (let i = schema.length - 1; i >= 0; i--) {
-                const col = schema[i];
-                if (col.freezed) {
-                    if (middleSchema.length <= 0) {
-                        // 从后往前遍历，可能遇到右侧的冻结列了
-                        // 如果发现 middleSchema 还没东西，那么继续往前遍历
-                        continue;
-                    }
-                    else {
-                        // 如果 middleSchema 已经有东西了，说明碰到左侧的冻结列了，那么结束遍历吧
-                        break;
-                    }
-                }
-                fixWidth(col);
-                middleSchema.unshift(col);
-            }
-            return middleSchema;
+            _.each(schema, col => fixWidth(col));
+            return schema;
         },
         rightSchema() {
             const schema = this.data.get('schema');
@@ -184,6 +189,7 @@ export default defineComponent({
             const middle = this.ref('middle');
             const right = this.ref('right');
             if (left && left.el && middle && middle.el) {
+                this.data.set('bodyHeight', $(middle.el).height());
                 const leftRows = $(left.el).find('tbody tr');
                 const middleRows = $(middle.el).find('tbody tr');
                 const rightRows = (right && right.el) ? $(right.el).find('tbody tr') : [];
@@ -268,6 +274,19 @@ export default defineComponent({
     onLeaveRow({rowIndex}) {
         this.__syncHoverState(rowIndex, false);
         this.fire('row-leave', {rowIndex});
+    },
+    onScroll(event) {
+        const containerWidth = $(event.target).width();
+        const tableWidth = $(event.target.firstElementChild).width();
+        const scrollEnd = Math.max(tableWidth - containerWidth, 0);
+
+        const scrollLeft = event.target.scrollLeft;
+        if (scrollLeft > 0) {
+            this.data.set('scrollPosition', scrollLeft === scrollEnd ? 'right' : 'middle');
+        }
+        else {
+            this.data.set('scrollPosition', 'left');
+        }
     },
     inited() {
         this.watch('datasource', () => this.__syncHeight());

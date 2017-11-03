@@ -14,7 +14,7 @@ import TableFilter from './TableFilter';
 const cx = create('ui-table');
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
+const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-scroll="onScroll($event)">
     <table cellpadding="0" cellspacing="0" width="{{tableWidth}}">
         <thead class="${cx('head')}">
             <tr>
@@ -227,6 +227,10 @@ export default defineComponent({
         const key = colItem.name;
         const value = filterItem.value;
         this.fire('filter', {[key]: value});
+    },
+
+    onScroll(event) {
+        this.fire('scroll', event);
     },
 
     attached() {
