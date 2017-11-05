@@ -6,6 +6,7 @@ import moment from 'moment';
 import {defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 import Layer from './Layer';
 import MonthView from './MonthView';
 import Button from './Button';
@@ -20,7 +21,7 @@ const template = `<div class="${cx('xx')}">
     <div class="${cx('arrow')}"></div>
     <ui-layer open="{=active=}" s-ref="layer">
         <div class="${cx('layer')}">
-            <ui-monthview value="{=value=}" time="{{time}}" />
+            <ui-monthview value="{=value=}" time="{{time}}" on-change="onChange"/>
         </div>
     </ui-layer>
 </div>
@@ -29,7 +30,7 @@ const template = `<div class="${cx('xx')}">
 `;
 /* eslint-enable */
 
-export default defineComponent({
+const Calendar = defineComponent({
     template,
     components: {
         'ui-button': Button,
@@ -66,11 +67,13 @@ export default defineComponent({
         const value = this.data.get('value');
         const newValue = moment(value).add(1, 'day').toDate();
         this.data.set('value', newValue);
+        this.fire('change', {value: newValue});
     },
     prevDay() {
         const value = this.data.get('value');
         const newValue = moment(value).subtract(1, 'day').toDate();
         this.data.set('value', newValue);
+        this.fire('change', {value: newValue});
     },
     toggleLayer() {
         const disabled = this.data.get('disabled');
@@ -79,5 +82,11 @@ export default defineComponent({
         }
         const active = this.data.get('active');
         this.data.set('active', !active);
+    },
+    onChange() {
+        this.fire('change', {value: this.data.get('value')});
     }
 });
+
+export default asInput(Calendar);
+

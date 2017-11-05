@@ -5,6 +5,7 @@
 import {defineComponent} from 'san';
 
 import {buildMonths, create} from './util';
+import {asInput} from './asInput';
 import Button from './Button';
 import Select from './Select';
 import TextBox from './TextBox';
@@ -52,7 +53,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const MonthView = defineComponent({
     template,
     components: {
         'ui-textbox': TextBox,
@@ -139,6 +140,7 @@ export default defineComponent({
                 this.data.set('minute', value.getMinutes());
                 this.data.set('second', value.getSeconds());
             }
+            this.fire('change', {value});
         };
         this.watch('value', valueWatcher);
         valueWatcher(this.data.get('value'));
@@ -218,3 +220,6 @@ export default defineComponent({
         this.data.set('yearDs.value', year);
     }
 });
+
+export default asInput(MonthView);
+
