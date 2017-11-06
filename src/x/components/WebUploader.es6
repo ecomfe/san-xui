@@ -6,7 +6,6 @@ import u from 'lodash';
 import $ from 'jquery';
 import _ from 'inf-i18n';
 import {defineComponent} from 'san';
-import Uploader from 'webuploader';
 import util from 'inf-ria/util';
 
 import {create} from './util';
@@ -73,7 +72,7 @@ export default defineComponent({
         };
     },
 
-    initializeUploader() {
+    initializeUploader(Uploader) {
         const url = this.data.get('url');
         if (!url) {
             this.data.set('error', new Error('初始化失败，请设置 url 属性'));
@@ -168,7 +167,7 @@ export default defineComponent({
     },
 
     attached() {
-        this.initializeUploader();
+        window.require(['webuploader'], Uploader => this.initializeUploader(Uploader));
     },
     disposed() {
         if (this.uploader) {
