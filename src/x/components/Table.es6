@@ -81,6 +81,10 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-scroll="on
                     s-for="col in tableColumns">
                     <div class="${cx('cell-text')}">
                         {{item | tableCell(col.name, col, rowIndex) | raw}}
+                        <a s-if="col.editcmd || col.editable"
+                            data-command="{{col.editcmd || 'EDIT'}}"
+                            class="${cx('cell-editentry')}"
+                            href="javascript:void(0)"><i class="iconfont icon-edit"></i></a>
                     </div>
                 </td>
             </tr>
@@ -240,10 +244,16 @@ export default defineComponent({
         }
         $(this.el).on('click', 'a[data-command]', e => {
             // 因为有 head 的存在，rowIndex 是从 1开始的
+            const type = $(e.currentTarget).data('command');
+            if (!type) {
+                return;
+            }
+
             const rowIndex = $(e.target).parents('tr').prop('rowIndex');
-            const type = $(e.target).data('command');
             const payload = this.data.get(`datasource[${rowIndex - 1}]`);
-            this.fire('command', {type, payload, rowIndex, domEvent: e});
+            if (payload) {
+                this.fire('command', {type, payload, rowIndex, domEvent: e});
+            }
         });
     },
 
