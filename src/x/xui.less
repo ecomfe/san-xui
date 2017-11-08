@@ -950,11 +950,17 @@
     background: #fff;
 }
 .list-page-body > h2 {
+    .clearfix();
     line-height: 55px;
     font-weight: normal;
     border-bottom: 1px solid #E8EBEE;
     margin: 0;
     padding-left: 20px;
+    div[slot="helps"] {
+        float: right;
+        margin-right: 20px;
+        font-size: 12px;
+    }
 }
 .list-page-body > h2 > span {
     font-size: 12px;
@@ -971,6 +977,10 @@
             margin-bottom: 0;
             margin-right: 0;
         }
+    }
+    > div[slot="filter"] {
+        .clearfix();
+        margin: 10px 20px;
     }
 }
 
@@ -990,8 +1000,24 @@
 
 .list-page-tb-left {
     float: left;
+    > div[slot] {
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 .list-page-tb-right {
     float: right;
+}
+
+.ui-biz-filter-form-inline,
+.ui-biz-filter-form-item {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-biz-filter-form-item {
+    margin-right: 5px;
+}
+.ui-biz-filter-form-item:last-child {
+    margin-right: 0;
 }

@@ -78,9 +78,9 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-scroll="on
                 </td>
                 <td class="{{col | cellClass}}"
                     style="{{col | cellStyle}}"
-                    s-for="col in tableColumns">
+                    s-for="col, colIndex in tableColumns">
                     <div class="${cx('cell-text')}">
-                        {{item | tableCell(col.name, col, rowIndex) | raw}}
+                        {{item | tableCell(col.name, col, rowIndex, colIndex) | raw}}
                         <a s-if="col.editcmd || col.editable"
                             data-command="{{col.editcmd || 'EDIT'}}"
                             class="${cx('cell-editentry')}"
@@ -170,10 +170,10 @@ export default defineComponent({
             }
             return klass;
         },
-        tableCell(item, key, col, rowIndex) {
+        tableCell(item, key, col, rowIndex, colIndex) {
             const cellBuilder = this.data.get('cellBuilder');
             if (typeof cellBuilder === 'function') {
-                return cellBuilder(item, key, col, rowIndex);
+                return cellBuilder(item, key, col, rowIndex, colIndex);
             }
             return item[key];
         }

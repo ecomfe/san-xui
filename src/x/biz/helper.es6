@@ -129,17 +129,19 @@ export const Page = defineComponent({      // eslint-disable-line
     template: `<div class="{{mainClass}}">
         <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />
 
-        <slot name="filter" />
-
         <div class="${cx('body')}">
-            <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span></h2>
+            <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span><slot name="helps" /></h2>
             <div class="${cx('content')}">
                 <div class="${cx('tip')}" s-if="withTip">
                     <slot name="tip" />
                 </div>
+
+                <slot name="filter" />
+
                 <div class="${cx('toolbar')}" s-if="withToolbar">
                     <div class="${cx('tb-left')}">
                         <slot name="tb-left" />
+                        <slot name="tb-filter" />
                     </div>
                     <div class="${cx('tb-right')}">
                         <slot name="tb-right" />

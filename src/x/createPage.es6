@@ -40,11 +40,34 @@ export default function createPage(schema) {
     /* eslint-disable */
     const template = `<template>
     <page title="{{title}}" remark="{{remark}}" with-tip="{{withTip}}" with-sidebar="{{withSidebar}}" breadcrumbs="{{breadcrumbs}}">
-        <div slot="filter">
-            <filter s-if="body.filter" items="{{body.filter}}" on-submit="onFilter" />
+        <div slot="filter" s-if="filter && filter.$position !== 'tb'">
+            <x-filter
+                s-ref="filter"
+                title="{{filter.title}}"
+                submit-text="{{filter.submitText}}"
+                controls="{{filter.controls}}"
+                on-submit="onFilter($event)" />
         </div>
 
-        <div slot="tb-left">
+        <div slot="tb-filter" s-if="filter && filter.$position === 'tb'">
+            <x-filter
+                s-ref="filter"
+                title="{{filter.title}}"
+                submit-text="{{filter.submitText}}"
+                controls="{{filter.controls}}"
+                on-submit="onFilter($event)" />
+        </div>
+
+        <div slot="helps" s-if="helps.length">
+            <ui-ghost s-for="item in helps">
+                <a
+                    s-if="item.type === 'link'"
+                    target="_blank"
+                    href="{{item.link}}">{{item.label}}</a>
+            </ui-ghost>
+        </div>
+
+        <div slot="tb-left" s-if="toolbar.length">
             <ui-ghost s-for="item in toolbar">
                 <ui-button
                     s-if="item.type === 'button'"
@@ -134,7 +157,7 @@ export default function createPage(schema) {
     return defineComponent({
         template,
         components: {
-            'filter': Filter,
+            'x-filter': Filter,
             'bulk-actions': BulkActions,
             'page': Page,
             'ui-ghost': Ghost,
@@ -185,7 +208,7 @@ export default function createPage(schema) {
         },
 
         initData() {
-            const {$breadcrumbs, $withTip, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            const {$breadcrumbs, $helps, $withTip, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
             const cellRenderer = $cellRenderer
                 ? (...args) => $cellRenderer.apply(null, [...args, this.data.get('$extraPayload')])
@@ -193,6 +216,7 @@ export default function createPage(schema) {
 
             return {
                 title,
+                helps: $helps,
                 remark,
                 toolbar: createToolbar(toolbar),
                 bulkActions,
@@ -248,9 +272,7 @@ export default function createPage(schema) {
             // a: b
             // c: d
             // e: f
-            const $extraPayload = this.data.get('$extraPayload');
-            const newPayload = _.extend({}, $extraPayload, filterOptions);
-            this.data.set('$extraPayload', newPayload);
+            this.resetSearchCriteria(filterOptions);
             this.doSearch();
         },
 
@@ -423,13 +445,20 @@ export default function createPage(schema) {
             this.loadPage(payload);
         },
 
+        resetSearchCriteria(filterOptions) {
+            const $extraPayload = this.data.get('$extraPayload');
+            const newPayload = _.extend({}, $extraPayload, filterOptions);
+            this.data.set('$extraPayload', newPayload);
+        },
+
         getSearchCriteria() {
-            // const filter = this.data.get('filter');
             const pager = this.data.get('pager');
             const payload = {
                 pageNo: pager.page,
                 pageSize: pager.size
             };
+
+            // const filter = this.data.get('
 
             const extraPayload = this.data.get('$extraPayload');
             // const keyword = filter.keywordType === 'USERNAME'
@@ -516,7 +545,12 @@ export default function createPage(schema) {
         },
 
         attached() {
-            this.refreshTable();
+            const filter = this.ref('filter');
+            if (filter) {
+                this.resetSearchCriteria(filter.data.get('formData'));
+            }
+            this.doSearch();
+
             this.__watcherTableColumns(this.data.get('tableColumns'));
         }
     });
