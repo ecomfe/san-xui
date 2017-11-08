@@ -53,7 +53,7 @@ const AlertDialog = defineComponent({
         width="{{width}}"
         s-ref="dialog">
         <span slot="head">{{title}}</span>
-        <div class="ui-dialog-icon ui-dialog-icon-alert"></div>
+        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>
         <div class="ui-dialog-text">{{message | raw}}</div>
         <div slot="foot">
             <ui-button on-click="onConfirmDialog" skin="primary">确定</ui-button>
