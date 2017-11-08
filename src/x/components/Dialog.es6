@@ -40,9 +40,12 @@ export default defineComponent({
         'ui-button': Button
     },
     initData() {
+        const zIndex = nextZindex();
         return {
             draggable: false,
             closeOnClickMask: false,
+            maskZindex: zIndex,
+            dialogZindex: zIndex + 1,
             width: 'auto',
             height: 'auto',
             left: null,
@@ -70,7 +73,7 @@ export default defineComponent({
         },
         maskStyle() {
             return {
-                'z-index': nextZindex()
+                'z-index': this.data.get('maskZindex')
             };
         },
         dialogBodyStyle() {
@@ -85,7 +88,7 @@ export default defineComponent({
             const width = this.data.get('width');
             const left = this.data.get('left');
             const top = this.data.get('top');
-            const styles = {'opacity': 1, 'z-index': nextZindex() + 1};
+            const styles = {'opacity': 1, 'z-index': this.data.get('dialogZindex')};
             if (width !== 'auto') {
                 styles.width = `${width}px`;
             }
@@ -117,6 +120,9 @@ export default defineComponent({
         if (!open) {
             return;
         }
+        const zIndex = nextZindex();
+        this.data.set('maskZindex', zIndex);
+        this.data.set('dialogZindex', zIndex + 1);
         nextTick(() => {
             const main = $(this.el).find('> .ui-dialog-x');
             // const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
