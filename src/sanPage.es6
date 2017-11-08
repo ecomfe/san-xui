@@ -11,6 +11,8 @@ import Action from 'er/Action';
 import Model from 'er/Model';
 import View from 'er/View';
 
+import createPage from './x/createPage';
+
 class SanView extends View {
     constructor(page) {
         super();
@@ -98,8 +100,18 @@ export default function sanPage(moduleId) {
         createRuntimeAction(actionContext) {
             return new Promise((resolve, reject) => {
                 window.require([moduleId], Component => {
-                    const SanPage = buildSanPage(Component);
-                    resolve(new SanAction(SanPage));
+                    if (typeof Component === 'function') {
+                        const SanPage = buildSanPage(Component);
+                        resolve(new SanAction(SanPage));
+                    }
+                    else if (typeof Component === 'object') {
+                        const schema = Component;
+                        const SanPage = buildSanPage(createPage(schema));
+                        resolve(new SanAction(SanPage));
+                    }
+                    else {
+                        throw new Error('invalid component type');
+                    }
                 });
             });
         }
