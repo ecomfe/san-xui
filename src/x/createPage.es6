@@ -78,6 +78,7 @@ export default function createPage(schema) {
                 <ui-button
                     s-if="item.type === 'button'"
                     on-click="onToolbarEvent(item)"
+                    disabled="{{item.disabled}}"
                     icon="{{item.icon}}"
                     label="{{item.label}}"
                     skin="{{item.skin}}"
@@ -85,6 +86,7 @@ export default function createPage(schema) {
                 <ui-radioselect
                     s-if="item.type === 'button-group'"
                     value="{{item.value}}"
+                    disabled="{{item.disabled}}"
                     on-change="onToolbarEvent($event)"
                     datasource="{{item.datasource}}"
                     />
