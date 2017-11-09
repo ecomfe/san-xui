@@ -963,11 +963,16 @@
         margin-right: 20px;
         font-size: 12px;
     }
+
     .ui-tab-x {
         margin-left: -20px;
+        float: left;
         .ui-tab-navigator {
             background: #fff;
             border-bottom: none;
+        }
+        + div[slot="helps"] {
+            line-height: 50px;
         }
     }
     > h2 {
