@@ -57,7 +57,7 @@ export default defineComponent({
                 if (!errors) {
                     errors = [];
                 }
-    
+
                 let found = false;
                 for (let i = 0; i < errors.length; i++) {
                     const item = errors[i];
@@ -72,7 +72,7 @@ export default defineComponent({
                     this.data.set('errors.' + name, null);
                     resolve();
                 }
-    
+
                 let hasError = false;
                 const formErrors = this.data.get('errors');
                 for (const key in formErrors) {
@@ -101,7 +101,7 @@ export default defineComponent({
                     resolve();
                     return;
                 }
-    
+
                 const errorsMap = {};
                 for (let i = 0; i < errors.length; i++) {
                     const item = errors[i];

@@ -96,6 +96,7 @@ const MonthView = defineComponent({
             hour: null,
             minute: null,
             second: null,
+            endOfDay: false,    // 如果设置为 true 的时候，当没有 time 选型，选择日期的时候是 23:59:59 结束
 
             value: new Date(),
             titles: ['一', '二', '三', '四', '五', '六', '日'],
@@ -187,10 +188,13 @@ const MonthView = defineComponent({
             return;
         }
         const {year, month, date} = item;
-        const value = this.data.get('value');
+        const {value, time, endOfDay} = this.data.get();
         value.setFullYear(year);
         value.setMonth(month);
         value.setDate(date);
+        if (endOfDay && !time) {
+            value.setHours(23, 59, 59, 999);
+        }
         this.data.set('value', new Date(value));
     },
     onMonthBack() {

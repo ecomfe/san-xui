@@ -39,7 +39,13 @@ function createClient(api) {
 export default function createPage(schema) {
     /* eslint-disable */
     const template = `<template>
-    <page title="{{title}}" remark="{{remark}}" with-tip="{{withTip}}" with-sidebar="{{withSidebar}}" breadcrumbs="{{breadcrumbs}}">
+    <page class="{{klass}}"
+        title="{{title}}"
+        navs="{{navs}}"
+        remark="{{remark}}"
+        with-tip="{{withTip}}"
+        with-sidebar="{{withSidebar}}"
+        breadcrumbs="{{breadcrumbs}}">
         <div slot="filter" s-if="filter && filter.$position !== 'tb'">
             <x-filter
                 s-ref="filter"
@@ -94,7 +100,15 @@ export default function createPage(schema) {
         ${schema.$withTip ? '<div slot="tip">' + schema.$withTip + '</div>' : ''}
 
         <div slot="tb-right">
-            <ui-searchbox search-btn="{{false}}" value="{=$extraPayload.keyword=}" on-search="doSearch" s-if="withSearchbox" />
+            <ui-searchbox
+                s-if="withSearchbox"
+                search-btn="{{false}}"
+                value="{=$extraPayload.keyword=}"
+                keyword-type="{=$extraPayload.keywordType=}"
+                placeholder="{{filter.$searchbox.placeholder}}"
+                datasource="{{filter.$searchbox.datasource}}"
+                on-search="doSearch"
+            />
             <ui-button disabled="{{table.loading}}" on-click="refreshTable" icon="refresh" />
             <ui-table-column-toggle
                 s-if="tct.datasource.length"
@@ -208,14 +222,21 @@ export default function createPage(schema) {
         },
 
         initData() {
-            const {$breadcrumbs, $helps, $withTip, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
+            const {$onRequest, $onResponse, $onError} = body;
             const cellRenderer = $cellRenderer
                 ? (...args) => $cellRenderer.apply(null, [...args, this.data.get('$extraPayload')])
                 : null;
 
+            this.$onRequest = $onRequest;
+            this.$onResponse = $onResponse;
+            this.$onError = $onError;
+
             return {
                 title,
+                klass: $pageClass,
+                navs: $navs,
                 helps: $helps,
                 remark,
                 toolbar: createToolbar(toolbar),
@@ -264,6 +285,16 @@ export default function createPage(schema) {
         },
 
         inited() {
+            const keywordType = this.data.get('filter.$searchbox.keywordType');
+            if (keywordType) {
+                this.data.set('$extraPayload.keywordType', keywordType);
+            }
+
+            const keyword = this.data.get('filter.$searchbox.value');
+            if (keyword) {
+                this.data.set('$extraPayload.keyword', keyword);
+            }
+
             this.$childs = [];
             this.watch('tableColumns', tableColumns => this.__watcherTableColumns(tableColumns));
         },
@@ -458,21 +489,12 @@ export default function createPage(schema) {
                 pageSize: pager.size
             };
 
-            // const filter = this.data.get('
-
             const extraPayload = this.data.get('$extraPayload');
-            // const keyword = filter.keywordType === 'USERNAME'
-            //     ? filter.keyword1
-            //     : filter.keyword2;
-            // if (filter.keywordType && keyword) {
-            //     payload.keywordType = filter.keywordType;
-            //     payload.keyword = keyword;
-            // }
-            // if (filter.dateRange) {
-            //     const {begin, end} = getDateRange(filter.dateRange);
-            //     payload.startTime = timeUtil.timeToUtc(begin);
-            //     payload.endTime = timeUtil.timeToUtc(end);
-            // }
+            const keywordName = this.data.get('filter.$searchbox.name');
+            if (keywordName) {
+                const keyword = extraPayload.keyword;
+                return _.extend(payload, _.omit(extraPayload, 'keyword'), {[keywordName]: keyword});
+            }
             return _.extend(payload, extraPayload);
         },
 
@@ -514,27 +536,31 @@ export default function createPage(schema) {
             }
 
             this.data.set('table.loading', true);
-            return createClient(schema.body.api).sendRequest(payload)
+            const requestPayload = typeof this.$onRequest === 'function'
+                ? this.$onRequest(payload) || payload
+                : payload;
+            return createClient(schema.body.api).sendRequest(requestPayload)
                 .then(page => {
-                    const tableData = this.transformTable(page.result);
+                    const responsePayload = typeof this.$onResponse === 'function'
+                        ? this.$onResponse(page) || page
+                        : page;
+                    const {result, pageNo, totalCount} = responsePayload;
+                    const tableData = this.transformTable(result);
                     // 有些接口返回的 page.totalCount 是 0，但是 page.result 居然有内容
-                    const totalCount = page.totalCount > 0
-                        ? page.totalCount
-                        : tableData.length;
+                    const resultTotalCount = totalCount > 0 ? totalCount : tableData.length;
                     this.data.set('table.loading', false);
                     this.data.set('table.error', null);
                     this.data.set('table.datasource', tableData);
-                    this.data.set('pager.page', page.pageNo);
-                    this.data.set('pager.count', totalCount);
+                    this.data.set('pager.page', pageNo);
+                    this.data.set('pager.count', resultTotalCount);
                 })
                 .fail(error => {
+                    if (typeof this.$onError === 'function') {
+                        this.$onError(error);
+                    }
                     this.data.set('table.loading', false);
                     this.data.set('table.error', error);
                 });
-        },
-
-        doSubmit() {
-            return Promise.resolve();
         },
 
         doSearch() {

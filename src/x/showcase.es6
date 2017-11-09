@@ -31,7 +31,7 @@ const template = `<div class="showcase">
 </div>`;
 /* eslint-enable */
 
-const App = defineComponent({
+const App = defineComponent({   // eslint-disable-line
     template,
     components: {
         'ui-aside': Aside,
@@ -46,7 +46,7 @@ const App = defineComponent({
                 error: null,
                 comp: null
             }
-        }
+        };
     },
     disposeComponent() {
         const comp = this.data.get('explorer.comp');

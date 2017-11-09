@@ -130,7 +130,21 @@ export const Page = defineComponent({      // eslint-disable-line
         <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />
 
         <div class="${cx('body')}">
-            <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span><slot name="helps" /></h2>
+            <div class="${cx('title')}" s-if="title || navs">
+                <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span></h2>
+                <div class="ui-tab ui-tab-x" s-elif="navs">
+                    <ul class="ui-tab-navigator">
+                        <li
+                            s-for="item in navs"
+                            class="{{item.active ? 'ui-tab-item ui-tab-item-active' : 'ui-tab-item'}}"
+                        >
+                            <a href="{{item.link}}" s-if="item.link">{{item.text}}</a>
+                            <span s-else>{{item.text}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <slot name="helps" />
+            </div>
             <div class="${cx('content')}">
                 <div class="${cx('tip')}" s-if="withTip">
                     <slot name="tip" />
@@ -160,6 +174,7 @@ export const Page = defineComponent({      // eslint-disable-line
             withTip: false,
             withToolbar: true,
             title: null,
+            navs: null,
             remark: null,
             breadcrumbs: null
         };

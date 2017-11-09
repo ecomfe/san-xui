@@ -30,7 +30,7 @@ const template = `<div class="${cx('xx')}">
 `;
 /* eslint-enable */
 
-const Calendar = defineComponent({
+const Calendar = defineComponent({  // eslint-disable-line
     template,
     components: {
         'ui-button': Button,

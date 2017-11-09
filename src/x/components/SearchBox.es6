@@ -16,7 +16,7 @@ const cx = create('ui-searchbox');
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
     <ui-select
-        s-if="datasource"
+        s-if="datasource.length"
         on-change="onKeywordTypeChanged($event)"
         datasource="{{datasource}}"
         value="{=keywordType=}"
@@ -75,13 +75,13 @@ export default defineComponent({
         if (datasource && keywordType) {
             u.each(datasource, item => {
                 if (item.value === keywordType) {
-                    this.onKeywordTypeChanged({selectedItem: item});
+                    this.onKeywordTypeChanged(item);
                 }
             });
         }
     },
-    onKeywordTypeChanged({selectedItem}) {
-        this.data.set('placeholder', `请输入${selectedItem.text}进行搜索`);
+    onKeywordTypeChanged({value, text}) {
+        this.data.set('placeholder', `请输入${text}进行搜索`);
     },
     onSearch() {
         this.fire('search');

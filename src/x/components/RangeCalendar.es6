@@ -9,13 +9,14 @@ import {create} from './util';
 import Button from './Button';
 import Layer from './Layer';
 import MonthView from './MonthView';
+import {asInput} from './asInput';
 
 const cx = create('ui-rangecalendar');
 
 function getDayValue(bd = 1, ed = 2) {
     return function () {
         const begin = moment().subtract(bd, 'day').toDate();
-        const end = moment().subtract(ed, 'day').toDate();
+        const end = moment().subtract(ed, 'day').endOf('day').toDate();
         return {begin, end};
     };
 }
@@ -38,13 +39,14 @@ function getLastWeekValue() {
                 begin.getDate() - 7 - begin.getDay() + startOfWeek % 7
             );
         }
-        // begin.setHours(0, 0, 0, 0);
+        begin.setHours(0, 0, 0, 0);
+
         end.setFullYear(
             begin.getFullYear(),
             begin.getMonth(),
             begin.getDate() + 6
         );
-        // end.setHours(0, 0, 0, 0);
+        end.setHours(23, 59, 59, 999);
 
         return {begin, end};
     };
@@ -53,7 +55,7 @@ function getLastWeekValue() {
 function getMonthValue() {
     return function () {
         const begin = moment().startOf('month').toDate();
-        const end = moment().toDate();
+        const end = moment().endOf('day').toDate();
         return {begin, end};
     };
 }
@@ -61,7 +63,7 @@ function getMonthValue() {
 function getLastMonthValue() {
     return function () {
         const begin = moment().subtract('month', 1).startOf('month').toDate();
-        const end = moment().startOf('month').subtract('day', 1).toDate();
+        const end = moment().startOf('month').subtract('day', 1).endOf('day').toDate();
         return {begin, end};
     };
 }
@@ -74,7 +76,7 @@ function getLastQuarterValue() {
             .startOf('month').toDate();
         const end = moment()
             .subtract('month', now.getMonth() % 3)
-            .startOf('month').subtract('day', 1).toDate();
+            .startOf('month').subtract('day', 1).endOf('day').toDate();
         return {begin, end};
     };
 }
@@ -100,7 +102,7 @@ const template = `<div on-click="toggleLayer" class="{{mainClass}}">
                 <div class="${cx('end')}">
                     <div class="${cx('label')}"><h3>结束日期</h3></div>
                     <div class="${cx('end-cal')}">
-                        <ui-monthview value="{=end.value=}" time="{{time}}" />
+                        <ui-monthview value="{=end.value=}" time="{{time}}" end-of-day />
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@ const template = `<div on-click="toggleLayer" class="{{mainClass}}">
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const RangeCalendar = defineComponent({
     template,
     components: {
         'ui-layer': Layer,
@@ -181,6 +183,7 @@ export default defineComponent({
         const begin = this.data.get('begin.value');
         const end = this.data.get('end.value');
         this.data.set('value', {begin, end});
+        this.fire('change', {value: {begin, end}});
         this.closeLayer();
     },
     closeLayer() {
@@ -195,3 +198,5 @@ export default defineComponent({
         this.data.set('active', !active);
     }
 });
+
+export default asInput(RangeCalendar);

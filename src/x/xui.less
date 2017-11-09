@@ -951,7 +951,7 @@
     background: #fff;
     margin-top: 20px;
 }
-.list-page-body > h2 {
+.list-page-title {
     .clearfix();
     line-height: 55px;
     font-weight: normal;
@@ -963,11 +963,21 @@
         margin-right: 20px;
         font-size: 12px;
     }
-}
-.list-page-body > h2 > span {
-    font-size: 12px;
-    margin-left: 10px;
-    color: #666;
+    .ui-tab-x {
+        margin-left: -20px;
+        .ui-tab-navigator {
+            background: #fff;
+            border-bottom: none;
+        }
+    }
+    > h2 {
+        display: inline-block;
+        > span {
+            font-size: 12px;
+            margin-left: 10px;
+            color: #666;
+        }
+    }
 }
 
 .list-page-content {
