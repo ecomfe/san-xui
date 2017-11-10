@@ -11,6 +11,7 @@ import {create} from 'inf-ui/x/components/util';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
 import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
+import Calendar from 'inf-ui/x/components/Calendar';
 
 const cx = create('ui-biz-filter');
 
@@ -32,6 +33,13 @@ const template = `<div class="{{mainClass}}">
                         on-change="onItemChanged(item.name, $event)"
                         value="{{item.value}}"
                         />
+                    <ui-calendar
+                        s-if="item.type === 'calendar'"
+                        on-change="onItemChanged(item.name, $event)"
+                        prev="{{item.prev}}"
+                        next="{{item.next}}"
+                        value="{{item.value}}"
+                        />
                     <div class="${cx('form-item-plain')}" s-if="item.type === 'plain'">{{item.text | raw}}</div>
                 </div>
             </div>
@@ -45,6 +53,7 @@ export default defineComponent({
     template,
     components: {
         'ui-select': Select,
+        'ui-calendar': Calendar,
         'ui-rangecalendar': RangeCalendar,
         'ui-button': Button
     },
