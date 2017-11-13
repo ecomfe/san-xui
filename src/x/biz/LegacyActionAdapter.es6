@@ -61,54 +61,50 @@ export default defineComponent({
     closeDialog() {
         this.data.set('actionOptions.open', false);
     },
+
     onActionLoaded(e) {
         const erAction = e.action;
-        erAction.on('beforesubmit', () => {
-            this.data.set('confirm.label', '处理中...');
-            this.data.set('confirm.disabled', true);
+        let compInstance = erAction;
+
+        if (erAction && erAction.page && erAction.SanPage) {
+            compInstance = erAction.page.children[0];
+        }
+        compInstance.on('legacyactioncustomevent', e => {
+            const type = e.legacyActionFireCustomType;
+            // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
+            erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
         });
 
-        const erView = erAction.view;
-        const enableSubmit = erView.enableSubmit;
-        erView.enableSubmit = () => {
-            if (typeof enableSubmit === 'function') {
-                enableSubmit.call(erView);
-            }
-            this.data.set('confirm.label', '确定');
-            this.data.set('confirm.disabled', false);
-        };
         this.erAction = erAction;
     },
     onConfirmDialog() {
         const erAction = this.erAction;
+        let compInstance = null;
+
         if (erAction && erAction.page && erAction.SanPage) {
-            const compInstance = erAction.page.children[0];
-            if (compInstance && typeof compInstance.doSubmit === 'function') {
-                this.data.set('confirm.label', '处理中...');
-                this.data.set('confirm.disabled', true);
-                return compInstance.doSubmit()
-                    .then(() => {
-                        this.data.set('confirm.label', '确定');
-                        this.data.set('confirm.disabled', false);
-                        this.closeDialog();
-                    })
-                    .catch(error => {
-                        Toast.error(error.global || '操作失败');
-                        this.data.set('confirm.label', '确定');
-                        this.data.set('confirm.disabled', false);
-                    });
-            }
-            this.closeDialog();
+            compInstance = erAction.page.children[0];
+
         }
         else if (erAction && erAction.view) {
-            const form = erAction.view.get('form');
-            if (form) {
-                form.validateAndSubmit();
-            }
+            compInstance = erAction;
         }
-        else {
-            this.closeDialog();
+
+        if (compInstance && typeof compInstance.doSubmit === 'function') {
+            this.data.set('confirm.label', '处理中...');
+            this.data.set('confirm.disabled', true);
+            return compInstance.doSubmit()
+                .then(() => {
+                    this.data.set('confirm.label', '确定');
+                    this.data.set('confirm.disabled', false);
+                    this.closeDialog();
+                })
+                .then(null, (error = {}) => {
+                    Toast.error(error.global || '操作失败');
+                    this.data.set('confirm.label', '确定');
+                    this.data.set('confirm.disabled', false);
+                });
         }
+        this.closeDialog();
     },
     onCloseDialog() {
         this.closeDialog();

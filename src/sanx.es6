@@ -15,6 +15,7 @@ import Icon from './x/components/Icon';
 import $data from './mixins/data';
 import $locator from './mixins/locator';
 import {i18n} from './mixins/filters';
+import $shim from './mixins/shim';
 import {$post} from './mixins/ajax';
 import {alert, confirm, plain} from './x/biz/helper';
 
@@ -63,7 +64,7 @@ export function defineComponent(options) {
     const $ajax = {
         $post
     };
-    const $options = u.extend($ajax, $dialog, $data, $locator, options);
+    const $options = u.extend($ajax, $dialog, $data, $locator, $shim, options);
 
     return san.defineComponent($options);
 }

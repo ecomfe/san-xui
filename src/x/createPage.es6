@@ -27,7 +27,7 @@ import {asDialog} from 'inf-ui/x/components/asDialog';
 import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, createPayload, createToolbar} from './biz/helper';
+import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, createPayload, createToolbar, createCommandMessages} from './biz/helper';
 
 export default function createPage(schema) {
     /* eslint-disable */
@@ -425,15 +425,7 @@ export default function createPage(schema) {
                         }
                     },
                     // TODO(leeight) 貌似不是一个好的设计
-                    dispatchCommand: (type, id) => {
-                        const datasource = this.data.get('table.datasource');
-                        const payload = _.isString(id)
-                            ? _.find(datasource, item => item.id === id)
-                            : id;   // maybe it's a payload object
-                        if (payload && type) {
-                            this.onTableCommand({type, payload});
-                        }
-                    }
+                    dispatchCommand: (type, id) => this.dispatchCommand(type, id)
                 };
                 const actionOptions = {
                     open: true,
@@ -449,7 +441,7 @@ export default function createPage(schema) {
                 if (foot != null) {
                     compData.foot = foot;
                 }
-                component = new LegacyActionAdapter({data: compData});
+                component = new LegacyActionAdapter({parent: this, data: compData});
                 component.attach(document.body);
                 this.$childs.push(component);
             }
@@ -623,6 +615,18 @@ export default function createPage(schema) {
             this.doSearch();
 
             this.__watcherTableColumns(this.data.get('tableColumns'));
+        },
+
+        messages: createCommandMessages(schema.body.$commands),
+
+        dispatchCommand(type, id) {
+            const datasource = this.data.get('table.datasource');
+            const payload = _.isString(id)
+                    ? _.find(datasource, item => item.id === id)
+                    : id;   // maybe it's a payload object
+            if (payload && type) {
+                this.onTableCommand({type, payload});
+            }
         }
     });
 }

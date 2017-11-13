@@ -48,7 +48,6 @@ function notifyActionLoadComplete(e) {
     if (!this.actionMatched(e)) {
         return;
     }
-
     this.data.set('loading', false);
     this.data.set('error', null);
     this.fire('actionloaded', e);

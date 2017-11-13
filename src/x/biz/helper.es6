@@ -126,3 +126,16 @@ export function matchAll(compProxy, when) {
     }
     return true;
 }
+
+// 将commands转化成messages供调用
+export function createCommandMessages(commands) {
+    const messages = {};
+    u.each(commands, (config, key) => {
+        messages[key] = function (args) {
+            this.dispatchCommand(key, args.value);
+        };
+    });
+    return messages;
+}
+
+
