@@ -114,7 +114,12 @@ const template = `<template>
     </xui-form>
 </x-row>
 
-<x-row label="edit,formData=...">
+<x-row label="inline,label">
+    <xui-form formData="{=formData2=}" errors="{=formErrors2=}" >
+        <xui-item name="name" required inline label="名称">
+            <xui-textbox placeholder="用户名" type="text" value="{=formData2.name=}" />
+        </xui-item>
+    </xui-form>
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -131,30 +136,14 @@ export default defineComponent({
         'xui-form': Form,
         'xui-item': FormItem
     },
-    computed: {
-        canSubmit() {
-            const loading = this.data.get('loading');
-            const formData = this.data.get('formData');
-            const formErrors = this.data.get('formErrors');
-            // TODO(leeight) 这个需要再调整一下，这样子做太繁琐了
-            return !loading
-                && formData
-                && formData.userName
-                && formData.password
-                && formData.confirmPassword
-                && formData.mobile
-                && formData.verifyCode
-                && formData.select
-                && formData.boxgroup
-                && !formErrors;
-        }
-    },
     initData() {
         return {
             loading: false,
             rules: formValidator,
             formData: {},
             formErrors: null,
+            formData2: {},
+            formErrors2: null,
             select: {
                 datasource: [
                     {text: 'Empty', value: ''},
