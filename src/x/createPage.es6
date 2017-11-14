@@ -46,7 +46,7 @@ export default function createPage(schema) {
         with-tip="{{withTip}}"
         with-sidebar="{{withSidebar}}"
         breadcrumbs="{{breadcrumbs}}">
-        <div slot="filter" s-if="filter && filter.$position !== 'tb'">
+        <div slot="filter" s-if="filter && filter.$position !== 'tb' && filter.controls.length > 0">
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
@@ -55,7 +55,7 @@ export default function createPage(schema) {
                 on-submit="onFilter($event)" />
         </div>
 
-        <div slot="tb-filter" s-if="filter && filter.$position === 'tb'">
+        <div slot="tb-filter" s-if="filter && filter.$position === 'tb' && filter.controls.length > 0">
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"

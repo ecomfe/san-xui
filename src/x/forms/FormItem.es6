@@ -19,7 +19,7 @@ function getEventName(tagName) {
 }
 
 const template = `<div class="{{mainClass}}">
-    <div class="${cx('label')} {{require ? 'require-label' : ''}}" s-if="label"><slot name="label">{{label}}</slot></div>
+    <div class="${cx('label')} {{isRequired ? 'require-label required-label' : ''}}" s-if="label"><slot name="label">{{label}}</slot></div>
     <div class="${cx('content')}">
         <slot/>
         <slot name="error"><label class="${cx('invalid-label')}" s-if="error">{{error}}</label></slot>
@@ -29,15 +29,24 @@ export default defineComponent({
     role: 'FormItem',
     template,
     computed: {
+        isRequired() {
+            const a = this.data.get('require');
+            const b = this.data.get('required');
+            return a || b;
+        },
         mainClass() {
             const klass = [cx()];
             const name = this.data.get('name');
             const error = this.data.get('error');
+            const inline = this.data.get('inline');
             if (name) {
                 klass.push(cx(name));
             }
             if (error) {
                 klass.push(cx('invalid'));
+            }
+            if (inline) {
+                klass.push(cx('inline'));
             }
             return klass;
         }

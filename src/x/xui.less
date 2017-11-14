@@ -1040,3 +1040,38 @@
 .ui-biz-filter-form-item:last-child {
     margin-right: 0;
 }
+
+/* ui-form-x */
+.ui-form-x {
+    .ui-form-item {
+        margin: 10px 0;
+    }
+
+    .ui-form-item-invalid-label {
+        color: #EB5252;
+    }
+
+    .required-label {
+        position: relative;
+
+        &:before {
+            content: '*';
+            position: absolute;
+            line-height: inherit;
+            left: -10px;
+            color: #f00;
+        }
+    }
+
+    .ui-form-item-inline {
+        .ui-form-item-label,
+        .ui-form-item-content {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ui-form-item-label {
+            width: 150px;
+        }
+    }
+}
