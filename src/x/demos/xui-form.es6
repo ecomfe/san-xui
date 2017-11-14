@@ -63,7 +63,7 @@ const formValidator = new Schema({
 /* eslint-disable */
 const template = `<template>
 <x-row label="[default]">
-    <xui-form rules="{{rules}}" formData="{=formData=}" errors="{=formErrors=}">
+    <xui-form s-ref="form" rules="{{rules}}" formData="{=formData=}" errors="{=formErrors=}">
         <xui-item name="nativeInput">
             <input type="text" value="{=formData.nativeInput=}" />
         </xui-item>
@@ -107,7 +107,7 @@ const template = `<template>
             <xui-smscode width="{{110}}" />
         </xui-item>
         <xui-item>
-            <xui-button on-click="doSubmit" disabled="{{!canSubmit}}" skin="primary">
+            <xui-button on-click="doSubmit" skin="primary">
                 {{loading ? '提交中...' : '同意条款并注册'}}
             </xui-button>
         </xui-item>
@@ -153,7 +153,7 @@ export default defineComponent({
         return {
             loading: false,
             rules: formValidator,
-            formData: null,
+            formData: {},
             formErrors: null,
             select: {
                 datasource: [
@@ -172,10 +172,13 @@ export default defineComponent({
         };
     },
     doSubmit() {
-        this.data.set('loading', true);
-        setTimeout(() => {
-            this.data.set('loading', false);
-            Toast.success('创建成功');
-        }, 1000);
+        const form = this.ref('form');
+        form.validateForm().then(() => {
+            this.data.set('loading', true);
+            setTimeout(() => {
+                this.data.set('loading', false);
+                Toast.success('创建成功');
+            }, 1000);
+        }).catch(error => this.data.set('error', error));
     }
 });
