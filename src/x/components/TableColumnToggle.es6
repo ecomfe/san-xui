@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import Button from './Button';
@@ -91,6 +91,6 @@ export default defineComponent({
         if (item.disabled) {
             return;
         }
-        this.fire('change');
+        nextTick(() => this.fire('change'));
     }
 });
