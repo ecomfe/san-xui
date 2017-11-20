@@ -39,8 +39,8 @@ export default defineComponent({
         }
     },
     assertOK() {
-        const slotChilds = this.slotChilds;
-        if (!slotChilds || slotChilds.length <= 0) {
+        const defaultSlot = this.slot();
+        if (!defaultSlot || defaultSlot.length <= 0) {
             throw new Error('xui-tab-panel is missing');
         }
     },
@@ -52,14 +52,15 @@ export default defineComponent({
     refreshTabs() {
         this.assertOK();
 
-        const tabPanels = this.slotChilds[0].childs;
+        const defaultSlot = this.slot();
+        const tabPanels = defaultSlot[0].children;
         const tabs = [];
         for (let i = 0; i < tabPanels.length; i++) {
             const panel = tabPanels[i];
             const text = panel.data
                 ? panel.data.get('title')
-                : panel.cond && panel.childs.length
-                ? panel.childs[0].data.get('title')
+                : panel.cond && panel.children.length
+                ? panel.children[0].data.get('title')
                 : null;
             if (text) {
                 tabs.push({text});
@@ -80,8 +81,8 @@ export default defineComponent({
             if (tabPanel.data) {
                 tabPanel.data.set('active', active);
             }
-            else if (tabPanel.cond && tabPanel.childs.length) {
-                tabPanel.childs[0].data.set('active', active);
+            else if (tabPanel.cond && tabPanel.children.length) {
+                tabPanel.children[0].data.set('active', active);
             }
         }
     },
@@ -89,7 +90,8 @@ export default defineComponent({
     onTabClick(item, i) {
         this.assertOK();
 
-        const tabPanels = this.slotChilds[0].childs;    // eslint-disable-line
+        const defaultSlot = this.slot();
+        const tabPanels = defaultSlot[0].children;
 
         const selectedIndex = this.data.get('selectedIndex');
         const currentActiveTab = tabPanels[selectedIndex];

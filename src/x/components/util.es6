@@ -75,7 +75,7 @@ export function nexUuid() {
 }
 
 export function findAllEvents(aNode, events) {
-    _.each(aNode.childs, child => {
+    _.each(aNode.children, child => {
         _.each(child.events, event => {
             events.push(event.expr.name);
         });

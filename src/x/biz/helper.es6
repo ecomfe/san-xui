@@ -189,6 +189,14 @@ export const Page = defineComponent({      // eslint-disable-line
 
             return klass;
         }
+    },
+    hasSlot(name) {
+        const theSlot = this.slot(name);
+        return theSlot.length > 0 && theSlot[0] && theSlot[0].children.length > 0;
+    },
+    attached() {
+        const withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');
+        this.data.set('withToolbar', withToolbar);
     }
 });
 

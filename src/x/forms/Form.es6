@@ -114,9 +114,10 @@ export default defineComponent({
     },
     inited() {
         this.watch('errors', errors => {
-            const childs = this.slotChilds[0].childs;
-            for (let i = 0; i < childs.length; i++) {
-                const formItem = childs[i];
+            const defaultSlot = this.slot();
+            const children = defaultSlot.length ? defaultSlot[0].children : [];
+            for (let i = 0; i < children.length; i++) {
+                const formItem = children[i];
                 const name = formItem.data && formItem.data.get('name');
                 if (!name) {
                     continue;

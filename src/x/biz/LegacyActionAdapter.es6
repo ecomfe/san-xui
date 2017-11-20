@@ -82,7 +82,7 @@ export default defineComponent({
     onConfirmDialog() {
         const erAction = this.erAction;
         if (erAction && erAction.page && erAction.SanPage) {
-            const compInstance = erAction.page.childs[0];
+            const compInstance = erAction.page.children[0];
             if (compInstance && typeof compInstance.doSubmit === 'function') {
                 this.data.set('confirm.label', '处理中...');
                 this.data.set('confirm.disabled', true);

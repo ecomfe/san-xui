@@ -64,7 +64,8 @@ export default defineComponent({
         if (!name) {
             return;
         }
-        const child = this.slotChilds[0].childs[0];
+        const defaultSlot = this.slot();
+        const child = defaultSlot.length ? defaultSlot[0].children[0] : null;
         if (!isComponent(child) && /input|select|textarea/.test(child.tagName)) {
             child._onEl(getEventName(child.tagName), () => {
                 this.dispatch('form-element-changed', {

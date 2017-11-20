@@ -67,17 +67,18 @@ export default defineComponent({
         }
     },
     getInputComp() {
-        const slotChilds = this.slotChilds;
-        if (!slotChilds || slotChilds.length <= 0) {
+        const defaultSlot = this.slot();
+        if (!defaultSlot || defaultSlot.length <= 0) {
             return null;
         }
 
-        const slotChild = u.find(slotChilds, item => item.aNode != null && item.childs && item.childs.length > 0);
+        const slotChild = u.find(defaultSlot[0].children,
+            item => item.aNode != null && item.children && item.children.length > 0);
         if (!slotChild) {
             return null;
         }
 
-        return slotChild.childs[0];
+        return slotChild.children[0];
     },
     attached() {
     },
