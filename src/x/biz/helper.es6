@@ -10,6 +10,7 @@ import Dialog from 'inf-ui/x/components/Dialog';
 import Button from 'inf-ui/x/components/Button';
 import {create} from 'inf-ui/x/components/util';
 
+import {hasSlot} from '../components/util';
 import Breadcrumbs from './Breadcrumbs';
 import LegacyActionAdapter from './LegacyActionAdapter';
 
@@ -191,8 +192,7 @@ export const Page = defineComponent({      // eslint-disable-line
         }
     },
     hasSlot(name) {
-        const theSlot = this.slot(name);
-        return theSlot.length > 0 && theSlot[0] && theSlot[0].children.length > 0;
+        return hasSlot(this, name);
     },
     attached() {
         const withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');

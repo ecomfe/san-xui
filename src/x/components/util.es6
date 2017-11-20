@@ -5,7 +5,7 @@
 
 import _ from 'lodash';
 import moment from 'moment';
-import {Component, defineComponent} from 'san';
+import {NodeType, Component, defineComponent} from 'san';
 
 export function hasUnit(value) {
     return /%|px|auto/.test(value);
@@ -61,10 +61,6 @@ export function isComponent(node) {
     return node instanceof Component;
 }
 
-export function isComponentBuilder(x) {
-    return x && x.uuid && x.ComponentClass && x.context;
-}
-
 let zindex = 0x5942b;
 export function nextZindex() {
     return zindex++;
@@ -74,36 +70,32 @@ export function nexUuid() {
     return nextZindex();
 }
 
-export function findAllEvents(aNode, events) {
-    _.each(aNode.children, child => {
-        _.each(child.events, event => {
-            events.push(event.expr.name);
-        });
-        findAllEvents(child, events);
-    });
-}
+export function hasSlot(comp, name) {
+    let isInsertContent = false;
 
-export function P(template, options) {  // eslint-disable-line
-    const owner = options.owner;
-    const OwnerComponentClass = owner.constructor;
-    const components = OwnerComponentClass.components || OwnerComponentClass.prototype.components || {};
-    const ComponentClass = defineComponent({
-        template,
-        components,
-        inited() {
-            const delegateEvents = [];
-            findAllEvents(this.aNode, delegateEvents);
-            _.each(delegateEvents, eventName => {
-                if (typeof owner[eventName] === 'function') {
-                    this[eventName] = _.bind(owner[eventName], owner);
-                }
-            });
+    function childrenTraversal(children) {
+        for (let i = 0; !isInsertContent && i < children.length; i++) {
+            const child = children[i];
+            if (child.nodeType === NodeType.IF || child.nodeType === NodeType.FOR) {
+                childrenTraversal(child.children);
+                break;
+            }
+            else {
+                isInsertContent = true;
+                return;
+            }
         }
-    });
+    }
 
-    const uuid = `i${nextZindex()}`;
-    owner.temporaryChilds[uuid] = new ComponentClass(options);
-    return `<div id="${uuid}"></div>`;
+    const slots = comp.slot(name);
+    for (let i = 0; i < slots.length; i++) {
+        if (isInsertContent) {
+            return;
+        }
+        childrenTraversal(slots[i].children);
+    }
+
+    return isInsertContent;
 }
 
 export function buildMonths(year, month, date) {
