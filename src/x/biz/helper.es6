@@ -105,7 +105,7 @@ const ConfirmDialog = defineComponent({
     }
 });
 
-function displayDialog(DialogComponent, data = {}) {
+export function displayDialog(DialogComponent, data = {}) {
     return new Promise((resolve, reject) => {
         const dialog = new DialogComponent({data});
         dialog.attach(document.body);
@@ -199,6 +199,40 @@ export const Page = defineComponent({      // eslint-disable-line
         this.data.set('withToolbar', withToolbar);
     }
 });
+
+export const buildDialog = _.memoize(BizComponent => defineComponent({
+    template: `<template>
+    <ui-dialog
+        open
+        width="{{width}}"
+        s-ref="dialog">
+        <span slot="head">{{title}}</span>
+        <x-biz payload="{{payload}}" />
+        <div slot="foot">
+            <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || '确定'}}</ui-button>
+        </div>
+    </ui-dialog>
+    </template>`,
+    components: {
+        'x-biz': BizComponent,
+        'ui-button': Button,
+        'ui-dialog': Dialog
+    },
+    initData() {
+        return {
+            title: '确认',
+            payload: null,
+            foot: {
+                okBtn: {
+                    label: '确定'
+                }
+            }
+        };
+    },
+    onConfirmDialog() {
+        this.fire('confirm');
+    }
+}));
 
 export function plain(data) {
     return displayDialog(PlainDialog, data);

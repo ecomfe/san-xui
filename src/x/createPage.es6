@@ -26,7 +26,7 @@ import io from 'bat-ria/io/serverIO';
 import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, Ghost, matchAll, confirm, alert, plain, createPayload, createToolbar} from './biz/helper';
+import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, buildDialog, createPayload, createToolbar} from './biz/helper';
 
 function createClient(api) {
     return {
@@ -372,6 +372,21 @@ export default function createPage(schema) {
             }
             else if (type === 'plain') {
                 const content = body.content;
+                if (typeof content === 'function') {
+                    // 重新构造一个动态的组件出来
+                    const DialogComponent = buildDialog(content);
+                    const dialogData = {
+                        title: $title, width, foot, payload
+                    };
+                    return displayDialog(DialogComponent, dialogData).then(() => {
+                        if (foot && foot.okBtn && foot.okBtn.actionType) {
+                            const config = foot.okBtn;
+                            this.dispatchAction(config, payload);
+                            // FIXME(leeight) 可能不太合适
+                            this.refreshTable();
+                        }
+                    });
+                }
                 const plainMessage = _.template(content)(payload);
                 return plain({title: $title, width, foot, message: plainMessage}).then(() => {
                     if (foot && foot.okBtn && foot.okBtn.actionType) {
