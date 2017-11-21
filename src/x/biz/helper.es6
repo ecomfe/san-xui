@@ -3,15 +3,12 @@
  * @author leeight
  */
 
-import _ from 'inf-i18n';
 import u from 'lodash';
 import Promise from 'promise';
-import {defineComponent} from 'san';
-import Dialog from 'inf-ui/x/components/Dialog';
 import ConfirmDialog from 'inf-ui/x/components/ConfirmDialog';
 import AlertDialog from 'inf-ui/x/components/AlertDialog';
 import PlainDialog from 'inf-ui/x/components/PlainDialog';
-import Button from 'inf-ui/x/components/Button';
+import {asDialog} from 'inf-ui/x/components/asDialog';
 
 import LegacyActionAdapter from './LegacyActionAdapter';
 import _Page from './Page';
@@ -35,44 +32,8 @@ export function displayDialog(DialogComponent, data = {}) {
     });
 }
 
-export function buildDialog(BizComponent) {
-    if (BizComponent.__dialogComponent) {
-        return BizComponent.__dialogComponent;
-    }
-
-    const DialogComponent = defineComponent({
-        template: `<template>
-        <ui-dialog open width="{{width}}" s-ref="dialog">
-            <span slot="head">{{title}}</span>
-            <x-biz payload="{{payload}}" />
-            <div slot="foot">
-                <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || '确定'}}</ui-button>
-            </div>
-        </ui-dialog>
-        </template>`,
-        components: {
-            'x-biz': BizComponent,
-            'ui-button': Button,
-            'ui-dialog': Dialog
-        },
-        initData() {
-            return {
-                title: _('确认'),
-                payload: null,
-                foot: {
-                    okBtn: {
-                        label: _('确定')
-                    }
-                }
-            };
-        },
-        onConfirmDialog() {
-            this.fire('confirm');
-        }
-    });
-    BizComponent.__dialogComponent = DialogComponent;
-
-    return DialogComponent;
+export function buildDialog(Klass) {
+    return asDialog(Klass);
 }
 
 export function plain(data) {

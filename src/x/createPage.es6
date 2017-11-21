@@ -21,12 +21,13 @@ import SearchBox from 'inf-ui/x/components/SearchBox';
 import Toast from 'inf-ui/x/components/Toast';
 import Loading from 'inf-ui/x/components/Loading';
 import Go from 'inf-ui/x/components/Go';
+import {asDialog} from 'inf-ui/x/components/asDialog';
 import io from 'bat-ria/io/serverIO';
 
 import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, buildDialog, createPayload, createToolbar} from './biz/helper';
+import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, createPayload, createToolbar} from './biz/helper';
 
 function createClient(api) {
     return {
@@ -374,7 +375,7 @@ export default function createPage(schema) {
                 const content = body.content;
                 if (typeof content === 'function') {
                     // 重新构造一个动态的组件出来
-                    const DialogComponent = buildDialog(content);
+                    const DialogComponent = asDialog(content);
                     const dialogData = {
                         title: $title, width, foot, payload
                     };
