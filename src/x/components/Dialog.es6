@@ -8,6 +8,7 @@ import {nextTick, defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Button from './Button';
+import {i18n} from '../../mixins/filters';
 
 const cx = create('ui-dialog');
 
@@ -25,8 +26,8 @@ const template = `<template>
     </div>
     <div class="${cx('foot', 'foot-panel')}" san-if="foot">
         <slot name="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary">确认</ui-button>
-            <ui-button on-click="onCloseDialog">取消</ui-button>
+            <ui-button on-click="onConfirmDialog" skin="primary">{{'确认'|i18n}}</ui-button>
+            <ui-button on-click="onCloseDialog">{{'取消'|i18n}}</ui-button>
         </slot>
     </div>
 </div>
@@ -38,6 +39,9 @@ export default defineComponent({
     template,
     components: {
         'ui-button': Button
+    },
+    filters: {
+        i18n
     },
     initData() {
         const zIndex = nextZindex();

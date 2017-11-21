@@ -8,6 +8,7 @@ import {defineComponent} from 'san';
 
 import Dialog from './Dialog';
 import Button from './Button';
+import {i18n} from '../../mixins/filters';
 
 export default defineComponent({
     template: `<template>
@@ -16,13 +17,16 @@ export default defineComponent({
         <div class="ui-dialog-icon ui-dialog-icon-warning"></div>
         <div class="ui-dialog-text">{{message | raw}}</div>
         <div slot="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary">确定</ui-button>
+            <ui-button on-click="onConfirmDialog" skin="primary">{{'确定'|i18n}}</ui-button>
         </div>
     </ui-dialog>
     </template>`,
     components: {
         'ui-button': Button,
         'ui-dialog': Dialog
+    },
+    filters: {
+        i18n
     },
     initData() {
         return {
