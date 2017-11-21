@@ -4,6 +4,6 @@
   "library.type": "amd",
   "library.ignore": [
     "x/demos/**", "x/showcase",
-    "x/List", "x/Aside", "x/AppExplorer"
+    "x/List", "x/Aside", "x/AppExplorer", "x/SwitchLan"
   ]
 }

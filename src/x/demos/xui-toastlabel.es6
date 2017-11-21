@@ -6,6 +6,9 @@
 import {defineComponent} from 'san';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
+import {i18n} from '../../mixins/filters';
+import _ from 'inf-i18n';
+
 import Row from './Row';
 
 /* eslint-disable */
@@ -14,10 +17,10 @@ const template = `<template>
     <xui-toastlabel text="hello toastlabel" />
 </x-row>
 <x-row label="level=normal">
-    <xui-toastlabel text="hello toastlabel" level="normal" />
+    <xui-toastlabel text="{{'预付费'| i18n}} i18n" level="normal" />
 </x-row>
 <x-row label="level=error">
-    <xui-toastlabel text="hello toastlabel" level="error" />
+    <xui-toastlabel text="{{aaa}}, i18n" level="error" />
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -30,6 +33,8 @@ export default defineComponent({
     },
     initData() {
         return {
+            aaa: _('预付费')
         };
-    }
+    },
+    filters: {i18n}
 });

@@ -5,16 +5,30 @@
 
 import $ from 'jquery';
 import {defineComponent} from 'san';
+import _ from 'inf-i18n';
+import i18nConfig from 'inf-i18n/config';
 
 import Aside from './Aside';
 import AppExplorer from './AppExplorer';
+import SwitchLan from './SwitchLan';
+
 import {blocks} from './demos/config';
 
 const kUrl = 'http://icode.baidu.com/repo/baidu%2Fbce-console%2Ffe-base/files/master/tree/dep/inf-ui/0.0.0/src/x/';
 
+function activateI18n() {
+    // 设置 i18n 相关的配置
+    i18nConfig.url = 'https://console-i18n.bj.bcebos.com/console.%s';
+    i18nConfig.sourceType = 'amd';
+    let locale = /locale=([a-zA-Z\-]+)/g.exec(location.search);
+    let toSet = (locale || [])[1];
+    return _.activate(toSet || _.getLanguage());
+}
+
 /* eslint-disable */
 const template = `<div class="showcase">
     <h1><a href="${kUrl}" target="_blank">San UI Library</a></h1>
+    <ui-switch-lan></ui-switch-lan>
     <main>
         <ui-aside
             on-item-selected="onItemSelected($event)"
@@ -35,7 +49,8 @@ const App = defineComponent({   // eslint-disable-line
     template,
     components: {
         'ui-aside': Aside,
-        'ui-explorer': AppExplorer
+        'ui-explorer': AppExplorer,
+        'ui-switch-lan': SwitchLan
     },
     initData() {
         return {
@@ -85,6 +100,10 @@ const App = defineComponent({   // eslint-disable-line
 });
 
 export function start() {
-    const app = new App();
-    app.attach(document.getElementById('root'));
+    activateI18n().then(() => {
+        const app = new App();
+        app.attach(document.getElementById('root'));
+    });
 }
+
+
