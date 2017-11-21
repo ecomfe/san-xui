@@ -42,7 +42,10 @@ export default defineComponent({
             align: 'left',  // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
             offsetTop: 0,   // 有时候自动定位不准确，需要修正一下
             offsetLeft: 0,  // 有时候自动定位不准确，需要修正一下
-            layerStyle: {}
+            layerStyle: {
+                left: '-10000px',
+                top: '-10000px'
+            }
         };
     },
     inited() {

@@ -49,7 +49,7 @@ export default defineComponent({
             width: 'auto',
             height: 'auto',
             left: null,
-            top: null,
+            top: '-10000px',
             open: false,
             mask: true,
             foot: true,
