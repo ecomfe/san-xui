@@ -8,9 +8,15 @@ import Tip from 'inf-ui/x/components/Tip';
 import Dialog from 'inf-ui/x/components/Dialog';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
+import Toast from 'inf-ui/x/components/Toast';
+import AlertDialog from 'inf-ui/x/components/AlertDialog';
+import {alert, confirm, plain} from 'inf-ui/x/biz/helper';
+
+import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
+<x-row label="[default]">
 <xui-button skin="primary" on-click="onShowDialog">Show Dialog</xui-button>
 
 <xui-dialog open="{=dialog.showDialog=}">
@@ -23,19 +29,35 @@ const template = `<template>
 <xui-dialog open="{=dialog.showDialog2=}" width="300" foot="{{false}}">
     <xui-button on-click="closeTheDialog">关闭上一个Dialog</xui-button>
 </xui-dialog>
+</x-row>
+
+<x-row label="alert,confirm,plain">
+    <xui-button on-click="showAlertDialog">alert</xui-button>
+    <xui-button on-click="showConfirmDialog">confirm</xui-button>
+    <xui-button on-click="showPlainDialog">plain</xui-button>
+</x-row>
+
+<x-row label="AlertDialog">
+    <xui-alert-dialog open="{=alertDialogOpened=}" message="Hello Alert Dialog" />
+    <xui-button on-click="showAlertDialog2">AlertDialog Component</xui-button>
+</x-row>
+
 </template>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
     components: {
+        'x-row': Row,
         'xui-tip': Tip,
         'xui-select': Select,
         'xui-dialog': Dialog,
+        'xui-alert-dialog': AlertDialog,
         'xui-button': Button
     },
     initData() {
         return {
+            alertDialogOpened: false,
             select: {
                 value: 'abc7',
                 multi: {
@@ -68,5 +90,21 @@ export default defineComponent({
     },
     closeTheDialog() {
         this.data.set('dialog.showDialog', false);
+    },
+    showAlertDialog2() {
+        this.data.set('alertDialogOpened', true);
+    },
+    showAlertDialog() {
+        alert({message: 'Alert dialog (w=300)', width: 300})
+            .then(() => Toast.success('OK'));
+    },
+    showConfirmDialog() {
+        confirm({message: 'Confirm dialog (w=400)', width: 400})
+            .then(() => Toast.success('OK'))
+            .catch(() => Toast.warning('Canceled'));
+    },
+    showPlainDialog() {
+        plain({message: 'Plain dialog (w=500)', width: 500})
+            .then(() => Toast.success('OK'));
     }
 });

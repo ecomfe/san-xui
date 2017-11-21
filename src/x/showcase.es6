@@ -4,6 +4,8 @@
  */
 
 import $ from 'jquery';
+import u from 'underscore';
+import Promise from 'promise';
 import {defineComponent} from 'san';
 import _ from 'inf-i18n';
 import i18nConfig from 'inf-i18n/config';
@@ -44,6 +46,10 @@ const template = `<div class="showcase">
     </main>
 </div>`;
 /* eslint-enable */
+
+if (typeof u.noop === 'function') {
+    Promise.onReject(u.noop);   // eslint-disable-line
+}
 
 const App = defineComponent({   // eslint-disable-line
     template,

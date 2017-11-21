@@ -5,7 +5,7 @@
 
 import _ from 'lodash';
 import moment from 'moment';
-import {NodeType, Component, defineComponent} from 'san';
+import {NodeType, Component} from 'san';
 
 export function hasUnit(value) {
     return /%|px|auto/.test(value);
