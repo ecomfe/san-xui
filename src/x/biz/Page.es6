@@ -11,7 +11,7 @@ import {hasSlot} from '../components/util';
 
 const cx = create('list-page');
 
-export const Page = defineComponent({      // eslint-disable-line
+export default defineComponent({      // eslint-disable-line
     template: `<div class="{{mainClass}}">
         <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />
 
