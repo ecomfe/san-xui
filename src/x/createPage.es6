@@ -106,7 +106,6 @@ export default function createPage(schema) {
         <div slot="tb-right">
             <ui-searchbox
                 s-if="withSearchbox"
-                search-btn="{{false}}"
                 value="{=$extraPayload.keyword=}"
                 keyword-type="{=$extraPayload.keywordType=}"
                 placeholder="{{filter.$searchbox.placeholder}}"
