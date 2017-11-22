@@ -18,6 +18,9 @@ export const Page = _Page;
 export const Ghost = _Ghost;
 
 export function displayDialog(DialogComponent, data = {}) {
+    if (typeof data === 'string') {
+        data = {message: data};
+    }
     return new Promise((resolve, reject) => {
         const dialog = new DialogComponent({data});
         dialog.attach(document.body);

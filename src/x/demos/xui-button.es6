@@ -53,8 +53,8 @@ const template = `<template>
 </x-row>
 
 <x-row label="icon,label,size=large">
-    <xui-button icon="refresh" size="large">{{'刷新'|i18n}}</xui-button>
-    <xui-button icon="plus" skin="primary" size="large">{{'创建'|i18n}}</xui-button>
+    <xui-button on-click="onRefresh" icon="refresh" size="large">{{'刷新'|i18n}}</xui-button>
+    <xui-button on-click="onCreate" icon="plus" skin="primary" size="large">{{'创建'|i18n}}</xui-button>
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -64,6 +64,12 @@ export default defineComponent({
     components: {
         'x-row': Row,
         'xui-button': Button
+    },
+    onCreate() {
+        this.$plain('On Create');
+    },
+    onRefresh() {
+        this.$plain('On Refresh');
     }
 });
 

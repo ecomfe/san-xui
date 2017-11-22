@@ -15,6 +15,7 @@ import Icon from './x/components/Icon';
 import $data from './mixins/data';
 import $locator from './mixins/locator';
 import {i18n} from './mixins/filters';
+import {alert, confirm, plain} from './x/biz/helper';
 
 const kDefaultComponents = {
     'x-icon': Icon
@@ -53,7 +54,12 @@ export function defineComponent(options) {
     }
 
     // Apply mixins ...
-    u.extend(options, $data, $locator);
+    const $dialog = {
+        $alert: alert,
+        $confirm: confirm,
+        $plain: plain
+    };
+    u.extend(options, $data, $locator, $dialog);
 
     return san.defineComponent(options);
 }
