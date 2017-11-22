@@ -989,9 +989,19 @@
 
 .list-page-content {
     .clearfix();
-    .ui-pager {
+    .list-page-pager {
         float: right;
         margin: 20px 20px 40px 0;
+        > label {
+            color: #108cee;
+        }
+        .ui-select-x {
+            min-width: 80px;
+        }
+        .ui-pager {
+            display: inline-block;
+            vertical-align: middle;
+        }
         .ui-dialog-body-panel & {
             margin-bottom: 0;
             margin-right: 0;

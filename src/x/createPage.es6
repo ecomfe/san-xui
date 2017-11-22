@@ -17,6 +17,7 @@ import Button from 'inf-ui/x/components/Button';
 import Clipboard from 'inf-ui/x/components/Clipboard';
 import Dialog from 'inf-ui/x/components/Dialog';
 import RadioSelect from 'inf-ui/x/components/RadioSelect';
+import Select from 'inf-ui/x/components/Select';
 import SearchBox from 'inf-ui/x/components/SearchBox';
 import Toast from 'inf-ui/x/components/Toast';
 import Loading from 'inf-ui/x/components/Loading';
@@ -161,13 +162,23 @@ export default function createPage(schema) {
             </div>
         </ui-table>
 
-        <ui-pager s-if="pager.count > 0"
-            size="{{pager.size}}"
-            page="{{pager.page}}"
-            count="{{pager.count}}"
-            back-text="<"
-            forward-text=">"
-            on-change="onPagerChange($event)" />
+        <div class="list-page-pager" s-if="pager.count > 0">
+            <label s-if="withPagerSize">每页展示</label>
+            <ui-select
+                s-if="withPagerSize"
+                layer-width="80"
+                datasource="{{pager.datasource}}"
+                value="{=pager.size=}"
+                on-change="onPagerSizeChange($event)"
+                />
+            <ui-pager
+                size="{{pager.size}}"
+                page="{{pager.page}}"
+                count="{{pager.count}}"
+                back-text="<"
+                forward-text=">"
+                on-change="onPagerChange($event)" />
+        </div>
     </page></template>`;
     /* eslint-enable */
 
@@ -178,6 +189,7 @@ export default function createPage(schema) {
             'bulk-actions': BulkActions,
             'page': Page,
             'ui-ghost': Ghost,
+            'ui-select': Select,
             'ui-radioselect': RadioSelect,
             'ui-table': Table,
             'ui-f-table': FrozenColumnTable,
@@ -225,7 +237,7 @@ export default function createPage(schema) {
         },
 
         initData() {
-            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPagerSize, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
             const {$onRequest, $onResponse, $onError} = body;
             const cellRenderer = $cellRenderer
@@ -247,6 +259,7 @@ export default function createPage(schema) {
                 filter,
                 breadcrumbs: $breadcrumbs,
                 withSidebar: !!$withSidebar,
+                withPagerSize: !!$withPagerSize,
                 withSearchbox: $withSearchbox !== false,
                 withTip: !!$withTip,
                 $extraPayload,
@@ -267,7 +280,13 @@ export default function createPage(schema) {
                 pager: {
                     size: $pageSize || 10,
                     page: 1,
-                    count: 0
+                    count: 0,
+                    datasource: [
+                        {text: '10', value: 10},
+                        {text: '20', value: 20},
+                        {text: '50', value: 50},
+                        {text: '100', value: 100}
+                    ]
                 }
             };
         },
@@ -486,6 +505,13 @@ export default function createPage(schema) {
 
         onTableRowSelected({selectedIndex, selectedItems}) {
             // console.log(selectedIndex, selectedItems);
+        },
+
+        onPagerSizeChange({value}) {
+            const payload = this.getSearchCriteria();
+            payload.pageNo = 1;
+            payload.pageSize = value;
+            this.loadPage(payload);
         },
 
         onPagerChange({pageNo}) {

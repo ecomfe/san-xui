@@ -30,7 +30,7 @@ function defaultFilter(datasource, keyword) {
 }
 
 /* eslint-disable */
-const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
+const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
     <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
@@ -152,6 +152,9 @@ const Select = defineComponent({    // eslint-disable-line
                 klass.push(cx('active'));
             }
             return klass;
+        },
+        mainStyle() {
+            return cx.mainStyle(this);
         }
     },
     filters: {
