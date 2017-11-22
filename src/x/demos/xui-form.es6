@@ -74,7 +74,7 @@ const template = `<template>
                 <option value="bar">Bar</option>
             </select>
         </xui-item>
-        <xui-item name="userName"><xui-textbox
+        <xui-item name="userName" help="This is the help text"><xui-textbox
             placeholder="用户名"
             type="text"
             value="{=formData.userName=}" /></xui-item>
