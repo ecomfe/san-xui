@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Button from 'inf-ui/x/components/Button';
 
 import Row from './Row';
@@ -48,13 +48,13 @@ const template = `<template>
 </x-row>
 
 <x-row label="icon,label">
-    <xui-button icon="refresh">刷新</xui-button>
-    <xui-button icon="plus" skin="primary">创建</xui-button>
+    <xui-button icon="refresh">{{'刷新'|i18n}}</xui-button>
+    <xui-button icon="plus" skin="primary">{{'创建'|i18n}}</xui-button>
 </x-row>
 
 <x-row label="icon,label,size=large">
-    <xui-button icon="refresh" size="large">刷新</xui-button>
-    <xui-button icon="plus" skin="primary" size="large">创建</xui-button>
+    <xui-button icon="refresh" size="large">{{'刷新'|i18n}}</xui-button>
+    <xui-button icon="plus" skin="primary" size="large">{{'创建'|i18n}}</xui-button>
 </x-row>
 </template>`;
 /* eslint-enable */
