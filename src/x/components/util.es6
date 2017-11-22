@@ -90,7 +90,7 @@ export function hasSlot(comp, name) {
     const slots = comp.slot(name);
     for (let i = 0; i < slots.length; i++) {
         if (isInsertContent) {
-            return;
+            break;
         }
         childrenTraversal(slots[i].children);
     }
