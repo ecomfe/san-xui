@@ -63,7 +63,7 @@ export function defineComponent(options) {
     const $ajax = {
         $post
     };
-    u.extend(options, $data, $locator, $dialog, $ajax);
+    u.extend($ajax, $dialog, $data, $locator, options);
 
     return san.defineComponent(options);
 }
