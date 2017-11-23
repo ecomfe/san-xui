@@ -499,10 +499,16 @@ export default function createPage(schema) {
 
         onToolbarEvent(item) {
             const config = item;
-            this.dispatchAction(config);
+            const select = this.data.get('table.select');
+            const payload = select === 'single'
+                ? this.__selectedItems[0]
+                : {items: this.__selectedItems};
+            this.dispatchAction(config, payload);
         },
 
         onTableRowSelected({selectedIndex, selectedItems}) {
+            this.__selectedItems = selectedItems;
+            this.__selectedIndex = selectedIndex;
             // console.log(selectedIndex, selectedItems);
         },
 

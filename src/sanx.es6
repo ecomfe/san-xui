@@ -15,6 +15,7 @@ import Icon from './x/components/Icon';
 import $data from './mixins/data';
 import $locator from './mixins/locator';
 import {i18n} from './mixins/filters';
+import {$post} from './mixins/ajax';
 import {alert, confirm, plain} from './x/biz/helper';
 
 const kDefaultComponents = {
@@ -59,7 +60,10 @@ export function defineComponent(options) {
         $confirm: confirm,
         $plain: plain
     };
-    u.extend(options, $data, $locator, $dialog);
+    const $ajax = {
+        $post
+    };
+    u.extend(options, $data, $locator, $dialog, $ajax);
 
     return san.defineComponent(options);
 }

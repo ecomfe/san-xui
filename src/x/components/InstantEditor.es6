@@ -21,6 +21,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                 <slot />
                 <div class="${cx('error')}" s-if="error">{{error}}</div>
             </div>
+            <div class="${cx('help')}" s-if="help">{{help | raw}}</div>
             <div class="${cx('btns')}">
                 <ui-button disabled="{{submitDisabled}}" on-click="onSubmit" skin="primary">{{submiting ? '提交中...' : '确定'}}</ui-button>
                 <ui-button on-click="toggleLayer">取消</ui-button>
@@ -39,6 +40,7 @@ export default defineComponent({
     initData() {
         return {
             label: '编辑',
+            help: null,
             active: false,
             submiting: false,
             submitDisabled: false,
