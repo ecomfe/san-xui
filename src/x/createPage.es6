@@ -339,24 +339,29 @@ export default function createPage(schema) {
 
         ajaxActionType(config, payload) {
             const {confirmText, api, $before, $done, $error, $payloadFields, $extraPayload, $toastMessage} = config;
+            const {$onRequest, $onResponse, $onError} = config;
+            const onRequest = $onRequest || $before;
+            const onResponse = $onResponse || $done;
+            const onError = $onError || $error;
+
             const sendRequest = () => {
                 const requestPayload = createPayload(payload, $payloadFields, $extraPayload);
-                if (typeof $before === 'function') {
-                    $before.call(this, requestPayload);
+                if (typeof onRequest === 'function') {
+                    onRequest.call(this, requestPayload);
                 }
                 return createClient(api).sendRequest(requestPayload)
                     .then(response => {
                         if ($toastMessage) {
                             Toast.success($toastMessage, 3000);
                         }
-                        if (typeof $done === 'function') {
-                            return $done.call(this, response, requestPayload);
+                        if (typeof onResponse === 'function') {
+                            return onResponse.call(this, response, requestPayload);
                         }
                         return this.refreshTable();
                     })
                     .fail(error => {
-                        if (typeof $error === 'function') {
-                            $error.call(this, error, requestPayload);
+                        if (typeof onError === 'function') {
+                            onError.call(this, error, requestPayload);
                         }
 
                         if (error.global) {
