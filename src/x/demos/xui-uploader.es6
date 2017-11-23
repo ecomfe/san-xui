@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 // import Uploader from 'inf-ui/x/components/Uploader';
 
 /* eslint-disable */

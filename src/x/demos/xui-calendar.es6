@@ -4,7 +4,7 @@
  */
 
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Calendar from 'inf-ui/x/components/Calendar';
 
 import Row from './Row';

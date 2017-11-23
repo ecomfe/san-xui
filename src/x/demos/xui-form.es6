@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import * as AsyncValidator from 'async-validator';
 import Form from 'inf-ui/x/forms/Form';
 import FormItem from 'inf-ui/x/forms/FormItem';

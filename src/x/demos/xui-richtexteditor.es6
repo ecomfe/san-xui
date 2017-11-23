@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import RichTextEditor from 'inf-ui/x/components/RichTextEditor';
 
 import Row from './Row';

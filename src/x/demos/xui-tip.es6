@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Tip from 'inf-ui/x/components/Tip';
 import Button from 'inf-ui/x/components/Button';
 import MonthView from 'inf-ui/x/components/MonthView';

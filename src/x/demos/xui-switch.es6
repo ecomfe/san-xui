@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Switch from 'inf-ui/x/components/Switch';
 import Button from 'inf-ui/x/components/Button';
 

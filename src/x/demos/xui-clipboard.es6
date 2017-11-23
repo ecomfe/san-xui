@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Clipboard from 'inf-ui/x/components/Clipboard';
 import Button from 'inf-ui/x/components/Button';
 

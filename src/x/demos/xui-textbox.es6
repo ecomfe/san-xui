@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import TextBox from 'inf-ui/x/components/TextBox';
 import Toast from 'inf-ui/x/components/Toast';
 

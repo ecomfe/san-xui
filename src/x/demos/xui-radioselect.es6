@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import RadioSelect from 'inf-ui/x/components/RadioSelect';
 
 import Row from './Row';

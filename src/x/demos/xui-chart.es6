@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Chart from 'inf-ui/x/components/Chart';
 
 import {metrics} from './config';
