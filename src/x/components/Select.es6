@@ -33,7 +33,7 @@ function defaultFilter(datasource, keyword) {
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
-    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
+    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{layerOffsetTop}}">
         <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi" style="{{layerStyle}}">
             <ui-textbox s-if="filter"
                 value="{=keyword=}"
@@ -87,6 +87,7 @@ const Select = defineComponent({    // eslint-disable-line
             active: false,
             multi: false,   // 是否支持多选，也就是之前的 MultiSelect 的功能
             layerWidth: 200,
+            layerOffsetTop: 3,
 
             filter: false,  // 是否支持搜索过滤
             filterPlaceholder: '',    // filter textbox placeholder
