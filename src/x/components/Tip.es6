@@ -5,7 +5,7 @@
 import dom from 'esui/lib/dom';
 import {defineComponent} from 'san';
 
-import {nextZindex, create} from './util';
+import {nextZindex, create, hasUnit} from './util';
 import Layer from './Layer';
 import Ghost from './Ghost';
 
@@ -101,6 +101,10 @@ export default defineComponent({   // eslint-disable-line
             else if (position === 'tc') {
                 style.left = (offset.left - (offsetWidth - rect.width) / 2) + 'px';
                 style.top = (offset.top - rect.height - offsetHeight) + 'px';
+            }
+            const width = this.data.get('width');
+            if (width != null) {
+                style.width = hasUnit(width) ? width : width + 'px';
             }
             layer.data.set('layerStyle', style);
         }
