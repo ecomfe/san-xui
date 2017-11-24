@@ -90,7 +90,7 @@ export function asPage(schema, MainComponent) {
         />
 
         <x-pager
-            s-if="pager.count > 0"
+            s-if="withPager && pager.count > 0"
             class="list-page-pager"
             pager="{{pager}}"
             with-pager-size="{{withPagerSize}}"
@@ -137,7 +137,7 @@ export function asPage(schema, MainComponent) {
         },
 
         initData() {
-            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPagerSize, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPager, $withPagerSize, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
             const {$onRequest, $onResponse, $onError} = body;
             const cellRenderer = $cellRenderer
@@ -161,6 +161,7 @@ export function asPage(schema, MainComponent) {
                 withSidebar: !!$withSidebar,
                 withPagerSize: !!$withPagerSize,
                 withSearchbox: $withSearchbox !== false,
+                withPager: $withPager !== false,
                 withTip: !!$withTip,
                 $extraPayload,
 
