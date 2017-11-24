@@ -6,16 +6,17 @@
 import _ from 'lodash';
 import Promise from 'promise';
 import {defineComponent} from 'inf-ui/sanx';
-import Toast from 'inf-ui/x/components/Toast';
-import {asDialog} from 'inf-ui/x/components/asDialog';
 
-import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Toolbar from './biz/Toolbar';
 import RightToolbar from './biz/RightToolbar';
 import XPager from './biz/XPager';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, matchAll, confirm, alert, plain, displayDialog, createPayload, createToolbar, createCommandMessages} from './biz/helper';
+import {Page, matchAll, createToolbar, createCommandMessages} from './biz/helper';
+import {ajaxAction} from './biz/ajaxAction';
+import {dialogAlertAction} from './biz/dialogAlertAction';
+import {dialogPlainAction} from './biz/dialogPlainAction';
+import {dialogXLoaderAction} from './biz/dialogXLoaderAction';
 
 export function asPage(schema, MainComponent) {
     /* eslint-disable */
@@ -242,7 +243,7 @@ export function asPage(schema, MainComponent) {
             this.doSearch();
         },
 
-        setFilterValue(key, value) {
+        $filterValue(key, value) {
             const nowValue = this.data.get(`$extraPayload.${key}`);
             if (nowValue === value) {
                 return;
@@ -251,129 +252,32 @@ export function asPage(schema, MainComponent) {
             this.refreshTable();
         },
 
-        ajaxActionType(config, payload) {
-            const {confirmText, api, $before, $done, $error, $payloadFields, $extraPayload, $toastMessage} = config;
-            const {$onRequest, $onResponse, $onError} = config;
-            const onRequest = $onRequest || $before;
-            const onResponse = $onResponse || $done;
-            const onError = $onError || $error;
-
-            const sendRequest = () => {
-                const requestPayload = createPayload(payload, $payloadFields, $extraPayload);
-                if (typeof onRequest === 'function') {
-                    onRequest.call(this, requestPayload);
-                }
-                return this.$post(api, requestPayload)
-                    .then(response => {
-                        if ($toastMessage) {
-                            Toast.success($toastMessage, 3000);
-                        }
-                        if (typeof onResponse === 'function') {
-                            return onResponse.call(this, response, requestPayload);
-                        }
-                        return this.refreshTable();
-                    })
-                    .fail(error => {
-                        if (typeof onError === 'function') {
-                            onError.call(this, error, requestPayload);
-                        }
-
-                        if (error.global) {
-                            Toast.error(error.global);
-                        }
-                        this.data.set('error', error);
-                    });
-            };
-
-            if (confirmText) {
-                const message = _.template(confirmText)(payload);
-                return confirm({message}).then(sendRequest);
-            }
-            return sendRequest();
-        },
-
         dialogActionType(config, payload = {}) {
-            const {width, height, title, body, foot} = config.dialog;
-            const $title = _.template(title)(payload);
-            const type = body.type;
-            if (type === 'alert') {
-                const content = body.content;
-                const alertMessage = _.template(content)(payload);
-                alert({title: $title, width, foot, message: alertMessage}).then(() => {
-                    if (foot && foot.okBtn && foot.okBtn.actionType) {
-                        const config = foot.okBtn;
-                        this.dispatchAction(config, payload);
-                        // FIXME(leeight) 可能不太合适
-                        this.refreshTable();
-                    }
-                });
-            }
-            else if (type === 'plain') {
-                const content = body.content;
-                if (typeof content === 'function') {
-                    // 重新构造一个动态的组件出来
-                    const DialogComponent = asDialog(content);
-                    const dialogData = {
-                        title: $title, width, foot, payload
-                    };
-                    return displayDialog(DialogComponent, dialogData).then(() => {
-                        if (foot && foot.okBtn && foot.okBtn.actionType) {
-                            const config = foot.okBtn;
-                            this.dispatchAction(config, payload);
-                            // FIXME(leeight) 可能不太合适
-                            this.refreshTable();
-                        }
-                    });
-                }
-                const plainMessage = _.template(content)(payload);
-                return plain({title: $title, width, foot, message: plainMessage}).then(() => {
-                    if (foot && foot.okBtn && foot.okBtn.actionType) {
-                        const config = foot.okBtn;
-                        this.dispatchAction(config, payload);
-                        // FIXME(leeight) 可能不太合适
-                        this.refreshTable();
-                    }
-                });
-            }
-            else if (type === 'action-loader') {
-                let component;
-                const {$payloadFields, $extraPayload, url} = body;
-                const parentAction = {
-                    reload: () => {
-                        this.refreshTable();
-                    },
-                    view: {
-                        showToast(message, options) {
-                            Toast[options.messageType || 'success'](message);
-                        }
-                    },
-                    // TODO(leeight) 貌似不是一个好的设计
-                    dispatchCommand: (type, id) => this.dispatchCommand(type, id)
-                };
-                const actionOptions = {
-                    open: true,
-                    width: width || 'auto',
-                    height: height || 'auto',
-                    title: $title, url,
-                    options: _.extend(
-                        {parentAction},
-                        createPayload(payload, $payloadFields, $extraPayload)
-                    )
-                };
-                const compData = {dialog: true, actionOptions};
-                if (foot != null) {
-                    compData.foot = foot;
-                }
-                component = new LegacyActionAdapter({parent: this, data: compData});
-                component.attach(document.body);
-                this.$childs.push(component);
+            const body = config.dialog.body;
+            switch (body.type) {
+                case 'alert':
+                    this.$dialogAlertAction(config, payload);
+                    break;
+                case 'plain':
+                    this.$dialogPlainAction(config, payload);
+                    break;
+                case 'action-loader':
+                    this.$dialogXLoaderAction(config, payload);
+                    break;
+                default:
+                    throw new Error('Unsupported dialog type = ' + body.type);
             }
         },
+
+        $ajaxAction: ajaxAction,
+        $dialogAlertAction: dialogAlertAction,
+        $dialogPlainAction: dialogPlainAction,
+        $dialogXLoaderAction: dialogXLoaderAction,
 
         dispatchAction(config, payload = {}) {
             switch (config.actionType) {
                 case 'ajax':
-                    this.ajaxActionType(config, payload);
+                    this.$ajaxAction(config, payload);
                     break;
                 case 'dialog':
                     this.dialogActionType(config, payload);
@@ -388,7 +292,7 @@ export function asPage(schema, MainComponent) {
                     this.$redirect(_.template(config.link)(payload));
                     break;
                 case 'filter':
-                    this.setFilterValue(config.$filterKey, config.value);
+                    this.$filterValue(config.$filterKey, config.value);
                     break;
             }
         },
