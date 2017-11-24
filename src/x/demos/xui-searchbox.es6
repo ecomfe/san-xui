@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import SearchBox from 'inf-ui/x/components/SearchBox';
 import Button from 'inf-ui/x/components/Button';
 import CheckBox from 'inf-ui/x/components/CheckBox';

@@ -4,7 +4,7 @@
  */
 
 import Promise from 'promise';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Go from 'inf-ui/x/components/Go';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
 

@@ -7,7 +7,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 import Promise from 'promise';
 import locator from 'er/locator';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Table from 'inf-ui/x/components/Table';
 import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
 import FrozenColumnTable from 'inf-ui/x/components/FrozenColumnTable';
@@ -23,20 +23,11 @@ import Toast from 'inf-ui/x/components/Toast';
 import Loading from 'inf-ui/x/components/Loading';
 import Go from 'inf-ui/x/components/Go';
 import {asDialog} from 'inf-ui/x/components/asDialog';
-import io from 'bat-ria/io/serverIO';
 
 import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
 import {Page, Ghost, matchAll, confirm, alert, plain, displayDialog, createPayload, createToolbar} from './biz/helper';
-
-function createClient(api) {
-    return {
-        sendRequest(payload = {}) {
-            return io.post(api, payload, {'X-silence': true, 'x-silent': true});
-        }
-    };
-}
 
 export default function createPage(schema) {
     /* eslint-disable */
@@ -339,24 +330,29 @@ export default function createPage(schema) {
 
         ajaxActionType(config, payload) {
             const {confirmText, api, $before, $done, $error, $payloadFields, $extraPayload, $toastMessage} = config;
+            const {$onRequest, $onResponse, $onError} = config;
+            const onRequest = $onRequest || $before;
+            const onResponse = $onResponse || $done;
+            const onError = $onError || $error;
+
             const sendRequest = () => {
                 const requestPayload = createPayload(payload, $payloadFields, $extraPayload);
-                if (typeof $before === 'function') {
-                    $before.call(this, requestPayload);
+                if (typeof onRequest === 'function') {
+                    onRequest.call(this, requestPayload);
                 }
-                return createClient(api).sendRequest(requestPayload)
+                return this.$post(api, requestPayload)
                     .then(response => {
                         if ($toastMessage) {
                             Toast.success($toastMessage, 3000);
                         }
-                        if (typeof $done === 'function') {
-                            return $done.call(this, response, requestPayload);
+                        if (typeof onResponse === 'function') {
+                            return onResponse.call(this, response, requestPayload);
                         }
                         return this.refreshTable();
                     })
                     .fail(error => {
-                        if (typeof $error === 'function') {
-                            $error.call(this, error, requestPayload);
+                        if (typeof onError === 'function') {
+                            onError.call(this, error, requestPayload);
                         }
 
                         if (error.global) {
@@ -588,7 +584,7 @@ export default function createPage(schema) {
             const requestPayload = typeof this.$onRequest === 'function'
                 ? this.$onRequest(payload) || payload
                 : payload;
-            return createClient(schema.body.api).sendRequest(requestPayload)
+            return this.$post(schema.body.api, requestPayload)
                 .then(page => {
                     const responsePayload = typeof this.$onResponse === 'function'
                         ? this.$onResponse(page) || page

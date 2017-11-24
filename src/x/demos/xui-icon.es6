@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Icon from 'inf-ui/x/components/Icon';
 import Loading from 'inf-ui/x/components/Loading';
 import TextBox from 'inf-ui/x/components/TextBox';

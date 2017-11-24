@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {nextTick, defineComponent} from 'san';
+import {nextTick, defineComponent} from 'inf-ui/sanx';
 import Tab from 'inf-ui/x/components/Tab';
 import TabPanel from 'inf-ui/x/components/TabPanel';
 import Button from 'inf-ui/x/components/Button';

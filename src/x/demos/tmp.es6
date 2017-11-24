@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Pager from 'inf-ui/x/components/Pager';
 
 import Row from './Row';

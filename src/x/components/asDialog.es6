@@ -4,6 +4,7 @@
  */
 
 import _ from 'inf-i18n';
+import u from 'underscore';
 import {defineComponent} from 'san';
 
 import Dialog from './Dialog';
@@ -14,11 +15,16 @@ export function asDialog(Klass) {
         return Klass.__dialogComponent;
     }
 
+    const dataTypes = u.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
+    const klassTemplate = dataTypes.length <= 0
+        ? '<x-biz payload="{{payload}}" />'
+        : '<x-biz ' + u.map(dataTypes, prop => `${prop}="{{payload.${prop}}}"`).join(' ') + '/>';
+
     const WrappedComponent = defineComponent({
         template: `<template>
         <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog">
             <span slot="head">{{title}}</span>
-            <x-biz payload="{{payload}}" />
+            ${klassTemplate}
             <div slot="foot">
                 <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || '确定'}}</ui-button>
             </div>

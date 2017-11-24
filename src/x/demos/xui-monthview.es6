@@ -4,7 +4,7 @@
  */
 
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import MonthView from 'inf-ui/x/components/MonthView';
 
 import Row from './Row';

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import WebUploader from 'inf-ui/x/components/WebUploader';
 import Switch from 'inf-ui/x/components/Switch';
 import Toast from 'inf-ui/x/components/Toast';

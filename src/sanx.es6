@@ -63,9 +63,9 @@ export function defineComponent(options) {
     const $ajax = {
         $post
     };
-    u.extend($ajax, $dialog, $data, $locator, options);
+    const $options = u.extend($ajax, $dialog, $data, $locator, options);
 
-    return san.defineComponent(options);
+    return san.defineComponent($options);
 }
 
 export function nextTick(fn, thisArg) {

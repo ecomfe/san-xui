@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import SMSCodeBox from 'inf-ui/x/components/SMSCodeBox';
 
 /* eslint-disable */

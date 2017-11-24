@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import BosUploader from 'inf-ui/x/components/BosUploader';
 
 import Row from './Row';

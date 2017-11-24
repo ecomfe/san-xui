@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Tip from 'inf-ui/x/components/Tip';
 import Dialog from 'inf-ui/x/components/Dialog';
 import Button from 'inf-ui/x/components/Button';

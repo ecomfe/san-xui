@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import ViewStep from 'inf-ui/x/components/ViewStep';
 
 import Row from './Row';

@@ -97,6 +97,7 @@ const App = defineComponent({   // eslint-disable-line
             .then(response => response.text())
             .then(code => this.data.set('explorer.code', code));
         window.require([moduleId], CompCtor => {
+            window._hmt && _hmt.push(['_trackEvent', 'page', 'view', item.text]);
             this.disposeComponent();
             this.data.set('explorer.loading', false);
             this.data.set('explorer.comp', new CompCtor());

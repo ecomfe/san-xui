@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import Table from 'inf-ui/x/components/Table';
 import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
 import FrozenColumnTable from 'inf-ui/x/components/FrozenColumnTable';

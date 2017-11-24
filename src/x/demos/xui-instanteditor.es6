@@ -4,7 +4,7 @@
  */
 
 import Promise from 'promise';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import InstantEditor from 'inf-ui/x/components/InstantEditor';
 import TextBox from 'inf-ui/x/components/TextBox';
 import Select from 'inf-ui/x/components/Select';

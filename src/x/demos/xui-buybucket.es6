@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import BuyBucket from 'inf-ui/x/components/BuyBucket';
 
 import Row from './Row';

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Row from './Row';
