@@ -444,8 +444,8 @@ export function asPage(schema, MainComponent) {
         dispatchCommand(type, id) {
             const datasource = this.data.get('table.datasource');
             const payload = _.isString(id)
-                    ? _.find(datasource, item => item.id === id)
-                    : id;   // maybe it's a payload object
+                ? _.find(datasource, item => item.id === id)
+                : id;   // maybe it's a payload object
             if (payload && type) {
                 this.onTableCommand({type, payload});
             }
