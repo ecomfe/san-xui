@@ -11,6 +11,10 @@ import u from 'underscore';
 import san from 'san';
 
 import Icon from './x/components/Icon';
+import Button from './x/components/Button';
+import Clipboard from './x/components/Clipboard';
+import Loading from './x/components/Loading';
+import Dialog from './x/components/Dialog';
 
 import $data from './mixins/data';
 import $locator from './mixins/locator';
@@ -20,7 +24,12 @@ import {$post} from './mixins/ajax';
 import {alert, confirm, plain} from './x/biz/helper';
 
 const kDefaultComponents = {
-    'x-icon': Icon
+    'x-icon': Icon,
+    'ui-icon': Icon,
+    'ui-button': Button,
+    'ui-dialog': Dialog,
+    'ui-loading': Loading,
+    'ui-clipboard': Clipboard
 };
 
 function defaultInited() {
