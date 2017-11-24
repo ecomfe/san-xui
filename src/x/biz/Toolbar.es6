@@ -12,7 +12,7 @@ import {Ghost} from './helper';
 
 /* eslint-disable */
 const template = `<template>
-<ui-ghost s-for="item in items">
+<ui-ghost s-for="item in controls">
     <ui-button
         s-if="item.type === 'button'"
         on-click="onToolbarEvent(item)"
@@ -45,7 +45,7 @@ export default defineComponent({
         'ui-radioselect': RadioSelect
     },
     dataTypes: {
-        items: DataTypes.array
+        controls: DataTypes.array
     },
     onToolbarEvent(event) {
         this.fire('item-clicked', event);

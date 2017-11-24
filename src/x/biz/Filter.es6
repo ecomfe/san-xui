@@ -24,23 +24,30 @@ const template = `<div class="{{mainClass}}">
                 <div class="${cx('form-item')}" s-for="item in controls">
                     <ui-select
                         s-if="item.type === 'select'"
+                        value="{{item.value}}"
+
                         datasource="{{item.options}}"
                         on-change="onItemChanged(item.name, $event)"
-                        value="{{item.value}}"
                         />
+
                     <ui-rangecalendar
                         s-if="item.type === 'rangecalendar'"
-                        on-change="onItemChanged(item.name, $event)"
                         value="{{item.value}}"
+
+                        on-change="onItemChanged(item.name, $event)"
                         />
+
                     <ui-calendar
                         s-if="item.type === 'calendar'"
+                        value="{{item.value}}"
+
                         on-change="onItemChanged(item.name, $event)"
                         prev="{{item.prev}}"
                         next="{{item.next}}"
-                        value="{{item.value}}"
                         />
-                    <div class="${cx('form-item-plain')}" s-if="item.type === 'plain'">{{item.text | raw}}</div>
+                    <div
+                        s-if="item.type === 'plain'"
+                        class="${cx('form-item-plain')}">{{item.text | raw}}</div>
                 </div>
             </div>
             <ui-button on-click="doFilter" skin="primary" s-if="submitText">{{submitText}}</ui-button>

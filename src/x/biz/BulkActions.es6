@@ -12,7 +12,7 @@ const cx = create('ui-bulk-actions');
 
 /* eslint-disable */
 const template = `<div class="${cx()}">
-    <ui-button class="${cx('item')}" san-for="item in items"
+    <ui-button class="${cx('item')}" san-for="item in controls"
         disabled="{{item.disabled || disabled}}"
         skin="{{item.level}}"
     >{{item.label}}</ui-button>
@@ -27,7 +27,7 @@ export default defineComponent({
     initData() {
         return {
             disabled: false,
-            items: []
+            controls: []
         };
     }
 });

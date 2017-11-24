@@ -2,7 +2,9 @@
  * @file mixins/locator.es6
  * @author leeight
  */
+import $ from 'jquery';
 import locator from 'er/locator';
+import Go from 'inf-ui/x/components/Go';
 
 export default {
 
@@ -25,5 +27,18 @@ export default {
      */
     $reload() {
         locator.reload();
+    },
+
+    /**
+     * 跨模块的跳转
+     *
+     * this.$go('/iam/#/user/account/list');
+     *
+     * @param {string} link 要跳转的地址.
+     */
+    $go(link) {
+        const target = $(`<a href="${link}"></a>`);
+        const event = $.Event('click', {target, currentTarget: target});  // eslint-disable-line
+        Go.switchHandler(event, this);
     }
 };

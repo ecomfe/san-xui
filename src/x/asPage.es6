@@ -3,19 +3,15 @@
  * @author leeight
  */
 
-import $ from 'jquery';
 import _ from 'lodash';
 import Promise from 'promise';
-import locator from 'er/locator';
 import {defineComponent} from 'inf-ui/sanx';
-import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
-import SearchBox from 'inf-ui/x/components/SearchBox';
 import Toast from 'inf-ui/x/components/Toast';
-import Go from 'inf-ui/x/components/Go';
 import {asDialog} from 'inf-ui/x/components/asDialog';
 
 import LegacyActionAdapter from './biz/LegacyActionAdapter';
 import Toolbar from './biz/Toolbar';
+import RightToolbar from './biz/RightToolbar';
 import XPager from './biz/XPager';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
@@ -24,14 +20,16 @@ import {Page, matchAll, confirm, alert, plain, displayDialog, createPayload, cre
 export function asPage(schema, MainComponent) {
     /* eslint-disable */
     const template = `<template>
-    <x-page class="{{klass}}"
+    <x-page
+        class="{{klass}}"
         title="{{title}}"
         navs="{{navs}}"
         remark="{{remark}}"
         with-tip="{{withTip}}"
         with-sidebar="{{withSidebar}}"
-        breadcrumbs="{{breadcrumbs}}">
-        <div slot="filter" s-if="filter && filter.$position !== 'tb' && filter.controls.length > 0">
+        breadcrumbs="{{breadcrumbs}}"
+    >
+        <div slot="filter" s-if="withFilter">
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
@@ -40,7 +38,7 @@ export function asPage(schema, MainComponent) {
                 on-submit="onFilter($event)" />
         </div>
 
-        <div slot="tb-filter" s-if="filter && filter.$position === 'tb' && filter.controls.length > 0">
+        <div slot="tb-filter" s-if="withToolbarFilter">
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
@@ -50,34 +48,34 @@ export function asPage(schema, MainComponent) {
         </div>
 
         <div slot="helps" s-if="helps.length">
-            <x-toolbar items="{{helps}}" />
+            <x-toolbar controls="{{helps}}" />
         </div>
 
         <div slot="tb-left" s-if="toolbar.length">
-            <x-toolbar items="{{toolbar}}" on-item-clicked="onToolbarEvent($event)" />
-            <x-bulk-actions items="{{bulkActions}}" disabled="{{!enableBuckActions}}" />
+            <x-toolbar controls="{{toolbar}}" on-item-clicked="onToolbarEvent($event)" />
+            <x-bulk-actions controls="{{bulkActions}}" disabled="{{!enableBuckActions}}" />
         </div>
 
         ${schema.$withTip ? '<div slot="tip">' + schema.$withTip + '</div>' : ''}
 
         <div slot="tb-right">
-            <ui-searchbox
-                s-if="withSearchbox"
-                value="{=$extraPayload.keyword=}"
-                keyword-type="{=$extraPayload.keywordType=}"
-                placeholder="{{filter.$searchbox.placeholder}}"
-                datasource="{{filter.$searchbox.datasource}}"
+            <x-right-toolbar
+                loading="{{table.loading}}"
+
+                with-searchbox="{{withSearchbox}}"
+                searchbox-value="{=$extraPayload.keyword=}"
+                searchbox-placeholder="{{filter.$searchbox.placeholder}}"
+                searchbox-keyword-type="{=$extraPayload.keywordType=}"
+                searchbox-keyword-types="{{filter.$searchbox.datasource}}"
+
+                with-tct="{{tct.datasource.length}}"
+                tct-value="{=tct.value=}"
+                tct-datasource="{{tct.datasource}}"
+
+                on-refresh="refreshTable"
                 on-search="doSearch"
+                on-table-columns-changed="toggleTableColumns"
             />
-            <ui-button disabled="{{table.loading}}" on-click="refreshTable" icon="refresh" />
-            <ui-table-column-toggle
-                s-if="tct.datasource.length"
-                on-change="toggleTableColumns"
-                layer-align="right"
-                layer-offset-left="{{0}}"
-                value="{=tct.value=}"
-                datasource="{{tct.datasource}}"
-                />
         </div>
 
         <x-main
@@ -103,17 +101,31 @@ export function asPage(schema, MainComponent) {
     const WrappedComponent = defineComponent({    // eslint-disable-line
         template,
         components: {
-            'x-filter': Filter,
-            'x-main': MainComponent,
-            'x-toolbar': Toolbar,
-            'x-pager': XPager,
-            'x-bulk-actions': BulkActions,
+            'x-main': MainComponent,              // 这个是自定义的组件
+
             'x-page': Page,
-            'ui-table-column-toggle': TableColumnToggle,
-            'ui-searchbox': SearchBox
+            'x-filter': Filter,
+            'x-bulk-actions': BulkActions,
+            'x-toolbar': Toolbar,
+            'x-right-toolbar': RightToolbar,
+            'x-pager': XPager
         },
 
         computed: {
+            withFilter() {
+                const filter = this.data.get('filter');
+                return filter
+                    && filter.$position !== 'tb'
+                    && filter.controls
+                    && filter.controls.length > 0;
+            },
+            withToolbarFilter() {
+                const filter = this.data.get('filter');
+                return filter
+                    && filter.$position === 'tb'
+                    && filter.controls
+                    && filter.controls.length > 0;
+            },
             tableColumns() {
                 const schema = this.data.get('table.schema');
                 if (schema[0].$when && schema[0].$then) {
@@ -370,21 +382,15 @@ export function asPage(schema, MainComponent) {
                     window.open(_.template(config.link)(payload));
                     break;
                 case 'go':
-                    this._goToService(_.template(config.link)(payload));
+                    this.$go(_.template(config.link)(payload));
                     break;
                 case 'link':
-                    locator.redirect(_.template(config.link)(payload));
+                    this.$redirect(_.template(config.link)(payload));
                     break;
                 case 'filter':
                     this.setFilterValue(config.$filterKey, config.value);
                     break;
             }
-        },
-
-        _goToService(link) {
-            const target = $(`<a href="${link}"></a>`);
-            const event = $.Event('click', {target, currentTarget: target});  // eslint-disable-line
-            Go.switchHandler(event, this);
         },
 
         onTableCommand({type, payload, rowIndex}) {
