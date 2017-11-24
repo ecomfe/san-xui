@@ -292,6 +292,7 @@ export function asPage(schema, MainComponent) {
                     this.$redirect(_.template(config.link)(payload));
                     break;
                 case 'filter':
+                    // SEE: iam/account/policy/v3/List
                     this.$filterValue(config.$filterKey, config.value);
                     break;
             }
