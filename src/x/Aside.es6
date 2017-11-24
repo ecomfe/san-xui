@@ -95,9 +95,11 @@ export default defineComponent({
         this.activeItemByText(this.data.get('selectedItemText'));
     },
     onClick(item) {
-        if (item.disabled) {
+        const activedItem = this.data.get('activedItem');
+        if (item.disabled || item === activedItem) {
             return;
         }
+
         this.data.set('activedItem', item);
         this.fire('item-selected', item);
     }
