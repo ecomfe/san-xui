@@ -439,6 +439,7 @@ export function asPage(schema, MainComponent) {
             this.__watcherTableColumns(this.data.get('tableColumns'));
         },
 
+        // FIXME(leeight) 这个 messages 的应用场景如何?
         messages: createCommandMessages(schema.body.$commands),
 
         dispatchCommand(type, id) {
@@ -447,6 +448,7 @@ export function asPage(schema, MainComponent) {
                 ? _.find(datasource, item => item.id === id)
                 : id;   // maybe it's a payload object
             if (payload && type) {
+                // TODO(leeight) rowIndex 可能会错，如何处理？
                 this.onTableCommand({type, payload});
             }
         }

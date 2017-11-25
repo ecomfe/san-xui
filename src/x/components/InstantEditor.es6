@@ -69,20 +69,9 @@ export default defineComponent({
         }
     },
     getInputComp() {
-        // 等待 https://github.com/ecomfe/san/issues/151 的处理结果，再进一步优化
-        const layer = this.ref('layer');
-        if (!layer.slotChildren || layer.slotChildren.length <= 0) {
-            return null;
-        }
-
-        const slotChild = u.find(layer.slotChildren,
-            item => item.aNode != null && item.children && item.children.length > 0);
-        if (!slotChild) {
-            return null;
-        }
-
         try {
-            return slotChild.children[0].children[0].children[0].children[0];
+            const slots = this.slot();
+            return slots[0].children[0];
         }
         catch (ex) {
             return null;

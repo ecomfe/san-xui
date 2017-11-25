@@ -61,14 +61,11 @@ export default defineComponent({
     closeDialog() {
         this.data.set('actionOptions.open', false);
     },
-
     onActionLoaded(e) {
         const erAction = e.action;
-        let compInstance = erAction;
-
-        if (erAction && erAction.page && erAction.SanPage) {
-            compInstance = erAction.page.children[0];
-        }
+        const compInstance = erAction && erAction.page && erAction.SanPage
+            ? erAction.page.children[0]
+            : erAction;
         compInstance.on('legacyactioncustomevent', e => {
             const type = e.legacyActionFireCustomType;
             // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
@@ -79,15 +76,9 @@ export default defineComponent({
     },
     onConfirmDialog() {
         const erAction = this.erAction;
-        let compInstance = null;
-
-        if (erAction && erAction.page && erAction.SanPage) {
-            compInstance = erAction.page.children[0];
-
-        }
-        else if (erAction && erAction.view) {
-            compInstance = erAction;
-        }
+        const compInstance = erAction && erAction.page && erAction.SanPage
+            ? erAction.page.children[0]
+            : erAction;
 
         if (compInstance && typeof compInstance.doSubmit === 'function') {
             this.data.set('confirm.label', '处理中...');
