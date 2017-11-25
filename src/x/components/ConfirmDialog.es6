@@ -10,7 +10,7 @@ import Dialog from './Dialog';
 
 export default defineComponent({
     template: `<template>
-    <ui-dialog open="{{open}}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">
+    <ui-dialog open="{=open=}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">
         <span slot="head">{{title}}</span>
         <div class="ui-dialog-icon ui-dialog-icon-confirm"></div>
         <div class="ui-dialog-text">{{message | raw}}</div>

@@ -19,7 +19,8 @@ const template = `<div class="{{mainClass}}">
         s-if="datasource.length"
         on-change="onKeywordTypeChanged($event)"
         datasource="{{datasource}}"
-        layer-width="{{100}}"
+        layer-offset-top="{{1}}"
+        layer-offset-left="{{-1}}"
         value="{=keywordType=}"
         />
     <ui-textbox

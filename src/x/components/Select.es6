@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
@@ -33,12 +33,12 @@ function defaultFilter(datasource, keyword) {
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
-    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{layerOffsetTop}}">
+    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{layerOffsetTop}}" offset-left="{{layerOffsetLeft}}">
         <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi" style="{{layerStyle}}">
             <ui-textbox s-if="filter"
                 value="{=keyword=}"
                 placeholder="{{filterPlaceholder}}"
-                width="{{layerWidth - 50}}"
+                width="{{realLayerWidth - 50}}"
                 />
             <li class="${cx('item', 'item-all')}" s-if="filteredDatasource.length">
                 <label>
@@ -86,8 +86,10 @@ const Select = defineComponent({    // eslint-disable-line
         return {
             active: false,
             multi: false,   // 是否支持多选，也就是之前的 MultiSelect 的功能
-            layerWidth: 200,
-            layerOffsetTop: 3,
+            layerWidth: null,       // 手工设置的
+            autoLayerWidth: null,   // this.el.clientWidth 自动算出来的
+            layerOffsetTop: 2,
+            layerOffsetLeft: 0,
 
             filter: false,  // 是否支持搜索过滤
             filterPlaceholder: '',    // filter textbox placeholder
@@ -137,11 +139,16 @@ const Select = defineComponent({    // eslint-disable-line
             }
             return null;
         },
+        realLayerWidth() {
+            const layerWidth = this.data.get('layerWidth');
+            const autoLayerWidth = this.data.get('autoLayerWidth');
+            return layerWidth || autoLayerWidth;
+        },
         layerStyle() {
             const style = {};
-            const layerWidth = this.data.get('layerWidth');
-            if (layerWidth != null) {
-                style.width = hasUnit(layerWidth) ? layerWidth : `${layerWidth}px`;
+            const realLayerWidth = this.data.get('realLayerWidth');
+            if (realLayerWidth != null) {
+                style.width = hasUnit(realLayerWidth) ? realLayerWidth : `${realLayerWidth}px`;
             }
             return style;
         },
@@ -185,6 +192,7 @@ const Select = defineComponent({    // eslint-disable-line
             // 转化一下格式
             this.data.set('value', []);
         }
+        this.watch('selectedItem', () => nextTick(() => this.__setLayerWidth()));
     },
     selectItem(e, item) {
         if (item.disabled) {
@@ -218,6 +226,15 @@ const Select = defineComponent({    // eslint-disable-line
         }
         const active = this.data.get('active');
         this.data.set('active', !active);
+    },
+    __setLayerWidth() {
+        const layerWidth = this.data.get('layerWidth');
+        if (layerWidth == null) {
+            this.data.set('autoLayerWidth', this.el.clientWidth + 2);
+        }
+    },
+    attached() {
+        this.__setLayerWidth();
     }
 });
 

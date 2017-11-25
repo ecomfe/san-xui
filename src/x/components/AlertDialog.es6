@@ -12,7 +12,7 @@ import {i18n} from '../../mixins/filters';
 
 export default defineComponent({
     template: `<template>
-    <ui-dialog open="{{open}}" skin="alert" width="{{width}}" s-ref="dialog">
+    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">
         <span slot="head">{{title}}</span>
         <div class="ui-dialog-icon ui-dialog-icon-warning"></div>
         <div class="ui-dialog-text">{{message | raw}}</div>

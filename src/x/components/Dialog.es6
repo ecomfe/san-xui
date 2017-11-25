@@ -9,12 +9,13 @@ import {nextTick, defineComponent} from 'san';
 import {create, nextZindex} from './util';
 import Button from './Button';
 import {i18n} from '../../mixins/filters';
+import {opacity} from './fx/opacity';
 
 const cx = create('ui-dialog');
 
 /* eslint-disable */
 const template = `<template>
-<div s-if="open" class="{{mainClass}}" style="{{dialogStyle}}">
+<div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">
     <div class="${cx('head', 'head-panel')}" san-if="head">
         <div class="${cx('title')}">
             <slot name="head">Title</slot>
@@ -37,6 +38,7 @@ const template = `<template>
 
 export default defineComponent({
     template,
+    $fxOpacity: opacity(5),
     components: {
         'ui-button': Button
     },

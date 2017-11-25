@@ -6,12 +6,13 @@ import $ from 'jquery';
 import {nextTick, defineComponent} from 'san';
 
 import {nextZindex, create} from './util';
+import {opacity} from './fx/opacity';
 
 const cx = create('ui-layer');
 
 /* eslint-disable */
 const template = `<template>
-    <div s-if="open" class="${cx()}" style="{{layerStyle}}"><slot/></div>
+    <div s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
 </template>`;
 /* eslint-enable */
 
@@ -30,6 +31,7 @@ function returnFalse(e) {
 
 export default defineComponent({
     template,
+    $fxOpacity: opacity(5),
     initData() {
         return {
             // 是否是打开的状态
@@ -63,9 +65,11 @@ export default defineComponent({
         if (this.el.parentNode !== document.body) {
             document.body.appendChild(this.el);
         }
+        // FIXME(leeight) 修复一下(性能)问题?
         if (this.autoHideHandler) {
             $(document).on('mousedown', this.autoHideHandler);
         }
+        // FIXME(leeight) 修复一下(性能)问题?
         if (this.scrollHandler) {
             $(window).on('scroll', this.scrollHandler);
         }
