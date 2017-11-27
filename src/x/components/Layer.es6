@@ -3,6 +3,7 @@
  * @author leeight
  */
 import $ from 'jquery';
+import _ from 'lodash';
 import {nextTick, defineComponent} from 'san';
 
 import {nextZindex, create} from './util';
@@ -14,19 +15,11 @@ const cx = create('ui-layer');
 const template = `<template>
     <div s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
 </template>`;
+
 /* eslint-enable */
 
 function returnFalse(e) {
-    // FIXME(leeight) This is a hack for xui-select[multi=true,filter=true]
-    const nodeName = e.target.nodeName;
-    if (nodeName === 'INPUT') {
-        if (typeof e.target.focus === 'function') {
-            e.target.focus();
-            e.target.select();
-        }
-    }
-
-    return false;
+    e.stopPropagation();
 }
 
 export default defineComponent({
@@ -38,6 +31,9 @@ export default defineComponent({
             open: false,
             // 点击文档中其它位置的时候，是否自动隐藏
             autoHide: true,
+            // 如果在页面中直接使用layer，可能希望点击了父节点也触发隐藏。变量默认为true，因为select等组件需要。
+            // 如果autoHide 为false 此变量无效。
+            autoHideExceptParent: true,
             // 是否自动定位到 parentComponent.el 的下面
             autoPosition: true,
             width: null,    // 外部传进来的宽度值
@@ -53,8 +49,14 @@ export default defineComponent({
     inited() {
         const autoHide = this.data.get('autoHide');
         this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
-        this.scrollHandler = () => this.selfPosition(true);
+
+        this.scrollHandler = _.throttle(() => this.selfPosition(true), 1000);
+
         this.watch('open', open => {
+            // 一个表单页可以能有较多select && 其他浮层。关闭的情况下去掉事件。
+
+            open ? this.bindLayerEvents() : this.unbindLayerEvents();
+
             const autoPosition = this.data.get('autoPosition');
             if (autoPosition && open) {
                 nextTick(() => this.selfPosition());
@@ -65,20 +67,43 @@ export default defineComponent({
         if (this.el.parentNode !== document.body) {
             document.body.appendChild(this.el);
         }
-        // FIXME(leeight) 修复一下(性能)问题?
-        if (this.autoHideHandler) {
-            $(document).on('mousedown', this.autoHideHandler);
-        }
-        // FIXME(leeight) 修复一下(性能)问题?
-        if (this.scrollHandler) {
-            $(window).on('scroll', this.scrollHandler);
-        }
-        $(this.el).on('mousedown', returnFalse);
-        const pc = this.parentComponent;
-        if (pc && pc.el) {
-            $(pc.el).on('mousedown', returnFalse);
+
+        // 这些事件只在显示时才有意义，默认情况下，一个页面只有一个浮层处于打开状态
+        if (this.data.get('open')) {
+            this.bindLayerEvents();
         }
     },
+    bindLayerEvents() {
+        if (this.autoHideHandler) {
+            $(document).on('mousedown', this.autoHideHandler);
+            $(this.el).on('mousedown', returnFalse);
+
+            const pc = this.parentComponent;
+            const autoHideExceptParent = this.data.get('autoHideExceptParent');
+            // 用pc.id fix 点击选择组件闪动的bug
+            if (autoHideExceptParent && pc && pc.el) {
+                $(pc.el).on('mousedown', returnFalse);
+            }
+        }
+
+        $(window).on('scroll', this.scrollHandler);
+    },
+    unbindLayerEvents() {
+        if (this.autoHideHandler) {
+            $(document).off('mousedown', this.autoHideHandler);
+            $(this.el).off('mousedown', returnFalse);
+
+            const pc = this.parentComponent;
+            const autoHideExceptParent = this.data.get('autoHideExceptParent');
+            if (autoHideExceptParent && pc && pc.el) {
+                $(pc.el).off('mousedown', returnFalse);
+            }
+        }
+
+        $(window).off('scroll', this.scrollHandler);
+    },
+
+
     selfPosition(kz) {
         const pc = this.parentComponent;
         if (!pc || !pc.el) {
@@ -109,17 +134,7 @@ export default defineComponent({
         }
     },
     detached() {
-        if (this.autoHideHandler) {
-            $(document).off('mousedown', this.autoHideHandler);
-        }
-        if (this.scrollHandler) {
-            $(window).off('scroll', this.scrollHandler);
-        }
-        const pc = this.parentComponent;
-        if (pc && pc.el) {
-            $(pc.el).off('mousedown', returnFalse);
-        }
-        $(this.el).off('mousedown', returnFalse);
+        this.unbindLayerEvents();
         $(this.el).remove();
     }
 });

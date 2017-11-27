@@ -53,6 +53,9 @@ export const blocks = [
                 text: 'xui-dialog'
             },
             {
+                text: 'xui-layer'
+            },
+            {
                 text: 'xui-switch'
             },
             {
