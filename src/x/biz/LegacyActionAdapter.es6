@@ -35,6 +35,10 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
+const isSanPage = function (erAction) {
+    return !!(erAction && erAction.page && erAction.SanPage);
+}
+
 export default defineComponent({
     template,
     components: {
@@ -63,9 +67,7 @@ export default defineComponent({
     },
     onActionLoaded(e) {
         const erAction = e.action;
-        const compInstance = erAction && erAction.page && erAction.SanPage
-            ? erAction.page.children[0]
-            : erAction;
+        const compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
         compInstance.on('legacyactioncustomevent', e => {
             const type = e.legacyActionFireCustomType;
             // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
@@ -76,9 +78,8 @@ export default defineComponent({
     },
     onConfirmDialog() {
         const erAction = this.erAction;
-        const compInstance = erAction && erAction.page && erAction.SanPage
-            ? erAction.page.children[0]
-            : erAction;
+        const isSan = isSanPage(erAction);
+        const compInstance = isSan ? erAction.page.children[0] : erAction;
 
         if (compInstance && typeof compInstance.doSubmit === 'function') {
             this.data.set('confirm.label', '处理中...');
@@ -90,7 +91,14 @@ export default defineComponent({
                     this.closeDialog();
                 })
                 .then(null, (error = {}) => {
-                    Toast.error(error.global || '操作失败');
+                    // er
+                    // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
+                    // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
+                    // san
+                    // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
+                    if (isSan) {
+                        Toast.error(error.global || '操作失败');
+                    }
                     this.data.set('confirm.label', '确定');
                     this.data.set('confirm.disabled', false);
                 });
