@@ -7,7 +7,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {nextTick, defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
 import {asInput} from './asInput';
@@ -98,8 +98,10 @@ const BoxGroup = defineComponent({
         }
     },
     onChange() {
-        const value = this.data.get('value');
-        this.fire('change', {value});
+        nextTick(() => {
+            const value = this.data.get('value');
+            this.fire('change', {value});
+        });
     }
 });
 
