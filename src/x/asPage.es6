@@ -102,7 +102,7 @@ export function asPage(schema, MainComponent) {
     const WrappedComponent = defineComponent({    // eslint-disable-line
         template,
         components: {
-            'x-main': MainComponent,              // 这个是自定义的组件
+            'x-main': MainComponent, // 这个是自定义的组件
 
             'x-page': Page,
             'x-filter': Filter,
@@ -178,18 +178,18 @@ export function asPage(schema, MainComponent) {
                 withTip: !!$withTip,
                 $extraPayload,
 
-                loading: false,         // 数据是否在加载中
-                error: null,            // 错误的情况
+                loading: false, // 数据是否在加载中
+                error: null, // 错误的情况
                 table: {
-                    loading: false,           // 数据是否在加载中
+                    loading: false, // 数据是否在加载中
                     disabledSelectAll: false, // 禁用全选的功能
-                    error: null,              // 加载失败的情况??
+                    error: null, // 加载失败的情况??
                     cellRenderer,
                     select: $select,
-                    schema: columns,          // 当前表格的列
-                    datasource: [],           // 当前可见的数据
+                    schema: columns, // 当前表格的列
+                    datasource: [], // 当前可见的数据
                     selectedIndex: [],
-                    selectedItems: []         // 当前选中的行
+                    selectedItems: [] // 当前选中的行
                 },
                 pager: {
                     size: $pageSize || 10,
@@ -320,6 +320,21 @@ export function asPage(schema, MainComponent) {
             this.__selectedItems = selectedItems;
             this.__selectedIndex = selectedIndex;
             // console.log(selectedIndex, selectedItems);
+
+            // 更新 bulkActions 的状态
+            const bulkActions = this.data.get('bulkActions');
+            _.each(bulkActions, (item, i) => {
+                // FIXME(leeight) 应该起个什么名字呢？
+                if (typeof item.reactive === 'function') {
+                    const newState = item.reactive(selectedItems); // 根据当前选中的内容，重新计算状态
+                    if (newState && _.isObject(newState)) {
+                        // 比如返回的可以是
+                        // {disabled: true, label: 'eee'}
+                        // {datasource: [], value: 'eee'}
+                        _.each(newState, (value, key) => this.data.set(`bulkActions[${i}].${key}`, value));
+                    }
+                }
+            });
         },
 
         onPagerSizeChange({value}) {
@@ -446,7 +461,7 @@ export function asPage(schema, MainComponent) {
             const datasource = this.data.get('table.datasource');
             const payload = _.isString(id)
                 ? _.find(datasource, item => item.id === id)
-                : id;   // maybe it's a payload object
+                : id; // maybe it's a payload object
             if (payload && type) {
                 // TODO(leeight) rowIndex 可能会错，如何处理？
                 this.onTableCommand({type, payload});
