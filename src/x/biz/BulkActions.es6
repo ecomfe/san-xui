@@ -1,4 +1,6 @@
 /**
+ * 批量操作的区域，一般包含 Button, Select 之类的内容
+ *
  * @file BulkActions.es6
  * @author leeight
  */

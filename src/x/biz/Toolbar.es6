@@ -1,4 +1,5 @@
 /**
+ * 左侧工具栏的区域，包括 Button, ButtonGroupp, 链接 等等
  * @file inf-ui/x/biz/Toolbar.es6
  * @author leeight
  */

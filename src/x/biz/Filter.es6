@@ -1,11 +1,18 @@
 /**
- * @file Filter.es6
+ * 内容过滤区域，组件包括
+ *
+ *   ui-select
+ *   ui-rangecalendar
+ *   ui-calendar
+ *   plain-text
+ *
+ * @file inf-ui/x/biz/Filter.es6
  * @author leeight
  */
 
 import _ from 'lodash';
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from 'inf-ui/x/components/util';
 import Button from 'inf-ui/x/components/Button';
@@ -63,6 +70,11 @@ export default defineComponent({
         'ui-calendar': Calendar,
         'ui-rangecalendar': RangeCalendar,
         'ui-button': Button
+    },
+    dataTypes: {
+        title: DataTypes.string,
+        submitText: DataTypes.string,
+        controls: DataTypes.array
     },
     computed: {
         mainClass() {

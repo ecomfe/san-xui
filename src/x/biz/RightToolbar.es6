@@ -1,4 +1,6 @@
 /**
+ * 右侧工具条的区域，包括 SearchBox, RefreshButton, 自定义表格列的按钮
+ *
  * @file inf-ui/x/biz/RightToolbar.es6
  * @author leeight
  */

@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/createPage.es6
+ * @file inf-ui/x/asPage.es6
  * @author leeight
  */
 
