@@ -1055,6 +1055,18 @@
 .list-page-tb-right {
     float: right;
 }
+.ui-dialog-body-panel {
+    .ui-actionloader-x {
+        // 如果在 Dialog 里面，**应该** 没有 h2 这部分了
+        // 默认的 20px 是因为 ui-breadcrumbs 有一个 -20px （为什么呢）
+        .list-page-body {
+            margin-top: 0;
+        }
+        .list-page-toolbar {
+            margin-top: 0;
+        }
+    }
+}
 
 .ui-biz-filter-form-inline,
 .ui-biz-filter-form-item {
