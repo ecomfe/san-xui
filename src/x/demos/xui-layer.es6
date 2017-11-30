@@ -21,26 +21,26 @@ const template = `
 <xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>
 <xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>
 
-<xui-layer auto-hide-except-parent="{{false}}" offset-top="{{-100}}" offset-left="{{200}}" open="{=layer.showLayer=}">
+<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" offset-top="{{-100}}" offset-left="{{200}}" open="{=layer.showLayer=}">
     <x-row label="type=default">
         <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
         <xui-button on-click="closeTheLayer">关闭.</xui-button>
         <xui-button on-click="openNewLayer">打开一个新的Layer.</xui-button>
         <xui-select multi filter layer-width="300" datasource="{{select.datasource}}" value="{=select.value=}" />
     </x-row>
-    
+
     <x-row label="type=text">
         <xui-textbox placeholder="This is placeholder" value="{=text.value=}" on-enter="onPressEnterOnTextBox" />
         <xui-textbox disabled placeholder="This is disabled textbox" />
         Value is: {{text.value}}
     </x-row>
-    
+
     <x-row label="type=password">
         <xui-textbox width="{{100}}" type="password" placeholder="This is placeholder" value="{=password.value=}" />
         <xui-textbox disabled width="300px" type="password" placeholder="This is disabled textbox" />
         Password is: {{password.value}}
     </x-row>
-    
+
     <x-row label="multiline">
         <xui-textbox multiline placeholder="This is placeholder" value="{=textarea.value=}" />
         <xui-textbox multiline disabled placeholder="This is disabled textbox" />
@@ -49,7 +49,7 @@ const template = `
 </xui-layer>
 
 
-<xui-layer offset-top="{{-100}}" offset-left="{{200}}" open="{=layer.showLayer3=}">
+<xui-layer class="demo-layer" offset-top="{{100}}" offset-left="{{0}}" open="{=layer.showLayer3=}">
     <x-row label="radio">
         <xui-boxgroup
             box-type="radio"
@@ -77,7 +77,7 @@ const template = `
             datasource="{{boxgroup.datasource}}"
             value="{=boxgroup.checkbox=}"/>
     </x-row>
-    
+
     <x-row label="操作系统">
         <xui-multipicker
             datasource="{{os.datasource}}"
@@ -86,12 +86,10 @@ const template = `
             操作系统: {{os.value}}
         </strong>
     </x-row>
-    
+
 </xui-layer>
 
-
-
-<xui-layer autoHideExceptParent="{{false}}" open="{=layer.showLayer2=}" width="300">
+<xui-layer class="demo-layer" autoHideExceptParent="{{false}}" open="{=layer.showLayer2=}" width="300">
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-button on-click="closeTheLayer">关闭上一个Layer</xui-button>
 </xui-layer>
