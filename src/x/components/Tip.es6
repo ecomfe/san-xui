@@ -75,7 +75,7 @@ export default defineComponent({   // eslint-disable-line
     initData() {
         return {
             message: null,
-            position: 'lt',   // 'lt' | 'tc' | 'rt' | 'bc'
+            position: 'lt', // 'lt' | 'tc' | 'rt' | 'bc'
             active: false,
             duration: 500
         };

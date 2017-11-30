@@ -31,8 +31,8 @@ export default defineComponent({
         return {
             rangecalendar: {
                 value: {
-                    begin: new Date(2017, 9, 19),   // 2017-10-19
-                    end: new Date(2018, 0, 12)      // 2018-01-12
+                    begin: new Date(2017, 9, 19), // 2017-10-19
+                    end: new Date(2018, 0, 12) // 2018-01-12
                 }
             }
         };

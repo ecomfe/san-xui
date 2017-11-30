@@ -27,7 +27,7 @@ export default defineComponent({
     },
     initData() {
         return {
-            level: 'alert'    // 'normal' | 'alert' | 'error'
+            level: 'alert' // 'normal' | 'alert' | 'error'
         };
     }
 });

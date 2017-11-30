@@ -38,13 +38,13 @@ const BoxGroup = defineComponent({
     template,
     initData() {
         return {
-            datasource: [],             // Array.<{value: string, title: string}>
+            datasource: [], // Array.<{value: string, title: string}>
             disabled: false,
-            orientation: 'horizontal',  // 'vertical' | 'horizontal'
+            orientation: 'horizontal', // 'vertical' | 'horizontal'
             value: null,
-            colCount: 0,                // 展示N列
+            colCount: 0, // 展示N列
             name: 'esui' + nexUuid(),
-            boxType: 'radio'            // 'radio' | 'checkbox'
+            boxType: 'radio' // 'radio' | 'checkbox'
         };
     },
     computed: {

@@ -92,7 +92,7 @@ export default defineComponent({
             fileSingleSizeLimit: sizeLimit,
 
             swf: window.require.toUrl('webuploader/Uploader.swf'),
-            disableWidgets: 'log',    // 禁用log统计
+            disableWidgets: 'log', // 禁用log统计
             chunked: false,
             threads: 1,
             duplicate: false,

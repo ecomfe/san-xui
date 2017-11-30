@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {hasUnit, create} from './util';

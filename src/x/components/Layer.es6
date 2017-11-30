@@ -36,10 +36,10 @@ export default defineComponent({
             autoHideExceptParent: true,
             // 是否自动定位到 parentComponent.el 的下面
             autoPosition: true,
-            width: null,    // 外部传进来的宽度值
-            align: 'left',  // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
-            offsetTop: 0,   // 有时候自动定位不准确，需要修正一下
-            offsetLeft: 0,  // 有时候自动定位不准确，需要修正一下
+            width: null, // 外部传进来的宽度值
+            align: 'left', // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
+            offsetTop: 0, // 有时候自动定位不准确，需要修正一下
+            offsetLeft: 0, // 有时候自动定位不准确，需要修正一下
             layerStyle: {
                 left: '-10000px',
                 top: '-10000px'

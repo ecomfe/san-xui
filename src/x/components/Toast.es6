@@ -38,7 +38,7 @@ const Toast = defineComponent({   // eslint-disable-line
         return {
             message: null,
             duration: 5000,
-            level: 'success'    // 'success' | 'info' | 'warning' | 'error'
+            level: 'success' // 'success' | 'info' | 'warning' | 'error'
         };
     },
     attached() {

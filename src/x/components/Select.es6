@@ -85,18 +85,18 @@ const Select = defineComponent({    // eslint-disable-line
     initData() {
         return {
             active: false,
-            multi: false,   // 是否支持多选，也就是之前的 MultiSelect 的功能
-            layerWidth: null,       // 手工设置的
-            autoLayerWidth: null,   // this.el.clientWidth 自动算出来的
+            multi: false, // 是否支持多选，也就是之前的 MultiSelect 的功能
+            layerWidth: null, // 手工设置的
+            autoLayerWidth: null, // this.el.clientWidth 自动算出来的
             layerOffsetTop: 2,
             layerOffsetLeft: 0,
 
-            filter: false,  // 是否支持搜索过滤
-            filterPlaceholder: '',    // filter textbox placeholder
+            filter: false, // 是否支持搜索过滤
+            filterPlaceholder: '', // filter textbox placeholder
             filterCallback: defaultFilter,
-            keyword: '',    // 过滤的关键词
+            keyword: '', // 过滤的关键词
 
-            value: '',      // any | any[]
+            value: '', // any | any[]
             checkedAll: false
         };
     },

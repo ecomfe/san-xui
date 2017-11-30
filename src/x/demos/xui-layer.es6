@@ -10,6 +10,7 @@ import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
 import TextBox from 'inf-ui/x/components/TextBox';
 import MultiPicker from 'inf-ui/x/components/MultiPicker';
+import Toast from 'inf-ui/x/components/Toast';
 import BoxGroup from 'inf-ui/x/components/BoxGroup';
 
 import Row from './Row';

@@ -96,7 +96,7 @@ const MonthView = defineComponent({
             hour: null,
             minute: null,
             second: null,
-            endOfDay: false,    // 如果设置为 true 的时候，当没有 time 选型，选择日期的时候是 23:59:59 结束
+            endOfDay: false, // 如果设置为 true 的时候，当没有 time 选型，选择日期的时候是 23:59:59 结束
 
             value: new Date(),
             titles: ['一', '二', '三', '四', '五', '六', '日'],

@@ -57,7 +57,7 @@ export default defineComponent({
         return {
             disabled: false,
             length: 350,
-            value: 0,   // [min, max]
+            value: 0, // [min, max]
             min: 0,
             max: 100,
             step: 1,

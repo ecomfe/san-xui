@@ -52,10 +52,10 @@ const MultiPicker = defineComponent({
             disabled: false,
             active: false,
             layerWidth: 'auto',
-            loader: null,             // 数据异步加载的loader，逐步的填充 datasource 的内容
+            loader: null, // 数据异步加载的loader，逐步的填充 datasource 的内容
             datasource: [],
             [kValuesKey]: [],
-            [kTmpValuesKey]: []       // 临时的值，点击了之后，同步到 value 里面去
+            [kTmpValuesKey]: [] // 临时的值，点击了之后，同步到 value 里面去
         };
     },
     computed: {
@@ -130,7 +130,7 @@ const MultiPicker = defineComponent({
     expandChildrenAync(item, index) {
         const values = [...this.data.get(kTmpValuesKey)];
         values[index] = item.value;
-        values.splice(index + 1);     // 删掉多余的数据
+        values.splice(index + 1); // 删掉多余的数据
         if (values.length <= 0) {
             return;
         }
@@ -138,7 +138,7 @@ const MultiPicker = defineComponent({
         const datasource = this.data.get('datasource');
         const indexes = arrayTreeFilterIndex(datasource, (item, level) => item.value === values[level]);
         const itemKey = u.map(indexes,
-            (v, i) => i === 0 ? `datasource[${v}]` : `children[${v}]`).join('.');   // eslint-disable-line
+            (v, i) => i === 0 ? `datasource[${v}]` : `children[${v}]`).join('.'); // eslint-disable-line
 
         const lastNode = this.data.get(itemKey);
         if (!lastNode || lastNode.children || !lastNode.expandable) {

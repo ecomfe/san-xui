@@ -17,7 +17,7 @@ export default defineComponent({
     template,
     initData() {
         return {
-            size: 'normal'    // 'normal' | 'middle' | 'small'
+            size: 'normal' // 'normal' | 'middle' | 'small'
         };
     },
     computed: {

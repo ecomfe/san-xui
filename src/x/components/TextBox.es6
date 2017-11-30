@@ -52,7 +52,7 @@ const TextBox = defineComponent({
             skin: '',
             placeholder: '',
             addon: '',
-            addonPosition: 'begin',   // 'begin' | 'end'
+            addonPosition: 'begin', // 'begin' | 'end'
             width: null,
             height: null
         };

@@ -229,7 +229,7 @@ export default defineComponent({
                     }
 
                     const deferred = baidubce.sdk.Q.defer();
-                    const delay = ~~(2 + Math.random() * 5);    // (2, 7);
+                    const delay = ~~(2 + Math.random() * 5); // (2, 7);
                     setTimeout(() => {
                         const key = year + '/' + month + '/' + day + '/' + file.name;
                         deferred.resolve(key);
