@@ -33,6 +33,7 @@ const template = `<div class="{{mainClass}}">
                         s-if="item.type === 'select'"
                         value="{{item.value}}"
 
+                        width="{{item.width}}"
                         datasource="{{item.options}}"
                         on-change="onItemChanged(item.name, $event)"
                         />
@@ -41,6 +42,7 @@ const template = `<div class="{{mainClass}}">
                         s-if="item.type === 'rangecalendar'"
                         value="{{item.value}}"
 
+                        width="{{item.width}}"
                         on-change="onItemChanged(item.name, $event)"
                         />
 
@@ -48,9 +50,10 @@ const template = `<div class="{{mainClass}}">
                         s-if="item.type === 'calendar'"
                         value="{{item.value}}"
 
-                        on-change="onItemChanged(item.name, $event)"
+                        width="{{item.width}}"
                         prev="{{item.prev}}"
                         next="{{item.next}}"
+                        on-change="onItemChanged(item.name, $event)"
                         />
                     <div
                         s-if="item.type === 'plain'"
