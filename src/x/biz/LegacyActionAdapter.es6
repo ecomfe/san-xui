@@ -35,7 +35,7 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-const isSanPage = function (erAction) {
+function isSanPage(erAction) {
     return !!(erAction && erAction.page && erAction.SanPage);
 }
 
