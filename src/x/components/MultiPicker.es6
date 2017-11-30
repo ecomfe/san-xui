@@ -120,14 +120,14 @@ const MultiPicker = defineComponent({
 
         const loader = this.data.get('loader');
         if (typeof loader === 'function') {
-            this.expandChildrenAync(item, index);
+            this.expandChildrenAsync(item, index);
         }
         else {
             this.expandChildrenInternal(item, index);
         }
     },
 
-    expandChildrenAync(item, index) {
+    expandChildrenAsync(item, index) {
         const values = [...this.data.get(kTmpValuesKey)];
         values[index] = item.value;
         values.splice(index + 1); // 删掉多余的数据
