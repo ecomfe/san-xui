@@ -3,6 +3,8 @@
  * @author leeight
  */
 
+/* global _hmt */
+
 import $ from 'jquery';
 import u from 'underscore';
 import Promise from 'promise';
@@ -97,7 +99,8 @@ const App = defineComponent({   // eslint-disable-line
             .then(response => response.text())
             .then(code => this.data.set('explorer.code', code));
         window.require([moduleId], CompCtor => {
-            window._hmt && window._hmt.push(['_trackEvent', 'page', 'view', item.text]);
+            _hmt.push(['_trackEvent', 'page', 'view', item.text]);
+            _hmt.push(['_trackPageview', location.pathname + location.search + '#comp=' + item.text]);
             this.disposeComponent();
             this.data.set('explorer.loading', false);
             this.data.set('explorer.comp', new CompCtor());
