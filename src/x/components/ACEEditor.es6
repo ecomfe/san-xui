@@ -5,7 +5,7 @@
 
 /* global ace */
 
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {create} from './util';
 import Loading from './Loading';
@@ -54,7 +54,7 @@ const ACEEditor = defineComponent({
     attached() {
         window.require([kUrl], () => {
             this.data.set('loading', false);
-            nextTick(() => {
+            this.nextTick(() => {
                 const ghost = this.ref('ghost');
                 if (!ghost || !ghost.el) {
                     this.data.set('error', new Error('ACEEditor初始化失败.'));

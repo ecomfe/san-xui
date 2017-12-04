@@ -4,7 +4,7 @@
  */
 import $ from 'jquery';
 import lib from 'esui/lib';
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Button from './Button';
@@ -129,7 +129,7 @@ export default defineComponent({
         const zIndex = nextZindex();
         this.data.set('maskZindex', zIndex);
         this.data.set('dialogZindex', zIndex + 1);
-        nextTick(() => {
+        this.nextTick(() => {
             const main = $(this.el).find('> .ui-dialog-x');
             // const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
             const top = lib.page.getScrollTop() + Math.max((lib.page.getViewHeight() - main.prop('offsetHeight')) / 2, 0);

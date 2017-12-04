@@ -4,7 +4,7 @@
  */
 import $ from 'jquery';
 import _ from 'lodash';
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {nextZindex, create} from './util';
 import {opacity} from './fx/opacity';
@@ -59,7 +59,7 @@ export default defineComponent({
 
             const autoPosition = this.data.get('autoPosition');
             if (autoPosition && open) {
-                nextTick(() => this.selfPosition());
+                this.nextTick(() => this.selfPosition());
             }
         });
     },

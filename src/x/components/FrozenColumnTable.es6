@@ -5,7 +5,7 @@
  */
 import _ from 'lodash';
 import $ from 'jquery';
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import Table from './Table';
@@ -184,7 +184,7 @@ export default defineComponent({
     },
     __syncHeight() {
         this.data.set('__syncHeightStyles', '');
-        nextTick(() => {
+        this.nextTick(() => {
             const left = this.ref('left');
             const middle = this.ref('middle');
             const right = this.ref('right');

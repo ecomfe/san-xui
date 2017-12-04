@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {nextTick, defineComponent} from 'san';
+import {defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
@@ -192,7 +192,7 @@ const Select = defineComponent({    // eslint-disable-line
             // 转化一下格式
             this.data.set('value', []);
         }
-        this.watch('selectedItem', () => nextTick(() => this.__setLayerWidth()));
+        this.watch('selectedItem', () => this.nextTick(() => this.__setLayerWidth()));
     },
     selectItem(e, item) {
         if (item.disabled) {

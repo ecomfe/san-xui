@@ -1,9 +1,7 @@
 /**
- * @file components/Input.es6
+ * @file components/asInput.es6
  * @author leeight
  */
-
-import {nextTick} from 'san';
 
 export function asInput(Klass) {
     return class extends Klass {
@@ -15,7 +13,7 @@ export function asInput(Klass) {
             }
 
             if (name === 'input') {
-                nextTick(() => {
+                this.nextTick(() => {
                     const value = this.data.get('value');
                     this.dispatch('input-comp-value-changed', {value});
                 });
