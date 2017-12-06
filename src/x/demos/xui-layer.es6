@@ -18,11 +18,11 @@ import Row from './Row';
 /* eslint-disable */
 const template = `
 <template>
-<x-row label="[default]">
+<x-row label="[default]" class="layer-test-row">
 <xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>
 <xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>
 
-<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" offset-top="{{-100}}" offset-left="{{200}}" open="{=layer.showLayer=}">
+<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">
     <x-row label="type=default">
         <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
         <xui-button on-click="closeTheLayer">关闭.</xui-button>
@@ -50,7 +50,7 @@ const template = `
 </xui-layer>
 
 
-<xui-layer class="demo-layer" offset-top="{{100}}" offset-left="{{0}}" open="{=layer.showLayer3=}">
+<xui-layer class="demo-layer" align="right" height="{{670}}" offset-top="{{-100}}" offset-left="{{-100}}" open="{=layer.showLayer3=}">
     <x-row label="radio">
         <xui-boxgroup
             box-type="radio"
@@ -90,7 +90,7 @@ const template = `
 
 </xui-layer>
 
-<xui-layer class="demo-layer" autoHideExceptParent="{{false}}" open="{=layer.showLayer2=}" width="300">
+<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}" width="300">
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-button on-click="closeTheLayer">关闭上一个Layer</xui-button>
 </xui-layer>
