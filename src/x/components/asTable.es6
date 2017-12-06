@@ -73,9 +73,9 @@ function buildTableCell(column, colIndex) {
             <slot
                 name="${column.name}"
                 var-row="item"
-                var-row-index="rowIndex"
+                var-rowIndex="rowIndex"
                 var-col="tableColumns[${colIndex}]"
-                var-col-index="{{${colIndex}}}"
+                var-colIndex="{{${colIndex}}}"
             >
                 {{row | tableCell(col.name, col, rowIndex, colIndex) | raw}}
                 <a s-if="col.editcmd || col.editable"
