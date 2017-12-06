@@ -47,6 +47,9 @@ export const blocks = [
                 text: 'xui-table'
             },
             {
+                text: 'xui-as-table'
+            },
+            {
                 text: 'xui-pager'
             },
             {
