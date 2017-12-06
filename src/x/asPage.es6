@@ -456,6 +456,9 @@ export function asPage(schema, MainComponent) {
 
         // FIXME(leeight) 这个 messages 的应用场景如何?
         messages: {
+            'refresh': function () {
+                this.refreshTable();
+            },
             '*': function (arg) {
                 // 目前只有schema.body.$commands中的方法。如果后续添加了有不在$commands中的方法，可以再进行判断
                 this.dispatchCommand(arg.name, arg.value);
