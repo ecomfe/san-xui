@@ -6,6 +6,7 @@
 import {defineComponent} from 'inf-ui/sanx';
 import Filter from 'inf-ui/x/biz/Filter';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Row from './Row';
 
@@ -18,7 +19,7 @@ const template = `<template>
         controls="{{controls}}"
         on-submit="onFilter1"
         />
-    <pre>{{formData.f1 | json}}</pre>
+    <xui-hljs code="{=formData.f1=}" lang="json" />
 </x-row>
 
 <x-row label="title && submit-text">
@@ -28,7 +29,7 @@ const template = `<template>
         controls="{{controls}}"
         on-submit="onFilter2"
         />
-    <pre>{{formData.f2 | json}}</pre>
+    <xui-hljs code="{=formData.f2=}" lang="json" />
 </x-row>
 </template>`;
 /* eslint-enable */
@@ -37,13 +38,9 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-hljs': SyntaxHighlighter,
         'xui-filter': Filter,
         'xui-toastlabel': ToastLabel
-    },
-    filters: {
-        json(data) {
-            return JSON.stringify(data, null, 2);
-        }
     },
     initData() {
         return {
@@ -85,9 +82,9 @@ export default defineComponent({
         };
     },
     onFilter1(formData) {
-        this.data.set('formData.f1', formData);
+        this.data.set('formData.f1', JSON.stringify(formData, null, 2));
     },
     onFilter2(formData) {
-        this.data.set('formData.f2', formData);
+        this.data.set('formData.f2', JSON.stringify(formData, null, 2));
     }
 });

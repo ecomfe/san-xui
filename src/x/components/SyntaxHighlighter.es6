@@ -3,9 +3,7 @@
  * @author leeight
  */
 
-import 'inf-ria/css!hljs/styles/default.min.css';
-import hljs from 'hljs/highlight';
-import {defineComponent} from 'san';
+import {defineComponent} from 'inf-ui/sanx';
 
 import {create} from './util';
 
@@ -21,20 +19,27 @@ export default defineComponent({
     template,
     initData() {
         return {
+            code: '',
             lang: 'javascript'
         };
     },
-    computed: {
-        highlightedCode() {
-            const code = this.data.get('code');
-            const lang = this.data.get('lang');
-            try {
-                const rv = hljs.highlight(lang, code);
-                return rv.value;
-            }
-            catch (ex) {
-                return String(ex);
-            }
+    __updateHighlightedCode(hljs) {
+        const code = this.data.get('code');
+        const lang = this.data.get('lang');
+        try {
+            const rv = hljs.highlight(lang, code);
+            this.data.set('highlightedCode', rv.value);
         }
+        catch (ex) {
+            this.data.set('highlightedCode', '');
+        }
+    },
+    attached() {
+        const amdModules = ['hljs/highlight', 'inf-ria/css!hljs/styles/default.min.css'];
+        window.require(amdModules, hljs => {
+            this.watch('code', () => this.__updateHighlightedCode(hljs));
+            this.watch('lang', () => this.__updateHighlightedCode(hljs));
+            this.__updateHighlightedCode(hljs);
+        });
     }
 });

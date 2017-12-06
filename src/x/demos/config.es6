@@ -138,6 +138,18 @@ export const blocks = [
                 text: 'xui-filter'
             },
             {
+                text: 'xui-toolbar',
+                disabled: true
+            },
+            {
+                text: 'xui-right-toolbar',
+                disabled: true
+            },
+            {
+                text: 'xui-bulk-actions',
+                disabled: true
+            },
+            {
                 text: 'xui-clipboard'
             },
             {
