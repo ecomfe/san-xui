@@ -150,6 +150,7 @@ export default defineComponent({
         }
     },
     doFilter() {
-        this.fire('submit', this.data.get('formData'));
+        const formData = _.clone(this.data.get('formData'));
+        this.fire('submit', formData);
     }
 });

@@ -135,6 +135,9 @@ export const blocks = [
         title: '业务组件',
         items: [
             {
+                text: 'xui-filter'
+            },
+            {
                 text: 'xui-clipboard'
             },
             {
