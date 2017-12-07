@@ -18,11 +18,9 @@ import Row from './Row';
 /* eslint-disable */
 const template = `
 <template>
-<x-row label="[default]" class="layer-test-row">
+<x-row label="center-to-view=true width=700 auto-hide-except-parent=false">
 <xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>
-<xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>
-
-<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">
+<xui-layer class="demo-layer" center-to-view="{{true}}" width="{{700}}" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">
     <x-row label="type=default">
         <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
         <xui-button on-click="closeTheLayer">关闭.</xui-button>
@@ -49,16 +47,26 @@ const template = `
     </x-row>
 </xui-layer>
 
+<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}" width="300">
+    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
+    <xui-button on-click="closeTheLayer">关闭上一个Layer</xui-button>
+</xui-layer>
 
-<xui-layer class="demo-layer" align="right" height="{{670}}" offset-top="{{-100}}" offset-left="{{-100}}" open="{=layer.showLayer3=}">
+</x-row>
+
+<x-row label="follow-scroll=false offset-top=100 offset-left=100" class="layer-test-row">
+<xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>
+<xui-layer class="demo-layer" follow-scroll="{{false}}" offset-top="{{100}}" offset-left="{{100}}" open="{=layer.showLayer3=}">
     <x-row label="radio">
         <xui-boxgroup
             box-type="radio"
+
             datasource="{{boxgroup.datasource}}"
             value="{=boxgroup.radio=}"/>
         <strong class="large">
             Value is: {{boxgroup.radio}}
         </strong>
+
     </x-row>
 
     <x-row label="checkbox">
@@ -74,9 +82,12 @@ const template = `
     <x-row label="checkbox,col-count=3">
         <xui-boxgroup
             box-type="checkbox"
-            col-count="{{3}}"
+
             datasource="{{boxgroup.datasource}}"
             value="{=boxgroup.checkbox=}"/>
+        <strong class="large">
+            Value is: {{boxgroup.checkbox}}
+        </strong>
     </x-row>
 
     <x-row label="操作系统">
@@ -89,13 +100,15 @@ const template = `
     </x-row>
 
 </xui-layer>
-
-<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}" width="300">
-    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
-    <xui-button on-click="closeTheLayer">关闭上一个Layer</xui-button>
-</xui-layer>
-
 </x-row>
+
+<x-row label="width=300 height=500">
+    <xui-button skin="primary" on-click="openFourthLayer">Show fourth Layer</xui-button>
+    <xui-layer class="demo-layer" width="{{300}}" height="{{500}}" open="{=layer.showLayer4=}">
+        <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
+    </xui-layer>
+</x-row>
+
 </template>`;
 
 /* eslint-enable */
@@ -225,6 +238,9 @@ export default defineComponent({
     },
     openThirdLayer() {
         this.data.set('layer.showLayer3', true);
+    },
+    openFourthLayer() {
+        this.data.set('layer.showLayer4', true);
     },
     closeTheLayer() {
         this.data.set('layer.showLayer', false);

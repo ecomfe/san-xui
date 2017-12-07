@@ -4,7 +4,7 @@
  */
 import $ from 'jquery';
 import _ from 'lodash';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import lib from 'esui/lib';
 
 import {nextZindex, create} from './util';
@@ -15,7 +15,7 @@ const cx = create('ui-layer');
 /* eslint-disable */
 const template = `
 <template>
-    <div s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
+    <div s-ref="layer" s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
 </template>
 `;
 
@@ -32,18 +32,24 @@ export default defineComponent({
         return {
             // 是否是打开的状态
             open: false,
+            // 是否默认居中，如果设置为true，align offsetTop offsetLeft就没有效果
+            centerToView: false,
             // 点击文档中其它位置的时候，是否自动隐藏
             autoHide: true,
+            // 是否跟随滚动条重新定位，因为之前是默认跟随，为了兼容，默认值为true。
+            // 以下特例建议设置为false:
+            // layer里面继续使用了layer，且第二个layer的位置依赖于第一个layer的元素，此时建议第一个浮层使用false。
+            followScroll: true,
             // 如果在页面中直接使用layer，可能希望点击了父节点也触发隐藏。变量默认为true，因为select等组件需要。
             // 如果autoHide 为false 此变量无效。
             autoHideExceptParent: true,
-            // 是否自动定位到 parentComponent.el 的下面
+            // 是否在初次显示时自动定位到 parentComponent.el 的下面 。
+            // 注意：如果parentComponent.el大小，位置发生变化，并不会同步更新。
             autoPosition: true,
-            // 这两个值最好设置为实际需要的宽度和高度。特别是在slot里的内容有较多的动态变化时，
-            // 因为可能会出现第一次显示浮层和后续用open控制时显示的同一浮层的高度宽度计算值不一样。
-            width: null, // 外部传进来的宽度值
-            height: null, // 外部传进来的高度值
-            align: 'left', // 左边距对齐，有时候如果需要右边距对齐，设置为 'right' 即可
+            // 这两个值为实际需要自定义锁定的宽度和高度。
+            width: 0, // 外部传进来的宽度值
+            height: 0, // 外部传进来的高度值
+            align: null, // 设置为'left' 'right' 可以直接指定对其左右方式，如果没有指定 动态去计算
             offsetTop: 0, // 有时候自动定位不准确，需要修正一下
             offsetLeft: 0, // 有时候自动定位不准确，需要修正一下
             layerStyle: {
@@ -52,11 +58,28 @@ export default defineComponent({
             }
         };
     },
+    dataTypes: {
+        open: DataTypes.bool,
+        centerToView: DataTypes.bool,
+        autoHide: DataTypes.bool,
+        followScroll: DataTypes.bool,
+        autoHideExceptParent: DataTypes.bool,
+        autoPosition: DataTypes.bool,
+        width: DataTypes.number,
+        height: DataTypes.number,
+        align: DataTypes.oneOf(['left', 'right']),
+        offsetTop: DataTypes.number,
+        offsetLeft: DataTypes.number
+    },
     inited() {
-        const autoHide = this.data.get('autoHide');
-        this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
+        // moving变量用于维护本layer组件移动状态。因为是一个内部state，不希望放到data里被干扰，所以暂时直接挂在Component上
+        this.moving = false;
 
-        this.scrollHandler = _.throttle(() => this.selfPosition(true), 1000);
+        const autoHide = this.data.get('autoHide');
+        const followScroll = this.data.get('followScroll');
+
+        this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
+        this.scrollHandler = followScroll ? _.throttle(() => this.selfPosition(true), 1000) : null;
 
         this.watch('open', open => {
             // 一个表单页可以能有较多select && 其他浮层。关闭的情况下去掉事件。
@@ -91,7 +114,9 @@ export default defineComponent({
             }
         }
 
-        $(window).on('scroll', this.scrollHandler);
+        if (this.scrollHandler) {
+            $(window).on('scroll', this.scrollHandler);
+        }
     },
     unbindLayerEvents() {
         if (this.autoHideHandler) {
@@ -108,19 +133,34 @@ export default defineComponent({
         $(window).off('scroll', this.scrollHandler);
     },
 
-
     selfPosition(kz) {
+        if (this.moving) {
+            return;
+        }
+        this.moving = true;
+        //todo 默认跟随父元素，如果后续有指定元素跟随指定元素的需求，在attachToElement中扩展即可。
+        this.data.get('centerToView') ? this.centerToView(kz) : this.attachToElement(kz);
+        this.moving = false;
+    },
+
+    attachToElement(kz) {
         const align = this.data.get('align');
         // 相当于 宽度 和 高度 分别进行了调整，然后进行计算
         const offsetTop = this.data.get('offsetTop');
         const offsetLeft = this.data.get('offsetLeft');
-
 
         const pc = this.parentComponent;
 
         if (!pc || !pc.el) {
             return;
         }
+
+        const layer = this.ref('layer');
+
+        if (!layer) {
+            return;
+        }
+
         let topValue = 0;
         let leftValue = 0;
 
@@ -133,6 +173,7 @@ export default defineComponent({
         //
         // 水平算法：
         // offsetLeft产生的偏移将合和width合并在一起，参与同左右空间的比较
+        // 0. 先应用align 如果没有设置align 再走常规比较
         // 1. 将层的左边缘贴住目标元素的左边缘
         // 2. 如果右侧空间不够，则转为层的右边缘贴住目标元素的右边缘
         // 3. 如果左侧空间依旧不够，则强制使用第1步的位置
@@ -145,21 +186,27 @@ export default defineComponent({
         const targetElement = lib.getOffset(pc.el);
 
 
-        // 只有这样才能取到具体放置slot的div。
-        const layer = this.el.children[0];
-        const layerElement = lib.getOffset(layer);
+        this.data.set('layerStyle.left', '-10000px');
+        this.data.set('layerStyle.top', '-10000px');
 
-        // todo  1.第一次打开时获取slot 由于一些动态项的变化，高度时可能比实际高度小，在这种情况下请认真设置height 和 width
-        // 2.如果layer在打开的状态下高度变化 暂时无特殊处理, 还是会动态的去计算位置。
+
+        const layerElement = lib.getOffset(layer);
+        // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
+        // 实际中的width熟悉不包括
+        let widthValue = $(layer).width();
+        let heightValue = $(layer).height();
+
+        this.data.set('layerStyle.left', '0px');
+        this.data.set('layerStyle.top', '0px');
 
         if (this.data.get('width')) {
-            layerElement.width = this.data.get('width');
+            widthValue = layerElement.width = this.data.get('width');
+
         }
 
         if (this.data.get('height')) {
-            layerElement.height = this.data.get('height');
+            heightValue = layerElement.height = this.data.get('height');
         }
-
 
         // 先算垂直的位置
         const bottomSpace = pageHeight - (targetElement.bottom - pageScrollTop);
@@ -176,31 +223,89 @@ export default defineComponent({
         topValue = topValue + offsetTop;
 
         // 再算水平的位置
-        const rightSpace = pageWidth - (targetElement.left - pageScrollLeft);
-        const leftSpace = targetElement.right - pageScrollLeft;
-        if (rightSpace <= (layerElement.width + offsetLeft)
-            && leftSpace > (layerElement.width + offsetLeft)
-            && align !== 'left') {
-            // 靠右侧
-            leftValue = targetElement.right - layerElement.width;
-        }
-        else {
+        if (align === 'left') {
             // 靠左侧
             leftValue = targetElement.left;
+        } else if (align === 'right') {
+            // 靠右侧
+            leftValue = targetElement.right - layerElement.width;
+        } else {
+            const rightSpace = pageWidth - (targetElement.left - pageScrollLeft);
+            const leftSpace = targetElement.right - pageScrollLeft;
+            if (rightSpace <= (layerElement.width + offsetLeft)
+                && leftSpace > (layerElement.width + offsetLeft)) {
+                // 靠右侧
+                leftValue = targetElement.right - layerElement.width;
+            }
+            else {
+                // 靠左侧
+                leftValue = targetElement.left;
+            }
         }
-        leftValue = leftValue + offsetLeft;
-        topValue = topValue + 'px';
-        leftValue = leftValue + 'px';
 
-        if (kz) {
+        leftValue = leftValue + offsetLeft;
+
+        this.positionLayerElement({topValue, leftValue, widthValue, heightValue, kz});
+    },
+
+    centerToView(kz) {
+        const layer = this.ref('layer');
+
+        if (!layer) {
+            return;
+        }
+
+        this.data.set('layerStyle.left', '-10000px');
+        this.data.set('layerStyle.top', '-10000px');
+
+        let widthValue = $(layer).width();
+        let heightValue = $(layer).height();
+
+        const layerElement = lib.getOffset(layer);
+
+        if (this.data.get('width')) {
+            widthValue = layerElement.width = this.data.get('width');
+        }
+
+        if (this.data.get('height')) {
+            heightValue = layerElement.height = this.data.get('height');
+        }
+
+        this.data.set('layerStyle.left', '0px');
+        this.data.set('layerStyle.top', '0px');
+
+        const pageWidth = lib.page.getViewWidth();
+        const pageHeight = lib.page.getViewHeight();
+
+        // 计算位置
+        let topValue = Math.floor((pageHeight - layerElement.height) / 2);
+        let leftValue = Math.floor((pageWidth - layerElement.width) / 2);
+
+        topValue += lib.page.getScrollTop();
+
+        this.positionLayerElement({topValue, leftValue, widthValue, heightValue, kz});
+    },
+    // 移动当前浮层的公共方法
+    positionLayerElement(options = {}) {
+        const topValue = options.topValue + 'px';
+        const leftValue = options.leftValue + 'px';
+
+        const widthValue = options.widthValue + 'px';
+        const heightValue = options.heightValue + 'px';
+
+        if (options.kz) {
             this.data.set('layerStyle.left', leftValue);
             this.data.set('layerStyle.top', topValue);
+            this.data.set('layerStyle.width', widthValue);
+            this.data.set('layerStyle.height', heightValue);
         }
         else {
             this.data.set('layerStyle', {
                 'z-index': nextZindex(),
                 'left': leftValue,
-                'top': topValue
+                'top': topValue,
+                'width': widthValue,
+                'height': heightValue
             });
         }
     },
