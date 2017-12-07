@@ -22,7 +22,8 @@ const template = `<template>
     disabled-select-all="{{table.disabledSelectAll}}"
     selected-index="{=table.selectedIndex=}"
     on-command="onTableCommand($event)"
-    on-filter="onFilter($event)"
+    on-filter="onFilter($event)",
+    on-sort="onSort($event)"
     on-selected-change="onTableRowSelected($event)">
 >
     <div slot="error">
@@ -42,6 +43,7 @@ const template = `<template>
     selected-index="{=table.selectedIndex=}"
     on-command="onTableCommand($event)"
     on-filter="onFilter($event)"
+    on-sort="onSort($event)"
     on-selected-change="onTableRowSelected($event)">
 
     <div slot="error">
@@ -86,6 +88,9 @@ export default defineComponent({
     },
     onFilter(event) {
         this.fire('filter', event);
+    },
+    onSort(event) {
+        this.fire('sort', event);
     },
     onTableRowSelected(event) {
         this.fire('selected-change', event);

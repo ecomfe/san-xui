@@ -84,6 +84,7 @@ export function asPage(schema, MainComponent) {
             table="{{table}}"
             on-command="onTableCommand($event)"
             on-filter="onFilter($event)"
+            on-sort="onSort($event)"
             on-selected-change="onTableRowSelected($event)"
             on-refresh="refreshTable"
         />
@@ -240,6 +241,12 @@ export function asPage(schema, MainComponent) {
             // c: d
             // e: f
             this.resetSearchCriteria(filterOptions);
+            this.doSearch();
+        },
+
+        onSort({orderBy, order}) {
+            this.data.set('$extraPayload.orderBy', orderBy);
+            this.data.set('$extraPayload.order', order);
             this.doSearch();
         },
 

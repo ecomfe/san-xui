@@ -50,6 +50,7 @@ const template = `<div class="{{mainClass}}">
                 on-row-leave="onLeaveRow($event)"
                 on-selected-change="onSelectedChange($event)"
                 on-filter="onFilter($event)"
+                on-sort="onSort($event)"
                 on-command="onCommand($event)"
                 />
         </div>
@@ -69,6 +70,7 @@ const template = `<div class="{{mainClass}}">
                 on-row-leave="onLeaveRow($event)"
                 on-selected-change="onSelectedChange($event)"
                 on-filter="onFilter($event)"
+                on-sort="onSort($event)"
                 on-command="onCommand($event)"
                 />
         </div>
@@ -83,6 +85,7 @@ const template = `<div class="{{mainClass}}">
                 on-row-enter="onEnterRow($event)"
                 on-row-leave="onLeaveRow($event)"
                 on-filter="onFilter($event)"
+                on-sort="onSort($event)"
                 on-command="onCommand($event)"
                 />
         </div>
@@ -263,6 +266,9 @@ export default defineComponent({
     },
     onFilter(event) {
         this.fire('filter', event);
+    },
+    onSort(event) {
+        this.fire('sort', event);
     },
     onCommand(event) {
         this.fire('command', event);

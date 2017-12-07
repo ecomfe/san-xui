@@ -14,9 +14,12 @@ import TableFilter from './TableFilter';
 const cx = create('ui-table');
 const kDefaultHeadTemplate = `
 <th class="{{col | hcellClass}}" style="{{col | cellStyle}}" s-for="col, colIndex in tableColumns">
-    <div class="${cx('hcell-text')}" on-click="onSort(col, colIndex)">
-        {{col.label}}
-        <div class="${cx('hsort')}" s-if="col.sortable"></div>
+    <div class="${cx('hcell-text')}">
+        <div s-if="col.sortable" class="${cx('hcell-text-content')}" on-click="onSort(col, colIndex)">
+            {{col.label}}
+            <div class="${cx('hsort')}"></div>
+        </div>
+        <div s-else class="${cx('hcell-text-content')}">{{col.label}}</div>
         <ui-table-filter
             s-if="col.filter"
             on-change="onFilter($event, col)"
@@ -53,8 +56,11 @@ function buildTableHead(column, colIndex) {
                 name="h-${column.name}"
                 var-col="tableColumns[${colIndex}]"
             >
-                {{col.label}}
-                <div class="${cx('hsort')}" s-if="col.sortable"></div>
+                <div s-if="col.sortable" class="${cx('hcell-text-content')}" on-click="onSort(col, ${colIndex})">
+                    {{col.label}}
+                    <div class="${cx('hsort')}"></div>
+                </div>
+                <div s-else class="${cx('hcell-text-content')}">{{col.label}}</div>
                 <ui-table-filter
                     s-if="col.filter"
                     on-change="onFilter($event, col)"
@@ -165,6 +171,7 @@ export function asTable(columns) {
 
     return defineComponent({
         template,
+
         components: {
             'ui-table-filter': TableFilter,
             'ui-loading': Loading
