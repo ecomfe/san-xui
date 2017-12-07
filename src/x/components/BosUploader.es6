@@ -5,7 +5,7 @@
 
 import $ from 'jquery';
 import humanize from 'humanize';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
 import Button from './Button';
@@ -35,31 +35,33 @@ const template = `<div class="{{mainClass}}">
             on-click="startUpload"
             disabled="{{startDisabled}}"
             skin="primary">开始上传</ui-button>
-        <div class="${cx('speed-info')}" s-if="speedInfo">{{speedInfo | raw}}</div>
+        <div class="${cx('speed-info')}" s-if="withSpeedInfo && speedInfo">{{speedInfo | raw}}</div>
 
         <div class="${cx('list')}" s-if="files.length">
-            <table border="1" cellpadding="0" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th class="${cx('col-no')}">序号</th>
-                        <th class="${cx('col-name')}">名称</th>
-                        <th class="${cx('col-status')}">状态</th>
-                        <th class="${cx('col-progress')}">进度</th>
-                        <th class="${cx('col-size')}">大小</th>
-                        <th class="${cx('col-time')}">耗时</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr s-for="f, i in files">
-                        <td>#{{i}}</td>
-                        <td><div title="{{f.name}}">{{f.name}}</div></td>
-                        <td>{{f.status | status}}</td>
-                        <td>{{f.progress}}</td>
-                        <td>{{f.size | filesize}}</td>
-                        <td>{{f.time}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <slot name="preview" var-files="files">
+                <table border="1" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="${cx('col-no')}">序号</th>
+                            <th class="${cx('col-name')}">名称</th>
+                            <th class="${cx('col-status')}">状态</th>
+                            <th class="${cx('col-progress')}">进度</th>
+                            <th class="${cx('col-size')}">大小</th>
+                            <th class="${cx('col-time')}">耗时</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr s-for="f, i in files">
+                            <td>#{{i}}</td>
+                            <td><div title="{{f.name}}">{{f.name}}</div></td>
+                            <td>{{f.status | status}}</td>
+                            <td>{{f.progress}}</td>
+                            <td>{{f.size | filesize}}</td>
+                            <td>{{f.time}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </slot>
         </div>
     </div>
 </div>`;
@@ -75,10 +77,23 @@ export default defineComponent({
             autoStart: false,
             finished: false,
             multiple: false,
+            withSpeedInfo: true,
             speedInfo: null,
             error: null,
             files: []
         };
+    },
+    dataTypes: {
+        autoStart: DataTypes.bool,
+        disabled: DataTypes.bool,
+        multiple: DataTypes.bool,
+        withSpeedInfo: DataTypes.bool,
+        uptokenUrl: DataTypes.string,
+        uptoken: DataTypes.string,
+        ak: DataTypes.string,
+        sk: DataTypes.string,
+        keyCb: DataTypes.func,
+        bosEndpoint: DataTypes.string
     },
     computed: {
         startDisabled() {
@@ -115,8 +130,11 @@ export default defineComponent({
         const autoStart = this.data.get('autoStart');
         const bosEndpoint = this.data.get('bosEndpoint');
         const uptokenUrl = this.data.get('uptokenUrl');
-        if (!bosEndpoint || !uptokenUrl) {
-            this.data.set('error', new Error('初始化失败，请设置 bos-endpoint 和 uptoken-url 属性'));
+        const ak = this.data.get('ak');
+        const sk = this.data.get('sk');
+        const uptoken = this.data.get('uptoken');
+        if (!bosEndpoint || !(uptokenUrl || (ak && sk))) {
+            this.data.set('error', new Error('初始化失败，请设置 bos-endpoint 和 uptoken-url 或者 ak && sk 属性'));
             return;
         }
 
@@ -129,7 +147,12 @@ export default defineComponent({
             bos_multipart_parallel: 5,
             bos_multipart_auto_continue: true,
             chunk_size: '8mb',
+
             uptoken_url: uptokenUrl,
+            uptoken,
+            bos_ak: ak,
+            bos_sk: sk,
+
             max_retries: 2,
             max_file_size: '50Gb',
             init: {
@@ -181,6 +204,7 @@ export default defineComponent({
                     const time = ((new Date().getTime() - f.__startTime) / 1000).toFixed(2);
                     this.data.set(`files[${idx}].time`, time);
                     this.data.set(`files[${idx}].status`, kStatus.UPLOAD_SUCCESS);
+                    this.data.set(`files[${idx}].url`, info && info.body && info.body.location);
                 },
                 NetworkSpeed: (_, bytes, time, pendings) => {   // eslint-disable-line
                     const speed = bytes / (time / 1000);
@@ -213,8 +237,16 @@ export default defineComponent({
                 UploadComplete: () => {   // eslint-disable-line
                     this.data.set('speedInfo', null);
                     this.data.set('finished', true);
+                    const files = this.data.get('files');
+                    this.fire('complete', {files});
                 },
                 Key: (_, file) => {   // eslint-disable-line
+                    const keyCb = this.data.get('keyCb');
+                    if (typeof keyCb === 'function') {
+                        // string | Promise.<string>
+                        return keyCb(file);
+                    }
+
                     const date = new Date();
                     const year = date.getFullYear();
 
@@ -229,11 +261,10 @@ export default defineComponent({
                     }
 
                     const deferred = baidubce.sdk.Q.defer();
-                    const delay = ~~(2 + Math.random() * 5); // (2, 7);
                     setTimeout(() => {
                         const key = year + '/' + month + '/' + day + '/' + file.name;
                         deferred.resolve(key);
-                    }, delay * 100);
+                    }, 0);
                     return deferred.promise;
                 }
             }
