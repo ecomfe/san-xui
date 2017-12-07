@@ -318,6 +318,11 @@ export function asTable(columns) {
         },
 
         onSort(colItem, colIndex) {
+            const loading = this.data.get('loading');
+            // 在loading中不让重新排序
+            if (loading) {
+                return;
+            }
             const orderBy = colItem.name;
             const order = this.data.get(`schema[${colIndex}].order`) === 'desc' ? 'asc' : 'desc';
             // 更新schema中的order，记录当前的order

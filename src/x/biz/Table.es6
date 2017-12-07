@@ -22,7 +22,7 @@ const template = `<template>
     disabled-select-all="{{table.disabledSelectAll}}"
     selected-index="{=table.selectedIndex=}"
     on-command="onTableCommand($event)"
-    on-filter="onFilter($event)",
+    on-filter="onFilter($event)"
     on-sort="onSort($event)"
     on-selected-change="onTableRowSelected($event)">
 >
