@@ -91,7 +91,7 @@ export function asPage(schema, MainComponent) {
         <x-pager
             s-if="withPager && pager.count > 0"
             class="list-page-pager"
-            pager="{{pager}}"
+            pager="{=pager=}"
             with-pager-size="{{withPagerSize}}"
             on-pager-size-change="onPagerSizeChange($event)"
             on-pager-change="onPagerChange($event)"
