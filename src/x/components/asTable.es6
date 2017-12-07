@@ -13,8 +13,8 @@ import TableFilter from './TableFilter';
 
 const cx = create('ui-table');
 const kDefaultHeadTemplate = `
-<th class="{{col | hcellClass}}" style="{{col | cellStyle}}" s-for="col in tableColumns">
-    <div class="${cx('hcell-text')}">
+<th class="{{col | hcellClass}}" style="{{col | cellStyle}}" s-for="col, colIndex in tableColumns">
+    <div class="${cx('hcell-text')}" on-click="onSort(col, colIndex)">
         {{col.label}}
         <div class="${cx('hsort')}" s-if="col.sortable"></div>
         <ui-table-filter
@@ -232,6 +232,10 @@ export function asTable(columns) {
                 const klass = [cx('hcell')];
                 if (item.sortable) {
                     klass.push(cx('hcell-sort'));
+                    // 显示向上或向下箭头
+                    if (item.order) {
+                        klass.push(cx(`hcell-${item.order}`));
+                    }
                 }
                 if (item.labelClassName) {
                     klass.push(item.labelClassName);
@@ -303,6 +307,14 @@ export function asTable(columns) {
 
         onScroll(event) {
             this.fire('scroll', event);
+        },
+
+        onSort(colItem, colIndex) {
+            const orderBy = colItem.name;
+            const order = this.data.get(`schema[${colIndex}].order`) === 'desc' ? 'asc' : 'desc';
+            // 更新schema中的order，记录当前的order
+            this.data.set(`schema[${colIndex}].order`, order);
+            this.fire('sort', {orderBy, order});
         },
 
         attached() {
