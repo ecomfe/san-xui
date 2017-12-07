@@ -22,7 +22,10 @@ const MyTable = asTable(kTableColumns);
 const template = `
 <template>
 
-<xui-toastlabel>表格的列是在组件编译期间确定的，无法动态的修改</xui-toastlabel>
+<xui-toastlabel>
+表格的列是在组件编译期间确定的，无法动态的修改<br/>
+项目中的真实案例，请参考：<a target="_blank" href="http://icode.baidu.com/repos/baidu/bce-multimedia/face-demo/tree/master:fe_source/src/face/v3/">face-demo</a>
+</xui-toastlabel>
 
 <x-row label="[default]">
     <xui-table
@@ -31,11 +34,11 @@ const template = `
         schema="{{table.schema}}"
         on-selected-change="onTableRowSelected($event)"
     >
-        <div slot="age">
+        <div slot="c-age">
             {{row.age}}
             <xui-tip message="{{row.name}} 的年龄是：{{row.age}}" />
         </div>
-        <div slot="gender"><xui-button>{{row.gender}}</xui-button></div>
+        <div slot="c-gender"><xui-button>{{row.gender}}</xui-button></div>
     <xui-table>
 </x-row>
 

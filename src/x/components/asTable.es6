@@ -71,7 +71,7 @@ function buildTableCell(column, colIndex) {
         style="{{tableColumns[${colIndex}] | cellStyle}}">
         <div class="${cx('cell-text')}">
             <slot
-                name="${column.name}"
+                name="c-${column.name}"
                 var-row="item"
                 var-rowIndex="rowIndex"
                 var-col="tableColumns[${colIndex}]"
