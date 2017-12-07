@@ -38,7 +38,11 @@ class SanView extends View {
 }
 
 function buildSanPage(Component) {
-    return san.defineComponent({
+    if (Component.__sanPage) {
+        return Component.__sanPage;
+    }
+
+    const sanPage = san.defineComponent({
         template: '<template><san-page context="{{context}}"/></template>',
         components: {
             'san-page': Component
@@ -57,6 +61,8 @@ function buildSanPage(Component) {
             }
         }
     });
+    Component.__sanPage = sanPage;
+    return sanPage;
 }
 
 class SanAction extends Action {
