@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import Dialog from 'inf-ui/x/components/Dialog';
 import Button from 'inf-ui/x/components/Button';
 import Toast from 'inf-ui/x/components/Toast';
@@ -19,8 +19,10 @@ const template = `<template>
         width="{{actionOptions.width}}">
         <span slot="head">{{actionOptions.title}}</span>
         <ui-actionloader
+            on-actionattach="onActionAttach($event)"
             on-actionloaded="onActionLoaded($event)"
             url="{{actionOptions.url}}"
+            module="{{actionOptions.module}}"
             options="{{actionOptions.options}}" />
         <div slot="foot" s-if="foot">
             <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>
@@ -29,9 +31,11 @@ const template = `<template>
     </ui-dialog>
     <ui-actionloader
         s-else
+        on-actionattach="onActionAttach($event)"
         on-actionloaded="onActionLoaded($event)"
         url="{{actionOptions.url}}"
-        options="{{actionOptions.options}}" />
+        options="{{actionOptions.options}}"
+        module="{{actionOptions.module}}" />
 </template>`;
 /* eslint-enable */
 
@@ -45,6 +49,25 @@ export default defineComponent({
         'ui-actionloader': ActionLoader,
         'ui-button': Button,
         'ui-dialog': Dialog
+    },
+    dataTypes: {
+        dialog: DataTypes.bool,
+        foot: DataTypes.bool,
+        confirm: DataTypes.objectOf({
+            label: DataTypes.string,
+            disabled: DataTypes.bool
+        }),
+        actionOptions: DataTypes.objectOf({
+            open: DataTypes.bool,
+            width: DataTypes.number,
+            height: DataTypes.number,
+            title: DataTypes.string,
+            url: DataTypes.string,
+            module: DataTypes.string,
+            options: DataTypes.objectOf({
+                parentAction: DataTypes.object
+            })
+        })
     },
     initData() {
         return {
@@ -62,8 +85,17 @@ export default defineComponent({
     inited() {
         this.erAction = null;
     },
+    confirmEnable(able) {
+        this.data.set('confirm.disabled', !able);
+    },
     closeDialog() {
         this.data.set('actionOptions.open', false);
+    },
+
+    onActionAttach(e) {
+        if (this.parent) {
+            this.parent.on('confirmenable', e => this.confirmEnable(e.able), this);
+        }
     },
     onActionLoaded(e) {
         const erAction = e.action;

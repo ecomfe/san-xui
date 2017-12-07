@@ -8,6 +8,7 @@ import Deferred from 'er/Deferred';
 import events from 'er/events';
 import MiniEvent from 'mini-event';
 import controller from 'er/controller';
+import {loadAppInBackground} from 'inf-ria/helper';
 
 import {create} from './util';
 import Loading from './Loading';
@@ -140,6 +141,16 @@ export default defineComponent({
     },
 
     reloadAction() {
+        const module = this.data.get('module');
+        if (module) {
+            loadAppInBackground(module).then(() => this.renderAction());
+        }
+        else {
+            this.renderAction();
+        }
+    },
+
+    renderAction() {
         const {url, options} = this.data.get();
         const ghost = this.ref('ghost');
         const action = this.action = controller.renderChildAction(url, ghost.el.id, options);
