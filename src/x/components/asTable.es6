@@ -25,6 +25,7 @@ const kDefaultHeadTemplate = `
     </div>
 </th>
 `;
+
 const kDefaultCellTemplate = `
 <td class="{{col | cellClass}}"
     style="{{col | cellStyle}}"
