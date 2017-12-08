@@ -11,6 +11,7 @@ import Promise from 'promise';
 import {defineComponent} from 'san';
 import _ from 'inf-i18n';
 import i18nConfig from 'inf-i18n/config';
+import Icon from 'inf-ui/x/components/Icon';
 
 import Aside from './Aside';
 import AppExplorer from './AppExplorer';
@@ -31,10 +32,11 @@ function activateI18n() {
 
 /* eslint-disable */
 const template = `<div class="showcase">
-    <h1><a href="${kUrl}" target="_blank">San UI Library</a></h1>
+    <h1><ui-icon name="collapse" on-click="native:onToggleAside" /><a href="${kUrl}" target="_blank">San UI Library</a></h1>
     <ui-switch-lan></ui-switch-lan>
     <main>
         <ui-aside
+            class="{{aside.expand ? 'aside-expand' : ''}}"
             on-item-selected="onItemSelected($event)"
             selected-item-text="{{selectedItemText}}"
             blocks="{{blocks}}" />
@@ -56,6 +58,7 @@ if (typeof u.noop === 'function') {
 const App = defineComponent({   // eslint-disable-line
     template,
     components: {
+        'ui-icon': Icon,
         'ui-aside': Aside,
         'ui-explorer': AppExplorer,
         'ui-switch-lan': SwitchLan
@@ -63,6 +66,9 @@ const App = defineComponent({   // eslint-disable-line
     initData() {
         return {
             blocks,
+            aside: {
+                expand: false
+            },
             explorer: {
                 title: '',
                 loading: false,
@@ -84,16 +90,25 @@ const App = defineComponent({   // eslint-disable-line
                 this.data.set('selectedItemText', text);
             }
         };
+        const touchendHandler = () => {
+            this.data.set('aside.expand', false);
+        };
         $(window).on('hashchange', hashchangeHandler);
+        $(document).on('touchend', touchendHandler);
         hashchangeHandler();
     },
     disposed() {
         $(window).off('hashchange');
     },
+    onToggleAside() {
+        const expand = this.data.get('aside.expand');
+        this.data.set('aside.expand', !expand);
+    },
     onItemSelected(item) {
         const moduleId = item.moduleId || `inf-ui/x/demos/${item.text}`;
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
+        this.data.set('aside.expand', false);
         const sourceUrl = window.require.toUrl(moduleId) + '.es6';
         fetch(sourceUrl)
             .then(response => response.text())
