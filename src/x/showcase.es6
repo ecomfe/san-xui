@@ -32,7 +32,7 @@ function activateI18n() {
 
 /* eslint-disable */
 const template = `<div class="showcase">
-    <h1><ui-icon name="collapse" on-click="native:onToggleAside" /><a href="${kUrl}" target="_blank">San UI Library</a></h1>
+    <h1><ui-icon name="collapse" on-click="native:onToggleAside($event)" /><a href="${kUrl}" target="_blank">San UI Library</a></h1>
     <ui-switch-lan></ui-switch-lan>
     <main>
         <ui-aside
@@ -90,17 +90,18 @@ const App = defineComponent({   // eslint-disable-line
                 this.data.set('selectedItemText', text);
             }
         };
-        const touchendHandler = () => {
+        const clickHandler = () => {
             this.data.set('aside.expand', false);
         };
         $(window).on('hashchange', hashchangeHandler);
-        $(document).on('touchend', touchendHandler);
+        $(document).on('click', clickHandler);
         hashchangeHandler();
     },
     disposed() {
         $(window).off('hashchange');
     },
-    onToggleAside() {
+    onToggleAside(e) {
+        e.stopPropagation();
         const expand = this.data.get('aside.expand');
         this.data.set('aside.expand', !expand);
     },
