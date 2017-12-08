@@ -5,6 +5,7 @@
 
 import {defineComponent} from 'inf-ui/sanx';
 import Select from 'inf-ui/x/components/Select';
+import Button from 'inf-ui/x/components/Button';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
 import Row from './Row';
@@ -17,6 +18,10 @@ const template = `<template>
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-select datasource="{{select.datasource}}"  />
     <xui-select datasource="{{select.datasource}}" disabled />
+    <xui-button on-click="showContainer">{{container.show ? '隐藏' : '显示'}} Select</xui-button>
+    <div style="{{containerStyle}}">
+        <xui-select datasource="{{select.datasource}}"  />
+    </div>
     <strong class="large">
         Selected value: {{select.value}}
     </strong>
@@ -49,11 +54,24 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-button': Button,
         'xui-toastlabel': ToastLabel,
         'xui-select': Select
     },
+    computed: {
+        containerStyle() {
+            const show = this.data.get('container.show');
+            const style = {
+                display: show ? 'inline-block' : 'none'
+            };
+            return style;
+        }
+    },
     initData() {
         return {
+            container: {
+                show: false
+            },
             select: {
                 value: 'abc7',
                 multi: {
@@ -76,5 +94,9 @@ export default defineComponent({
                 ]
             }
         };
+    },
+    showContainer() {
+        const show = this.data.get('container.show');
+        this.data.set('container.show', !show);
     }
 });

@@ -226,6 +226,7 @@ const Select = defineComponent({    // eslint-disable-line
         }
         const active = this.data.get('active');
         this.data.set('active', !active);
+        this.nextTick(() => this.__setLayerWidth());
     },
     __setLayerWidth() {
         const layerWidth = this.data.get('layerWidth');
