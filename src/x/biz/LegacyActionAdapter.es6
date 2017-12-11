@@ -87,22 +87,18 @@ export default defineComponent({
         this.data.set('actionOptions.open', false);
     },
 
-    confirmEnable(able) {
-        this.data.set('confirm.disabled', !able);
-    },
-
     onActionLoaded(e) {
         const erAction = e.action;
         const compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
         compInstance.on('legacyactioncustomevent', e => {
             const type = e.legacyActionFireCustomType;
-            if (type === 'confirmenable') {
-                this.data.set('confirm.disabled', !e.value);
-            }
-            else {
-                // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
-                erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
-            }
+            // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
+            erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
+        });
+
+        compInstance.on('legacyactioninnerevent', e => {
+            const key = e.legacyActionFireCustomType;
+            this.data.set(key, e.value);
         });
 
         this.erAction = erAction;

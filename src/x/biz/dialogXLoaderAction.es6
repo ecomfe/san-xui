@@ -42,8 +42,8 @@ export function dialogXLoaderAction(config, payload) {
         compData.foot = foot;
     }
     if (confirm && _.isObject(confirm)) {
-        compData.confirm = {};
-        _.each(confirm, (value, key) => compData.confirm[key] = value);
+        // 想配置确认按钮的文案和状态
+        compData.confirm = confirm;
     }
     const component = new LegacyActionAdapter({parent: this, data: compData});
     component.attach(document.body);
