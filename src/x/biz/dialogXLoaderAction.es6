@@ -10,7 +10,7 @@ import LegacyActionAdapter from './LegacyActionAdapter';
 import {createPayload} from './helper';
 
 export function dialogXLoaderAction(config, payload) {
-    const {width, height, title, body, foot} = config.dialog;
+    const {width, height, title, body, foot, confirm} = config.dialog;
     const {$payloadFields, $extraPayload, url, module} = body;
     const $title = _.template(title)(payload);
 
@@ -22,9 +22,6 @@ export function dialogXLoaderAction(config, payload) {
             showToast(message, options) {
                 Toast[options.messageType || 'success'](message);
             }
-        },
-        confirmEnable: able => {
-            this.fire('confirmenable', {able});
         },
         // TODO(leeight) 貌似不是一个好的设计
         dispatchCommand: (type, id) => this.dispatchCommand(type, id)
@@ -43,6 +40,10 @@ export function dialogXLoaderAction(config, payload) {
     const compData = {dialog: true, actionOptions};
     if (foot != null) {
         compData.foot = foot;
+    }
+    if (confirm && _.isObject(confirm)) {
+        compData.confirm = {};
+        _.each(confirm, (value, key) => compData.confirm[key] = value);
     }
     const component = new LegacyActionAdapter({parent: this, data: compData});
     component.attach(document.body);

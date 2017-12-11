@@ -19,19 +19,17 @@ const template = `<template>
         width="{{actionOptions.width}}">
         <span slot="head">{{actionOptions.title}}</span>
         <ui-actionloader
-            on-actionattach="onActionAttach($event)"
             on-actionloaded="onActionLoaded($event)"
             url="{{actionOptions.url}}"
             module="{{actionOptions.module}}"
             options="{{actionOptions.options}}" />
         <div slot="foot" s-if="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>
+            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label || '确定'}}</ui-button>
             <ui-button on-click="onCloseDialog">取消</ui-button>
         </div>
     </ui-dialog>
     <ui-actionloader
         s-else
-        on-actionattach="onActionAttach($event)"
         on-actionloaded="onActionLoaded($event)"
         url="{{actionOptions.url}}"
         options="{{actionOptions.options}}"
@@ -85,25 +83,26 @@ export default defineComponent({
     inited() {
         this.erAction = null;
     },
-    confirmEnable(able) {
-        this.data.set('confirm.disabled', !able);
-    },
     closeDialog() {
         this.data.set('actionOptions.open', false);
     },
 
-    onActionAttach(e) {
-        if (this.parent) {
-            this.parent.on('confirmenable', e => this.confirmEnable(e.able), this);
-        }
+    confirmEnable(able) {
+        this.data.set('confirm.disabled', !able);
     },
+
     onActionLoaded(e) {
         const erAction = e.action;
         const compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
         compInstance.on('legacyactioncustomevent', e => {
             const type = e.legacyActionFireCustomType;
-            // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
-            erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
+            if (type === 'confirmenable') {
+                this.data.set('confirm.disabled', !e.value);
+            }
+            else {
+                // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
+                erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
+            }
         });
 
         this.erAction = erAction;
