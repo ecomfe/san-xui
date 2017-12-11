@@ -306,7 +306,7 @@ export function asPage(schema, MainComponent) {
         },
 
         onTableCommand({type, payload, rowIndex}) {
-            const config = schema.body.$commands[type];
+            const config = schema.body.$commands && schema.body.$commands[type];
             if (!config) {
                 return;
             }
