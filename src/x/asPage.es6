@@ -12,7 +12,7 @@ import RightToolbar from './biz/RightToolbar';
 import XPager from './biz/XPager';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, matchAll, createToolbar, createCommandMessages} from './biz/helper';
+import {Page, matchAll, createToolbar} from './biz/helper';
 import {ajaxAction} from './biz/ajaxAction';
 import {dialogAlertAction} from './biz/dialogAlertAction';
 import {dialogPlainAction} from './biz/dialogPlainAction';
@@ -221,6 +221,8 @@ export function asPage(schema, MainComponent) {
             this.data.set('tct', {datasource, value});
         },
 
+        // compiled,
+
         inited() {
             const keywordType = this.data.get('filter.$searchbox.keywordType');
             if (keywordType) {
@@ -234,6 +236,24 @@ export function asPage(schema, MainComponent) {
 
             this.$childs = [];
             this.watch('tableColumns', tableColumns => this.__watcherTableColumns(tableColumns));
+        },
+
+        // created,
+
+        attached() {
+            const filter = this.ref('filter');
+            if (filter) {
+                this.resetSearchCriteria(filter.data.get('formData'));
+            }
+            this.doSearch();
+
+            this.__watcherTableColumns(this.data.get('tableColumns'));
+        },
+
+        // detached,
+
+        disposed() {
+            this.disposeInternalChilds();
         },
 
         onFilter(filterOptions) {
@@ -449,16 +469,6 @@ export function asPage(schema, MainComponent) {
             const payload = this.getSearchCriteria();
             payload.pageNo = 1;
             return this.loadPage(payload);
-        },
-
-        attached() {
-            const filter = this.ref('filter');
-            if (filter) {
-                this.resetSearchCriteria(filter.data.get('formData'));
-            }
-            this.doSearch();
-
-            this.__watcherTableColumns(this.data.get('tableColumns'));
         },
 
         // FIXME(leeight) 这个 messages 的应用场景如何?

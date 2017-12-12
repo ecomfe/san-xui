@@ -1,7 +1,6 @@
 /**
  * @file xui-infinite-scroll.es6
  * @author xuli07
- * 
  */
 
 import {defineComponent} from 'inf-ui/sanx';
@@ -33,11 +32,12 @@ export default defineComponent({
     loadMore() {
         this.data.set('loading', true);
         setTimeout(() => {
-            if (this.data.get('start') < 100) { 
+            if (this.data.get('start') < 100) {
                 this.data.set('start', this.data.get('start') + 30);
                 this.data.set('list', this.data.get('list').concat(Array(30).fill(1).map((k, i) => this.data.get('start') + i)));
                 this.data.set('loading', false);
-            } else {
+            }
+            else {
                 this.data.set('finished', true);
             }
         }, 1000);

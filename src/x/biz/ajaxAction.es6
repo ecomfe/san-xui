@@ -5,8 +5,9 @@
 
 import _ from 'lodash';
 import Toast from 'inf-ui/x/components/Toast';
+import ConfirmDialog from 'inf-ui/x/components/ConfirmDialog';
 
-import {createPayload} from './helper';
+import {asPromise, createPayload} from './helper';
 
 export function ajaxAction(config, payload) {
     const {api, $payloadFields, $extraPayload} = config;
@@ -47,7 +48,10 @@ export function ajaxAction(config, payload) {
 
     if (confirmText) {
         const message = _.template(confirmText)(payload);
-        return this.$confirm(message).then(sendRequest);
+        const dialog = new ConfirmDialog({data: {message}});
+        dialog.attach(document.body);
+        this.$childs.push(dialog);
+        return asPromise(dialog).then(sendRequest);
     }
     return sendRequest();
 }

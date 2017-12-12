@@ -17,6 +17,19 @@ import _Ghost from './Ghost';
 export const Page = _Page;
 export const Ghost = _Ghost;
 
+export function asPromise(dialog) {
+    return new Promise((resolve, reject) => {
+        dialog.on('confirm', () => {
+            resolve();
+            dialog.dispose();
+        });
+        dialog.on('close', () => {
+            reject();
+            dialog.dispose();
+        });
+    });
+}
+
 export function displayDialog(DialogComponent, data = {}) {
     if (typeof data === 'string') {
         data = {message: data};
