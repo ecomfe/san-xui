@@ -73,6 +73,9 @@ export const blocks = [
             {
                 text: 'xui-tree',
                 disabled: true
+            },
+            {
+                text: 'xui-infinite-scroll'
             }
         ]
     },
