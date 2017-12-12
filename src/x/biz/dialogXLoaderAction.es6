@@ -10,7 +10,7 @@ import LegacyActionAdapter from './LegacyActionAdapter';
 import {createPayload} from './helper';
 
 export function dialogXLoaderAction(config, payload) {
-    const {width, height, title, body, foot, confirm} = config.dialog;
+    const {width, height, title, body, foot} = config.dialog;
     const {$payloadFields, $extraPayload, url, module} = body;
     const $title = _.template(title)(payload);
 
@@ -41,10 +41,7 @@ export function dialogXLoaderAction(config, payload) {
     if (foot != null) {
         compData.foot = foot;
     }
-    if (confirm && _.isObject(confirm)) {
-        // 想配置确认按钮的文案和状态
-        compData.confirm = confirm;
-    }
+
     const component = new LegacyActionAdapter({parent: this, data: compData});
     component.attach(document.body);
     this.$childs.push(component);

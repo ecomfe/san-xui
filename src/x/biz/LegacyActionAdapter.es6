@@ -24,7 +24,7 @@ const template = `<template>
             module="{{actionOptions.module}}"
             options="{{actionOptions.options}}" />
         <div slot="foot" s-if="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label || '确定'}}</ui-button>
+            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>
             <ui-button on-click="onCloseDialog">取消</ui-button>
         </div>
     </ui-dialog>
@@ -94,11 +94,6 @@ export default defineComponent({
             const type = e.legacyActionFireCustomType;
             // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
             erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
-        });
-
-        compInstance.on('legacyactioninnerevent', e => {
-            const key = e.legacyActionFireCustomType;
-            this.data.set(key, e.value);
         });
 
         this.erAction = erAction;
