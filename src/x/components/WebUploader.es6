@@ -160,6 +160,14 @@ export default defineComponent({
         this.watch('disabled', this.disabledWatcher);
     },
 
+    updated() {
+        // FIXME(leeight) 是否存在潜在的性能问题呢？
+        // SEE baidu-bce-console-fe-base-45
+        if (this.uploader && typeof this.uploader.refresh === 'function') {
+            this.uploader.refresh();
+        }
+    },
+
     startUpload() {
         if (this.uploader) {
             this.uploader.upload();
