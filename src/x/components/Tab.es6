@@ -55,6 +55,7 @@ export default defineComponent({
         const defaultSlot = this.slot();
         const tabPanels = defaultSlot[0].children;
         const tabs = [];
+        const selectedIndex = this.data.get('selectedIndex');
         for (let i = 0; i < tabPanels.length; i++) {
             const panel = tabPanels[i];
             const text = panel.data
@@ -68,10 +69,14 @@ export default defineComponent({
             else {
                 tabs.push({text: '-', hide: true});
             }
+
+            // inactive tab
+            if (i !== selectedIndex) {
+                this.__setTabPanelStatus(panel, false);
+            }
         }
         this.data.set('tabs', tabs);
-
-        const selectedIndex = this.data.get('selectedIndex');
+        // active
         const tabPanel = tabPanels[selectedIndex];
         this.__setTabPanelStatus(tabPanel, true);
     },
