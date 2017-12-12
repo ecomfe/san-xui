@@ -95,8 +95,11 @@ export default defineComponent({
             // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
             erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
         });
-
         this.erAction = erAction;
+        // action加载完成调整dialog位置
+        if (this.data.get('dialog')) {
+            this.ref('dialog').__resize();
+        }
     },
     onConfirmDialog() {
         const erAction = this.erAction;
@@ -118,8 +121,8 @@ export default defineComponent({
                     // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
                     // san
                     // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
-                    if (isSan) {
-                        Toast.error(error.global || '操作失败');
+                    if (isSan && error.global) {
+                        Toast.error(error.global);
                     }
                     this.data.set('confirm.label', '确定');
                     this.data.set('confirm.disabled', false);
