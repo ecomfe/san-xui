@@ -16,8 +16,8 @@ export function asDialog(Klass) {
     }
     const dataTypes = u.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
     const klassTemplate = dataTypes.length <= 0
-        ? '<x-biz payload="{{payload}}" on-resize="onResize" />'
-        : '<x-biz ' + u.map(dataTypes, prop => `${prop}="{{payload.${prop}}}"`).join(' ') + ' on-resize="onResize" />';
+        ? '<x-biz payload="{{payload}}" />'
+        : '<x-biz ' + u.map(dataTypes, prop => `${prop}="{{payload.${prop}}}"`).join(' ') + ' />';
 
     const WrappedComponent = defineComponent({
         template: `<template>
@@ -46,12 +46,14 @@ export function asDialog(Klass) {
                 }
             };
         },
+        messages: {
+            resize() {
+                this.ref('dialog').__resize();
+            }
+        },
         onConfirmDialog() {
             this.fire('confirm');
             this.data.set('open', false);
-        },
-        onResize() {
-            this.ref('dialog').__resize();
         }
     });
     Klass.__dialogComponent = WrappedComponent;
