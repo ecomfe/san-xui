@@ -34,18 +34,9 @@ export function displayDialog(DialogComponent, data = {}) {
     if (typeof data === 'string') {
         data = {message: data};
     }
-    return new Promise((resolve, reject) => {
-        const dialog = new DialogComponent({data});
-        dialog.attach(document.body);
-        dialog.on('confirm', () => {
-            resolve();
-            dialog.dispose();
-        });
-        dialog.on('close', () => {
-            reject();
-            dialog.dispose();
-        });
-    });
+    const dialog = new DialogComponent({data});
+    dialog.attach(document.body);
+    return asPromise(dialog);
 }
 
 export function buildDialog(Klass) {
