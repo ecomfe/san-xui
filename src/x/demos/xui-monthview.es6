@@ -12,7 +12,7 @@ import Row from './Row';
 /* eslint-disable */
 const template = `<template>
 <x-row label="[default]">
-    <xui-monthview value="{=monthview.value=}" />
+    <xui-monthview value="{=monthview.value=}" range="{{monthview.range}}"/>
     <strong class="large">
         Value is: {{monthview.value | datetime('YYYY-MM-DD')}}
     </strong>
@@ -42,7 +42,11 @@ export default defineComponent({
     initData() {
         return {
             monthview: {
-                value: new Date()
+                value: new Date(),
+                range: {
+                    begin: new Date(2014, 4, 1),
+                    end: new Date()
+                }
             }
         };
     }

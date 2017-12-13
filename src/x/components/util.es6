@@ -98,7 +98,7 @@ export function hasSlot(comp, name) {
     return isInsertContent;
 }
 
-export function buildMonths(year, month, date) {
+export function buildMonths(year, month, date, range) {
     let repeater = new Date(year, month, 1);
     let nextMonth = new Date(year, month + 1, 1);
     let begin = 1 - (repeater.getDay() + 6) % 7;
@@ -115,7 +115,8 @@ export function buildMonths(year, month, date) {
         }
         const virtual = repeater.getMonth() !== month;
         const active = moment(date).isSame(repeater, 'day');
-        const disabled = false;
+        // range定义的begin之前end之后的日期不可选,
+        const disabled = range && ((repeater < range.begin) || (repeater > range.end));
         cells.push({
             year: repeater.getFullYear(),
             month: repeater.getMonth(),

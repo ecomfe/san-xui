@@ -76,7 +76,11 @@ export default defineComponent({
                     value: new Date(),
                     width: 200,
                     prev: true,
-                    next: true
+                    next: true,
+                    range: {
+                        begin: new Date(2014, 4, 1),
+                        end: new Date()
+                    }
                 },
                 {
                     type: 'plain',

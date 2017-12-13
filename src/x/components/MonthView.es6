@@ -19,7 +19,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}">
             <tbody>
                 <tr>
                     <td width="30" align="left"><ui-button class="${cx('month-back')}" on-click="onMonthBack" /></td>
-                    <td><ui-select datasource="{{yearDs.datasource}}" value="{=yearDs.value=}" /></td>
+                    <td><ui-select datasource="{{yearDs.datasource}}" value="{=yearDs.value=}" on-change="onYearChange($event)"/></td>
                     <td><ui-select datasource="{{monthDs.datasource}}" value="{=monthDs.value=}" /></td>
                     <td width="30" align="right"><ui-button class="${cx('month-forward')}" on-click="onMonthForward" /></td>
                 </tr>
@@ -67,7 +67,8 @@ const MonthView = defineComponent({
         rows() {
             const year = this.data.get('yearDs.value');
             const month = this.data.get('monthDs.value');
-            return buildMonths(year, month, this.data.get('value'));
+            const range = this.data.get('range');
+            return buildMonths(year, month, this.data.get('value'), range);
         }
     },
     filters: {
@@ -119,13 +120,26 @@ const MonthView = defineComponent({
         this.data.set('yearDs.datasource', datasource);
         this.data.set('yearDs.value', year);
     },
-    initMonthOptions() {
-        const value = this.data.get('value');
-        const month = value.getMonth();
-
+    initMonthOptions(year) {
+        const {value, yearDs, range} = this.data.get();
         const datasource = [];
-        for (let month = 0; month <= 11; month++) {
-            datasource.push({text: month + 1, value: month});
+        let month = value.getMonth();
+        let end = 11;
+        let start = 0;
+
+        year = year || yearDs.value;
+
+        if (year === range.begin.getFullYear()) {
+            start = range.begin.getMonth();
+            month < start && (month = start);
+        }
+        else if (year === range.end.getFullYear()) {
+            end = range.end.getMonth();
+            month > end && (month = end);
+        }
+
+        for (; start <= end; start++) {
+            datasource.push({text: start + 1, value: start});
         }
 
         this.data.set('monthDs.datasource', datasource);
@@ -196,6 +210,9 @@ const MonthView = defineComponent({
             value.setHours(23, 59, 59, 999);
         }
         this.data.set('value', new Date(value));
+    },
+    onYearChange(e) {
+        this.initMonthOptions(e.value);
     },
     onMonthBack() {
         let month = this.data.get('monthDs.value');

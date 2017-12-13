@@ -13,7 +13,7 @@ import Row from './Row';
 const template = `<template>
 
 <x-row label="[default]">
-    <xui-calendar value="{=calendar.value=}" />
+    <xui-calendar value="{=calendar.value=}" range="{{calendar.range}}"/>
     <strong class="large">
         Value is: {{calendar.value | datetime('YYYY-MM-DD')}}
     </strong>
@@ -51,7 +51,11 @@ export default defineComponent({
     initData() {
         return {
             calendar: {
-                value: new Date()
+                value: new Date(),
+                range: {
+                    begin: new Date(2014, 4, 1),
+                    end: new Date()
+                }
             }
         };
     }

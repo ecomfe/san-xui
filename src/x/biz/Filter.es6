@@ -57,6 +57,7 @@ const template = `<div class="{{mainClass}}">
                         width="{{item.width}}"
                         prev="{{item.prev}}"
                         next="{{item.next}}"
+                        range="{{item.range}}"
                         on-change="onItemChanged(item.name, $event)"
                         />
                     <div
