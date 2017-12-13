@@ -4,6 +4,7 @@
  */
 import $ from 'jquery';
 import locator from 'er/locator';
+import URL from 'er/URL';
 import Go from 'inf-ui/x/components/Go';
 
 export default {
@@ -40,5 +41,28 @@ export default {
         const target = $(`<a href="${link}"></a>`);
         const event = $.Event('click', {target, currentTarget: target});  // eslint-disable-line
         Go.switchHandler(event, this);
+    },
+
+    /**
+     * 获取当前页面的路由信息.
+     *
+     * const $route = this.$route();
+     * console.log($route.path);
+     * console.log($route.query);
+     *
+     * @return {{path: string, query: Object}}
+     */
+    $route() {
+        if (this.__$route) {
+            return this.__$route;
+        }
+        const url = URL.parse(location.hash.substr(1));
+        const path = url.getPath();
+        const query = url.getQuery();
+        this.__$route = {
+            path,
+            query
+        };
+        return this.__$route;
     }
 };

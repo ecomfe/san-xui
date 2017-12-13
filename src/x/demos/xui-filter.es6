@@ -50,6 +50,10 @@ export default defineComponent({
                     type: 'select',
                     name: 'the-select',
                     value: 'foo',
+                    // multi: false,
+                    // filterCallback: null,
+                    filter: true,
+                    filterPlaceholder: '输入域名查询，多个搜索项以空格分隔',
                     width: 300,
                     options: [
                         {text: 'FOO', value: 'foo'},

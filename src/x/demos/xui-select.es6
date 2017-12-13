@@ -47,6 +47,17 @@ const template = `<template>
         Selected value: {{select.multi.value}}
     </strong>
 </x-row>
+<x-row label="filter=true,layer-width=300">
+    <xui-select
+        filter
+        filter-placeholder="输入域名查询，多个搜索项以空格分隔"
+        layer-width="300"
+        value="{=select.multi.value=}"
+        datasource="{{select.datasource}}" />
+    <strong class="large">
+        Selected value: {{select.multi.value}}
+    </strong>
+</x-row>
 </template>`;
 /* eslint-enable */
 

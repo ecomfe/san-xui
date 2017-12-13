@@ -63,10 +63,15 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
             </li>
         </ul>
         <ul class="${cx('layer')} ${cx('layer-x')}" s-else style="{{layerStyle}}">
+            <ui-textbox s-if="filter"
+                value="{=keyword=}"
+                placeholder="{{filterPlaceholder}}"
+                width="{{realLayerWidth - 50}}"
+                />
             <li on-click="selectItem($event, item)"
                 class="{{item | itemClass}}"
                 aria-label="{{item.tip}}"
-                s-for="item in datasource">
+                s-for="item in filteredDatasource">
                 <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
                 <span s-else>{{item.text}}</span>
             </li>
@@ -122,8 +127,12 @@ const Select = defineComponent({    // eslint-disable-line
         },
         filteredDatasource() {
             // XXX(leeight) https://github.com/ecomfe/san/issues/97
-            const keyword = this.data.get('keyword');
+            const filter = this.data.get('filter');
             const datasource = this.data.get('datasource');
+            if (!filter) {
+                return datasource;
+            }
+            const keyword = this.data.get('keyword');
             const filterCallback = this.data.get('filterCallback') || defaultFilter;
             return filterCallback(datasource, keyword);
         },

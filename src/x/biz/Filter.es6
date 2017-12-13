@@ -34,6 +34,10 @@ const template = `<div class="{{mainClass}}">
                         value="{{item.value}}"
 
                         width="{{item.width}}"
+                        filter="{{item.filter}}"
+                        filter-placeholder="{{item.filterPlaceholder}}"
+                        filter-callback="{{item.filterCallback}}"
+                        multi="{{item.multi}}"
                         datasource="{{item.options}}"
                         on-change="onItemChanged(item.name, $event)"
                         />
