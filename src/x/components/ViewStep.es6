@@ -13,7 +13,7 @@ const cx = create('ui-viewstep');
 const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
     <ul>
         <li class="{{i <= stepIndex ? '${cx('item-active')}' : ''}}"
-            s-for="item, i in steps"><i>{{i + 1}}</i><span>{{item.text}}</span></li>
+            s-for="item, i in steps" on-click="itemClick(i)"><i>{{i + 1}}</i><span>{{item.text}}</span></li>
     </ul>
 </div>`;
 /* eslint-enable */
@@ -33,5 +33,10 @@ export default defineComponent({
             stepIndex: 0,
             steps: []
         };
+    },
+    itemClick(index) {
+        if (index <= this.data.get('stepIndex')) {
+            this.fire('click', {index});
+        }
     }
 });

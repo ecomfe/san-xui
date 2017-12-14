@@ -40,7 +40,7 @@ const Calendar = defineComponent({  // eslint-disable-line
     computed: {
         text() {
             const value = this.data.get('value');
-            const valueText = moment(value).format('YYYY-MM-DD');
+            const valueText = moment(value).format(this.data.get('format'));
             return `${valueText}`;
         },
         mainClass() {
@@ -66,7 +66,8 @@ const Calendar = defineComponent({  // eslint-disable-line
             prev: false,
             next: false,
             active: false,
-            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)}
+            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
+            format: 'YYYY-MM-DD'
         };
     },
     inited() {
