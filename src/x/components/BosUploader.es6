@@ -157,6 +157,10 @@ export default defineComponent({
             max_file_size: '50Gb',
             init: {
                 FilesFilter: (_, files) => {  // eslint-disable-line
+                    if (!multiple) {
+                        // 如果是单选的情况，每次选择文件之前，清空 files
+                        this.data.set('files', []);
+                    }
                 },
                 FilesAdded: (_, files) => {   // eslint-disable-line
                     for (let i = 0; i < files.length; i++) {

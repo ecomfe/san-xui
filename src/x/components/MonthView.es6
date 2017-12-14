@@ -146,6 +146,12 @@ const MonthView = defineComponent({
         this.data.set('monthDs.value', month);
     },
     inited() {
+        // value = "2017-12-14T10:44:01Z"
+        const value = this.data.get('value');
+        if (value && typeof value === 'string') {
+            this.data.set('value', new Date(value));
+        }
+
         const valueWatcher = value => {
             this.initYearOptions();
             this.initMonthOptions();

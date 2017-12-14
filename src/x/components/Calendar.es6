@@ -74,6 +74,9 @@ const Calendar = defineComponent({  // eslint-disable-line
         if (!value) {
             value = new Date();
         }
+        else if (value && typeof value === 'string') {
+            value = new Date(value);
+        }
         this.data.set('value', value);
     },
     nextDay() {
