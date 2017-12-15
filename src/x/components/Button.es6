@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 
@@ -39,6 +39,14 @@ export default defineComponent({
             icon: '',
             label: ''
         };
+    },
+    dataTypes: {
+        disabled: DataTypes.bool,
+        ariaLabel: DataTypes.string,
+        size: DataTypes.string,
+        skin: DataTypes.string,
+        icon: DataTypes.string,
+        label: DataTypes.string
     },
     onClick(e) {
         const disabled = this.data.get('disabled');

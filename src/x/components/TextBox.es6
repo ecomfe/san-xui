@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import {asInput} from './asInput';
@@ -56,6 +56,18 @@ const TextBox = defineComponent({
             width: null,
             height: null
         };
+    },
+    dataTypes: {
+        disabled: DataTypes.bool,
+        type: DataTypes.string,
+        value: DataTypes.string,
+        multiline: DataTypes.bool,
+        skin: DataTypes.string,
+        placeholder: DataTypes.string,
+        addon: DataTypes.string,
+        addonPosition: DataTypes.string,
+        width: DataTypes.number,
+        height: DataTypes.number
     },
     onInput() {
         this.fire('input');

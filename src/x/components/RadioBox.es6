@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import {asInput} from './asInput';
@@ -31,12 +31,15 @@ const RadioBox = defineComponent({
             title: null
         };
     },
+    dataTypes: {
+        checked: DataTypes.bool,
+        disabled: DataTypes.bool,
+        title: DataTypes.string
+    },
     computed: {
         mainClass() {
             return cx.mainClass(this);
         }
-    },
-    inited() {
     },
     onChange(e) {
         this.fire('change', {value: e.target.checked});
