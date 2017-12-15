@@ -16,7 +16,8 @@ const template = `<template>
         s-ref="dialog"
         open="{=actionOptions.open=}"
         height="{{actionOptions.height}}"
-        width="{{actionOptions.width}}">
+        width="{{actionOptions.width}}"
+        on-close="onCloseDialog">
         <span slot="head">{{actionOptions.title}}</span>
         <ui-actionloader
             on-actionloaded="onActionLoaded($event)"
@@ -132,5 +133,6 @@ export default defineComponent({
     },
     onCloseDialog() {
         this.closeDialog();
+        this.fire('close');
     }
 });
