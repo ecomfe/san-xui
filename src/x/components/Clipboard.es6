@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import _ from 'inf-i18n';
 import XClipboard from 'clipboard/Clipboard';
 
@@ -31,9 +31,14 @@ export default defineComponent({
     initData() {
         return {
             ariaLabel: _('复制到剪贴板'),
-            tipPosition: 's',   // 'n', 'e', 's', 'w'
+            tipPosition: 's', // 'n', 'e', 's', 'w'
             text: null
         };
+    },
+    dataTypes: {
+        ariaLabel: DataTypes.string,
+        tipPosition: DataTypes.oneOf(['n', 'e', 's', 'w']),
+        text: DataTypes.string
     },
     attached() {
         this.client = new XClipboard(this.el, {
