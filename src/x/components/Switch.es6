@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import {asInput} from './asInput';
@@ -24,6 +24,10 @@ const Switch = defineComponent({    // eslint-disable-line
             checked: true
         };
     },
+    dataTypes: {
+        checked: DataTypes.bool,
+        disabled: DataTypes.bool
+    },
     computed: {
         mainClass() {
             const klass = cx.mainClass(this);
@@ -35,6 +39,9 @@ const Switch = defineComponent({    // eslint-disable-line
             return klass;
         }
     },
+    inited() {
+        this.watch('checked', checked => this.fire('change', {value: checked}));
+    },
     toggleSwitch() {
         const disabled = this.data.get('disabled');
         if (disabled) {
@@ -43,7 +50,6 @@ const Switch = defineComponent({    // eslint-disable-line
 
         const checked = this.data.get('checked');
         this.data.set('checked', !checked);
-        this.fire('change', {value: !checked});
     }
 });
 
