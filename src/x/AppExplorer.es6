@@ -9,6 +9,7 @@ import Ghost from 'inf-ui/x/components/Ghost';
 import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Section from './demos/Section';
+import DataTypeExplorer from './demos/DataTypeExplorer';
 
 /* eslint-disable */
 const template = `<div class="app-explorer">
@@ -16,6 +17,9 @@ const template = `<div class="app-explorer">
     <x-section label="{{title}}" s-if="title">
         <ui-loading s-if="loading" />
         <ui-ghost s-ref="ghost" />
+    </x-section>
+    <x-section label="DataTypes" open="{{false}}">
+        <x-datatype-explorer key="{{title}}" comp="{{comp}}" />
     </x-section>
     <x-section label="Source Code" s-if="code" open="{=open=}">
         <ui-hljs code="{{code}}" />
@@ -29,6 +33,7 @@ export default defineComponent({
         'ui-loading': Loading,
         'ui-ghost': Ghost,
         'ui-hljs': SyntaxHighlighter,
+        'x-datatype-explorer': DataTypeExplorer,
         'x-section': Section
     },
     initData() {
