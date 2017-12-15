@@ -165,9 +165,19 @@ const RangeCalendar = defineComponent({
         if (!begin) {
             begin = new Date();
         }
+        else if (typeof begin === 'string') {
+            // utc to date
+            begin = new Date(begin);
+        }
+
         if (!end) {
             end = new Date();
         }
+        else if (typeof end === 'string') {
+            // utc to date
+            end = new Date(end);
+        }
+
         this.data.set('value', {begin, end});
         this.data.set('begin.value', new Date(begin));
         this.data.set('end.value', new Date(end));

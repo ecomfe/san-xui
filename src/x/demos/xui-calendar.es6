@@ -19,6 +19,10 @@ const template = `<template>
     </strong>
 </x-row>
 
+<x-row label="value type is string: 1985-03-08T01:44:48Z">
+    <xui-calendar value="1985-03-08T01:44:48Z" />
+</x-row>
+
 <x-row label="prev,next,time">
     <xui-calendar prev next time value="{=calendar.value=}" />
     <strong class="large">

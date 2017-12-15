@@ -4,6 +4,7 @@
  */
 
 import {defineComponent} from 'san';
+import _ from 'inf-i18n';
 import XClipboard from 'clipboard/Clipboard';
 
 import {create} from './util';
@@ -20,15 +21,17 @@ export default defineComponent({
         mainClass() {
             const klass = [cx(), cx('x')];
             const ariaLabel = this.data.get('ariaLabel');
+            const tipPosition = this.data.get('tipPosition');
             if (ariaLabel) {
-                klass.push('tooltipped', 'tooltipped-s');
+                klass.push('tooltipped', 'tooltipped-' + tipPosition);
             }
             return klass;
         }
     },
     initData() {
         return {
-            ariaLabel: '复制到剪贴板',
+            ariaLabel: _('复制到剪贴板'),
+            tipPosition: 's',   // 'n', 'e', 's', 'w'
             text: null
         };
     },
@@ -39,13 +42,13 @@ export default defineComponent({
         });
         this.client.on('beforecopy', () => this.fire('beforecopy'));
         this.client.on('success', () => {
-            this.data.set('ariaLabel', '复制成功');
+            this.data.set('ariaLabel', _('复制成功'));
             this.fire('aftercopy');
         });
         this.client.on('error', () => this.fire('error'));
     },
     onMouseLeave() {
-        this.data.set('ariaLabel', '复制到剪贴板');
+        this.data.set('ariaLabel', _('复制到剪贴板'));
     }
 });
 

@@ -18,6 +18,10 @@ const template = `<template>
     </strong>
 </x-row>
 
+<x-row label="value type is string: 1985-03-08T01:44:48Z">
+    <xui-monthview value="1985-03-08T01:44:48Z"/>
+</x-row>
+
 <x-row label="time">
     <xui-monthview time value="{=monthview.value=}" />
     <strong class="large">

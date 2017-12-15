@@ -19,6 +19,18 @@ const template = `<template>
     <xui-clipboard text="Hello World">
         <xui-button icon="copy" />
     </xui-clipboard>
+
+    <xui-clipboard text="Hello World" tip-position="e">
+        <xui-button icon="copy" />
+    </xui-clipboard>
+
+    <xui-clipboard text="Hello World" tip-position="w">
+        <xui-button icon="copy" />
+    </xui-clipboard>
+
+    <xui-clipboard text="Hello World" tip-position="n">
+        <xui-button icon="copy" />
+    </xui-clipboard>
 </x-row>
 </template>`;
 /* eslint-enable */
