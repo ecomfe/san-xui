@@ -19,7 +19,7 @@ const template = `<template>
             <ui-ghost class="{{tiplayerClass}}" s-ref="layer-body">
                 <div class="${cx2('body-panel')}" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">
                     <div class="${cx2('body')}" s-if="message" style="{{messageStyle}}">
-                        {{message}}
+                        {{message | raw}}
                     </div>
                     <div class="${cx2('body')}" s-else>
                         <slot />
