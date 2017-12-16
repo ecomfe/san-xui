@@ -3,7 +3,7 @@
  * @author leeight
  */
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Button from './Button';
@@ -96,13 +96,13 @@ const template = `<div on-click="toggleLayer" class="{{mainClass}}">
                 <div class="${cx('begin')}">
                     <div class="${cx('label')}"><h3>开始日期</h3></div>
                     <div class="${cx('begin-cal')}">
-                        <ui-monthview value="{=begin.value=}" time="{{time}}" />
+                        <ui-monthview value="{=begin.value=}" range="{{range}}" time="{{time}}" />
                     </div>
                 </div>
                 <div class="${cx('end')}">
                     <div class="${cx('label')}"><h3>结束日期</h3></div>
                     <div class="${cx('end-cal')}">
-                        <ui-monthview value="{=end.value=}" time="{{time}}" end-of-day />
+                        <ui-monthview value="{=end.value=}" range="{{range}}" time="{{time}}" end-of-day />
                     </div>
                 </div>
             </div>
@@ -140,6 +140,7 @@ const RangeCalendar = defineComponent({
                 end: new Date()
             },
             time: null,
+            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
             // BEGIN 临时的数据
             begin: {
                 value: null
@@ -159,6 +160,14 @@ const RangeCalendar = defineComponent({
                 {text: '上个季度', value: getLastQuarterValue()}
             ]
         };
+    },
+    dataTypes: {
+        value: DataTypes.object, // 日期范围值
+        range: DataTypes.object, // 选择范围
+        disabled: DataTypes.bool, // 是否禁用 默认为false
+        shortcut: DataTypes.bool, // 是否启用快捷方式 默认为true
+        active: DataTypes.bool, // 是否打开选择界面 默认为false
+        time: DataTypes.bool // 是否有小时 分钟  秒 输入框 默认为false
     },
     inited() {
         let {begin, end} = this.data.get('value');
@@ -181,6 +190,7 @@ const RangeCalendar = defineComponent({
         this.data.set('value', {begin, end});
         this.data.set('begin.value', new Date(begin));
         this.data.set('end.value', new Date(end));
+        this.watch('value', value => this.fire('change', {value}));
     },
     onShortcutSelect(item) {
         const {begin, end} = typeof item.value === 'function'
@@ -193,7 +203,6 @@ const RangeCalendar = defineComponent({
         const begin = this.data.get('begin.value');
         const end = this.data.get('end.value');
         this.data.set('value', {begin, end});
-        this.fire('change', {value: {begin, end}});
         this.closeLayer();
     },
     closeLayer() {

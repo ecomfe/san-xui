@@ -86,6 +86,7 @@ export default defineComponent({
             typeDefs.push({
                 name: _.kebabCase(name),
                 type: getTypeString(type),
+                // FIXME(chenbo09) 注释怎么导入呢？ 从代码中读取？
                 description: '-'
             });
         });
