@@ -4,6 +4,7 @@
  */
 
 import {defineComponent} from 'inf-ui/sanx';
+import ToastLabel from 'inf-ui/x/components/ToastLabel';
 import ACEEditor from 'inf-ui/x/components/ACEEditor';
 import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 import Button from 'inf-ui/x/components/Button';
@@ -17,6 +18,7 @@ import {kDefaultSchema, kSchema$eq, kSchema$in, kSchema$gt} from './examples/for
 
 /* eslint-disable */
 const template = `<template>
+<xui-toastlabel>暂时还不支持表单验证的逻辑</xui-toastlabel>
 <x-row label="[default]">
     <xui-select width="300" on-change="onExampleChanged" datasource="{{examples.datasource}}"></xui-select>
     <xui-button on-click="buildForm" skin="primary">生成表单</xui-button>
@@ -41,6 +43,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-toastlabel': ToastLabel,
         'xui-ghost': Ghost,
         'xui-select': Select,
         'xui-button': Button,

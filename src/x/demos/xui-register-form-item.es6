@@ -38,16 +38,18 @@ registerFormItem({
 
 /* eslint-disable */
 const template = `<template>
+<xui-toastlabel>
+默认情况下，提供的 form-item 类型是不够的，如果需要扩展，调用 registerFormItem() 来完成<br/>
+<code style="font-family: monospace">
+registerFormItem({<br/>
+&nbsp;&nbsp;type: string,<br/>
+&nbsp;&nbsp;tagName: string?,<br/>
+&nbsp;&nbsp;Component: &lt;san.Component&gt;<br/>
+&nbsp;&nbsp;builder(item: Object, prefix: string): string<br/>
+})
+</code>
+</xui-toastlabel>
 <x-row label="registerFormItem">
-    <xui-toastlabel>
-    默认情况下，提供的 form-item 类型是不够的，如果需要扩展，调用 registerFormItem() 来完成<br/>
-    registerFormItem({<br/>
-    &nbsp;&nbsp;type: string,<br/>
-    &nbsp;&nbsp;tagName: string?,<br/>
-    &nbsp;&nbsp;Component: &lt;san.Component&gt;<br/>
-    &nbsp;&nbsp;builder(item: Object, prefix: string): string<br/>
-    })
-    </xui-toastlabel>
     <xui-form form-data="{=formData=}" style="{{formStyle}}" />
     <pre>{{formData | stringify}}</pre>
 </x-row>
