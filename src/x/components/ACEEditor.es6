@@ -51,6 +51,15 @@ const ACEEditor = defineComponent({
             return cx.mainClass(this);
         }
     },
+    inited() {
+        /**
+        this.watch('value', value => {
+            if (this.editor) {
+                this.editor.setValue(value, 1);
+            }
+        });
+        */
+    },
     attached() {
         window.require([kUrl], () => {
             this.data.set('loading', false);

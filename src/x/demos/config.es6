@@ -123,6 +123,9 @@ export const blocks = [
         items: [
             {
                 text: 'xui-form'
+            },
+            {
+                text: 'xui-as-form'
             }
         ]
     },
