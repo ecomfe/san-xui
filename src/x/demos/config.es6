@@ -126,6 +126,9 @@ export const blocks = [
             },
             {
                 text: 'xui-as-form'
+            },
+            {
+                text: 'xui-register-form-item'
             }
         ]
     },
