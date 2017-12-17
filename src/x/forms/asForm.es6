@@ -5,15 +5,19 @@
 
 import _ from 'lodash';
 import moment from 'moment';
+import Promise from 'promise';
+import * as AsyncValidator from 'async-validator';
 import {defineComponent} from 'inf-ui/sanx';
 import {create} from 'inf-ui/x/components/util';
 
 import {evalExpr} from './ExpressionEvaluator';
+import {buildValidator} from './buildValidator';
 
 const cx = create('as-form');
 const cx2 = create('ui-form');
 const kFormItemComponents = {};
 const kFormItemBuilders = {};
+const Schema = AsyncValidator.default;
 
 function wrapAsItem(item, prefix, content) {
     return `
@@ -23,6 +27,8 @@ function wrapAsItem(item, prefix, content) {
         </div>
         <div class="${cx2('item-content')}">
             ${content}
+            <div class="${cx2('item-invalid-label')}" s-if="formErrors.${item.name}">{{formErrors.${item.name}}}</div>
+            <div class="${cx2('item-help')}" s-if="${prefix}.help">{{${prefix}.help | raw}}</div>
         </div>
     </div>
     `;
@@ -138,6 +144,11 @@ export function asForm(schema) {
                 return moment(value).format(format);
             }
         },
+        messages: {
+            'input-comp-value-changed'(arg) {
+                this.validateForm();
+            }
+        },
         initData() {
             return {
                 title: null,
@@ -147,8 +158,12 @@ export function asForm(schema) {
                 editable: false, // 预览模式下是否允许编辑
                 schema: controls,
                 formData: {},
+                formErrors: null,
                 visibleOn: {},
                 hiddenOn: {}
+
+                // disabledOn: {},
+                // requiredOn: {}
             };
         },
 
@@ -194,14 +209,7 @@ export function asForm(schema) {
             }
 
             const controls = this.data.get('schema');
-            _.each(controls, item => {
-                if (_.isArray(item)) {
-                    _.each(item, appendToMap);
-                }
-                else {
-                    appendToMap(item);
-                }
-            });
+            schemaTraversal(controls, item => item.name && appendToMap(item));
 
             this.itemsMap = itemsMap;
             this.visibleOn = visibleOn;
@@ -283,9 +291,87 @@ export function asForm(schema) {
             });
         },
 
+        buildFormValidator() {
+            const formValidator = {};
+            _.each(this.itemsMap, (config, name) => {
+                const {validator, validations, validationErrors, required} = config;
+                const rules = [];
+                if (validator) {
+                    // 自定义的验证规则
+                    rules.push({validator});
+                }
+                if (validations) {
+                    rules.push.apply(rules, buildValidator(validations, validationErrors));
+                }
+                if (required) {
+                    const message = validationErrors && validationErrors.required
+                        ? validationErrors.required
+                        : `${config.label || name}必填`;
+
+                    let type = 'string';
+                    if (config.type === 'select' && config.multi) {
+                        type = 'array';
+                    }
+                    else if (config.type === 'calendar') {
+                        type = 'date';
+                    }
+                    else if (config.type === 'number') {
+                        type = 'number';
+                    }
+                    else if (config.type === 'switch') {
+                        type = 'boolean';
+                    }
+                    rules.push({type, required, message});
+                }
+                // TODO(leeight) max, min, maxLength 等配置的处理
+                // TODO(leeight) value, unsetValueOnInvisible 等配置的处理
+                if (rules.length) {
+                    formValidator[name] = rules;
+                }
+            });
+            return new Schema(formValidator);
+        },
+
+        validateForm() {
+            if (!this.validator) {
+                this.validator = this.buildFormValidator();
+            }
+            return new Promise((resolve, reject) => {
+                const formData = this.getFormData();
+                this.validator.validate(formData, (errors, fields) => {
+                    if (!errors) {
+                        this.data.set('formErrors', null);
+                        resolve();
+                        return;
+                    }
+
+                    const formErrors = {};
+                    for (let i = 0; i < errors.length; i++) {
+                        const item = errors[i];
+                        formErrors[item.field] = item.message;
+                    }
+                    this.data.set('formErrors', formErrors);
+                    reject(formErrors);
+                });
+            });
+        },
+
+        getFormData() {
+            const formData = _.pick(this.data.get('formData'), Form.$fields);
+            // 转化一下类型
+            _.each(formData, (value, key) => {
+                const config = this.itemsMap[key];
+                if (value != null && config && config.type === 'number') {
+                    // 把 string 类型转化为 number 类型，否则验证的时候会失败
+                    formData[key] = parseFloat(value, 10);
+                }
+            });
+            return formData;
+        },
+
         submit() {
             const formKey = this.getFormKey();
-            const formData = _.pick(this.data.get('formData'), Form.$fields);
+            const formData = this.getFormData();
             this.data.set('submitting', true);
             this.dispatch('submit', {formKey, formData});
         }

@@ -10,11 +10,10 @@ import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
 import Toast from 'inf-ui/x/components/Toast';
-import Ghost from 'inf-ui/x/components/Ghost';
 import {createForm} from 'inf-ui/x/forms/createForm';
 
 import Row from './Row';
-import {kDefaultSchema, kSchema$eq, kSchema$in, kSchema$gt} from './examples/formSchemas';
+import {kDefaultSchema, kSchema$eq, kSchema$in, kSchema$gt, kSchema$validations} from './examples/formSchemas';
 
 /* eslint-disable */
 const template = `<template>
@@ -30,7 +29,10 @@ const template = `<template>
         <tbody>
             <tr><th>表单</th><th>表单数据</th></tr>
             <tr>
-                <td class="as-form-instance"><xui-ghost s-ref="form-container" /></td>
+                <td class="as-form-instance">
+                    <div s-ref="form-container"></div>
+                    <div><xui-button skin="primary" on-click="validateForm">验证表单</xui-button></div>
+                </td>
                 <td class="as-form-data"><xui-hljs code="{{formData | stringify}}" /></td>
             </tr>
         </tbody>
@@ -44,7 +46,6 @@ export default defineComponent({
     components: {
         'x-row': Row,
         'xui-toastlabel': ToastLabel,
-        'xui-ghost': Ghost,
         'xui-select': Select,
         'xui-button': Button,
         'xui-hljs': SyntaxHighlighter,
@@ -62,7 +63,8 @@ export default defineComponent({
                     {text: '默认情况', value: kDefaultSchema},
                     {text: '表单联动 visibleOn: $eq, $ne', value: kSchema$eq},
                     {text: '表单联动 visibleOn: $in, $nin', value: kSchema$in},
-                    {text: '表单联动 $gt, $lt, $gte, $lte', value: kSchema$gt}
+                    {text: '表单联动 $gt, $lt, $gte, $lte', value: kSchema$gt},
+                    {text: '表单验证', value: kSchema$validations}
                 ]
             },
             formData: {},
@@ -93,15 +95,23 @@ export default defineComponent({
             if (formContainer) {
                 if (this.formInstance) {
                     this.formInstance.dispose();
-                    formContainer.el.innerHTML = '';
+                    formContainer.innerHTML = '';
                 }
                 this.data.set('formData', {});
                 const FormComponent = createForm(value);
                 const formInstance = new FormComponent();
                 formInstance.watch('formData', formData => this.data.set('formData', formData));
-                formInstance.attach(formContainer.el);
+                formInstance.attach(formContainer);
                 this.formInstance = formInstance;
             }
         });
+    },
+    validateForm() {
+        if (!this.formInstance) {
+            return;
+        }
+        this.formInstance.validateForm()
+            .then(() => Toast.success('验证通过'))
+            .catch(() => Toast.error('验证失败'));
     }
 });

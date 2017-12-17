@@ -202,6 +202,7 @@ const Select = defineComponent({    // eslint-disable-line
             this.data.set('value', []);
         }
         this.watch('selectedItem', () => this.nextTick(() => this.__setLayerWidth()));
+        this.watch('value', value => this.fire('change', {value}));
     },
     selectItem(e, item) {
         if (item.disabled) {
@@ -209,8 +210,6 @@ const Select = defineComponent({    // eslint-disable-line
         }
         this.data.set('value', item.value);
         this.data.set('active', false);
-
-        this.fire('change', item);
     },
     onToggleAll() {
         const checkedAll = this.data.get('checkedAll');

@@ -5,6 +5,7 @@
 
 import {defineComponent} from 'inf-ui/sanx';
 import BosUploader from 'inf-ui/x/components/BosUploader';
+import {asInput} from 'inf-ui/x/components/asInput';
 import UUID from 'inf-ui/x/demos/uuid';
 
 /* eslint-disable */
@@ -28,7 +29,7 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-export default defineComponent({
+const Uploader = defineComponent({ // eslint-disable-line
     template,
     components: {
         'xui-bosuploader': BosUploader
@@ -58,7 +59,11 @@ export default defineComponent({
     },
     onComplete({files}) {
         if (files && files.length) {
-            this.data.set('value', files[0].url);
+            const value = files[0].url;
+            this.data.set('value', value);
+            this.fire('change', {value});
         }
     }
 });
+
+export default asInput(Uploader);

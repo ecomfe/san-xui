@@ -11,7 +11,12 @@ export const kDefaultSchema = {
             placeholder: '请输入姓名',
             type: 'text',
             required: true,
-            name: 'aText'
+            name: 'aText',
+            validations: [
+                'minLength:10',
+                'maxLength:20',
+                'isUrl'
+            ]
         },
         {
             label: '多行文本类型',
@@ -26,7 +31,12 @@ export const kDefaultSchema = {
             placeholder: '请输入年龄',
             type: 'number',
             required: true,
-            name: 'bNumber'
+            name: 'bNumber',
+            validations: ['minimum:10', 'maximum:30'],
+            validationErrors: {
+                minimum: '年龄最小值10',
+                maximum: '年龄最大值30'
+            }
         },
         {
             label: 'SELECT',
@@ -189,3 +199,95 @@ export const kSchema$gt = {
     ]
 };
 
+
+export const kSchema$validations = {
+    '//': '演示验证规则的用法',
+    'controls': [
+        {
+            label: 'minLength,maxLength',
+            type: 'text',
+            name: 'username',
+            required: true,
+            validations: [
+                'minLength:5',
+                'maxLength:20'
+            ]
+        },
+        {
+            label: 'maximum,minimum',
+            type: 'number',
+            name: 'age',
+            required: true,
+            validations: [
+                'minimum:10',
+                'maximum:30'
+            ]
+        },
+        {
+            label: 'matchRegexp',
+            type: 'text',
+            name: 'matchRegexp',
+            required: true,
+            validations: [
+                'matchRegexp:^\\d+$'
+            ]
+        },
+        {
+            label: 'isEmail',
+            type: 'text',
+            name: 'isEmail',
+            required: true,
+            validations: ['isEmail']
+        },
+        {
+            label: 'isUrl',
+            type: 'text',
+            name: 'isUrl',
+            required: true,
+            validations: ['isUrl']
+        },
+        {
+            label: 'isNumeric',
+            type: 'text',
+            name: 'isNumeric',
+            required: true,
+            validations: ['isNumeric']
+        },
+        {
+            label: 'isAlphanumeric',
+            type: 'text',
+            name: 'isAlphanumeric',
+            required: true,
+            validations: ['isAlphanumeric']
+        },
+        {
+            label: 'isInt',
+            type: 'text',
+            name: 'isInt',
+            required: true,
+            validations: ['isInt']
+        },
+        {
+            label: 'isFloat',
+            type: 'text',
+            name: 'isFloat',
+            required: true,
+            validations: ['isFloat']
+        },
+        {
+            label: 'isBool',
+            type: 'switch',
+            name: 'isBool',
+            required: true,
+            validations: ['isBool']
+        },
+        {
+            label: 'isJson',
+            type: 'text',
+            multiline: true,
+            name: 'isJson',
+            required: true,
+            validations: ['isJson']
+        }
+    ]
+};

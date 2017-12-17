@@ -18,7 +18,7 @@ export default defineComponent({
         }
     },
     messages: {
-        'form-element-changed'(arg) {
+        'form-element-changed'(arg) { // eslint-disable-line
             const formItem = arg.target;
             const payload = arg.value;
             this.onFormElementChanged(formItem, payload);
@@ -55,7 +55,7 @@ export default defineComponent({
             const validator = this.data.get('rules');
             validator.validate(formData, (errors, fields) => {
                 if (!errors) {
-                    errors = [];
+                    errors = []; // eslint-disable-line
                 }
 
                 let found = false;
@@ -75,7 +75,7 @@ export default defineComponent({
 
                 let hasError = false;
                 const formErrors = this.data.get('errors');
-                for (const key in formErrors) {
+                for (const key in formErrors) { // eslint-disable-line
                     if (formErrors[key]) {
                         hasError = true;
                         break;
