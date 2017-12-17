@@ -10,7 +10,6 @@ import {defineComponent} from 'san';
 import {create} from './util';
 import Loading from './Loading';
 import {asInput} from './asInput';
-import Ghost from './Ghost';
 
 const cx = create('ui-aceeditor');
 const kUrl = 'inf-ria/js!https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
@@ -19,14 +18,13 @@ const kUrl = 'inf-ria/js!https://cdn.bdstatic.com/ace-builds/src-min-noconflict/
 const template = `<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error">{{error}}</div>
     <ui-loading s-if="loading" />
-    <ui-ghost s-ref="ghost" style="{{mainStyle}}" />
+    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>
 </div>`;
 /* eslint-enable */
 
 const ACEEditor = defineComponent({
     template,
     components: {
-        'ui-ghost': Ghost,
         'ui-loading': Loading
     },
     initData() {
@@ -66,12 +64,12 @@ const ACEEditor = defineComponent({
             this.data.set('loading', false);
             this.nextTick(() => {
                 const ghost = this.ref('ghost');
-                if (!ghost || !ghost.el) {
+                if (!ghost) {
                     this.data.set('error', new Error('ACEEditor初始化失败.'));
                     return;
                 }
 
-                const editor = this.editor = ace.edit(ghost.el);
+                const editor = this.editor = ace.edit(ghost);
                 editor.on('change', e => {
                     this.data.set('value', editor.getValue());
                     this.fire('input');

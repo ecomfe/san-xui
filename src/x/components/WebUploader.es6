@@ -9,7 +9,6 @@ import {defineComponent} from 'san';
 import util from 'inf-ria/util';
 
 import {create} from './util';
-import Ghost from './Ghost';
 import Button from './Button';
 import Loading from './Loading';
 
@@ -26,7 +25,7 @@ const kDefaultErrorMessages = {
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
-    <ui-ghost s-ref="ghost" class="${cx('pick')}" />
+    <div s-ref="ghost" class="${cx('pick')}"></div>
     <ui-button icon="paddle-upload"
         s-if="!autoStart"
         on-click="startUpload"
@@ -41,8 +40,7 @@ export default defineComponent({
     template,
     components: {
         'ui-loading': Loading,
-        'ui-button': Button,
-        'ui-ghost': Ghost
+        'ui-button': Button
     },
 
     computed: {
@@ -86,7 +84,7 @@ export default defineComponent({
         const sizeLimit = this.data.get('sizeLimit');
         const ghost = this.ref('ghost');
         const pickOptions = {
-            pick: {id: '#' + ghost.el.id, label, multiple},
+            pick: {id: '#' + ghost.id, label, multiple},
             server: url,
             auto: autoStart,
             fileSingleSizeLimit: sizeLimit,
@@ -142,18 +140,18 @@ export default defineComponent({
         this.disabledWatcher = disabled => {
             if (this.uploader) {
                 const ghost = this.ref('ghost');
-                if (ghost && ghost.el && ghost.el.lastChild) {
+                if (ghost && ghost.lastChild) {
                     disabled
-                        ? $(ghost.el.lastChild).hide()
-                        : $(ghost.el.lastChild).show();
+                        ? $(ghost.lastChild).hide()
+                        : $(ghost.lastChild).show();
                 }
             }
         };
         this.watch('label', label => {
             if (this.uploader) {
                 const ghost = this.ref('ghost');
-                if (ghost && ghost.el && ghost.el.firstChild) {
-                    $(ghost.el.firstChild).html(label);
+                if (ghost && ghost.firstChild) {
+                    $(ghost.firstChild).html(label);
                 }
             }
         });

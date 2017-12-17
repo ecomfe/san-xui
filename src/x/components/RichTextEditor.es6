@@ -9,7 +9,6 @@ import u from 'lodash';
 import {defineComponent} from 'san';
 
 import {create} from './util';
-import Ghost from './Ghost';
 import Loading from './Loading';
 
 const cx = create('ui-richtexteditor');
@@ -49,7 +48,7 @@ const template = `<template>
 <div class="${cx()}">
     <ui-loading s-if="loading" />
     <div class="${cx('error')}" s-if="error">{{error}}</div>
-    <ui-ghost s-ref="ghost" style="{{mainStyle}}" />
+    <div s-ref="ghost" style="{{mainStyle}}"></div>
 </div>
 </template>`;
 /* eslint-enable */
@@ -57,7 +56,6 @@ const template = `<template>
 export default defineComponent({
     template,
     components: {
-        'ui-ghost': Ghost,
         'ui-loading': Loading
     },
     computed: {
@@ -101,13 +99,13 @@ export default defineComponent({
             const value = this.data.get('value');
             const ghost = this.ref('ghost');
 
-            if (!ghost || !ghost.el) {
+            if (!ghost) {
                 this.data.set('error', new Error('RichTextEditor初始化失败'));
                 return;
             }
 
             const editor = this.editor = new UE.ui.Editor(editorOptions);
-            editor.render(ghost.el);
+            editor.render(ghost);
             if (value) {
                 editor.addListener('ready', () => editor.setContent(value));
             }

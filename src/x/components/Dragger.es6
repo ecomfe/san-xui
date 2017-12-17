@@ -8,7 +8,6 @@ import {defineComponent} from 'san';
 
 import {create} from './util';
 import TextBox from './TextBox';
-import Ghost from './Ghost';
 
 const cx = create('ui-dragger');
 
@@ -22,11 +21,11 @@ function getValue(value, step) {
 
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainStyle}}">
-    <ui-ghost
+    <div
         class="${cx('control-bar', 'control-bar-horizontal')}"
         s-ref="control-bar"
-        style="{{controlBarStyle}}"></ui-ghost>
-    <ui-ghost class="${cx('bar', 'bar-horizontal')}" s-ref="bar" on-click="onBarClick($event)">
+        style="{{controlBarStyle}}"></div>
+    <div class="${cx('bar', 'bar-horizontal')}" s-ref="bar" on-click="onBarClick($event)">
         <div class="${cx('bar-selected', 'bar-selected-horizontal')}" style="{{selectedBarStyle}}"></div>
         <div class="${cx('bar-left')}">{{min}}{{unit}}</div>
         <div class="${cx('bar-middle')}">{{(max - min) / 2}}{{unit}}</div>
@@ -34,7 +33,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainSty
         <div class="${cx('ruling-box')}">
             <div class="${cx('ruling', 'ruling-horizontal')}"></div>
         </div>
-    </ui-ghost>
+    </div>
     <ui-textbox
         addon="{{unit}}"
         addon-position="end"
@@ -50,8 +49,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainSty
 export default defineComponent({
     template,
     components: {
-        'ui-textbox': TextBox,
-        'ui-ghost': Ghost
+        'ui-textbox': TextBox
     },
     initData() {
         return {
@@ -120,8 +118,8 @@ export default defineComponent({
     },
     attached() {
         const controlBar = this.ref('control-bar');
-        if (controlBar && controlBar.el) {
-            $(controlBar.el).on('mousedown', e => {
+        if (controlBar) {
+            $(controlBar).on('mousedown', e => {
                 const disabled = this.data.get('disabled');
                 if (disabled) {
                     return false;
@@ -164,7 +162,7 @@ export default defineComponent({
         }
 
         const bar = this.ref('bar');
-        const rect = bar.el.getBoundingClientRect();
+        const rect = bar.getBoundingClientRect();
         const deltaX = e.clientX - rect.left;
 
         let value = deltaX * (max - min) / length;
@@ -186,8 +184,8 @@ export default defineComponent({
     },
     disposed() {
         const controlBar = this.ref('control-bar');
-        if (controlBar && controlBar.el) {
-            $(controlBar.el).off('mousedown');
+        if (controlBar) {
+            $(controlBar).off('mousedown');
         }
         $(document).off('mousemove.dragger');
         $(document).off('mouseup.dragger');

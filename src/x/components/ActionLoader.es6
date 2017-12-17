@@ -12,7 +12,6 @@ import {loadAppInBackground} from 'inf-ria/helper';
 
 import {create} from './util';
 import Loading from './Loading';
-import Ghost from './Ghost';
 
 const cx = create('ui-actionloader');
 
@@ -20,7 +19,7 @@ const cx = create('ui-actionloader');
 const template = `<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error"><pre>{{error}}</pre></div>
     <ui-loading s-if="loading" />
-    <ui-ghost s-ref="ghost" style="{{mainStyle}}" />
+    <div s-ref="ghost" style="{{mainStyle}}"></div>
 </div>`;
 /* eslint-enable */
 
@@ -83,7 +82,6 @@ function notifyActionLoadAborted(e) {
 export default defineComponent({
     template,
     components: {
-        'ui-ghost': Ghost,
         'ui-loading': Loading
     },
     initData() {
@@ -137,7 +135,7 @@ export default defineComponent({
 
     actionMatched(e) {
         const ghost = this.ref('ghost');
-        return (e.isChildAction && ghost && ghost.el && ghost.el.id === e.container);
+        return (e.isChildAction && ghost && ghost.id === e.container);
     },
 
     reloadAction() {
@@ -153,7 +151,7 @@ export default defineComponent({
     renderAction() {
         const {url, options} = this.data.get();
         const ghost = this.ref('ghost');
-        const action = this.action = controller.renderChildAction(url, ghost.el.id, options);
+        const action = this.action = controller.renderChildAction(url, ghost.id, options);
 
         // 如果发生错误，因为事件是同步触发的，
         // 因此先执行`notifyActionLoadFailed`再赋值，导致没清掉。

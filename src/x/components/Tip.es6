@@ -7,7 +7,6 @@ import {defineComponent} from 'san';
 
 import {nextZindex, create, hasUnit} from './util';
 import Layer from './Layer';
-import Ghost from './Ghost';
 
 const cx = create('ui-tip');
 const cx2 = create('ui-tiplayer');
@@ -16,7 +15,7 @@ const cx2 = create('ui-tiplayer');
 const template = `<template>
     <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">
         <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer">
-            <ui-ghost class="{{tiplayerClass}}" s-ref="layer-body">
+            <div class="{{tiplayerClass}}" s-ref="layer-body">
                 <div class="${cx2('body-panel')}" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">
                     <div class="${cx2('body')}" s-if="message" style="{{messageStyle}}">
                         {{message | raw}}
@@ -26,7 +25,7 @@ const template = `<template>
                     </div>
                 </div>
                 <div class="{{arrowClass}}"></div>
-            </ui-ghost>
+            </div>
         </ui-layer>
     </div>
 </template>`;
@@ -35,8 +34,7 @@ const template = `<template>
 export default defineComponent({   // eslint-disable-line
     template,
     components: {
-        'ui-layer': Layer,
-        'ui-ghost': Ghost
+        'ui-layer': Layer
     },
     computed: {
         style() {
@@ -89,10 +87,10 @@ export default defineComponent({   // eslint-disable-line
         const layer = this.ref('layer');
         const layerBody = this.ref('layer-body');
         const position = this.data.get('position');
-        if (layerBody && layerBody.el) {
+        if (layerBody) {
             const rect = this.el.getBoundingClientRect();
             const offset = dom.getOffset(this.el);
-            const {offsetHeight, offsetWidth} = layerBody.el;
+            const {offsetHeight, offsetWidth} = layerBody;
             const style = {'z-index': nextZindex()};
             if (position === 'lt') {
                 style.top = (offset.top - (offsetHeight - rect.height) / 2) + 'px';
