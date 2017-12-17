@@ -146,12 +146,16 @@ export function asForm(schema) {
         },
         messages: {
             'input-comp-value-changed'(arg) {
-                this.validateForm();
+                const instantValidation = this.data.get('instantValidation');
+                if (instantValidation) {
+                    this.validateForm();
+                }
             }
         },
         initData() {
             return {
                 title: null,
+                instantValidation: true,
                 preview: false, // 预览模式
                 editing: false, // 编辑状态
                 submitting: false, // 提交状态

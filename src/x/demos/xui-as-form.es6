@@ -9,6 +9,7 @@ import ACEEditor from 'inf-ui/x/components/ACEEditor';
 import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
+import Switch from 'inf-ui/x/components/Switch';
 import Toast from 'inf-ui/x/components/Toast';
 import {createForm} from 'inf-ui/x/forms/createForm';
 
@@ -31,7 +32,10 @@ const template = `<template>
             <tr>
                 <td class="as-form-instance">
                     <div s-ref="form-container"></div>
-                    <div><xui-button skin="primary" on-click="validateForm">验证表单</xui-button></div>
+                    <div>
+                        开启实时验证：<xui-switch checked="{=instantValidation=}" on-change="onInstantValidationChanged" />
+                        <xui-button skin="primary" on-click="validateForm">验证表单</xui-button>
+                    </div>
                 </td>
                 <td class="as-form-data"><xui-hljs code="{{formData | stringify}}" /></td>
             </tr>
@@ -47,6 +51,7 @@ export default defineComponent({
         'x-row': Row,
         'xui-toastlabel': ToastLabel,
         'xui-select': Select,
+        'xui-switch': Switch,
         'xui-button': Button,
         'xui-hljs': SyntaxHighlighter,
         'xui-aceeditor': ACEEditor
@@ -58,6 +63,7 @@ export default defineComponent({
     },
     initData() {
         return {
+            instantValidation: true,
             examples: {
                 datasource: [
                     {text: '默认情况', value: kDefaultSchema},
@@ -89,6 +95,12 @@ export default defineComponent({
         this.data.set('schemaCode', schemaCode);
         this.buildFormBySchema({value});
     },
+    onInstantValidationChanged({value}) {
+        if (this.formInstance) {
+            this.formInstance.data.set('instantValidation', value);
+            this.validateForm();
+        }
+    },
     buildFormBySchema({value}) {
         this.nextTick(() => {
             const formContainer = this.ref('form-container');
@@ -98,8 +110,9 @@ export default defineComponent({
                     formContainer.innerHTML = '';
                 }
                 this.data.set('formData', {});
+                const instantValidation = this.data.get('instantValidation');
                 const FormComponent = createForm(value);
-                const formInstance = new FormComponent();
+                const formInstance = new FormComponent({data: {instantValidation}});
                 formInstance.watch('formData', formData => this.data.set('formData', formData));
                 formInstance.attach(formContainer);
                 this.formInstance = formInstance;
