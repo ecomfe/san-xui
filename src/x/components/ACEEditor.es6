@@ -52,13 +52,14 @@ const ACEEditor = defineComponent({
         }
     },
     inited() {
-        /**
         this.watch('value', value => {
             if (this.editor) {
-                this.editor.setValue(value, 1);
+                const currentValue = this.editor.getValue();
+                if (currentValue !== value) {
+                    this.editor.setValue(value, 1);
+                }
             }
         });
-        */
     },
     attached() {
         window.require([kUrl], () => {

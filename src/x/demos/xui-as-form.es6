@@ -24,7 +24,7 @@ const template = `<template>
     <xui-button on-click="buildForm" skin="primary">生成表单</xui-button>
     <br />
     <br />
-    <xui-aceeditor s-ref="editor" s-if="schemaCode" value="{=schemaCode=}" mode="ace/mode/json" />
+    <xui-aceeditor s-if="schemaCode" value="{=schemaCode=}" mode="ace/mode/json" />
     <br />
     <table class="typedefs as-form-preview" s-if="schemaCode">
         <tbody>
@@ -83,12 +83,8 @@ export default defineComponent({
         }
     },
     onExampleChanged({value}) {
-        const editor = this.ref('editor');
         const schemaCode = JSON.stringify(value, null, 2);
         this.data.set('schemaCode', schemaCode);
-        if (editor) {
-            editor.editor.setValue(schemaCode, 1);
-        }
         this.buildFormBySchema({value});
     },
     buildFormBySchema({value}) {
