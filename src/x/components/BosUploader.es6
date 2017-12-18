@@ -138,9 +138,15 @@ export default defineComponent({
             return;
         }
 
+        // FIXME(leeight) 奇怪，为啥会没有这个元素呢?
+        const btn = this.ref('btn');
+        if (!btn) {
+            return;
+        }
+
         const multiple = this.data.get('multiple');
         this.uploader = new baidubce.bos.Uploader({
-            browse_button: this.ref('btn').el,
+            browse_button: btn.el,
             auto_start: autoStart,
             multi_selection: multiple,
             bos_endpoint: bosEndpoint,

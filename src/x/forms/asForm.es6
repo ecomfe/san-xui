@@ -22,7 +22,7 @@ const Schema = AsyncValidator.default;
 function wrapAsItem(item, prefix, content) {
     return `
     <div class="${cx2('item', 'item-inline')} ${cx2('item-' + item.name)}">
-        <div class="${cx2('item-label')}${item.required ? ' required-label' : ''}" s-if="${prefix}.label">
+        <div class="${cx2('item-label')}{{requiredOn.${item.name} ? ' required-label' : ''}}" s-if="${prefix}.label">
             ${item.label}：
         </div>
         <div class="${cx2('item-content')}">
@@ -109,7 +109,7 @@ export function asForm(schema) {
             <slot name="actions" s-if="editable">
                 <div class="${cx('title-actions')}">
                     <ui-button on-click="startEditing" s-if="!editing">编辑</ui-button>
-                    <ui-button disabled="{{submitting}}" on-click="submit" skin="primary" s-if="editing">{{submitting ? '保存中...' : '保存'}}</ui-button>
+                    <ui-button disabled="{{submitting}}" on-click="submitEditing" skin="primary" s-if="editing">{{submitting ? '保存中...' : '保存'}}</ui-button>
                     <ui-button disabled="{{submitting}}" on-click="cancelEditing" s-if="editing">取消修改</ui-button>
                 </div>
             </slot>
@@ -164,18 +164,16 @@ export function asForm(schema) {
                 formData: {},
                 formErrors: null,
                 visibleOn: {},
-                hiddenOn: {}
+                hiddenOn: {},
+                requiredOn: {}
 
                 // disabledOn: {},
-                // requiredOn: {}
             };
         },
 
         inited() {
             // 根据 Name 来快速定位相关的配置
             const itemsMap = {};
-
-            const visibleOn = {};
 
             // {
             //   当 formData.a 变化的时候，需要重新计算 hiddenOn.b 和 hiddenOn.c 的值
@@ -189,9 +187,13 @@ export function asForm(schema) {
             //   'a': ['b', 'c']
             // }
             const hiddenOn = {};
+            const visibleOn = {};
+            const requiredOn = {};
+            const requiredOnInitValues = {};
 
             function appendToMap(item) {
                 itemsMap[item.name] = item;
+                requiredOnInitValues[item.name] = !!item.required;
 
                 if (item.visibleOn) {
                     if (_.isString(item.visibleOn)) {
@@ -210,6 +212,15 @@ export function asForm(schema) {
                         _.each(item.hiddenOn, (config, key) => appendList(hiddenOn, key, item.name));
                     }
                 }
+
+                if (item.requiredOn) {
+                    if (_.isString(item.requiredOn)) {
+                        appendList(requiredOn, item.requiredOn, item.name);
+                    }
+                    else if (_.isPlainObject(item.requiredOn)) {
+                        _.each(item.requiredOn, (config, key) => appendList(requiredOn, key, item.name));
+                    }
+                }
             }
 
             const controls = this.data.get('schema');
@@ -218,20 +229,33 @@ export function asForm(schema) {
             this.itemsMap = itemsMap;
             this.visibleOn = visibleOn;
             this.hiddenOn = hiddenOn;
+            this.requiredOn = requiredOn;
 
-            const triggerKeys = _.uniq([..._.keys(visibleOn), ..._.keys(hiddenOn)]);
+            // 监控特定数据项的变化
+            const triggerKeys = this.__getTriggerKeys();
             _.each(triggerKeys, name => this.watch(`formData.${name}`, () => this.__refreshRelatedFields(name)));
-
             this.watch('submitting', submitting => {
                 if (!submitting) {
                     this.data.set('editing', false);
                     this.data.set('preview', true);
                 }
             });
+
+            // 给 requiredOn 加上默认值，从 config.required 解析出来的
+            this.data.set('requiredOn', requiredOnInitValues);
         },
 
         attached() {
-            _.each(Form.$fields, name => this.__refreshRelatedFields(name));
+            const triggerKeys = this.__getTriggerKeys();
+            _.each(triggerKeys, name => this.__refreshRelatedFields(name));
+        },
+
+        __getTriggerKeys() {
+            return _.uniq([
+                ..._.keys(this.visibleOn),
+                ..._.keys(this.hiddenOn),
+                ..._.keys(this.requiredOn)
+            ]);
         },
 
         __refreshRelatedFields(name) {
@@ -258,6 +282,14 @@ export function asForm(schema) {
                         if (hidden && config.unsetValueOnInvisible) {
                             this.data.set(`formData.${itemName}`, undefined);
                         }
+                    });
+                }
+
+                if (this.requiredOn[name]) {
+                    _.each(this.requiredOn[name], itemName => {
+                        const config = this.itemsMap[itemName];
+                        const required = evalExpr(config.requiredOn, scope);
+                        this.data.set(`requiredOn.${itemName}`, required);
                     });
                 }
             });
@@ -303,10 +335,20 @@ export function asForm(schema) {
             });
         },
 
+        submitEditing() {
+            this.validateForm().then(() => {
+                const formKey = this.getFormKey();
+                const formData = this.getFormData();
+                this.data.set('submitting', true);
+                this.dispatch('submit', {formKey, formData});
+            });
+        },
+
         buildFormValidator() {
             const formValidator = {};
             _.each(this.itemsMap, (config, name) => {
-                const {validator, validations, validationErrors, required} = config;
+                const {validator, validations, validationErrors} = config;
+                const required = this.data.get(`requiredOn.${name}`);
                 const rules = [];
                 if (validator) {
                     // 自定义的验证规则
@@ -345,12 +387,15 @@ export function asForm(schema) {
         },
 
         validateForm() {
-            if (!this.validator) {
-                this.validator = this.buildFormValidator();
+            const preview = this.data.get('preview');
+            if (preview) {
+                return Promise.resolve();
             }
+
             return new Promise((resolve, reject) => {
                 const formData = this.getFormData();
-                this.validator.validate(formData, (errors, fields) => {
+                const validator = this.buildFormValidator();
+                validator.validate(formData, (errors, fields) => {
                     if (!errors) {
                         this.data.set('formErrors', null);
                         resolve();
@@ -360,8 +405,20 @@ export function asForm(schema) {
                     const formErrors = {};
                     for (let i = 0; i < errors.length; i++) {
                         const item = errors[i];
-                        formErrors[item.field] = item.message;
+                        const visible = this.data.get(`visibleOn.${item.field}`);
+                        const hidden = this.data.get(`hiddenOn.${item.field}`);
+                        // TODO(leeight) disable 的情况
+                        if (!hidden && visible !== false) {
+                            // 如果输入项是可见的，那么才考虑这个错误信息
+                            formErrors[item.field] = item.message;
+                        }
                     }
+
+                    if (_.isEmpty(formErrors)) {
+                        this.data.set('formErrors', null);
+                        resolve();
+                    }
+
                     this.data.set('formErrors', formErrors);
                     reject(formErrors);
                 });
@@ -373,19 +430,21 @@ export function asForm(schema) {
             // 转化一下类型
             _.each(formData, (value, key) => {
                 const config = this.itemsMap[key];
-                if (value != null && config && config.type === 'number') {
+                if (value == null) {
+                    return;
+                }
+                if (config.type === 'number') {
                     // 把 string 类型转化为 number 类型，否则验证的时候会失败
                     formData[key] = parseFloat(value, 10);
                 }
+                else if (config.type === 'text') {
+                    // 把 其它 类型转化为 string 类型，否则验证的时候会失败
+                    formData[key] = String(value);
+                }
+                // TODO(leeight)
+                // 其它的类型应该如何处理呢？或许考虑换一个 validator 的库了??
             });
             return formData;
-        },
-
-        submit() {
-            const formKey = this.getFormKey();
-            const formData = this.getFormData();
-            this.data.set('submitting', true);
-            this.dispatch('submit', {formKey, formData});
         }
     });
 
