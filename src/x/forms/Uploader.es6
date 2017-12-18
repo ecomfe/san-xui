@@ -39,8 +39,22 @@ const Uploader = defineComponent({ // eslint-disable-line
             value: null,
             files: [],
             keyCb(file) {
+                const date = new Date();
+                const year = date.getFullYear();
+
+                let month = date.getMonth() + 1;
+                if (month < 10) {
+                    month = '0' + month;
+                }
+
+                let day = date.getDate();
+                if (day < 10) {
+                    day = '0' + day;
+                }
+
                 const uuid = UUID.generate();
-                return uuid + '/' + file.name;
+                const key = year + '/' + month + '/' + day + '/' + uuid + '/' + file.name;
+                return key;
             }
         };
     },
