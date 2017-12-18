@@ -14,11 +14,13 @@ import Toast from 'inf-ui/x/components/Toast';
 import {createForm} from 'inf-ui/x/forms/createForm';
 
 import Row from './Row';
-import {kDefaultSchema, kSchema$eq, kSchema$in, kSchema$gt, kSchema$validations} from './examples/formSchemas';
+import {
+    kDefaultSchema, kSchema$eq, kSchema$in,
+    kSchema$gt, kSchema$validations, kSchema$requiredOn
+} from './examples/formSchemas';
 
 /* eslint-disable */
 const template = `<template>
-<xui-toastlabel>暂时还不支持表单验证的逻辑</xui-toastlabel>
 <x-row label="[default]">
     <xui-select width="300" on-change="onExampleChanged" datasource="{{examples.datasource}}"></xui-select>
     <xui-button on-click="buildForm" skin="primary">生成表单</xui-button>
@@ -70,7 +72,8 @@ export default defineComponent({
                     {text: '表单联动 visibleOn: $eq, $ne', value: kSchema$eq},
                     {text: '表单联动 visibleOn: $in, $nin', value: kSchema$in},
                     {text: '表单联动 $gt, $lt, $gte, $lte', value: kSchema$gt},
-                    {text: '表单验证', value: kSchema$validations}
+                    {text: '表单验证', value: kSchema$validations},
+                    {text: '表单验证 requiredOn', value: kSchema$requiredOn}
                 ]
             },
             formData: {},

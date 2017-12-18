@@ -291,3 +291,27 @@ export const kSchema$validations = {
         }
     ]
 };
+
+export const kSchema$requiredOn = {
+    '//': '介绍 requiredOn 的用法',
+    'controls': [
+        {
+            label: '性别',
+            type: 'select',
+            name: 'gender',
+            required: true,
+            datasource: [
+                {text: '女', value: '女'},
+                {text: '男', value: '男'}
+            ]
+        },
+        {
+            label: '年龄',
+            type: 'number',
+            name: 'age',
+            requiredOn: {
+                gender: '女'
+            }
+        }
+    ]
+};
