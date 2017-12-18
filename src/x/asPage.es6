@@ -30,29 +30,29 @@ export function asPage(schema, MainComponent) {
         with-sidebar="{{withSidebar}}"
         breadcrumbs="{{breadcrumbs}}"
     >
-        <div slot="filter" s-if="withFilter">
-            <x-filter
-                s-ref="filter"
-                title="{{filter.title}}"
-                submit-text="{{filter.submitText}}"
-                controls="{{filter.controls}}"
-                on-submit="onFilter($event)" />
-        </div>
-
-        <div slot="tb-filter" s-if="withToolbarFilter">
-            <x-filter
-                s-ref="filter"
-                title="{{filter.title}}"
-                submit-text="{{filter.submitText}}"
-                controls="{{filter.controls}}"
-                on-submit="onFilter($event)" />
-        </div>
-
-        <div slot="helps" s-if="helps.length">
+        <div class="list-page-helps" slot="helps" s-if="helps.length">
             <x-toolbar controls="{{helps}}" />
         </div>
 
-        <div slot="tb-left" s-if="toolbar.length">
+        <div class="list-page-filter" slot="filter" s-if="withFilter">
+            <x-filter
+                s-ref="filter"
+                title="{{filter.title}}"
+                submit-text="{{filter.submitText}}"
+                controls="{{filter.controls}}"
+                on-submit="onFilter($event)" />
+        </div>
+
+        <div class="list-page-tb-left-filter" slot="tb-filter" s-if="withToolbarFilter">
+            <x-filter
+                s-ref="filter"
+                title="{{filter.title}}"
+                submit-text="{{filter.submitText}}"
+                controls="{{filter.controls}}"
+                on-submit="onFilter($event)" />
+        </div>
+
+        <div class="list-page-tb-left-toolbar" slot="tb-left" s-if="toolbar.length">
             <x-toolbar controls="{{toolbar}}" on-item-clicked="onToolbarEvent($event)" />
             <x-bulk-actions controls="{{bulkActions}}" disabled="{{!enableBuckActions}}" />
         </div>
