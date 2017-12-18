@@ -12,6 +12,8 @@ import TextBox from './TextBox';
 
 const cx = create('ui-monthview');
 
+const kDefaultRange = {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)};
+
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}">
     <div class="${cx('head')}">
@@ -101,7 +103,7 @@ const MonthView = defineComponent({
 
             value: new Date(),
             titles: ['一', '二', '三', '四', '五', '六', '日'],
-            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
+            range: kDefaultRange,
             yearDs: {datasource: []},
             monthDs: {datasource: []}
         };
@@ -146,6 +148,11 @@ const MonthView = defineComponent({
         this.data.set('monthDs.value', month);
     },
     inited() {
+        const range = this.data.get('range');
+        // 外部有可能传过来的range为undefined
+        if (!range) {
+            this.data.set('range', kDefaultRange);
+        }
         // value = "2017-12-14T10:44:01Z"
         const value = this.data.get('value');
         if (value && typeof value === 'string') {

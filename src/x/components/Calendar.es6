@@ -12,6 +12,7 @@ import MonthView from './MonthView';
 import Button from './Button';
 
 const cx = create('ui-calendar');
+const kDefaultRange = {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)};
 
 /* eslint-disable */
 const template = `<div class="${cx('xx')}">
@@ -50,13 +51,15 @@ const Calendar = defineComponent({  // eslint-disable-line
             const disabled = this.data.get('disabled');
             const range = this.data.get('range');
             const value = this.data.get('value');
-            return disabled || moment(range.begin).unix() >= moment(value).add(-1, 'day').unix();
+            // computed的执行早于了inted，所以需要判断下range
+            return disabled || (range && moment(range.begin).unix() >= moment(value).add(-1, 'day').unix());
         },
         nextDisabled() {
             const disabled = this.data.get('disabled');
             const range = this.data.get('range');
             const value = this.data.get('value');
-            return disabled || moment(range.end).unix() <= moment(value).unix();
+            // computed的执行早于了inted，所以需要判断下range
+            return disabled || (range && moment(range.end).unix() <= moment(value).unix());
         }
     },
     initData() {
@@ -66,12 +69,16 @@ const Calendar = defineComponent({  // eslint-disable-line
             prev: false,
             next: false,
             active: false,
-            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
+            range: kDefaultRange,
             format: 'YYYY-MM-DD'
         };
     },
     inited() {
-        let value = this.data.get('value');
+        let {value, range} = this.data.get();
+        // 外部有可能传过来的range为undefined
+        if (!range) {
+            this.data.set('range', kDefaultRange);
+        }
         if (!value) {
             value = new Date();
         }
