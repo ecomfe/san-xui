@@ -241,15 +241,23 @@ export function asForm(schema) {
 
                 if (this.visibleOn[name]) {
                     _.each(this.visibleOn[name], itemName => {
-                        const expression = this.itemsMap[itemName].visibleOn;
-                        this.data.set(`visibleOn.${itemName}`, evalExpr(expression, scope));
+                        const config = this.itemsMap[itemName];
+                        const visible = evalExpr(config.visibleOn, scope);
+                        this.data.set(`visibleOn.${itemName}`, visible);
+                        if (!visible && config.unsetValueOnInvisible) {
+                            this.data.set(`formData.${itemName}`, undefined);
+                        }
                     });
                 }
 
                 if (this.hiddenOn[name]) {
                     _.each(this.hiddenOn[name], itemName => {
-                        const expression = this.itemsMap[itemName].hiddenOn;
-                        this.data.set(`hiddenOn.${itemName}`, evalExpr(expression, scope));
+                        const config = this.itemsMap[itemName];
+                        const hidden = evalExpr(config.hiddenOn, scope);
+                        this.data.set(`hiddenOn.${itemName}`, hidden);
+                        if (hidden && config.unsetValueOnInvisible) {
+                            this.data.set(`formData.${itemName}`, undefined);
+                        }
                     });
                 }
             });
