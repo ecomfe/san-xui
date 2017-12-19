@@ -5,7 +5,7 @@
 import $ from 'jquery';
 import {defineComponent} from 'san';
 
-import {create} from './util';
+import {create, nextZindex} from './util';
 
 const cx = create('ui-toast');
 const kToastContainerId = cx('container') + '-' + new Date().getTime();
@@ -58,6 +58,7 @@ function getToastContainer() {
         container = document.createElement('DIV');
         container.id = kToastContainerId;
         container.className = cx('container');
+        container.style.zIndex = nextZindex();
         document.body.appendChild(container);
     }
     return container;

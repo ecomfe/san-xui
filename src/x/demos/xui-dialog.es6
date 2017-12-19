@@ -23,6 +23,7 @@ const template = `<template>
     <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
     <xui-button on-click="closeTheDialog">关闭.</xui-button>
     <xui-button on-click="openNewDialog">打开一个新的Dialog.</xui-button>
+    <xui-button on-click="showToast">show toast.</xui-button>
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
 </xui-dialog>
 
@@ -106,5 +107,8 @@ export default defineComponent({
     showPlainDialog() {
         plain({message: 'Plain dialog (w=500)', width: 500})
             .then(() => Toast.success('OK'));
+    },
+    showToast() {
+        Toast.success('ok');
     }
 });
