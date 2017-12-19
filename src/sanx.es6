@@ -21,6 +21,7 @@ import $locator from './mixins/locator';
 import {i18n} from './mixins/filters';
 import $shim from './mixins/shim';
 import {$post} from './mixins/ajax';
+import $toast from './mixins/toast';
 import {alert, confirm, plain} from './x/biz/helper';
 
 const kDefaultComponents = {
@@ -73,7 +74,7 @@ export function defineComponent(options) {
     const $ajax = {
         $post
     };
-    const $options = u.extend($ajax, $dialog, $data, $locator, $shim, options);
+    const $options = u.extend($dialog, $ajax, $toast, $data, $locator, $shim, options);
 
     return san.defineComponent($options);
 }

@@ -28,7 +28,7 @@ function wrapAsItem(item, prefix, content) {
         <div class="${cx2('item-content')}">
             ${content}
             <div class="${cx2('item-invalid-label')}" s-if="formErrors.${item.name}">{{formErrors.${item.name}}}</div>
-            <div class="${cx2('item-help')}" s-if="${prefix}.help">{{${prefix}.help | raw}}</div>
+            <div class="${cx2('item-help')}" s-if="!preview && ${prefix}.help">{{${prefix}.help | raw}}</div>
         </div>
     </div>
     `;
