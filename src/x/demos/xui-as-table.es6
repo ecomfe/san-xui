@@ -8,7 +8,7 @@ import Tip from 'inf-ui/x/components/Tip';
 import Toast from 'inf-ui/x/components/Toast';
 import Button from 'inf-ui/x/components/Button';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import {asTable} from 'inf-ui/x/components/asTable';
+import Table from 'inf-ui/x/components/Table';
 
 import Row from './Row';
 
@@ -17,13 +17,11 @@ const kTableColumns = [
     {name: 'age', label: '年龄', sortable: true},
     {name: 'gender', label: '性别', sortable: true}
 ];
-const MyTable = asTable(kTableColumns);
 
 const template = `
 <template>
 
 <xui-toastlabel>
-表格的列是在组件编译期间确定的，无法动态的修改<br/>
 项目中的真实案例，请参考：<a target="_blank" href="http://icode.baidu.com/repos/baidu/bce-multimedia/face-demo/tree/master:fe_source/src/face/v3/">face-demo</a>
 </xui-toastlabel>
 
@@ -38,7 +36,7 @@ const template = `
             {{row.age}}
             <xui-tip message="{{row.name}} 的年龄是：{{row.age}}" />
         </div>
-        <div slot="c-gender"><xui-button>{{row.gender}}</xui-button></div>
+        <div slot="c-gender"><xui-button on-click="incAge(rowIndex)">{{row.gender}}, CLICK TO INC THE AGE</xui-button></div>
     <xui-table>
 </x-row>
 
@@ -52,7 +50,7 @@ export default defineComponent({
         'xui-tip': Tip,
         'xui-toastlabel': ToastLabel,
         'xui-button': Button,
-        'xui-table': MyTable
+        'xui-table': Table
     },
     onTableRowSelected() {
         Toast.info('Table row selected');
@@ -68,5 +66,10 @@ export default defineComponent({
                 ]
             }
         };
+    },
+    incAge(rowIndex) {
+        const key = `table.datasource[${rowIndex}].age`;
+        const age = this.data.get(key);
+        this.data.set(key, age + 10);
     }
 });

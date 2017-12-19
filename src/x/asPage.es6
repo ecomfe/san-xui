@@ -18,6 +18,9 @@ import {dialogAlertAction} from './biz/dialogAlertAction';
 import {dialogPlainAction} from './biz/dialogPlainAction';
 import {dialogXLoaderAction} from './biz/dialogXLoaderAction';
 
+// TODO(user) 注意使用 schema.$withTip 的地方，可能并不是一个好的设计
+// 为了让不同的页面可以注入一些私货，貌似在生成模板的地方需要插入一些私货，否则只有在页面 attached 之后再动态的创建一些组件？
+
 export function asPage(schema, MainComponent) {
     /* eslint-disable */
     const template = `<template>

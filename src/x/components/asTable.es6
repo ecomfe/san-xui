@@ -15,16 +15,22 @@ const cx = create('ui-table');
 const kDefaultHeadTemplate = `
 <th class="{{col | hcellClass}}" style="{{col | cellStyle}}" s-for="col, colIndex in tableColumns">
     <div class="${cx('hcell-text')}">
-        <div s-if="col.sortable" class="${cx('hcell-text-content')}" on-click="onSort(col, colIndex)">
-            {{col.label}}
-            <div class="${cx('hsort')}"></div>
-        </div>
-        <div s-else class="${cx('hcell-text-content')}">{{col.label}}</div>
-        <ui-table-filter
-            s-if="col.filter"
-            on-change="onFilter($event, col)"
-            options="{{col.filter.options}}"
-        />
+        <slot
+            name="h-{{col.name}}"
+            var-col="{{col}}"
+            var-colIndex="{{colIndex}}"
+        >
+            <div s-if="col.sortable" class="${cx('hcell-text-content')}" on-click="onSort(col, colIndex)">
+                {{col.label}}
+                <div class="${cx('hsort')}"></div>
+            </div>
+            <div s-else class="${cx('hcell-text-content')}">{{col.label}}</div>
+            <ui-table-filter
+                s-if="col.filter"
+                on-change="onFilter($event, col)"
+                options="{{col.filter.options}}"
+            />
+        </slot>
     </div>
 </th>
 `;
@@ -34,11 +40,19 @@ const kDefaultCellTemplate = `
     style="{{col | cellStyle}}"
     s-for="col, colIndex in tableColumns">
     <div class="${cx('cell-text')}">
-        {{item | tableCell(col.name, col, rowIndex, colIndex) | raw}}
-        <a s-if="col.editcmd || col.editable"
-            data-command="{{col.editcmd || 'EDIT'}}"
-            class="${cx('cell-editentry')}"
-            href="javascript:void(0)"><i class="iconfont icon-edit"></i></a>
+        <slot
+            name="c-{{col.name}}"
+            var-row="item"
+            var-rowIndex="rowIndex"
+            var-col="{{col}}"
+            var-colIndex="{{colIndex}}"
+        >
+            {{item | tableCell(col.name, col, rowIndex, colIndex) | raw}}
+            <a s-if="col.editcmd || col.editable"
+                data-command="{{col.editcmd || 'EDIT'}}"
+                class="${cx('cell-editentry')}"
+                href="javascript:void(0)"><i class="iconfont icon-edit"></i></a>
+        </slot>
     </div>
 </td>
 `;
