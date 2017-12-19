@@ -114,6 +114,9 @@ export const blocks = [
                 text: 'xui-richtexteditor'
             },
             {
+                text: 'xui-ckeditor'
+            },
+            {
                 text: 'xui-aceeditor'
             }
         ]
