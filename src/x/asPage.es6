@@ -4,7 +4,6 @@
  */
 
 import _ from 'lodash';
-import Promise from 'promise';
 import {defineComponent} from 'inf-ui/sanx';
 
 import Toolbar from './biz/Toolbar';
@@ -20,6 +19,9 @@ import {dialogXLoaderAction} from './biz/dialogXLoaderAction';
 
 // TODO(user) 注意使用 schema.$withTip 的地方，可能并不是一个好的设计
 // 为了让不同的页面可以注入一些私货，貌似在生成模板的地方需要插入一些私货，否则只有在页面 attached 之后再动态的创建一些组件？
+
+// 一个标记而已
+const kShieldType = {};
 
 export function asPage(schema, MainComponent) {
     /* eslint-disable */
@@ -433,18 +435,37 @@ export function asPage(schema, MainComponent) {
             return tableData;
         },
 
-        loadPage(payload) {
-            const table = this.data.get('table');
-            if (table.loading) {
-                return Promise.resolve();
-            }
+        __doRequest(url, payload) {
+            return this.$post(url, payload)
+                .then(page => {
+                    return {
+                        searchCriteria: payload,
+                        searchResponse: page
+                    };
+                })
+                .catch(error => {
+                    throw {
+                        searchCriteria: payload,
+                        error
+                    };
+                });
+        },
 
+        loadPage(payload) {
             this.data.set('table.loading', true);
             const requestPayload = typeof this.$onRequest === 'function'
                 ? this.$onRequest(payload) || payload
                 : payload;
-            return this.$post(schema.body.api, requestPayload)
-                .then(page => {
+            // this.__searchCriteria 保存最后一次的查询条件
+            this.__searchCriteria = requestPayload;
+            return this.__doRequest(schema.body.api, requestPayload)
+                .then(({searchCriteria, searchResponse}) => {
+                    if (this.__searchCriteria === kShieldType
+                        || this.__searchCriteria !== searchCriteria) {
+                        return;
+                    }
+                    this.__searchCriteria = kShieldType;
+                    const page = searchResponse;
                     const responsePayload = typeof this.$onResponse === 'function'
                         ? this.$onResponse(page) || page
                         : page;
@@ -458,7 +479,12 @@ export function asPage(schema, MainComponent) {
                     this.data.set('pager.page', pageNo);
                     this.data.set('pager.count', resultTotalCount);
                 })
-                .fail(error => {
+                .catch(({searchCriteria, error}) => {
+                    if (this.__searchCriteria === kShieldType
+                        || this.__searchCriteria !== searchCriteria) {
+                        return;
+                    }
+                    this.__searchCriteria = kShieldType;
                     if (typeof this.$onError === 'function') {
                         this.$onError(error);
                     }
@@ -476,10 +502,10 @@ export function asPage(schema, MainComponent) {
 
         // FIXME(leeight) 这个 messages 的应用场景如何?
         messages: {
-            'refresh': function () {
+            'refresh'() {
                 this.refreshTable();
             },
-            '*': function (arg) {
+            '*'(arg) {
                 // 目前只有schema.body.$commands中的方法。如果后续添加了有不在$commands中的方法，可以再进行判断
                 this.dispatchCommand(arg.name, arg.value);
             }
