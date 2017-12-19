@@ -74,7 +74,7 @@ Toast.success = toastBuilder('success');
 Toast.info = toastBuilder('info');
 Toast.warning = toastBuilder('warning');
 Toast.error = toastBuilder('error');
-
+Toast.alert = toastBuilder('warning'); // 兼容历史用法
 Toast.normal = toastBuilder('success'); // 兼容bat-ria/mvc/FormAction里调用Toast的方式
 
 export default Toast;
