@@ -9,6 +9,8 @@ import Icon from 'inf-ui/x/components/Icon';
 import Loading from 'inf-ui/x/components/Loading';
 import TextBox from 'inf-ui/x/components/TextBox';
 
+import Row from './Row';
+
 /* eslint-disable */
 const template = `<template>
 <xui-loading s-if="loading" />
@@ -16,11 +18,13 @@ const template = `<template>
     <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />
     Total count: {{filteredIcons.length}}
     <br />
-    <div class="icons">
-        <div s-for="icon in filteredIcons" class="tooltipped tooltipped-n" aria-label="{{icon}}">
-            <xui-icon name="{{icon}}" /><br />{{icon}}
+    <x-row label="{{g.name}} ({{g.icons.length}})" s-for="g in groupedIcons">
+        <div class="icons">
+            <div s-for="icon in g.icons" class="tooltipped tooltipped-n" aria-label="{{icon}}">
+                <xui-icon name="{{icon}}" /><br />{{icon}}
+            </div>
         </div>
-    </div>
+    </x-row>
 </div>
 </template>`;
 /* eslint-enable */
@@ -38,13 +42,35 @@ function getIcons() {
                 icons.push(match[1]);
             }
 
+            icons.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
             return icons;
         });
+}
+
+function groupIcons(icons) {
+    const groups = [];
+
+    let group = null;
+    u.each(icons, icon => {
+        const groupName = icon.substr(0, 1).toUpperCase();
+        if (!group || group.name !== groupName) {
+            group = {
+                name: groupName,
+                icons: []
+            };
+            groups.push(group);
+        }
+        group.icons.push(icon);
+    });
+
+    return groups;
 }
 
 export default defineComponent({
     template,
     components: {
+        'x-row': Row,
         'xui-loading': Loading,
         'xui-textbox': TextBox,
         'xui-icon': Icon
@@ -53,10 +79,14 @@ export default defineComponent({
         return {
             loading: true,
             keyword: '',
+            groupedIcons: [],
             icons: []
         };
     },
     computed: {
+        groupedIcons() {
+            return groupIcons(this.data.get('filteredIcons'));
+        },
         filteredIcons() {
             const keyword = this.data.get('keyword');
             const icons = this.data.get('icons');
