@@ -318,6 +318,7 @@ export function asForm(schema) {
 
             this.data.set('editing', true);
             this.data.set('preview', false);
+            this.data.set('formErrors', null);
         },
 
         cancelEditing() {
@@ -332,6 +333,7 @@ export function asForm(schema) {
             this.nextTick(() => {
                 this.data.set('editing', false);
                 this.data.set('preview', true);
+                this.data.set('formErrors', null);
             });
         },
 
