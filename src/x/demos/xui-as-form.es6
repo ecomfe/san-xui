@@ -14,10 +14,12 @@ import Toast from 'inf-ui/x/components/Toast';
 import {createForm} from 'inf-ui/x/forms/createForm';
 
 import Row from './Row';
+/* eslint-disable */
 import {
     kDefaultSchema, kSchema$eq, kSchema$in,
     kSchema$gt, kSchema$validations, kSchema$requiredOn
 } from './examples/formSchemas';
+/* eslint-enable */
 
 /* eslint-disable */
 const template = `<template>
