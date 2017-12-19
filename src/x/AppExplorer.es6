@@ -5,7 +5,6 @@
 
 import {defineComponent} from 'san';
 import Loading from 'inf-ui/x/components/Loading';
-import Ghost from 'inf-ui/x/components/Ghost';
 import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Section from './demos/Section';
@@ -16,7 +15,7 @@ const template = `<div class="app-explorer">
     <div class="error" s-if="error">{{error}}</div>
     <x-section label="{{title}}" s-if="title">
         <ui-loading s-if="loading" />
-        <ui-ghost s-ref="ghost" />
+        <div s-ref="ghost"></div>
     </x-section>
     <x-section label="DataTypes" open="{{false}}">
         <x-datatype-explorer key="{{title}}" comp="{{comp}}" />
@@ -31,7 +30,6 @@ export default defineComponent({
     template,
     components: {
         'ui-loading': Loading,
-        'ui-ghost': Ghost,
         'ui-hljs': SyntaxHighlighter,
         'x-datatype-explorer': DataTypeExplorer,
         'x-section': Section
@@ -44,9 +42,13 @@ export default defineComponent({
     },
     inited() {
         this.watch('comp', comp => {
-            const container = this.ref('ghost').el;
-            comp.attach(container);
-            this.data.set('open', false);
+            this.nextTick(() => {
+                const container = this.ref('ghost');
+                if (comp && container) {
+                    comp.attach(container);
+                }
+                this.data.set('open', false);
+            });
         });
     }
 });
