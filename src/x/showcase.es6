@@ -110,7 +110,7 @@ const App = defineComponent({   // eslint-disable-line
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
         this.data.set('aside.expand', false);
-        const sourceUrl = window.require.toUrl(moduleId) + '.es6';
+        const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + '.es6';
         fetch(sourceUrl)
             .then(response => response.text())
             .then(code => this.data.set('explorer.code', code));
