@@ -905,6 +905,25 @@
     vertical-align: middle;
 }
 
+/* ui-table-subrow-label */
+.ui-table-subrow-label {
+    display: inline-block;
+    cursor: pointer;
+    color: #108cee;
+    font-size: 12px;
+    transition: all 0.5s ease-out;
+
+    &.open {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+
+    &.close {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+}
+
 /* ui-frozen-column-table */
 .ui-frozen-column-table .ui-table-hcell .ui-table-hcell-text {
     white-space: nowrap;

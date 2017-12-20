@@ -137,6 +137,8 @@ export function asTable(columns) {
                     </th>
                     <th class="${cx('hcell', 'hcell-sel')}" s-if="select === 'single'">
                     </th>
+                    <th class="${cx('hcell', 'hcell-sel')}" s-if="hasSubrow">
+                    </th>
                     ${tableHeadsTemplate}
                 </tr>
             </thead>
@@ -151,11 +153,10 @@ export function asTable(columns) {
                         <slot name="empty">{{emptyText}}</slot>
                     </td>
                 </tr>
-                <tr s-else
-                    class="{{item | rowClass(rowIndex)}}"
+                <template s-else s-for="item, rowIndex in datasource">
+                <tr class="{{item | rowClass(rowIndex)}}"
                     on-mouseenter="onEnterRow(item, rowIndex)"
-                    on-mouseleave="onLeaveRow(item, rowIndex)"
-                    s-for="item, rowIndex in datasource">
+                    on-mouseleave="onLeaveRow(item, rowIndex)">
                     <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                         <div class="${cx('cell-text', 'cell-sel')}">
                             <input disabled="{=item.xui__disabled=}"
@@ -175,8 +176,29 @@ export function asTable(columns) {
                                 class="${cx('single-select')}" />
                         </div>
                     </td>
+                    <td class="${cx('cell', 'cell-sel')}" s-if="hasSubrow">
+                        <div class="${cx('cell-text', 'cell-sel')}">
+                            <label class="${cx('subrow-label')} {{item.xui__expanded ? 'open' : 'close'}} iconfont icon-downarrow"
+                                on-click="toggleSubrow(rowIndex)"></label>
+                        </div>
+                    </td>
                     ${tableCellsTemplate}
                 </tr>
+                <tr s-if="item.xui__expanded">
+                    <td colspan="{{columnCount}}">
+                        <div class="${cx('subrow-wrapper')}">
+                            <slot
+                                name="sub-{{item.name}}"
+                                var-row="item"
+                                var-subrow="item.subrow"
+                                var-rowIndex="rowIndex"
+                            >
+                                {{row | raw}}
+                            </slot>
+                        </div>
+                    </td>
+                </tr>
+                </template> 
             </tbody>
         </table>
         <div class="${cx('loading')}" s-if="loading"><slot name="loading"><ui-loading /></slot></div>
@@ -210,7 +232,8 @@ export function asTable(columns) {
             columnCount() {
                 const tableColumns = this.data.get('tableColumns');
                 const select = this.data.get('select');
-                return tableColumns.length + (/^(multi|single)$/.test(select) ? 1 : 0);
+                const hasSubrow = this.data.get('hasSubrow');
+                return tableColumns.length + (/^(multi|single)$/.test(select) ? 1 : 0) + (hasSubrow ? 1 : 0);
             },
             selectAll() {
                 const loading = this.data.get('loading');
@@ -229,6 +252,12 @@ export function asTable(columns) {
                     .compact()
                     .value();
                 return selectedItems;
+            },
+            expandedItems() {
+                const datasource = this.data.get('datasource');
+                const expandedIndex = this.data.get('expandedIndex');
+                const expandedItems = _.at(datasource, expandedIndex);
+                return expandedItems;
             }
         },
 
@@ -278,6 +307,7 @@ export function asTable(columns) {
                 schema: [],
                 datasource: [],
                 selectedIndex: [],
+                expandedIndex: [],
                 cellBuilder: null,
                 tableWidth: '100%',
                 select: 'none',
@@ -285,13 +315,27 @@ export function asTable(columns) {
                 radioName: `e${nextZindex()}`,
                 loading: false,
                 emptyText: '暂无数据',
+                hasSubrow: false,
                 error: null
             };
         },
 
-        dispatchEvent() {
-            const {selectedIndex, selectedItems} = this.data.get();
-            this.fire('selected-change', {selectedIndex: [...selectedIndex], selectedItems});
+        dispatchEvent(eventType, args = {}) {
+            switch (eventType) {
+                case 'selected':
+                    const {selectedIndex, selectedItems} = this.data.get();
+                    this.fire('selected-change', $.extend({selectedIndex: [...selectedIndex], selectedItems}, args));
+                    break;
+                case 'subrow-expand':
+                    this.fire('subrow-expand', args);
+                    break;
+                case 'subrow-collapse':
+                    this.fire('subrow-collapse', args);
+                    break;
+                default:
+                    break;
+            };
+            
         },
 
         onSelectAllClicked(e) {
@@ -310,7 +354,7 @@ export function asTable(columns) {
                 // 如果是 number 类型的话，匹配不上，需要转成 string 类型
                 this.data.set('selectedIndex', _.map(selectedIndex, String));
             }
-            this.watch('selectedIndex', () => this.dispatchEvent());
+            this.watch('selectedIndex', () => this.dispatchEvent('selected'));
         },
 
         onEnterRow(item, rowIndex) {
@@ -344,10 +388,29 @@ export function asTable(columns) {
             this.fire('sort', {orderBy, order});
         },
 
+        toggleSubrow(rowIndex) {
+            const expandedIndex = this.data.get('expandedIndex');
+            const xuiExpanded = `datasource[${rowIndex}].xui__expanded`;
+            if (this.data.get(xuiExpanded)) {
+                this.data.set(xuiExpanded, false);
+                this.data.remove('expandedIndex', rowIndex);
+                this.dispatchEvent('subrow-collapse', {rowIndex});
+            }
+            else {
+                this.data.set(xuiExpanded, true);
+                this.data.push('expandedIndex', rowIndex);
+                this.dispatchEvent('subrow-expand', {rowIndex});
+            }
+        },
+
         attached() {
             const selectedIndex = this.data.get('selectedIndex');
+            const expandedIndex = this.data.get('expandedIndex');
             if (selectedIndex && selectedIndex.length) {
-                this.dispatchEvent();
+                this.dispatchEvent('selected');
+            }
+            if (expandedIndex && expandedIndex.length) {
+                _.forEach(expandedIndex, item => this.data.set(`datasource[${item}].xui__expanded`, true));
             }
             $(this.el).on('click', 'a[data-command]', e => {
                 // 因为有 head 的存在，rowIndex 是从 1开始的

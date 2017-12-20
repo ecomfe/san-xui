@@ -50,6 +50,9 @@ export const blocks = [
                 text: 'xui-as-table'
             },
             {
+                text: 'xui-subrow-table'
+            },
+            {
                 text: 'xui-pager'
             },
             {
