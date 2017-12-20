@@ -14,14 +14,20 @@ const cx = create('ui-textbox');
 const template = `<div class="{{mainClass}}">
     <div s-if="addon && addonPosition === 'begin'" class="${cx('addon')}">{{addon}}</div>
     <textarea s-if="multiline"
+        s-ref="inputEl"
         on-input="onInput"
+        on-keyup="onKeyUp($event)"
+        on-keydown="onKeyDown($event)"
         on-keypress="onKeyPress($event)"
         value="{=value=}"
         disabled="{{disabled}}"
         placeholder="{{placeholder}}"
         style="{{textboxStyle}}"></textarea>
     <input s-else
+        s-ref="inputEl"
         on-input="onInput"
+        on-keyup="onKeyUp($event)"
+        on-keydown="onKeyDown($event)"
         on-keypress="onKeyPress($event)"
         on-focus="onFocus($event)"
         on-blur="onBlur($event)"
@@ -69,6 +75,15 @@ const TextBox = defineComponent({
         width: DataTypes.number,
         height: DataTypes.number
     },
+    focus() {
+        const inputEl = this.ref('inputEl');
+        if (inputEl) {
+            if (document.activeElement === inputEl) {
+                return;
+            }
+            inputEl.focus();
+        }
+    },
     onInput() {
         this.fire('input');
     },
@@ -77,6 +92,12 @@ const TextBox = defineComponent({
     },
     onBlur(e) {
         this.fire('blur', e);
+    },
+    onKeyUp(e) {
+        this.fire('keyup', e);
+    },
+    onKeyDown(e) {
+        this.fire('keydown', e);
     },
     onKeyPress(e) {
         const keyCode = e.which || e.keyCode;

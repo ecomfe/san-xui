@@ -365,22 +365,29 @@ export function asForm(schema) {
                         : `${config.label || name}必填`;
 
                     let type = 'string';
-                    if (config.type === 'select' && config.multi) {
-                        type = 'array';
+                    if (config.requiredRuleType) {
+                        // 针对一些自定义的组件，如果设置了 required: true，那么生成验证规则的时候
+                        // 需要考虑到 value 的类型
+                        type = config.requiredRuleType;
                     }
-                    else if (config.type === 'calendar') {
-                        type = 'date';
-                    }
-                    else if (config.type === 'number') {
-                        type = 'number';
-                    }
-                    else if (config.type === 'switch') {
-                        type = 'boolean';
+                    else {
+                        if (config.type === 'select' && config.multi) {
+                            type = 'array';
+                        }
+                        else if (config.type === 'calendar') {
+                            type = 'date';
+                        }
+                        else if (config.type === 'number') {
+                            type = 'number';
+                        }
+                        else if (config.type === 'switch') {
+                            type = 'boolean';
+                        }
                     }
                     rules.push({type, required, message});
                 }
                 // TODO(leeight) max, min, maxLength 等配置的处理
-                // TODO(leeight) value, unsetValueOnInvisible 等配置的处理
+                // TODO(leeight) value 等配置的处理
                 if (rules.length) {
                     formValidator[name] = rules;
                 }
