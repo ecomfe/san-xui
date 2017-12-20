@@ -58,7 +58,6 @@ function getToastContainer() {
         container = document.createElement('DIV');
         container.id = kToastContainerId;
         container.className = cx('container');
-        container.style.zIndex = nextZindex();
         document.body.appendChild(container);
     }
     return container;
@@ -67,7 +66,9 @@ function getToastContainer() {
 function toastBuilder(level) {
     return (message, duration = 5000) => {
         const comp = new Toast({data: {message, level, duration}});
-        comp.attach(getToastContainer());
+        const container = getToastContainer();
+        container.style.zIndex = nextZindex();
+        comp.attach(container);
     };
 }
 
