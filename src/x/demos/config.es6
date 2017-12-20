@@ -76,6 +76,9 @@ export const blocks = [
             },
             {
                 text: 'xui-infinite-scroll'
+            },
+            {
+                text: 'xui-userpicker'
             }
         ]
     },
