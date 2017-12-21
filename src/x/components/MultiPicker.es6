@@ -21,7 +21,7 @@ const kTmpValuesKey = '__values';
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer open="{=active=}" s-ref="layer" offset-top="{{3}}">
+    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{3}}">
         <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
             <ul s-for="datastore, levelIndex in compactLevels">
                 <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"

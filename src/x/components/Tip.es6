@@ -14,7 +14,7 @@ const cx2 = create('ui-tiplayer');
 /* eslint-disable */
 const template = `<template>
     <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">
-        <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer">
+        <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer" follow-scroll="{{false}}">
             <div class="{{tiplayerClass}}" s-ref="layer-body">
                 <div class="${cx2('body-panel')}" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">
                     <div class="${cx2('body')}" s-if="message" style="{{messageStyle}}">

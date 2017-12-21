@@ -20,7 +20,7 @@ const template = `<div class="${cx('xx')}">
 <div on-click="toggleLayer" class="{{mainClass}}">
     <div class="${cx('text')}">{{text}}</div>
     <div class="${cx('arrow')}"></div>
-    <ui-layer open="{=active=}" s-ref="layer">
+    <ui-layer open="{=active=}" s-ref="layer" follow-scroll="{{false}}">
         <div class="${cx('layer')}">
             <ui-monthview value="{=value=}" time="{{time}}" range="{{range}}" on-change="onChange"/>
         </div>

@@ -16,6 +16,7 @@ const cx2 = create('ui-select');
 const template = `<div class="${cx()}">
 <ui-button disabled="{{disabled}}" icon="iot-device-list" on-click="toggleLayer" />
 <ui-layer
+    follow-scroll="{{false}}"
     open="{=active=}"
     offset-left="{{layerOffsetLeft}}"
     offset-top="{{layerOffsetTop}}"

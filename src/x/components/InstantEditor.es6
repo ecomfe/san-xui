@@ -14,7 +14,14 @@ const cx = create('ui-instanteditor');
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span s-if="label" class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer auto-hide="{{true}}" open="{=active=}" offset-left="{{layerOffsetLeft}}" layer-style="{{position}}" s-ref="layer">
+    <ui-layer
+        follow-scroll="{{false}}"
+        auto-hide="{{true}}"
+        open="{=active=}"
+        offset-left="{{layerOffsetLeft}}"
+        layer-style="{{position}}"
+        s-ref="layer"
+    >
         <div class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
             <div class="${cx('input-field')}">
                 <slot />

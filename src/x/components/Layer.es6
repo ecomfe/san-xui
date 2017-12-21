@@ -79,7 +79,7 @@ export default defineComponent({
         const followScroll = this.data.get('followScroll');
 
         this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
-        this.scrollHandler = followScroll ? _.throttle(() => this.selfPosition(true), 1000) : null;
+        this.scrollHandler = followScroll ? _.debounce(() => this.selfPosition(true), 100) : null;
 
         this.watch('open', open => {
             // 一个表单页可以能有较多select && 其他浮层。关闭的情况下去掉事件。
@@ -105,6 +105,9 @@ export default defineComponent({
         if (this.autoHideHandler) {
             $(document).on('mousedown', this.autoHideHandler);
             $(this.el).on('mousedown', returnFalse);
+            if (!this.scrollHandler) {
+                $(window).on('scroll', this.autoHideHandler);
+            }
 
             const pc = this.parentComponent;
             const autoHideExceptParent = this.data.get('autoHideExceptParent');
@@ -122,6 +125,9 @@ export default defineComponent({
         if (this.autoHideHandler) {
             $(document).off('mousedown', this.autoHideHandler);
             $(this.el).off('mousedown', returnFalse);
+            if (!this.scrollHandler) {
+                $(window).off('scroll', this.autoHideHandler);
+            }
 
             const pc = this.parentComponent;
             const autoHideExceptParent = this.data.get('autoHideExceptParent');
@@ -130,7 +136,9 @@ export default defineComponent({
             }
         }
 
-        $(window).off('scroll', this.scrollHandler);
+        if (this.scrollHandler) {
+            $(window).off('scroll', this.scrollHandler);
+        }
     },
 
     selfPosition(kz) {

@@ -48,7 +48,7 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onC
         on-keydown="onKeyDown($event)"
     />
 </div>
-<ui-layer open="{=layerOpened=}">
+<ui-layer open="{=layerOpened=}" follow-scroll="{{false}}">
     <div class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
         <div class="${cx('layer-main')}">
             <ui-loading s-if="loading" size="small" />
