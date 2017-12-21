@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create, buildPagerItems} from './util';
 
@@ -12,7 +12,7 @@ const cx = create('ui-pager');
 /* eslint-disable */
 const template = `<template>
 <div class="${cx()}">
-    <span class="${cx('count')}" s-if="withTotalcount">共{{count}}条</span>
+    <span class="${cx('count')}" s-if="withTotalCount">共{{count}}条</span>
     <ul class="${cx('main')}">
         <li on-click="onPagerItemClick(item)"
             class="${cx('item')} {{item.className}}"
@@ -40,7 +40,7 @@ export default defineComponent({
     },
     initData() {
         return {
-            withTotalcount: true,
+            withTotalCount: true,
             size: 10,
             page: 1,
             count: 0,
@@ -49,6 +49,16 @@ export default defineComponent({
             backText: '上一页',
             forwardText: '下一页'
         };
+    },
+    dataTypes: {
+        withTotalCount: DataTypes.bool,
+        size: DataTypes.number,
+        page: DataTypes.number,
+        count: DataTypes.number,
+        backCount: DataTypes.number,
+        forwardCount: DataTypes.number,
+        backText: DataTypes.string,
+        forwardText: DataTypes.string
     },
     onPagerItemClick(item) {
         if (item.disabled) {
