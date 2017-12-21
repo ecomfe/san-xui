@@ -53,6 +53,7 @@ const TextBox = defineComponent({
     initData() {
         return {
             disabled: false,
+            autofocus: false,
             type: 'text',
             multiline: false,
             skin: '',
@@ -74,6 +75,12 @@ const TextBox = defineComponent({
         addonPosition: DataTypes.string,
         width: DataTypes.number,
         height: DataTypes.number
+    },
+    attached() {
+        const autofocus = this.data.get('autofocus');
+        if (autofocus) {
+            this.focus();
+        }
     },
     focus() {
         const inputEl = this.ref('inputEl');
