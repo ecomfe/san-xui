@@ -138,7 +138,7 @@ export default defineComponent({
             return;
         }
         this.moving = true;
-        //todo 默认跟随父元素，如果后续有指定元素跟随指定元素的需求，在attachToElement中扩展即可。
+        // todo 默认跟随父元素，如果后续有指定元素跟随指定元素的需求，在attachToElement中扩展即可。
         this.data.get('centerToView') ? this.centerToView(kz) : this.attachToElement(kz);
         this.moving = false;
     },
