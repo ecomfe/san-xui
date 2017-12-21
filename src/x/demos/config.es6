@@ -146,6 +146,9 @@ export const blocks = [
             },
             {
                 text: 'xui-bosuploader'
+            },
+            {
+                text: 'xui-uploader'
             }
         ]
     },
