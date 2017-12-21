@@ -12,7 +12,6 @@ import Row from './Row';
 const template = `<template>
 <x-row label="[default]">
     <xui-button class="tooltipped tooltipped-e" aria-label="Success: The Travis CI build passed">Hello xui-button</xui-button>
-    <xui-button loading class="tooltipped tooltipped-e" aria-label="Success: The Travis CI build passed">Hello xui-button</xui-button>
     <xui-button skin="primary">primary skin</xui-button>
     <xui-button skin="danger">danger skin</xui-button>
     <xui-button
@@ -28,7 +27,6 @@ const template = `<template>
     <xui-button size="large" skin="primary">primary skin</xui-button>
     <xui-button size="large" skin="danger">danger skin</xui-button>
     <xui-button size="large" disabled skin="primary">disabled button</xui-button>
-    <xui-button size="large" loading disabled skin="primary">disabled button</xui-button>
 </x-row>
 
 <x-row label="icon">

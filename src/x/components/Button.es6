@@ -6,23 +6,19 @@
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
-import Loading from './Loading';
 
 const cx = create('ui-button');
 
 /* eslint-disable */
 const template = `<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">
     <i class="{{'iconfont icon-' + icon}}" s-if="icon"></i>
-    <span class="${cx('label')}" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>
-    <div class="${cx('label')}" san-else><ui-loading s-if="loading" size="small" /><slot /></div>
+    <span class="${cx('label')}" san-if="label">{{label}}</span>
+    <div class="${cx('label')}" san-else><slot /></div>
 </div>`;
 /* eslint-enable */
 
 export default defineComponent({
     template,
-    components: {
-        'ui-loading': Loading
-    },
     computed: {
         mainClass() {
             const klass = cx.mainClass(this);
@@ -39,7 +35,6 @@ export default defineComponent({
     initData() {
         return {
             disabled: false,
-            loading: false,
             skin: '',
             icon: '',
             label: ''
@@ -47,7 +42,6 @@ export default defineComponent({
     },
     dataTypes: {
         disabled: DataTypes.bool,
-        loading: DataTypes.bool,
         ariaLabel: DataTypes.string,
         size: DataTypes.string,
         skin: DataTypes.string,
