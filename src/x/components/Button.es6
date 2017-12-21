@@ -47,6 +47,7 @@ export default defineComponent({
     },
     dataTypes: {
         disabled: DataTypes.bool,
+        loading: DataTypes.bool,
         ariaLabel: DataTypes.string,
         size: DataTypes.string,
         skin: DataTypes.string,
