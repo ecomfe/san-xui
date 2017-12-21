@@ -12,6 +12,7 @@ const cx = create('ui-pager');
 /* eslint-disable */
 const template = `<template>
 <div class="${cx()}">
+    <span class="${cx('count')}" s-if="withTotalcount">共{{count}}条</span>
     <ul class="${cx('main')}">
         <li on-click="onPagerItemClick(item)"
             class="${cx('item')} {{item.className}}"
@@ -39,6 +40,7 @@ export default defineComponent({
     },
     initData() {
         return {
+            withTotalcount: true,
             size: 10,
             page: 1,
             count: 0,
