@@ -11,6 +11,7 @@ import {asInput} from './asInput';
 import Layer from './Layer';
 import Icon from './Icon';
 import Loading from './Loading';
+import StopScroll from './StopScroll';
 
 const cx = create('ui-select');
 
@@ -22,7 +23,7 @@ const kTmpValuesKey = '__values';
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
     <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{3}}">
-        <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
+        <ui-ss class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
             <ul s-for="datastore, levelIndex in compactLevels">
                 <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
                     on-click="onItemClicked(item, levelIndex)"
@@ -35,7 +36,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
                     </span>
                 </li>
             </ul>
-        </div>
+        </ui-ss>
     </ui-layer>
 </div>`;
 /* eslint-enable */
@@ -45,6 +46,7 @@ const MultiPicker = defineComponent({
     components: {
         'ui-loading': Loading,
         'ui-icon': Icon,
+        'ui-ss': StopScroll,
         'ui-layer': Layer
     },
     initData() {

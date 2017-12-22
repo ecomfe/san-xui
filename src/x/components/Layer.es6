@@ -15,7 +15,7 @@ const cx = create('ui-layer');
 /* eslint-disable */
 const template = `
 <template>
-    <div on-wheel="onWheel" s-ref="layer" s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
+    <div s-ref="layer" s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
 </template>
 `;
 
@@ -46,9 +46,6 @@ export default defineComponent({
             // 是否在初次显示时自动定位到 parentComponent.el 的下面 。
             // 注意：如果parentComponent.el大小，位置发生变化，并不会同步更新。
             autoPosition: true,
-            // 滚动到 layer 底部的时候，是否禁止 body 的滚动
-            // 默认情况下是开启的，避免 body 滚动的时候，导致 layer 自动隐藏.
-            preventBodyScroll: true,
             // 这两个值为实际需要自定义锁定的宽度和高度。
             width: 0, // 外部传进来的宽度值
             height: 0, // 外部传进来的高度值
@@ -68,7 +65,6 @@ export default defineComponent({
         followScroll: DataTypes.bool,
         autoHideExceptParent: DataTypes.bool,
         autoPosition: DataTypes.bool,
-        preventBodyScroll: DataTypes.bool,
         width: DataTypes.number,
         height: DataTypes.number,
         align: DataTypes.oneOf(['left', 'right']),
@@ -319,21 +315,6 @@ export default defineComponent({
                 'width': widthValue,
                 'height': heightValue
             });
-        }
-    },
-    onWheel(e) {
-        const preventBodyScroll = this.data.get('preventBodyScroll');
-        const layer = e.currentTarget.firstElementChild;
-        if (!layer || !preventBodyScroll) {
-            return;
-        }
-        if (layer.scrollTop + e.deltaY + layer.clientHeight >= layer.scrollHeight) {
-            e.preventDefault();
-            layer.scrollTop = layer.scrollHeight;
-        }
-        if (layer.scrollTop + e.deltaY <= 0) {
-            e.preventDefault();
-            layer.scrollTop = 0;
         }
     },
     detached() {

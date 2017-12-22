@@ -8,7 +8,7 @@ import Loading from 'inf-ui/x/components/Loading';
 
 export default defineComponent({
     template: `
-    <div class="ui-infinite-scroll">
+    <div on-scroll="scrollHandler" class="ui-infinite-scroll">
         <slot></slot>
         <slot name="loading">
             <xui-loading s-if="loading && !finished"/>
@@ -28,21 +28,13 @@ export default defineComponent({
     },
 
     scrollHandler() {
-        if (this.el.scrollHeight - this.el.offsetHeight - this.el.scrollTop < this.data.get('distance')
+        const {scrollHeight, offsetHeight, scrollTop} = this.el;
+        if (scrollHeight - offsetHeight - scrollTop < this.data.get('distance')
             && !this.data.get('loading')
             && !this.data.get('finished')
         ) {
             this.fire('more');
         }
-    },
-
-    attached() {
-        this.scrollHandlerBindThis = this.scrollHandler.bind(this);
-        this.el.addEventListener('scroll', this.scrollHandlerBindThis);
-    },
-
-    dispose() {
-        this.el.removeEventListener('scroll', this.scrollHandlerBindThis);
     }
 });
 

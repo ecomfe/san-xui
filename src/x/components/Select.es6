@@ -11,6 +11,7 @@ import {asInput} from './asInput';
 import Layer from './Layer';
 import ScrollIntoView from './ScrollIntoView';
 import TextBox from './TextBox';
+import StopScroll from './StopScroll';
 
 const cx = create('ui-select');
 const kDefaultLabel = '请选择';
@@ -34,7 +35,8 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
     <span class="${cx('text')}" s-else>{{label|raw}}</span>
     <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{layerOffsetTop}}" offset-left="{{layerOffsetLeft}}">
-        <ul class="${cx('layer')} ${cx('layer-x')}" s-if="multi" style="{{layerStyle}}">
+        <ui-ss class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
+        <ul s-if="multi">
             <ui-textbox s-if="filter"
                 value="{=keyword=}"
                 placeholder="{{filterPlaceholder}}"
@@ -62,7 +64,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                 </label>
             </li>
         </ul>
-        <ul class="${cx('layer')} ${cx('layer-x')}" s-else style="{{layerStyle}}">
+        <ul s-else>
             <ui-textbox s-if="filter"
                 value="{=keyword=}"
                 placeholder="{{filterPlaceholder}}"
@@ -76,6 +78,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                 <span s-else>{{item.text}}</span>
             </li>
         </ul>
+        </ui-ss>
     </ui-layer>
 </div>`;
 /* eslint-enable */
@@ -85,6 +88,7 @@ const Select = defineComponent({    // eslint-disable-line
     components: {
         'ui-textbox': TextBox,
         'ui-layer': Layer,
+        'ui-ss': StopScroll,
         'ui-siv': ScrollIntoView
     },
     initData() {
