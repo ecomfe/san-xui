@@ -5,6 +5,7 @@
 
 /* global UE */
 
+import $ from 'jquery';
 import u from 'lodash';
 import {defineComponent} from 'san';
 
@@ -16,30 +17,30 @@ const cx = create('ui-richtexteditor');
 const kDefaultEditorOptions = {
     // 如果配置了 urlArgs，那么后续用 UEDITOR_HOME_URL 拼接路径的时候就出问题了，因此把这个部分删掉
     UEDITOR_HOME_URL: require.toUrl('ueditor/').replace(/\?.*/, ''),
+    // initialFrameWidth: 770,
+    initialFrameHeight: 250,
     autoFloatEnabled: false,
+    elementPathEnabled: false,
+    autoHeightEnabled: false,
     iframeUrlMap: {
         link: require.toUrl('ueditor/dialogs/link/link.html')
     },
+    serverUrl: '/api/mc/imageUpload',
+    initialStyle: [
+        `p, ol{
+            line-height: 1.5em;
+            color: #494949;
+            font-family: Microsoft Yahei, Tahoma, Arial, Helvetica, STHeiti;
+            font-size: 12px;
+        }`
+    ],
     toolbars: [[
-        'fullscreen', 'source', '|', 'undo', 'redo', '|',
-        'bold', 'italic', 'underline', 'fontborder', 'strikethrough',
-        'superscript', 'subscript', 'removeformat', 'formatmatch',
-        'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor',
-        'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-        'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-        'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-        'directionalityltr', 'directionalityrtl', 'indent', '|',
-        'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
-        'touppercase', 'tolowercase', '|',
-        'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-        'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music',
-        'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak',
-        'template', 'background', '|',
-        'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-        'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow',
-        'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown',
-        'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-        'print', 'preview', 'searchreplace', 'help', 'drafts'
+        'source', 'undo', 'redo', 'insertunorderedlist', 'insertorderedlist', 'unlink',
+        'link', 'bold', 'underline', 'fontborder', 'strikethrough', 'forecolor',
+        'backcolor', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify',
+        'removeformat', 'fontfamily', 'fontsize', '|', 'simpleupload', 'imagenone',
+        'imageleft', 'imageright', 'imagecenter', 'blockquote', 'cleardoc', 'formatmatch',
+        'indent', 'lineheight', 'paragraph', 'rowspacing', 'date', ''
     ]]
 };
 
@@ -75,7 +76,7 @@ export default defineComponent({
             loading: true,
             error: null,
             width: '100%',
-            height: 100,
+            height: null,
             options: null
         };
     },
@@ -107,19 +108,27 @@ export default defineComponent({
             const editor = this.editor = new UE.ui.Editor(editorOptions);
             editor.render(ghost);
             if (value) {
-                editor.addListener('ready', () => editor.setContent(value));
+                editor.addListener('ready', () => {
+                    if (this.editor) {
+                        this.editor.setContent(value);
+                    }
+                });
             }
             editor.addListener('contentchange', () => {
-                const value = editor.getContent();
-                // FIXME(leeight) 递归的问题如何处理呢？
-                this.data.set('value', value);
+                if (this.editor) {
+                    const value = this.editor.getContent();
+                    // FIXME(leeight) 递归的问题如何处理呢？
+                    this.data.set('value', value);
+                }
             });
         });
     },
     disposed() {
         if (this.editor) {
             try {
+                $('#edui_fixedlayer').remove();
                 this.editor.destroy();
+                this.editor = null;
             }
             catch (ex) {
             }
