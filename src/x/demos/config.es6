@@ -62,6 +62,9 @@ export const blocks = [
                 text: 'xui-switch'
             },
             {
+                text: 'xui-ss'
+            },
+            {
                 text: 'xui-tab'
             },
             {
