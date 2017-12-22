@@ -18,6 +18,7 @@ const template = `<template>
 </x-row>
 <x-row label="back-text=<,forward-text=>">
     <xui-pager size="{{pager.size}}"
+        with-total-count
         page="{{pager.page}}"
         count="{{pager.count}}"
         back-text="<"

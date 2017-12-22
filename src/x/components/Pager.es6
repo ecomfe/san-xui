@@ -40,7 +40,7 @@ export default defineComponent({
     },
     initData() {
         return {
-            withTotalCount: true,
+            withTotalCount: false, // 是否显示总条数
             size: 10,
             page: 1,
             count: 0,

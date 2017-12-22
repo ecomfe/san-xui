@@ -98,6 +98,7 @@ export function asPage(schema, MainComponent) {
             s-if="withPager && pager.count > 0"
             class="list-page-pager"
             pager="{=pager=}"
+            with-total-count="{{withTotalCount}}"
             with-pager-size="{{withPagerSize}}"
             on-pager-size-change="onPagerSizeChange($event)"
             on-pager-change="onPagerChange($event)"
@@ -156,7 +157,7 @@ export function asPage(schema, MainComponent) {
         },
 
         initData() {
-            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPager, $withPagerSize, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPager, $withPagerSize, $withTotalCount, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
             const {$onRequest, $onResponse, $onError} = body;
             const cellRenderer = $cellRenderer
@@ -179,6 +180,7 @@ export function asPage(schema, MainComponent) {
                 breadcrumbs: $breadcrumbs,
                 withSidebar: !!$withSidebar,
                 withPagerSize: !!$withPagerSize,
+                withTotalCount: !!$withTotalCount,
                 withSearchbox: $withSearchbox !== false,
                 withPager: $withPager !== false,
                 withTip: !!$withTip,
@@ -524,6 +526,5 @@ export function asPage(schema, MainComponent) {
     });
 
     // TODO(leeight) cache the WrappedComponent
-
     return WrappedComponent;
 }

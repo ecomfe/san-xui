@@ -10,6 +10,7 @@ import Select from 'inf-ui/x/components/Select';
 
 /* eslint-disable */
 const template = `<template>
+    <label class="list-page-pager-total-count" s-if="withTotalCount">共{{pager.count}}条</label>
     <label s-if="withPagerSize">每页展示</label>
     <ui-select
         s-if="withPagerSize"
@@ -35,6 +36,7 @@ export default defineComponent({
         'ui-pager': Pager
     },
     dataTypes: {
+        withTotalCount: DataTypes.bool,
         withPagerSize: DataTypes.bool,
         pager: DataTypes.object
     },
