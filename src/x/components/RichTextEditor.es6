@@ -127,6 +127,7 @@ export default defineComponent({
         if (this.editor) {
             try {
                 $('#edui_fixedlayer').remove();
+                $('#ueditor_textarea_editorValue').remove();
                 this.editor.destroy();
                 this.editor = null;
             }

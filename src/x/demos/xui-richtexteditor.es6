@@ -4,6 +4,7 @@
  */
 
 import {defineComponent} from 'inf-ui/sanx';
+import Switch from 'inf-ui/x/components/Switch';
 import RichTextEditor from 'inf-ui/x/components/RichTextEditor';
 
 import Row from './Row';
@@ -23,6 +24,13 @@ const template = `<template>
     </strong>
 </x-row>
 
+<x-row label="s-if">
+    <xui-switch checked="{=show=}" />
+    <form s-if="show">
+        <xui-richtexteditor options="{{options}}" />
+    </form>
+</x-row>
+
 </template>`;
 /* eslint-enable */
 
@@ -30,10 +38,12 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-switch': Switch,
         'xui-richtexteditor': RichTextEditor
     },
     initData() {
         return {
+            show: true,
             value: 'Hello world! <strong> This is the initialize content </strong>',
             options: {
                 toolbars: [
