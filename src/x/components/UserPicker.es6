@@ -297,6 +297,7 @@ const UUAP = defineComponent({
         }
         this.data.set('layerOpened', false);
         this.data.set('keyword', '');
+        this.focusInput();
     },
     removeItem(nativeEvent, index) {
         nativeEvent.stopPropagation();
