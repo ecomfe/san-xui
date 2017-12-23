@@ -19,18 +19,79 @@ const kFormItemComponents = {};
 const kFormItemBuilders = {};
 const Schema = AsyncValidator.default;
 
-function wrapAsItem(item, prefix, content) {
+// FIXME(leeight) 如何跟 forms/FormItem.es6 复用呢?
+const FormItem = defineComponent({
+    template: `<div class="{{mainClass}}">
+        <div class="{{labelClass}}" s-if="label">{{label | raw}}：</div>
+        <div class="{{contentClass}}">
+            <slot />
+            <div class="{{errorClass}}" s-if="!preview && error">{{error | raw}}</div>
+            <div class="{{helpClass}}" s-if="!preview && help">{{help | raw}}</div>
+        </div>
+    </div>`,
+    messages: {
+        'input-comp-value-changed'(arg) {
+            const payload = arg.value;
+            const name = this.data.get('name');
+            this.dispatch('form-element-changed', {name, value: payload.value});
+        }
+    },
+    computed: {
+        errorClass() {
+            return [cx2('item-invalid-label')];
+        },
+        helpClass() {
+            return [cx2('item-help')];
+        },
+        mainClass() {
+            const klass = [cx2('item')];
+            const name = this.data.get('name');
+            const inline = this.data.get('inline');
+            if (inline) {
+                klass.push(cx2('item-inline'));
+            }
+            if (name) {
+                klass.push(cx2(`item-${name}`));
+            }
+            return klass;
+        },
+        labelClass() {
+            const klass = [cx2('item-label')];
+            const required = this.data.get('required');
+            if (required) {
+                klass.push('required-label');
+            }
+            return klass;
+        },
+        contentClass() {
+            const klass = [cx2('item-content')];
+            return klass;
+        }
+    },
+    initData() {
+        return {
+            name: null,
+            label: null,
+            error: null,
+            help: null,
+            required: false,
+            preview: false,
+            inline: true
+        };
+    }
+});
+
+function asFormItem(item, prefix, content) {
     return `
-    <div class="${cx2('item', 'item-inline')} ${cx2('item-' + item.name)}">
-        <div class="${cx2('item-label')}{{requiredOn.${item.name} ? ' required-label' : ''}}" s-if="${prefix}.label">
-            ${item.label}：
-        </div>
-        <div class="${cx2('item-content')}">
-            ${content}
-            <div class="${cx2('item-invalid-label')}" s-if="formErrors.${item.name}">{{formErrors.${item.name}}}</div>
-            <div class="${cx2('item-help')}" s-if="!preview && ${prefix}.help">{{${prefix}.help | raw}}</div>
-        </div>
-    </div>
+    <as-form-item
+        inline
+        name="${item.name}"
+        label="{{${prefix}.label}}"
+        help="{{${prefix}.help}}"
+        required="{{requiredOn.${item.name}}}"
+        error="{{formErrors.${item.name}}}"
+        preview="{{preview}}"
+    >${content}</as-form-item>
     `;
 }
 
@@ -66,7 +127,7 @@ function generateTemplate(controls) {
                 const prefix = `schema[${i}][${j}]`;
                 template.push(`<div class="${cx('col')}"
                     s-if="{{!hiddenOn.${colItem.name} && visibleOn.${colItem.name} !== false}}">`);
-                template.push(wrapAsItem(colItem, prefix, builder(colItem, prefix)));
+                template.push(asFormItem(colItem, prefix, builder(colItem, prefix)));
                 template.push('</div>');
             });
             template.push('</div>');
@@ -79,7 +140,7 @@ function generateTemplate(controls) {
             const prefix = `schema[${i}]`;
             template.push(`<div class="${cx('row')}"
                 s-if="{{!hiddenOn.${item.name} && visibleOn.${item.name} !== false}}">`);
-            template.push(wrapAsItem(item, prefix, builder(item, prefix)));
+            template.push(asFormItem(item, prefix, builder(item, prefix)));
             template.push('</div>');
         }
     });
@@ -99,7 +160,9 @@ export function registerFormItem({type, tagName, Component, builder}) {
 
 export function asForm(schema) {
     const controls = schema.controls;
-    const components = _.extend({}, kFormItemComponents);
+    const components = _.extend({
+        'as-form-item': FormItem
+    }, kFormItemComponents);
 
     /* eslint-disable */
     const template = `<template>
@@ -145,10 +208,11 @@ export function asForm(schema) {
             }
         },
         messages: {
-            'input-comp-value-changed'(arg) {
+            'form-element-changed'(arg) { // eslint-disable-line
                 const instantValidation = this.data.get('instantValidation');
                 if (instantValidation) {
-                    this.validateForm();
+                    const payload = arg.value;
+                    this.validateFormItem(payload.name);
                 }
             }
         },
@@ -346,53 +410,95 @@ export function asForm(schema) {
             });
         },
 
-        buildFormValidator() {
-            const formValidator = {};
-            _.each(this.itemsMap, (config, name) => {
-                const {validator, validations, validationErrors} = config;
-                const required = this.data.get(`requiredOn.${name}`);
-                const rules = [];
-                if (validator) {
-                    // 自定义的验证规则
-                    rules.push({validator});
-                }
-                if (validations) {
-                    rules.push.apply(rules, buildValidator(validations, validationErrors));
-                }
-                if (required) {
-                    const message = validationErrors && validationErrors.required
-                        ? validationErrors.required
-                        : `${config.label || name}必填`;
+        buildFormItemValidator(name, config) {
+            const rules = [];
+            const {validator, validations, validationErrors} = config;
+            if (validator) {
+                // 自定义的验证规则
+                rules.push({validator});
+            }
 
-                    let type = 'string';
-                    if (config.requiredRuleType) {
-                        // 针对一些自定义的组件，如果设置了 required: true，那么生成验证规则的时候
-                        // 需要考虑到 value 的类型
-                        type = config.requiredRuleType;
-                    }
-                    else {
-                        if (config.type === 'select' && config.multi) {
-                            type = 'array';
-                        }
-                        else if (config.type === 'calendar') {
-                            type = 'date';
-                        }
-                        else if (config.type === 'number') {
-                            type = 'number';
-                        }
-                        else if (config.type === 'switch') {
-                            type = 'boolean';
-                        }
-                    }
-                    rules.push({type, required, message});
+            if (validations) {
+                // amis 的验证规则，转化一下
+                rules.push.apply(rules, buildValidator(validations, validationErrors));
+            }
+
+            const required = this.data.get(`requiredOn.${name}`);
+            if (required) {
+                const message = validationErrors && validationErrors.required
+                    ? validationErrors.required
+                    : `${config.label || name}必填`;
+
+                let type = 'string';
+                if (config.requiredRuleType) {
+                    // 针对一些自定义的组件，如果设置了 required: true，那么生成验证规则的时候
+                    // 需要考虑到 value 的类型
+                    type = config.requiredRuleType;
                 }
-                // TODO(leeight) max, min, maxLength 等配置的处理
-                // TODO(leeight) value 等配置的处理
+                else {
+                    if (config.type === 'select' && config.multi) {
+                        type = 'array';
+                    }
+                    else if (config.type === 'calendar') {
+                        type = 'date';
+                    }
+                    else if (config.type === 'number') {
+                        type = 'number';
+                    }
+                    else if (config.type === 'switch') {
+                        type = 'boolean';
+                    }
+                }
+                rules.push({type, required, message});
+            }
+            // TODO(leeight) max, min, maxLength 等配置的处理
+            // TODO(leeight) value 等配置的处理
+            return rules;
+        },
+
+        buildFormValidator(name) {
+            const formValidator = {};
+            if (name) {
+                const config = this.itemsMap[name];
+                const rules = this.buildFormItemValidator(name, config);
                 if (rules.length) {
                     formValidator[name] = rules;
                 }
-            });
+            }
+            else {
+                _.each(this.itemsMap, (config, name) => {
+                    const rules = this.buildFormItemValidator(name, config);
+                    if (rules.length) {
+                        formValidator[name] = rules;
+                    }
+                });
+            }
             return new Schema(formValidator);
+        },
+
+        validateFormItem(name) {
+            const preview = this.data.get('preview');
+            if (preview) {
+                return Promise.resolve();
+            }
+
+            return new Promise((resolve, reject) => {
+                const formData = this.getFormData();
+                const validator = this.buildFormValidator(name);
+                validator.validate(formData, (errors, fields) => {
+                    // 不要改变整个 formErrors ，只修改它特定的 item
+                    const key = `formErrors.${name}`;
+                    if (!errors) {
+                        this.data.set(key, null);
+                        resolve();
+                    }
+                    else {
+                        const errorMessages = _.map(errors, e => e.message).join('<br/>');
+                        this.data.set(key, errorMessages);
+                        reject(errors);
+                    }
+                });
+            });
         },
 
         validateForm() {
