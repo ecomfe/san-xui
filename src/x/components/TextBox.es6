@@ -92,7 +92,8 @@ const TextBox = defineComponent({
         }
     },
     onInput() {
-        this.fire('input');
+        const value = this.data.get('value');
+        this.fire('input', {value});
     },
     onFocus(e) {
         this.fire('focus', e);

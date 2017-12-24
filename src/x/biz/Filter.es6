@@ -2,6 +2,7 @@
  * 内容过滤区域，组件包括
  *
  *   ui-select
+ *   ui-textbox
  *   ui-rangecalendar
  *   ui-calendar
  *   plain-text
@@ -18,6 +19,7 @@ import {create} from 'inf-ui/x/components/util';
 import Button from 'inf-ui/x/components/Button';
 import Select from 'inf-ui/x/components/Select';
 import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
+import TextBox from 'inf-ui/x/components/TextBox';
 import Calendar from 'inf-ui/x/components/Calendar';
 
 const cx = create('ui-biz-filter');
@@ -29,6 +31,7 @@ const template = `<div class="{{mainClass}}">
         <dd>
             <div class="${cx('form', 'form-inline')}">
                 <div class="${cx('form-item')}" s-for="item in controls">
+                    <label s-if="item.label" class="${cx('label')}">{{item.label}}</label>
                     <ui-select
                         s-if="item.type === 'select'"
                         value="{{item.value}}"
@@ -42,11 +45,21 @@ const template = `<div class="{{mainClass}}">
                         on-change="onItemChanged(item.name, $event)"
                         />
 
+                    <ui-textbox
+                        s-if="item.type === 'textbox'"
+                        value="{{item.value}}"
+                        width="{{item.width}}"
+                        placeholder="{{item.placeholder}}"
+                        on-input="onItemChanged(item.name, $event, true)"
+                        on-enter="doFilter"
+                    />
+
                     <ui-rangecalendar
                         s-if="item.type === 'rangecalendar'"
                         value="{{item.value}}"
-
+                        time="{{item.time}}"
                         width="{{item.width}}"
+                        range="{{item.range}}"
                         on-change="onItemChanged(item.name, $event)"
                         />
 
@@ -77,7 +90,8 @@ export default defineComponent({
         'ui-select': Select,
         'ui-calendar': Calendar,
         'ui-rangecalendar': RangeCalendar,
-        'ui-button': Button
+        'ui-button': Button,
+        'ui-textbox': TextBox
     },
     dataTypes: {
         title: DataTypes.string,
@@ -127,7 +141,7 @@ export default defineComponent({
             }
         });
     },
-    onItemChanged(name, {value}) {
+    onItemChanged(name, {value}, preventFilterAction) {
         const formData = this.data.get('formData');
 
         if (!name && _.isPlainObject(value)) {
@@ -149,8 +163,8 @@ export default defineComponent({
         this.data.set('formData', formData);
 
         const submitText = this.data.get('submitText');
-        if (!submitText) {
-            // 如果没有提交按钮，那么就自动过滤
+        if (!submitText && !preventFilterAction) {
+            // 如果没有提交按钮，且不是输入框input事件，那么就自动过滤
             this.doFilter();
         }
     },
