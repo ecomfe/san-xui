@@ -17,7 +17,7 @@ const template = `<template>
         value="{=boxgroup.radio=}"
         />
     <strong class="large">
-    Value is: {{boxgroup.radio}}
+    Value is: {{boxgroup.radio | stringify}}
     </strong>
 </x-row>
 
@@ -28,7 +28,7 @@ const template = `<template>
         value="{=boxgroup.checkbox=}"
         />
     <strong class="large">
-    Value is: {{boxgroup.checkbox}}
+    Value is: {{boxgroup.checkbox | stringify}}
     </strong>
 </x-row>
 
@@ -49,6 +49,11 @@ export default defineComponent({
         'x-row': Row,
         'xui-boxgroup': BoxGroup
     },
+    filters: {
+        stringify(value) {
+            return JSON.stringify(value);
+        }
+    },
     initData() {
         return {
             boxgroup: {
@@ -56,14 +61,14 @@ export default defineComponent({
                     {text: 'foo', value: 'foo'},
                     {text: 'bar', value: 'bar'},
                     {text: '123', value: '123', disabled: true},
-                    {text: 'abc1', value: 'abc1'},
-                    {text: 'abc2', value: 'abc2'},
-                    {text: 'abc3', value: 'abc3'},
-                    {text: 'abc4', value: 'abc4'},
-                    {text: 'abc5', value: 'abc5'},
-                    {text: 'abc6', value: 'abc6'},
-                    {text: 'abc7', value: 'abc7'},
-                    {text: 'abc8', value: 'abc8'},
+                    {text: 'number 1', value: 1},
+                    {text: 'string \'1\'', value: '1'},
+                    {text: 'number 2', value: 2},
+                    {text: 'string \'2\'', value: '2'},
+                    {text: 'bool true', value: true},
+                    {text: 'bool false', value: false},
+                    {text: 'object 1', value: {foo: 1}},
+                    {text: 'object 2', value: {bar: 1}},
                     {text: 'abc9', value: 'abc9'},
                     {text: 'abc0', value: 'abc0'}
                 ]

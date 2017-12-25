@@ -1,13 +1,10 @@
 /**
- * 因为 esui/BoxGroup.es6 存在一个比较难处理的问题，所以换一个新的组件试试
- * 但是样式还是沿用之前的
- *
- * @file esui/BoxGroup.es6
+ * @file components/BoxGroup.es6
  * @author leeight
  */
 
-import u from 'lodash';
-import {defineComponent} from 'san';
+import _ from 'lodash';
+import {DataTypes, defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
 import {asInput} from './asInput';
@@ -18,15 +15,23 @@ const cx = create('ui-boxgroup');
 const template = `
 <template>
 <div class="{{mainClass}}">
-    <div class="${cx('group')}" s-for="datasource, i in groupedDatasource">
-        <label class="${cx('radio', 'wrapper')}" title="{{item|title}}" san-for="item in datasource">
+    <div class="${cx('group')}" s-for="ds, i in groupedDatasource">
+        <label class="${cx('radio', 'wrapper')}" san-for="item in ds">
             <input san-if="boxType == 'radio'"
-                type="radio" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
-                title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
+                type="radio"
+                on-change="onChange($event, item.__index)"
+                name="{{name}}"
+                disabled="{{item.disabled || disabled}}"
+                checked="{{checkedStatus[item.__index]}}"
+            />
             <input san-else
-                type="checkbox" on-change="onChange" name="{{name}}" disabled="{{item.disabled || disabled}}"
-                title="{{item|title}}" value="{{item.value}}" checked="{=value=}" />
-            <span>{{item|title}}</span>
+                type="checkbox"
+                on-change="onChange($event, item.__index)"
+                name="{{name}}"
+                disabled="{{item.disabled || disabled}}"
+                checked="{{checkedStatus[item.__index]}}"
+            />
+            <span>{{item | title}}</span>
         </label>
     </div>
 </div>
@@ -47,12 +52,48 @@ const BoxGroup = defineComponent({
             boxType: 'radio' // 'radio' | 'checkbox'
         };
     },
+    dataTypes: {
+        datasource: DataTypes.array,
+        disabled: DataTypes.bool,
+        orientation: DataTypes.string,
+        value: DataTypes.any,
+        colCount: DataTypes.number,
+        boxType: DataTypes.string
+    },
     computed: {
+        checkedStatus() {
+            const status = {};
+            const datasource = this.data.get('datasource');
+            const boxType = this.data.get('boxType');
+
+            let value = this.data.get('value');
+            if (value != null) {
+                if (boxType === 'radio' && !_.isArray(value)) {
+                    value = [value];
+                }
+
+                for (let i = 0; i < value.length; i++) {
+                    for (let j = 0; j < datasource.length; j++) {
+                        if (datasource[j].value === value[i]) {
+                            status[j] = 1;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return status;
+        },
         groupedDatasource() {
             const datasource = this.data.get('datasource');
             const colCount = this.data.get('colCount');
             if (!colCount) {
-                return [datasource];
+                return [_.map(datasource, (item, __index) => {
+                    const {text, title, disabled} = item;
+                    return {
+                        text, title, disabled, __index
+                    };
+                })];
             }
             const itemsCount = datasource.length;
             const groups = [];
@@ -63,7 +104,8 @@ const BoxGroup = defineComponent({
                 const startIndex = i * colCount;
                 const endIndex = Math.min(itemsCount, (i + 1) * colCount);
                 for (let j = startIndex; j < endIndex; j++) {
-                    group.push(datasource[j]);
+                    const {text, title, disabled} = datasource[j];
+                    group.push({text, title, disabled, __index: j});
                 }
                 groups.push(group);
             }
@@ -90,18 +132,38 @@ const BoxGroup = defineComponent({
         if (disabled === '') {
             this.data.set('disabled', true);
         }
-        if (boxType === 'radio' && u.isArray(value)) {
+        if (boxType === 'radio' && _.isArray(value)) {
             this.data.set('value', value[0]);
         }
         if (boxType === 'checkbox' && !value) {
             this.data.set('value', []);
         }
+        this.watch('value', value => this.fire('change', {value}));
     },
-    onChange() {
-        this.nextTick(() => {
-            const value = this.data.get('value');
-            this.fire('change', {value});
-        });
+    onChange(e, index) {
+        const boxType = this.data.get('boxType');
+        const datasource = this.data.get('datasource');
+
+        const value = datasource[index].value;
+        if (boxType === 'radio') {
+            if (e.target.checked) {
+                this.data.set('value', value);
+            }
+            else {
+                // ??? 好像不太可能？
+            }
+        }
+        else {
+            if (e.target.checked) {
+                this.data.push('value', value);
+            }
+            else {
+                const valueIndex = _.findIndex(this.data.get('value'), o => o === value);
+                if (valueIndex !== -1) {
+                    this.data.removeAt('value', valueIndex);
+                }
+            }
+        }
     }
 });
 
