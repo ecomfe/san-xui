@@ -31,6 +31,10 @@ export function dialogPlainAction(config, payload) {
             message: _.template(content)(payload)
         };
     }
+    // 如果没有定义foot，则不作为输入
+    if (dialogData.foot === undefined) {
+        delete dialogData.foot;
+    }
 
     const dialog = new DialogComponent({data: dialogData});
     dialog.attach(document.body);

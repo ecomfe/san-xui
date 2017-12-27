@@ -17,6 +17,7 @@ const template = `<template>
         open="{=actionOptions.open=}"
         height="{{actionOptions.height}}"
         width="{{actionOptions.width}}"
+        foot="{{foot}}"
         on-close="onCloseDialog">
         <span slot="head">{{actionOptions.title}}</span>
         <ui-actionloader

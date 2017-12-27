@@ -21,10 +21,10 @@ export function asDialog(Klass) {
 
     const WrappedComponent = defineComponent({
         template: `<template>
-        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog">
+        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{foot}}">
             <span slot="head">{{title}}</span>
             ${klassTemplate}
-            <div slot="foot">
+            <div slot="foot" s-if="foot">
                 <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || '确定'}}</ui-button>
             </div>
         </ui-dialog>
