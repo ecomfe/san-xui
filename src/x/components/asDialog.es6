@@ -21,7 +21,7 @@ export function asDialog(Klass) {
 
     const WrappedComponent = defineComponent({
         template: `<template>
-        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{foot}}">
+        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">
             <span slot="head">{{title}}</span>
             ${klassTemplate}
             <div slot="foot" s-if="foot">
@@ -49,6 +49,10 @@ export function asDialog(Klass) {
         messages: {
             resize() {
                 this.ref('dialog').__resize();
+            },
+            refreshtable() {
+                this.data.set('open', false);
+                this.fire('refreshtable');
             }
         },
         onConfirmDialog() {
