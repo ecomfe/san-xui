@@ -12,7 +12,11 @@ export default {
     Component: Calendar,
     builder(item, prefix) {
         return `
-            <${tagName} s-if="!preview" value="{=formData.${item.name}=}" />
+            <${tagName} s-if="!preview"
+                range="{{${prefix}.range}}"
+                prev="{{${prefix}.prev}}"
+                next="{{${prefix}.next}}"
+                value="{=formData.${item.name}=}" />
             <span s-else>{{formData.${item.name} | datetime(${item.format})}}</span>`;
     }
 };
