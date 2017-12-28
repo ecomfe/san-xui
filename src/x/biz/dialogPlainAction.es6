@@ -20,23 +20,19 @@ export function dialogPlainAction(config, payload) {
     if (typeof content === 'function') {
         // 重新构造一个动态的组件出来
         DialogComponent = asDialog(content);
-        dialogData = {title: $title, width, payload};
+        dialogData = {title: $title, width, foot, payload};
     }
     else {
         DialogComponent = PlainDialog;
         dialogData = {
             title: $title,
             width,
+            foot,
             message: _.template(content)(payload)
         };
     }
-    // 如果配置了foot则传入
-    if (foot !== undefined) {
-        dialogData.foot = foot;
-    }
 
     const dialog = new DialogComponent({data: dialogData});
-    dialog.on('refreshtable', () => this.refreshTable());
     dialog.attach(document.body);
     this.$childs.push(dialog);
 

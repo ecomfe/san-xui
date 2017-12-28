@@ -38,21 +38,22 @@ export function asDialog(Klass) {
             return {
                 open: true,
                 title: _('确认'),
-                payload: null,
-                foot: {
+                payload: null
+            };
+        },
+        inited() {
+            // 设置foot默认值
+            if (this.data.get('foot') === undefined) {
+                this.data.set('foot', {
                     okBtn: {
                         label: _('确定')
                     }
-                }
-            };
+                });
+            }
         },
         messages: {
             resize() {
                 this.ref('dialog').__resize();
-            },
-            refreshtable() {
-                this.data.set('open', false);
-                this.fire('refreshtable');
             }
         },
         onConfirmDialog() {

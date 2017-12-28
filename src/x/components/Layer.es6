@@ -309,7 +309,7 @@ export default defineComponent({
         }
         else {
             this.data.set('layerStyle', {
-                'z-index': nextZindex() + 1, // 这里需要加1来解决dialog中的下拉框问题
+                'z-index': nextZindex(),
                 'left': leftValue,
                 'top': topValue,
                 'width': widthValue,

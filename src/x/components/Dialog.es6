@@ -126,9 +126,8 @@ export default defineComponent({
         if (!open) {
             return;
         }
-        const zIndex = nextZindex();
-        this.data.set('maskZindex', zIndex);
-        this.data.set('dialogZindex', zIndex + 1);
+        this.data.set('maskZindex', nextZindex());
+        this.data.set('dialogZindex', nextZindex());
         this.nextTick(() => {
             const main = $(this.el).find('> .ui-dialog-x');
             // const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
