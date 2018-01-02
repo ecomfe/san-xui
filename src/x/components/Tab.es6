@@ -29,12 +29,13 @@ export default defineComponent({
     initData() {
         return {
             selectedIndex: 0,
+            skin: '',
             tabs: []
         };
     },
     computed: {
         mainClass() {
-            const klass = [cx(), cx('x')];
+            const klass = cx.mainClass(this);
             return klass;
         }
     },

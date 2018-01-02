@@ -30,6 +30,40 @@ const template = `<template>
 </xui-tab>
 </x-row>
 
+<x-row label="[skin=card]">
+<xui-tab skin="card">
+    <xui-tab-panel title="图片处理">
+        <xui-button>图片处理</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="图像审核">
+        <xui-button>图像审核</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="音视频处理">
+        <xui-button>音视频处理</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="Android批量打包">
+        <xui-monthview />
+    </xui-tab-panel>
+</xui-tab>
+</x-row>
+
+<x-row label="[skin=sub]">
+<xui-tab skin="sub">
+    <xui-tab-panel title="图片处理">
+        <xui-button>图片处理</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="图像审核">
+        <xui-button>图像审核</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="音视频处理">
+        <xui-button>音视频处理</xui-button>
+    </xui-tab-panel>
+    <xui-tab-panel title="Android批量打包">
+        <xui-monthview />
+    </xui-tab-panel>
+</xui-tab>
+</x-row>
+
 <x-row label="dynamic tabs">
 <xui-button on-click="toggleTab" skin="primary">Toggle Tab</xui-button>
 <br/>
