@@ -85,19 +85,19 @@ const Calendar = defineComponent({  // eslint-disable-line
         else if (value && typeof value === 'string') {
             value = new Date(value);
         }
-        this.data.set('value', value);
+        this.watch('value', value => this.fire('change', {value}));
+        // 只有 new Date(value), 数据才会同步到外部的组件里面去
+        this.data.set('value', new Date(value));
     },
     nextDay() {
         const value = this.data.get('value');
         const newValue = moment(value).add(1, 'day').toDate();
         this.data.set('value', newValue);
-        this.fire('change', {value: newValue});
     },
     prevDay() {
         const value = this.data.get('value');
         const newValue = moment(value).subtract(1, 'day').toDate();
         this.data.set('value', newValue);
-        this.fire('change', {value: newValue});
     },
     toggleLayer() {
         const disabled = this.data.get('disabled');
@@ -107,8 +107,8 @@ const Calendar = defineComponent({  // eslint-disable-line
         const active = this.data.get('active');
         this.data.set('active', !active);
     },
-    onChange() {
-        this.fire('change', {value: this.data.get('value')});
+    onChange({value}) {
+        this.fire('change', {value});
     }
 });
 
