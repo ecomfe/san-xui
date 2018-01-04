@@ -118,14 +118,20 @@ export default defineComponent({
                     this.closeDialog();
                 })
                 .then(null, (error = {}) => {
-                    // er
-                    // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
-                    // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
                     // san
                     // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
                     if (isSan && error.global) {
                         Toast.error(error.global);
                     }
+
+                    // er
+                    // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
+                    // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
+                    // 3. 如果后端返回message.field 指定了错误字段，因为错误都在此处处理，故执行view.notifyErrors
+                    if (!isSan && error.field) {
+                        compInstance.view && compInstance.view.notifyErrors && compInstance.view.notifyErrors(error.field);
+                    }
+
                     this.data.set('confirm.label', '确定');
                     this.data.set('confirm.disabled', false);
                 });
