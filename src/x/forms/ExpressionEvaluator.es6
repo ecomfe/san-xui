@@ -9,6 +9,8 @@ import _ from 'lodash';
 
 function expressionComparison(oper, expectedValue, realValue) {
     switch (oper) {
+        case '$contains':
+            return _.includes(realValue, expectedValue);
         case '$in':
             return _.indexOf(expectedValue, realValue) !== -1;
         case '$nin':
