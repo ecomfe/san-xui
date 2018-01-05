@@ -29,6 +29,9 @@ const Switch = defineComponent({    // eslint-disable-line
         disabled: DataTypes.bool
     },
     computed: {
+        value() {
+            return this.data.get('checked');
+        },
         mainClass() {
             const klass = cx.mainClass(this);
             const checked = this.data.get('checked');
@@ -40,7 +43,7 @@ const Switch = defineComponent({    // eslint-disable-line
         }
     },
     inited() {
-        this.watch('checked', checked => this.fire('change', {value: checked}));
+        this.watch('value', value => this.fire('change', {value}));
     },
     toggleSwitch() {
         const disabled = this.data.get('disabled');

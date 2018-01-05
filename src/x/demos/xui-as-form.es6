@@ -31,6 +31,10 @@ const template = `<template>
     <xui-aceeditor s-if="schemaCode" value="{=schemaCode=}" mode="ace/mode/json" />
     <br />
     <table class="typedefs as-form-preview" s-if="schemaCode">
+        <colgroup>
+            <col width="700px" />
+            <col width="200px" />
+        </colgroup>
         <tbody>
             <tr><th>表单</th><th>表单数据</th></tr>
             <tr>
@@ -38,6 +42,7 @@ const template = `<template>
                     <div s-ref="form-container"></div>
                     <div>
                         开启实时验证：<xui-switch checked="{=instantValidation=}" on-change="onInstantValidationChanged" />
+                        预览模式：<xui-switch checked="{=preview=}" on-change="onPreviewChanged" />
                         <xui-button skin="primary" on-click="validateForm">验证表单</xui-button>
                     </div>
                 </td>
@@ -68,6 +73,7 @@ export default defineComponent({
     initData() {
         return {
             instantValidation: true,
+            preview: false,
             examples: {
                 datasource: [
                     {text: '默认情况', value: kDefaultSchema},
@@ -104,6 +110,11 @@ export default defineComponent({
         if (this.formInstance) {
             this.formInstance.data.set('instantValidation', value);
             this.validateForm();
+        }
+    },
+    onPreviewChanged({value}) {
+        if (this.formInstance) {
+            this.formInstance.data.set('preview', value);
         }
     },
     buildFormBySchema({value}) {

@@ -16,7 +16,8 @@ export const kDefaultSchema = {
                 'minLength:10',
                 'maxLength:20',
                 'isUrl'
-            ]
+            ],
+            help: '最少10个字符，最多20个字符，URL格式'
         },
         {
             label: '多行文本类型',
@@ -36,7 +37,8 @@ export const kDefaultSchema = {
             validationErrors: {
                 minimum: '年龄最小值10',
                 maximum: '年龄最大值30'
-            }
+            },
+            help: '最小值10，最大值30'
         },
         {
             label: 'SELECT',
@@ -81,6 +83,105 @@ export const kDefaultSchema = {
             type: 'switch',
             required: true,
             name: 'gSwitch'
+        },
+        {
+            label: 'BoxGroup',
+            type: 'boxgroup',
+            required: true,
+            requiredRuleType: 'number',
+            datasource: [
+                {text: 'FOO', value: 0},
+                {text: 'BAR', value: 1}
+            ],
+            name: 'gBoxgroup'
+        },
+        {
+            label: 'Dragger',
+            type: 'dragger',
+            required: true,
+            requiredRuleType: 'number',
+            name: 'gDragger'
+        },
+        {
+            label: 'NumberTextline',
+            type: 'numbertextline',
+            required: true,
+            requiredRuleType: 'number',
+            min: 10,
+            max: 20,
+            name: 'gNtl'
+        },
+        {
+            label: 'RadioSelect',
+            type: 'radioselect',
+            required: true,
+            name: 'gRs',
+            datasource: [
+                {text: '1个月', value: 'foo'},
+                {text: '2', value: 'bar'},
+                {text: '3', value: '123', disabled: true}
+            ]
+        },
+        {
+            label: 'MultiPicker',
+            type: 'multipicker',
+            required: true,
+            requiredRuleType: 'array',
+            name: 'gMp',
+            datasource: [
+                {
+                    text: 'CentOS',
+                    value: 'CentOS'
+                },
+                {
+                    text: 'Debian',
+                    value: 'Debian',
+                },
+                {
+                    text: 'Ubuntu',
+                    value: 'Ubuntu',
+                    disabled: true
+                },
+                {
+                    text: 'Windows Server',
+                    value: 'Windows Server'
+                }
+            ]
+        },
+        {
+            label: 'UserPicker',
+            type: 'userpicker',
+            required: true,
+            requiredRuleType: 'array',
+            name: 'gUp',
+            searchRequester(keyword) {
+                return fetch('https://randomuser.me/api/?results=5')
+                    .then(response => response.json())
+                    .then(response => {
+                        const results = response.results;
+                        return results.map(o => {
+                            // 必须要有 accountId 和 username 两个属性
+                            o.accountId = o.email;
+                            o.username = o.name.first + ' ' + o.name.last;
+                            o.displayName = o.username;
+                            return o;
+                        });
+                    });
+            }
+        },
+        {
+            label: 'RangeCalendar',
+            type: 'rangecalendar',
+            required: true,
+            requiredRuleType: 'object',
+            name: 'gRc'
+        },
+        {
+            label: 'ACEEditor',
+            type: 'aceeditor',
+            required: true,
+            width: 300,
+            name: 'gACE'
         }
     ]
 };

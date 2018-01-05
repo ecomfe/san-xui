@@ -1,5 +1,5 @@
 /**
- * @file Dragger.es6
+ * @file components/Dragger.es6
  * @author leeight
  */
 
@@ -8,6 +8,7 @@ import {defineComponent} from 'san';
 
 import {create} from './util';
 import TextBox from './TextBox';
+import {asInput} from './asInput';
 
 const cx = create('ui-dragger');
 
@@ -46,7 +47,7 @@ const template = `<div on-click="onClick" class="{{mainClass}}" style="{{mainSty
 </div>`;
 /* eslint-enable */
 
-export default defineComponent({
+const Dragger = defineComponent({ // eslint-disable-line
     template,
     components: {
         'ui-textbox': TextBox
@@ -105,15 +106,17 @@ export default defineComponent({
             const {min, step, max} = this.data.get();
             if (value < min || value > max) {
                 if (value < min) {
-                    this.data.set('value', min);
+                    value = min;
                 }
                 else if (value > max) {
-                    this.data.set('value', max);
+                    value = max;
                 }
             }
             else {
-                this.data.set('value', getValue(value, step));
+                value = getValue(value, step);
             }
+            this.data.set('value', value);
+            this.fire('change', {value});
         });
     },
     attached() {
@@ -191,3 +194,5 @@ export default defineComponent({
         $(document).off('mouseup.dragger');
     }
 });
+
+export default asInput(Dragger);
