@@ -26,7 +26,7 @@ const cx = create('ui-biz-filter');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
-    <dl>
+    <dl s-if="!loading">
         <dt s-if="title">{{title}}</dt>
         <dd>
             <div class="${cx('form', 'form-inline')}">
@@ -34,7 +34,7 @@ const template = `<div class="{{mainClass}}">
                     <label s-if="item.label" class="${cx('label')}">{{item.label}}</label>
                     <ui-select
                         s-if="item.type === 'select'"
-                        value="{{item.value}}"
+                        value="{{formData[item.name]}}"
 
                         width="{{item.width}}"
                         filter="{{item.filter}}"
@@ -47,7 +47,7 @@ const template = `<div class="{{mainClass}}">
 
                     <ui-textbox
                         s-if="item.type === 'textbox'"
-                        value="{{item.value}}"
+                        value="{{formData[item.name]}}"
                         width="{{item.width}}"
                         placeholder="{{item.placeholder}}"
                         on-input="onItemChanged(item.name, $event, true)"
@@ -56,7 +56,7 @@ const template = `<div class="{{mainClass}}">
 
                     <ui-rangecalendar
                         s-if="item.type === 'rangecalendar'"
-                        value="{{item.value}}"
+                        value="{{formData[item.name]}}"
                         time="{{item.time}}"
                         width="{{item.width}}"
                         range="{{item.range}}"
@@ -65,7 +65,7 @@ const template = `<div class="{{mainClass}}">
 
                     <ui-calendar
                         s-if="item.type === 'calendar'"
-                        value="{{item.value}}"
+                        value="{{formData[item.name]}}"
 
                         width="{{item.width}}"
                         prev="{{item.prev}}"
@@ -95,8 +95,10 @@ export default defineComponent({
     },
     dataTypes: {
         title: DataTypes.string,
+        loading: DataTypes.bool,
         submitText: DataTypes.string,
-        controls: DataTypes.array
+        controls: DataTypes.array,
+        formData: DataTypes.object
     },
     computed: {
         mainClass() {
@@ -106,61 +108,51 @@ export default defineComponent({
     initData() {
         return {
             title: null,
+            loading: true,
             submitText: null,
+            formData: null,
             controls: []
         };
     },
     inited() {
-        const controls = this.data.get('controls');
-        const formData = {};
-        _.each(controls, item => {
-            if (item.value != null) {
-                if (_.isString(item.name)) {
-                    formData[item.name] = item.value;
-                }
-                else if (_.isPlainObject(item.name) && item.value) {
-                    _.each(item.name, (name, valueKey) => {
-                        const value = item.value[valueKey];
-                        if (value != null) {
-                            formData[name] = value;
-                        }
-                    });
-                }
-                else if (!item.name && _.isPlainObject(item.value)) {
-                    _.extend(formData, item.value);
-                }
+        const keyMap = [];
+        const formData = this.data.get('formData') || {};
+        const controls = _.map(this.data.get('controls'), (item, index) => {
+            let name = item.name;
+            if (!name) {
+                // 如果没有设置 name，就用默认值，这样子才能恢复 value
+                // XXX(leeight) 如果有这种情况，为什么不直接在 $extraPayload 里面设置过滤参数呢？
+                keyMap.push({type: 'p', value: index});
+                name = `__key_${keyMap.length - 1}`;
             }
+            else if (_.isPlainObject(name)) {
+                // 如果设置的是 JSON 格式，转成 string，方便后续使用
+                keyMap.push({type: 'j', value: name});
+                name = `__key_${keyMap.length - 1}`;
+            }
+
+            if (formData[name] == null && item.value != null) {
+                formData[name] = item.value;
+            }
+
+            return _.extend({}, item, {name});
         });
-        this._valueFilter(formData);
+        if (keyMap.length) {
+            formData.__s_key = keyMap; // eslint-disable-line
+        }
         this.data.set('formData', formData);
+        this.data.set('controls', controls);
+        this.data.set('loading', false);
     },
-    _valueFilter(formData) {
-        _.each(formData, (v, k) => {
-            if (_.isDate(v)) {
-                formData[k] = moment(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
-            }
-        });
+    attached() {
+        const formData = this.data.get('formData');
+        if (!_.isEmpty(formData)) {
+            // 如果有默认值，就自动过滤一下??
+            this.doFilter();
+        }
     },
     onItemChanged(name, {value}, preventFilterAction) {
-        const formData = this.data.get('formData');
-
-        if (!name && _.isPlainObject(value)) {
-            _.extend(formData, value);
-        }
-        else if (_.isString(name)) {
-            formData[name] = value;
-        }
-        else if (_.isPlainObject(name) && value) {
-            _.each(name, (n, valueKey) => {
-                const v = value[valueKey];
-                if (v != null) {
-                    formData[n] = v;
-                }
-            });
-        }
-
-        this._valueFilter(formData);
-        this.data.set('formData', formData);
+        this.data.set(`formData.${name}`, value);
 
         const submitText = this.data.get('submitText');
         if (!submitText && !preventFilterAction) {
@@ -169,6 +161,14 @@ export default defineComponent({
         }
     },
     doFilter() {
+        if (!this.lifeCycle.attached) {
+            return;
+        }
+
+        // 在一个渲染周期内，可能会被触发三次
+        // RangeCalendar
+        // Calendar
+        // attached
         const formData = _.clone(this.data.get('formData'));
         this.fire('submit', formData);
     }

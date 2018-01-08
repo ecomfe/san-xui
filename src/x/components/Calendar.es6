@@ -85,9 +85,9 @@ const Calendar = defineComponent({  // eslint-disable-line
         else if (value && typeof value === 'string') {
             value = new Date(value);
         }
-        this.watch('value', value => this.fire('change', {value}));
         // 只有 new Date(value), 数据才会同步到外部的组件里面去
         this.data.set('value', new Date(value));
+        this.watch('value', value => this.fire('change', {value}));
     },
     nextDay() {
         const value = this.data.get('value');

@@ -50,10 +50,11 @@ export default {
      * console.log($route.path);
      * console.log($route.query);
      *
+     * @param {boolean} disableCache 是否允许缓存数据.
      * @return {{path: string, query: Object}}
      */
-    $route() {
-        if (this.__$route) {
+    $route(disableCache = false) {
+        if (!disableCache && this.__$route) {
             return this.__$route;
         }
         const url = URL.parse(location.hash.substr(1));

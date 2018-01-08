@@ -124,7 +124,11 @@ const RangeCalendar = defineComponent({
     },
     computed: {
         text() {
-            const {begin, end} = this.data.get('value');
+            const value = this.data.get('value');
+            if (!value) {
+                return '-';
+            }
+            const {begin, end} = value;
             const format = this.data.get('time') ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
             const beginText = moment(begin).format(format);
             const endText = moment(end).format(format);

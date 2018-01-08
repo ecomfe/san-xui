@@ -48,7 +48,7 @@ export default defineComponent({
             controls: [
                 {
                     type: 'select',
-                    name: 'the-select',
+                    name: 'theSelect',
                     value: 'foo',
                     // multi: false,
                     // filterCallback: null,
@@ -63,7 +63,7 @@ export default defineComponent({
                 },
                 {
                     type: 'rangecalendar',
-                    name: 'the-rangecalendar',
+                    name: 'theRangecalendar',
                     value: {
                         begin: new Date(),
                         end: new Date()
@@ -72,7 +72,7 @@ export default defineComponent({
                 },
                 {
                     type: 'calendar',
-                    name: 'the-calendar',
+                    name: 'theCalendar',
                     value: new Date(),
                     width: 200,
                     prev: true,
@@ -81,6 +81,12 @@ export default defineComponent({
                         begin: new Date(2014, 4, 1),
                         end: new Date()
                     }
+                },
+                {
+                    type: 'textbox',
+                    name: 'theText',
+                    value: 'eeeee',
+                    width: 200
                 },
                 {
                     type: 'plain',

@@ -4,6 +4,7 @@
  */
 
 import u from 'lodash';
+import moment from 'moment';
 import Promise from 'promise';
 import ConfirmDialog from 'inf-ui/x/components/ConfirmDialog';
 import AlertDialog from 'inf-ui/x/components/AlertDialog';
@@ -131,4 +132,49 @@ export function matchAll(compProxy, when) {
     return true;
 }
 
+export function valueTransform(formData) {
+    const transformedData = {};
+    const keyMap = formData.__s_key || [];
+    u.each(formData, (v, k) => {
+        if (/^__key_(.*)$/.test(k)) {
+            const config = keyMap[+RegExp.$1];
+            if (!config) {
+                return;
+            }
+            if (config.type === 'p') {
+                // 没有对应的 key，把 v 直接合并到 transformedData 里面去
+                u.extend(transformedData, v);
+            }
+            else if (config.type === 'j') {
+                // 对应的 key 是 JSON，重新处理恢复一下
+                //
+                // 针对 type: rangecalendar 的特殊情况
+                // name: {
+                //   begin: 'beginTime',
+                //   end: 'endTime'
+                // },
+                // value: {
+                //   begin: ...,
+                //   end: ...
+                // }
+                u.each(config.value, (name, valueKey) => {
+                    const value = v[valueKey];
+                    if (value != null) {
+                        transformedData[name] = value;
+                    }
+                });
+            }
+        }
+        else if (k !== '__s_key') {
+            transformedData[k] = v;
+        }
+    });
 
+    u.each(transformedData, (v, k) => {
+        if (u.isDate(v)) {
+            transformedData[k] = moment(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
+        }
+    });
+
+    return transformedData;
+}

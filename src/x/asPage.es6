@@ -4,6 +4,7 @@
  */
 
 import _ from 'lodash';
+import URL from 'er/URL';
 import {defineComponent} from 'inf-ui/sanx';
 
 import Toolbar from './biz/Toolbar';
@@ -11,7 +12,7 @@ import RightToolbar from './biz/RightToolbar';
 import XPager from './biz/XPager';
 import Filter from './biz/Filter';
 import BulkActions from './biz/BulkActions';
-import {Page, matchAll, createToolbar} from './biz/helper';
+import {Page, matchAll, valueTransform, createToolbar} from './biz/helper';
 import {ajaxAction} from './biz/ajaxAction';
 import {dialogAlertAction} from './biz/dialogAlertAction';
 import {dialogPlainAction} from './biz/dialogPlainAction';
@@ -43,18 +44,20 @@ export function asPage(schema, MainComponent) {
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
+                form-data="{{$filterPayload}}"
                 submit-text="{{filter.submitText}}"
                 controls="{{filter.controls}}"
-                on-submit="onFilter($event)" />
+                on-submit="onXFilter($event)" />
         </div>
 
         <div class="list-page-tb-left-filter" slot="tb-filter" s-if="withToolbarFilter">
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
+                form-data="{{$filterPayload}}"
                 submit-text="{{filter.submitText}}"
                 controls="{{filter.controls}}"
-                on-submit="onFilter($event)" />
+                on-submit="onXFilter($event)" />
         </div>
 
         <div class="list-page-tb-left-toolbar" slot="tb-left" s-if="toolbar.length">
@@ -69,9 +72,9 @@ export function asPage(schema, MainComponent) {
                 loading="{{table.loading}}"
 
                 with-searchbox="{{withSearchbox}}"
-                searchbox-value="{=$extraPayload.keyword=}"
+                searchbox-value="{=$filterPayload.keyword=}"
                 searchbox-placeholder="{{filter.$searchbox.placeholder}}"
-                searchbox-keyword-type="{=$extraPayload.keywordType=}"
+                searchbox-keyword-type="{=$filterPayload.keywordType=}"
                 searchbox-keyword-types="{{filter.$searchbox.datasource}}"
 
                 with-tct="{{tct.datasource.length}}"
@@ -153,22 +156,75 @@ export function asPage(schema, MainComponent) {
                 const selectedIndex = this.data.get('table.selectedIndex');
                 const loading = this.data.get('table.loading');
                 return !loading && selectedIndex && selectedIndex.length > 0;
+            },
+            pageState() {
+                const pager = this.data.get('pager');
+                const extraPayload = this.data.get('$extraPayload');
+                const filterPayload = this.data.get('$filterPayload');
+                return {
+                    p: pager,
+                    e: extraPayload,
+                    f: filterPayload
+                };
+            },
+            searchCriteria() {
+                const pager = this.data.get('pager');
+                const extraPayload = this.data.get('$extraPayload');
+                const filterPayload = this.data.get('$filterPayload');
+                const searchCriteria = {
+                    pageNo: pager.page,
+                    pageSize: pager.size
+                };
+
+                const keywordName = this.data.get('filter.$searchbox.name');
+                if (keywordName) {
+                    const keyword = filterPayload.keyword;
+                    _.extend(searchCriteria, extraPayload,
+                        _.omit(filterPayload, 'keyword'),
+                        {[keywordName]: keyword}
+                    );
+                }
+                else {
+                    _.extend(searchCriteria, extraPayload, filterPayload);
+                }
+
+                return valueTransform(searchCriteria);
             }
         },
 
         initData() {
-            const {$pageClass, $breadcrumbs, $navs, $helps, $withTip, $withPager, $withPagerSize, $withTotalCount, $withSearchbox, $withSidebar, remark, title, toolbar, body} = schema;
+            /* eslint-disable */
+            const {
+                $pageClass, $breadcrumbs, $navs, $helps, $persistState,
+                $withTip, $withPager, $withPagerSize, $withTotalCount, $withSearchbox, $withSidebar,
+                remark, title, toolbar, body
+            } = schema;
+            /* eslint-enable */
             const {bulkActions, filter, columns, $extraPayload, $select, $cellRenderer, $pageSize} = body;
             const {$onRequest, $onResponse, $onError} = body;
             const cellRenderer = $cellRenderer
-                ? (...args) => $cellRenderer.apply(null, [...args, this.data.get('$extraPayload')])
+                ? (...args) => $cellRenderer.apply(null, [...args, this.getSearchCriteria()])
                 : null;
+
+            const $filterPayload = {};
+            const keywordType = _.get(filter, '$searchbox.keywordType');
+            if (keywordType) {
+                $filterPayload.keywordType = keywordType;
+            }
+            const keyword = _.get(filter, '$searchbox.value');
+            if (keyword) {
+                $filterPayload.keyword = keyword;
+            }
+
+            const withPersistState = $persistState && typeof history.pushState === 'function';
 
             this.$onRequest = $onRequest;
             this.$onResponse = $onResponse;
             this.$onError = $onError;
 
-            return {
+            const {p, e, f} = withPersistState ? this.__restorePageState() : {};
+
+            const data = {
                 title,
                 klass: $pageClass,
                 navs: $navs,
@@ -184,7 +240,7 @@ export function asPage(schema, MainComponent) {
                 withSearchbox: $withSearchbox !== false,
                 withPager: $withPager !== false,
                 withTip: !!$withTip,
-                $extraPayload,
+                withPersistState,
 
                 loading: false, // 数据是否在加载中
                 error: null, // 错误的情况
@@ -199,7 +255,10 @@ export function asPage(schema, MainComponent) {
                     selectedIndex: [],
                     selectedItems: [] // 当前选中的行
                 },
-                pager: {
+
+                $extraPayload: e || $extraPayload,
+                $filterPayload: f || $filterPayload,
+                pager: p || {
                     size: $pageSize || 10,
                     page: 1,
                     count: 0,
@@ -211,6 +270,8 @@ export function asPage(schema, MainComponent) {
                     ]
                 }
             };
+
+            return data;
         },
 
         __watcherTableColumns(tableColumns) {
@@ -231,30 +292,16 @@ export function asPage(schema, MainComponent) {
         // compiled,
 
         inited() {
-            const keywordType = this.data.get('filter.$searchbox.keywordType');
-            if (keywordType) {
-                this.data.set('$extraPayload.keywordType', keywordType);
-            }
-
-            const keyword = this.data.get('filter.$searchbox.value');
-            if (keyword) {
-                this.data.set('$extraPayload.keyword', keyword);
-            }
-
             this.$childs = [];
+            this.$tableInited = false;
             this.watch('tableColumns', tableColumns => this.__watcherTableColumns(tableColumns));
         },
 
         // created,
 
         attached() {
-            const filter = this.ref('filter');
-            if (filter) {
-                this.resetSearchCriteria(filter.data.get('formData'));
-            }
-            this.doSearch();
-
             this.__watcherTableColumns(this.data.get('tableColumns'));
+            this.refreshTable();
         },
 
         // detached,
@@ -263,11 +310,15 @@ export function asPage(schema, MainComponent) {
             this.disposeInternalChilds();
         },
 
-        onFilter(filterOptions) {
+        onXFilter(formData) {
+            this.onFilter(formData);
+        },
+
+        onFilter(filterPayload) {
             // a: b
             // c: d
             // e: f
-            this.resetSearchCriteria(filterOptions);
+            this.resetSearchCriteria(filterPayload);
             this.doSearch();
         },
 
@@ -278,11 +329,11 @@ export function asPage(schema, MainComponent) {
         },
 
         $filterValue(key, value) {
-            const nowValue = this.data.get(`$extraPayload.${key}`);
+            const nowValue = this.data.get(`$filterPayload.${key}`);
             if (nowValue === value) {
                 return;
             }
-            this.data.set(`$extraPayload.${key}`, value);
+            this.data.set(`$filterPayload.${key}`, value);
             this.refreshTable();
         },
 
@@ -384,26 +435,14 @@ export function asPage(schema, MainComponent) {
             this.loadPage(payload);
         },
 
-        resetSearchCriteria(filterOptions) {
-            const $extraPayload = this.data.get('$extraPayload');
-            const newPayload = _.extend({}, $extraPayload, filterOptions);
-            this.data.set('$extraPayload', newPayload);
+        resetSearchCriteria(filterPayload) {
+            const $filterPayload = this.data.get('$filterPayload');
+            const newFilterPayload = _.extend({}, $filterPayload, filterPayload);
+            this.data.set('$filterPayload', newFilterPayload);
         },
 
         getSearchCriteria() {
-            const pager = this.data.get('pager');
-            const payload = {
-                pageNo: pager.page,
-                pageSize: pager.size
-            };
-
-            const extraPayload = this.data.get('$extraPayload');
-            const keywordName = this.data.get('filter.$searchbox.name');
-            if (keywordName) {
-                const keyword = extraPayload.keyword;
-                return _.extend(payload, _.omit(extraPayload, 'keyword'), {[keywordName]: keyword});
-            }
-            return _.extend(payload, extraPayload);
+            return this.data.get('searchCriteria');
         },
 
         disposeInternalChilds() {
@@ -453,13 +492,48 @@ export function asPage(schema, MainComponent) {
                 });
         },
 
+        __restorePageState() {
+            // silent
+            const query = this.$route().query;
+            if (query && query.__state) {
+                try {
+                    // {p: ..., e: ..., f: ...}
+                    return JSON.parse(query.__state);
+                }
+                catch (ex) {
+                }
+            }
+
+            return {};
+        },
+
+        __savePageState() {
+            // 保存当前页面的搜索条件
+            const disableCache = true;
+            const {query, path} = this.$route(disableCache);
+            const pageState = this.data.get('pageState');
+            query.__state = JSON.stringify(pageState);
+            const newUrl = '#' + URL.withQuery(path, query).toString();
+            history.pushState(null, '', newUrl);
+        },
+
         loadPage(payload) {
-            this.data.set('table.loading', true);
+            if (!this.lifeCycle.attached) {
+                return;
+            }
+
             const requestPayload = typeof this.$onRequest === 'function'
                 ? this.$onRequest(payload) || payload
                 : payload;
+
+            if (_.isEqual(this.__searchCriteria, requestPayload)) {
+                // 如果搜索条件一样，就忽略本次的请求
+                return;
+            }
+
             // this.__searchCriteria 保存最后一次的查询条件
             this.__searchCriteria = requestPayload;
+            this.data.set('table.loading', true);
             return this.__doRequest(schema.body.api, requestPayload)
                 .then(({searchCriteria, searchResponse}) => {
                     if (this.__searchCriteria === kShieldType
@@ -467,6 +541,7 @@ export function asPage(schema, MainComponent) {
                         return;
                     }
                     this.__searchCriteria = kShieldType;
+                    this.$tableInited = true;
                     const page = searchResponse;
                     const responsePayload = typeof this.$onResponse === 'function'
                         ? this.$onResponse(page) || page
@@ -480,6 +555,11 @@ export function asPage(schema, MainComponent) {
                     this.data.set('table.datasource', tableData);
                     this.data.set('pager.page', pageNo);
                     this.data.set('pager.count', resultTotalCount);
+
+                    const withPersistState = this.data.get('withPersistState');
+                    if (withPersistState) {
+                        this.__savePageState();
+                    }
                 })
                 .catch(({searchCriteria, error}) => {
                     if (this.__searchCriteria === kShieldType
@@ -487,6 +567,7 @@ export function asPage(schema, MainComponent) {
                         return;
                     }
                     this.__searchCriteria = kShieldType;
+                    this.$tableInited = true;
                     if (typeof this.$onError === 'function') {
                         this.$onError(error);
                     }
@@ -498,7 +579,12 @@ export function asPage(schema, MainComponent) {
         doSearch() {
             this.disposeInternalChilds();
             const payload = this.getSearchCriteria();
-            payload.pageNo = 1;
+            if (this.$tableInited) {
+                // 如果已经完成了数据的初始化，那么后续切换过滤条件的时候，才需要把页码恢复到第一页
+                // 否则在初始化的时候，经常会发现因为 x-filter#submit 触发执行了 onXFilter 的逻辑，然后执行了
+                // doSearch，导致把页面从 pageState 里面的值重置到了第一页
+                payload.pageNo = 1;
+            }
             return this.loadPage(payload);
         },
 
