@@ -4,7 +4,7 @@
  */
 
 import Promise from 'promise';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import ResizeObserver from './ResizeObserver';
 import {create} from './util';
@@ -35,10 +35,18 @@ export default defineComponent({
             autoResize: false,
             width: 300,
             height: 300,
-            option: {}
+            option: {},
+            notMerge: false
         };
     },
-
+    dataTypes: {
+        loading: DataTypes.bool,
+        autoResize: DataTypes.bool,
+        width: DataTypes.number,
+        height: DataTypes.number,
+        option: DataTypes.object,
+        notMerge: DataTypes.bool,
+    },
     getChart() {
         return this.chart;
     },
@@ -92,7 +100,7 @@ export default defineComponent({
 
         this.watch('option', option => {
             if (this.chart && option) {
-                this.chart.setOption(option);
+                this.chart.setOption(option, !!this.data.get('notMerge'));
                 this.chart.hideLoading();
             }
         });
