@@ -108,7 +108,9 @@ const Calendar = defineComponent({  // eslint-disable-line
         this.data.set('active', !active);
     },
     onChange({value}) {
-        this.fire('change', {value});
+        if (value !== this.data.get('value')) {
+            this.fire('change', {value});
+        }
     }
 });
 
