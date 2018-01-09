@@ -168,8 +168,7 @@ export const blocks = [
                 text: 'xui-filter'
             },
             {
-                text: 'xui-toolbar',
-                disabled: true
+                text: 'xui-toolbar'
             },
             {
                 text: 'xui-right-toolbar',
