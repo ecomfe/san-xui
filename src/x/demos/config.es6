@@ -32,6 +32,9 @@ export const blocks = [
                 text: 'xui-multipicker'
             },
             {
+                text: 'xui-region'
+            },
+            {
                 text: 'xui-radioselect'
             },
             {
