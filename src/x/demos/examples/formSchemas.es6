@@ -123,6 +123,13 @@ export const kDefaultSchema = {
             ]
         },
         {
+            label: 'Region',
+            type: 'region',
+            required: true,
+            requiredRuleType: 'array',
+            name: 'gRegion'
+        },
+        {
             label: 'MultiPicker',
             type: 'multipicker',
             required: true,
