@@ -539,14 +539,30 @@
 /* ui-select-multipicker */
 .ui-select-multipicker-layer {
     white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
 }
-.ui-select-multipicker-layer > ul {
-    display: inline-block;
+.ui-select-multipicker-layer > .ui-select-multipicker-column {
+    // display: inline-block;
     min-width: 100px;
     vertical-align: top;
     border-left: 1px solid #eee;
+    max-height: 156px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // flex: 1;
 }
-.ui-select-multipicker-layer > ul:first-child {
+.ui-select-multipicker-layer > .ui-select-multipicker-column::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column:first-child {
     border-left: none;
 }
 .ui-select-multipicker-layer .ui-select-item {

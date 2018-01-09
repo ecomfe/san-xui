@@ -22,21 +22,23 @@ const kTmpValuesKey = '__values';
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}">
     <span class="${cx('text')}">{{label|raw}}</span>
-    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{3}}">
-        <ui-ss class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
-            <ul s-for="datastore, levelIndex in compactLevels">
-                <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
-                    on-click="onItemClicked(item, levelIndex)"
-                    s-for="item in datastore">
-                    <span>
-                        {{item.text}}
-                        <ui-loading size="small" s-if="item.loading" />
-                        <ui-icon name="color-error" s-elif="item.error" />
-                        <ui-icon name="arrow-right" s-elif="item.expandable" />
-                    </span>
-                </li>
-            </ul>
-        </ui-ss>
+    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{0}}">
+        <div class="${cx('layer')} ${cx('layer-x')} ${cx('multipicker-layer')}" style="{{layerStyle}}">
+            <ui-ss class="${cx('multipicker-column')}" s-for="datastore, levelIndex in compactLevels">
+                <ul>
+                    <li class="{{item.disabled ? '${cx('item', 'item-disabled')}' : item.active ? '${cx('item', 'item-selected')}' : '${cx('item')}'}}"
+                        on-click="onItemClicked(item, levelIndex)"
+                        s-for="item in datastore">
+                        <span>
+                            {{item.text}}
+                            <ui-loading size="small" s-if="item.loading" />
+                            <ui-icon name="color-error" s-elif="item.error" />
+                            <ui-icon name="arrow-right" s-elif="item.expandable" />
+                        </span>
+                    </li>
+                </ul>
+            </ui-ss>
+        </div>
     </ui-layer>
 </div>`;
 /* eslint-enable */
