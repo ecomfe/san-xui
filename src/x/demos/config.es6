@@ -172,7 +172,6 @@ export const blocks = [
             },
             {
                 text: 'xui-right-toolbar',
-                disabled: true
             },
             {
                 text: 'xui-bulk-actions',
