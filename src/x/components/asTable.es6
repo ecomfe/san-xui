@@ -334,8 +334,7 @@ export function asTable(columns) {
                     break;
                 default:
                     break;
-            };
-            
+            }
         },
 
         onSelectAllClicked(e) {
@@ -389,7 +388,6 @@ export function asTable(columns) {
         },
 
         toggleSubrow(rowIndex) {
-            const expandedIndex = this.data.get('expandedIndex');
             const xuiExpanded = `datasource[${rowIndex}].xui__expanded`;
             if (this.data.get(xuiExpanded)) {
                 this.data.set(xuiExpanded, false);

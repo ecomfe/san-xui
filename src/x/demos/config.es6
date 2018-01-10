@@ -110,6 +110,9 @@ export const blocks = [
         items: [
             {
                 text: 'xui-chart'
+            },
+            {
+                text: 'xui-bcmchart'
             }
         ]
     },
@@ -171,7 +174,7 @@ export const blocks = [
                 text: 'xui-toolbar'
             },
             {
-                text: 'xui-right-toolbar',
+                text: 'xui-right-toolbar'
             },
             {
                 text: 'xui-bulk-actions',

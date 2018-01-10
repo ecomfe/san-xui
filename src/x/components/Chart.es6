@@ -45,7 +45,7 @@ export default defineComponent({
         width: DataTypes.number,
         height: DataTypes.number,
         option: DataTypes.object,
-        notMerge: DataTypes.bool,
+        notMerge: DataTypes.bool
     },
     getChart() {
         return this.chart;
