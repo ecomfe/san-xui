@@ -330,7 +330,6 @@
     position: relative;
     top: -10px;
 }
-
 .ui-dragger-bar-selected,
 .ui-dragger-control-bar {
     transition: all 0.2s ease-out;
@@ -341,6 +340,20 @@
 }
 .ui-dragger-disabled .ui-dragger-control-bar-horizontal:before {
     background: #f6f7fb !important;
+}
+.ui-dragger-x {
+    .ui-dragger-bar.ui-dragger-bar-horizontal {
+        height: 12px;
+        .ui-dragger-bar-left,
+        .ui-dragger-bar-right,
+        .ui-dragger-bar-middle {
+            height: 12px;
+        }
+    }
+    .ui-textbox-addon-end {
+        border: none;
+        background: none;
+    }
 }
 
 /* ui-textbox */
