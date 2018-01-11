@@ -28,15 +28,13 @@ export default defineComponent({
             if (size === 'middle') {
                 return {
                     'width': `${width / 2}px`,
-                    'height': `${height / 2}px`,
-                    'background-size': '100%'
+                    'height': `${height / 2}px`
                 };
             }
             else if (size === 'small') {
                 return {
                     'width': `${width / 4}px`,
-                    'height': `${height / 4}px`,
-                    'background-size': '100%'
+                    'height': `${height / 4}px`
                 };
             }
             return {
