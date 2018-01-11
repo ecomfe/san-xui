@@ -586,7 +586,13 @@
 
 /* ui-numbertextline */
 .ui-numbertextline-x .ui-textbox-x {
-    margin: 0 -4px;
+    margin: 0 -3px;
+    input[type="number"] {
+        &::-webkit-inner-spin-button {
+           display: none;
+        }
+        -moz-appearance: textfield;
+    }
 }
 
 /* ui-actionloader */
