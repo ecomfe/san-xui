@@ -44,11 +44,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                 />
             <li class="${cx('item', 'item-all')}" s-if="filteredDatasource.length">
                 <label>
-                    <input type="checkbox"
-                        on-change="onToggleAll"
-                        checked="{=checkedAll=}"
-                        />
-                    全选/全不选
+                    <input type="checkbox" on-change="onToggleAll" checked="{=checkedAll=}" />全选/全不选
                 </label>
             </li>
             <li class="{{item | itemClass}}"
@@ -59,8 +55,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                         value="{{item.value}}"
                         class="${cx('selected-box')}"
                         disabled="{{item.disabled}}"
-                        checked="{=value=}" />
-                    <span>{{item.text}}</span>
+                        checked="{=value=}" /><span>{{item.text}}</span>
                 </label>
             </li>
         </ul>
