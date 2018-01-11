@@ -16,7 +16,7 @@ const template = `
 <template>
 <div class="{{mainClass}}">
     <div class="${cx('group')}" s-for="ds, i in groupedDatasource">
-        <label class="${cx('radio', 'wrapper')}" san-for="item in ds">
+        <label class="${cx('radio', 'wrapper')}" style="{{itemStyle}}" san-for="item in ds">
             <input san-if="boxType == 'radio'"
                 type="radio"
                 on-change="onChange($event, item.__index)"
@@ -48,6 +48,7 @@ const BoxGroup = defineComponent({
             orientation: 'horizontal', // 'vertical' | 'horizontal'
             value: null,
             colCount: 0, // 展示N列
+            itemWidth: 0, // 每一列的宽度
             name: 'esui' + nexUuid(),
             boxType: 'radio' // 'radio' | 'checkbox'
         };
@@ -58,6 +59,7 @@ const BoxGroup = defineComponent({
         orientation: DataTypes.string,
         value: DataTypes.any,
         colCount: DataTypes.number,
+        itemWidth: DataTypes.number,
         boxType: DataTypes.string
     },
     computed: {
@@ -83,6 +85,16 @@ const BoxGroup = defineComponent({
             }
 
             return status;
+        },
+        itemStyle() {
+            const style = {};
+
+            const itemWidth = this.data.get('itemWidth');
+            if (itemWidth > 0) {
+                style.width = `${itemWidth}px`;
+            }
+
+            return style;
         },
         groupedDatasource() {
             const datasource = this.data.get('datasource');

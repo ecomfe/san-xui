@@ -32,10 +32,11 @@ const template = `<template>
     </strong>
 </x-row>
 
-<x-row label="checkbox,col-count=3">
+<x-row label="checkbox,col-count=3,item-width=100">
     <xui-boxgroup
         box-type="checkbox"
         col-count="{{3}}"
+        item-width="{{100}}"
         datasource="{{boxgroup.datasource}}"
         value="{=boxgroup.checkbox=}"
         />
