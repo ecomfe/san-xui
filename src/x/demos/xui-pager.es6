@@ -16,13 +16,13 @@ const template = `<template>
         count="{{pager.count}}"
         on-change="onPagerChange($event)" />
 </x-row>
-<x-row label="back-text=<,forward-text=>">
+<x-row label="back-text=上一页,forward-text=下一页">
     <xui-pager size="{{pager.size}}"
         with-total-count
         page="{{pager.page}}"
         count="{{pager.count}}"
-        back-text="<"
-        forward-text=">"
+        back-text="上一页"
+        forward-text="下一页"
         on-change="onPagerChange($event)" />
 </x-row>
 </template>`;

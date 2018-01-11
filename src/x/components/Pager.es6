@@ -46,8 +46,8 @@ export default defineComponent({
             count: 0,
             backCount: 3,
             forwardCount: 3,
-            backText: '上一页',
-            forwardText: '下一页'
+            backText: '<',
+            forwardText: '>'
         };
     },
     dataTypes: {
