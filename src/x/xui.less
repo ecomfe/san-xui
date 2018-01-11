@@ -200,8 +200,13 @@
 .ui-monthview-x .ui-monthview-time {
     text-align: center;
 }
-.ui-monthview-x .ui-monthview-time input[type="number"]::-webkit-inner-spin-button {
-    display: none;
+.ui-monthview-x .ui-monthview-time {
+    input[type="number"] {
+        -moz-appearance: textfield;
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
 }
 
 /* ui-table */

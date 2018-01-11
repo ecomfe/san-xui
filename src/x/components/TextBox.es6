@@ -32,6 +32,9 @@ const template = `<div class="{{mainClass}}">
         on-focus="onFocus($event)"
         on-blur="onBlur($event)"
         value="{=value=}"
+        min="{{min}}",
+        max="{{max}}"
+        step="{{step}}"
         type="{{type}}"
         disabled="{{disabled}}"
         placeholder="{{placeholder}}"
@@ -74,7 +77,10 @@ const TextBox = defineComponent({
         addon: DataTypes.string,
         addonPosition: DataTypes.string,
         width: DataTypes.number,
-        height: DataTypes.number
+        height: DataTypes.number,
+        min: DataTypes.number,
+        max: DataTypes.number,
+        step: DataTypes.number
     },
     attached() {
         const autofocus = this.data.get('autofocus');
