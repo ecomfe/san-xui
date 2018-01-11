@@ -26,6 +26,7 @@ export default defineComponent({
     initData() {
         return {
             open: true,
+            width: 500,
             title: _('确认'),
             foot: {
                 okBtn: {

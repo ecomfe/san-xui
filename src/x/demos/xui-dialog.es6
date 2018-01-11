@@ -96,7 +96,7 @@ export default defineComponent({
         this.data.set('alertDialogOpened', true);
     },
     showAlertDialog() {
-        alert({message: 'Alert dialog (w=300)', width: 300})
+        alert({message: 'Alert dialog (w=500)'})
             .then(() => Toast.success('OK'));
     },
     showConfirmDialog() {
@@ -105,7 +105,7 @@ export default defineComponent({
             .catch(() => Toast.warning('Canceled'));
     },
     showPlainDialog() {
-        plain({message: 'Plain dialog (w=500)', width: 500})
+        plain({message: 'Plain dialog (w=500)'})
             .then(() => Toast.success('OK'));
     },
     showToast() {

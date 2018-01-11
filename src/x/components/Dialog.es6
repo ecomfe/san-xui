@@ -32,7 +32,7 @@ const template = `<template>
         </slot>
     </div>
 </div>
-<div s-if="open && mask" on-click="onClickMask" class="${cx('mask')}" style="{{maskStyle}}"></div>
+<div s-if="open && mask" on-click="onClickMask" class="${cx('mask', 'mask-x')}" style="{{maskStyle}}"></div>
 </template>`;
 /* eslint-enable */
 
