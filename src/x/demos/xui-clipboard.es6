@@ -6,12 +6,19 @@
 import {defineComponent} from 'inf-ui/sanx';
 import Clipboard from 'inf-ui/x/components/Clipboard';
 import Button from 'inf-ui/x/components/Button';
+import Icon from 'inf-ui/x/components/Icon';
 
 import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
 <x-row label="[default]">
+    <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
+        <xui-icon name="copy" />
+    </xui-clipboard>
+</x-row>
+
+<x-row label="btns">
     <xui-clipboard text="Hello World" on-aftercopy="onAfterCopy">
         <xui-button>{{clipboard.btnText}}</xui-button>
     </xui-clipboard>
@@ -39,6 +46,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-icon': Icon,
         'xui-button': Button,
         'xui-clipboard': Clipboard
     },
