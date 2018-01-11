@@ -72,18 +72,21 @@ export default defineComponent({
         }
     },
     attached() {
-        const datasource = this.data.get('datasource');
         const keywordType = this.data.get('keywordType');
+        this.__updatePlaceholder(keywordType);
+    },
+    onKeywordTypeChanged({value}) {
+        this.__updatePlaceholder(value);
+    },
+    __updatePlaceholder(keywordType) {
+        const datasource = this.data.get('datasource');
         if (datasource && keywordType) {
             u.each(datasource, item => {
                 if (item.value === keywordType) {
-                    this.onKeywordTypeChanged(item);
+                    this.data.set('placeholder', `请输入${item.text}进行搜索`);
                 }
             });
         }
-    },
-    onKeywordTypeChanged({value, text}) {
-        this.data.set('placeholder', `请输入${text}进行搜索`);
     },
     onSearch() {
         this.fire('search');
