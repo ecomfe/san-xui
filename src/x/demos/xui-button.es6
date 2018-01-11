@@ -5,6 +5,7 @@
 
 import {defineComponent} from 'inf-ui/sanx';
 import Button from 'inf-ui/x/components/Button';
+import ToastLabel from 'inf-ui/x/components/ToastLabel';
 
 import Row from './Row';
 
@@ -40,7 +41,21 @@ const template = `<template>
     <xui-button icon="sdk" disabled />
 </x-row>
 
+<x-row label="icon,label">
+    <xui-button icon="refresh" />
+    <xui-button icon="refresh">{{'刷新'|i18n}}</xui-button>
+    <xui-button icon="voice">Start</xui-button>
+    <xui-button icon="plus" skin="primary" label="{{'创建' | i18n}}" />
+</x-row>
+
+<x-row label="icon,label,size=large">
+    <xui-button on-click="onRefresh" icon="refresh" size="large">{{'刷新'|i18n}}</xui-button>
+    <xui-button on-click="onCreate" icon="plus" skin="primary" size="large">{{'创建'|i18n}}</xui-button>
+</x-row>
+
 <x-row label="icon,size=large">
+    <xui-toastlabel>非标准样式</xui-toastlabel>
+    <br/>
     <xui-button icon="refresh" size="large" />
     <xui-button icon="refresh" disabled size="large" />
     <xui-button icon="download" size="large" />
@@ -49,15 +64,6 @@ const template = `<template>
     <xui-button icon="sdk" disabled size="large" />
 </x-row>
 
-<x-row label="icon,label">
-    <xui-button icon="refresh">{{'刷新'|i18n}}</xui-button>
-    <xui-button icon="plus" skin="primary">{{'创建'|i18n}}</xui-button>
-</x-row>
-
-<x-row label="icon,label,size=large">
-    <xui-button on-click="onRefresh" icon="refresh" size="large">{{'刷新'|i18n}}</xui-button>
-    <xui-button on-click="onCreate" icon="plus" skin="primary" size="large">{{'创建'|i18n}}</xui-button>
-</x-row>
 </template>`;
 /* eslint-enable */
 
@@ -65,6 +71,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-toastlabel': ToastLabel,
         'xui-button': Button
     },
     onCreate() {

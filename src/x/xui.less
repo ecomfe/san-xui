@@ -541,11 +541,18 @@
 }
 
 /* ui-button */
+.ui-button-x {
+    padding: 0 10px;
+}
 .ui-button-x > div:empty {
     display: none;
 }
 .ui-button-x .iconfont {
-    font-size: inherit;
+    font-size: 16px;
+    margin: 0 2px;
+}
+.ui-button-with-label:not(.ui-button-large) .iconfont {
+    font-size: 12px;
 }
 .ui-button-x .ui-button-label {
     display: inline-block;
@@ -723,12 +730,23 @@
 .ui-checkbox-x input {
     margin: 0;
 }
-
 .ui-radiobox-x label,
 .ui-checkbox-x label {
     display: block;
     line-height: 1;
 }
+/*
+.ui-radiobox-x input {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+}
+.ui-radiobox-x input:before {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+*/
 
 /* .ui-region-x */
 .ui-region-x {
