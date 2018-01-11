@@ -332,6 +332,11 @@ const BcmChart = defineComponent({ // eslint-disable-line
     },
 
     showBigView() {
+        if (this.dialog) {
+            this.dialog.dispose();
+            this.dialog = null;
+        }
+
         const DialogComponent = asDialog(BcmChart);
         const payload = _.defaults({withFilter: true, width: 740, height: 350}, this.data.get());
         const data = {
@@ -340,11 +345,15 @@ const BcmChart = defineComponent({ // eslint-disable-line
             width: 800,
             payload
         };
-        const dialog = new DialogComponent({data});
+        const dialog = this.dialog = new DialogComponent({data});
+        dialog.on('close', () => this.dialog = null);
         dialog.attach(document.body);
     },
 
     disposed() {
+        if (this.dialog) {
+            this.dialog.dispose();
+        }
     }
 });
 
