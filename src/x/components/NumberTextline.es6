@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {DataTypes, defineComponent} from 'san';
 import Big from 'big.js';
-import _ from 'lodash';
+import {DataTypes, defineComponent} from 'san';
 
 import Button from './Button';
 import TextBox from './TextBox';
@@ -21,6 +20,10 @@ const template = `<div class="{{mainClass}}">
     <ui-button on-click="onIncrease" skin="primary" disabled="{{increaseDisabled}}">+</ui-button>
 </div>`;
 /* eslint-enable */
+
+function isValid(value) {
+    return /^-?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i.test(value);
+}
 
 const NumberTextline = defineComponent({
     template,
@@ -40,10 +43,7 @@ const NumberTextline = defineComponent({
 
             const min = this.data.get('min');
             const value = this.data.get('value');
-            if (value === '') {
-                return false;
-            }
-            return +value <= min;
+            return !(isValid(value) && +value > min);
         },
         increaseDisabled() {
             const disabled = this.data.get('disabled');
@@ -53,10 +53,7 @@ const NumberTextline = defineComponent({
 
             const max = this.data.get('max');
             const value = this.data.get('value');
-            if (value === '') {
-                return false;
-            }
-            return +value >= max;
+            return !(isValid(value) && +value < max);
         }
     },
     initData() {
@@ -78,35 +75,25 @@ const NumberTextline = defineComponent({
     },
     inited() {
         // 如果value没有填默认值，则与min一致
-        if (this.data.get('value') === undefined) {
-            this.data.set('value', this.data.get('min').toString());
+        const {value, min} = this.data.get();
+        if (value == null) {
+            this.data.set('value', String(min));
         }
-        this.watch('value', value => {
-            // 点击加减button后的value是number，其他情况下都是string
-            if (_.isNumber(value)) {
-                const {min, max} = this.data.get();
-                if (value < min) {
-                    value = min;
-                }
-                else if (value > max) {
-                    value = max;
-                }
-                value = value.toString();
-                // 转成string
-                this.data.set('value', value, {silent: true});
-            }
-            this.fire('input', {value});
-        });
+        this.watch('value', value => this.fire('input', {value}));
     },
     onDecrease() {
-        let {value, min, step} = this.data.get();
-        value = value === '' ? min : Number(new Big(value).minus(step));
-        this.data.set('value', value);
+        const {value, min, step} = this.data.get();
+        const newValue = isValid(value)
+            ? Math.max(min, new Big(value).minus(step))
+            : min;
+        this.data.set('value', String(newValue));
     },
     onIncrease() {
-        let {value, min, step} = this.data.get();
-        value = value === '' ? min : Number(new Big(value).add(step));
-        this.data.set('value', value);
+        const {value, max, step} = this.data.get();
+        const newValue = isValid(value)
+            ? Math.min(max, new Big(value).add(step))
+            : max;
+        this.data.set('value', String(newValue));
     }
 });
 
