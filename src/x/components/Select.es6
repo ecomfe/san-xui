@@ -30,6 +30,29 @@ function defaultFilter(datasource, keyword) {
     return rv;
 }
 
+function defaultGroupFilter(groupDatasource, keyword) {
+    if (!keyword) {
+        return groupDataHandler(groupDatasource);
+    }
+
+    const rv = [];
+    u.each(groupDatasource, item => {
+        if (item.text && item.text.indexOf(keyword) !== -1) {
+            rv.push(item);
+        }
+    });
+    return groupDataHandler(rv);
+}
+
+function groupDataHandler(groupDatasource) {
+    const rv = [];
+    let groupObj = u.groupBy(groupDatasource, 'group');
+    u.each(groupObj, (item, key) => {
+        rv.push({title: key, datasource: item});
+    });
+    return rv;
+}
+
 /* eslint-disable */
 const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">
     <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
@@ -65,7 +88,22 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                 placeholder="{{filterPlaceholder}}"
                 width="{{realLayerWidth - 50}}"
                 />
-            <li on-click="selectItem($event, item)"
+            <li s-if="groupDatasource"
+                class="${cx('item-group')}"
+                s-for="group in filteredGroupDatasource">
+                <div class="${cx('item-group-title')}" title="{{group.title}}">{{group.title}}</div>
+                <ul class="${cx('item-group-list')}">
+                    <li on-click="selectItem($event, item)"
+                        class="{{item | itemClass}}"
+                        aria-label="{{item.tip}}"
+                        s-for="item in group.datasource">
+                        <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
+                        <span s-else>{{item.text}}</span>
+                    </li>
+                </ul>
+            </li>
+            <li s-else
+                on-click="selectItem($event, item)"
                 class="{{item | itemClass}}"
                 aria-label="{{item.tip}}"
                 s-for="item in filteredDatasource">
@@ -101,7 +139,11 @@ const Select = defineComponent({    // eslint-disable-line
             keyword: '', // 过滤的关键词
 
             value: '', // any | any[]
-            checkedAll: false
+            checkedAll: false,
+
+            // 分组形式的dataSource:
+            // [{text: 'XXX', value: 'XXX', group: 'XXX'}, {...}]
+            groupDatasource: null
         };
     },
     computed: {
@@ -135,9 +177,20 @@ const Select = defineComponent({    // eslint-disable-line
             const filterCallback = this.data.get('filterCallback') || defaultFilter;
             return filterCallback(datasource, keyword);
         },
+        filteredGroupDatasource() {
+            const filter = this.data.get('filter');
+            const groupDatasource = this.data.get('groupDatasource');
+            if (!filter) {
+                return groupDatasource;
+            }
+            const keyword = this.data.get('keyword');
+            const filterCallback = defaultGroupFilter;
+            return filterCallback(groupDatasource, keyword);
+        },
         selectedItem() {
             const value = this.data.get('value');
-            const datasource = this.data.get('datasource');
+
+            const datasource = this.data.get('groupDatasource') || this.data.get('datasource');
             if (value != null && datasource) {
                 for (let i = 0; i < datasource.length; i++) {
                     if (datasource[i] && datasource[i].value === value) {
