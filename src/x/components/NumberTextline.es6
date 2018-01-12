@@ -15,9 +15,9 @@ const cx = create('ui-numbertextline');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
-    <ui-button on-click="onDecrease" skin="primary" disabled="{{decreaseDisabled}}">-</ui-button>
+    <ui-button icon="minus" on-click="onDecrease" skin="primary" disabled="{{decreaseDisabled}}" />
     <ui-textbox type="number" value="{=value=}" min="{{min}}" max="{{max}}" step="{{step}}" disabled="{{disabled}}" width="{{width}}"/>
-    <ui-button on-click="onIncrease" skin="primary" disabled="{{increaseDisabled}}">+</ui-button>
+    <ui-button icon="plus" on-click="onIncrease" skin="primary" disabled="{{increaseDisabled}}" />
 </div>`;
 /* eslint-enable */
 
@@ -59,7 +59,7 @@ const NumberTextline = defineComponent({
     initData() {
         return {
             disabled: false,
-            width: null,
+            width: 38,
             min: 0,
             max: 0,
             step: 1 // 默认step是1,支持小数
