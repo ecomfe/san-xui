@@ -106,11 +106,9 @@ export function createToolbar(toolbar) {
                 type: item.type,
                 value: item.$value || item.buttons[0].$value,
                 datasource: u.map(item.buttons, btn => {
-                    const {label, $value, ...props} = btn;
-                    return u.extend({
-                        text: label,
-                        value: $value
-                    }, props);
+                    const {label, $value} = btn;
+                    const props = u.omit(btn, 'label', '$value');
+                    return u.extend({text: label, value: $value}, props);
                 })
             };
             return btnGroup;

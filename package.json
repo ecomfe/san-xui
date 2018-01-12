@@ -3,7 +3,20 @@
   "version": "0.0.0",
   "library.type": "amd",
   "library.ignore": [
-    "x/demos/**", "x/showcase",
-    "x/List", "x/Aside", "x/AppExplorer", "x/SwitchLan"
-  ]
+    "x/demos/**",
+    "x/showcase",
+    "x/List",
+    "x/Aside",
+    "x/AppExplorer",
+    "x/SwitchLan"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "jsxobj": "^1.1.0",
+    "webpack": "^3.10.0"
+  }
 }
