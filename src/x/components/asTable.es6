@@ -198,7 +198,7 @@ export function asTable(columns) {
                         </div>
                     </td>
                 </tr>
-                </template> 
+                </template>
             </tbody>
         </table>
         <div class="${cx('loading')}" s-if="loading"><slot name="loading"><ui-loading /></slot></div>

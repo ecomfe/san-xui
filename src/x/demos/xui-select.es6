@@ -52,10 +52,21 @@ const template = `<template>
         filter
         filter-placeholder="输入域名查询，多个搜索项以空格分隔"
         layer-width="300"
-        value="{=select.multi.value=}"
+        value="{=select.value=}"
         datasource="{{select.datasource}}" />
     <strong class="large">
-        Selected value: {{select.multi.value}}
+        Selected value: {{select.value}}
+    </strong>
+</x-row>
+<x-row label="分组展示,filter=true,layer-width=300">
+    <xui-select
+        filter
+        filter-placeholder="输入域名查询，多个搜索项以空格分隔"
+        layer-width="300"
+        value="{=groupSelect.value=}"
+        datasource="{{groupSelect.datasource}}" />
+    <strong class="large">
+        Selected value: {{groupSelect.value}}
     </strong>
 </x-row>
 </template>`;
@@ -102,6 +113,24 @@ export default defineComponent({
                     {text: 'abc8', value: 'abc8'},
                     {text: 'abc9', value: 'abc9'},
                     {text: 'abc0', value: 'abc0'}
+                ]
+            },
+            groupSelect: {
+                value: 'abc7',
+                datasource: [
+                    {group: '分组1', text: 'foo', value: 'foo'},
+                    {group: '分组1', text: 'bar', value: 'bar'},
+                    {group: '分组1', text: '123', value: '123', disabled: true, tip: 'Disabled item'},
+                    {group: '分组2', text: 'abc1', value: 'abc1', tip: 'hello world'},
+                    {group: '分组2', text: 'abc2', value: 'abc2'},
+                    {group: '分组2', text: 'abc3', value: 'abc3'},
+                    {group: '分组2', text: 'abc4', value: 'abc4'},
+                    {group: '分组2', text: 'abc5', value: 'abc5'},
+                    {group: '分组3', text: 'abc6', value: 'abc6'},
+                    {group: '分组4', text: 'abc7', value: 'abc7'},
+                    {group: '分组4', text: 'abc8', value: 'abc8'},
+                    {group: '分组4', text: 'abc9', value: 'abc9'},
+                    {group: '分组4', text: 'abc0', value: 'abc0'}
                 ]
             }
         };
