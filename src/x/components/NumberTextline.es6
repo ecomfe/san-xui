@@ -82,17 +82,13 @@ const NumberTextline = defineComponent({
         this.watch('value', value => this.fire('input', {value}));
     },
     onDecrease() {
-        const {value, min, step} = this.data.get();
-        const newValue = isValid(value)
-            ? Math.max(min, new Big(value).minus(step))
-            : min;
+        const {value, min, max, step} = this.data.get();
+        const newValue = Math.min(max, Math.max(min, new Big(value).minus(step)));
         this.data.set('value', String(newValue));
     },
     onIncrease() {
-        const {value, max, step} = this.data.get();
-        const newValue = isValid(value)
-            ? Math.min(max, new Big(value).add(step))
-            : max;
+        const {value, min, max, step} = this.data.get();
+        const newValue = Math.max(min, Math.min(max, new Big(value).add(step)));
         this.data.set('value', String(newValue));
     }
 });
