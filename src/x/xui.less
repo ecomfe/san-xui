@@ -226,12 +226,25 @@
 .ui-table-x .ui-table-hcell:last-child .ui-table-hcell-text {
     border-right: none;
 }
+.ui-table-x {
+    .ui-table-cell-text,
+    .ui-table-body-nodata {
+        padding: 10px;
+    }
+    .ui-table-hcell-text {
+        border-right-color: #fff;
+        font-size: 12px;
+        padding: 0 10px;
+        .ui-table-hcell-text-content {
+            display: inline-block;
+        }
+    }
 
-.ui-table-x .ui-table-hcell-text {
-    border-right-color: #fff;
-    font-size: 12px;
-    .ui-table-hcell-text-content {
-        display: inline-block;
+    .ui-table-cell:first-child .ui-table-cell-text {
+        padding: 10px 16px;
+    }
+    .ui-table-hcell:first-child .ui-table-hcell-text {
+        padding: 0 16px;
     }
 }
 
