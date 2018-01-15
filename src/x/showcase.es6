@@ -106,15 +106,20 @@ const App = defineComponent({   // eslint-disable-line
         this.data.set('aside.expand', !expand);
     },
     onItemSelected(item) {
-        const moduleId = item.moduleId || `inf-ui/x/demos/${item.text}`;
+        const prefix = typeof G_PREFIX === 'string' ? G_PREFIX : 'inf-ui/x/demos/';
+        const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
+        const moduleId = item.moduleId || `${prefix}${item.text}`;
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
         this.data.set('aside.expand', false);
-        const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + '.es6';
+        const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
         fetch(sourceUrl)
             .then(response => response.text())
             .then(code => this.data.set('explorer.code', code));
         window.require([moduleId], CompCtor => {
+            if (typeof CompCtor.default === 'function') {
+                CompCtor = CompCtor.default;
+            }
             _hmt.push(['_trackEvent', 'page', 'view', item.text]);
             _hmt.push(['_trackPageview', location.pathname + location.search + '#comp=' + item.text]);
             this.disposeComponent();

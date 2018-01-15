@@ -16,14 +16,14 @@ const cx = create('ui-richtexteditor');
 
 const kDefaultEditorOptions = {
     // 如果配置了 urlArgs，那么后续用 UEDITOR_HOME_URL 拼接路径的时候就出问题了，因此把这个部分删掉
-    UEDITOR_HOME_URL: require.toUrl('ueditor/').replace(/\?.*/, ''),
+    UEDITOR_HOME_URL: window.require.toUrl('ueditor/').replace(/\?.*/, ''),
     // initialFrameWidth: 770,
     initialFrameHeight: 250,
     autoFloatEnabled: false,
     elementPathEnabled: false,
     autoHeightEnabled: false,
     iframeUrlMap: {
-        link: require.toUrl('ueditor/dialogs/link/link.html')
+        link: window.require.toUrl('ueditor/dialogs/link/link.html')
     },
     serverUrl: '/api/mc/imageUpload',
     initialStyle: [

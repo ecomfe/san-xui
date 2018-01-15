@@ -214,7 +214,7 @@ const BcmChart = defineComponent({ // eslint-disable-line
 
             if (apiType === kMetricName) {
                 conf.dimensions = dimensions;
-                conf.metricNames = _.pluck(metricMap, 'value');
+                conf.metricNames = _.map(metricMap, o => o.value);
             }
             else {
                 // 是数组，表示已经解析好了，不需要再次解析

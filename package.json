@@ -10,13 +10,26 @@
     "x/AppExplorer",
     "x/SwitchLan"
   ],
+  "scripts": {
+    "start:dev": "webpack-dev-server -d --progress --colors",
+    "build": "webpack"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.8",
+    "file-loader": "^1.1.6",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^2.30.1",
     "jsxobj": "^1.1.0",
-    "webpack": "^3.10.0"
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
   }
 }
