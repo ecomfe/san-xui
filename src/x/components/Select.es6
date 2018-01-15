@@ -115,7 +115,7 @@ const Select = defineComponent({    // eslint-disable-line
             keyword: '', // 过滤的关键词
 
             value: '', // any | any[]
-            checkedAll: false,
+            checkedAll: false
         };
     },
     computed: {
@@ -151,13 +151,19 @@ const Select = defineComponent({    // eslint-disable-line
         },
         groupedDatasource() {
             const datasource = this.data.get('filteredDatasource');
-            let groupObj = u.groupBy(datasource, 'group');
+            const defaultItems = u.filter(datasource, item => item.group == null);
+            const groupedDatasource = u.chain(datasource).filter(item => item.group != null).groupBy('group').value();
             const data = [];
-            u.each(groupObj, (item, key) => {
-                let title = key !== 'undefined' ? key : '-';
-                data.push({title, datasource: item});
+            u.each(groupedDatasource, (item, key) => {
+                data.push({title: key, datasource: item});
             });
-            console.log(data);
+
+            if (defaultItems.length) {
+                data.unshift({
+                    title: '-',
+                    datasource: defaultItems
+                });
+            }
 
             return data;
         },
