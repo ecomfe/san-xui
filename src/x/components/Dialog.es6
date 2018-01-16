@@ -16,7 +16,7 @@ const cx = create('ui-dialog');
 /* eslint-disable */
 const template = `<template>
 <div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">
-    <div class="${cx('head', 'head-panel')}" san-if="head">
+    <div class="${cx('head', 'head-panel')}" s-if="head">
         <div class="${cx('title')}">
             <slot name="head">Title</slot>
         </div>
@@ -25,7 +25,7 @@ const template = `<template>
     <div class="${cx('body', 'body-panel')}" style="{{dialogBodyStyle}}">
         <slot />
     </div>
-    <div class="${cx('foot', 'foot-panel')}" san-if="foot">
+    <div class="${cx('foot', 'foot-panel')}" s-if="foot">
         <slot name="foot">
             <ui-button on-click="onConfirmDialog" skin="primary">{{'确认'|i18n}}</ui-button>
             <ui-button on-click="onCloseDialog">{{'取消'|i18n}}</ui-button>

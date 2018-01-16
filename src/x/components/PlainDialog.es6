@@ -11,7 +11,7 @@ import Button from './Button';
 
 export default defineComponent({
     template: `<template>
-    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" s-if="{{!!foot}}">
+    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">
         <span slot="head">{{title}}</span>
         {{message | raw}}
         <div slot="foot">

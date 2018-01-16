@@ -32,7 +32,8 @@ export function dialogPlainAction(config, payload) {
         };
     }
 
-    const dialog = new DialogComponent({data: dialogData});
+    const data = _(dialogData).omit(_.isUndefined).value();
+    const dialog = new DialogComponent({data});
     dialog.attach(document.body);
     this.$childs.push(dialog);
 
