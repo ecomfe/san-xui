@@ -54,6 +54,8 @@
 .ui-select-layer-x {
     width: 200px;
     left: 0;
+    // 覆盖absolute
+    position: relative;
     -webkit-box-shadow: 2px 5px 8px rgba(0,0,0,0.2);
     box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
 }
@@ -668,6 +670,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     display: flex;
+    position: absolute;
 }
 .ui-select-multipicker-layer > .ui-select-multipicker-column {
     // display: inline-block;
