@@ -11,9 +11,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const kBaseDir = path.resolve(__dirname, '..', '..');
 
-function pages() {
+function entries() {
     const files = glob.sync('./src/x/demos/xui-*.es6');
-    const config = {};
+    const config = {
+        app: './src/x/demos/app.es6'
+    };
     files.forEach(f => {
         const key = path.basename(f, '.es6');
         config[key] = f;
@@ -22,10 +24,7 @@ function pages() {
 }
 
 module.exports = {
-    entry: {
-        app: './src/x/demos/app.es6',
-        ...pages()
-    },
+    entry: entries(),
     output: {
         filename: '[name].js',
         path: __dirname + '/dist',
@@ -42,6 +41,14 @@ module.exports = {
             amd: 'async-validator'
         }
     },
+    devServer: {
+        allowedHosts: [
+            '.efe.tech',
+            '.baidu.com',
+            '.baidu-int.com'
+        ],
+        host: '0.0.0.0'
+    },
     resolve: {
         extensions: ['.js', '.jsx', '.es6'],
         mainFiles: ['index', 'main'],
@@ -51,6 +58,7 @@ module.exports = {
             'bat-ria': path.join(kBaseDir, 'bat-ria', '0.1.14', 'src'),
             'clipboard': path.join(kBaseDir, 'clipboard', '0.0.0', 'src'),
             'eoo': path.join(kBaseDir, 'eoo', '0.1.4', 'src'),
+            'underscore': path.join(kBaseDir, 'underscore', '1.6.0', 'src', 'underscore'),
             'mini-event': path.join(kBaseDir, 'mini-event', '1.0.2', 'src'),
             'promise': path.join(kBaseDir, 'promise', '1.0.2', 'src'),
             'humanize': path.join(kBaseDir, 'humanize', '0.0.9', 'src'),
