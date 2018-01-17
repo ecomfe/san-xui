@@ -66,6 +66,9 @@ export default defineComponent({
                             T.name = _.kebabCase(T.name);
                         });
                         this.data.set('typeDefs', typeDefs);
+                    })
+                    .catch(() => {
+                        this.data.set('typeDefs', []);
                     });
             }
         });
