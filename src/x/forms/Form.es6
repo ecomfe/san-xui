@@ -4,13 +4,14 @@
  */
 
 import {defineComponent} from 'san';
+import Promise from 'promise';
 
 import {create} from '../components/util';
-import Promise from 'promise';
 
 const cx = create('ui-form');
 
 export default defineComponent({
+    roleType: 'Form',
     template: '<form class="{{mainClass}}"><slot/></form>',
     computed: {
         mainClass() {
@@ -27,6 +28,7 @@ export default defineComponent({
     initData() {
         return {
             errors: null,
+            labelWidth: null,
             formData: {}
         };
     },

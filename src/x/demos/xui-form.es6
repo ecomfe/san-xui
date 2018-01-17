@@ -114,10 +114,13 @@ const template = `<template>
     </xui-form>
 </x-row>
 
-<x-row label="inline,label">
-    <xui-form formData="{=formData2=}" errors="{=formErrors2=}" >
+<x-row label="inline,label,label-width">
+    <xui-form label-width="{{200}}" formData="{=formData2=}" errors="{=formErrors2=}" >
         <xui-item name="name" required inline label="名称">
             <xui-textbox placeholder="用户名" type="text" value="{=formData2.name=}" />
+        </xui-item>
+        <xui-item label-width="{{300}}" name="age" required inline label="年龄">
+            <xui-textbox placeholder="年龄" type="text" value="{=formData2.age=}" />
         </xui-item>
     </xui-form>
 </x-row>
