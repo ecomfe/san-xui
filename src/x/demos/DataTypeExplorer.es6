@@ -4,93 +4,73 @@
  * @file inf-ui/x/demos/DataTypeExplorer.es6
  * @author leeight
  */
+
+/* global _hmt, G_PREFIX, G_SOURCE_EXT */
+
 import _ from 'lodash';
-import {DataTypes} from 'san';
+import {parse} from 'san-types';
 import {defineComponent} from 'inf-ui/sanx';
+import Icon from 'inf-ui/x/components/Icon';
 
 /* eslint-disable */
 const template = `<template>
 <table s-if="typeDefs.length" border="1" cellpadding="0" cellspacing="0" class="typedefs">
-    <tr><th>名称</th><th>类型</th><th>描述</th></tr>
+    <tr><th>名称</th><th>类型</th><th>默认值</th><th>描述</th></tr>
     <tr s-for="typeDef in typeDefs">
-        <td>{{typeDef.name}}</td>
+        <td>
+            {{typeDef.name | kebabCase}}
+            <ui-icon name="bind" title="支持双绑" s-if="typeDef.bindx" />
+            <ui-icon name="ok" title="必填" s-if="typeDef.required" />
+        </td>
         <td>{{typeDef.type}}</td>
-        <td>{{typeDef.description}}</td>
+        <td>{{typeDef.defaultValue || '-'}}</td>
+        <td>{{typeDef.desc || '-'}}</td>
     </tr>
 </table>
 <div s-else>暂无定义，请给组件添加 <code>dataTypes</code> 属性</div>
 </template>`;
 /* eslint-enable */
 
-const kAllTypes = [
-    'any',
-
-    // 基本类型
-    'array', 'object', 'func', 'string', 'number', 'bool', 'symbol',
-
-    // 复合类型
-    'arrayOf', 'instanceOf', 'shape', 'oneOf', 'oneOfType', 'objectOf', 'exact'
-];
-
-function getTypeString(type) {
-    for (let i = 0; i < kAllTypes.length; i++) {
-        if (type === DataTypes[kAllTypes[i]]) {
-            return kAllTypes[i];
-        }
-    }
-
-    // FIXME(leeight) 如何检测是复合类型呢?
-    return 'unknown';
-}
-
 export default defineComponent({
     template,
-    components: {},
+    components: {
+        'ui-icon': Icon
+    },
+    filters: {
+        kebabCase(value) {
+            return _.kebabCase(value);
+        }
+    },
     initData() {
         return {
-            key: '',
-            comp: null,
             typeDefs: []
         };
     },
     inited() {
-        this.watch('comp', comp => {
-            if (!comp) {
-                this.noDataTypes();
-                return;
-            }
+        this.watch('code', code => {
             const key = this.data.get('key');
-            const components = comp.components;
-            const Ctor = components[key];
-            if (!Ctor) {
-                this.noDataTypes();
-                return;
+            const pattern = new RegExp('\'' + _.escapeRegExp(key) + '\'\\s*:\\s*(\\w+)', 'gm');
+            const match = pattern.exec(code);
+            if (match) {
+                const compName = match[1];
+                const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
+                const moduleId = typeof G_PREFIX === 'object'
+                    ? `${G_PREFIX.componentsCode}/${compName}`
+                    : `inf-ui/x/components/${compName}`;
+                const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
+                fetch(sourceUrl)
+                    .then(response => {
+                        if (response.status === 200) {
+                            return response.text();
+                        }
+                        throw new Error(response.url + ' failed');
+                    })
+                    .then(code => {
+                        const typeDefs = parse(code) || [];
+                        this.data.set('typeDefs', typeDefs);
+                    });
             }
-            const dataTypes = Ctor.prototype.dataTypes;
-            if (!dataTypes) {
-                this.noDataTypes();
-                return;
-            }
-
-            this.parseDataTypes(dataTypes);
         });
-    },
-
-    noDataTypes() {
-        this.data.set('typeDefs', []);
-    },
-
-    parseDataTypes(dataTypes) {
-        const typeDefs = [];
-        _.each(dataTypes, (type, name) => {
-            typeDefs.push({
-                name: _.kebabCase(name),
-                type: getTypeString(type),
-                // FIXME(chenbo09) 注释怎么导入呢？ 从代码中读取？
-                description: '-'
-            });
-        });
-        this.data.set('typeDefs', typeDefs);
     }
 });
 

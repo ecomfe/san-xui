@@ -34,6 +34,9 @@ module.exports = {
         san: {
             amd: 'san'
         },
+        'san-types': {
+            amd: 'san-types'
+        },
         echarts: {
             amd: 'echarts'
         },
@@ -100,7 +103,8 @@ module.exports = {
             template: './src/x/demos/index.html'
         }),
         new CopyWebpackPlugin([
-            {from: './src/x/demos/xui-*.es6', to: '[name].txt'}
+            {from: './src/x/demos/xui-*.es6', to: 'assets/demos/[name].txt'},
+            {from: './src/x/components/*.es6', to: 'assets/components/[name].txt'}
         ])
     ],
     module: {
@@ -108,7 +112,14 @@ module.exports = {
             {
                 test: /\.(png|gif|jpe?g|svg)$/,
                 use: [
-                    {loader: 'file-loader'}
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name(file) {
+                                return 'assets/images/[hash].[ext]';
+                            }
+                        }
+                    }
                 ]
             },
             {
@@ -134,7 +145,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                   presets: ['es2015']
+                    presets: ['es2015']
                 }
             }
         ]

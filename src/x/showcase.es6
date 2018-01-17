@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-/* global _hmt */
+/* global _hmt, G_PREFIX, G_SOURCE_EXT */
 
 import $ from 'jquery';
 import u from 'underscore';
@@ -106,13 +106,23 @@ const App = defineComponent({   // eslint-disable-line
         this.data.set('aside.expand', !expand);
     },
     onItemSelected(item) {
-        const prefix = typeof G_PREFIX === 'string' ? G_PREFIX : 'inf-ui/x/demos/';
+        let demosModulePrefix = 'inf-ui/x/demos/';
+        let demosCodePrefix = 'inf-ui/x/demos/';
+        if (typeof G_PREFIX === 'object') {
+            if (G_PREFIX.demosModule != null) {
+                demosModulePrefix = G_PREFIX.demosModule;
+            }
+            if (G_PREFIX.demosCode != null) {
+                demosCodePrefix = G_PREFIX.demosCode;
+            }
+        }
         const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
-        const moduleId = item.moduleId || `${prefix}${item.text}`;
+        const moduleId = item.moduleId || `${demosModulePrefix}${item.text}`;
+        const sourceCodeId = `${demosCodePrefix}${item.text}`;
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
         this.data.set('aside.expand', false);
-        const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
+        const sourceUrl = window.require.toUrl(sourceCodeId).replace(/\?.*/, '') + ext;
         fetch(sourceUrl)
             .then(response => response.text())
             .then(code => this.data.set('explorer.code', code));

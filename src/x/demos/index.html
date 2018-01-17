@@ -10,7 +10,11 @@
     <script src="https://cdn.bdstatic.com/ecom/esl/2-1-6/esl.js"></script>
     <script>
     /* eslint-disable */
-    var G_PREFIX = '';
+    var G_PREFIX = {
+        demosModule: '',
+        demosCode: 'assets/demos/',
+        componentsCode: 'assets/components/'
+    };
     var G_SOURCE_EXT = '.txt';
     var _hmt = _hmt || [];
     (function () {
@@ -122,6 +126,7 @@
         paths: {
             'x-config': 'https://bj.bcebos.com/bce-cdn/console/config',
             'san': 'https://cdn.bdstatic.com/san/3.3.2-rc.3/san.min',
+            'san-types': 'https://cdn.bdstatic.com/san-types/1.0.0/main',
             'ckeditor': 'https://cdn.bdstatic.com/ckeditor/4.8.0',
             'iconfont': 'https://cdn.bdstatic.com/iconfont',
             'jquery': 'https://cdn.bdstatic.com/console/dist/be03539/dep/jquery/1.9.1/jquery.min',

@@ -51,12 +51,44 @@ export default defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 控制按钮的禁用状态
+         *
+         * @default false
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 控制是否显示 loading 的 ICON
+         *
+         * @default false
+         */
         loading: DataTypes.bool,
+
+        /**
+         * 控制是否展示按钮的 tip 文案
+         */
         ariaLabel: DataTypes.string,
+
+        /**
+         * 控制按钮的大小，如果需要展示大的按钮，设置 size="large"
+         */
         size: DataTypes.string,
+
+        /**
+         * 控制按钮的皮肤，默认提供的有 primary, danger
+         * 如果设置了其它值，需要自行提供 css 样式
+         */
         skin: DataTypes.string,
+
+        /**
+         * 控制按钮文字前面的icon
+         */
         icon: DataTypes.string,
+
+        /**
+         * 控制按钮上的文案
+         */
         label: DataTypes.string
     },
     attached() {
