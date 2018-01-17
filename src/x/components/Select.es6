@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
@@ -117,6 +117,75 @@ const Select = defineComponent({    // eslint-disable-line
             value: '', // any | any[]
             checkedAll: false
         };
+    },
+    dataTypes: {
+        /**
+         * 获取或者设置 Select 组件的当前的值
+         *
+         * @bindx
+         * @default ''
+         */
+        value: DataTypes.any,
+
+        /**
+         * 浮层的打开或者关闭状态
+         *
+         * @bindx
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * Select 的数据源，每一项的格式如下：
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   group?: string （如需要分组展示，设置这个字段）
+         * }</code></pre>
+         */
+        datasource: DataTypes.array,
+
+        /**
+         * 是否支持选择多项，如果设置为 true，那么 value 的类型是 any[]
+         *
+         * @default false
+         */
+        multi: DataTypes.bool,
+
+        /**
+         * 浮层的宽度，如果没有设置的话，默认跟 Select 的宽度保持一致（每次展示的时候会计算）
+         */
+        layerWidth: DataTypes.number,
+
+        /**
+         * 调整 Layer 的偏移量
+         *
+         * @default 2
+         */
+        layerOffsetTop: DataTypes.number,
+
+        /**
+         * 调整 Layer 的偏移量
+         *
+         * @default 0
+         */
+        layerOffsetLeft: DataTypes.number,
+
+        /**
+         * 是否支持搜索的功能
+         */
+        filter: DataTypes.bool,
+
+        /**
+         * 搜索框的 placeholder
+         */
+        filterPlaceholder: DataTypes.string,
+
+        /**
+         * 自定义的过滤器<br>
+         * function(datasource: any[], keyword: string): any[]
+         */
+        filterCallback: DataTypes.func
     },
     computed: {
         multiLabel() {

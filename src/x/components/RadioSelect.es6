@@ -2,7 +2,7 @@
  * @file RadioSelect.es6
  * @author leeight
  */
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import {asInput} from './asInput';
@@ -49,9 +49,31 @@ const RadioSelect = defineComponent({
     initData() {
         return {
             value: null,
-            // TODO(leeight) 暂不支持 tip
             datasource: []
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 组件当前的值
+         * @bindx
+         */
+        value: DataTypes.any,
+
+        /**
+         * 组件的数据源
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   tip?: string
+         * }</code></pre>
+         */
+        datasource: DataTypes.array
     },
     onItemClick(item) {
         const disabled = this.data.get('disabled');

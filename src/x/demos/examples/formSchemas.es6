@@ -142,7 +142,7 @@ export const kDefaultSchema = {
                 },
                 {
                     text: 'Debian',
-                    value: 'Debian',
+                    value: 'Debian'
                 },
                 {
                     text: 'Ubuntu',

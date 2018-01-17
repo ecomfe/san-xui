@@ -3,7 +3,7 @@
  * @author leeight
  */
 import dom from 'esui/lib/dom';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {nextZindex, create, hasUnit} from './util';
 import Layer from './Layer';
@@ -77,6 +77,31 @@ export default defineComponent({   // eslint-disable-line
             active: false,
             duration: 500
         };
+    },
+    dataTypes: {
+        /**
+         * Tip 需要展示的内容，如果设置了 message，那么就忽略 default slot 的内容
+         */
+        message: DataTypes.string,
+
+        /**
+         * Tip 的位置，可选的内容有：lt, tc, rt, bc
+         * @default lt
+         */
+        position: DataTypes.string,
+
+        /**
+         * Tip 打开的状态
+         * @bindx
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * 默认的延迟(ms)
+         * @default 500
+         */
+        duration: DataTypes.number
     },
     inited() {
         this.timer = null;

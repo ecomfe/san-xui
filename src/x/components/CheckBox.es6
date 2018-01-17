@@ -32,8 +32,22 @@ const CheckBox = defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 设置或者获取控件的选中状态
+         *
+         * @bindx
+         * @default false
+         */
         checked: DataTypes.bool,
+
+        /**
+         * 控件的禁用状态
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 控件的文案
+         */
         title: DataTypes.string
     },
     computed: {

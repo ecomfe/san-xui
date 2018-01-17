@@ -61,16 +61,51 @@ const NumberTextline = defineComponent({
             disabled: false,
             width: 38,
             min: 0,
-            max: 0,
+            max: 100,
             step: 1 // 默认step是1,支持小数
         };
     },
     dataTypes: {
+        /**
+         * 控件的禁用状态
+         *
+         * @default false
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 控件的宽度
+         *
+         * @default 38
+         */
         width: DataTypes.number,
+
+        /**
+         * 获取或者设置控件的内容
+         *
+         * @bindx
+         */
         value: DataTypes.string,
+
+        /**
+         * 最小值
+         *
+         * @default 0
+         */
         min: DataTypes.number,
+
+        /**
+         * 最大值
+         *
+         * @default 100
+         */
         max: DataTypes.number,
+
+        /**
+         * 步进值，支持小数，例如 0.1
+         *
+         * @default 1
+         */
         step: DataTypes.number
     },
     inited() {

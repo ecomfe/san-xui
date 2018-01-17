@@ -17,8 +17,8 @@ const template = `<div class="app-explorer">
         <ui-loading s-if="loading" />
         <div s-ref="ghost"></div>
     </x-section>
-    <x-section label="DataTypes" open="{{false}}">
-        <x-datatype-explorer key="{{title}}" code="{{code}}" comp="{{comp}}" />
+    <x-section label="DataTypes" open>
+        <x-datatype-explorer key="{{title}}" code="{{code}}" />
     </x-section>
     <x-section label="Source Code" s-if="code" open="{=open=}">
         <ui-hljs code="{{code}}" />

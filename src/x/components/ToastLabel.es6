@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 
@@ -29,6 +29,18 @@ export default defineComponent({
         return {
             level: 'alert' // 'normal' | 'alert' | 'error'
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的样式，可选值有 normal, alert, error
+         * @default alert
+         */
+        level: DataTypes.string,
+
+        /**
+         * 需要展示的内容，如果设置了 text，那么就忽略 default slot 的内容
+         */
+        text: DataTypes.string
     }
 });
 

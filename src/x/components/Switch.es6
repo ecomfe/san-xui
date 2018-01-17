@@ -25,7 +25,16 @@ const Switch = defineComponent({    // eslint-disable-line
         };
     },
     dataTypes: {
+        /**
+         * 获取或者设置 Switch 组件选中的状态
+         * @bindx
+         * @default true
+         */
         checked: DataTypes.bool,
+
+        /**
+         * Switch 组件的禁用状态
+         */
         disabled: DataTypes.bool
     },
     computed: {

@@ -4,7 +4,7 @@
  */
 import $ from 'jquery';
 import lib from 'esui/lib';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Button from './Button';
@@ -61,6 +61,49 @@ export default defineComponent({
             foot: true,
             head: true
         };
+    },
+    dataTypes: {
+        /**
+         * 是否支持拖动(暂未实现)
+         * @default false
+         */
+        draggable: DataTypes.bool,
+
+        /**
+         * 点击遮罩层的时候，是否关闭对话框
+         * @default false
+         */
+        closeOnClickMask: DataTypes.bool,
+
+        /**
+         * 是否显示遮罩层
+         * @default true
+         */
+        mask: DataTypes.bool,
+
+        /**
+         * 是否显示Footer
+         * @default true
+         */
+        foot: DataTypes.bool,
+
+        /**
+         * 是否显示Header
+         * @default true
+         */
+        head: DataTypes.bool,
+
+        /**
+         * 对话框宽度
+         * @default auto
+         */
+        width: DataTypes.any,
+
+        /**
+         * 对话框内容区域的高度
+         * @default auto
+         */
+        height: DataTypes.any
     },
     computed: {
         mainClass() {

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import MultiPicker from 'inf-ui/x/components/MultiPicker';
 
 import {asInput} from './asInput';
@@ -45,6 +45,26 @@ const Region = defineComponent({
             disabled: false,
             value: []
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 设置或者获取组件的值
+         * @bindx
+         * @default []
+         */
+        value: DataTypes.array,
+
+        /**
+         * 组件的数据源
+         * @default 国标的新政区域划分
+         */
+        datasource: DataTypes.array
     }
 });
 

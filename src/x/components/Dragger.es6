@@ -4,7 +4,7 @@
  */
 
 import $ from 'jquery';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import TextBox from './TextBox';
@@ -63,6 +63,60 @@ const Dragger = defineComponent({ // eslint-disable-line
             unit: null,
             skin: ''
         };
+    },
+    dataTypes: {
+        /**
+         * 获取或者设置Dragger组件的值
+         *
+         * @bindx
+         * @default 0
+         */
+        value: DataTypes.number,
+
+        /**
+         * 可输入的最小值
+         *
+         * @default 0
+         */
+        min: DataTypes.number,
+
+        /**
+         * 可输入的最大值
+         *
+         * @default 100
+         */
+        max: DataTypes.number,
+
+        /**
+         * 步进值，可以设置小数
+         *
+         * @default 1
+         */
+        step: DataTypes.number,
+
+        /**
+         * 控件的禁用状态
+         *
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 控件的宽度
+         *
+         * @default 350
+         */
+        length: DataTypes.number,
+
+        /**
+         * 控件的单位，例如 Mbps 之类的
+         */
+        unit: DataTypes.string,
+
+        /**
+         * 控件的皮肤
+         */
+        skin: DataTypes.string
     },
     computed: {
         selectedBarStyle() {

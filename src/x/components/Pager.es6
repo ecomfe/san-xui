@@ -51,13 +51,52 @@ export default defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 是否显示总的页数
+         * @default false
+         */
         withTotalCount: DataTypes.bool,
+
+        /**
+         * 每页展示的数量
+         * @default 10
+         */
         size: DataTypes.number,
+
+        /**
+         * 第一页
+         * @default 1
+         */
         page: DataTypes.number,
+
+        /**
+         * 总共的数量
+         * @default 0
+         */
         count: DataTypes.number,
+
+        /**
+         * 当前页之前最多 back-count 个页码
+         * @default 3
+         */
         backCount: DataTypes.number,
+
+        /**
+         * 当前页之后最多 forward-count 个页码
+         * @default 3
+         */
         forwardCount: DataTypes.number,
+
+        /**
+         * 后一页的文案
+         * @default <
+         */
         backText: DataTypes.string,
+
+        /**
+         * 前一页的文案
+         * @default >
+         */
         forwardText: DataTypes.string
     },
     onPagerItemClick(item) {

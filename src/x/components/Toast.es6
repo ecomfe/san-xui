@@ -3,7 +3,7 @@
  * @author leeight
  */
 import $ from 'jquery';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 
@@ -40,6 +40,24 @@ const Toast = defineComponent({   // eslint-disable-line
             duration: 5000,
             level: 'success' // 'success' | 'info' | 'warning' | 'error'
         };
+    },
+    dataTypes: {
+        /**
+         * 需要展示的信息
+         */
+        message: DataTypes.string,
+
+        /**
+         * 最长展示的时间
+         * @default 5000
+         */
+        duration: DataTypes.number,
+
+        /**
+         * 组件的样式，可选的参数有 success, info, warning, error
+         * @default success
+         */
+        level: DataTypes.string
     },
     attached() {
         setTimeout(() => {

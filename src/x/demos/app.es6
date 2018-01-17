@@ -7,5 +7,5 @@ import './app.less';
 import {start as SS} from '../showcase';
 
 export function start() {
-    SS();
+    SS(); // eslint-disable-line
 }

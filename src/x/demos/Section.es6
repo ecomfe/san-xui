@@ -4,14 +4,17 @@
  */
 
 import {defineComponent} from 'inf-ui/sanx';
+import Icon from 'inf-ui/x/components/Icon';
 
 export default defineComponent({
     template: `<fieldset class="x-section">
-        <legend s-if="label" on-click="toggleViewport">{{open ? '[-]' : '[+]'}}{{label}}</legend>
+        <legend s-if="label" on-click="toggleViewport"><ui-icon name="{{open ? 'minus' : 'plus'}}" />{{label}}</legend>
         <div style="{{viewportStyle}}"><slot/></div>
         <div s-if="!open" on-click="toggleViewport" class="view-more">View more...</div>
     </fieldset>`,
-
+    components: {
+        'ui-icon': Icon
+    },
     computed: {
         viewportStyle() {
             const open = this.data.get('open');

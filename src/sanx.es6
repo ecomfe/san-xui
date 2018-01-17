@@ -82,3 +82,5 @@ export function defineComponent(options) {
 export function nextTick(fn, thisArg) {
     return san.nextTick(fn, thisArg);
 }
+
+export const DataTypes = san.DataTypes;

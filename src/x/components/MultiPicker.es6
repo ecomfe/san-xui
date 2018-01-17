@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {hasUnit, arrayTreeFilter, arrayTreeFilterIndex, arrayTreeCompact, create} from './util';
 import {asInput} from './asInput';
@@ -61,6 +61,53 @@ const MultiPicker = defineComponent({
             [kValuesKey]: [],
             [kTmpValuesKey]: [] // 临时的值，点击了之后，同步到 value 里面去
         };
+    },
+    dataTypes: {
+        /**
+         * 控制 MultiPicker浮层的展开和关闭
+         * @bindx
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * 获取或者设置 MultiPicker 组件的值
+         * @bindx
+         */
+        value: DataTypes.array,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * MultiPicker 组件的数据源，不一定是完整的，可以通过 loader 逐步填充
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   disabled?: bool, // 是否禁止选择当前项
+         *   expandable?: bool, // 如果是 true，说明可以继续展开
+         *   children?: any[] // 如果可以展开，那么子节点的内容（可以是 loader 动态返回的）
+         * }
+         * </code></pre>
+         * @default []
+         */
+        datasource: DataTypes.array,
+
+        /**
+         * 如果需要异步的加载数据，那么就设置这个参数<br>
+         * <code>function(values: any[]): Promise.&lt;DatasourceItem[], Error&gt;</code>
+         */
+        loader: DataTypes.func,
+
+        /**
+         * 浮层的宽度，例如 'auto', '100px', '100%', 300
+         *
+         * @default 'auto'
+         */
+        layerWidth: DataTypes.any
     },
     computed: {
         // datasource 是树形结构

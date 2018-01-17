@@ -7,7 +7,6 @@ import {defineComponent} from 'inf-ui/sanx';
 import Toolbar from 'inf-ui/x/biz/Toolbar';
 import Toast from 'inf-ui/x/components/Toast';
 import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
 import Row from './Row';
 

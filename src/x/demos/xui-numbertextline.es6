@@ -11,6 +11,11 @@ import Row from './Row';
 /* eslint-disable */
 const template = `<template>
 
+<x-row label="[default]">
+    <xui-numbertextline value="{=value=}" />
+    <strong class="large">Value: {{value}}</strong>
+</x-row>
+
 <x-row label="[default],min=70,max=100">
     <xui-numbertextline min="{{70}}" max="{{100}}" value="{=value=}" />
     <strong class="large">Value: {{value}}</strong>

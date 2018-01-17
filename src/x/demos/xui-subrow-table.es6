@@ -5,7 +5,6 @@
 
 import {defineComponent} from 'inf-ui/sanx';
 import Promise from 'promise';
-import _ from 'lodash';
 
 import Toast from 'inf-ui/x/components/Toast';
 import Button from 'inf-ui/x/components/Button';

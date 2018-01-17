@@ -135,18 +135,81 @@ const UUAP = defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 是否是聚焦的状态，当点击内容可输入区域的时候，自动设置未 true
+         * @default false
+         */
         active: DataTypes.bool,
+
+        /**
+         * 数据是否正在加载
+         * @default false
+         */
         loading: DataTypes.bool,
+
+        /**
+         * 用户输入的关键词
+         */
         keyword: DataTypes.string,
+
+        /**
+         * 搜索的时候，关键词的名字
+         * @default keyword
+         */
         keywordName: DataTypes.string,
+
+        /**
+         * 搜索 API 的地址
+         * @default /api/product/center/uid/search
+         */
         searchApi: DataTypes.string,
+
+        /**
+         * 自定义的请求函数，如果设置了 search-requester，那么会忽略 search-api 的配置<br>
+         * function({[keywordName]: keyword}): Promise&lt;{items: object[]}, Error&gt;
+         */
         searchRequester: DataTypes.func,
+
+        /**
+         * 浮层是否打开
+         * @bindx
+         * @default false
+         */
         layerOpened: DataTypes.bool,
+
+        /**
+         * 手工设置浮层的宽度，如果没有设置的话，会在展开的时候动态计算
+         */
         layerWidth: DataTypes.number,
-        autoLayerWidth: DataTypes.number,
+
+        /**
+         * UserPicker 的内容
+         * <pre><code>{
+         *   username: string,
+         *   accountId: string
+         * }</code></pre>
+         * @bindx
+         * @default []
+         */
         value: DataTypes.array,
-        selectedIndex: DataTypes.number,
+
+        /**
+         * 转化后端返回的数据格式<br>
+         * function({items: object[]}): object[]
+         */
         itemsTransformer: DataTypes.func,
+
+        /**
+         * 浮层里面所展示的数据源
+         * <pre><code>{
+         *   username: string,
+         *   accountId: string,
+         *   displayName: string
+         * }</code></pre>
+         * 每一项的格式需要符合下面的约束，如果后端API返回的数据格式不同<br>
+         * 那么可以通过设置 items-transformer 来调整数据格式
+         * @default []
+         */
         items: DataTypes.array
     },
     inited() {
@@ -200,7 +263,12 @@ const UUAP = defineComponent({
                 const itemsTransformer = this.data.get('itemsTransformer');
                 this.data.set('loading', false);
                 this.data.set('selectedIndex', 0);
-                this.data.set('items', itemsTransformer(result));
+                if (typeof itemsTransformer === 'function') {
+                    this.data.set('items', itemsTransformer(result));
+                }
+                else {
+                    this.data.set('items', result.items);
+                }
             })
             .catch(error => {
                 if (this.data.get('keyword') !== keyword) {

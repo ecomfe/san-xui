@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import {DataTypes, defineComponent} from 'inf-ui/sanx';
 
 export default defineComponent({
     template: '<div on-wheel="onWheel"><slot/></div>',
@@ -11,6 +11,13 @@ export default defineComponent({
         return {
             disabled: false
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool
     },
     onWheel(e) {
         const disabled = this.data.get('disabled');

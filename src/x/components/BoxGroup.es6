@@ -54,12 +54,50 @@ const BoxGroup = defineComponent({
         };
     },
     dataTypes: {
-        datasource: DataTypes.array,
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 组件的数据源
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   disabled?: bool
+         * }</code></pre>
+         * @default []
+         */
+        datasource: DataTypes.array,
+
+        /**
+         * 排列方式，横向还是纵向
+         * @default horizontal
+         */
         orientation: DataTypes.string,
+
+        /**
+         * 组件当前的值，如果是 checkbox 的话，值的类型是 any[]
+         * @bindx
+         */
         value: DataTypes.any,
+
+        /**
+         * 每行最多展示 col-count 列
+         * @default 0
+         */
         colCount: DataTypes.number,
+
+        /**
+         * 每一项的宽度
+         * @default 0
+         */
         itemWidth: DataTypes.number,
+
+        /**
+         * 类型 radio | checkbox
+         */
         boxType: DataTypes.string
     },
     computed: {
@@ -77,7 +115,7 @@ const BoxGroup = defineComponent({
                 for (let i = 0; i < value.length; i++) {
                     for (let j = 0; j < datasource.length; j++) {
                         if (datasource[j].value === value[i]) {
-                            status[j] = 1;
+                            status['' + j] = 1;
                             break;
                         }
                     }

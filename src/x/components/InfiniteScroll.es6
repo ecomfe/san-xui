@@ -3,7 +3,7 @@
  * @author xuli07
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import Loading from 'inf-ui/x/components/Loading';
 
 export default defineComponent({
@@ -25,6 +25,26 @@ export default defineComponent({
             loading: false,
             distance: 50
         };
+    },
+
+    dataTypes: {
+        /**
+         * 是否展示 loading 的状态
+         * @default false
+         */
+        loading: DataTypes.bool,
+
+        /**
+         * 是否所有的数据已经加载完毕。如果 finished 设置成 true，那么滚动的时候，不会触发任何请求
+         * @default false
+         */
+        finished: DataTypes.bool,
+
+        /**
+         * 距离底部 distance 的时候，开始加载下一页的数据
+         * @default 50
+         */
+        distance: DataTypes.number
     },
 
     scrollHandler() {

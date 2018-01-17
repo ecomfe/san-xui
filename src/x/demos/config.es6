@@ -11,9 +11,6 @@ export const blocks = [
                 text: 'xui-button'
             },
             {
-                text: 'xui-button-menu'
-            },
-            {
                 text: 'xui-textbox'
             },
             {
@@ -216,6 +213,14 @@ export const blocks = [
             },
             {
                 text: 'xui-instanteditor'
+            }
+        ]
+    },
+    {
+        title: '非标组件',
+        items: [
+            {
+                text: 'xui-button-menu'
             }
         ]
     }
