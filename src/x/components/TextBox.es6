@@ -68,18 +68,87 @@ const TextBox = defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 控件的禁用状态
+         *
+         * @default false
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 是否默认获取焦点
+         *
+         * @default false
+         */
+        autofocus: DataTypes.bool,
+
+        /**
+         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
+         *
+         * @default text
+         */
         type: DataTypes.string,
+
+        /**
+         * 获取或者设置控件的值
+         *
+         * @bindx
+         */
         value: DataTypes.string,
+
+        /**
+         * 是否展示成多行输入的文本框(textarea)
+         *
+         * @default false
+         */
         multiline: DataTypes.bool,
+
+        /**
+         * 皮肤样式
+         */
         skin: DataTypes.string,
+
+        /**
+         * 设置 placeholder 的内容
+         */
         placeholder: DataTypes.string,
+
+        /**
+         * 输入框的前缀或者后缀文案
+         */
         addon: DataTypes.string,
+
+        /**
+         * addon 文案的位置，可以设置 begin 或者 end
+         *
+         * @default begin
+         */
         addonPosition: DataTypes.string,
+
+        /**
+         * 输入框的宽度
+         */
         width: DataTypes.number,
+
+
+        /**
+         * 输入框的高度
+         */
         height: DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
         min: DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
         max: DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
         step: DataTypes.number
     },
     attached() {
