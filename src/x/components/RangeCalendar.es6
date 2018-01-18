@@ -193,8 +193,6 @@ const RangeCalendar = defineComponent({
         }
 
         this.data.set('value', {begin, end});
-        this.data.set('begin.value', new Date(begin));
-        this.data.set('end.value', new Date(end));
         this.watch('value', value => this.fire('change', {value}));
     },
     onShortcutSelect(item) {
@@ -219,6 +217,11 @@ const RangeCalendar = defineComponent({
             return;
         }
         const active = this.data.get('active');
+        if (!active) {
+            const {begin, end} = this.data.get('value');
+            this.data.set('begin.value', new Date(begin));
+            this.data.set('end.value', new Date(end));
+        }
         this.data.set('active', !active);
     }
 });
