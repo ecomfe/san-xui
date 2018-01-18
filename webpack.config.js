@@ -64,7 +64,7 @@ module.exports = {
             'mini-event': alias('@ecomfe/mini-event'),
             'er': alias('@ecomfe/er'),
             'inf-ria': alias('@ecomfe/inf-ria'),
-            'inf-i18n': path.join(kBaseDir, 'inf-i18n', '0.0.0', 'src'),
+            'inf-i18n': alias('@ecomfe/inf-i18n'),
             'inf-ui': path.join(__dirname, 'src')
         }
     },
