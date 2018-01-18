@@ -51,7 +51,8 @@ const template = `<div class="showcase">
 </div>`;
 /* eslint-enable */
 
-if (typeof u.noop === 'function') {
+if (typeof Promise.onReject === 'function'
+    && typeof u.noop === 'function') {
     Promise.onReject(u.noop);   // eslint-disable-line
 }
 
