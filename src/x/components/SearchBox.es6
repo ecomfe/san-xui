@@ -4,7 +4,7 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Button from './Button';
@@ -54,6 +54,53 @@ export default defineComponent({
             keywordType: null,
             width: null
         };
+    },
+    dataTypes: {
+        /**
+         * 用户输入的内容
+         * @bindx
+         * @default ''
+         */
+        value: DataTypes.string,
+
+        /**
+         * 组件的聚焦状态
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * 是否展示搜索按钮
+         * @default true
+         */
+        searchBtn: DataTypes.bool,
+
+        /**
+         * 搜索框的 placeholder
+         * @default ''
+         */
+        placeholder: DataTypes.string,
+
+        /**
+         * Select 的数据源，每一项的格式如下：
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   disabled?: bool
+         * }</code></pre>
+         */
+        datasource: DataTypes.array,
+
+        /**
+         * 设置或者获取 Select 的值
+         * @bindx
+         */
+        keywordType: DataTypes.any,
+
+        /**
+         * 输入框的宽度
+         */
+        width: DataTypes.number
     },
     computed: {
         mainClass() {

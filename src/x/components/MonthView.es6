@@ -2,7 +2,7 @@
  * @file MonthView.es6
  * @author leeight
  */
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {buildMonths, create} from './util';
 import {asInput} from './asInput';
@@ -94,19 +94,65 @@ const MonthView = defineComponent({
         return {
             disabled: false,
             skin: '',
-
-            time: null,
-            hour: null,
-            minute: null,
-            second: null,
+            time: false,
             endOfDay: false, // 如果设置为 true 的时候，当没有 time 选型，选择日期的时候是 23:59:59 结束
-
             value: new Date(),
             titles: ['一', '二', '三', '四', '五', '六', '日'],
             range: kDefaultRange,
+
+            // 下面的几个都是组件内部的状态，不建议对外公开
+            hour: null,
+            minute: null,
+            second: null,
             yearDs: {datasource: []},
             monthDs: {datasource: []}
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 如果没有设置 time，但是 end-of-day 设置了 true，<br>
+         * 那么选择了日期之后，结束时间是 23:59:59<br>
+         * 否则默认的情况是 00:00:00
+         * @default false
+         */
+        endOfDay: DataTypes.bool,
+
+        /**
+         * 是否可以编辑 HH:mm:ss
+         * @default false
+         */
+        time: DataTypes.bool,
+
+        /**
+         * 组件的皮肤
+         * @default ''
+         */
+        skin: DataTypes.string,
+
+        /**
+         * 组件的值
+         * @bindx
+         * @default new Date()
+         */
+        value: DataTypes.date,
+
+        /**
+         * 日期的可选范围
+         * @default {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)}
+         */
+        range: DataTypes.object,
+
+        /**
+         * 星期的名称
+         * @default ['一', '二', '三', '四', '五', '六', '日']
+         */
+        titles: DataTypes.array
     },
     initYearOptions() {
         const value = this.data.get('value');

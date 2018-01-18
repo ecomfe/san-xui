@@ -117,8 +117,8 @@ const App = defineComponent({   // eslint-disable-line
             }
         }
         const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
-        const moduleId = item.moduleId || `${demosModulePrefix}${item.text}`;
-        const sourceCodeId = `${demosCodePrefix}${item.text}`;
+        const moduleId = item.moduleId || `${demosModulePrefix}/${item.text}`;
+        const sourceCodeId = `${demosCodePrefix}/${item.text}`;
         this.data.set('explorer.title', item.text);
         this.data.set('explorer.loading', true);
         this.data.set('aside.expand', false);

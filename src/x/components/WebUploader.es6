@@ -5,7 +5,7 @@
 import u from 'lodash';
 import $ from 'jquery';
 import _ from 'inf-i18n';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 import util from 'inf-ria/util';
 
 import {create} from './util';
@@ -68,6 +68,59 @@ export default defineComponent({
             uploading: false,
             error: null
         };
+    },
+
+    dataTypes: {
+        /**
+         * 禁用的状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 按钮上的文案
+         * @default 选择文件
+         */
+        label: DataTypes.string,
+
+        /**
+         * 上传的文件地址
+         */
+        url: DataTypes.string.isRequired,
+
+        /**
+         * 可以选择的最大文件体积
+         * @default 2 * 1024 * 1024
+         */
+        sizeLimit: DataTypes.number,
+
+        /**
+         * 是否支持多选
+         * @default false
+         */
+        multiple: DataTypes.bool,
+
+        /**
+         * 是否自动上传
+         */
+        autoStart: DataTypes.bool,
+
+        /**
+         * WebUploader 的其它设置项，默认值如下：
+         * <pre><code>{
+         *   server: url,
+         *   auto: auto-start,
+         *   fileSingleSizeLimit: size-limit,
+         *   swf: ...swf,
+         *   disableWidgets: 'log',
+         *   chunked: false,
+         *   threads: 1,
+         *   duplicate: false,
+         *   disableGlobalDnd: true,
+         *   sendAsBinary: true
+         * }</code></pre>
+         */
+        options: DataTypes.object
     },
 
     initializeUploader(Uploader) {

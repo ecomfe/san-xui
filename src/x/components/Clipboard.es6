@@ -36,9 +36,22 @@ export default defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * Tip的文案
+         * @default 复制到剪贴板
+         */
         ariaLabel: DataTypes.string,
+
+        /**
+         * Tip展示的位置
+         * @default s
+         */
         tipPosition: DataTypes.oneOf(['n', 'e', 's', 'w']),
-        text: DataTypes.string
+
+        /**
+         * 需要复制的内容
+         */
+        text: DataTypes.string.isRequired
     },
     attached() {
         this.client = new XClipboard(this.el, {

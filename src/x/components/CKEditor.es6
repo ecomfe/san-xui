@@ -5,7 +5,7 @@
 
 /* global CKEDITOR */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Loading from './Loading';
@@ -44,6 +44,18 @@ export default defineComponent({
                 toolbarCanCollapse: true
             }
         };
+    },
+    dataTypes: {
+        /**
+         * 获取编辑器的值，不支持双绑
+         */
+        value: DataTypes.string,
+
+        /**
+         * 编辑器的配置项目
+         * @default {language: 'zh-cn', toolbarCanCollapse: true}
+         */
+        options: DataTypes.object
     },
     inited() {
         /**

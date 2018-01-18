@@ -753,11 +753,19 @@
 }
 
 /* ui-viewstep */
-.ui-viewstep-x i {
-    font-style: normal;
-}
-.ui-viewstep-x > ul > li:last-child:after {
-    display: none;
+.ui-viewstep-x {
+    i {
+        font-style: normal;
+    }
+    li {
+        cursor: not-allowed;
+    }
+    .ui-viewstep-item-active {
+        cursor: pointer;
+    }
+    > ul > li:last-child:after {
+        display: none;
+    }
 }
 
 /* ui-radioselect */

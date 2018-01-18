@@ -3,7 +3,7 @@
  * @author leeight
  */
 import moment from 'moment';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import {asInput} from './asInput';
@@ -65,13 +65,58 @@ const Calendar = defineComponent({  // eslint-disable-line
     initData() {
         return {
             value: new Date(),
-            time: null,
+            time: false,
             prev: false,
             next: false,
             active: false,
             range: kDefaultRange,
             format: 'YYYY-MM-DD'
         };
+    },
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 是否可以编辑 HH:mm:ss
+         * @default false
+         */
+        time: DataTypes.bool,
+
+        /**
+         * 是否展示前一天的按钮
+         * @default false
+         */
+        prev: DataTypes.bool,
+
+        /**
+         * 是否展示后一天的按钮
+         * @default false
+         */
+        next: DataTypes.bool,
+
+        /**
+         * 浮层的展开状态
+         * @bindx
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * 组件的值
+         * @bindx
+         * @default new Date()
+         */
+        value: DataTypes.date,
+
+        /**
+         * 文案格式化日期的时候默认格式
+         * @default YYYY-MM-DD
+         */
+        format: DataTypes.string
     },
     inited() {
         let {value, range} = this.data.get();

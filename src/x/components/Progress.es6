@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 
@@ -23,6 +23,18 @@ export default defineComponent({
         return {
             value: 0
         };
+    },
+    dataTypes: {
+        /**
+         * 取值范围[0 - 100]
+         * @default 0
+         */
+        value: DataTypes.number,
+
+        /**
+         * 组件的宽度
+         */
+        width: DataTypes.number
     },
     computed: {
         barStyle() {

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import {DataTypes, defineComponent} from 'inf-ui/sanx';
 import BosUploader from 'inf-ui/x/components/BosUploader';
 import {asInput} from 'inf-ui/x/components/asInput';
 import UUID from 'inf-ui/x/demos/uuid';
@@ -33,6 +33,25 @@ const Uploader = defineComponent({ // eslint-disable-line
     template,
     components: {
         'xui-bosuploader': BosUploader
+    },
+    dataTypes: {
+        /**
+         * 获取或者设置当前上传组件的文件地址
+         * @bindx
+         */
+        value: DataTypes.string,
+
+        /**
+         * 需要上传的文件列表<br>
+         * 上传成功之后，可以通过访问数组中元素的 url 属性获取文件地址
+         */
+        files: DataTypes.array,
+
+        /**
+         * 计算文件的地址，默认的文件路径是如下的格式"YYYY/MM/dd/[uuid]/[name].[ext]"
+         * <pre><code>function(file:File): string</code></pre>
+         */
+        keyCb: DataTypes.func
     },
     initData() {
         return {

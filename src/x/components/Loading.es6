@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 
@@ -19,6 +19,13 @@ export default defineComponent({
         return {
             size: 'normal' // 'normal' | 'middle' | 'small'
         };
+    },
+    dataTypes: {
+        /**
+         * 控制元素的大小，可选值有 normal, middle, small
+         * @default normal
+         */
+        size: DataTypes.string
     },
     computed: {
         mainStyle() {

@@ -27,6 +27,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        // 'xui-uploader': ../forms/Uploader
         'xui-toastlabel': ToastLabel,
         'xui-uploader': Uploader
     },

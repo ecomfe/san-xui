@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Button from './Button';
@@ -42,6 +42,42 @@ const SMSCodeBox = defineComponent({
             width: null,
             placeholder: '请输入验证码'
         };
+    },
+    dataTypes: {
+        /**
+         * 用户输入的手机号
+         * @bindx
+         */
+        value: DataTypes.string,
+
+        /**
+         * 输入框的宽度
+         */
+        width: DataTypes.number,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 发送短信之后的冷冻时间
+         * @default 60
+         */
+        freezeTime: DataTypes.number,
+
+        /**
+         * 按钮上面的文案
+         * @default 获取验证码
+         */
+        btnText: DataTypes.string,
+
+        /**
+         * 输入框的 placeholder
+         * @default 请输入验证码
+         */
+        placeholder: DataTypes.string
     },
     computed: {
         mainClass() {

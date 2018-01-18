@@ -167,12 +167,43 @@ const RangeCalendar = defineComponent({
         };
     },
     dataTypes: {
-        value: DataTypes.object, // 日期范围值
-        range: DataTypes.object, // 选择范围
-        disabled: DataTypes.bool, // 是否禁用 默认为false
-        shortcut: DataTypes.bool, // 是否启用快捷方式 默认为true
-        active: DataTypes.bool, // 是否打开选择界面 默认为false
-        time: DataTypes.bool // 是否有小时 分钟  秒 输入框 默认为false
+        /**
+         * 获取或者设置组件的值
+         * @bindx
+         * @default {begin: new Date(), end: new Date()}
+         */
+        value: DataTypes.object,
+
+        /**
+         * 日期可以选择的范围
+         * @default {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)}
+         */
+        range: DataTypes.object,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 是否启用选择日期的快捷方式
+         * @default true
+         */
+        shortcut: DataTypes.bool,
+
+        /**
+         * 浮层的打开状态
+         * @bindx
+         * @default false
+         */
+        active: DataTypes.bool,
+
+        /**
+         * 是否可以编辑 HH:mm:ss
+         * @default false
+         */
+        time: DataTypes.bool
     },
     inited() {
         let {begin, end} = this.data.get('value');

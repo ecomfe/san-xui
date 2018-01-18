@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 
@@ -33,6 +33,22 @@ export default defineComponent({
             stepIndex: 0,
             steps: []
         };
+    },
+    dataTypes: {
+        /**
+         * 当前属于第几步，从 0 开始
+         * @default 0
+         */
+        stepIndex: DataTypes.number,
+
+        /**
+         * 步骤的配置项，每一项的格式如下：
+         * <pre><code>{
+         *   text: string
+         * }</code></pre>
+         * @default []
+         */
+        steps: DataTypes.array
     },
     itemClick(index) {
         if (index <= this.data.get('stepIndex')) {

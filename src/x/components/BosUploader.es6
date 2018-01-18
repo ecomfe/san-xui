@@ -84,16 +84,65 @@ export default defineComponent({
         };
     },
     dataTypes: {
+        /**
+         * 是否自动上传
+         * @default false
+         */
         autoStart: DataTypes.bool,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 是否支持多选
+         * @default false
+         */
         multiple: DataTypes.bool,
+
+        /**
+         * 是否展示上传进度的信息
+         * @default true
+         */
         withSpeedInfo: DataTypes.bool,
-        uptokenUrl: DataTypes.string,
+
+        /**
+         * 计算签名的地址，<strong style="color:red">线上环境</strong>建议设置这个参数<br>
+         * uptoken_url 的后端实现逻辑，请参考:
+         * <pre><code>https://github.com/leeight/bce-sdk-js-usage</code></pre>
+         */
+        uptokenUrl: DataTypes.string.isRequired,
+
+        /**
+         * 如果是 ak 和 sk 是 sts 服务获取的，需要通过这个参数设置对应的 stsToken。<br>
+         * 更多信息请参考
+         * <a target="_blank" href="https://cloud.baidu.com/doc/BOS/API/27.5CSTS.E6.9C.8D.E5.8A.A1.E6.8E.A5.E5.8F.A3.html">官方文档（临时授权访问）</a>
+         */
         uptoken: DataTypes.string,
+
+        /**
+         * 测试环境，方便的话，可以设置 ak 参数
+         */
         ak: DataTypes.string,
+
+        /**
+         * 测试环境，方便的话，可以设置 sk 参数
+         */
         sk: DataTypes.string,
+
+        /**
+         * 计算上传的文件名
+         * <pre><code>function(file:File): string | Promise.&lt;string&gt;</code></pre>
+         */
         keyCb: DataTypes.func,
-        bosEndpoint: DataTypes.string
+
+        /**
+         * BOS的地址，需要设置成 https://&lt;bucket&gt;.&lt;region&gt;.bcebos.com，例如：
+         * <pre><code>https://bce-bos-uploader.bj.bcebos.com</code></pre>
+         */
+        bosEndpoint: DataTypes.string.isRequired
     },
     computed: {
         startDisabled() {

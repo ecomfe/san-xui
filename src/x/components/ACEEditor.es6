@@ -5,7 +5,7 @@
 
 /* global ace */
 
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Loading from './Loading';
@@ -37,6 +37,41 @@ const ACEEditor = defineComponent({
             height: 300,
             value: null
         };
+    },
+    dataTypes: {
+        /**
+         * 设置或者获取编辑器的值
+         * @bindx
+         */
+        value: DataTypes.string,
+
+        /**
+         * 编辑器的风格
+         */
+        theme: DataTypes.string,
+
+        /**
+         * 编辑器支持的语言
+         */
+        mode: DataTypes.string,
+
+        /**
+         * 是否是只读模式
+         * @default false
+         */
+        readonly: DataTypes.bool,
+
+        /**
+         * 宽度
+         * @default 100%
+         */
+        width: DataTypes.string,
+
+        /**
+         * 高度
+         * @default 300
+         */
+        height: DataTypes.number
     },
     computed: {
         mainStyle() {

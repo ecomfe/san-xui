@@ -7,7 +7,7 @@
 
 import $ from 'jquery';
 import u from 'lodash';
-import {defineComponent} from 'san';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 import Loading from './Loading';
@@ -79,6 +79,29 @@ export default defineComponent({
             height: null,
             options: null
         };
+    },
+    dataTypes: {
+        /**
+         * 获取编辑器的值，不支持双绑
+         */
+        value: DataTypes.string,
+
+        /**
+         * 编辑器的配置项
+         * @default {...}
+         */
+        options: DataTypes.object,
+
+        /**
+         * 编辑器的宽度
+         * @default 100%
+         */
+        width: DataTypes.string,
+
+        /**
+         * 编辑器的高度
+         */
+        height: DataTypes.string
     },
     inited() {
         /** TODO(leeight) 暂时不支持在运行时动态的修改 editor 的内容

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import {DataTypes, defineComponent} from 'inf-ui/sanx';
 
 import {create} from './util';
 
@@ -22,6 +22,19 @@ export default defineComponent({
             code: '',
             lang: 'javascript'
         };
+    },
+    dataTypes: {
+        /**
+         * 需要高亮的代码
+         * @default ''
+         */
+        code: DataTypes.string,
+
+        /**
+         * 代码的类型
+         * @default javascript
+         */
+        lang: DataTypes.string
     },
     __updateHighlightedCode(hljs) {
         const code = this.data.get('code');

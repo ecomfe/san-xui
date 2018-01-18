@@ -31,6 +31,10 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
+function hasF(x) {
+    return x.bindx || x.required;
+}
+
 export default defineComponent({
     template,
     components: {
@@ -44,34 +48,47 @@ export default defineComponent({
     inited() {
         this.watch('code', code => {
             const key = this.data.get('key');
-            const pattern = new RegExp('\'' + _.escapeRegExp(key) + '\'\\s*:\\s*(\\w+)', 'gm');
+            const pattern = new RegExp('\'' + _.escapeRegExp(key) + '\'\\s*:\\s*([\\.\\/\\w]+)', 'gm');
             const match = pattern.exec(code);
-            if (match) {
-                const compName = match[1];
-                const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
-                const moduleId = typeof G_PREFIX === 'object'
-                    ? `${G_PREFIX.componentsCode}/${compName}`
-                    : `inf-ui/x/components/${compName}`;
-                const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
-                fetch(sourceUrl)
-                    .then(response => {
-                        if (response.status === 200) {
-                            return response.text();
-                        }
-                        throw new Error(response.url + ' failed');
-                    })
-                    .then(code => {
-                        const typeDefs = parse(code) || [];
-                        _.each(typeDefs, T => {
-                            T.name = _.kebabCase(T.name);
-                        });
-                        this.data.set('typeDefs', typeDefs);
-                    })
-                    .catch(() => {
-                        this.data.set('typeDefs', []);
-                    });
+            if (!match) {
+                this.noTypeDefs();
+                return;
             }
+
+            const compName = match[1];
+            const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
+            const moduleId = typeof G_PREFIX === 'object'
+                ? `${G_PREFIX.componentsCode}/${compName}`
+                : `inf-ui/x/components/${compName}`;
+            const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
+            fetch(sourceUrl)
+                .then(response => {
+                    if (response.status === 200) {
+                        return response.text();
+                    }
+                    throw new Error(response.url + ' failed');
+                })
+                .then(code => {
+                    const typeDefs = parse(code) || [];
+                    _.each(typeDefs, T => {
+                        T.name = _.kebabCase(T.name);
+                    });
+                    typeDefs.sort((a, b) => {
+                        if (hasF(a) && !hasF(b)) {
+                            return -1;
+                        }
+                        else if (!hasF(a) && hasF(b)) {
+                            return 1;
+                        }
+                        return a.name.localeCompare(b.name);
+                    });
+                    this.data.set('typeDefs', typeDefs);
+                })
+                .catch(() => this.noTypeDefs());
         });
+    },
+    noTypeDefs() {
+        this.data.set('typeDefs', []);
     }
 });
 

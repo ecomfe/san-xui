@@ -69,16 +69,25 @@ const BcmChart = defineComponent({ // eslint-disable-line
         'ui-chart': Chart
     },
     dataTypes: {
+        /**
+         * BcmChart 的标题
+         */
         title: DataTypes.string,
 
         /**
          * WTF??
          */
         lazy: DataTypes.bool,
+
+        /**
+         * 是否展示过滤的功能，一般在对话框的里面才会设置这个值
+         * @default false
+         */
         withFilter: DataTypes.bool,
 
         /**
          * 是否支持弹框放大的功能
+         * @default false
          */
         showbigable: DataTypes.bool,
 
@@ -94,21 +103,19 @@ const BcmChart = defineComponent({ // eslint-disable-line
 
         /**
          * Chart的宽度
+         * @default 550
          */
         width: DataTypes.number,
 
         /**
          * Chart的高度
+         * @default 200
          */
         height: DataTypes.number,
 
         /**
-         * Chart的配置信息
-         */
-        chartOption: DataTypes.object,
-
-        /**
          * 是否是加载中
+         * @default true
          */
         loading: DataTypes.bool,
 
@@ -118,7 +125,8 @@ const BcmChart = defineComponent({ // eslint-disable-line
         error: DataTypes.any,
 
         /**
-         * 获取监控数据回掉函数
+         * 获取监控数据回掉函数<br>
+         * function(payload:object):Promise.&lt;{series: any[]}, Error&gt;
          */
         requester: DataTypes.func,
 
@@ -128,7 +136,8 @@ const BcmChart = defineComponent({ // eslint-disable-line
         scope: DataTypes.string,
 
         /**
-         * 趋势图维度类型：多维度|多指标
+         * 趋势图维度类型：多维度|多指标，可以设置的值有 metricName, dimensions
+         * @default metricName
          */
         apiType: DataTypes.string,
 
@@ -142,6 +151,7 @@ const BcmChart = defineComponent({ // eslint-disable-line
         /**
          * 监控指标
          * 如：CPUUsagePercent(CPU使用率)
+         * @default ''
          */
         metrics: DataTypes.string,
 
@@ -152,22 +162,26 @@ const BcmChart = defineComponent({ // eslint-disable-line
          *  minimum: '最小值'
          *  sum: '和值'
          *  sampleCount: '样本数'
+         * @default average
          */
         statistics: DataTypes.string,
 
         /**
          * 聚合周期，单位秒
+         * @default 60
          */
         period: DataTypes.number,
 
         /**
          * 聚合区间，目前只支持最近多长时间
          * 如：1h：最近1小时
+         * @default 1h
          */
         time: DataTypes.string,
 
         /**
          * 指标单位
+         * @default ''
          */
         unit: DataTypes.string
     },

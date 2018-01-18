@@ -104,7 +104,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: './src/x/demos/xui-*.es6', to: 'assets/demos/[name].txt'},
-            {from: './src/x/components/*.es6', to: 'assets/components/[name].txt'}
+            {from: './src/x/components/*.es6', to: 'assets/components/[name].txt'},
+            {from: './src/x/forms/*.es6', to: 'assets/forms/[name].txt'}
         ])
     ],
     module: {
