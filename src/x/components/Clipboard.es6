@@ -5,7 +5,7 @@
 
 import {DataTypes, defineComponent} from 'san';
 import _ from 'inf-i18n';
-import XClipboard from 'clipboard/Clipboard';
+import XClipboard from 'clipboard';
 
 import {create} from './util';
 

@@ -58,7 +58,6 @@ module.exports = {
         alias: {
             'moment': path.join(kBaseDir, 'moment', '2.7.0', 'src', 'moment'),
             'jquery': path.join(kBaseDir, 'jquery', '1.9.1', 'src', 'jquery'),
-            'clipboard': path.join(kBaseDir, 'clipboard', '0.0.0', 'src'),
             'eoo': path.join(kBaseDir, 'eoo', '0.1.4', 'src'),
             'mini-event': path.join(kBaseDir, 'mini-event', '1.0.2', 'src'),
             'promise': path.join(kBaseDir, 'promise', '1.0.2', 'src'),
