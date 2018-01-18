@@ -23,6 +23,10 @@ function entries() {
     return config;
 }
 
+function alias(name) {
+    return path.dirname(require.resolve(name));
+}
+
 module.exports = {
     entry: entries(),
     output: {
@@ -56,11 +60,12 @@ module.exports = {
         extensions: ['.js', '.jsx', '.es6'],
         mainFiles: ['index', 'main'],
         alias: {
+            // TODO(leeight) 只需要修改3个文件就可以去掉这个配置了
             'moment': path.join(kBaseDir, 'moment', '2.7.0', 'src', 'moment'),
             'jquery': path.join(kBaseDir, 'jquery', '1.9.1', 'src', 'jquery'),
-            'eoo': path.join(kBaseDir, 'eoo', '0.1.4', 'src'),
-            'mini-event': path.join(kBaseDir, 'mini-event', '1.0.2', 'src'),
-            'er': path.join(kBaseDir, 'er', '3.1.0-beta.6', 'src'),
+            'eoo': alias('@ecomfe/eoo'),
+            'mini-event': alias('@ecomfe/mini-event'),
+            'er': alias('@ecomfe/er'),
             'inf-ria': path.join(kBaseDir, 'inf-ria', '0.0.0', 'src'),
             'inf-i18n': path.join(kBaseDir, 'inf-i18n', '0.0.0', 'src'),
             'inf-ui': path.join(__dirname, 'src')
