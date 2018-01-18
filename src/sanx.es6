@@ -7,7 +7,7 @@
  */
 
 
-import u from 'underscore';
+import u from 'lodash';
 import san from 'san';
 
 import Icon from './x/components/Icon';

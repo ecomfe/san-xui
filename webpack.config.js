@@ -61,8 +61,6 @@ module.exports = {
             'bat-ria': path.join(kBaseDir, 'bat-ria', '0.1.14', 'src'),
             'clipboard': path.join(kBaseDir, 'clipboard', '0.0.0', 'src'),
             'eoo': path.join(kBaseDir, 'eoo', '0.1.4', 'src'),
-            'underscore': path.join(kBaseDir, 'underscore', '1.6.0', 'src', 'underscore'),
-            'lodash': path.join(kBaseDir, 'lodash', '3.10.1', 'src', 'lodash'),
             'mini-event': path.join(kBaseDir, 'mini-event', '1.0.2', 'src'),
             'promise': path.join(kBaseDir, 'promise', '1.0.2', 'src'),
             'humanize': path.join(kBaseDir, 'humanize', '0.0.9', 'src'),

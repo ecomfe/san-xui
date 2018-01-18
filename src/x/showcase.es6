@@ -6,7 +6,7 @@
 /* global _hmt, G_PREFIX, G_SOURCE_EXT */
 
 import $ from 'jquery';
-import u from 'underscore';
+import u from 'lodash';
 import Promise from 'promise';
 import {defineComponent} from 'san';
 import _ from 'inf-i18n';

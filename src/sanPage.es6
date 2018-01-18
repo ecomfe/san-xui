@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import u from 'underscore';
+import u from 'lodash';
 import san from 'san';
 import Promise from 'promise';
 import locator from 'er/locator';

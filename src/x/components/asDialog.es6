@@ -4,7 +4,7 @@
  */
 
 import _ from 'inf-i18n';
-import u from 'underscore';
+import u from 'lodash';
 import {defineComponent} from 'san';
 
 import Dialog from './Dialog';
