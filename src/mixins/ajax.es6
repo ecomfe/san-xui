@@ -3,19 +3,9 @@
  * @author leeight
  */
 
-import Promise from 'promise';
-import io from 'bat-ria/io/serverIO';
+import axios from 'axios';
 
 export function $post(url, data, options) {
-    if (!data) {
-        data = '';
-    }
-
-    if (!options) {
-        options = {'X-silence': true, 'x-silent': true};
-    }
-
-    return new Promise((resolve, reject) =>
-        io.post(url, data, options).then(resolve).fail(reject));
+    return axios.post(url, data, options);
 }
 
