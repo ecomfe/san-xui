@@ -5,10 +5,11 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import {DataTypes, defineComponent} from 'san';
-import lib from 'esui/lib';
 
 import {nextZindex, create} from './util';
 import {opacity} from './fx/opacity';
+import {getOffset} from '../esui/dom';
+import {getScrollTop, getScrollLeft, getViewWidth, getViewHeight} from '../esui/page';
 
 const cx = create('ui-layer');
 
@@ -186,19 +187,19 @@ export default defineComponent({
         // 2. 如果右侧空间不够，则转为层的右边缘贴住目标元素的右边缘
         // 3. 如果左侧空间依旧不够，则强制使用第1步的位置
 
-        const pageWidth = lib.page.getViewWidth();
-        const pageHeight = lib.page.getViewHeight();
-        const pageScrollTop = lib.page.getScrollTop();
-        const pageScrollLeft = lib.page.getScrollLeft();
+        const pageWidth = getViewWidth();
+        const pageHeight = getViewHeight();
+        const pageScrollTop = getScrollTop();
+        const pageScrollLeft = getScrollLeft();
 
-        const targetElement = lib.getOffset(pc.el);
+        const targetElement = getOffset(pc.el);
 
 
         this.data.set('layerStyle.left', '-10000px');
         this.data.set('layerStyle.top', '-10000px');
 
 
-        const layerElement = lib.getOffset(layer);
+        const layerElement = getOffset(layer);
         // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
         // 实际中的width熟悉不包括
         let widthValue = $(layer).width();
@@ -269,7 +270,7 @@ export default defineComponent({
         let widthValue = $(layer).width();
         let heightValue = $(layer).height();
 
-        const layerElement = lib.getOffset(layer);
+        const layerElement = getOffset(layer);
 
         if (this.data.get('width')) {
             widthValue = layerElement.width = this.data.get('width');
@@ -282,14 +283,14 @@ export default defineComponent({
         this.data.set('layerStyle.left', '0px');
         this.data.set('layerStyle.top', '0px');
 
-        const pageWidth = lib.page.getViewWidth();
-        const pageHeight = lib.page.getViewHeight();
+        const pageWidth = getViewWidth();
+        const pageHeight = getViewHeight();
 
         // 计算位置
         let topValue = Math.floor((pageHeight - layerElement.height) / 2);
         let leftValue = Math.floor((pageWidth - layerElement.width) / 2);
 
-        topValue += lib.page.getScrollTop();
+        topValue += getScrollTop();
 
         this.positionLayerElement({topValue, leftValue, widthValue, heightValue, kz});
     },

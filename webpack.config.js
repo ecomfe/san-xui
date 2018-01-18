@@ -62,12 +62,10 @@ module.exports = {
             'eoo': path.join(kBaseDir, 'eoo', '0.1.4', 'src'),
             'mini-event': path.join(kBaseDir, 'mini-event', '1.0.2', 'src'),
             'promise': path.join(kBaseDir, 'promise', '1.0.2', 'src'),
-            'humanize': path.join(kBaseDir, 'humanize', '0.0.9', 'src'),
             'er': path.join(kBaseDir, 'er', '3.1.0-beta.6', 'src'),
-            'esui': path.join(kBaseDir, 'esui', '3.1.0-beta.6', 'src'),
             'inf-ria': path.join(kBaseDir, 'inf-ria', '0.0.0', 'src'),
             'inf-i18n': path.join(kBaseDir, 'inf-i18n', '0.0.0', 'src'),
-            'inf-ui': path.join(kBaseDir, 'inf-ui', '0.0.0', 'src')
+            'inf-ui': path.join(__dirname, 'src')
         }
     },
     plugins: [

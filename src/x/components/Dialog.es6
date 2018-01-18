@@ -3,13 +3,13 @@
  * @author leeight
  */
 import $ from 'jquery';
-import lib from 'esui/lib';
 import {DataTypes, defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Button from './Button';
 import {i18n} from '../../mixins/filters';
 import {opacity} from './fx/opacity';
+import {getScrollTop, getViewHeight} from '../esui/page';
 
 const cx = create('ui-dialog');
 
@@ -173,8 +173,7 @@ export default defineComponent({
         this.data.set('dialogZindex', nextZindex());
         this.nextTick(() => {
             const main = $(this.el).find('> .ui-dialog-x');
-            // const left = Math.max((lib.page.getViewWidth() - main.prop('offsetWidth')) / 2, 0);
-            const top = lib.page.getScrollTop() + Math.max((lib.page.getViewHeight() - main.prop('offsetHeight')) / 2, 0);
+            const top = getScrollTop() + Math.max((getViewHeight() - main.prop('offsetHeight')) / 2, 0);
             this.data.set('top', top + 'px');
         });
     },

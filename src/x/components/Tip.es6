@@ -2,9 +2,9 @@
  * @file Tip.es6
  * @author leeight
  */
-import dom from 'esui/lib/dom';
 import {DataTypes, defineComponent} from 'san';
 
+import {getOffset} from '../esui/dom';
 import {nextZindex, create, hasUnit} from './util';
 import Layer from './Layer';
 
@@ -114,7 +114,7 @@ export default defineComponent({   // eslint-disable-line
         const position = this.data.get('position');
         if (layerBody) {
             const rect = this.el.getBoundingClientRect();
-            const offset = dom.getOffset(this.el);
+            const offset = getOffset(this.el);
             const {offsetHeight, offsetWidth} = layerBody;
             const style = {'z-index': nextZindex()};
             if (position === 'lt') {
