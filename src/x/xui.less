@@ -1,3 +1,11 @@
+/**
+ * @file inf-ui/x/xui.less
+ * @author leeight
+ */
+
+@san-ui-disabled-color: #f6f7fb;
+@san-ui-blue-color: #108cee;
+
 .ui-breadcrumbs {
     overflow: hidden;
     height: 40px;
@@ -98,7 +106,7 @@
     border-color: #999;
     color: #999 !important;
     &:hover {
-        border-color: #108cee;
+        border-color: @san-ui-blue-color;
     }
 }
 .ui-tiplayer-x {
@@ -195,7 +203,7 @@
 .ui-calendar-x-disabled:hover,
 .ui-calendar-x-disabled {
     color: #999999;
-    background: #f6f7fb;
+    background: @san-ui-disabled-color;
 }
 .ui-calendar-x-disabled .ui-calendar-arrow,
 .ui-calendar-x-disabled .ui-calendar-arrow:after,
@@ -399,7 +407,7 @@
 }
 .ui-clipboard-x > .iconfont {
     font-size: 12px;
-    color: #108cee;
+    color: @san-ui-blue-color;
     cursor: pointer;
 }
 
@@ -420,7 +428,7 @@
     transform: translateX(-50%);
 }
 .ui-dragger-disabled .ui-dragger-control-bar-horizontal:before {
-    background: #f6f7fb !important;
+    background: @san-ui-disabled-color !important;
 }
 .ui-dragger-x {
     .ui-dragger-bar.ui-dragger-bar-horizontal {
@@ -476,7 +484,7 @@
 }
 .ui-tab-x .ui-tab-navigator .ui-tab-item-active {
     background-color: #fff;
-    color: #108cee;
+    color: @san-ui-blue-color;
 }
 .ui-tab-x .ui-tab-navigator .ui-tab-item-hide {
     display: none;
@@ -528,14 +536,14 @@
     border: 1px solid #ccc;
 }
 .ui-searchbox-x .ui-select-x {
-    background: #f6f7fb;
+    background: @san-ui-disabled-color;
     color: #333;
 }
 .ui-searchbox-x-active {
-    border-color: #108cee;
+    border-color: @san-ui-blue-color;
     .ui-select-x {
         background: #eaf6fe;
-        color: #108cee;
+        color: @san-ui-blue-color;
     }
 }
 .ui-searchbox-x .ui-select-x,
@@ -597,7 +605,7 @@
     height: 12px;
     line-height: 1;
     .inner {
-        background: #108cee;
+        background: @san-ui-blue-color;
     }
     .percent {
         top: 0;
@@ -664,6 +672,19 @@
     margin-right: 5px;
 }
 
+/* ui-pager-x */
+.ui-pager-x {
+    .ui-pager-item {
+        background: none;
+        border: none;
+        color: #666;
+    }
+    .ui-pager-item-current {
+        background: @san-ui-blue-color;
+        color: #fff;
+    }
+}
+
 /* ui-select-multipicker */
 .ui-select-multipicker-layer {
     white-space: nowrap;
@@ -708,9 +729,9 @@
 }
 .ui-select-multipicker-layer .ui-select-item-selected {
     // background-color: #eaf6fe !important;
-    color: #108cee;
+    color: @san-ui-blue-color;
     .iconfont {
-        color: #108cee;
+        color: @san-ui-blue-color;
     }
 }
 .ui-select-multipicker-layer .ui-loading-x {
@@ -748,7 +769,7 @@
     min-width: 28px;
 }
 .ui-radioselect-x .ui-radio-disabled {
-    background-color: #f6f7fb !important;
+    background-color: @san-ui-disabled-color !important;
 }
 
 /* ui-instanteditor*/
@@ -756,7 +777,7 @@
     display: inline-block;
 }
 .ui-instanteditor-text {
-    color: #108cee;
+    color: @san-ui-blue-color;
     cursor: pointer;
 }
 .ui-instanteditor-help {
@@ -808,7 +829,7 @@
     text-align: center;
     vertical-align: middle;
     background-color: #eaf6fe;
-    color: #108cee;
+    color: @san-ui-blue-color;
     border-radius: 0;
 }
 .ui-webuploader-x .webuploader-pick-hover {
@@ -818,7 +839,7 @@
 .ui-webuploader-x-disabled .webuploader-pick-hover {
     cursor: not-allowed;
     color: #999999;
-    background-color: #f6f7fb;
+    background-color: @san-ui-disabled-color;
 }
 
 /* ui-checkbox */
@@ -1134,7 +1155,7 @@
 .ui-table-subrow-label {
     display: inline-block;
     cursor: pointer;
-    color: #108cee;
+    color: @san-ui-blue-color;
     font-size: 12px;
     transition: all 0.5s ease-out;
 
@@ -1288,7 +1309,7 @@
             margin-right: 6px;
         }
         > label {
-            color: #108cee;
+            color: @san-ui-blue-color;
         }
         .ui-select-x {
             min-width: 80px;
@@ -1444,7 +1465,7 @@
 
     h4 {
         font-size: 16px;
-        border-left: 5px solid #108cee;
+        border-left: 5px solid @san-ui-blue-color;
         padding-left: 10px;
         margin-top: 6px;
         float: left;
@@ -1510,7 +1531,7 @@
     .ui-userpicker-preview-item {
         display: inline-block;
         vertical-align: middle;
-        color: #108cee;
+        color: @san-ui-blue-color;
         background-color: #eaf6fe;
         padding: 2px 5px;
         margin-bottom: 3px;
@@ -1524,7 +1545,7 @@
     }
 }
 .ui-userpicker-x-active {
-    border-color: #108cee;
+    border-color: @san-ui-blue-color;
 }
 .ui-userpicker-layer-x {
     background-color: #fff;
