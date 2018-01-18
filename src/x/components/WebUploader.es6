@@ -6,7 +6,6 @@ import u from 'lodash';
 import $ from 'jquery';
 import _ from 'inf-i18n';
 import {DataTypes, defineComponent} from 'san';
-import util from 'inf-ria/util';
 
 import {create} from './util';
 import Button from './Button';
@@ -19,8 +18,8 @@ const kDefaultErrorMessages = {
     Q_EXCEED_NUM_LIMIT: _('队列文件数量超出限制！'),
     Q_EXCEED_SIZE_LIMIT: _('队列文件总量大小超出限制！'),
     Q_ZERO_SIZE_LIMIT: _('不支持0字节的文件上传'),
-    Q_TYPE_DENIED: util.sprintf(_('不支持 “%s” 的文件类型：“%s”'), '${name}', '${ext}'),
-    F_DUPLICATE: util.sprintf(_('文件 “%s” 已存在'), '${name}')
+    Q_TYPE_DENIED: _('不支持 “${name}” 的文件类型：“${ext}”'),
+    F_DUPLICATE: _('文件 “${name}” 已存在')
 };
 
 /* eslint-disable */
