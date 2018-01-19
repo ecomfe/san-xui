@@ -1,0 +1,34 @@
+/* *
+ * esui v5 style - kafka
+ *
+ * @file kafka.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-select-kafka-wrap {
+    position: relative;
+    .inline-block();
+
+    .ui-select-kafka-tip {
+        > div {
+            position: absolute;
+            text-indent: 1em;
+            top: 1px;
+            right: 1px;
+            left: 1px;
+            border-radius: 3px;
+            padding-top: 3px;
+            background: #f1f5fd;
+        }
+
+        .ui-select-kafka-loading {
+            &:after {
+                content: " ";
+                .inline-block();
+                width: 16px;
+                height: 16px;
+                background: url(../../../img/loading.gif) no-repeat 0 0;
+            }
+        }
+    }
+}

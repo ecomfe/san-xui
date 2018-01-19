@@ -198,6 +198,9 @@
 /* ui-calendar */
 .ui-calendar-xx {
     display: inline-block;
+    .ui-calendar-x {
+        border-radius: 0;
+    }
 }
 
 .ui-calendar-x-disabled:hover,
@@ -211,22 +214,30 @@
     color: #999999;
 }
 
+/* ui-rangecalendar-x */
+.ui-rangecalendar-x {
+    border-radius: 0;
+}
+
 /* ui-monthview */
-.ui-monthview-x .ui-select-x {
-    min-width: 0;
-    width: 100%;
-}
-.ui-monthview-shortcut .ui-button {
-    display: block;
-}
-.ui-monthview-x .ui-monthview-time {
-    text-align: center;
-}
-.ui-monthview-x .ui-monthview-time {
-    input[type="number"] {
-        -moz-appearance: textfield;
-        &::-webkit-inner-spin-button {
-            display: none;
+.ui-monthview-x {
+    .ui-select-x {
+        min-width: 0;
+        width: 100%;
+    }
+    .ui-monthview-month-item-selected {
+        border-radius: 0;
+    }
+    .ui-monthview-shortcut .ui-button {
+        display: block;
+    }
+    .ui-monthview-time {
+        text-align: center;
+        input[type="number"] {
+            -moz-appearance: textfield;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
         }
     }
 }
@@ -617,6 +628,7 @@
 .ui-toastlabel-x .ui-toastlabel-content {
     position: relative;
     padding: 5px 10px;
+    display: inline-block;
 }
 
 /* ui-numbertextline */
@@ -771,6 +783,8 @@
 /* ui-radioselect */
 .ui-radioselect-x {
     overflow: visible;
+    display: inline-block;
+    vertical-align: middle;
 }
 .ui-radioselect-x .ui-radio-block {
     position: relative;
@@ -828,6 +842,7 @@
 }
 .ui-webuploader-x .webuploader-container {
     vertical-align: middle;
+    display: inline-block;
 }
 .ui-webuploader-x .webuploader-pick {
     padding: 0 12px;
@@ -888,6 +903,7 @@
 
 /* .ui-bcmchart-x */
 .ui-bcmchart-x {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     padding: 10px;
@@ -896,9 +912,27 @@
     border: 1px solid #e8e8e6;
     border-radius: 4px;
     min-width: 320px;
+
+    .ui-bcmchart-box > h1 {
+        font-size: 12px;
+        margin: 0 0 .5em 0;
+        color: #555;
+        font-weight: 700;
+    }
+
     .diagnostic-log,
     .ui-bcmchart-error {
         color: #ea2e2e;
+    }
+
+    .ui-bcmchart-no-data {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        margin-top: -10px;
+        text-align: center;
+        font-size: 20px;
+        color: #ddd;
     }
 
     .ui-bcmchart-filter {

@@ -1,0 +1,110 @@
+/* *
+ * esui v5 style - pager
+ *
+ * @file pager.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@pager-normal-color: @bce-ui-normal-color;
+@pager-normal-color-bg: @bce-ui-normal-color-bg;
+@pager-normal-color-bg-hover: @bce-ui-normal-color-bg-hover;
+
+@pager-active-color: @bce-ui-primary-color;
+@pager-active-color-bg: @bce-ui-primary-color-bg;
+@pager-active-color-bg-hover: @bce-ui-primary-color-bg-hover;
+
+@pager-disable-color: @bce-ui-disabled-color;
+@pager-disable-color-bg: #e2e5ec;
+
+.ui-pager {
+    font-size: 12px;
+    line-height: 30px;
+    .user-select();
+
+    .ui-select {
+        vertical-align: top;
+        .inline-block();
+    }
+    .ui-pager-count {
+        color: #999;
+        margin-right: 10px;
+    }
+}
+
+.ui-pager-label {
+    color: @pager-normal-color;
+    text-align: center;
+}
+
+.ui-pager-select-wrapper {
+    margin-left: 5px;
+    .inline-block();
+
+    .ui-select {
+        min-width: 65px;
+    }
+}
+
+.ui-pager-alignRight {
+    .ui-pager-select-wrapper {
+        margin-right: 5px;
+    }
+    .ui-pager-label {
+        margin-right: 5px;
+    }
+}
+
+.ui-pager-select-hidden {
+    display: none;
+}
+
+.ui-pager-main {
+    margin: 0;
+    padding: 0;
+    .inline-block();
+
+    li {
+        min-width: 19px;
+        cursor: pointer;
+        text-align: center;
+        padding: 0 5px;
+        display: inline-block;
+        border-right: 1px solid #fff;
+        color: @pager-normal-color;
+        background-color: @pager-normal-color-bg;
+        .transition(all .3s);
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &:hover {
+            background-color: @pager-normal-color-bg-hover;
+        }
+    }
+
+    .ui-pager-item-omit,
+    .ui-pager-item-current {
+        cursor: default;
+    }
+
+    .ui-pager-item-current {
+        color: @pager-active-color;
+        background-color: @pager-active-color-bg;
+
+        &:hover {
+            background-color: @pager-active-color-bg-hover;
+        }
+    }
+
+    .ui-pager-item-extend-disabled {
+        cursor: not-allowed;
+        color: @pager-disable-color;
+        background-color: @pager-disable-color-bg;
+
+        &:hover {
+            background-color: @pager-disable-color-bg;
+        }
+    }
+}
+

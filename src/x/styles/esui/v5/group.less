@@ -1,0 +1,123 @@
+/* *
+ * esui v5 style - 控件组，以及控件混用的样式
+ *
+ * @file group.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-group {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui-group,
+.ui-row {
+    .ui-ctrl {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/**
+ * 按钮组
+ */
+.ui-button-group {
+    font-size: 0;
+
+    .ui-button {
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    .ui-button:last-child {
+        margin-right: 0;
+    }
+}
+
+/**
+ * Select组
+ */
+.ui-select-group {
+    font-size: 0;
+
+    .ui-select:first-child {
+        border-left: none;
+    }
+    .ui-select {
+        border-left: 1px solid #fff;
+    }
+}
+
+/**
+ * 实现搜索功能的控件组
+ */
+.ui-search-group {
+    font-size: 0;
+    height: 30px;
+    vertical-align: middle;
+
+    .ui-select {
+        &:extend(.skin-light-select);
+
+        &:hover,
+        &:active,
+        &:focus {
+            &:extend(.skin-light-select:hover);
+        }
+    }
+
+    .ui-textbox input:focus {
+        &:extend(.ui-textbox input:hover);
+    }
+
+    .ui-button:after {
+        content: '\e601';
+        .transition(all .3s);
+        font-family: "iconfont" !important;
+    }
+}
+
+// 表格中的select控件没有边框和背景色
+.ui-table {
+    .ui-select,
+    .ui-select:focus {
+        color: @select-normal-color;
+        background: transparent;
+        border: none;
+    }
+
+    .ui-select:hover,
+    .ui-select-active,
+    .ui-select-active:focus {
+        background-color: transparent;
+    }
+}
+
+// TODO(zhanghao) 下面内容还没整理
+/**
+ * 对话框中的form-row
+ */
+.ui-dialog-body-panel {
+    .form-row {
+        margin-bottom: 20px;
+    }
+    .form-row:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// 表格中的commond按钮样式
+.ui-table {
+    .cmds {
+        button {
+            border: none;
+            background: transparent;
+            color: #0786E9;
+            cursor: pointer;
+            outline: none;
+        }
+        button[disabled] {
+            cursor: not-allowed;
+        }
+    }
+}

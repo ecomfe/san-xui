@@ -1,0 +1,97 @@
+esui-toggle-button {
+    display: block;
+}
+
+@togglebutton-parrent-border-radius: 3px;
+@togglebutton-inner-border-radius: 2px;
+
+@togglebutton-off-bg-color: #f46767;
+@togglebutton-on-bg-color: #2cb663;
+
+@togglebutton-on-text-color: #90dbae;
+@togglebutton-off-text-color: #f9b3b3;
+
+@togglebutton-disabled-bg-color: #ccc;
+@togglebutton-disabled-text-color: #999;
+
+.ui-togglebutton {
+    width: 50px;
+    height: 20px;
+    border-radius: @togglebutton-parrent-border-radius;
+    line-height: 20px;
+    font-size: 12px !important;
+    color: @togglebutton-off-text-color;
+    display: inline-block;
+    zoom: 1;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: @togglebutton-off-bg-color;
+    border:1px solid  @togglebutton-off-bg-color;
+
+    span {
+        display: inline-block;
+        zoom: 1;
+        border: none;
+        text-align: center;
+    }
+
+    .ui-togglebutton-part-on {
+        display: none;
+    }
+
+    .ui-togglebutton-part-off {
+        display: block;
+        width: 33px;
+        margin-left: 17px;
+    }
+
+    &:after {
+        content: "|||";
+        display: block;
+        line-height: 17px;
+        text-align: center;
+        border-radius: @togglebutton-inner-border-radius;
+        position: absolute;
+        width: 17px;
+        height: 20px;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+        transition: left .3s ease-out;
+    }
+}
+
+.ui-togglebutton-checked {
+    background-color: @togglebutton-on-bg-color;
+    border: 1px solid @togglebutton-on-bg-color;
+    color: @togglebutton-on-text-color;
+
+    &:after {
+        left: 33px;
+    }
+
+    .ui-togglebutton-part-on {
+        display:block;
+        width: 33px;
+     }
+
+    .ui-togglebutton-part-off {
+        display: none;
+    }
+}
+
+.ui-togglebutton-disabled {
+    background-color: @togglebutton-disabled-bg-color;
+    border: 1px solid @togglebutton-disabled-bg-color;
+    color: @togglebutton-disabled-text-color;
+
+    .ui-togglebutton-part-on,
+    .ui-togglebutton-part-off {
+        color: @togglebutton-disabled-text-color;
+    }
+}

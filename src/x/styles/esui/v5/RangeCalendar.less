@@ -1,0 +1,137 @@
+/* *
+ * esui v5 style - Calendar
+ *
+ * @file Calendar.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@rangecalendar-normal-color: @bce-ui-normal-color;
+@rangecalendar-normal-color-bg: @bce-ui-normal-color-bg;
+@rangecalendar-normal-color-bg-hover: @bce-ui-normal-color-bg-hover;
+
+@rangecalendar-disable-color: @bce-ui-disabled-color;
+@rangecalendar-disable-color-bg: @bce-ui-disabled-color-bg;
+
+// 日期选择框
+.ui-rangecalendar {
+    display: inline-block;
+    font-size: 12px;
+    cursor:pointer;
+    padding: 0 8px;;
+    color: @rangecalendar-normal-color;
+    background-color: @rangecalendar-normal-color-bg;
+    .user-select();
+    .border-radius();
+    .transition(all .3s);
+
+    &:hover {
+        background-color: @rangecalendar-normal-color-bg-hover;
+    }
+
+    .ui-rangecalendar-text {
+        display: inline-block;
+        line-height: 30px;
+        vertical-align: middle;
+    }
+
+    .ui-rangecalendar-arrow {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:after {
+            content: "\e7b1";
+            font-family: "iconfont" !important;
+        }
+    }
+}
+
+// 选择日期的浮层
+.ui-rangecalendar-layer {
+    padding: 20px;
+    background: #fff;
+    .box-shadow();
+
+    &-hidden {
+        display: none;
+    }
+
+    .ui-rangecalendar-shortcut {
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .ui-rangecalendar-shortcut-item {
+        color: #666666;
+        margin-left: 8px;
+        .interactive-cursor();
+
+        &:hover {
+            color: @rangecalendar-normal-color;
+        }
+
+        &-selected {
+            cursor: default;
+            color: @rangecalendar-normal-color;
+            text-decoration: none;
+        }
+    }
+
+    .ui-rangecalendar-begin,
+    .ui-rangecalendar-end {
+        float: left;
+        width: 210px;
+    }
+
+    .ui-rangecalendar-begin {
+        margin-right: 20px;
+    }
+
+    .ui-rangecalendar-label {
+        font-size: 12px;
+        height: 10px;
+        overflow: hidden;
+        zoom: 1;
+        h3 {
+            float: left;
+            font-size: 12px;
+            line-height: 18px;
+            margin: 0;
+            display: none;
+        }
+        .ui-checkbox {
+            float: right;
+            input {
+                vertical-align: text-bottom;
+                *margin-bottom: -3px;
+            }
+            line-height: 18px;
+        }
+    }
+
+    .ui-rangecalendar-foot {
+        clear: both;
+        padding-top: 8px;
+        text-align: right;
+
+        .ui-button {
+            margin-right: 5px;
+        }
+    }
+}
+
+.ui-rangecalendar-disabled,
+.ui-rangecalendar-read-only {
+    color: @rangecalendar-disable-color;
+    background: @rangecalendar-disable-color-bg;
+
+    &:hover {
+        background: @rangecalendar-disable-color-bg;
+    }
+}
+
+/** 关闭layer按钮 */
+.skin-layerClose-button {
+    display: none;
+}
+

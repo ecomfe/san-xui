@@ -1,0 +1,37 @@
+/**
+ * esui Toast mixin
+ * @file common/css/esui/mixin/Toast.less
+ */
+
+//默认消息
+.ui-toast-content-mixin() {
+    margin: 0;
+    padding: 0 50px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    line-height: 50px;
+    border: 1px solid;
+    pointer-events: auto;
+    .border-radius();
+    font-size: 14px;
+    .box-shadow();
+}
+
+.ui-toast-normal-mixin(@img) {
+    color: #1DA653;
+    border-color: #90DBAE;
+    background: #D4F0DF @img 20px center no-repeat;
+}
+
+.ui-toast-error-mixin(@img) {
+    color: #EB5252;
+    border-color: #F9B3B3;
+    background: #FCE0E0 @img 20px center no-repeat;
+}
+
+.ui-toast-alert-mixin(@img) {
+    color: #E19D0C;
+    border-color: #F4CA73;
+    background: #F8EBCF @img 20px center no-repeat;
+}

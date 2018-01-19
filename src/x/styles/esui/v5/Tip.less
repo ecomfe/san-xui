@@ -1,0 +1,163 @@
+/* *
+ * esui v5 style - Tip
+ *
+ * @file Tip.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-tip-layer {
+    background: #FFF3D9;
+    border: 1px solid #D9CBA8;
+    padding: 10px;
+    margin-left: -5px;
+    margin-top: 13px;
+    z-index: @layer-z-index;
+}
+
+.ui-tip-title,
+.ui-tip-body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+.ui-tip-title {
+    margin: 0 0 .5em;
+}
+
+.ui-tip-body {
+    margin-bottom: 5px;
+}
+
+.ui-tip-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px;
+}
+
+.ui-tip-arrow-tl .ui-tip-arrow-1 {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -24px, -12px);
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    left: 12px;
+}
+.ui-tip-arrow-tr {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -36px, -12px);
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    right: 12px;
+}
+.ui-tip-arrow-bl {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -12px, -12px);
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    left: 12px;
+}
+.ui-tip-arrow-br {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, 0, -12px);
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    right: 12px;
+}
+
+.ui-tip-arrow-lt {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -26px, 0);
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    left: -13px;
+}
+.ui-tip-arrow-lb {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -39px, 0);
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    left: -13px;
+}
+.ui-tip-arrow-rt {
+    display: block;
+    .background(url(../../img/transparent.gif));
+    width: 13px;
+    height: 12px;
+    top: 7px;
+    right: -13px;
+}
+.ui-tip-arrow-rb {
+    display: block;
+    .background(url(../../img/transparent.gif), no-repeat, -13px, 0);
+    width: 13px;
+    height: 12px;
+    bottom: 7px;
+    right: -13px;
+}
+
+.ui-tip {
+    width: 14px;
+    height: 14px;
+    line-height: 15px !important;
+    border: 1px solid @bce-ui-light-color;
+    color: @bce-ui-light-color !important;
+    background: #FFF !important;
+    overflow: hidden;
+    .inline-block();
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: "iconfont" !important;
+    text-align: center;
+    font-size: 12px;
+
+    &:before {
+        content: "\e7fa";
+    }
+}
+
+.ui-tip:hover,
+.ui-tip:active {
+    color: #FFF !important;
+    background: @bce-ui-light-color !important;
+}
+
+.skin-warning-tip {
+    background: #FFF;
+    border-color: @bce-ui-warning-color;
+    color: @bce-ui-warning-color !important;
+
+    &:before {
+        content: "\e7f9";
+    }
+}
+
+.skin-warning-tip:hover,
+.skin-warning-tip:active {
+    background: @bce-ui-warning-color !important;
+    color: #FFF !important;
+}
+
+.skin-error-tip {
+    background: #FFF;
+    border-color: @bce-ui-error-color;
+    color: @bce-ui-error-color !important;
+
+    &:before {
+        content: "\e7f9";
+    }
+}
+
+.skin-error-tip:hover,
+.skin-error-tip:active {
+    background: @bce-ui-error-color !important;
+    color: #FFF !important;
+}
+
+.ui-tip-layer-hidden {
+    display: none;
+}

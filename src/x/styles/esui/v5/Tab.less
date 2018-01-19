@@ -1,0 +1,163 @@
+/* *
+ * esui v5 style - tab
+ *
+ * @file tab.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@tab-normal-color: #666;
+@tab-normal-color-border: #e8ebee;
+@tab-normal-color-bg: #f5f5f5;
+@tab-active-color: @bce-ui-normal-color;
+
+@tab-smart-color: @bce-ui-normal-color;
+@tab-smart-color-bg: @bce-ui-normal-color-bg;
+@tab-smart-color-bg-hover: @bce-ui-normal-color-bg-hover;
+@tab-smart-active-color: @bce-ui-primary-color;
+@tab-smart-active-color-bg: @bce-ui-primary-color-bg;
+
+
+.ui-tab {
+    overflow: hidden;
+    background-color: #FFF;
+
+    .border-radius(0);
+
+    .ui-tab-content {
+        padding: 20px;
+    }
+}
+
+.ui-tab-navigator {
+    height: 50px;
+    font-size: 16px;
+    list-style: none;
+    font-weight: normal;
+    background-color: #fff;
+    border-bottom: 1px solid @tab-normal-color-border;
+
+    .box-sizing();
+    .clear-float();
+}
+
+.ui-tab-item {
+    float: left;
+    height: 50px;
+    min-width: 90px;
+    padding: 0 20px;
+    text-align: center;
+
+    .box-sizing();
+    .border-radius(0);
+    .interactive-cursor();
+    .transition(background,color .3s);
+
+    span, a {
+        color: @tab-normal-color;
+        line-height: 50px;
+        text-align: center;
+        display: inline-block;
+        .transition(background,color .3s);
+
+        &:visited, &:active {
+            color: @tab-normal-color;
+        }
+
+        &:hover {
+            color: @tab-active-color;
+        }
+    }
+}
+
+.ui-tab-item-active {
+    cursor: default;
+    position: relative;
+    border-bottom: 2px solid @tab-active-color;
+
+    span, a, a:hover, a:visited, a:active {
+        color: @tab-active-color;
+    }
+}
+
+// 宝宝不知道起什么名字了
+.skin-sandwich-tab {
+    .ui-tab-navigator {
+        font-size: 14px;
+        border-bottom: none;
+        // border-top: 1px solid @tab-normal-color-border;
+        background-color: @tab-normal-color-bg;
+    }
+
+    .ui-tab-item-active {
+        border-bottom: none;
+        background-color: #FFF;
+    }
+}
+
+/* 简版Tab */
+.ui-smart-tab {
+    .border-radius(0);
+
+    .ui-tab-navigator {
+        border: none;
+        height: 30px;
+    }
+
+    .ui-tab-item {
+        font-size: 0;
+        z-index: 10;
+        height: 30px;
+        line-height: 30px;
+        border-right: 1px solid #fff;
+        background-color: @tab-smart-color-bg;
+        .transition(background,color .3s);
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &:hover {
+            background-color: @tab-smart-color-bg-hover;
+        }
+
+        span, a {
+            font-size: 12px;
+            line-height: 30px;
+            text-align: center;
+            display: inline-block;
+            color: @tab-smart-color;
+        }
+    }
+
+    .ui-tab-item-active {
+        z-index: 20;
+        border: none;
+        background-color: @tab-smart-active-color-bg;
+
+        &:hover {
+            background-color: @tab-smart-active-color-bg;
+
+            span, a {
+                color: #FFF;
+            }
+        }
+
+        span, a {
+            color: #FFF;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

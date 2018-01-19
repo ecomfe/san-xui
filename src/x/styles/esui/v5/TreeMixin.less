@@ -1,0 +1,24 @@
+/* *
+ * esui v5 style - TipLayer
+ *
+ * @file TipLayer.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.skin-folder-tree-node-indicator {
+    .background(url(../../img/esui/esui-folder.png), no-repeat, 0, -6px, transparent);
+}
+.skin-folder-tree-node-indicator-expanded {
+    background-position: 0 -30px;
+}
+
+// 收起
+// .skin-folder-tree-node-indicator-collapsed {
+// }
+
+// 无子节点或占位
+.skin-folder-tree-node-indicator-empty,
+.skin-folder-tree-node-indicator-previous,
+.skin-folder-tree-node-indicator-far-previous {
+    background-image: none;
+}

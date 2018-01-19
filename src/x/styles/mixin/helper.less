@@ -1,0 +1,152 @@
+/**
+ * mixin - helper
+ *
+ * @file helper.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+// 浮动
+.fl (@type:left) {
+    float: @type;
+}
+
+// 清除浮动
+.clear-float () {
+    display: block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+
+// 背景函数
+.background (@image-url, @repeat-type:no-repeat, @s-x:0, @s-y:0, @b-color:transparent) {
+    @url: ~"@{image-url}";
+    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{url}") ? 'true' : 'false'`;
+
+    .background-image(@is-url-exp) when not (@is-url-exp) {
+        background-image: url(@url);
+    }
+    .background-image(@is-url-exp) when (@is-url-exp) {
+        background-image: @url;
+    }
+    .background-image(@is-url-exp);
+
+    background-repeat: @repeat-type;
+    background-position: @s-x @s-y;
+    background-color: @b-color;
+}
+
+// 阴影
+// @x 横轴偏移
+// @y 纵轴偏移
+// @blur 阴影偏移
+// @color 阴影颜色
+.box-shadow (@arguments:1px 1px 8px rgba(0, 0, 0, 0.2)) {
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+
+
+// 盒模型计算模式
+// @type border-box | content-box
+.box-sizing (@type:border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    -ms-box-sizing: @type;
+    box-sizing: @type;
+}
+
+// 变换
+.transition (...) {
+    -moz-transition: @arguments;
+    -webkit-transition: @arguments;
+    transition: @arguments;
+}
+
+// 设置尺寸为内部显示尺寸
+// @height 设置高度
+// @width 设置宽度
+.input-inner-size (@height, @width) {
+    height: @height;
+    line-height: @height;
+    width: @width;
+    .box-sizing(content-box);
+}
+
+// 提供inline-block的兼容显示效果
+.inline-block () {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+// 隐藏元素内文字
+.indent-text () {
+    text-indent: -500%;
+   // IE6,7 下使用text-indent会导致内容消失，因此做下hack
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+}
+
+.interactive-cursor () {
+    cursor: pointer;
+}
+
+.ellipse-overflow () {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+// 重设列表的样式
+.reset-list () {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+// Opacity
+.opacity (@opacity) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+// 文字选择
+.user-select (@type:none) {
+    // 火狐
+    -moz-user-select: @type;
+    // webkit浏览器
+    -webkit-user-select: @type;
+    // IE10
+    -ms-user-select: @type;
+    // 早期浏览器
+    -khtml-user-select: @type;
+    user-select: @type;
+}
+
+.nowrap-text(@width:60%) {
+    max-width:@width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.justify(@width) {
+    width: @width;
+    text-align: justify;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}

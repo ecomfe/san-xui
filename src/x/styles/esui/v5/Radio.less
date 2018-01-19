@@ -1,0 +1,57 @@
+/* *
+ * esui v5 style - Radio
+ *
+ * @file Radio.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@radio-primary-color-bg: @bce-ui-primary-color-bg;
+@radio-disabled-primary-color-bg: @bce-ui-disabled-primary-color-bg;
+@radio-disable-color-bg: @bce-ui-disabled-color-bg;
+@radio-disable-color-border: @bce-ui-disabled-color-border;
+@radio-disable-color: @bce-ui-disabled-color;
+
+input[type=radio] {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    outline: none;
+    cursor: pointer;
+    vertical-align: -2px;
+    border: 1px solid @radio-primary-color-bg;
+    // 注意只开启safri、chrome, 不支持ie、firefox
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    .border-radius(7px);
+
+    &:before {
+        top: 2px;
+        left: 2px;
+        width: 8px;
+        height: 8px;
+        content: '';
+        position: absolute;
+        .border-radius(4px);
+        .transition(all .3s);
+    }
+
+    &:checked:before {
+        background-color: @radio-primary-color-bg;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        border-color: @radio-disable-color-border;
+        background-color: @radio-disable-color-bg;
+
+        &:checked:before {
+            background-color: @radio-disable-color;
+        }
+
+        &:checked {
+            background-color: @radio-disabled-primary-color-bg;
+        }
+    }
+}

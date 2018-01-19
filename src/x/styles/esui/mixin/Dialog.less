@@ -1,0 +1,90 @@
+/* *
+ * esui Dialog mixin
+ * @file common/css/esui/mixin/Dialog.less
+ */
+
+.ui-dialog-mixin() {
+    // overflow: hidden;
+    background-color: #FFF;
+    .border-radius();
+    position: absolute;
+    width: 600px;
+    z-index: @dialog-z-index;
+}
+
+.ui-dialog-head-mixin() {
+    border-bottom: 1px solid #D0DAF3;
+    background-color: #F1F5FD;
+    color: #2C4A93;
+    height: 40px;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .user-select();
+    .border-radius(3px 3px 0 0);
+}
+
+.ui-dialog-close-icon-mixin() {
+    .background(url(../../../img/esui/dialog-head-close.png));
+    height: 20px;
+    width: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    .interactive-cursor();
+}
+
+.ui-dialog-title-mixin() {
+    padding-left: 20px;
+    line-height: 40px;
+    font-size: 14px;
+    padding-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-dialog-body-panel-mixin() {
+    padding: 30px;
+    overflow: hidden;
+    zoom: 1;
+    font-size: 14px;
+}
+
+.ui-dialog-foot-panel-mixin() {
+    .user-select();
+    margin: 0px 8px 3px;
+    padding: 10px 0 10px 6px;
+    border-top: 1px solid #F0F0F0;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.ui-dialog-draggable-mixin() {
+    .ui-dialog-head {
+        cursor: move;
+    }
+}
+
+.ui-dialog-dragging-mixin() {
+    .user-select();
+}
+
+.ui-dialog-mask-mixin() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // 兼容IE6
+    _position: absolute;
+    _width: 100%;
+    _height: 100%;
+    background: #333;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    z-index: @mask-z-index;
+}

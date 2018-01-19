@@ -1,0 +1,109 @@
+/* *
+ * mixin - flexbox
+ *
+ * @file flex.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+/* *
+ * usage - .flexbox('inline')
+ */
+.flexbox(@inline) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+/* *
+ * usage - .flexbox()
+ */
+.flexbox() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* *
+ * usage - .flex-flow(column, wrap)
+ */
+.flex-flow(@direction:row, @wrap:nowrap) {
+    -ms-flex-flow: @direction @wrap;
+    flex-flow: @direction @wrap;
+}
+
+/* *
+ * usage - .flex-auto()
+ */
+.flex-auto(@grow:1, @shrink:1, @basis:auto) {
+    -ms-flex: @grow @shrink @basis;
+    -webkit-box-flex: @grow;
+            flex: @grow @shrink @basis;
+}
+
+/* *
+ * usage - .flex-shrink()
+ */
+.flex-shrink(@shrink:0) {
+    -ms-flex-negative: @shrink;
+        flex-shrink: @shrink;
+}
+
+/* *
+ * usage - .flex-grow()
+ */
+.flex-grow(@grow:0) {
+    -webkit-box-flex: @grow;
+        -ms-flex-positive: @grow;
+            flex-grow: @grow;
+}
+
+/* *
+ * usage - .flex-basis(100)
+ */
+.flex-basis(@basis:auto) {
+    .flex-auto(1, 1, @basis);
+}
+
+/* *
+ * usage - .align-items()
+ */
+.align-items(@layout:center) {
+    -webkit-box-align: @layout;
+        -ms-flex-align: @layout;
+            align-items: @layout;
+}
+
+/* *
+ * usage - .align-content()
+ */
+.align-content(@layout:center) {
+    -ms-flex-line-pack: @layout;
+        align-content: @layout;
+}
+
+/* *
+ * usage - .align-self()
+ */
+.align-self(@layout:center) {
+    -ms-flex-item-align: @layout;
+        -ms-grid-row-align: @layout;
+        align-self: @layout;
+}
+
+/* *
+ * usage - .justify-content()
+ */
+.justify-content(@layout:center) {
+    -webkit-box-pack: @layout;
+        -ms-flex-pack: @layout;
+            justify-content: @layout;
+}
+
+/* *
+ * usage - .justify-content()
+ */
+.flex-order(@layout) {
+    -webkit-box-ordinal-group: NaN;
+        -ms-flex-order: @layout;
+            order: @layout;
+}

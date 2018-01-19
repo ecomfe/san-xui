@@ -36,7 +36,7 @@
     "@ecomfe/eoo": "^0.1.4",
     "@ecomfe/er": "^3.1.0-beta.7",
     "@ecomfe/inf-i18n": "^1.0.0",
-    "@ecomfe/inf-ria": "^1.0.0",
+    "@ecomfe/inf-ria": "^1.0.1",
     "@ecomfe/mini-event": "^1.0.2",
     "axios": "^0.17.1",
     "clipboard": "^1.7.1",

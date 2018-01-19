@@ -1,0 +1,176 @@
+/* *
+ * esui v5 style - Button
+ *
+ * @file Button.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@btn-disable-color: @bce-ui-disabled-color;
+@btn-disable-color-bg: @bce-ui-disabled-color-bg;
+@btn-disable-primary-color-bg: @bce-ui-disabled-primary-color-bg;
+
+@btn-normal-color: @bce-ui-normal-color;
+@btn-normal-color-bg: @bce-ui-normal-color-bg;
+@btn-normal-color-bg-hover: @bce-ui-normal-color-bg-hover;
+@btn-normal-color-bg-active: @bce-ui-normal-color-bg-active;
+
+@btn-primary-color: @bce-ui-primary-color;
+@btn-primary-color-bg: @bce-ui-primary-color-bg;
+@btn-primary-color-bg-hover: @bce-ui-primary-color-bg-hover;
+@btn-primary-color-bg-active: @bce-ui-primary-color-bg-active;
+
+@btn-danger-color: @bce-ui-danger-color;
+@btn-danger-color-bg: @bce-ui-danger-color-bg;
+@btn-danger-color-bg-hover: @bce-ui-danger-color-bg-hover;
+@btn-danger-color-bg-active: @bce-ui-danger-color-bg-active;
+
+/* *
+ * 普通按钮
+ */
+.ui-button {
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0 12px;
+    overflow: hidden;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: @btn-normal-color;
+    background-color: @btn-normal-color-bg;
+    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    .user-select();
+    .inline-block();
+    .border-radius(0);
+    .transition(all .3s);
+    .interactive-cursor();
+    .box-sizing(content-box);
+
+    &::-moz-focus-inner {
+        border: none;
+        padding: 0;
+    }
+
+    &:hover {
+        background-color: @btn-normal-color-bg-hover;
+    }
+
+    &:active {
+        background-color: @btn-normal-color-bg-active;
+    }
+
+    &.state-disabled,
+    &.state-disabled:hover,
+    &.state-disabled:active {
+        cursor: not-allowed;
+        color: @btn-disable-color;
+        background-color: @btn-disable-color-bg;
+    }
+
+    &.btn-lg {
+        height: 40px;
+        font-size: 14px;
+        padding: 0 40px;
+        line-height: 40px;
+    }
+}
+
+/* *
+ * 突出按钮：用于比较重要的功能，强烈引导用户操作
+ */
+.skin-ok-button,
+.skin-create-button,
+.skin-primary-button {
+    color: @btn-primary-color;
+    background-color: @btn-primary-color-bg;
+
+    &:hover {
+        background-color: @btn-primary-color-bg-hover;
+    }
+
+    &:active {
+        background-color: @btn-primary-color-bg-active;
+    }
+
+    &.state-disabled,
+    &.state-disabled:hover,
+    &.state-disabled:active {
+        background-color: @btn-disable-primary-color-bg;
+    }
+}
+
+/* *
+ * 危险按钮，标示操作具有不可恢复性
+ */
+.skin-danger-button {
+    color: @btn-danger-color;
+    background-color: @btn-danger-color-bg;
+
+    &:hover {
+        background-color: @btn-danger-color-bg-hover;
+    }
+
+    &:active {
+        background-color: @btn-danger-color-bg-active;
+    }
+}
+
+/* *
+ * 文字类按钮，没有边框、背景色继承父元素
+ */
+.skin-stringfy-button {
+    color: @btn-normal-color;
+    background: transparent;
+
+    &.state-disabled,
+    &.state-disabled:hover {
+        background-color: transparent;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+// 创建按钮添加icon
+.skin-create-button:before {
+    font-family: "iconfont" !important;
+    content: "\e600";
+    margin-right: 6px;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* *
+ * 确定按钮和取消按钮的最小宽度
+ */
+.skin-ok-button,
+.skin-cancel-button {
+    min-width: 40px;
+}
+
+/* *
+ * 刷新按钮：只有一个刷新图标的按钮
+ */
+.skin-refresh-button:before {
+    font-family: "iconfont" !important;
+    content: "\e61c";
+}
+
+/* *
+ * 下载按钮：只有一个下载图标的按钮
+ */
+.skin-download-button:before {
+    font-family: "iconfont" !important;
+    content: "\e678";
+    font-size: 15px;
+}
+
+@-moz-document url-prefix() {
+    .skin-refresh-button,
+    .skin-download-button {
+        line-height: -moz-block-height;
+    }
+}

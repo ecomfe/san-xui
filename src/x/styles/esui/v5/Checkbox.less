@@ -1,0 +1,61 @@
+/* *
+ * esui v5 style - CheckBox
+ *
+ * @file CheckBox.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@checkbox-primary-color-bg: @bce-ui-primary-color-bg;
+@checkbox-disabled-primary-color-bg: @bce-ui-disabled-primary-color-bg;
+@checkbox-disable-color-bg: @bce-ui-disabled-color-bg;
+@checkbox-disable-color-border: @bce-ui-disabled-color-border;
+@checkbox-disable-color: @bce-ui-disabled-color;
+
+input[type=checkbox] {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    outline: none;
+    cursor: pointer;
+    vertical-align: -3px;
+    border: 1px solid @checkbox-primary-color-bg;
+    // 注意只开启safri、chrome, 不支持ie、firefox
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    .transition(all .3s);
+
+    &:checked {
+        background-color: @checkbox-primary-color-bg;
+
+        &:before {
+            top: 1.5px;
+            left: 1px;
+            width: 8px;
+            height: 4px;
+            content: '';
+            color: #fff;
+            position: absolute;
+            border-bottom: solid 2px currentColor;
+            border-left: solid 2px currentColor;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        border-color: @checkbox-disable-color-border;
+        background-color: @checkbox-disable-color-bg;
+
+        &:checked:before {
+            border-color: @checkbox-disable-color;
+        }
+
+        &:checked {
+            border-color: @checkbox-disabled-primary-color-bg;
+            background-color: @checkbox-disabled-primary-color-bg;
+        }
+    }
+}

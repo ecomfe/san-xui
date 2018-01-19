@@ -1,0 +1,188 @@
+/* *
+ * esui v5 style - textbox
+ *
+ * @file textbox.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@textbox-padding: 0 10px;
+@textbox-border: 1px solid @bce-ui-disabled-color-border;
+@textbox-border-color-hover: @bce-ui-normal-color;
+@textbox-border-color-active: @bce-ui-normal-color;
+@textbox-border-color-valid: @bce-ui-valid-color-border;
+@textbox-border-color-invalid: @bce-ui-invalid-color-border;
+
+@textbox-bg-color-disabled: #f7f7f7;
+@textbox-bg-color-focus: #f8fbfe;
+@textbox-bg-color-invalid: #fffbfb;
+@textbox-bg-color-valid: #fbfefa;
+
+@textbox-color: #333;
+
+@textbox-height: 28px;
+@textbox-placehoder-color: #999999;
+@textbox-font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+
+@textbox-hint-color: #333333;
+@textbox-hint-bg-color: #f7f7f7;
+@textbox-hint-bg-color-focus: #e6eff8;
+@textbox-hint-bg-color-valid: #e6f8e0;
+@textbox-hint-bg-color-invalid: #fbebeb;
+
+.ui-textbox {
+    font-size: 0;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    .textbox-placeholder() {
+        color: @textbox-placehoder-color;
+        font-family: @textbox-font-family;
+    }
+
+    input, textarea {
+        width: 200px;
+        font-size: 12px;
+        background: #FFF;
+        vertical-align: middle;
+
+        color: @textbox-color;
+        border: @textbox-border;
+        height: @textbox-height;
+        padding: @textbox-padding;
+        line-height: @textbox-height;
+        font-family: @textbox-font-family;
+
+        .border-radius(0);
+        .box-sizing(content-box);
+
+        &:focus {
+            outline: 0;
+            color: #333;
+            background-color: @textbox-bg-color-focus;
+        }
+        &:hover {
+            border-color: @textbox-border-color-hover;
+        }
+        &:-moz-placeholder {
+            .textbox-placeholder();
+        }
+        &::-moz-placeholder {
+            .textbox-placeholder();
+        }
+        &::-webkit-input-placeholder {
+            .textbox-placeholder();
+        }
+        &:-ms-input-placeholder {
+            .textbox-placeholder();
+        }
+    }
+
+    textarea {
+        height: 200px;
+        overflow: auto;
+        resize: none;
+    }
+
+    input:hover + .ui-textbox-hint {
+        border-color: @textbox-border-color-hover;
+    }
+
+    input:focus + .ui-textbox-hint {
+        background-color: @textbox-hint-bg-color-focus;
+    }
+}
+
+.ui-textbox-hint {
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 4px;
+    border-top: @textbox-border;
+    border-bottom: @textbox-border;
+    line-height: @textbox-height;
+    background: @textbox-hint-bg-color;
+
+    &-suffix & {
+        border-right: @textbox-border;
+        margin-left: -1px;
+    }
+
+    &-prefix & {
+        float: left;
+        border-left: @textbox-border;
+    }
+
+    &-prefix input {
+        border-left: none;
+    }
+}
+
+.ui-textbox-validity-invalid {
+    input, textarea {
+        background-color: @textbox-bg-color-invalid;
+        border-color: @textbox-border-color-invalid;
+
+        &:hover, &:focus {
+            border-color: @textbox-border-color-invalid;
+        }
+    }
+
+    .ui-textbox-hint {
+        border-color: @textbox-border-color-invalid;
+        background: @textbox-hint-bg-color-invalid;
+    }
+
+    input:hover + .ui-textbox-hint,
+    input:focus + .ui-textbox-hint {
+        .ui-textbox-hint();
+    }
+}
+
+.ui-textbox-validity-valid {
+    input:focus, textarea:focus {
+        background-color: @textbox-bg-color-valid;
+        border-color: @textbox-border-color-valid;
+    }
+
+    input:focus + .ui-textbox-hint {
+        border-color: @textbox-border-color-valid;
+        background: @textbox-hint-bg-color-valid;
+    }
+}
+
+.ui-textbox-placeholder {
+    top: 1px;
+    left: 10px;
+    font-size: 12px;
+    position: absolute;
+    height: @textbox-height;
+    line-height: @textbox-height;
+    color: @textbox-placehoder-color;
+}
+
+.ui-textbox-placeholder-hidden {
+    display: none;
+}
+
+.ui-textbox-disabled,
+.ui-textbox-read-only {
+    input, textarea {
+        cursor: not-allowed;
+        color: @textbox-color;
+        background: @textbox-bg-color-disabled;
+        border: @textbox-border;
+    }
+    input:hover, textarea:hover {
+        border: @textbox-border;
+    }
+}
+
+.ui-textbox-validity-label,
+.ui-textarea-validity-label {
+    &, &-notice, &-warn, &-invalid {
+        zoom: 1;
+        padding-left: 10px;
+        display: inline-block;
+    }
+}

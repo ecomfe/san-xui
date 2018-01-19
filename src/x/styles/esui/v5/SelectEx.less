@@ -1,0 +1,57 @@
+/* *
+ * esui v5 style - selectex
+ *
+ * @file selectex.less
+ * @author yangxiayan(yangxiayan@baidu.com)
+ */
+
+@selectex-layer-after-color: #999;
+@selectex-layer-color-select: @bce-ui-normal-color;
+
+.ui-selectex {
+    &:extend(.ui-select all);
+    background-image: none;
+    border: 0;
+    .border-radius(0);
+}
+
+.ui-selectex-disabled,
+.ui-selectex-read-only {
+    &:extend(.ui-select-disabled all);
+}
+
+.ui-selectex-active,
+.ui-selectex-active:hover,
+.ui-selectex-active:focus {
+    &:extend(.ui-select-active all);
+}
+
+.ui-selectex-layer {
+    &:extend(.ui-selectex-layer all);
+}
+
+.ui-selectex-layer-hidden {
+    &:extend(.ui-select-layer-hidden all);
+}
+
+.ui-selectex-list {
+    &:extend(.ui-select-list all);
+    &.ui-selectex-child-list {
+        border: 0;
+    }
+    border: 0;
+}
+
+.ui-selectex-item {
+    &:extend(.ui-select-item all);
+    span:after {
+        color: @selectex-layer-after-color;
+    }
+    &:hover,
+    &.ui-selectex-item-selected {
+        color: @selectex-layer-color-select;
+        span:after {
+            color: @selectex-layer-color-select;
+        }
+    }
+}

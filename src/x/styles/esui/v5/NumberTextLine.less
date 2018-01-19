@@ -1,0 +1,54 @@
+/* *
+ * esui v5 style - 控件组，以及控件混用的样式
+ *
+ * @file group.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@numbertextline-color: @bce-ui-disabled-color;
+@numbertextline-color-bg: @bce-ui-normal-color-bg;
+@numbertextline-disable-primary-bg: @bce-ui-disabled-primary-color-bg;
+
+.ui-numbertextline {
+    .ui-button {
+        padding: 0;
+        vertical-align: middle;
+        &:extend(.ui-button);
+        &:extend(.skin-primary-button);
+    }
+
+    .ui-button:hover {
+        &:extend(.skin-primary-button:hover);
+    }
+
+    .ui-button:first-child,
+    .ui-button:last-child {
+        .border-radius(0);
+    }
+
+    .ui-button-disabled {
+        color: @numbertextline-color;
+        background-color: @numbertextline-disable-primary-bg;
+
+        &:hover {
+            background-color: @numbertextline-disable-primary-bg;
+        }
+    }
+
+    .ui-textbox {
+        margin: 0;
+        vertical-align: middle;
+
+        input {
+            width: 60px;
+            padding: 0 10px;
+            color: @numbertextline-color;
+            background-color: @numbertextline-color-bg;
+            border-color: @numbertextline-color-bg;
+        }
+
+        input:focus {
+            border-color: @numbertextline-color-bg;
+        }
+    }
+}

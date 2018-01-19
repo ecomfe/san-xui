@@ -1,0 +1,77 @@
+/* *
+ * esui v5 style - Toast
+ *
+ * @file Toast.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@-webkit-keyframes ui-toast-show {
+    from {
+        opacity: 0;
+        margin-top: -30px;
+    }
+    to {
+        opacity: 1;
+        margin-top: -1px;
+    }
+}
+
+@keyframes ui-toast-show {
+    from {
+        opacity: 0;
+        margin-top: -30px;
+    }
+    to {
+        opacity: 1;
+        margin-top: -1px;
+    }
+}
+
+.ui-toast {
+    position: fixed;
+    top: 80px;
+    text-align: center;
+    // 这是个很神奇的事情，一般来说放一个占满宽度的元素会导致下面的东西不能点击，
+    // 因此有`pointer-events`来处理，但是IE不支持这个所以有兼容性问题。
+    // 但是IE6-9（10未测）统一透明的地方是默认穿透的，所以完全没问题- -
+
+    // 经过测试IE下并不是所有元素能穿透
+    // 内容元素能穿透（文本框、文本等），空白部分穿透不了
+    // 导致我们的select控件只有文字部分能点，右边一部分点击和hover都没反应
+    // 所以目前把 width 设为100% height 设为0，来达到居中，又不遮罩底层
+    // pointer-events: none;
+    width: 100%;
+    height: 0;
+    z-index: 99999999;
+    -webkit-animation: ui-toast-show .3s;
+    animation: ui-toast-show .3s;
+}
+
+.ui-toast-collection-area {
+    position: fixed;
+    z-index: 99999999;
+    top: 0;
+    width: 100%;
+    height: 0;
+}
+
+.ui-toast-content {
+    .ui-toast-content-mixin();
+}
+
+.ui-toast-content {
+    // 普通类消息
+    .ui-toast-normal & {
+        .ui-toast-normal-mixin(url(../../img/esui/toast-normal-icon.png));
+    }
+
+    // 错误类消息
+    .ui-toast-error & {
+        .ui-toast-error-mixin(url(../../img/esui/toast-error-icon.png));
+    }
+
+    // 警示类消息
+    .ui-toast-alert & {
+        .ui-toast-alert-mixin(url(../../img/esui/toast-alert-icon.png));
+    }
+}

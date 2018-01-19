@@ -1,0 +1,62 @@
+/* *
+ * esui v5 style - Calendar
+ *
+ * @file Calendar.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@calendar-normal-color: @bce-ui-normal-color;
+@calendar-normal-color-bg: @bce-ui-normal-color-bg;
+@calendar-normal-color-bg-hover: @bce-ui-normal-color-bg-hover;
+
+.ui-calendar {
+    display: inline-block;
+    font-size: 12px;
+    cursor:pointer;
+    padding: 0 8px;;
+    background-color: @calendar-normal-color-bg;
+    .user-select();
+    .border-radius();
+    .transition(all .3s);
+
+    &:hover {
+        background-color: @calendar-normal-color-bg-hover;
+    }
+
+    .ui-calendar-text {
+        display: inline-block;
+        line-height: 30px;
+        vertical-align: middle;
+        color: @calendar-normal-color;
+    }
+
+    .ui-calendar-arrow {
+        margin-left: 4px;
+        color: @calendar-normal-color;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:after {
+            color: @calendar-normal-color;
+            content: "\e7b1";
+            font-family: "iconfont" !important;
+        }
+    }
+}
+
+.ui-calendar-layer {
+    padding: 20px;
+    background: #fff;
+    .box-shadow();
+
+    &-hidden {
+        display: none;
+    }
+}
+
+.ui-calendar-disabled,
+.ui-calendar-read-only {
+    color: #999;
+    border-color: #D8D8D8;
+}
+

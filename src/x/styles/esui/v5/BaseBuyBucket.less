@@ -1,0 +1,113 @@
+/**
+ * @file 订单配置模块样式
+ * @author 张浩(zhanghao25@baidu.com)
+ */
+
+@buybucket-bg-color: #f1f5fd;
+@buybucket-border: 1px solid #b0c0e7 ;
+@buybucket-body-title-color: #666;
+@buybucket-body-title-border: solid 1px #e3e8f7;
+@buybucket-body-content-color: #2c4a93;
+
+@buybucket-top: 0;
+@buybucket-width: 298px;
+@buybucket-right: 20px;
+
+.ui-buybucket {
+    z-index: 999;
+    font-size: 12px;
+    position: absolute;
+    border: @buybucket-border;
+    top: @buybucket-top;
+    right: @buybucket-right;
+    width: @buybucket-width;
+    background: @buybucket-bg-color;
+
+    .clearfix();
+    .border-radius();
+
+    .ui-buybucket-title {
+        border-bottom: @buybucket-body-title-border;
+
+        span {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            padding: 14px 18px;
+            .inline-block();
+        }
+
+        .ui-button {
+            padding: 0;
+            float: right;
+            margin: 8px 20px;
+        }
+    }
+
+    .ui-buybucket-body {
+        margin: 20px 18px 0 18px;
+
+        .ui-buybucket-body-item {
+            margin-bottom: 18px;
+        }
+
+        .ui-buybucket-body-title {
+            color: @buybucket-body-title-color;
+            font-weight: bold;
+            float: left;
+            overflow: hidden;
+            text-overflow: clip;
+            width: 60px;
+            white-space: nowrap;
+        }
+
+        .ui-buybucket-body-content {
+            margin-left: 60px;
+            word-wrap: break-word;
+            color: @buybucket-body-content-color;
+        }
+    }
+
+    .ui-buybucket-bottom {
+        margin: 12px 18px 20px 18px;
+
+        &.ui-buybucket-previous-true .ui-button {
+            width: 123px;
+
+            &:last-child {
+                float: right;
+            }
+        }
+
+        .ui-button {
+            width: 100%;
+            padding: 0;
+            font-size: 16px;
+            height: 38px;
+        }
+    }
+
+    .ui-buybucket-product-link {
+        margin: 0 18px 20px 18px;
+        color: #ccc;
+        .inline-block();
+        text-align: justify;
+
+        a {
+            float: right;
+        }
+
+        .color-999 {
+            color: #999;
+        }
+    }
+
+    .ui-buybucket-tip div {
+        color: #f18d36;
+        margin: 20px 18px 20px 17px;
+    }
+
+    .ui-buybucket-hidden {
+        display: none;
+    }
+}

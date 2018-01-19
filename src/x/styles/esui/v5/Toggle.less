@@ -1,0 +1,30 @@
+/* *
+ * esui v5 style - toggle
+ *
+ * @file toggle.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@togglebutton-parrent-border-radius: 12px;
+@togglebutton-inner-border-radius: 10px;
+
+@togglebutton-off-bg-color: @bce-ui-danger-color-bg;
+@togglebutton-on-bg-color: @bce-ui-primary-color-bg;
+
+@togglebutton-on-text-color: #fff;
+@togglebutton-off-text-color: #fff;
+
+@togglebutton-disabled-bg-color: #e2e5ec;
+@togglebutton-disabled-text-color: @bce-ui-disabled-color;
+
+.ui-togglebutton {
+    &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+    }
+
+    &.ui-togglebutton-checked:after {
+        left: 30px;
+    }
+}

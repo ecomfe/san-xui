@@ -1,0 +1,259 @@
+/**
+ * @file Dragger控件css
+ * @author Yijun Deng(dengyijun@baidu.com)
+ */
+.ui-dragger {
+    position: relative;
+    .ui-dragger-bar {
+        background: #ccc;
+        position: relative;
+        cursor: pointer;
+    }
+    .ui-dragger-bar-middle {
+        position: absolute;
+        text-align: center;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #999999;
+    }
+
+    .ui-dragger-bar-vertical {
+        width: 20px;
+        bottom: 16px;
+        left: 0;
+    }
+    .ui-dragger-bar-selected {
+        background: #477adf;
+        position: absolute;
+    }
+    .ui-dragger-bar-selected-horizontal {
+        height: 10px;
+        width: 0;
+        top: 50%;
+        margin-top: -5px;
+        font-size: 8px;
+    }
+    .ui-dragger-bar-selected-vertical {
+        width: 10px;
+        height: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -5px;
+        font-size: 0px;
+    }
+    .ui-dragger-bar-left {
+        width: 30px;
+        height: 6px;
+        position: absolute;
+        left: -30px;
+        top: 0;
+        padding-left: 0;
+        font-size: 12px;
+        color: #999999;
+    }
+    .ui-dragger-bar-right {
+        width: 30px;
+        height: 20px;
+        position: absolute;
+        right: -29px;
+        top: 0;
+        padding-right: 0;
+        font-size: 12px;
+        color: #999999;
+    }
+    .ui-dragger-bar-bottom {
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        font-size: 12px;
+    }
+    .ui-dragger-bar-top {
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        top: -15px;
+        left: 0;
+        font-size: 12px;
+    }
+
+    .ui-dragger-control-bar {
+        position: absolute;
+        border-radius: 10px;
+        cursor: pointer;
+        z-index: 1;
+        font-weight: bold;
+        color: #777;
+        text-align: center;
+    }
+    .ui-dragger-control-bar-horizontal {
+        top: -6px;
+    }
+    .ui-dragger-control-bar-vertical {
+        left: -21px;
+    }
+    .ui-dragger-control-panel {
+        position: absolute;
+        left: 0;
+    }
+    .ui-dragger-control-panel-horizontal {
+        top: 50px;
+    }
+    .ui-dragger-ruling {
+        position: absolute;
+        li {
+            cursor: pointer;
+            background: #d8d8d8;
+            position: absolute;
+            box-shadow: 0 0 1px #ccc;
+        }
+    }
+    .ui-dragger-ruling-num {
+        position: absolute;
+        li {
+            position: absolute;
+            text-shadow: 0 0 3px #ccc;
+            text-align: center;
+            font-size: 20px;
+            color: #999;
+        }
+    }
+    .ui-dragger-ruling-num-horizontal {
+        top: -37px;
+    }
+    .ui-dragger-ruling-num-vertical {
+        right: -38px;
+    }
+    .ui-dragger-ruling-horizontal {
+        top: -15px;
+        left: 0;
+        li {
+            width: 1px;
+            height: 10px;
+        }
+    }
+    .ui-dragger-ruling-vertical {
+        right: -8px;
+        bottom: 0;
+        li {
+            width: 25px;
+            height: 1px;
+        }
+    }
+}
+
+.ui-dragger-icon {
+    position: absolute;
+    top: -4px;
+    left: 660px;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
+//Dragger样式 个性化设置　张哲 2014-12-09
+.ui-dragger {
+    height: 30px;
+    .ui-dragger-bar.ui-dragger-bar-horizontal {
+        border: none;
+        height: 6px;
+        background: #e3e8f7;
+        left: 8px;
+        top: 6px;
+    }
+
+    .ui-dragger-bar {
+        .ui-dragger-bar-left {
+            width: 17px;
+            left: -8px;
+            height: 6px;
+            line-height: 38px;
+            background: #6583cc;
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-bottomleft: 3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        .ui-dragger-bar-middle {
+            line-height: 38px;
+        }
+        .ui-dragger-bar-right {
+            top: 0px;
+            border: none;
+            width: 17px;
+            right: -8px;
+            height: 6px;
+            line-height: 38px;
+            background: #e3e8f7;
+            -webkit-border-top-right-radius: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            -moz-border-radius-topright: 3px;
+            -moz-border-radius-bottomright: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            .ui-dragger-bar-right-text {
+                position: absolute;
+                right: 0;
+            }
+        }
+        .ui-dragger-bar-selected.ui-dragger-bar-selected-horizontal {
+            height: 100%;
+            top: 0px;
+            margin-top: 0px;
+            background: #6583cc;
+            border: none;
+        }
+
+    }
+    .ui-dragger-bar-tip {
+        padding: 0 5px;
+        .border-radius();
+        border: 1px solid #b0c0e7;
+        position: relative;
+        font-size: 12px;
+        text-align: center;
+        display: inline-block;
+        top: -35px;
+        line-height: 18px;
+        height: 18px;
+        display: none;
+        min-width: 40px;
+
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 5px solid #b0c0e7;
+            position: relative;
+            display: block;
+            left: 15px;
+        }
+    }
+    .ui-dragger-control-bar.ui-dragger-control-bar-horizontal {
+        height: 20px;
+        width: 17px;
+        border-radius: 0px;
+        top: 0px;
+    }
+
+    input {
+        position: relative;
+        top: -10px;
+        left: 0;
+    }
+
+    .ui-dragger-icon {
+        left: 492px;
+        top: 0px;
+        &.ui-dragger-icon-delete {
+            left: 470px;
+            top: -3px;
+        }
+    }
+}

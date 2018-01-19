@@ -1,0 +1,46 @@
+/* *
+ * esui v5 style - MultiSelect
+ *
+ * @file MultiSelect.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@multiselect-layer-color: #333;
+@multiselect-layer-color-select: @bce-ui-normal-color;
+@multiselect-layer-color-hover: @bce-ui-normal-color;
+@multiselect-layer-color-bg: @bce-ui-normal-color-bg;
+
+.ui-multiselect {
+    &:extend(.ui-select all);
+    border: none;
+}
+
+.ui-multiselect-layer {
+    border: none;
+    .box-shadow();
+
+    .ui-multiselect-head, .ui-multiselect-item {
+        line-height: 30px;
+        color: @multiselect-layer-color;
+        .transition(all .3s);
+
+        &:hover {
+            color: @multiselect-layer-color-hover;
+            background: @multiselect-layer-color-bg;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(18, 26, 44, .8);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+}

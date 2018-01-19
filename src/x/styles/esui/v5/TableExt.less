@@ -1,0 +1,41 @@
+/* *
+ * esui v5 style - TableExt
+ *
+ * @file TableExt.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-table {
+    .ui-panel {
+        .transition(filter, 1s);
+    }
+
+    &.ui-table-loading {
+        .ui-table-body {
+            position: relative;
+
+            .ui-panel {
+                -webkit-filter: blur(2px); // Chrome, Opera
+                -moz-filter: blur(2px);
+                -ms-filter: blur(2px);
+                filter: blur(2px);
+            }
+
+            &:before {
+                z-index: 1;
+                content: '';
+                height: 100%;
+                width: inherit;
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.1);
+                background-color: #fff\0;
+                opacity: .8\0;
+                background-image: url(../../img/process.gif);
+                background-image: url(../../img/process.svg), none;
+                background-size: 26px 26px;
+                background-repeat: no-repeat;
+                background-position: center 30%;
+            }
+        }
+    }
+}

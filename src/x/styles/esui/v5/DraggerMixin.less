@@ -1,0 +1,33 @@
+/* *
+ * esui v5 style - DraggerMixin
+ *
+ * @file DraggerMixin.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@dragger-icon-color: @bce-ui-disabled-color;
+@dragger-icon-color-hover: @bce-ui-normal-color;
+
+.ui-dragger {
+    .ui-dragger-icon.ui-dragger-icon-delete {
+        top: 0px;
+        width: 30px;
+        height: 30px;
+        color: @dragger-icon-color;
+        background: none;
+
+        &:hover:before {
+            color: @dragger-icon-color-hover;
+        }
+
+        &:before {
+            font-family: "iconfont" !important;
+            content: "\e6eb";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+}

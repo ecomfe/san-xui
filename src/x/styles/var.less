@@ -1,0 +1,53 @@
+/**
+ * inf-style - var entry
+ *
+ * @file var.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@import "./esui/v5/variable.less";
+
+// overfide est variables
+@default-border-radius: '0';
+
+// 常规文字颜色
+@bce-normal-color: #333;
+
+// 灰色：用于弱化的文字或者不可用按钮等
+@bce-gray-color: #666;
+@bce-lightgray-color: #999;
+@bce-disabled-color: #999;
+
+// 蓝色：用于常规链接
+@bce-link-color: #0786E9;
+
+// 红色：警示性链接
+@bce-error-color: #EB5252;
+
+// 黄色：中等警示性链接
+@bce-warning-color: #E19D0C;
+
+// 边框、分割线颜色
+@bce-border-color: #E5E5E5;
+
+// custom global variables
+@sys-blue-color: @bce-link-color;
+@sys-blue-hover-color: @sys-blue-color;
+@sys-blue-active-color: @sys-blue-color;
+@sys-disabled-bg-color: #999;
+
+// override bat-ria variables
+@bat-link-color: @sys-blue-color;
+@bat-link-hover-color: @sys-blue-hover-color;
+
+// 普通边框
+@bce-border: 1px solid @bce-border-color;
+
+@bce-color-grey: #999;
+@bce-color-grey-bg: #F7F7F7;
+@bce-color-green: #1DA653;
+@bce-color-green-bg: #F2FEF7;
+@bce-color-yellow: #F38900;
+@bce-color-yellow-bg: #FCF7F1;
+@bce-color-red: #FB4351;
+@bce-color-red-bg: #FFF5F5;

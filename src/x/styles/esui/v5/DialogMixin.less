@@ -1,0 +1,29 @@
+/* *
+ * esui v5 style - DialogMixin
+ *
+ * @file DialogMixin.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.skin-alert-dialog,
+.skin-confirm-dialog {
+    .ui-dialog-icon {
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .ui-dialog-icon-warning {
+        .background(url(../../img/esui/dialog-notice.png), no-repeat, 0, center);
+    }
+
+    .ui-dialog-icon-confirm {
+        .background(url(../../img/esui/dialog-question.png), no-repeat, 0, center);
+    }
+
+    .ui-dialog-text {
+        padding-left: 50px;
+        line-height: 30px;
+        word-break: break-all;
+    }
+}

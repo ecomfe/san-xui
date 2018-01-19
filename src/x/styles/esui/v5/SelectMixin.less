@@ -1,0 +1,20 @@
+/* *
+ * esui v5 style - SelectMixin
+ *
+ * @file SelectMixin.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@select-primary-color: @bce-ui-primary-color;
+@select-primary-color-bg: @bce-ui-primary-color-bg;
+@select-primary-color-bg-hover: @bce-ui-primary-color-bg-hover;
+@select-primary-color-bg-active: @bce-ui-primary-color-bg-active;
+
+.skin-dark-select {
+    color: @select-primary-color;
+    background-color: @select-primary-color-bg;
+
+    &:hover, &:active, &:focus {
+        background-color: @select-primary-color-bg-hover;
+    }
+}

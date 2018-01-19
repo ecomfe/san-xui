@@ -1,0 +1,113 @@
+/* *
+ * esui v5 style - Dialog
+ *
+ * @file Dialog.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-dialog {
+    opacity: 0;
+    .ui-dialog-mixin();
+    .transition(opacity .3s);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ui-dialog-head {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    color: #333333;
+    position: relative;
+    background-color: #f6f7fb;
+
+    .user-select();
+}
+
+.ui-dialog-maximize-icon {
+    top: 10px;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+
+    &:after {
+        content: "\e80e";
+        vertical-align: middle;
+        font-family: "iconfont" !important;
+    }
+}
+
+.ui-dialog-restore-icon {
+    top: 10px;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+
+    &:after {
+        content: "\e80f";
+        vertical-align: middle;
+        font-family: "iconfont" !important;
+    }
+}
+
+.ui-dialog-close-icon {
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+
+    &:after {
+        content: "\e6eb";
+        vertical-align: middle;
+        font-family: "iconfont" !important;
+    }
+}
+
+.ui-dialog-title {
+    .ui-dialog-title-mixin();
+}
+
+.ui-dialog-body-panel {
+    .ui-dialog-body-panel-mixin();
+}
+
+.ui-dialog-foot-panel {
+    .ui-dialog-foot-panel-mixin();
+}
+
+.ui-dialog-foot {
+    text-align: right;
+    height: 30px;
+
+    .ui-button {
+        margin-right: 6px;
+        min-width: 50px;
+    }
+}
+
+.ui-dialog-ok-btn {
+    &:extend(.skin-ok-button);
+}
+
+.ui-dialog-ok-btn:hover {
+    &:extend(.skin-ok-button:hover);
+}
+
+.ui-dialog-draggable {
+    .ui-dialog-draggable-mixin();
+}
+
+.ui-dialog-dragging {
+    .ui-dialog-dragging-mixin();
+}
+
+.ui-dialog-mask {
+    .ui-dialog-mask-mixin();
+}
+

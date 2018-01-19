@@ -1,0 +1,34 @@
+/**
+ * @file 行内错误提示
+ * @author jianling(zhaochengyang@baidu.com)
+ */
+
+.ui-toastlabel {
+    .ui-toastlabel-content {
+        .box-shadow(none);
+        border: none;
+        padding: 5px 15px;
+        line-height: 20px;
+    }
+}
+
+.ui-toastlabel.ui-toastlabel-normal {
+    .ui-toastlabel-content {
+        color: @bce-color-green;
+        background: @bce-color-green-bg;
+    }
+}
+
+.ui-toastlabel.ui-toastlabel-error {
+    .ui-toastlabel-content {
+        color: @bce-color-red;
+        background: @bce-color-red-bg;
+    }
+}
+
+.ui-toastlabel.ui-toastlabel-alert {
+    .ui-toastlabel-content {
+        color: @bce-color-yellow;
+        background: @bce-color-yellow-bg;
+    }
+}

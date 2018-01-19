@@ -1,0 +1,33 @@
+/* *
+ * esui v5 style - Panel
+ *
+ * @file Panel.less
+ * @author wanglinfang(wanglinfang@baidu.com)
+ */
+
+.ui-panel {
+    .transition(filter, 1s);
+}
+
+.ui-panel-loading {
+    position: relative;
+    -webkit-filter: blur(2px); // Chrome, Opera
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+
+    &:before {
+        z-index: 1;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.1);
+        background-color: #fff\0;
+        opacity: .8\0;
+        background-image: url(../../img/process.gif);
+        background-image: url(../../img/process.svg), none;
+        background-repeat: no-repeat;
+        background-position: center 30%;
+    }
+}

@@ -1,0 +1,72 @@
+/* *
+ * esui v5 style - dragger
+ *
+ * @file dragger.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@dragger-track-color-bg: #e2e5ec;
+@dragger-track-color-bg-active: #acddfd;
+@dragger-control-color-bg: @bce-ui-primary-color-bg;
+@dragger-control-color-bg-hover: @bce-ui-primary-color-bg-hover;
+
+.ui-dragger {
+    height: auto;
+
+    .ui-dragger-bar.ui-dragger-bar-horizontal {
+        height: 10px;
+        background: @dragger-track-color-bg;
+
+        .ui-dragger-bar-selected.ui-dragger-bar-selected-horizontal {
+            background: @dragger-track-color-bg-active;
+        }
+
+        .ui-dragger-bar-left,
+        .ui-dragger-bar-right,
+        .ui-dragger-bar-middle {
+            height: 10px;
+            line-height: 50px;
+            .border-radius(0);
+        }
+
+        .ui-dragger-bar-left {
+            background: @dragger-track-color-bg-active;
+        }
+
+        .ui-dragger-bar-right {
+            text-indent: -20px;
+            background: @dragger-track-color-bg;
+        }
+    }
+
+    .ui-dragger-control-bar {
+        &.ui-dragger-control-bar-horizontal {
+            width: 18px;
+            height: 24px;
+            line-height: 24px;
+            background: none;
+            overflow: hidden;
+            text-indent: initial !important;
+
+            &:before {
+                color: #fff;
+                content: '||';
+                display: block;
+                background: @dragger-control-color-bg;
+                .transition(all .3s);
+            }
+
+            &:hover {
+                background: none;
+
+                &:before {
+                    background: @dragger-control-color-bg-hover;
+                }
+            }
+        }
+    }
+
+    .ui-dragger-bar-tip {
+        display: none !important;
+    }
+}

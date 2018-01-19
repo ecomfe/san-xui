@@ -1,0 +1,47 @@
+/* *
+ * esui v5 style - Button
+ *
+ * @file Button.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+@buybucket-bg-color: @bce-ui-disabled-color-bg;
+@buybucket-border: none;
+
+@buybucket-body-title-color: @bce-ui-disabled-color;
+@buybucket-body-title-border: solid 1px #e2e5ec;
+
+@buybucket-body-content-color: #333;
+
+.ui-buybucket {
+    .ui-buybucket-title {
+        border-bottom: none;
+
+        span {
+            &:before {
+                content: '';
+                .inline-block();
+                vertical-align: middle;
+                width: 4px;
+                height: 16px;
+                background: #0786e9;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .ui-buybucket-body {
+        margin: 5px 18px 0 18px;
+
+        .ui-buybucket-body-title {
+            color: #666;
+            font-weight: normal;
+        }
+
+
+        .postpay-range-price {
+            color: #999;
+            font-size: 12px;
+        }
+    }
+}

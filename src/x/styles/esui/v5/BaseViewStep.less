@@ -1,0 +1,76 @@
+/*
+* Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+* the License. You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+* an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+* specific language governing permissions and limitations under the License.
+*/
+@viewstep-default-font-color: #999;
+@viewstep-default-border-color: #ccc;
+@viewstep-active-font-color: #1DA653;
+@viewstep-active-border-color: #2CB663;
+.ui-viewstep {
+    .clearfix();
+
+    li {
+        color: #999;
+        .inline-block();
+        float: left;
+        
+        i {
+            .inline-block();
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            border: 2px solid @viewstep-default-border-color;
+            border-radius: 21px;
+            text-align: center;
+            color: @viewstep-default-font-color;
+            font-size: 14px;
+        }
+        span {
+            padding: 0px 6px;
+        }
+    }
+
+    li:after {
+        border-bottom: 2px solid @viewstep-default-font-color;
+        width: 50px;
+        content: "";
+        .inline-block();
+        margin-right: 6px;
+        position: relative;
+        top: -4px;
+    }
+
+    li.ui-viewstep-last-item:after{
+        display: none;
+    }
+
+    li.ui-viewstep-item-active {
+        color: @viewstep-active-font-color;
+        i {
+            color: @viewstep-active-font-color;
+            border-color: @viewstep-active-border-color;
+        }
+    }
+    li.ui-viewstep-item-active:after {
+        border-color: @viewstep-active-border-color
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* vim: set ts=4 sw=4 sts=4 tw=120: */

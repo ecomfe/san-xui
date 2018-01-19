@@ -1,0 +1,145 @@
+/* *
+ * esui v5 style - TipLayer
+ *
+ * @file TipLayer.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-tiplayer {
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 16px;
+    z-index: @layer-z-index;
+    position: absolute;
+    .border-radius();
+    .box-shadow();
+}
+
+.ui-tiplayer-rt,
+.ui-tiplayer-rb {
+    margin-left: -10px;
+}
+
+.ui-tiplayer-lt,
+.ui-tiplayer-lb {
+    margin-left: 10px;
+}
+
+.ui-tiplayer-title,
+.ui-tiplayer-body {
+    padding: 0;
+    margin: 0;
+}
+
+.ui-tiplayer-title {
+    margin: 0 0 6px 0;
+    line-height: 24px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ui-tiplayer-body {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.ui-tiplayer-arrow {
+    display: none;
+    position: absolute;
+    font-size: 1px;
+}
+
+.ui-tiplayer-arrow-tl {
+    display: block;
+    background: #E1E1E1;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    left: 12px;
+}
+.ui-tiplayer-arrow-tr {
+    display: block;
+    background: #E2E2E2;
+    width: 12px;
+    height: 13px;
+    top: -13px;
+    right: 12px;
+}
+.ui-tiplayer-arrow-bl {
+    display: block;
+    background: #E3E3E3;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    left: 12px;
+}
+.ui-tiplayer-arrow-br {
+    display: block;
+    background: #E4E4E4;
+    width: 12px;
+    height: 13px;
+    bottom: -13px;
+    right: 12px;
+}
+
+.ui-tiplayer-arrow-lt {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, -43px, 0);
+    width: 11px;
+    height: 16px;
+    top: 50%;
+    margin-top: -8px;
+    left: -11px;
+}
+.ui-tiplayer-arrow-lb {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, -43px, 0);
+    width: 11px;
+    height: 16px;
+    bottom: 4px;
+    left: -11px;
+}
+.ui-tiplayer-arrow-rt {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, 0, 0);
+    width: 11px;
+    height: 16px;
+    top: 50%;
+    margin-top: -8px;
+    right: -11px;
+}
+.ui-tiplayer-arrow-rb {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, 0, 0);
+    width: 11px;
+    height: 16px;
+    bottom: 4px;
+    right: -11px;
+}
+
+.ui-tiplayer-arrow-bc {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, 0, -92px);
+    background-color: transparent;
+    width: 16px;
+    height: 11px;
+    top: -9px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.ui-tiplayer-arrow-tc {
+    display: block;
+    .background(url(../../img/esui/tip-arrow-icon.png), no-repeat, 0, -47px);
+    background-color: transparent;
+    width: 16px;
+    height: 11px;
+    bottom: -11px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.ui-tiplayer-hidden,
+.ui-tiplayer-init {
+    display: none;
+}

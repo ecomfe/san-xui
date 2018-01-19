@@ -1,0 +1,45 @@
+/* *
+ * esui v5 style - BucketSelect
+ *
+ * @file BucketSelect.less
+ * @author mudio(job.mudio@gmail.com)
+ */
+
+.ui-radio,
+.ui-checkbox,
+.ui-boxgroup-checkbox,
+.ui-boxgroup-radio {
+    vertical-align: middle;
+    line-height: 1.8;
+
+    input {
+        margin: 0px 10px 0px 0px;
+        vertical-align: middle;
+    }
+
+    span {
+        vertical-align: middle;
+    }
+}
+
+.ui-boxgroup-horizontal label {
+    .inline-block();
+    margin-right: 30px;
+}
+
+.ui-boxgroup-vertical label {
+    display: block;
+}
+
+.ui-checkbox-validity-label {
+    zoom:1;
+    color: @bce-ui-invalid-color;
+    padding-left: 10px;
+}
+
+.ui-checkbox-validity-label-warn,
+.ui-checkbox-validity-label-notice,
+.ui-checkbox-validity-label-invalid,
+.ui-boxgroup-validity-label-invalid {
+    color: @bce-ui-invalid-color;
+}
