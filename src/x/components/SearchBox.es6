@@ -21,6 +21,7 @@ const template = `<div class="{{mainClass}}">
         datasource="{{datasource}}"
         layer-offset-top="{{1}}"
         layer-offset-left="{{-1}}"
+        layer-width="{{layerWidth}}"
         value="{=keywordType=}"
         />
     <ui-textbox
@@ -52,7 +53,8 @@ export default defineComponent({
             placeholder: '',
             datasource: null,
             keywordType: null,
-            width: null
+            width: null,
+            layerWidth: null
         };
     },
     dataTypes: {
