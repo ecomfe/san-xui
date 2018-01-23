@@ -242,7 +242,8 @@ export function asTable(columns) {
                     return [];
                 }
                 const selectedIndex = this.data.get('selectedIndex');
-                return selectedIndex && selectedIndex.length ? ['all'] : [];
+                const datasource = this.data.get('datasource');
+                return selectedIndex && selectedIndex.length === datasource.length ? ['all'] : [];
             },
             selectedItems() {
                 const datasource = this.data.get('datasource');
@@ -252,12 +253,6 @@ export function asTable(columns) {
                     .compact()
                     .value();
                 return selectedItems;
-            },
-            expandedItems() {
-                const datasource = this.data.get('datasource');
-                const expandedIndex = this.data.get('expandedIndex');
-                const expandedItems = _.at(datasource, expandedIndex);
-                return expandedItems;
             }
         },
 
@@ -354,6 +349,13 @@ export function asTable(columns) {
                 this.data.set('selectedIndex', _.map(selectedIndex, String));
             }
             this.watch('selectedIndex', () => this.dispatchEvent('selected'));
+            this.watch('expandedIndex', expandedIndex => {
+                const datasource = this.data.get('datasource');
+                // 去重处理，避免因为重复数据无法正确显示
+                expandedIndex = _.uniq(expandedIndex);
+                _.forEach(datasource, (o, index) => this.data.set(`datasource[${index}].xui__expanded`, false));
+                _.forEach(expandedIndex, index => this.data.set(`datasource[${index}].xui__expanded`, true));
+            });
         },
 
         onEnterRow(item, rowIndex) {
@@ -388,14 +390,12 @@ export function asTable(columns) {
         },
 
         toggleSubrow(rowIndex) {
-            const xuiExpanded = `datasource[${rowIndex}].xui__expanded`;
-            if (this.data.get(xuiExpanded)) {
-                this.data.set(xuiExpanded, false);
+            const _expanded = this.data.get(`datasource[${rowIndex}].xui__expanded`);
+            if (_expanded) {
                 this.data.remove('expandedIndex', rowIndex);
                 this.dispatchEvent('subrow-collapse', {rowIndex});
             }
             else {
-                this.data.set(xuiExpanded, true);
                 this.data.push('expandedIndex', rowIndex);
                 this.dispatchEvent('subrow-expand', {rowIndex});
             }

@@ -24,15 +24,15 @@ const template = `
 <template>
 
 <xui-toastlabel>
-    有时候后端为了性能不会把subrow的内容一次性给出，所以提供了on-expanded-change方法，可以在每次展开时请求数据从而提升体验
+    有时候后端为了性能不会把subrow的内容一次性给出，所以提供了on-subrow-expand方法和on-subrow-collapse方法，可以在每次展开时请求数据从而提升体验
 </xui-toastlabel>
 
 <x-row label="[default]">
     <xui-table
         datasource="{{table.datasource}}"
         hasSubrow="{{table.hasSubrow}}"
-        expandedIndex="{=table.expandedIndex=}"
         on-subrow-expand="onSubrowExpand"
+        expandedIndex="{=_table1ExpandedIndex=}"
         on-subrow-collapse="onSubrowCollapse"
         schema="{{table.schema}}"
     >
@@ -72,9 +72,11 @@ const template = `
         datasource="{{table.datasource}}"
         hasSubrow="{{table.hasSubrow}}"
         select="{{table.select}}"
+        expandedIndex="{=table.expandedIndex=}"
         on-selected-change="onSelectedChange"
         schema="{{table.schema}}"
     >
+        <div slot="c-name" on-click="onClick(rowIndex)">{{row.name}}</div>
         <div slot="sub-foo" class="subrow-content-row">
             <div class="ui-table-subrow">
                 <strong class="large">The selectedIndex is {{selectedIndex}}</strong>
@@ -117,6 +119,7 @@ export default defineComponent({
                     {name: 'xxx', age: 20, gender: '未知'}
                 ]
             },
+            _table1ExpandedIndex: [0],
             selectedIndex: []
         };
     },
@@ -141,5 +144,11 @@ export default defineComponent({
     onSelectedChange(e) {
         Toast.success('Open the subrow and see change!');
         this.data.set('selectedIndex', e.selectedIndex);
+    },
+    onClick(rowIndex) {
+        const expandedIndex = this.data.get('table.expandedIndex');
+        _.indexOf(expandedIndex, rowIndex) > -1
+            ? this.data.remove('table.expandedIndex', rowIndex)
+            : this.data.push('table.expandedIndex', rowIndex);
     }
 });
