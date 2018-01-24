@@ -15,11 +15,9 @@ import Icon from 'inf-ui/x/components/Icon';
 
 import Aside from './Aside';
 import AppExplorer from './AppExplorer';
-import SwitchLan from './SwitchLan';
-
 import {blocks} from './demos/config';
 
-const kUrl = 'http://icode.baidu.com/repo/baidu%2Fbce-console%2Ffe-base/files/master/tree/dep/inf-ui/0.0.0/src/x/';
+const kUrl = 'https://github.com/ecomfe/san-xui';
 
 function activateI18n() {
     // 设置 i18n 相关的配置
@@ -33,7 +31,6 @@ function activateI18n() {
 /* eslint-disable */
 const template = `<div class="showcase">
     <h1><ui-icon name="collapse" on-click="native:onToggleAside($event)" /><a href="${kUrl}" target="_blank">San UI Library</a></h1>
-    <ui-switch-lan></ui-switch-lan>
     <main>
         <ui-aside
             class="{{aside.expand ? 'aside-expand' : ''}}"
@@ -61,8 +58,7 @@ const App = defineComponent({   // eslint-disable-line
     components: {
         'ui-icon': Icon,
         'ui-aside': Aside,
-        'ui-explorer': AppExplorer,
-        'ui-switch-lan': SwitchLan
+        'ui-explorer': AppExplorer
     },
     initData() {
         return {

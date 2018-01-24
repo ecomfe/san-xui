@@ -1,0 +1,16 @@
+{
+    "eslint": {
+        "env": {
+            "node": true,
+            "browser": true
+        },
+
+        "rules": {
+            "no-console": 0,
+            "fecs-camelcase": false,
+            "fecs-no-require": false,
+            "fecs-esnext-ext": "es6",
+            "max-len": [2, 300, 4]
+        }
+    }
+}

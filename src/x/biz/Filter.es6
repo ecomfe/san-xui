@@ -12,7 +12,7 @@
  */
 
 import _ from 'lodash';
-import moment from 'moment';
+// import moment from 'moment';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from 'inf-ui/x/components/util';

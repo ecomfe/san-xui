@@ -3,8 +3,9 @@
  * @author huangyunzhi(huangyunzhi@baidu.com)
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import _ from 'lodash';
 import Promise from 'promise';
+import {defineComponent} from 'inf-ui/sanx';
 
 import Toast from 'inf-ui/x/components/Toast';
 import Button from 'inf-ui/x/components/Button';
