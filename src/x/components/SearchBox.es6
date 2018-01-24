@@ -102,7 +102,12 @@ export default defineComponent({
         /**
          * 输入框的宽度
          */
-        width: DataTypes.number
+        width: DataTypes.number,
+
+        /**
+         * layer的宽度
+         */
+        layerWidth: DataTypes.number
     },
     computed: {
         mainClass() {
