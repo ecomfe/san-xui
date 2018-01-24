@@ -1,6 +1,6 @@
 {
-  "name": "inf-ui",
-  "version": "0.0.0",
+  "name": "san-xui",
+  "version": "0.0.1",
   "library.type": "amd",
   "library.ignore": [
     "x/demos/**",
