@@ -1,2 +1,4 @@
-src/x/showcase2.js
+output
+dist
+node_modules
 
