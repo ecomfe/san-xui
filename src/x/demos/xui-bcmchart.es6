@@ -6,7 +6,7 @@
 import _ from 'lodash';
 import Promise from 'promise';
 import {defineComponent} from 'san';
-import {BcmChart} from 'san-xui';
+import BcmChart from 'san-xui/x/components/BcmChart';
 
 import Row from './Row';
 import {Data1, Data2, Data3, Data4, Data5, Data6, Data7, Data8} from './examples/bcmData';

@@ -4,7 +4,8 @@
  */
 
 import {defineComponent} from 'san';
-import {ActionLoader, ToastLabel, Button} from 'san-xui';
+import {ToastLabel, Button} from 'san-xui';
+import ActionLoader from 'san-xui/x/components/ActionLoader';
 import controller from 'er/controller';
 
 import Row from './Row';

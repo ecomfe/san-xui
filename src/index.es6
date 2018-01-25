@@ -3,9 +3,9 @@
  * @author leeight
  */
 export {default as ACEEditor} from './x/components/ACEEditor';
-export {default as ActionLoader} from './x/components/ActionLoader';
+// export {default as ActionLoader} from './x/components/ActionLoader';
 export {default as AlertDialog} from './x/components/AlertDialog';
-export {default as BcmChart} from './x/components/BcmChart';
+// export {default as BcmChart} from './x/components/BcmChart';
 export {default as BosUploader} from './x/components/BosUploader';
 export {default as BoxGroup} from './x/components/BoxGroup';
 export {default as Breadcrumbs} from './x/components/Breadcrumbs';
