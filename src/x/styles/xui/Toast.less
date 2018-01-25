@@ -1,0 +1,49 @@
+/**
+ * @file xui/Toast.less
+ * @author leeight
+ */
+
+.ui-toast-container {
+    position: fixed;
+    z-index: 99999;
+    top: 10px;
+    // right: 10px;
+    // width: 222px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ui-toast-container .ui-toast-x {
+    position: static;
+    margin-bottom: 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+.ui-toast-x {
+    color: #000;
+    font-size: 14px;
+    max-width: 400px;
+    height: auto;
+    top: 0;
+    right: 0;
+    padding: 8px 10px;
+}
+.ui-toast-success {
+    background: #f1fdeb;
+    border: 1px solid #5fb333;
+    color: #5fb333;
+}
+.ui-toast-info {
+    background: #f7f7f7;
+    border: 1px solid #999;
+    color: #999;
+}
+.ui-toast-warning {
+    background: #fcf7f1;
+    border: 1px solid #f38900;
+    color: #f38900;
+}
+.ui-toast-error {
+    background: #fff5f4;
+    color: #ea2e2e;
+    border: 1px solid #ea2e2e;
+}

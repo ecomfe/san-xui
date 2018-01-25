@@ -1,0 +1,57 @@
+/**
+ * @file xui/asForm.less
+ * @author leeight
+ */
+
+.as-form {
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.as-form-title {
+    .clearfix();
+    height: 30px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+
+    h4 {
+        font-size: 16px;
+        border-left: 5px solid @san-ui-blue-color;
+        padding-left: 10px;
+        margin-top: 6px;
+        float: left;
+    }
+}
+.as-form-title-actions {
+    float: right;
+    .ui-button-x {
+        margin-left: 10px;
+    }
+}
+.as-form-row {
+    margin: 10px 0;
+    .ui-form-item {
+        margin: 0;
+    }
+    .ui-form-item-content {
+        .ui-bos-uploader-list {
+            display: inline-block;
+            margin-top: 0;
+            width: auto;
+        }
+    }
+    .ui-textbox-x textarea {
+        height: 100px;
+    }
+    .ui-form-item-invalid-label {
+        position: static;
+        margin-left: 0;
+    }
+}
+.as-form-row,
+.as-form-item {
+    .clearfix();
+}
+.as-form-col {
+    float: left;
+    margin-right: 10px;
+}

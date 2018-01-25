@@ -1,0 +1,26 @@
+/**
+ * @file xui/MonthView.less
+ * @author leeight
+ */
+
+.ui-monthview-x {
+    .ui-select-x {
+        min-width: 0;
+        width: 100%;
+    }
+    .ui-monthview-month-item-selected {
+        border-radius: 0;
+    }
+    .ui-monthview-shortcut .ui-button {
+        display: block;
+    }
+    .ui-monthview-time {
+        text-align: center;
+        input[type="number"] {
+            -moz-appearance: textfield;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+/**
+ * @file xui/form/Form.less
+ * @author leeight
+ */
+
+.ui-form-x {
+    .ui-form-item {
+        margin: 10px 0;
+    }
+
+    .ui-form-item-help {
+        color: #999;
+        padding: 3px 0;
+    }
+
+    .ui-form-item-invalid-label {
+        color: #EB5252;
+    }
+
+    .required-label {
+        position: relative;
+
+        &:before {
+            content: '*';
+            position: absolute;
+            line-height: inherit;
+            left: -10px;
+            color: #EB5252;
+        }
+    }
+
+    .ui-form-item-inline {
+        .ui-form-item-label,
+        .ui-form-item-content {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ui-form-item-label {
+            width: 150px;
+        }
+    }
+
+    .ui-form-item-invalid {
+        .ui-textbox-x input,
+        .ui-textbox-x textarea {
+            border-color: #EB5252;
+        }
+    }
+}

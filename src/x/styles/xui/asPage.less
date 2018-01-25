@@ -1,0 +1,126 @@
+/**
+ * @file xui/asPage.less
+ * @author leeight
+ */
+
+.list-page {
+    width: auto;
+    margin: 0 20px;
+    .ui-dialog-body-panel & {
+        margin: 0;
+        min-height: 160px;
+    }
+}
+
+.list-page-with-sidebar {
+    margin-left: 180px;
+}
+
+.list-page-body {
+    background: #fff;
+    margin-top: 20px;
+}
+.list-page-title {
+    .clearfix();
+    height: 55px;
+    line-height: 55px;
+    font-weight: normal;
+    border-bottom: 1px solid #E8EBEE;
+    margin: 0;
+    padding-left: 20px;
+    .list-page-helps {
+        float: right;
+        margin-right: 20px;
+        font-size: 12px;
+    }
+
+    .ui-tab-x {
+        margin-left: -20px;
+        float: left;
+        .ui-tab-navigator {
+            background: #fff;
+            border-bottom: none;
+            .ui-tab-item {
+                height: 55px;
+                line-height: 55px;
+            }
+        }
+    }
+    > h2 {
+        display: inline-block;
+        > span {
+            font-size: 12px;
+            margin-left: 10px;
+            color: #666;
+        }
+    }
+}
+
+.list-page-content {
+    .clearfix();
+    .list-page-pager {
+        float: right;
+        margin: 20px 20px 40px 0;
+        .list-page-pager-total-count {
+            color: #999;
+            margin-right: 6px;
+        }
+        > label {
+            color: @san-ui-blue-color;
+        }
+        .ui-select-x {
+            min-width: 80px;
+        }
+        .ui-pager {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ui-dialog-body-panel & {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+    }
+    > div.list-page-filter {
+        .clearfix();
+        margin: 10px 20px;
+    }
+}
+
+.list-page-tip,
+.list-page-toolbar {
+    .clearfix();
+    margin: 10px 20px;
+
+    .ui-dialog-body-panel & {
+        margin: 10px 0;
+    }
+}
+
+.list-page-tip span[class^='tip'] {
+    display: inline-block;
+}
+
+.list-page-tb-left {
+    float: left;
+    > .list-page-tb-left-filter,
+    > .list-page-tb-left-toolbar {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.list-page-tb-right {
+    float: right;
+}
+.ui-dialog-body-panel {
+    .ui-actionloader-x {
+        // 如果在 Dialog 里面，**应该** 没有 h2 这部分了
+        // 默认的 20px 是因为 ui-breadcrumbs 有一个 -20px （为什么呢）
+        .list-page-body {
+            margin-top: 0;
+        }
+        .list-page-toolbar {
+            margin-top: 0;
+        }
+    }
+}

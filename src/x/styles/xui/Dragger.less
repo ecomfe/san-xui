@@ -1,0 +1,37 @@
+/**
+ * @file xui/Dragger.less
+ * @author leeight
+ */
+
+.ui-dragger input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+.ui-dragger .ui-textbox-addon {
+    position: relative;
+    top: -10px;
+}
+.ui-dragger-bar-selected,
+.ui-dragger-control-bar {
+    transition: all 0.2s ease-out;
+}
+.ui-dragger-bar-middle {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ui-dragger-disabled .ui-dragger-control-bar-horizontal:before {
+    background: @san-ui-disabled-color !important;
+}
+.ui-dragger-x {
+    .ui-dragger-bar.ui-dragger-bar-horizontal {
+        height: 12px;
+        .ui-dragger-bar-left,
+        .ui-dragger-bar-right,
+        .ui-dragger-bar-middle {
+            height: 12px;
+        }
+    }
+    .ui-textbox-addon-end {
+        border: none;
+        background: none;
+    }
+}

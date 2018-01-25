@@ -1,0 +1,70 @@
+/**
+ * @file xui/MultiPicker.less
+ * @author leeight
+ */
+
+.ui-select-multipicker-layer {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    position: absolute;
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column {
+    // display: inline-block;
+    min-width: 100px;
+    vertical-align: top;
+    border-left: 1px solid #eee;
+    max-height: 156px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // flex: 1;
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.ui-select-multipicker-layer > .ui-select-multipicker-column:first-child {
+    border-left: none;
+}
+.ui-select-multipicker-layer .ui-select-item {
+    position: relative;
+}
+.ui-select-multipicker-layer .ui-select-item:hover {
+    // background-color: #f7f7f7;
+}
+.ui-select-multipicker-layer .ui-select-item span {
+    padding-right: 15px;
+}
+.ui-select-multipicker-layer .ui-select-item-disabled {
+    background-color: #fff !important;
+}
+.ui-select-multipicker-layer .ui-select-item-selected {
+    // background-color: #eaf6fe !important;
+    color: @san-ui-blue-color;
+    .iconfont {
+        color: @san-ui-blue-color;
+    }
+}
+.ui-select-multipicker-layer .ui-loading-x {
+    font-size: inherit;
+    position: absolute;
+    display: inline-block;
+    top: 7px;
+    right: 5px;
+    color: #ccc;
+}
+.ui-select-multipicker-layer .iconfont {
+    font-size: inherit;
+    position: absolute;
+    right: 5px;
+    color: #ccc;
+}
+.ui-select-multipicker-layer .icon-color-error {
+    color: #EB5252;
+}

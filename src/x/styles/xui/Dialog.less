@@ -1,0 +1,39 @@
+/**
+ * @file xui/Dialog.less
+ * @author leeight
+ */
+
+.ui-dialog-x {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    .ui-dialog-title {
+        padding: 0 20px;
+        color: #333;
+    }
+    .ui-dialog-close-icon {
+        font-size: 16px;
+        color: #999;
+    }
+    .ui-dialog-foot-panel {
+        border-top-color: #eceff8;
+        padding: 15px 0;
+        margin: 0 30px;
+        .ui-button-x {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+    }
+    .ui-dialog-body-panel {
+        overflow-y: auto;
+        .ui-dialog-text {
+            color: #666;
+        }
+    }
+}
+.ui-dialog-mask-x {
+    opacity: 0.3;
+    background: #000;
+}

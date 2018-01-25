@@ -1,0 +1,64 @@
+/**
+ * @file xui/SearchBox.less
+ * @author leeight
+ */
+
+.ui-searchbox-x {
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+.ui-searchbox-x .ui-select-x {
+    background: @san-ui-disabled-color;
+    color: #333;
+}
+.ui-searchbox-x-active {
+    border-color: @san-ui-blue-color;
+    .ui-select-x {
+        background: #eaf6fe;
+        color: @san-ui-blue-color;
+    }
+}
+.ui-searchbox-x .ui-select-x,
+.ui-searchbox-x .ui-textbox-x {
+    margin-right: -4px;
+    border: none;
+}
+.ui-searchbox-x .ui-button-x {
+    background: #fff;
+    color: #999;
+    padding: 0 6px;
+}
+.ui-searchbox-x .ui-button-x-disabled {
+    background: #f7f7f7;
+}
+.ui-searchbox-x-active .ui-button-x {
+    background: #f8fbfe;
+}
+.ui-searchbox-x .ui-button-x,
+.ui-searchbox-x .ui-select-x {
+    height: 28px;
+    line-height: 28px;
+}
+.ui-searchbox-x .ui-textbox-x input {
+    border-color: transparent !important;
+    border: none;
+}
+.ui-searchbox-nobtn .ui-textbox-x {
+    position: relative;
+    margin-right: 0;
+}
+.ui-searchbox-nobtn .ui-textbox-x input {
+    padding-right: 20px;
+}
+.ui-searchbox-nobtn .ui-textbox-x:after {
+    font-family: iconfont!important;
+    font-style: normal;
+    font-size: 12px;
+    color: #999;
+    content: "\e601";
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

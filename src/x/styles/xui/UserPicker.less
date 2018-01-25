@@ -1,0 +1,63 @@
+/**
+ * @file xui/UserPicker.less
+ * @author leeight
+ */
+
+.ui-userpicker-x {
+    border: 1px solid #cccccc;
+    min-height: 28px;
+    padding: 0 5px;
+    width: 250px;
+
+    .ui-textbox-x input {
+        border: none;
+        width: 75px;
+        height: 22px;
+        padding: 0;
+    }
+    .ui-textbox-x input:focus {
+        background-color: #fff;
+    }
+    .ui-userpicker-preview {
+        padding-top: 3px;
+        .ui-textbox-x {
+            top: -2px;
+        }
+    }
+    .ui-userpicker-preview-item {
+        display: inline-block;
+        vertical-align: middle;
+        color: @san-ui-blue-color;
+        background-color: #eaf6fe;
+        padding: 2px 5px;
+        margin-bottom: 3px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    .iconfont {
+        font-size: 10px;
+        cursor: pointer;
+        margin-left: 3px;
+    }
+}
+.ui-userpicker-x-active {
+    border-color: @san-ui-blue-color;
+}
+.ui-userpicker-layer-x {
+    background-color: #fff;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
+    .ui-userpicker-layer-main {
+        padding: 5px 0;
+        border: 1px solid #eaf6fe;
+        border-top: none;
+        .ui-loading-x {
+            margin-left: 5px;
+        }
+        li {
+            padding: 5px;
+        }
+    }
+}
+.ui-userpicker-layer-actived-item {
+    background-color: #eaf6fe;
+}
