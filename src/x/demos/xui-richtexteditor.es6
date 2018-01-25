@@ -4,7 +4,8 @@
  */
 
 import {defineComponent} from 'san';
-import {Switch, RichTextEditor} from 'san-xui';
+import {Switch} from 'san-xui';
+import RichTextEditor from 'san-xui/x/components/RichTextEditor';
 
 import Row from './Row';
 
