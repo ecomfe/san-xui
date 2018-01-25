@@ -1,11 +1,11 @@
 /**
- * @file v3/components/Breadcrumbs.es6
+ * @file san-xui/x/biz/Breadcrumbs.es6
  * @author leeight
  */
 
 import {defineComponent} from 'san';
 
-import {create} from 'inf-ui/x/components/util';
+import {create} from '../components/util';
 
 const cx = create('ui-breadcrumbs');
 

@@ -4,8 +4,8 @@
  */
 
 import u from 'lodash';
-import {defineComponent} from 'inf-ui/sanx';
-import Chart from 'inf-ui/x/components/Chart';
+import {defineComponent} from 'san';
+import {Chart} from 'san-xui';
 
 import {metrics} from './config';
 import Row from './Row';

@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import BoxGroup from 'inf-ui/x/components/BoxGroup';
+import {defineComponent} from 'san';
+import {BoxGroup} from 'san-xui';
 
 import Row from './Row';
 

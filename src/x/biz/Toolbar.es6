@@ -1,14 +1,13 @@
 /**
  * 左侧工具栏的区域，包括 Button, ButtonGroupp, 链接 等等
- * @file inf-ui/x/biz/Toolbar.es6
+ * @file san-xui/x/biz/Toolbar.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import {DataTypes} from 'san';
-import Button from 'inf-ui/x/components/Button';
-import RadioSelect from 'inf-ui/x/components/RadioSelect';
+import {DataTypes, defineComponent} from 'san';
 
+import Button from '../components/Button';
+import RadioSelect from '../components/RadioSelect';
 import {Ghost} from './helper';
 
 /* eslint-disable */

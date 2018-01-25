@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/demos/examples/formSchemas.es6
+ * @file demos/examples/formSchemas.es6
  * @author leeight
  */
 

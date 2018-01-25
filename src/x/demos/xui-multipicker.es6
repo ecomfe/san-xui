@@ -4,8 +4,8 @@
  */
 
 import Promise from 'promise';
-import {defineComponent} from 'inf-ui/sanx';
-import MultiPicker from 'inf-ui/x/components/MultiPicker';
+import {defineComponent} from 'san';
+import {MultiPicker} from 'san-xui';
 
 import Row from './Row';
 

@@ -1,11 +1,11 @@
 /**
- * @file inf-ui/x/components/Region.es6
+ * @file san-xui/x/components/Region.es6
  * @author leeight
  */
 
 import {DataTypes, defineComponent} from 'san';
-import MultiPicker from 'inf-ui/x/components/MultiPicker';
 
+import MultiPicker from './MultiPicker';
 import {asInput} from './asInput';
 import {create} from './util';
 import kDs from './data/regions';

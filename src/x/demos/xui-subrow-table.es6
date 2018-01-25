@@ -1,17 +1,12 @@
 /**
- * @file inf-ui/x/demo/xui-subrow-table.es6
+ * @file demos/xui-subrow-table.es6
  * @author huangyunzhi(huangyunzhi@baidu.com)
  */
 
 import _ from 'lodash';
 import Promise from 'promise';
-import {defineComponent} from 'inf-ui/sanx';
-
-import Toast from 'inf-ui/x/components/Toast';
-import Button from 'inf-ui/x/components/Button';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import Table from 'inf-ui/x/components/Table';
-import Loading from 'inf-ui/x/components/Loading';
+import {defineComponent} from 'san';
+import {Toast, Button, ToastLabel, Table, Loading} from 'san-xui';
 
 import Row from './Row';
 

@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import NumberTextline from 'inf-ui/x/components/NumberTextline';
+import {defineComponent} from 'san';
+import {NumberTextline} from 'san-xui';
 
 import Row from './Row';
 

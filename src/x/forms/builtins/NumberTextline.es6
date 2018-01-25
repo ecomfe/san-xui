@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/NumberTextline.es6
+ * @file san-xui/x/forms/builtins/NumberTextline.es6
  * @author liyuan
  */
 
-import NumberTextline from 'inf-ui/x/components/NumberTextline';
+import NumberTextline from '../../components/NumberTextline';
 
 const tagName = 'ui-form-numbertextline';
 export default {

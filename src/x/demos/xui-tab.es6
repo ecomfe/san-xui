@@ -3,11 +3,8 @@
  * @author leeight
  */
 
-import {nextTick, defineComponent} from 'inf-ui/sanx';
-import Tab from 'inf-ui/x/components/Tab';
-import TabPanel from 'inf-ui/x/components/TabPanel';
-import Button from 'inf-ui/x/components/Button';
-import MonthView from 'inf-ui/x/components/MonthView';
+import {nextTick, defineComponent} from 'san';
+import {Tab, TabPanel, Button, MonthView} from 'san-xui';
 
 import Row from './Row';
 

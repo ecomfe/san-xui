@@ -1,16 +1,16 @@
 /**
- * @file components/UserPicker.es6
+ * @file san-xui/x/components/UserPicker.es6
  * @author leeight
  */
 
 import _ from 'lodash';
-import {defineComponent} from 'inf-ui/sanx';
-import {DataTypes} from 'san';
-import {hasUnit, create} from 'inf-ui/x/components/util';
-import {asInput} from 'inf-ui/x/components/asInput';
-import TextBox from 'inf-ui/x/components/TextBox';
-import Loading from 'inf-ui/x/components/Loading';
-import Layer from 'inf-ui/x/components/Layer';
+import {DataTypes, defineComponent} from 'san';
+
+import {hasUnit, create} from './util';
+import {asInput} from './asInput';
+import TextBox from './TextBox';
+import Loading from './Loading';
+import Layer from './Layer';
 
 const cx = create('ui-userpicker');
 

@@ -1,11 +1,11 @@
 /**
- * @file aside.es6
+ * @file Aside.es6
  * @author leeight
  */
 
 import u from 'lodash';
 import {defineComponent} from 'san';
-import SearchBox from 'inf-ui/x/components/SearchBox';
+import SearchBox from './components/SearchBox';
 
 /* eslint-disable */
 const template = `<div class="aside">

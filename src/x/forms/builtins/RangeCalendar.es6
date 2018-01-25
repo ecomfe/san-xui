@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/RangeCalendar.es6
+ * @file san-xui/x/forms/builtins/RangeCalendar.es6
  * @author liyuan
  */
 
-import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
+import RangeCalendar from '../../components/RangeCalendar';
 
 const tagName = 'ui-form-rangecalendar';
 export default {

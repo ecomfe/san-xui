@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import CKEditor from 'inf-ui/x/components/CKEditor';
+import {defineComponent} from 'san';
+import {CKEditor} from 'san-xui';
 
 import Row from './Row';
 

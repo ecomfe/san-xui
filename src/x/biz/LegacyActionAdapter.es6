@@ -1,13 +1,14 @@
 /**
- * @file components/LegacyActionAdapter.es6
+ * @file san-xui/x/biz/LegacyActionAdapter.es6
  * @author leeight
  */
 
 import {DataTypes, defineComponent} from 'san';
-import Dialog from 'inf-ui/x/components/Dialog';
-import Button from 'inf-ui/x/components/Button';
-import Toast from 'inf-ui/x/components/Toast';
-import ActionLoader from 'inf-ui/x/components/ActionLoader';
+
+import Dialog from '../components/Dialog';
+import Button from '../components/Button';
+import Toast from '../components/Toast';
+import ActionLoader from '../components/ActionLoader';
 
 /* eslint-disable */
 const template = `<template>

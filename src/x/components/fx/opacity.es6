@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/components/fx/opacity.es6
+ * @file san-xui/x/components/fx/opacity.es6
  * @author leeight
  */
 

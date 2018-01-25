@@ -3,11 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import WebUploader from 'inf-ui/x/components/WebUploader';
-import Switch from 'inf-ui/x/components/Switch';
-import Toast from 'inf-ui/x/components/Toast';
-import Button from 'inf-ui/x/components/Button';
+import {defineComponent} from 'san';
+import {WebUploader, Switch, Toast, Button} from 'san-xui';
 
 import Row from './Row';
 

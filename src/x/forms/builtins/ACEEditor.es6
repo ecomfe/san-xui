@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/ACEEditor.es6
+ * @file san-xui/x/forms/builtins/ACEEditor.es6
  * @author liyuan
  */
 
-import ACEEditor from 'inf-ui/x/components/ACEEditor';
+import ACEEditor from '../../components/ACEEditor';
 
 const tagName = 'ui-form-aceeditor';
 export default {

@@ -1,12 +1,12 @@
 /**
- * @file inf-ui/x/biz/ajaxAction.es6
+ * @file san-xui/x/biz/ajaxAction.es6
  * @author leeight
  */
 
 import _ from 'lodash';
-import Toast from 'inf-ui/x/components/Toast';
-import ConfirmDialog from 'inf-ui/x/components/ConfirmDialog';
 
+import Toast from '../components/Toast';
+import ConfirmDialog from '../components/ConfirmDialog';
 import {asPromise, createPayload} from './helper';
 
 export function ajaxAction(config, payload) {

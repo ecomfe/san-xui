@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import TextBox from 'inf-ui/x/components/TextBox';
-import Toast from 'inf-ui/x/components/Toast';
+import {defineComponent} from 'san';
+import {TextBox, Toast} from 'san-xui';
 
 import Row from './Row';
 

@@ -1,14 +1,10 @@
 /**
- * @file inf-ui/x/demo/xui-as-table.es6
+ * @file demos/xui-as-table.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Tip from 'inf-ui/x/components/Tip';
-import Toast from 'inf-ui/x/components/Toast';
-import Button from 'inf-ui/x/components/Button';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import Table from 'inf-ui/x/components/Table';
+import {defineComponent} from 'san';
+import {Tip, Toast, Button, ToastLabel, Table} from 'san-xui';
 
 import Row from './Row';
 

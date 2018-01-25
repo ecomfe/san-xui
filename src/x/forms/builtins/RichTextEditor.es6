@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/RichTextEditor.es6
+ * @file san-xui/x/forms/builtins/RichTextEditor.es6
  * @author liyuan
  */
 
-import RichTextEditor from 'inf-ui/x/components/RichTextEditor';
+import RichTextEditor from '../../components/RichTextEditor';
 
 const tagName = 'ui-form-richtexteditor';
 export default {

@@ -1,16 +1,16 @@
 /**
- * @file inf-ui/x/biz/helper.es6
+ * @file san-xui/x/biz/helper.es6
  * @author leeight
  */
 
 import u from 'lodash';
 import moment from 'moment';
 import Promise from 'promise';
-import ConfirmDialog from 'inf-ui/x/components/ConfirmDialog';
-import AlertDialog from 'inf-ui/x/components/AlertDialog';
-import PlainDialog from 'inf-ui/x/components/PlainDialog';
-import {asDialog} from 'inf-ui/x/components/asDialog';
 
+import ConfirmDialog from '../components/ConfirmDialog';
+import AlertDialog from '../components/AlertDialog';
+import PlainDialog from '../components/PlainDialog';
+import {asDialog} from '../components/asDialog';
 import LegacyActionAdapter from './LegacyActionAdapter';
 import _Page from './Page';
 import _Ghost from './Ghost';

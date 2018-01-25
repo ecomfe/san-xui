@@ -1,10 +1,11 @@
 /**
- * @file InfiniteScroll.es6
+ * @file san-xui/x/components/InfiniteScroll.es6
  * @author xuli07
  */
 
 import {DataTypes, defineComponent} from 'san';
-import Loading from 'inf-ui/x/components/Loading';
+
+import Loading from './Loading';
 
 export default defineComponent({
     template: `

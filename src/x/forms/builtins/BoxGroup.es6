@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/BoxGroup.es6
+ * @file san-xui/x/forms/builtins/BoxGroup.es6
  * @author liyuan
  */
 
-import BoxGroup from 'inf-ui/x/components/BoxGroup';
+import BoxGroup from '../../components/BoxGroup';
 
 const tagName = 'ui-form-boxgroup';
 export default {

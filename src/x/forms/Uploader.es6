@@ -1,12 +1,13 @@
 /**
- * @file inf-ui/x/forms/Uploader.es6
+ * @file san-xui/x/forms/Uploader.es6
  * @author leeight
  */
 
-import {DataTypes, defineComponent} from 'inf-ui/sanx';
-import BosUploader from 'inf-ui/x/components/BosUploader';
-import {asInput} from 'inf-ui/x/components/asInput';
-import UUID from 'inf-ui/x/demos/uuid';
+import {DataTypes, defineComponent} from 'san';
+
+import BosUploader from '../components/BosUploader';
+import {asInput} from '../components/asInput';
+import UUID from '../demos/uuid';
 
 /* eslint-disable */
 const template = `<template>

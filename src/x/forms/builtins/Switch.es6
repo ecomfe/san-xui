@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Switch.es6
+ * @file san-xui/x/forms/builtins/Switch.es6
  * @author leeight
  */
 
-import Switch from 'inf-ui/x/components/Switch';
+import Switch from '../../components/Switch';
 
 const tagName = 'ui-form-switch';
 export default {

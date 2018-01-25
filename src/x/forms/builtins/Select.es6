@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Select.es6
+ * @file san-xui/x/forms/builtins/Select.es6
  * @author leeight
  */
 
-import Select from 'inf-ui/x/components/Select';
+import Select from '../../components/Select';
 
 const tagName = 'ui-form-select';
 export default {

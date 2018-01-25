@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/forms/createForm.es6
+ * @file san-xui/x/forms/createForm.es6
  * @author leeight
  */
 

@@ -1,11 +1,11 @@
 /**
- * @file inf-ui/x/biz/dialogXLoaderAction.es6
+ * @file san-xui/x/biz/dialogXLoaderAction.es6
  * @author leeight
  */
 
 import _ from 'lodash';
-import Toast from 'inf-ui/x/components/Toast';
 
+import Toast from '../components/Toast';
 import LegacyActionAdapter from './LegacyActionAdapter';
 import {createPayload} from './helper';
 

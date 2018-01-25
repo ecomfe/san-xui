@@ -3,16 +3,11 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import {defineComponent} from 'san';
 import * as AsyncValidator from 'async-validator';
-import Form from 'inf-ui/x/forms/Form';
-import FormItem from 'inf-ui/x/forms/FormItem';
-import Toast from 'inf-ui/x/components/Toast';
-import TextBox from 'inf-ui/x/components/TextBox';
-import SMSCodeBox from 'inf-ui/x/components/SMSCodeBox';
-import Button from 'inf-ui/x/components/Button';
-import Select from 'inf-ui/x/components/Select';
-import BoxGroup from 'inf-ui/x/components/BoxGroup';
+import Form from 'san-xui/x/forms/Form';
+import FormItem from 'san-xui/x/forms/FormItem';
+import {Toast, TextBox, SMSCodeBox, Button, Select, BoxGroup} from 'san-xui';
 
 import Row from './Row';
 import * as rules from './rules';

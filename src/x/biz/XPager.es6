@@ -1,12 +1,12 @@
 /**
- * @file inf-ui/x/biz/XPager.es6
+ * @file san-xui/x/biz/XPager.es6
  * @author leeight
  */
 
-import {DataTypes} from 'san';
-import {defineComponent} from 'inf-ui/sanx';
-import Pager from 'inf-ui/x/components/Pager';
-import Select from 'inf-ui/x/components/Select';
+import {DataTypes, defineComponent} from 'san';
+
+import Pager from '../components/Pager';
+import Select from '../components/Select';
 
 /* eslint-disable */
 const template = `<template>

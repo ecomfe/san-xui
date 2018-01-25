@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Text.es6
+ * @file san-xui/x/forms/builtins/Text.es6
  * @author leeight
  */
 
-import TextBox from 'inf-ui/x/components/TextBox';
+import TextBox from '../../components/TextBox';
 
 const tagName = 'ui-form-textbox';
 

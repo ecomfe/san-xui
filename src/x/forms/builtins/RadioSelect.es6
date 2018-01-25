@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/RadioSelect.es6
+ * @file san-xui/x/forms/builtins/RadioSelect.es6
  * @author liyuan
  */
 
-import RadioSelect from 'inf-ui/x/components/RadioSelect';
+import RadioSelect from '../../components/RadioSelect';
 
 const tagName = 'ui-form-radioselect';
 export default {

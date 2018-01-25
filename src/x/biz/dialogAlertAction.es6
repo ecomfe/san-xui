@@ -1,11 +1,11 @@
 /**
- * @file inf-ui/x/biz/dialogAlertAction.es6
+ * @file san-xui/x/biz/dialogAlertAction.es6
  * @author leeight
  */
 
 import _ from 'lodash';
-import AlertDialog from 'inf-ui/x/components/AlertDialog';
 
+import AlertDialog from '../components/AlertDialog';
 import {asPromise} from './helper';
 
 export function dialogAlertAction(config, payload) {

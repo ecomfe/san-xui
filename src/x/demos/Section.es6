@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Icon from 'inf-ui/x/components/Icon';
+import {defineComponent} from 'san';
+import {Icon} from 'san-xui';
 
 export default defineComponent({
     template: `<fieldset class="x-section">

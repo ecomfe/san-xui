@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/forms/buildValidator.es6
+ * @file san-xui/x/forms/buildValidator.es6
  * @author leeight
  */
 

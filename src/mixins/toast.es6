@@ -5,7 +5,7 @@
  * @author leeight
  */
 
-import Toast from 'inf-ui/x/components/Toast';
+import Toast from '../x/components/Toast';
 
 export default {
     $toast(options, toastOptions) {

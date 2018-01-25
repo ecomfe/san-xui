@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/CKEditor.es6
+ * @file san-xui/x/forms/builtins/CKEditor.es6
  * @author liyuan
  */
 
-import CKEditor from 'inf-ui/x/components/CKEditor';
+import CKEditor from '../../components/CKEditor';
 
 const tagName = 'ui-form-ckeditor';
 export default {

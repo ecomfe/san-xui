@@ -3,10 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ActionLoader from 'inf-ui/x/components/ActionLoader';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import Button from 'inf-ui/x/components/Button';
+import {defineComponent} from 'san';
+import {ActionLoader, ToastLabel, Button} from 'san-xui';
 import controller from 'er/controller';
 
 import Row from './Row';

@@ -1,13 +1,12 @@
 /**
- * @file biz/Page.es6
+ * @file san-xui/x/biz/Page.es6
  * @author leeight
  */
 
 import {defineComponent} from 'san';
-import {create} from 'inf-ui/x/components/util';
 
+import {create, hasSlot} from '../components/util';
 import Breadcrumbs from './Breadcrumbs';
-import {hasSlot} from '../components/util';
 
 const cx = create('list-page');
 

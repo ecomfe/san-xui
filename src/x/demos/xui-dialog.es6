@@ -3,14 +3,9 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Tip from 'inf-ui/x/components/Tip';
-import Dialog from 'inf-ui/x/components/Dialog';
-import Button from 'inf-ui/x/components/Button';
-import Select from 'inf-ui/x/components/Select';
-import Toast from 'inf-ui/x/components/Toast';
-import AlertDialog from 'inf-ui/x/components/AlertDialog';
-import {alert, confirm, plain} from 'inf-ui/x/biz/helper';
+import {defineComponent} from 'san';
+import {Tip, Dialog, Button, Select, Toast, AlertDialog} from 'san-xui';
+import {alert, confirm, plain} from 'san-xui/x/biz/helper';
 
 import Row from './Row';
 

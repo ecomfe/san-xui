@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ButtonMenu from 'inf-ui/x/components/ButtonMenu';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import {defineComponent} from 'san';
+import {ButtonMenu, ToastLabel} from 'san-xui';
 
 import Row from './Row';
 

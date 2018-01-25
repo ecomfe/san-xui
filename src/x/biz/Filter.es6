@@ -7,7 +7,7 @@
  *   ui-calendar
  *   plain-text
  *
- * @file inf-ui/x/biz/Filter.es6
+ * @file san-xui/x/biz/Filter.es6
  * @author leeight
  */
 
@@ -15,12 +15,12 @@ import _ from 'lodash';
 // import moment from 'moment';
 import {DataTypes, defineComponent} from 'san';
 
-import {create} from 'inf-ui/x/components/util';
-import Button from 'inf-ui/x/components/Button';
-import Select from 'inf-ui/x/components/Select';
-import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
-import TextBox from 'inf-ui/x/components/TextBox';
-import Calendar from 'inf-ui/x/components/Calendar';
+import {create} from '../components/util';
+import Button from '../components/Button';
+import Select from '../components/Select';
+import RangeCalendar from '../components/RangeCalendar';
+import TextBox from '../components/TextBox';
+import Calendar from '../components/Calendar';
 
 const cx = create('ui-biz-filter');
 

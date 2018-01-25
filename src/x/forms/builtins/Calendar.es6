@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Calendar.es6
+ * @file san-xui/x/forms/builtins/Calendar.es6
  * @author leeight
  */
 
-import Calendar from 'inf-ui/x/components/Calendar';
+import Calendar from '../../components/Calendar';
 
 const tagName = 'ui-form-calendar';
 export default {

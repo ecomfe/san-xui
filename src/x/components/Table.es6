@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/components/Table.es6
+ * @file san-xui/x/components/Table.es6
  * @author leeight
  */
 

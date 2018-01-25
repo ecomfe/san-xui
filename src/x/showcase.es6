@@ -11,8 +11,8 @@ import Promise from 'promise';
 import {defineComponent} from 'san';
 import _ from 'inf-i18n';
 import i18nConfig from 'inf-i18n/config';
-import Icon from 'inf-ui/x/components/Icon';
 
+import Icon from './components/Icon';
 import Aside from './Aside';
 import AppExplorer from './AppExplorer';
 import {blocks} from './demos/config';

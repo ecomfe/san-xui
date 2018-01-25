@@ -1,12 +1,12 @@
 /**
- * @file inf-ui/x/asPage.es6
+ * @file san-xui/x/asPage.es6
  * @author leeight
  */
 
 import _ from 'lodash';
 import URL from 'er/URL';
-import {defineComponent} from 'inf-ui/sanx';
 
+import {defineComponent} from '../sanx';
 import Toolbar from './biz/Toolbar';
 import RightToolbar from './biz/RightToolbar';
 import XPager from './biz/XPager';

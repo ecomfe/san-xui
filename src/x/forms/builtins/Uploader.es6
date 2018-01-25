@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/forms/builtins/Uploader.es6
+ * @file san-xui/x/forms/builtins/Uploader.es6
  * @author leeight
  */
 

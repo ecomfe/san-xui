@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/MultiPicker.es6
+ * @file san-xui/x/forms/builtins/MultiPicker.es6
  * @author liyuan
  */
 
-import MultiPicker from 'inf-ui/x/components/MultiPicker';
+import MultiPicker from '../../components/MultiPicker';
 
 const tagName = 'ui-form-multipicker';
 export default {

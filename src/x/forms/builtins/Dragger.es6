@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Dragger.es6
+ * @file san-xui/x/forms/builtins/Dragger.es6
  * @author liyuan
  */
 
-import Dragger from 'inf-ui/x/components/Dragger';
+import Dragger from '../../components/Dragger';
 
 const tagName = 'ui-form-dragger';
 export default {

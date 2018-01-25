@@ -1,12 +1,10 @@
 /**
- * @file inf-ui/x/demos/xui-register-form-item.es6
+ * @file demos/xui-register-form-item.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import {registerFormItem} from 'inf-ui/x/forms/asForm';
-import {createForm} from 'inf-ui/x/forms/createForm';
+import {defineComponent} from 'san';
+import {ToastLabel, registerFormItem, createForm} from 'san-xui';
 
 import Row from './Row';
 

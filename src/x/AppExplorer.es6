@@ -4,9 +4,9 @@
  */
 
 import {defineComponent} from 'san';
-import Loading from 'inf-ui/x/components/Loading';
-import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
 
+import Loading from './components/Loading';
+import SyntaxHighlighter from './components/SyntaxHighlighter';
 import Section from './demos/Section';
 import DataTypeExplorer from './demos/DataTypeExplorer';
 

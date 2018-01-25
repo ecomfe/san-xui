@@ -1,12 +1,11 @@
 /**
- * @file inf-ui/x/demos/xui-toolbar.es6
+ * @file demos/xui-toolbar.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Toolbar from 'inf-ui/x/biz/Toolbar';
-import Toast from 'inf-ui/x/components/Toast';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import {defineComponent} from 'san';
+import Toolbar from 'san-xui/x/biz/Toolbar';
+import {Toast, ToastLabel} from 'san-xui';
 
 import Row from './Row';
 

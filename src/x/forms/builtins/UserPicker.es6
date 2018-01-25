@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/UserPicker.es6
+ * @file san-xui/x/forms/builtins/UserPicker.es6
  * @author liyuan
  */
 
-import UserPicker from 'inf-ui/x/components/UserPicker';
+import UserPicker from '../../components/UserPicker';
 
 const tagName = 'ui-form-userpicker';
 export default {

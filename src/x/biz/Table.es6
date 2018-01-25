@@ -1,13 +1,13 @@
 /**
- * @file inf-ui/x/biz/Table.es6
+ * @file san-xui/x/biz/Table.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import {DataTypes} from 'san';
-import Table from 'inf-ui/x/components/Table';
-// import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
-import FrozenColumnTable from 'inf-ui/x/components/FrozenColumnTable';
+import {DataTypes, defineComponent} from 'san';
+
+import Table from '../components/Table';
+// import TableColumnToggle from '../components/TableColumnToggle';
+import FrozenColumnTable from '../components/FrozenColumnTable';
 
 /* eslint-disable */
 const template = `<template>

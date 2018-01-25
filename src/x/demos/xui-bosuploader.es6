@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import BosUploader from 'inf-ui/x/components/BosUploader';
-import Toast from 'inf-ui/x/components/Toast';
+import {defineComponent} from 'san';
+import {BosUploader, Toast} from 'san-xui';
 
 import Row from './Row';
 import UUID from './uuid';

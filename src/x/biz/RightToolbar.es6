@@ -1,14 +1,14 @@
 /**
  * 右侧工具条的区域，包括 SearchBox, RefreshButton, 自定义表格列的按钮
  *
- * @file inf-ui/x/biz/RightToolbar.es6
+ * @file san-xui/x/biz/RightToolbar.es6
  * @author leeight
  */
 
-import {DataTypes} from 'san';
-import {defineComponent} from 'inf-ui/sanx';
-import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
-import SearchBox from 'inf-ui/x/components/SearchBox';
+import {DataTypes, defineComponent} from 'san';
+
+import TableColumnToggle from '../components/TableColumnToggle';
+import SearchBox from '../components/SearchBox';
 
 /* eslint-disable */
 const template = `<template>

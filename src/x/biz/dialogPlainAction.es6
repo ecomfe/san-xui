@@ -1,12 +1,12 @@
 /**
- * @file inf-ui/x/biz/dialogPlainAction.es6
+ * @file san-xui/x/biz/dialogPlainAction.es6
  * @author leeight
  */
 
 import _ from 'lodash';
-import {asDialog} from 'inf-ui/x/components/asDialog';
-import PlainDialog from 'inf-ui/x/components/PlainDialog';
 
+import {asDialog} from '../components/asDialog';
+import PlainDialog from '../components/PlainDialog';
 import {asPromise} from './helper';
 
 export function dialogPlainAction(config, payload) {

@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Tip.es6
+ * @file san-xui/x/forms/builtins/Tip.es6
  * @author liyuan
  */
 
-import Tip from 'inf-ui/x/components/Tip';
+import Tip from '../../components/Tip';
 
 const tagName = 'ui-form-tip';
 export default {

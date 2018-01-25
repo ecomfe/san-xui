@@ -1,16 +1,15 @@
 /**
  * 批量操作的区域，一般包含 Button, Select 之类的内容
  *
- * @file BulkActions.es6
+ * @file san-xui/x/biz/BulkActions.es6
  * @author leeight
  */
 
 import {defineComponent} from 'san';
 
-import {create} from 'inf-ui/x/components/util';
-import Button from 'inf-ui/x/components/Button';
-import Select from 'inf-ui/x/components/Select';
-
+import {create} from '../components/util';
+import Button from '../components/Button';
+import Select from '../components/Select';
 import {Ghost} from './helper';
 
 const cx = create('ui-bulk-actions');

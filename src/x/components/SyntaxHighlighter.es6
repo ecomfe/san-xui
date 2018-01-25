@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {DataTypes, defineComponent} from 'inf-ui/sanx';
+import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
 

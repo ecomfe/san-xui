@@ -4,7 +4,8 @@
  */
 
 import {defineComponent} from 'san';
-import Button from 'inf-ui/x/components/Button';
+
+import Button from './components/Button';
 
 /* eslint-disable */
 const template = `<div class="switch-lan">

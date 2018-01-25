@@ -1,7 +1,7 @@
 /**
  * 展示组件的 DataTypes 定义的内容
  *
- * @file inf-ui/x/demos/DataTypeExplorer.es6
+ * @file demos/DataTypeExplorer.es6
  * @author leeight
  */
 
@@ -9,8 +9,8 @@
 
 import _ from 'lodash';
 import {parse} from 'san-types';
-import {defineComponent} from 'inf-ui/sanx';
-import Icon from 'inf-ui/x/components/Icon';
+import {defineComponent} from 'san';
+import {Icon} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

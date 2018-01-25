@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import SMSCodeBox from 'inf-ui/x/components/SMSCodeBox';
+import {defineComponent} from 'san';
+import {SMSCodeBox} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

@@ -4,9 +4,8 @@
  */
 
 import Promise from 'promise';
-import {defineComponent} from 'inf-ui/sanx';
-import Go from 'inf-ui/x/components/Go';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import {defineComponent} from 'san';
+import {Go, ToastLabel} from 'san-xui';
 
 Go.setSwitchHandler((event, comp) => {
     // XXX 真实场景下，在 common 里面会实现这个逻辑；在 DEMO 里面，就随便写写好了。

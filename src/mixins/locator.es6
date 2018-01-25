@@ -5,7 +5,8 @@
 import $ from 'jquery';
 import locator from 'er/locator';
 import URL from 'er/URL';
-import Go from 'inf-ui/x/components/Go';
+
+import Go from '../x/components/Go';
 
 export default {
 

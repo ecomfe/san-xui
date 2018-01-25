@@ -1,9 +1,9 @@
 /**
- * @file inf-ui/x/forms/builtins/Region.es6
+ * @file san-xui/x/forms/builtins/Region.es6
  * @author leeight
  */
 
-import Region from 'inf-ui/x/components/Region';
+import Region from '../../components/Region';
 
 const tagName = 'ui-form-region';
 export default {

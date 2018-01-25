@@ -65,7 +65,7 @@ module.exports = {
             'er': alias('@ecomfe/er'),
             'inf-ria': alias('@ecomfe/inf-ria'),
             'inf-i18n': alias('@ecomfe/inf-i18n'),
-            'inf-ui': path.join(__dirname, 'src')
+            'san-xui': path.join(__dirname, 'src')
         }
     },
     plugins: [

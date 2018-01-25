@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
+import {defineComponent} from 'san';
 
 export default defineComponent({
     template: `<div class="x-row">
