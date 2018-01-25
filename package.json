@@ -1,7 +1,7 @@
 {
   "name": "san-xui",
-  "version": "0.0.2",
-  "jsnext:main": "./src/index.es6",
+  "version": "0.0.3",
+  "main": "lib/index.js",
   "library.type": "amd",
   "library.ignore": [
     "x/demos/**",
@@ -13,9 +13,11 @@
   ],
   "scripts": {
     "start:dev": "webpack-dev-server -d --progress --colors",
-    "build": "webpack"
+    "build": "webpack",
+    "prepub": "sh -x scripts/prepub.sh"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
