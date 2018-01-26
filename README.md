@@ -1,5 +1,12 @@
 ## san-xui
 
+[![](https://img.shields.io/travis/ecomfe/san-xui.svg?style=flat-square)](https://travis-ci.org/ecomfe/san-xui)
+[![Codecov](https://img.shields.io/codecov/c/github/ecomfe/san-xui/master.svg?style=flat-square)](https://codecov.io/gh/ecomfe/san-xui/branch/master)
+[![Dependency Status](https://img.shields.io/gemnasium/react-component/trigger.svg?style=flat-square)](https://gemnasium.com/ecomfe/san-xui)
+[![npm package](https://img.shields.io/npm/v/san-xui.svg?style=flat-square)](https://www.npmjs.org/package/san-xui)
+[![NPM downloads](http://img.shields.io/npm/dm/san-xui.svg?style=flat-square)](https://npmjs.org/package/san-xui)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/ecomfe/san-xui.svg)](http://isitmaintained.com/project/ecomfe/san-xui "Percentage of issues still open")
+
 [san-xui](http://ecomfe.github.io/san-xui/) 是基于 [san](http://ecomfe.github.io/san/) 开发的一套UI组件库，在[百度云的控制台](https://console.bce.baidu.com)中得到了广泛的应用。
 
 ## 下载
