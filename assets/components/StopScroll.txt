@@ -1,9 +1,9 @@
 /**
- * @file components/StopScroll.es6
+ * @file san-xui/x/components/StopScroll.es6
  * @author leeight
  */
 
-import {DataTypes, defineComponent} from 'inf-ui/sanx';
+import {DataTypes, defineComponent} from 'san';
 
 export default defineComponent({
     template: '<div on-wheel="onWheel"><slot/></div>',

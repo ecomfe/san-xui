@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import UserPicker from 'inf-ui/x/components/UserPicker';
+import {defineComponent} from 'san';
+import {UserPicker} from 'san-xui';
 
 import Row from './Row';
 

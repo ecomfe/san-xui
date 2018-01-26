@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Progress from 'inf-ui/x/components/Progress';
+import {defineComponent} from 'san';
+import {Progress} from 'san-xui';
 
 import Row from './Row';
 

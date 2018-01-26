@@ -3,11 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import SearchBox from 'inf-ui/x/components/SearchBox';
-import Button from 'inf-ui/x/components/Button';
-import CheckBox from 'inf-ui/x/components/CheckBox';
-import RadioBox from 'inf-ui/x/components/RadioBox';
+import {defineComponent} from 'san';
+import {SearchBox, Button, CheckBox, RadioBox} from 'san-xui';
 
 import Row from './Row';
 

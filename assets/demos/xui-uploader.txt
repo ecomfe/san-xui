@@ -3,10 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import Uploader from 'inf-ui/x/forms/Uploader';
-// import Toast from 'inf-ui/x/components/Toast';
+import {defineComponent} from 'san';
+import {ToastLabel, Uploader} from 'san-xui';
 
 import Row from './Row';
 

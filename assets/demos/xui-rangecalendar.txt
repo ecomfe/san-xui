@@ -4,8 +4,8 @@
  */
 
 import moment from 'moment';
-import {defineComponent} from 'inf-ui/sanx';
-import RangeCalendar from 'inf-ui/x/components/RangeCalendar';
+import {defineComponent} from 'san';
+import {RangeCalendar} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

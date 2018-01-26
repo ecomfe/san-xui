@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Loading from 'inf-ui/x/components/Loading';
+import {defineComponent} from 'san';
+import {Loading} from 'san-xui';
 
 import Row from './Row';
 

@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Dragger from 'inf-ui/x/components/Dragger';
+import {defineComponent} from 'san';
+import {Dragger} from 'san-xui';
 
 import Row from './Row';
 

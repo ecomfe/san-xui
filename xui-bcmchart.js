@@ -1,4 +1,4 @@
-define(["san","echarts"], function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_322__) { return webpackJsonp([3],{
+define(["san","echarts"], function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_408__) { return webpackJsonp([0],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,752 +7,605 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 10:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = getOffset;
-/**
- * ESUI (Enterprise Simple UI library)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file DOM相关基础库
- * @author otakustay
- */
-
-/**
- * 获取元素在页面中的位置和尺寸信息
- *
- * @param {HTMLElement} element 目标元素
- * @return {Object} 元素的尺寸和位置信息，
- * 包含`top`、`right`、`bottom`、`left`、`width`和`height`属性
- */
-function getOffset(element) {
-    if (!element) {
-        return {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            width: 0,
-            height: 0
-        };
-    }
-
-    let rect = element.getBoundingClientRect();
-    let offset = {
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        left: rect.left,
-        width: rect.right - rect.left,
-        height: rect.bottom - rect.top
-    };
-    let clientTop = document.documentElement.clientTop
-        || document.body.clientTop
-        || 0;
-    let clientLeft = document.documentElement.clientLeft
-        || document.body.clientLeft
-        || 0;
-    let scrollTop = window.pageYOffset
-        || document.documentElement.scrollTop;
-    let scrollLeft = window.pageXOffset
-        || document.documentElement.scrollLeft;
-    offset.top = offset.top + scrollTop - clientTop;
-    offset.bottom = offset.bottom + scrollTop - clientTop;
-    offset.left = offset.left + scrollLeft - clientLeft;
-    offset.right = offset.right + scrollLeft - clientLeft;
-
-    return offset;
-}
-
-
-
-/***/ }),
-
-/***/ 12:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__ = __webpack_require__(2);
-/**
- * @file components/StopScroll.es6
- * @author leeight
- */
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__["b" /* defineComponent */])({
-    template: '<div on-wheel="onWheel"><slot/></div>',
-    initData() {
-        return {
-            disabled: false
-        };
-    },
-    dataTypes: {
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: __WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__["a" /* DataTypes */].bool
-    },
-    onWheel(e) {
-        const disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-
-        const layer = e.currentTarget;
-        if (!layer) {
-            return;
-        }
-        if (layer.scrollTop + e.deltaY + layer.clientHeight >= layer.scrollHeight) {
-            e.preventDefault();
-            layer.scrollTop = layer.scrollHeight;
-        }
-        if (layer.scrollTop + e.deltaY <= 0) {
-            e.preventDefault();
-            layer.scrollTop = 0;
-        }
-    }
-}));
-
-
-/***/ }),
-
 /***/ 13:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asInput__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Layer__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ScrollIntoView__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__TextBox__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__StopScroll__ = __webpack_require__(12);
+
+
+var bind = __webpack_require__(245);
+var isBuffer = __webpack_require__(413);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
 /**
- * @file Select.es6
- * @author leeight
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
  */
-
-
-
-
-
-
-
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_2__util__["f" /* create */])('ui-select');
-const kDefaultLabel = '请选择';
-
-function defaultFilter(datasource, keyword) {
-    if (!keyword) {
-        return datasource;
-    }
-
-    const rv = [];
-    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(datasource, item => {
-        if (item.text && item.text.indexOf(keyword) !== -1) {
-            rv.push(item);
-        }
-    });
-    return rv;
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
 }
 
-/* eslint-disable */
-const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">
-    <span class="${cx('text')}" s-if="multi">{{multiLabel|raw}}</span>
-    <span class="${cx('text')}" s-else>{{label|raw}}</span>
-    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{layerOffsetTop}}" offset-left="{{layerOffsetLeft}}">
-        <ui-ss class="${cx('layer')} ${cx('layer-x')}" style="{{layerStyle}}">
-        <ul s-if="multi">
-            <ui-textbox s-if="filter"
-                value="{=keyword=}"
-                placeholder="{{filterPlaceholder}}"
-                width="{{realLayerWidth - 50}}"
-                />
-            <li class="${cx('item', 'item-all')}" s-if="filteredDatasource.length">
-                <label>
-                    <input type="checkbox" on-change="onToggleAll" checked="{=checkedAll=}" />全选/全不选
-                </label>
-            </li>
-            <li class="${cx('x-group')}"
-                s-for="group in groupedDatasource">
-                <div s-if="group.title !== '-' "
-                    class="${cx('group-title')}" title="{{group.title}}">{{group.title}}</div>
-                <ul class="${cx('group-list')}">
-                    <li class="{{item | itemClass}}"
-                        aria-label="{{item.tip}}"
-                        s-for="item in group.datasource">
-                        <label>
-                            <input type="checkbox"
-                                value="{{item.value}}"
-                                class="${cx('selected-box')}"
-                                disabled="{{item.disabled}}"
-                                checked="{=value=}" /><span>{{item.text}}</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <ul s-else>
-            <ui-textbox s-if="filter"
-                value="{=keyword=}"
-                placeholder="{{filterPlaceholder}}"
-                width="{{realLayerWidth - 50}}"
-                />
-            <li class="${cx('x-group')}"
-                s-for="group in groupedDatasource">
-                <div s-if="group.title !== '-' "
-                    class="${cx('group-title')}" title="{{group.title}}">{{group.title}}</div>
-                <ul class="${cx('group-list')}">
-                    <li on-click="selectItem($event, item)"
-                        class="{{item | itemClass}}"
-                        aria-label="{{item.tip}}"
-                        s-for="item in group.datasource">
-                        <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>
-                        <span s-else>{{item.text}}</span>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        </ui-ss>
-    </ui-layer>
-</div>`;
-/* eslint-enable */
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
 
-const Select = Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({    // eslint-disable-line
-    template,
-    components: {
-        'ui-textbox': __WEBPACK_IMPORTED_MODULE_6__TextBox__["a" /* default */],
-        'ui-layer': __WEBPACK_IMPORTED_MODULE_4__Layer__["a" /* default */],
-        'ui-ss': __WEBPACK_IMPORTED_MODULE_7__StopScroll__["a" /* default */],
-        'ui-siv': __WEBPACK_IMPORTED_MODULE_5__ScrollIntoView__["a" /* default */]
-    },
-    initData() {
-        return {
-            active: false,
-            multi: false, // 是否支持多选，也就是之前的 MultiSelect 的功能
-            layerWidth: null, // 手工设置的
-            autoLayerWidth: null, // this.el.clientWidth 自动算出来的
-            layerOffsetTop: 2,
-            layerOffsetLeft: 0,
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
 
-            filter: false, // 是否支持搜索过滤
-            filterPlaceholder: '', // filter textbox placeholder
-            filterCallback: defaultFilter,
-            keyword: '', // 过滤的关键词
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
 
-            value: '', // any | any[]
-            checkedAll: false
-        };
-    },
-    dataTypes: {
-        /**
-         * 获取或者设置 Select 组件的当前的值
-         *
-         * @bindx
-         * @default ''
-         */
-        value: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].any,
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
 
-        /**
-         * 浮层的打开或者关闭状态
-         *
-         * @bindx
-         * @default false
-         */
-        active: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
 
-        /**
-         * Select 的数据源，每一项的格式如下：
-         * <pre><code>{
-         *   text: string,
-         *   value: any,
-         *   group?: string （如需要分组展示，设置这个字段）
-         * }</code></pre>
-         */
-        datasource: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].array,
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
 
-        /**
-         * 是否支持选择多项，如果设置为 true，那么 value 的类型是 any[]
-         *
-         * @default false
-         */
-        multi: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
 
-        /**
-         * 浮层的宽度，如果没有设置的话，默认跟 Select 的宽度保持一致（每次展示的时候会计算）
-         */
-        layerWidth: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
 
-        /**
-         * 调整 Layer 的偏移量
-         *
-         * @default 2
-         */
-        layerOffsetTop: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
 
-        /**
-         * 调整 Layer 的偏移量
-         *
-         * @default 0
-         */
-        layerOffsetLeft: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
 
-        /**
-         * 是否支持搜索的功能
-         */
-        filter: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
 
-        /**
-         * 搜索框的 placeholder
-         */
-        filterPlaceholder: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].string,
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
 
-        /**
-         * 自定义的过滤器<br>
-         * function(datasource: any[], keyword: string): any[]
-         */
-        filterCallback: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].func
-    },
-    computed: {
-        multiLabel() {
-            // const datasource = this.data.get('datasource');
-            const values = this.data.get('value');
-            return values && values.length > 0 ? `您已经选择了${values.length}项` : kDefaultLabel;
-            /**
-            const labels = [];
-            u.each(datasource, item => {
-                if (u.indexOf(values, item.value) !== -1) {
-                    labels.push(item.text);
-                }
-            });
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
 
-            return labels.length > 0 ? labels.join(',') : kDefaultLabel;
-            */
-        },
-        label() {
-            const selectedItem = this.data.get('selectedItem');
-            return selectedItem ? selectedItem.text : kDefaultLabel;
-        },
-        filteredDatasource() {
-            // XXX(leeight) https://github.com/ecomfe/san/issues/97
-            const filter = this.data.get('filter');
-            const datasource = this.data.get('datasource');
-            if (!filter) {
-                return datasource;
-            }
-            const keyword = this.data.get('keyword');
-            const filterCallback = this.data.get('filterCallback') || defaultFilter;
-            return filterCallback(datasource, keyword);
-        },
-        groupedDatasource() {
-            const datasource = this.data.get('filteredDatasource');
-            const defaultItems = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.filter(datasource, item => item.group == null);
-            const groupedDatasource = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.chain(datasource).filter(item => item.group != null).groupBy('group').value();
-            const data = [];
-            __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(groupedDatasource, (item, key) => {
-                data.push({title: key, datasource: item});
-            });
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
 
-            if (defaultItems.length) {
-                data.unshift({
-                    title: '-',
-                    datasource: defaultItems
-                });
-            }
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
 
-            return data;
-        },
-        selectedItem() {
-            const value = this.data.get('value');
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
 
-            const datasource = this.data.get('datasource');
-            if (value != null && datasource) {
-                for (let i = 0; i < datasource.length; i++) {
-                    if (datasource[i] && datasource[i].value === value) {
-                        return datasource[i];
-                    }
-                }
-            }
-            return null;
-        },
-        realLayerWidth() {
-            const layerWidth = this.data.get('layerWidth');
-            const autoLayerWidth = this.data.get('autoLayerWidth');
-            return layerWidth || autoLayerWidth;
-        },
-        layerStyle() {
-            const style = {};
-            const realLayerWidth = this.data.get('realLayerWidth');
-            if (realLayerWidth != null) {
-                style.width = Object(__WEBPACK_IMPORTED_MODULE_2__util__["h" /* hasUnit */])(realLayerWidth) ? realLayerWidth : `${realLayerWidth}px`;
-            }
-            return style;
-        },
-        mainClass() {
-            const klass = cx.mainClass(this);
-            const active = this.data.get('active');
-            if (active) {
-                klass.push('state-active');
-                klass.push(cx('active'));
-            }
-            return klass;
-        },
-        mainStyle() {
-            return cx.mainStyle(this);
-        }
-    },
-    filters: {
-        itemClass(item) {
-            const value = this.data.get('value');
-            const multi = this.data.get('multi');
-            const klass = [cx('item')];
-            // TODO(leeight) 针对 multi 的情况，还未处理
-            if (item.value === value) {
-                klass.push(cx('item-selected'));
-            }
-            if (item.disabled) {
-                klass.push(cx('item-disabled'));
-            }
-            if (multi) {
-                klass.push(cx('item-multi'));
-            }
-            if (item.tip) {
-                klass.push('tooltipped', 'tooltipped-n');
-            }
-            if (item.group) {
-                klass.push(cx('group-item'));
-            }
-            return klass;
-        }
-    },
-    inited() {
-        const {multi, value} = this.data.get();
-        if (multi && !__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isArray(value)) {
-            // 转化一下格式
-            this.data.set('value', []);
-        }
-        this.watch('selectedItem', () => this.nextTick(() => this.__setLayerWidth()));
-        this.watch('value', value => this.fire('change', {value}));
-    },
-    selectItem(e, item) {
-        if (item.disabled) {
-            return;
-        }
-        this.data.set('value', item.value);
-        this.data.set('active', false);
-    },
-    onToggleAll() {
-        const checkedAll = this.data.get('checkedAll');
-        if (checkedAll) {
-            const datasource = this.data.get('filteredDatasource');
-            const value = [];
-            __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(datasource, item => {
-                if (!item.disabled) {
-                    value.push(item.value);
-                }
-            });
-            this.data.set('value', value);
-        }
-        else {
-            this.data.set('value', []);
-        }
-    },
-    toggleLayer(e) {
-        const disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-        const active = this.data.get('active');
-        this.data.set('active', !active);
-        this.nextTick(() => this.__setLayerWidth());
-    },
-    __setLayerWidth() {
-        const layerWidth = this.data.get('layerWidth');
-        if (layerWidth == null) {
-            this.data.set('autoLayerWidth', this.el.clientWidth + 2);
-        }
-    },
-    attached() {
-        this.__setLayerWidth();
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
     }
-});
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3__asInput__["a" /* asInput */])(Select));
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
 
 
 /***/ }),
 
-/***/ 14:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 245:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/**
- * @file ScrollIntoView.es6
- * @author leeight
- */
 
 
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template: '<template><slot /></template>',
-    attached() {
-        /** FIXME(leeight) 效果不太好，导致页面的滚动条滚动了
-        if (this.el.scrollIntoView) {
-            this.el.scrollIntoView();
-        }
-        */
-        const element = this.el.parentNode;
-        element.parentNode.scrollTop = element.offsetTop;
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
     }
-}));
+    return fn.apply(thisArg, args);
+  };
+};
 
 
 /***/ }),
 
-/***/ 23:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 246:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__esui_dom__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Layer__ = __webpack_require__(8);
-/**
- * @file Tip.es6
- * @author leeight
- */
+/* WEBPACK VAR INJECTION */(function(process) {
 
+var utils = __webpack_require__(13);
+var settle = __webpack_require__(416);
+var buildURL = __webpack_require__(418);
+var parseHeaders = __webpack_require__(419);
+var isURLSameOrigin = __webpack_require__(420);
+var createError = __webpack_require__(247);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(421);
 
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
 
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_2__util__["f" /* create */])('ui-tip');
-const cx2 = Object(__WEBPACK_IMPORTED_MODULE_2__util__["f" /* create */])('ui-tiplayer');
-
-/* eslint-disable */
-const template = `<template>
-    <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">
-        <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer" follow-scroll="{{false}}">
-            <div class="{{tiplayerClass}}" s-ref="layer-body">
-                <div class="${cx2('body-panel')}" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">
-                    <div class="${cx2('body')}" s-if="message" style="{{messageStyle}}">
-                        {{message | raw}}
-                    </div>
-                    <div class="${cx2('body')}" s-else>
-                        <slot />
-                    </div>
-                </div>
-                <div class="{{arrowClass}}"></div>
-            </div>
-        </ui-layer>
-    </div>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({   // eslint-disable-line
-    template,
-    components: {
-        'ui-layer': __WEBPACK_IMPORTED_MODULE_3__Layer__["a" /* default */]
-    },
-    computed: {
-        style() {
-            return {};
-        },
-        tiplayerClass() {
-            const position = this.data.get('position');
-            const klass = [
-                cx2(),
-                cx2('x'),
-                cx2(position)
-            ];
-            return klass;
-        },
-        arrowClass() {
-            const position = this.data.get('position');
-            const klass = [
-                cx2('arrow'),
-                cx2('arrow-' + position)
-            ];
-            return klass;
-        },
-        mainClass() {
-            const klass = [cx(), cx('x')];
-            return klass;
-        },
-        messageStyle() {
-            const style = {};
-            const width = this.data.get('width');
-            if (width != null) {
-                style.width = Object(__WEBPACK_IMPORTED_MODULE_2__util__["h" /* hasUnit */])(width) ? width : width + 'px';
-            }
-            return style;
-        }
-    },
-    initData() {
-        return {
-            message: null,
-            position: 'lt', // 'lt' | 'tc' | 'rt' | 'bc'
-            active: false,
-            duration: 500
-        };
-    },
-    dataTypes: {
-        /**
-         * Tip 需要展示的内容，如果设置了 message，那么就忽略 default slot 的内容
-         */
-        message: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * Tip 的位置，可选的内容有：lt, tc, rt, bc
-         * @default lt
-         */
-        position: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * Tip 打开的状态
-         * @bindx
-         * @default false
-         */
-        active: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-
-        /**
-         * 默认的延迟(ms)
-         * @default 500
-         */
-        duration: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number
-    },
-    inited() {
-        this.timer = null;
-    },
-    attached() {
-    },
-    positionLayer() {
-        const layer = this.ref('layer');
-        const layerBody = this.ref('layer-body');
-        const position = this.data.get('position');
-        if (layerBody) {
-            const rect = this.el.getBoundingClientRect();
-            const offset = Object(__WEBPACK_IMPORTED_MODULE_1__esui_dom__["a" /* getOffset */])(this.el);
-            const {offsetHeight, offsetWidth} = layerBody;
-            const style = {'z-index': Object(__WEBPACK_IMPORTED_MODULE_2__util__["k" /* nextZindex */])()};
-            if (position === 'lt') {
-                style.top = (offset.top - (offsetHeight - rect.height) / 2) + 'px';
-                style.left = offset.right + 'px';
-            }
-            else if (position === 'bc') {
-                style.left = (offset.left - (offsetWidth - rect.width) / 2) + 'px';
-                style.top = (offset.top + rect.height + 11) + 'px';
-            }
-            else if (position === 'rt') {
-                style.top = (offset.top - (offsetHeight - rect.height) / 2) + 'px';
-                style.left = (offset.left - offsetWidth) + 'px';
-            }
-            else if (position === 'tc') {
-                style.left = (offset.left - (offsetWidth - rect.width) / 2) + 'px';
-                style.top = (offset.top - rect.height - offsetHeight) + 'px';
-            }
-            layer.data.set('layerStyle', style);
-        }
-    },
-    updated() {
-        const active = this.data.get('active');
-        if (active) {
-            this.positionLayer();
-        }
-    },
-    showLayer() {
-        this.cancelTimer();
-        this.timer = setTimeout(
-            () => {
-                this.timer = null;
-                this.data.set('active', true);
-            },
-            this.data.get('duration')
-        );
-    },
-    cancelTimer() {
-        if (this.timer) {
-            clearTimeout(this.timer);
-            this.timer = null;
-        }
-    },
-    hideLayer() {
-        this.cancelTimer();
-        const active = this.data.get('active');
-        if (!active) {
-            return;
-        }
-        this.timer = setTimeout(
-            () => {
-                this.timer = null;
-                this.data.set('active', false);
-            },
-            this.data.get('duration')
-        );
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
     }
-}));
 
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
 
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if (process.env.NODE_ENV !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
 
-/***/ }),
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
 
-/***/ 3:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = asInput;
-/**
- * @file components/asInput.es6
- * @author leeight
- */
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
 
-function asInput(Klass) {
-    return class extends Klass {
-        fire(name, event) {
-            super.fire(name, event);
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
 
-            if (name === 'change' && event.value != null
-                || name === 'input') {
-                this.nextTick(() => {
-                    const value = this.data.get('value');
-                    this.dispatch('input-comp-value-changed', {value});
-                });
-            }
-        }
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
     };
-}
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(422);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
+
+/***/ }),
+
+/***/ 247:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(417);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
 
 
 /***/ }),
 
-/***/ 319:
+/***/ 248:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+
+/***/ 249:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+
+/***/ 405:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_promise__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_promise__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_ui_sanx__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_inf_ui_x_components_BcmChart__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__examples_bcmData__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_san__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_san_xui_x_components_BcmChart__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__examples_bcmData__ = __webpack_require__(430);
 /**
  * @file demos/xui-bcmchart.es6
  * @author leeight
@@ -893,11 +746,11 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2_inf_ui_sanx__["b" /* defineComponent */])({
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2_san__["defineComponent"])({
     template,
     components: {
         'x-row': __WEBPACK_IMPORTED_MODULE_4__Row__["a" /* default */],
-        'xui-bcmchart': __WEBPACK_IMPORTED_MODULE_3_inf_ui_x_components_BcmChart__["a" /* default */]
+        'xui-bcmchart': __WEBPACK_IMPORTED_MODULE_3_san_xui_x_components_BcmChart__["a" /* default */]
     },
     initData() {
         return {
@@ -917,23 +770,23 @@ const template = `<template>
 
 /***/ }),
 
-/***/ 320:
+/***/ 406:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_ria_utils_mtools__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Chart__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Select__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Tip__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Button__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Loading__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__mixins_ajax__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__asDialog__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_ria_utils_mtools__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Chart__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Select__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Tip__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Button__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Loading__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__mixins_ajax__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__asDialog__ = __webpack_require__(76);
 /**
  * @file components/BcmChart.es6
  * @author leeight
@@ -1313,20 +1166,20 @@ const BcmChart = Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({ 
 
 /***/ }),
 
-/***/ 321:
+/***/ 407:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_i18n__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_i18n__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts__ = __webpack_require__(408);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formatter__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formatter__ = __webpack_require__(409);
 /**
  * @file inf-ria/utils/mtools.es6
  * @author leeight
@@ -2161,18 +2014,18 @@ function parseDimensions(str) {
 
 /***/ }),
 
-/***/ 322:
+/***/ 408:
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_322__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_408__;
 
 /***/ }),
 
-/***/ 323:
+/***/ 409:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_i18n__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_i18n__ = __webpack_require__(14);
 /**
  * @file inf-ria/utils/formatter.es6
  * @author leeight
@@ -2225,7 +2078,938 @@ const kBitUnit = ['', 'k', 'm', 'g', 't', 'p', 'e', 'z', 'y', 'b'];
 
 /***/ }),
 
-/***/ 324:
+/***/ 410:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = $post;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/**
+ * @file mixins/ajax.es6
+ * @author leeight
+ */
+
+
+
+function $post(url, data, options) {
+    return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(url, data, options);
+}
+
+
+
+/***/ }),
+
+/***/ 411:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(412);
+
+/***/ }),
+
+/***/ 412:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+var bind = __webpack_require__(245);
+var Axios = __webpack_require__(414);
+var defaults = __webpack_require__(75);
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(249);
+axios.CancelToken = __webpack_require__(428);
+axios.isCancel = __webpack_require__(248);
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(429);
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+
+/***/ 413:
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+
+/***/ 414:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(75);
+var utils = __webpack_require__(13);
+var InterceptorManager = __webpack_require__(423);
+var dispatchRequest = __webpack_require__(424);
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+
+/***/ }),
+
+/***/ 415:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+
+/***/ }),
+
+/***/ 416:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var createError = __webpack_require__(247);
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+
+/***/ }),
+
+/***/ 417:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+
+/***/ }),
+
+/***/ 418:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      }
+
+      if (!utils.isArray(val)) {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+
+/***/ }),
+
+/***/ 419:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+
+/***/ }),
+
+/***/ 420:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+
+/***/ }),
+
+/***/ 421:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+function E() {
+  this.message = 'String contains an invalid character';
+}
+E.prototype = new Error;
+E.prototype.code = 5;
+E.prototype.name = 'InvalidCharacterError';
+
+function btoa(input) {
+  var str = String(input);
+  var output = '';
+  for (
+    // initialize result and counter
+    var block, charCode, idx = 0, map = chars;
+    // if the next str index does not exist:
+    //   change the mapping table to "="
+    //   check if d has no fractional digits
+    str.charAt(idx | 0) || (map = '=', idx % 1);
+    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
+    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+  ) {
+    charCode = str.charCodeAt(idx += 3 / 4);
+    if (charCode > 0xFF) {
+      throw new E();
+    }
+    block = block << 8 | charCode;
+  }
+  return output;
+}
+
+module.exports = btoa;
+
+
+/***/ }),
+
+/***/ 422:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+
+/***/ }),
+
+/***/ 423:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+
+/***/ }),
+
+/***/ 424:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+var transformData = __webpack_require__(425);
+var isCancel = __webpack_require__(248);
+var defaults = __webpack_require__(75);
+var isAbsoluteURL = __webpack_require__(426);
+var combineURLs = __webpack_require__(427);
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+
+/***/ }),
+
+/***/ 425:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(13);
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+
+/***/ }),
+
+/***/ 426:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+
+/***/ }),
+
+/***/ 427:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+
+/***/ }),
+
+/***/ 428:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(249);
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+
+/***/ 429:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+
+/***/ }),
+
+/***/ 430:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3787,913 +4571,105 @@ const Data8 = {
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__ = __webpack_require__(2);
-/**
- * @file demos/Row.es6
- * @author leeight
- */
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__["b" /* defineComponent */])({
-    template: `<div class="x-row">
-        <div class="label" s-if="label">{{label}}</div>
-        <div class="content"><slot/></div>
-    </div>`
-}));
-
-
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__asInput__ = __webpack_require__(3);
-/**
- * @file TextBox.es6
- * @author leeight
- */
-
-
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_1__util__["f" /* create */])('ui-textbox');
-
-/* eslint-disable */
-const template = `<div class="{{mainClass}}">
-    <div s-if="addon && addonPosition === 'begin'" class="${cx('addon')}">{{addon}}</div>
-    <textarea s-if="multiline"
-        s-ref="inputEl"
-        on-input="onInput"
-        on-keyup="onKeyUp($event)"
-        on-keydown="onKeyDown($event)"
-        on-keypress="onKeyPress($event)"
-        value="{=value=}"
-        disabled="{{disabled}}"
-        placeholder="{{placeholder}}"
-        style="{{textboxStyle}}"></textarea>
-    <input s-else
-        s-ref="inputEl"
-        on-input="onInput"
-        on-keyup="onKeyUp($event)"
-        on-keydown="onKeyDown($event)"
-        on-keypress="onKeyPress($event)"
-        on-focus="onFocus($event)"
-        on-blur="onBlur($event)"
-        value="{=value=}"
-        min="{{min}}",
-        max="{{max}}"
-        step="{{step}}"
-        type="{{type}}"
-        disabled="{{disabled}}"
-        placeholder="{{placeholder}}"
-        style="{{textboxStyle}}" />
-    <div s-if="addon && addonPosition === 'end'" class="${cx('addon', 'addon-end')}">{{addon}}</div>
-</div>`;
-/* eslint-enable */
-
-const TextBox = Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
-    computed: {
-        mainClass() {
-            return cx.mainClass(this);
-        },
-        textboxStyle() {
-            return cx.mainStyle(this);
-        }
-    },
-    initData() {
-        return {
-            disabled: false,
-            autofocus: false,
-            type: 'text',
-            multiline: false,
-            skin: '',
-            placeholder: '',
-            addon: '',
-            addonPosition: 'begin', // 'begin' | 'end'
-            width: null,
-            height: null
-        };
-    },
-    dataTypes: {
-        /**
-         * 控件的禁用状态
-         *
-         * @default false
-         */
-        disabled: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-
-        /**
-         * 是否默认获取焦点
-         *
-         * @default false
-         */
-        autofocus: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-
-        /**
-         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
-         *
-         * @default text
-         */
-        type: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * 获取或者设置控件的值
-         *
-         * @bindx
-         */
-        value: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * 是否展示成多行输入的文本框(textarea)
-         *
-         * @default false
-         */
-        multiline: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-
-        /**
-         * 皮肤样式
-         */
-        skin: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * 设置 placeholder 的内容
-         */
-        placeholder: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * 输入框的前缀或者后缀文案
-         */
-        addon: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * addon 文案的位置，可以设置 begin 或者 end
-         *
-         * @default begin
-         */
-        addonPosition: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-
-        /**
-         * 输入框的宽度
-         */
-        width: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-
-
-        /**
-         * 输入框的高度
-         */
-        height: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        min: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        max: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        step: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number
-    },
-    attached() {
-        const autofocus = this.data.get('autofocus');
-        if (autofocus) {
-            this.focus();
-        }
-    },
-    focus() {
-        const inputEl = this.ref('inputEl');
-        if (inputEl) {
-            if (document.activeElement === inputEl) {
-                return;
-            }
-            inputEl.focus();
-        }
-    },
-    onInput() {
-        const value = this.data.get('value');
-        this.fire('input', {value});
-    },
-    onFocus(e) {
-        this.fire('focus', e);
-    },
-    onBlur(e) {
-        this.fire('blur', e);
-    },
-    onKeyUp(e) {
-        this.fire('keyup', e);
-    },
-    onKeyDown(e) {
-        this.fire('keydown', e);
-    },
-    onKeyPress(e) {
-        const keyCode = e.which || e.keyCode;
-        if (keyCode === 13) {
-            this.fire('enter');
-        }
-        this.fire('keypress', e);
-    }
-});
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_2__asInput__["a" /* asInput */])(TextBox));
-
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fx_opacity__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__esui_dom__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__esui_page__ = __webpack_require__(18);
-/**
- * @file Layer.es6
- * @author leeight
- */
-
-
-
-
-
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_3__util__["f" /* create */])('ui-layer');
-
-/* eslint-disable */
-const template = `
-<template>
-    <div s-ref="layer" s-if="open" s-transition="$fxOpacity" class="${cx()}" style="{{layerStyle}}"><slot/></div>
-</template>
-`;
-
-/* eslint-enable */
-
-function returnFalse(e) {
-    e.stopPropagation();
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_2_san__["defineComponent"])({
-    template,
-    $fxOpacity: Object(__WEBPACK_IMPORTED_MODULE_4__fx_opacity__["a" /* opacity */])(5),
-    initData() {
-        return {
-            // 是否是打开的状态
-            open: false,
-            // 是否默认居中，如果设置为true，align offsetTop offsetLeft就没有效果
-            centerToView: false,
-            // 点击文档中其它位置的时候，是否自动隐藏
-            autoHide: true,
-            // 是否跟随滚动条重新定位，因为之前是默认跟随，为了兼容，默认值为true。
-            // 以下特例建议设置为false:
-            // layer里面继续使用了layer，且第二个layer的位置依赖于第一个layer的元素，此时建议第一个浮层使用false。
-            followScroll: true,
-            // 如果在页面中直接使用layer，可能希望点击了父节点也触发隐藏。变量默认为true，因为select等组件需要。
-            // 如果autoHide 为false 此变量无效。
-            autoHideExceptParent: true,
-            // 是否在初次显示时自动定位到 parentComponent.el 的下面 。
-            // 注意：如果parentComponent.el大小，位置发生变化，并不会同步更新。
-            autoPosition: true,
-            // 这两个值为实际需要自定义锁定的宽度和高度。
-            width: 0, // 外部传进来的宽度值
-            height: 0, // 外部传进来的高度值
-            align: null, // 设置为'left' 'right' 可以直接指定对其左右方式，如果没有指定 动态去计算
-            offsetTop: 0, // 有时候自动定位不准确，需要修正一下
-            offsetLeft: 0, // 有时候自动定位不准确，需要修正一下
-            layerStyle: {
-                left: '-10000px',
-                top: '-10000px'
-            }
-        };
-    },
-    dataTypes: {
-        open: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        centerToView: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        autoHide: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        followScroll: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        autoHideExceptParent: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        autoPosition: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].bool,
-        width: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].number,
-        height: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].number,
-        align: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].oneOf(['left', 'right']),
-        offsetTop: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].number,
-        offsetLeft: __WEBPACK_IMPORTED_MODULE_2_san__["DataTypes"].number
-    },
-    inited() {
-        // moving变量用于维护本layer组件移动状态。因为是一个内部state，不希望放到data里被干扰，所以暂时直接挂在Component上
-        this.moving = false;
-
-        const autoHide = this.data.get('autoHide');
-        const followScroll = this.data.get('followScroll');
-
-        this.autoHideHandler = autoHide ? () => this.data.set('open', false) : null;
-        this.scrollHandler = followScroll ? __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.debounce(() => this.selfPosition(true), 100) : null;
-
-        this.watch('open', open => {
-            // 一个表单页可以能有较多select && 其他浮层。关闭的情况下去掉事件。
-
-            open ? this.bindLayerEvents() : this.unbindLayerEvents();
-
-            const autoPosition = this.data.get('autoPosition');
-            if (autoPosition && open) {
-                this.nextTick(() => this.selfPosition());
-            }
-        });
-    },
-    attached() {
-        if (this.el.parentNode !== document.body) {
-            document.body.appendChild(this.el);
-        }
-        // 这些事件只在显示时才有意义，默认情况下，一个页面只有一个浮层处于打开状态
-        if (this.data.get('open')) {
-            this.bindLayerEvents();
-        }
-    },
-    bindLayerEvents() {
-        if (this.autoHideHandler) {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).on('mousedown', this.autoHideHandler);
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this.el).on('mousedown', returnFalse);
-            if (!this.scrollHandler) {
-                __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).on('scroll', this.autoHideHandler);
-            }
-
-            const pc = this.parentComponent;
-            const autoHideExceptParent = this.data.get('autoHideExceptParent');
-            // 用pc.id fix 点击选择组件闪动的bug
-            if (autoHideExceptParent && pc && pc.el) {
-                __WEBPACK_IMPORTED_MODULE_0_jquery___default()(pc.el).on('mousedown', returnFalse);
-            }
-        }
-
-        if (this.scrollHandler) {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).on('scroll', this.scrollHandler);
-        }
-    },
-    unbindLayerEvents() {
-        if (this.autoHideHandler) {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).off('mousedown', this.autoHideHandler);
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this.el).off('mousedown', returnFalse);
-            if (!this.scrollHandler) {
-                __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).off('scroll', this.autoHideHandler);
-            }
-
-            const pc = this.parentComponent;
-            const autoHideExceptParent = this.data.get('autoHideExceptParent');
-            if (autoHideExceptParent && pc && pc.el) {
-                __WEBPACK_IMPORTED_MODULE_0_jquery___default()(pc.el).off('mousedown', returnFalse);
-            }
-        }
-
-        if (this.scrollHandler) {
-            __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).off('scroll', this.scrollHandler);
-        }
-    },
-
-    selfPosition(kz) {
-        if (this.moving) {
-            return;
-        }
-        this.moving = true;
-        // todo 默认跟随父元素，如果后续有指定元素跟随指定元素的需求，在attachToElement中扩展即可。
-        this.data.get('centerToView') ? this.centerToView(kz) : this.attachToElement(kz);
-        this.moving = false;
-    },
-
-    attachToElement(kz) {
-        const align = this.data.get('align');
-        // 相当于 宽度 和 高度 分别进行了调整，然后进行计算
-        const offsetTop = this.data.get('offsetTop');
-        const offsetLeft = this.data.get('offsetLeft');
-
-        const pc = this.parentComponent;
-
-        if (!pc || !pc.el) {
-            return;
-        }
-
-        const layer = this.ref('layer');
-
-        if (!layer) {
-            return;
-        }
-
-        let topValue = 0;
-        let leftValue = 0;
-
-        // 和esui/layer对齐  但是保留了 用户自定义的offset
-        // 垂直算法：
-        // offsetTop产生的偏移将合和height合并在一起，参与同上下空间的比较
-        // 1. 将层的上边缘贴住目标元素的下边缘
-        // 2. 如果下方空间不够，则转为层的下边缘贴住目标元素的上边缘
-        // 3. 如果上方空间依旧不够，则强制使用第1步的位置
-        //
-        // 水平算法：
-        // offsetLeft产生的偏移将合和width合并在一起，参与同左右空间的比较
-        // 0. 先应用align 如果没有设置align 再走常规比较
-        // 1. 将层的左边缘贴住目标元素的左边缘
-        // 2. 如果右侧空间不够，则转为层的右边缘贴住目标元素的右边缘
-        // 3. 如果左侧空间依旧不够，则强制使用第1步的位置
-
-        const pageWidth = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["d" /* getViewWidth */])();
-        const pageHeight = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["c" /* getViewHeight */])();
-        const pageScrollTop = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["b" /* getScrollTop */])();
-        const pageScrollLeft = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["a" /* getScrollLeft */])();
-
-        const targetElement = Object(__WEBPACK_IMPORTED_MODULE_5__esui_dom__["a" /* getOffset */])(pc.el);
-
-
-        this.data.set('layerStyle.left', '-10000px');
-        this.data.set('layerStyle.top', '-10000px');
-
-
-        const layerElement = Object(__WEBPACK_IMPORTED_MODULE_5__esui_dom__["a" /* getOffset */])(layer);
-        // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
-        // 实际中的width熟悉不包括
-        let widthValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(layer).width();
-        let heightValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(layer).height();
-
-        this.data.set('layerStyle.left', '0px');
-        this.data.set('layerStyle.top', '0px');
-
-        if (this.data.get('width')) {
-            widthValue = layerElement.width = this.data.get('width');
-
-        }
-
-        if (this.data.get('height')) {
-            heightValue = layerElement.height = this.data.get('height');
-        }
-
-        // 先算垂直的位置
-        const bottomSpace = pageHeight - (targetElement.bottom - pageScrollTop);
-        const topSpace = targetElement.top - pageScrollTop;
-        if (bottomSpace <= (layerElement.height + offsetTop)
-            && topSpace > (layerElement.height + offsetTop)) {
-            // 放上面
-            topValue = targetElement.top - layerElement.height;
-        }
-        else {
-            // 放下面
-            topValue = targetElement.bottom;
-        }
-        topValue = topValue + offsetTop;
-
-        // 再算水平的位置
-        if (align === 'left') {
-            // 靠左侧
-            leftValue = targetElement.left;
-        } else if (align === 'right') {
-            // 靠右侧
-            leftValue = targetElement.right - layerElement.width;
-        } else {
-            const rightSpace = pageWidth - (targetElement.left - pageScrollLeft);
-            const leftSpace = targetElement.right - pageScrollLeft;
-            if (rightSpace <= (layerElement.width + offsetLeft)
-                && leftSpace > (layerElement.width + offsetLeft)) {
-                // 靠右侧
-                leftValue = targetElement.right - layerElement.width;
-            }
-            else {
-                // 靠左侧
-                leftValue = targetElement.left;
-            }
-        }
-
-        leftValue = leftValue + offsetLeft;
-
-        this.positionLayerElement({topValue, leftValue, widthValue, heightValue, kz});
-    },
-
-    centerToView(kz) {
-        const layer = this.ref('layer');
-
-        if (!layer) {
-            return;
-        }
-
-        this.data.set('layerStyle.left', '-10000px');
-        this.data.set('layerStyle.top', '-10000px');
-
-        let widthValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(layer).width();
-        let heightValue = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(layer).height();
-
-        const layerElement = Object(__WEBPACK_IMPORTED_MODULE_5__esui_dom__["a" /* getOffset */])(layer);
-
-        if (this.data.get('width')) {
-            widthValue = layerElement.width = this.data.get('width');
-        }
-
-        if (this.data.get('height')) {
-            heightValue = layerElement.height = this.data.get('height');
-        }
-
-        this.data.set('layerStyle.left', '0px');
-        this.data.set('layerStyle.top', '0px');
-
-        const pageWidth = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["d" /* getViewWidth */])();
-        const pageHeight = Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["c" /* getViewHeight */])();
-
-        // 计算位置
-        let topValue = Math.floor((pageHeight - layerElement.height) / 2);
-        let leftValue = Math.floor((pageWidth - layerElement.width) / 2);
-
-        topValue += Object(__WEBPACK_IMPORTED_MODULE_6__esui_page__["b" /* getScrollTop */])();
-
-        this.positionLayerElement({topValue, leftValue, widthValue, heightValue, kz});
-    },
-    // 移动当前浮层的公共方法
-    positionLayerElement(options = {}) {
-        const topValue = options.topValue + 'px';
-        const leftValue = options.leftValue + 'px';
-
-        const widthValue = options.widthValue + 'px';
-        const heightValue = options.heightValue + 'px';
-
-        if (options.kz) {
-            this.data.set('layerStyle.left', leftValue);
-            this.data.set('layerStyle.top', topValue);
-            this.data.set('layerStyle.width', widthValue);
-            this.data.set('layerStyle.height', heightValue);
-        }
-        else {
-            this.data.set('layerStyle', {
-                'z-index': Object(__WEBPACK_IMPORTED_MODULE_3__util__["k" /* nextZindex */])(),
-                'left': leftValue,
-                'top': topValue,
-                'width': widthValue,
-                'height': heightValue
-            });
-        }
-    },
-    detached() {
-        this.unbindLayerEvents();
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this.el).remove();
-    }
-}));
-
-
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ResizeObserver__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ResizeObserver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ResizeObserver__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(1);
-/**
- * @file components/Chart.es6
- * @author leeight
- */
-
-
-
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_3__util__["f" /* create */])('ui-chart');
-
-const template = '<div class="{{mainClass}}" style="{{mainStyle}}"></div>';
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
-    template,
-    computed: {
-        mainStyle() {
-            const width = this.data.get('width');
-            const height = this.data.get('height');
-            return {
-                'width': `${width}px`,
-                'height': `${height}px`,
-                'line-height': `${height}px`
-            };
-        },
-        mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-    initData() {
-        return {
-            loading: true,
-            autoResize: false,
-            width: 300,
-            height: 300,
-            option: {},
-            notMerge: false
-        };
-    },
-    dataTypes: {
-        loading: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
-        autoResize: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
-        width: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
-        height: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
-        option: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].object,
-        notMerge: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool
-    },
-    getChart() {
-        return this.chart;
-    },
-
-    clearEmptyRing() {
-        if (this.chart && this.ring) {
-            this.chart.getZr().remove(this.ring);
-            this.ring = null;
-        }
-    },
-
-    __drawEmptyRing(echarts) {
-        // 这里把 echarts 当做参数传递进来，是因为不想直接写 imports echarts from 'inf-ria/echarts'
-        // 这样子导致初始化 echarts+zrender 的时候有 300ms ~ 500ms 的延迟
-        // 所以改成了异步的加载 echarts
-        return () => {
-            const chart = this.chart;
-            const width = chart.getWidth();
-            const height = chart.getHeight();
-            const size = Math.min(width, height) / 2;
-            const minRadius = echarts.number.parsePercent('50%', size);
-            const maxRadius = echarts.number.parsePercent('80%', size);
-            this.ring = new echarts.graphic.Ring({
-                shape: {
-                    r0: minRadius,
-                    r: maxRadius,
-                    cx: width / 2,
-                    cy: height / 2
-                },
-                style: {
-                    stroke: '#ccc',
-                    fill: 'none'
-                }
-            });
-            chart.getZr().add(this.ring);
-        };
-    },
-
-    __loadEcharts(delay = 300) {
-        return new __WEBPACK_IMPORTED_MODULE_0_promise___default.a((resolve, reject) => {
-            setTimeout(() => window.require(['inf-ria/echarts', 'zrender/vml/vml'], resolve), delay);
-        });
-    },
-
-    attached() {
-        this.watch('loading', loading => {
-            if (this.chart) {
-                loading ? this.chart.showLoading() : this.chart.hideLoading();
-            }
-        });
-
-        this.watch('option', option => {
-            if (this.chart && option) {
-                this.chart.setOption(option, !!this.data.get('notMerge'));
-                this.chart.hideLoading();
-            }
-        });
-
-        this.__loadEcharts().then(echarts => {
-            this.drawEmptyRing = this.__drawEmptyRing(echarts);
-
-            this.data.set('loading', false);
-            this.chart = echarts.init(this.el);
-            this.chart.showLoading();
-            const option = this.data.get('option');
-            if (option) {
-                this.chart.setOption(option);
-                this.chart.hideLoading();
-            }
-
-            if (this.data.get('autoResize')) {
-                const {clientWidth, clientHeight} = this.el.parentNode;
-                this.chart.resize({
-                    width: clientWidth,
-                    height: clientHeight
-                });
-            }
-
-            this.fire('chart-initialized');
-        });
-
-        if (this.data.get('autoResize')) {
-            this.observer = new __WEBPACK_IMPORTED_MODULE_2__ResizeObserver___default.a(entries => {
-                if (this.chart && this.chart.resize) {
-                    const entry = entries[0];
-                    this.chart.resize({
-                        width: entry.clientWidth(),
-                        height: entry.clientHeight()
-                    });
-                }
-            }).observe(this.el.parentNode);
-        }
-    },
-
-    disposed() {
-        if (this.observer) {
-            this.observer.disconnect();
-        }
-
-        if (this.chart) {
-            this.chart.dispose();
-            this.chart = null;
-        }
-    }
-}));
-
-
-/***/ }),
-
-/***/ 91:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * https://wicg.github.io/ResizeObserver/
- *
- * @file ResizeObserver.js
- * @author devrelm
- */
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
 
-/* eslint-disable */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-    var resizeObservers = [];
+var utils = __webpack_require__(13);
+var normalizeHeaderName = __webpack_require__(415);
 
-    function ResizeObserver(callback) {
-        resizeObservers.push(this);
-        this.__callback = callback;
-        this.__observationTargets = [];
-        this.__activeTargets = [];
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(246);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(246);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
     }
-
-    ResizeObserver.prototype.observe = function(target) {
-        var resizeObservationIndex = findTargetIndex(this.__observationTargets, target);
-        if (resizeObservationIndex >= 0) {
-            return;
-        }
-
-        var resizeObservation = new ResizeObservation(target);
-        this.__observationTargets.push(resizeObservation);
-    };
-
-    ResizeObserver.prototype.unobserve = function(target) {
-        var resizeObservationIndex = findTargetIndex(this.__observationTargets, target);
-        if (resizeObservationIndex === -1) {
-            return;
-        }
-
-        this.__observationTargets.splice(resizeObservationIndex, 1);
-    };
-
-    ResizeObserver.prototype.disconnect = function() {
-        this.__observationTargets = [];
-        this.__activeTargets = [];
-    };
-
-    ResizeObserver.prototype.__populateActiveTargets = function() {
-        this.__activeTargets = [];
-        for (var key in this.__observationTargets) {
-            var resizeObservation = this.__observationTargets[key];
-            if (resizeObservation.isActive()) {
-                this.__activeTargets.push(resizeObservation);
-            }
-        }
-    };
-
-    function ResizeObserverEntry(target) {
-        this.__target = target;
-        this.__clientWidth = getWidth(target);
-        this.__clientHeight = getHeight(target);
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
     }
-
-    ResizeObserverEntry.prototype.target = function() {
-        return this.__target;
-    };
-
-    ResizeObserverEntry.prototype.clientWidth = function() {
-        return this.__clientWidth;
-    };
-
-    ResizeObserverEntry.prototype.clientHeight = function() {
-        return this.__clientHeight;
-    };
-
-    function ResizeObservation(target) {
-        this.__target = target;
-        this.__lastBroadcastWidth = getWidth(target);
-        this.__lastBroadcastHeight = getHeight(target);
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
     }
-
-    ResizeObservation.prototype.target = function() {
-        return this.__target;
-    };
-
-    ResizeObservation.prototype.lastBroadcastWidth = function() {
-        return this.__lastBroadcastWidth;
-    };
-
-    ResizeObservation.prototype.lastBroadcastHeight = function() {
-        return this.__lastBroadcastHeight;
-    };
-
-    ResizeObservation.prototype.isActive = function() {
-        if (getWidth(this.__target) !== this.lastBroadcastWidth() ||
-            getHeight(this.__target) !== this.lastBroadcastHeight()) {
-            return true;
-        }
-        return false;
-    };
-
-    function findTargetIndex(collection, target) {
-        for (var index = 0; index < collection.length; index += 1) {
-            if (collection[index].target() === target) {
-                return index;
-            }
-        }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
     }
+    return data;
+  }],
 
-    function getWidth(target) {
-        return target.getBoundingClientRect().width;
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
     }
+    return data;
+  }],
 
-    function getHeight(target) {
-        return target.getBoundingClientRect().height;
-    }
+  timeout: 0,
 
-    function gatherActiveObservers() {
-        for (var index = 0; index < resizeObservers.length; index += 1) {
-            resizeObservers[index].__populateActiveTargets();
-        }
-    }
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
 
-    function broadcastActiveObservations() {
-        for (var roIndex = 0; roIndex < resizeObservers.length; roIndex++) {
-            var resizeObserver = resizeObservers[roIndex];
-            if (resizeObserver.__activeTargets.length === 0) {
-                continue;
-            }
+  maxContentLength: -1,
 
-            var entries = [];
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
 
-            for (var atIndex = 0; atIndex < resizeObserver.__activeTargets.length; atIndex += 1) {
-                var resizeObservation = resizeObserver.__activeTargets[atIndex];
-                var entry = new ResizeObserverEntry(resizeObservation.target());
-                entries.push(entry);
-                resizeObservation.__lastBroadcastWidth = getWidth(resizeObservation.target());
-                resizeObservation.__lastBroadcastHeight = getHeight(resizeObservation.target());
-            }
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
 
-            resizeObserver.__callback(entries);
-            resizeObserver.__activeTargets = [];
-        }
-    }
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
 
-    function frameHandler() {
-        gatherActiveObservers();
-        broadcastActiveObservations();
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
 
-        setFrameWait(frameHandler);
-    }
+module.exports = defaults;
 
-    function setFrameWait(callback) {
-        if (typeof window.requestAnimationFrame === 'undefined') {
-            window.setTimeout(callback, 1000 / 60);
-        } else {
-            window.requestAnimationFrame(callback);
-        }
-    }
-
-    setFrameWait(frameHandler);
-
-    return ResizeObserver;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-/* eslint-enable */
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
 
 /***/ })
 
-},[319])});;
+},[405])});;

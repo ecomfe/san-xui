@@ -3,8 +3,8 @@
  * @author xuli07
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import InfiniteScroll from 'inf-ui/x/components/InfiniteScroll';
+import {defineComponent} from 'san';
+import {InfiniteScroll} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

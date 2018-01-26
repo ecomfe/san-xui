@@ -1,7 +1,7 @@
 /**
  * 本来 san 提供了 san.parseExpr 接口，但是没有开放 san.evalExpr 接口 :-(
  *
- * @file inf-ui/x/forms/ExpressionEvaluator.es6
+ * @file san-xui/x/forms/ExpressionEvaluator.es6
  * @author leeight
  */
 

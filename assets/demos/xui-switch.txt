@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Switch from 'inf-ui/x/components/Switch';
-import Button from 'inf-ui/x/components/Button';
+import {defineComponent} from 'san';
+import {Switch, Button} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

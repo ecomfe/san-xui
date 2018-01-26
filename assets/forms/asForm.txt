@@ -1,5 +1,5 @@
 /**
- * @file inf-ui/x/forms/asForm.es6
+ * @file san-xui/x/forms/asForm.es6
  * @author leeight
  */
 
@@ -7,9 +7,9 @@ import _ from 'lodash';
 import moment from 'moment';
 import Promise from 'promise';
 import * as AsyncValidator from 'async-validator';
-import {defineComponent} from 'inf-ui/sanx';
-import {create} from 'inf-ui/x/components/util';
+import {defineComponent} from 'san';
 
+import {create} from '../components/util';
 import {evalExpr} from './ExpressionEvaluator';
 import {buildValidator} from './buildValidator';
 

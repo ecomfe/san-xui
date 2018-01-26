@@ -1,12 +1,11 @@
 /**
- * @file inf-ui/x/demos/xui-filter.es6
+ * @file demos/xui-filter.es6
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Filter from 'inf-ui/x/biz/Filter';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
+import {defineComponent} from 'san';
+import Filter from 'san-xui/x/biz/Filter';
+import {ToastLabel, SyntaxHighlighter} from 'san-xui';
 
 import Row from './Row';
 

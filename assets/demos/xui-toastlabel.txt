@@ -4,8 +4,8 @@
  */
 
 import _ from 'inf-i18n';
-import {defineComponent} from 'inf-ui/sanx';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import {defineComponent} from 'san';
+import {ToastLabel} from 'san-xui';
 
 import Row from './Row';
 

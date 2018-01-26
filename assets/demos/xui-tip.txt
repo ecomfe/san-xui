@@ -3,11 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Tip from 'inf-ui/x/components/Tip';
-import Button from 'inf-ui/x/components/Button';
-import MonthView from 'inf-ui/x/components/MonthView';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
+import {defineComponent} from 'san';
+import {Tip, Button, MonthView, ToastLabel} from 'san-xui';
 
 import Row from './Row';
 

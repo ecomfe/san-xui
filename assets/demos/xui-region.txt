@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Region from 'inf-ui/x/components/Region';
+import {defineComponent} from 'san';
+import {Region} from 'san-xui';
 
 import Row from './Row';
 

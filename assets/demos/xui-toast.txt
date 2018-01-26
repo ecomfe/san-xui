@@ -3,9 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Toast from 'inf-ui/x/components/Toast';
-import Button from 'inf-ui/x/components/Button';
+import {defineComponent} from 'san';
+import {Toast, Button} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

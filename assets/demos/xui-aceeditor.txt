@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ACEEditor from 'inf-ui/x/components/ACEEditor';
+import {defineComponent} from 'san';
+import {ACEEditor} from 'san-xui';
 
 import Row from './Row';
 

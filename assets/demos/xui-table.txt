@@ -3,13 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Table from 'inf-ui/x/components/Table';
-import TableColumnToggle from 'inf-ui/x/components/TableColumnToggle';
-import FrozenColumnTable from 'inf-ui/x/components/FrozenColumnTable';
-import SearchBox from 'inf-ui/x/components/SearchBox';
-import BoxGroup from 'inf-ui/x/components/BoxGroup';
-import Button from 'inf-ui/x/components/Button';
+import {defineComponent} from 'san';
+import {Table, TableColumnToggle, FrozenColumnTable, SearchBox, BoxGroup, Button} from 'san-xui';
 
 import Row from './Row';
 

@@ -3,8 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import StopScroll from 'inf-ui/x/components/StopScroll';
+import {defineComponent} from 'san';
+import {StopScroll} from 'san-xui';
 
 import Row from './Row';
 

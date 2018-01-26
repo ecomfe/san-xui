@@ -3,15 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import ToastLabel from 'inf-ui/x/components/ToastLabel';
-import ACEEditor from 'inf-ui/x/components/ACEEditor';
-import SyntaxHighlighter from 'inf-ui/x/components/SyntaxHighlighter';
-import Button from 'inf-ui/x/components/Button';
-import Select from 'inf-ui/x/components/Select';
-import Switch from 'inf-ui/x/components/Switch';
-import Toast from 'inf-ui/x/components/Toast';
-import {createForm} from 'inf-ui/x/forms/createForm';
+import {defineComponent} from 'san';
+import {createForm, ToastLabel, ACEEditor, SyntaxHighlighter, Button, Select, Switch, Toast} from 'san-xui';
 
 import Row from './Row';
 /* eslint-disable */

@@ -3,10 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'inf-ui/sanx';
-import Clipboard from 'inf-ui/x/components/Clipboard';
-import Button from 'inf-ui/x/components/Button';
-import Icon from 'inf-ui/x/components/Icon';
+import {defineComponent} from 'san';
+import {Clipboard, Button, Icon} from 'san-xui';
 
 import Row from './Row';
 

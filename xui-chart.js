@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([31],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([8],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,17 +7,18 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 333:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inf_ui_sanx__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_ui_x_components_Chart__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(4);
 /**
  * @file demos/xui-chart.es6
  * @author leeight
@@ -52,11 +53,11 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_inf_ui_sanx__["b" /* defineComponent */])({
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
     template,
     components: {
         'x-row': __WEBPACK_IMPORTED_MODULE_4__Row__["a" /* default */],
-        'xui-chart': __WEBPACK_IMPORTED_MODULE_2_inf_ui_x_components_Chart__["a" /* default */]
+        'xui-chart': __WEBPACK_IMPORTED_MODULE_2_san_xui__["i" /* Chart */]
     },
     filters: {
         gen_options_line(metrics) {  // eslint-disable-line
@@ -209,30 +210,7 @@ const template = `<template>
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__ = __webpack_require__(2);
-/**
- * @file demos/Row.es6
- * @author leeight
- */
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_inf_ui_sanx__["b" /* defineComponent */])({
-    template: `<div class="x-row">
-        <div class="label" s-if="label">{{label}}</div>
-        <div class="content"><slot/></div>
-    </div>`
-}));
-
-
-
-/***/ }),
-
-/***/ 68:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1268,343 +1246,6 @@ const metrics = [
 
 
 
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ResizeObserver__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ResizeObserver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ResizeObserver__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(1);
-/**
- * @file components/Chart.es6
- * @author leeight
- */
-
-
-
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_3__util__["f" /* create */])('ui-chart');
-
-const template = '<div class="{{mainClass}}" style="{{mainStyle}}"></div>';
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
-    template,
-    computed: {
-        mainStyle() {
-            const width = this.data.get('width');
-            const height = this.data.get('height');
-            return {
-                'width': `${width}px`,
-                'height': `${height}px`,
-                'line-height': `${height}px`
-            };
-        },
-        mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-    initData() {
-        return {
-            loading: true,
-            autoResize: false,
-            width: 300,
-            height: 300,
-            option: {},
-            notMerge: false
-        };
-    },
-    dataTypes: {
-        loading: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
-        autoResize: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool,
-        width: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
-        height: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].number,
-        option: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].object,
-        notMerge: __WEBPACK_IMPORTED_MODULE_1_san__["DataTypes"].bool
-    },
-    getChart() {
-        return this.chart;
-    },
-
-    clearEmptyRing() {
-        if (this.chart && this.ring) {
-            this.chart.getZr().remove(this.ring);
-            this.ring = null;
-        }
-    },
-
-    __drawEmptyRing(echarts) {
-        // 这里把 echarts 当做参数传递进来，是因为不想直接写 imports echarts from 'inf-ria/echarts'
-        // 这样子导致初始化 echarts+zrender 的时候有 300ms ~ 500ms 的延迟
-        // 所以改成了异步的加载 echarts
-        return () => {
-            const chart = this.chart;
-            const width = chart.getWidth();
-            const height = chart.getHeight();
-            const size = Math.min(width, height) / 2;
-            const minRadius = echarts.number.parsePercent('50%', size);
-            const maxRadius = echarts.number.parsePercent('80%', size);
-            this.ring = new echarts.graphic.Ring({
-                shape: {
-                    r0: minRadius,
-                    r: maxRadius,
-                    cx: width / 2,
-                    cy: height / 2
-                },
-                style: {
-                    stroke: '#ccc',
-                    fill: 'none'
-                }
-            });
-            chart.getZr().add(this.ring);
-        };
-    },
-
-    __loadEcharts(delay = 300) {
-        return new __WEBPACK_IMPORTED_MODULE_0_promise___default.a((resolve, reject) => {
-            setTimeout(() => window.require(['inf-ria/echarts', 'zrender/vml/vml'], resolve), delay);
-        });
-    },
-
-    attached() {
-        this.watch('loading', loading => {
-            if (this.chart) {
-                loading ? this.chart.showLoading() : this.chart.hideLoading();
-            }
-        });
-
-        this.watch('option', option => {
-            if (this.chart && option) {
-                this.chart.setOption(option, !!this.data.get('notMerge'));
-                this.chart.hideLoading();
-            }
-        });
-
-        this.__loadEcharts().then(echarts => {
-            this.drawEmptyRing = this.__drawEmptyRing(echarts);
-
-            this.data.set('loading', false);
-            this.chart = echarts.init(this.el);
-            this.chart.showLoading();
-            const option = this.data.get('option');
-            if (option) {
-                this.chart.setOption(option);
-                this.chart.hideLoading();
-            }
-
-            if (this.data.get('autoResize')) {
-                const {clientWidth, clientHeight} = this.el.parentNode;
-                this.chart.resize({
-                    width: clientWidth,
-                    height: clientHeight
-                });
-            }
-
-            this.fire('chart-initialized');
-        });
-
-        if (this.data.get('autoResize')) {
-            this.observer = new __WEBPACK_IMPORTED_MODULE_2__ResizeObserver___default.a(entries => {
-                if (this.chart && this.chart.resize) {
-                    const entry = entries[0];
-                    this.chart.resize({
-                        width: entry.clientWidth(),
-                        height: entry.clientHeight()
-                    });
-                }
-            }).observe(this.el.parentNode);
-        }
-    },
-
-    disposed() {
-        if (this.observer) {
-            this.observer.disconnect();
-        }
-
-        if (this.chart) {
-            this.chart.dispose();
-            this.chart = null;
-        }
-    }
-}));
-
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * https://wicg.github.io/ResizeObserver/
- *
- * @file ResizeObserver.js
- * @author devrelm
- */
-
-/* eslint-disable */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-    var resizeObservers = [];
-
-    function ResizeObserver(callback) {
-        resizeObservers.push(this);
-        this.__callback = callback;
-        this.__observationTargets = [];
-        this.__activeTargets = [];
-    }
-
-    ResizeObserver.prototype.observe = function(target) {
-        var resizeObservationIndex = findTargetIndex(this.__observationTargets, target);
-        if (resizeObservationIndex >= 0) {
-            return;
-        }
-
-        var resizeObservation = new ResizeObservation(target);
-        this.__observationTargets.push(resizeObservation);
-    };
-
-    ResizeObserver.prototype.unobserve = function(target) {
-        var resizeObservationIndex = findTargetIndex(this.__observationTargets, target);
-        if (resizeObservationIndex === -1) {
-            return;
-        }
-
-        this.__observationTargets.splice(resizeObservationIndex, 1);
-    };
-
-    ResizeObserver.prototype.disconnect = function() {
-        this.__observationTargets = [];
-        this.__activeTargets = [];
-    };
-
-    ResizeObserver.prototype.__populateActiveTargets = function() {
-        this.__activeTargets = [];
-        for (var key in this.__observationTargets) {
-            var resizeObservation = this.__observationTargets[key];
-            if (resizeObservation.isActive()) {
-                this.__activeTargets.push(resizeObservation);
-            }
-        }
-    };
-
-    function ResizeObserverEntry(target) {
-        this.__target = target;
-        this.__clientWidth = getWidth(target);
-        this.__clientHeight = getHeight(target);
-    }
-
-    ResizeObserverEntry.prototype.target = function() {
-        return this.__target;
-    };
-
-    ResizeObserverEntry.prototype.clientWidth = function() {
-        return this.__clientWidth;
-    };
-
-    ResizeObserverEntry.prototype.clientHeight = function() {
-        return this.__clientHeight;
-    };
-
-    function ResizeObservation(target) {
-        this.__target = target;
-        this.__lastBroadcastWidth = getWidth(target);
-        this.__lastBroadcastHeight = getHeight(target);
-    }
-
-    ResizeObservation.prototype.target = function() {
-        return this.__target;
-    };
-
-    ResizeObservation.prototype.lastBroadcastWidth = function() {
-        return this.__lastBroadcastWidth;
-    };
-
-    ResizeObservation.prototype.lastBroadcastHeight = function() {
-        return this.__lastBroadcastHeight;
-    };
-
-    ResizeObservation.prototype.isActive = function() {
-        if (getWidth(this.__target) !== this.lastBroadcastWidth() ||
-            getHeight(this.__target) !== this.lastBroadcastHeight()) {
-            return true;
-        }
-        return false;
-    };
-
-    function findTargetIndex(collection, target) {
-        for (var index = 0; index < collection.length; index += 1) {
-            if (collection[index].target() === target) {
-                return index;
-            }
-        }
-    }
-
-    function getWidth(target) {
-        return target.getBoundingClientRect().width;
-    }
-
-    function getHeight(target) {
-        return target.getBoundingClientRect().height;
-    }
-
-    function gatherActiveObservers() {
-        for (var index = 0; index < resizeObservers.length; index += 1) {
-            resizeObservers[index].__populateActiveTargets();
-        }
-    }
-
-    function broadcastActiveObservations() {
-        for (var roIndex = 0; roIndex < resizeObservers.length; roIndex++) {
-            var resizeObserver = resizeObservers[roIndex];
-            if (resizeObserver.__activeTargets.length === 0) {
-                continue;
-            }
-
-            var entries = [];
-
-            for (var atIndex = 0; atIndex < resizeObserver.__activeTargets.length; atIndex += 1) {
-                var resizeObservation = resizeObserver.__activeTargets[atIndex];
-                var entry = new ResizeObserverEntry(resizeObservation.target());
-                entries.push(entry);
-                resizeObservation.__lastBroadcastWidth = getWidth(resizeObservation.target());
-                resizeObservation.__lastBroadcastHeight = getHeight(resizeObservation.target());
-            }
-
-            resizeObserver.__callback(entries);
-            resizeObserver.__activeTargets = [];
-        }
-    }
-
-    function frameHandler() {
-        gatherActiveObservers();
-        broadcastActiveObservations();
-
-        setFrameWait(frameHandler);
-    }
-
-    function setFrameWait(callback) {
-        if (typeof window.requestAnimationFrame === 'undefined') {
-            window.setTimeout(callback, 1000 / 60);
-        } else {
-            window.requestAnimationFrame(callback);
-        }
-    }
-
-    setFrameWait(frameHandler);
-
-    return ResizeObserver;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-/* eslint-enable */
-
-
 /***/ })
 
-},[333])});;
+},[437])});;
