@@ -70,10 +70,10 @@ module.exports = {
             name: 'commons',
             // (the commons chunk name)
 
-            filename: 'commons.js'
+            filename: 'commons.js',
             // (the filename of the commons chunk)
 
-            // minChunks: 3,
+            minChunks: 3
             // (Modules must be shared between 3 entries)
 
             // chunks: ['pageA', 'pageB'],

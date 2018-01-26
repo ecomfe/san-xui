@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start:dev": "webpack-dev-server -d --progress --colors",
-    "build": "webpack",
+    "build": "rm -rf output && webpack",
     "precommit": "lint-staged",
     "prepub": "sh -x scripts/prepub.sh",
     "lint:fecs": "fecs --type=js src"
