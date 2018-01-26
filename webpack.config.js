@@ -35,7 +35,7 @@ module.exports = {
         libraryTarget: 'amd'
     },
     externals: {
-        san: {
+        'san': {
             amd: 'san'
         },
         'san-types': {
@@ -43,9 +43,6 @@ module.exports = {
         },
         echarts: {
             amd: 'echarts'
-        },
-        'async-validator': {
-            amd: 'async-validator'
         }
     },
     devServer: {
