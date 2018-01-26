@@ -141,7 +141,7 @@ export default defineComponent({
             auto: autoStart,
             fileSingleSizeLimit: sizeLimit,
 
-            swf: window.require.toUrl('webuploader/Uploader.swf'),
+            swf: 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/Uploader.swf',
             disableWidgets: 'log', // 禁用log统计
             chunked: false,
             threads: 1,

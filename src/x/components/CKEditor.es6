@@ -22,7 +22,7 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-window.CKEDITOR_BASEPATH = window.require.toUrl('ckeditor').replace(/\?.*/, '') + '/';
+window.CKEDITOR_BASEPATH = 'https://cdn.bdstatic.com/ckeditor/4.8.0/';
 
 export default defineComponent({
     template,
