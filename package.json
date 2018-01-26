@@ -1,6 +1,6 @@
 {
   "name": "san-xui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "lib/index.js",
   "library.type": "amd",
   "library.ignore": [
@@ -14,7 +14,12 @@
   "scripts": {
     "start:dev": "webpack-dev-server -d --progress --colors",
     "build": "webpack",
-    "prepub": "sh -x scripts/prepub.sh"
+    "precommit": "lint-staged",
+    "prepub": "sh -x scripts/prepub.sh",
+    "lint:fecs": "fecs --type=js src"
+  },
+  "lint-staged": {
+    "src/**/*.es6": "lint:fecs"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -31,6 +36,7 @@
     "jsxobj": "^1.1.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "lint-staged": "^6.0.1",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0"

@@ -16,7 +16,7 @@ const cx = create('ui-richtexteditor');
 
 const kDefaultEditorOptions = {
     // 如果配置了 urlArgs，那么后续用 UEDITOR_HOME_URL 拼接路径的时候就出问题了，因此把这个部分删掉
-    UEDITOR_HOME_URL: 'https://cdn.bdstatic.com/console/dep/c42ae776/ueditor/1.4.3/'
+    UEDITOR_HOME_URL: 'https://cdn.bdstatic.com/console/dep/c42ae776/ueditor/1.4.3/',
     // initialFrameWidth: 770,
     initialFrameHeight: 250,
     autoFloatEnabled: false,
