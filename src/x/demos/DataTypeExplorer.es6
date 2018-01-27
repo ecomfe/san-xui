@@ -59,7 +59,7 @@ export default defineComponent({
             const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
             const moduleId = typeof G_PREFIX === 'object'
                 ? `${G_PREFIX.componentsCode}${compName}`
-                : `inf-ui/x/components/${compName}`;
+                : `\x69nf-ui/x/components/${compName}`;
             const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
             fetch(sourceUrl)
                 .then(response => {

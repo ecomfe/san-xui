@@ -103,8 +103,8 @@ const App = defineComponent({   // eslint-disable-line
         this.data.set('aside.expand', !expand);
     },
     onItemSelected(item) {
-        let demosModulePrefix = 'inf-ui/x/demos/';
-        let demosCodePrefix = 'inf-ui/x/demos/';
+        let demosModulePrefix = '\x69nf-ui/x/demos/';
+        let demosCodePrefix = '\x69nf-ui/x/demos/';
         if (typeof G_PREFIX === 'object') {
             if (G_PREFIX.demosModule != null) {
                 demosModulePrefix = G_PREFIX.demosModule;
