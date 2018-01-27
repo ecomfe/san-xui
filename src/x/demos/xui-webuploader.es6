@@ -4,8 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Switch, Toast, Button} from 'san-xui';
-import WebUploader from 'san-xui/x/components/WebUploader';
+import {WebUploader, Switch, Toast, Button} from 'san-xui';
 
 import Row from './Row';
 

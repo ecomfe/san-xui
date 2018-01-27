@@ -10,7 +10,7 @@
 import _ from 'lodash';
 import {parse} from 'san-types';
 import {defineComponent} from 'san';
-import {Icon} from 'san-xui';
+import Icon from '../components/Icon';
 
 /* eslint-disable */
 const template = `<template>

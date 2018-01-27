@@ -13,7 +13,7 @@ const template = `
 <template>
 <x-row label="center-to-view=true width=700 auto-hide-except-parent=false">
 <xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>
-<xui-layer class="demo-layer" center-to-view="{{true}}" width="{{700}}" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">
+<xui-layer class="demo-layer" center-to-view="{{true}}" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">
     <x-row label="type=default">
         <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
         <xui-button on-click="closeTheLayer">关闭.</xui-button>
@@ -40,7 +40,7 @@ const template = `
     </x-row>
 </xui-layer>
 
-<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}" width="300">
+<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}">
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
     <xui-button on-click="closeTheLayer">关闭上一个Layer</xui-button>
 </xui-layer>

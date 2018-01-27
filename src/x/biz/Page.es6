@@ -16,7 +16,7 @@ export default defineComponent({      // eslint-disable-line
 
         <div class="${cx('body')}">
             <div class="${cx('title')}" s-if="title || navs">
-                <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span></h2>
+                <h2 s-if="title">{{title}}<span s-if="remark">{{remark | raw}}</span></h2>
                 <div class="ui-tab ui-tab-x" s-elif="navs">
                     <ul class="ui-tab-navigator">
                         <li

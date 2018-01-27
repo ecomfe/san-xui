@@ -103,12 +103,17 @@ export default defineComponent({
         if (this.data.get('dialog')) {
             this.ref('dialog').__resize();
         }
+        this.fire('actionloaded', e);
     },
-    onConfirmDialog() {
+    onConfirmDialog(e) {
+        this.fire('beforeok', {action: this.erAction,  e});
+        // TODO 判断默认事件是否被阻止 (ER的isDefaultPrevented)
+        if (e.defaultPrevented) {
+            return;
+        }
         const erAction = this.erAction;
         const isSan = isSanPage(erAction);
         const compInstance = isSan ? erAction.page.children[0] : erAction;
-
         if (compInstance && typeof compInstance.doSubmit === 'function') {
             this.data.set('confirm.label', '处理中...');
             this.data.set('confirm.disabled', true);
@@ -117,6 +122,7 @@ export default defineComponent({
                     this.data.set('confirm.label', '确定');
                     this.data.set('confirm.disabled', false);
                     this.closeDialog();
+                    this.fire('ok');
                 })
                 .then(null, (error = {}) => {
                     // san
@@ -124,7 +130,6 @@ export default defineComponent({
                     if (isSan && error.global) {
                         Toast.error(error.global);
                     }
-
                     // er
                     // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
                     // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
@@ -138,8 +143,14 @@ export default defineComponent({
                 });
         }
         this.closeDialog();
+        this.fire('ok');
     },
-    onCloseDialog() {
+    onCloseDialog(e) {
+        this.fire('beforeclose', {action: this.erAction, e});
+        // TODO 同上
+        if (e.defaultPrevented) {
+            return;
+        }
         this.closeDialog();
         this.fire('close');
     }

@@ -13,6 +13,9 @@ import {create} from './util';
 import Loading from './Loading';
 
 const cx = create('ui-richtexteditor');
+const kLinkUrl = typeof window.require === 'function'
+    ? window.require.toUrl('ueditor/dialogs/link/link.html')
+    : null;
 
 const kDefaultEditorOptions = {
     // 如果配置了 urlArgs，那么后续用 UEDITOR_HOME_URL 拼接路径的时候就出问题了，因此把这个部分删掉
@@ -23,7 +26,7 @@ const kDefaultEditorOptions = {
     elementPathEnabled: false,
     autoHeightEnabled: false,
     iframeUrlMap: {
-        // link: window.require.toUrl('ueditor/dialogs/link/link.html')
+        link: kLinkUrl
     },
     serverUrl: '/api/mc/imageUpload',
     initialStyle: [

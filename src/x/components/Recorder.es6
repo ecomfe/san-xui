@@ -6,7 +6,7 @@
 /* eslint-disable */
 import $ from 'jquery';
 
-import workerScript from './RecorderWorker.es6';
+import workerScript from './RecorderWorker';
 
 function addMask(e) {
     if (!m) {

@@ -200,10 +200,11 @@ export default defineComponent({
 
 
         const layerElement = getOffset(layer);
-        // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
-        // 实际中的width熟悉不包括
-        let widthValue = $(layer).width();
-        let heightValue = $(layer).height();
+
+        //dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
+        //实际中的width 属性不包括 。直接用jquery的 width()会抹去小数点，可能出现获取的值小于实际的值。
+        let widthValue = 'auto';
+        let heightValue = 'auto';
 
         this.data.set('layerStyle.left', '0px');
         this.data.set('layerStyle.top', '0px');
@@ -267,8 +268,8 @@ export default defineComponent({
         this.data.set('layerStyle.left', '-10000px');
         this.data.set('layerStyle.top', '-10000px');
 
-        let widthValue = $(layer).width();
-        let heightValue = $(layer).height();
+        let widthValue = 'auto';
+        let heightValue = 'auto';
 
         const layerElement = getOffset(layer);
 
@@ -299,6 +300,7 @@ export default defineComponent({
         const topValue = options.topValue + 'px';
         const leftValue = options.leftValue + 'px';
 
+        // 这个地方 反正不好好写数字都会办成无效 然后就是auto了。。
         const widthValue = options.widthValue + 'px';
         const heightValue = options.heightValue + 'px';
 

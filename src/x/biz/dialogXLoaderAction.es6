@@ -12,6 +12,7 @@ import {createPayload} from './helper';
 export function dialogXLoaderAction(config, payload) {
     const {width, height, title, body, foot} = config.dialog;
     const {$payloadFields, $extraPayload, url, module} = body;
+    const {actionLoaded, beforeOk, ok, beforeClose, close} = config.events || {};
     const $title = _.template(title)(payload);
 
     const parentAction = {
@@ -43,6 +44,11 @@ export function dialogXLoaderAction(config, payload) {
     }
 
     const component = new LegacyActionAdapter({parent: this, data: compData});
+    _.isFunction(actionLoaded) && component.on('actionloaded', actionLoaded);
+    _.isFunction(beforeOk) && component.on('beforeok', beforeOk);
+    _.isFunction(ok) && component.on('ok', ok);
+    _.isFunction(beforeClose) && component.on('beforeclose', beforeClose);
+    _.isFunction(close) && component.on('close', close);
     component.attach(document.body);
     this.$childs.push(component);
 }

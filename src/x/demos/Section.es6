@@ -4,7 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Icon} from 'san-xui';
+import Icon from '../components/Icon';
 
 export default defineComponent({
     template: `<fieldset class="x-section">
