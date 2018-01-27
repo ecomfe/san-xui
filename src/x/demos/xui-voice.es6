@@ -19,6 +19,10 @@ const template = `<template>
     TEXT: {{voiceText}}
     </strong>
 </x-row>
+
+<x-row label="error">
+    <xui-voice error="初始化失败" />
+</x-row>
 </template>`;
 /* eslint-enable */
 

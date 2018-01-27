@@ -7,18 +7,27 @@ import {DataTypes, defineComponent} from 'san';
 
 import Button from './Button';
 import Recorder from './Recorder';
+import {create} from './util';
 import {asInput} from './asInput';
 
+const cx = create('ui-voice');
+
 /* eslint-disable */
-const template = `<template>
-    <ui-button icon="voice" on-click="startRecording">{{label}}</ui-button>
-</template>`;
+const template = `<div class="{{mainClass}}">
+    <div class="${cx('error')}" s-if="error">{{error}}</div>
+    <ui-button s-else icon="voice" on-click="startRecording">{{label}}</ui-button>
+</div>`;
 /* eslint-enable */
 
 const Voice = defineComponent({
     template,
     components: {
         'ui-button': Button
+    },
+    computed: {
+        mainClass() {
+            return cx.mainClass(this);
+        }
     },
     initData() {
         return {
