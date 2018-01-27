@@ -1,5 +1,5 @@
 /**
- * @file voice.js
+ * @file san-xui/x/components/Recorder.es6
  * @author xxx
  */
 

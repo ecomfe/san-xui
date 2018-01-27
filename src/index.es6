@@ -59,6 +59,7 @@ export {default as Toast} from './x/components/Toast';
 export {default as ToastLabel} from './x/components/ToastLabel';
 export {default as UserPicker} from './x/components/UserPicker';
 export {default as ViewStep} from './x/components/ViewStep';
+export {default as Voice} from './x/components/Voice';
 export {default as WebUploader} from './x/components/WebUploader';
 export {default as Uploader} from './x/forms/Uploader';
 export {asForm, registerFormItem} from './x/forms/asForm';
