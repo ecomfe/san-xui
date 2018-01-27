@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 465:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,7 +15,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_RichTextEditor__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_RichTextEditor__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
 /**
  * @file demos/xui-richtexteditor.es6
@@ -79,4 +79,4 @@ const template = `<template>
 
 /***/ })
 
-},[465])});;
+},[453])});;

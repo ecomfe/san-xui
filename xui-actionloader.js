@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([6],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([5],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 391:
+/***/ 379:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,11 +15,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_ActionLoader__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_er_controller__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_ActionLoader__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_er_controller__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_er_controller___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_er_controller__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(401);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(389);
 /**
  * @file demos/xui-actionloader.es6
  * @author leeight
@@ -92,7 +92,7 @@ const template = `<template>
 
 /***/ }),
 
-/***/ 401:
+/***/ 389:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,4 +146,4 @@ function createAction(ms = 350) {
 
 /***/ })
 
-},[391])});;
+},[379])});;

@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 484:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62,4 +62,4 @@ const template = `<template>
 
 /***/ })
 
-},[484])});;
+},[472])});;

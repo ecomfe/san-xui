@@ -7,19 +7,19 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 445:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_async_validator__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_forms_Form__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_san_xui_x_forms_FormItem__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_async_validator__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_forms_Form__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_san_xui_x_forms_FormItem__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_san_xui__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Row__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rules__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rules__ = __webpack_require__(436);
 /**
  * @file demos/xui-form.es6
  * @author leeight
@@ -195,7 +195,7 @@ const template = `<template>
 
 /***/ }),
 
-/***/ 446:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -339,7 +339,7 @@ const cx = Object(__WEBPACK_IMPORTED_MODULE_2__components_util__["f" /* create *
 
 /***/ }),
 
-/***/ 447:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -480,7 +480,7 @@ const template = `<div class="{{mainClass}}">
 
 /***/ }),
 
-/***/ 448:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -535,4 +535,4 @@ function equals(key) {
 
 /***/ })
 
-},[445])});;
+},[433])});;

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([7],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 402:
+/***/ 390:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16,7 +16,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__examples_formSchemas__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__examples_formSchemas__ = __webpack_require__(391);
 /**
  * @file demos/xui-as-form.es6
  * @author leeight
@@ -136,7 +136,7 @@ const template = `<template>
                 }
                 this.data.set('formData', {});
                 const instantValidation = this.data.get('instantValidation');
-                const FormComponent = Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["U" /* createForm */])(value);
+                const FormComponent = Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["V" /* createForm */])(value);
                 const formInstance = new FormComponent({data: {instantValidation}});
                 formInstance.watch('formData', formData => this.data.set('formData', formData));
                 formInstance.attach(formContainer);
@@ -157,7 +157,7 @@ const template = `<template>
 
 /***/ }),
 
-/***/ 403:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -602,4 +602,4 @@ const kSchema$requiredOn = {
 
 /***/ })
 
-},[402])});;
+},[390])});;

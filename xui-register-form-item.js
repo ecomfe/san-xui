@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 464:
+/***/ 452:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38,7 +38,7 @@ const Color = Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
     </template>`
 });
 
-Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["V" /* registerFormItem */])({
+Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["W" /* registerFormItem */])({
     type: 'color',
     tagName: 'ui-form-item-color', // 需要跟下面 builder 里面用的保持一致
     Component: Color,
@@ -93,7 +93,7 @@ const kFormSchema = {
     template,
     components: {
         'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-form': Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["U" /* createForm */])(kFormSchema),
+        'xui-form': Object(__WEBPACK_IMPORTED_MODULE_1_san_xui__["V" /* createForm */])(kFormSchema),
         'xui-toastlabel': __WEBPACK_IMPORTED_MODULE_1_san_xui__["Q" /* ToastLabel */]
     },
     filters: {
@@ -116,4 +116,4 @@ const kFormSchema = {
 
 /***/ })
 
-},[464])});;
+},[452])});;
