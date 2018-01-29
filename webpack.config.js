@@ -130,15 +130,24 @@ module.exports = {
                         }
                     }
                 ]
-            }
-        ],
-        loaders: [
+            },
             {
                 test: /\.es6$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['es2015']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'stage-0']
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|dist)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'stage-0']
+                    }
                 }
             }
         ]

@@ -43,7 +43,7 @@ app.attach(document.body);
 需要安装必要的一些插件
 
 ```
-npm i --save-dev babel-loader css-loader style-loader less-loader less file-loader
+npm i --save-dev babel-loader css-loader style-loader less-loader less file-loader babel-preset-stage-0 babel-preset-env
 ```
 
 然后补充上一些相关的配置
@@ -100,15 +100,24 @@ module.exports = {
                         }
                     }
                 ]
-            }
-        ],
-        loaders: [
+            },
             {
-                test: /\.(js|es6)$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['es2015']
+                test: /\.es6$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'stage-0']
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|dist)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'stage-0']
+                    }
                 }
             }
         ]
