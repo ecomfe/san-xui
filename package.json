@@ -1,7 +1,8 @@
 {
   "name": "san-xui",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "library.type": "amd",
   "library.ignore": [
     "x/demos/**",
