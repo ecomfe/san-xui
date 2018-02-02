@@ -1,0 +1,72 @@
+/**
+ * @file xui/Tree.less
+ * @author zhangzhe(zhangzhe@baidu.com)
+ */
+
+.ui-tree-x {
+    li {
+        margin-left: 1.5em;
+    }
+    .ui-tree-node-indicator-empty {
+        display: none;
+    }
+    &.ui-tree-skin-arrow,
+    &.ui-tree-skin-folder {
+        .ui-tree-node-indicator {
+            font-family: "iconfont" !important;
+            background: none;
+            font-style: normal;
+            font-size: 12px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-indent: 0;
+            &:before {
+                line-height: 14px;
+                width: 100%;
+                display: block;
+                color: #999;
+            }
+        }
+    }
+    &.ui-tree-skin-arrow {
+        .ui-tree-node-indicator-expanded:before {
+            content: "\e605";
+        }
+        .ui-tree-node-indicator-collapsed:before {
+            content: "\e63b";
+        }
+    }
+    &.ui-tree-skin-folder {
+        .ui-tree-node-indicator-empty {
+            display: block;
+            &:before {
+                content: "\e765";
+            }
+        }
+        .ui-tree-node-indicator-expanded:before {
+            color: #FBDCB9;
+            content: "\e81b";
+        }
+        .ui-tree-node-indicator-collapsed:before {
+            color: #FBDCB9;
+            content: "\e81b";
+        }
+    }
+    .ui-tree-item-content .ui-checkbox label {
+        cursor: pointer;
+    }
+
+    .ui-tree-content-wrapper:hover {
+        background-color: #EAF6FE;
+    }
+    .ui-tree-root-empty.ui-tree-node-active {
+        .ui-tree-content-wrapper {
+            border-left: 2px solid #108cee;
+            background-color: #f6f7fb;
+            padding-left: 13px;
+            &:hover {
+                background-color: #f6f7fb;
+            }
+        }
+    }
+}

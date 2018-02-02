@@ -12,7 +12,9 @@ import Loading from './Loading';
 import {asInput} from './asInput';
 
 const cx = create('ui-aceeditor');
-const kUrl = 'inf-ria/js!https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
+const kUrl = typeof window.require === 'function'
+    ? window.require.toUrl('ace-builds/ace.js').replace(/\?.*/, '')
+    : 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}">
@@ -95,7 +97,7 @@ const ACEEditor = defineComponent({
         });
     },
     attached() {
-        window.require([kUrl], () => {
+        window.require(['inf-ria/js!' + kUrl], () => {
             this.data.set('loading', false);
             this.nextTick(() => {
                 const ghost = this.ref('ghost');

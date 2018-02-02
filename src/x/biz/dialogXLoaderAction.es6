@@ -17,6 +17,7 @@ export function dialogXLoaderAction(config, payload) {
 
     const parentAction = {
         reload: () => {
+            // TODO 对于formAction的加载，不会有这个方法，只能手动增加处理
             this.refreshTable();
         },
         view: {

@@ -145,12 +145,8 @@ export default defineComponent({
         this.closeDialog();
         this.fire('ok');
     },
-    onCloseDialog(e) {
-        this.fire('beforeclose', {action: this.erAction, e});
-        // TODO 同上
-        if (e.defaultPrevented) {
-            return;
-        }
+    onCloseDialog() {
+        this.fire('beforeclose', {action: this.erAction});
         this.closeDialog();
         this.fire('close');
     }

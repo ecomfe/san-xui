@@ -1,0 +1,61 @@
+
+.ui-drawer {
+    position: fixed;
+    overflow: hidden;
+    box-shadow: -5px 0 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.98);
+
+    &-loading {
+        -webkit-filter: blur(2px); // Chrome, Opera
+        -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+
+        &:before:extend(.ui-loading-x) {
+            content: '';
+            height: 100%;
+            width: inherit;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #fff\0;
+            opacity: .8\0;
+            background-position:  center 30%;
+            background-size: 50px;
+        }
+    }
+
+    .ui-drawer-close {
+        top: 17px;
+        right: 20px;
+        cursor: pointer;
+        color: #979797;
+        position: absolute;
+
+        &:hover {
+            color: #108cee;
+        }
+    }
+
+    .ui-drawer-header {
+        color: #333;
+        font-size: 16px;
+        line-height: 50px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .ui-drawer-body {
+        width: ~'calc(100% - 40px)';
+        height: 100%;
+        overflow-y: auto;
+        position: absolute;
+        padding: 20px;
+    }
+
+    .ui-drawer-header ~ .ui-drawer-body {
+        top: 50px;
+        border-top: 1px solid #ECEFF8;
+    }
+}

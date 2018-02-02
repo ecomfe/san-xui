@@ -15,7 +15,7 @@ export default {
         return `
             <${tagName}
                 s-if="!preview"
-                type="text"
+                type="{{${prefix}.inputType}}"
                 multiline="{{${prefix}.multiline}}"
                 width="{{${prefix}.width}}"
                 placeholder="{{${prefix}.placeholder}}"

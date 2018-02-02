@@ -50,6 +50,9 @@ export const blocks = [
                 text: 'xui-as-table'
             },
             {
+                text: 'xui-as-drawer'
+            },
+            {
                 text: 'xui-subrow-table'
             },
             {
@@ -77,14 +80,16 @@ export const blocks = [
                 text: 'xui-toastlabel'
             },
             {
-                text: 'xui-tree',
-                disabled: true
+                text: 'xui-tree'
             },
             {
                 text: 'xui-infinite-scroll'
             },
             {
                 text: 'xui-userpicker'
+            },
+            {
+                text: 'xui-sticky'
             }
         ]
     },
