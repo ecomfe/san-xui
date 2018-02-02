@@ -7,70 +7,48 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 429:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 434:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_biz_helper__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _helper = __webpack_require__(75);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
 /**
  * @file demos/xui-dialog.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-<xui-button skin="primary" on-click="onShowDialog">Show Dialog</xui-button>
-
-<xui-dialog open="{=dialog.showDialog=}">
-    <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>
-    <xui-button on-click="closeTheDialog">关闭.</xui-button>
-    <xui-button on-click="openNewDialog">打开一个新的Dialog.</xui-button>
-    <xui-button on-click="showToast">show toast.</xui-button>
-    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
-</xui-dialog>
-
-<xui-dialog open="{=dialog.showDialog2=}" width="300" foot="{{false}}">
-    <xui-button on-click="closeTheDialog">关闭上一个Dialog</xui-button>
-</xui-dialog>
-</x-row>
-
-<x-row label="alert,confirm,plain">
-    <xui-button on-click="showAlertDialog">alert</xui-button>
-    <xui-button on-click="showConfirmDialog">confirm</xui-button>
-    <xui-button on-click="showPlainDialog">plain</xui-button>
-</x-row>
-
-<x-row label="AlertDialog">
-    <xui-alert-dialog open="{=alertDialogOpened=}" message="Hello Alert Dialog" />
-    <xui-button on-click="showAlertDialog2">AlertDialog Component</xui-button>
-</x-row>
-
-</template>`;
+var template = '<template>\n<x-row label="[default]">\n<xui-button skin="primary" on-click="onShowDialog">Show Dialog</xui-button>\n\n<xui-dialog open="{=dialog.showDialog=}">\n    <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>\n    <xui-button on-click="closeTheDialog">\u5173\u95ED.</xui-button>\n    <xui-button on-click="openNewDialog">\u6253\u5F00\u4E00\u4E2A\u65B0\u7684Dialog.</xui-button>\n    <xui-button on-click="showToast">show toast.</xui-button>\n    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n</xui-dialog>\n\n<xui-dialog open="{=dialog.showDialog2=}" width="300" foot="{{false}}">\n    <xui-button on-click="closeTheDialog">\u5173\u95ED\u4E0A\u4E00\u4E2ADialog</xui-button>\n</xui-dialog>\n</x-row>\n\n<x-row label="alert,confirm,plain">\n    <xui-button on-click="showAlertDialog">alert</xui-button>\n    <xui-button on-click="showConfirmDialog">confirm</xui-button>\n    <xui-button on-click="showPlainDialog">plain</xui-button>\n</x-row>\n\n<x-row label="AlertDialog">\n    <xui-alert-dialog open="{=alertDialogOpened=}" message="Hello Alert Dialog" />\n    <xui-button on-click="showAlertDialog2">AlertDialog Component</xui-button>\n</x-row>\n\n</template>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-tip': __WEBPACK_IMPORTED_MODULE_1_san_xui__["O" /* Tip */],
-        'xui-select': __WEBPACK_IMPORTED_MODULE_1_san_xui__["F" /* Select */],
-        'xui-dialog': __WEBPACK_IMPORTED_MODULE_1_san_xui__["l" /* Dialog */],
-        'xui-alert-dialog': __WEBPACK_IMPORTED_MODULE_1_san_xui__["b" /* AlertDialog */],
-        'xui-button': __WEBPACK_IMPORTED_MODULE_1_san_xui__["e" /* Button */]
+        'x-row': _Row2.default,
+        'xui-tip': _sanXui.Tip,
+        'xui-select': _sanXui.Select,
+        'xui-dialog': _sanXui.Dialog,
+        'xui-alert-dialog': _sanXui.AlertDialog,
+        'xui-button': _sanXui.Button
     },
-    initData() {
+    initData: function initData() {
         return {
             alertDialogOpened: false,
             select: {
@@ -78,150 +56,159 @@ const template = `<template>
                 multi: {
                     value: ['foo', 'bar', 'abc1', 'abc2']
                 },
-                datasource: [
-                    {text: 'foo', value: 'foo'},
-                    {text: 'bar', value: 'bar'},
-                    {text: '123', value: '123', disabled: true},
-                    {text: 'abc1', value: 'abc1'},
-                    {text: 'abc2', value: 'abc2'},
-                    {text: 'abc3', value: 'abc3'},
-                    {text: 'abc4', value: 'abc4'},
-                    {text: 'abc5', value: 'abc5'},
-                    {text: 'abc6', value: 'abc6'},
-                    {text: 'abc7', value: 'abc7'},
-                    {text: 'abc8', value: 'abc8'},
-                    {text: 'abc9', value: 'abc9'},
-                    {text: 'abc0', value: 'abc0'}
-                ]
+                datasource: [{ text: 'foo', value: 'foo' }, { text: 'bar', value: 'bar' }, { text: '123', value: '123', disabled: true }, { text: 'abc1', value: 'abc1' }, { text: 'abc2', value: 'abc2' }, { text: 'abc3', value: 'abc3' }, { text: 'abc4', value: 'abc4' }, { text: 'abc5', value: 'abc5' }, { text: 'abc6', value: 'abc6' }, { text: 'abc7', value: 'abc7' }, { text: 'abc8', value: 'abc8' }, { text: 'abc9', value: 'abc9' }, { text: 'abc0', value: 'abc0' }]
             }
         };
     },
-
-    onShowDialog() {
+    onShowDialog: function onShowDialog() {
         this.data.set('dialog.showDialog', true);
     },
-    openNewDialog() {
+    openNewDialog: function openNewDialog() {
         this.data.set('dialog.showDialog2', true);
     },
-    closeTheDialog() {
+    closeTheDialog: function closeTheDialog() {
         this.data.set('dialog.showDialog', false);
     },
-    showAlertDialog2() {
+    showAlertDialog2: function showAlertDialog2() {
         this.data.set('alertDialogOpened', true);
     },
-    showAlertDialog() {
-        Object(__WEBPACK_IMPORTED_MODULE_2_san_xui_x_biz_helper__["b" /* alert */])({message: 'Alert dialog (w=500)'})
-            .then(() => __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].success('OK'));
+    showAlertDialog: function showAlertDialog() {
+        (0, _helper.alert)({ message: 'Alert dialog (w=500)' }).then(function () {
+            return _sanXui.Toast.success('OK');
+        });
     },
-    showConfirmDialog() {
-        Object(__WEBPACK_IMPORTED_MODULE_2_san_xui_x_biz_helper__["c" /* confirm */])({message: 'Confirm dialog (w=400)', width: 400})
-            .then(() => __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].success('OK'))
-            .catch(() => __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].warning('Canceled'));
+    showConfirmDialog: function showConfirmDialog() {
+        (0, _helper.confirm)({ message: 'Confirm dialog (w=400)', width: 400 }).then(function () {
+            return _sanXui.Toast.success('OK');
+        }).catch(function () {
+            return _sanXui.Toast.warning('Canceled');
+        });
     },
-    showPlainDialog() {
-        Object(__WEBPACK_IMPORTED_MODULE_2_san_xui_x_biz_helper__["d" /* plain */])({message: 'Plain dialog (w=500)'})
-            .then(() => __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].success('OK'));
+    showPlainDialog: function showPlainDialog() {
+        (0, _helper.plain)({ message: 'Plain dialog (w=500)' }).then(function () {
+            return _sanXui.Toast.success('OK');
+        });
     },
-    showToast() {
-        __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].success('ok');
+    showToast: function showToast() {
+        _sanXui.Toast.success('ok');
     }
-}));
-
+});
 
 /***/ }),
 
 /***/ 75:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* unused harmony export asPromise */
-/* unused harmony export displayDialog */
-/* unused harmony export buildDialog */
-/* harmony export (immutable) */ __webpack_exports__["d"] = plain;
-/* harmony export (immutable) */ __webpack_exports__["b"] = alert;
-/* harmony export (immutable) */ __webpack_exports__["c"] = confirm;
-/* unused harmony export waitActionDialog */
-/* unused harmony export createPayload */
-/* unused harmony export createToolbar */
-/* unused harmony export matchAll */
-/* unused harmony export valueTransform */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_promise__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ConfirmDialog__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AlertDialog__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_PlainDialog__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_asDialog__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__LegacyActionAdapter__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Page__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Ghost__ = __webpack_require__(79);
-/**
- * @file san-xui/x/biz/helper.es6
- * @author leeight
- */
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Ghost = exports.Page = undefined;
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @file san-xui/x/biz/helper.es6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @author leeight
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
 
+exports.asPromise = asPromise;
+exports.displayDialog = displayDialog;
+exports.buildDialog = buildDialog;
+exports.plain = plain;
+exports.alert = alert;
+exports.confirm = confirm;
+exports.waitActionDialog = waitActionDialog;
+exports.createPayload = createPayload;
+exports.createToolbar = createToolbar;
+exports.matchAll = matchAll;
+exports.valueTransform = valueTransform;
 
+var _lodash = __webpack_require__(5);
 
+var _lodash2 = _interopRequireDefault(_lodash);
 
+var _moment = __webpack_require__(1);
 
+var _moment2 = _interopRequireDefault(_moment);
 
+var _promise = __webpack_require__(9);
 
+var _promise2 = _interopRequireDefault(_promise);
 
+var _ConfirmDialog = __webpack_require__(50);
 
+var _ConfirmDialog2 = _interopRequireDefault(_ConfirmDialog);
 
-const Page = __WEBPACK_IMPORTED_MODULE_8__Page__["a" /* default */];
-/* unused harmony export Page */
+var _AlertDialog = __webpack_require__(47);
 
-const Ghost = __WEBPACK_IMPORTED_MODULE_9__Ghost__["a" /* default */];
-/* harmony export (immutable) */ __webpack_exports__["a"] = Ghost;
+var _AlertDialog2 = _interopRequireDefault(_AlertDialog);
 
+var _PlainDialog = __webpack_require__(52);
+
+var _PlainDialog2 = _interopRequireDefault(_PlainDialog);
+
+var _asDialog = __webpack_require__(74);
+
+var _LegacyActionAdapter = __webpack_require__(76);
+
+var _LegacyActionAdapter2 = _interopRequireDefault(_LegacyActionAdapter);
+
+var _Page2 = __webpack_require__(77);
+
+var _Page3 = _interopRequireDefault(_Page2);
+
+var _Ghost2 = __webpack_require__(79);
+
+var _Ghost3 = _interopRequireDefault(_Ghost2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Page = exports.Page = _Page3.default;
+var Ghost = exports.Ghost = _Ghost3.default;
 
 function asPromise(dialog) {
-    return new __WEBPACK_IMPORTED_MODULE_2_promise___default.a((resolve, reject) => {
-        dialog.on('confirm', () => {
+    return new _promise2.default(function (resolve, reject) {
+        dialog.on('confirm', function () {
             resolve();
             dialog.dispose();
         });
-        dialog.on('close', () => {
+        dialog.on('close', function () {
             reject();
             dialog.dispose();
         });
     });
 }
 
-function displayDialog(DialogComponent, data = {}) {
+function displayDialog(DialogComponent) {
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
     if (typeof data === 'string') {
-        data = {message: data};
+        data = { message: data };
     }
-    const dialog = new DialogComponent({data});
+    var dialog = new DialogComponent({ data: data });
     dialog.attach(document.body);
     return asPromise(dialog);
 }
 
 function buildDialog(Klass) {
-    return Object(__WEBPACK_IMPORTED_MODULE_6__components_asDialog__["a" /* asDialog */])(Klass);
+    return (0, _asDialog.asDialog)(Klass);
 }
 
 function plain(data) {
-    return displayDialog(__WEBPACK_IMPORTED_MODULE_5__components_PlainDialog__["a" /* default */], data);
+    return displayDialog(_PlainDialog2.default, data);
 }
 
 function alert(data) {
-    return displayDialog(__WEBPACK_IMPORTED_MODULE_4__components_AlertDialog__["a" /* default */], data);
+    return displayDialog(_AlertDialog2.default, data);
 }
 
 function confirm(data) {
-    return displayDialog(__WEBPACK_IMPORTED_MODULE_3__components_ConfirmDialog__["a" /* default */], data);
+    return displayDialog(_ConfirmDialog2.default, data);
 }
 
 function waitActionDialog(dialogOptions, actionOptions) {
-    const myOptions = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.extend({
+    var myOptions = _lodash2.default.extend({
         open: true,
         width: 'auto',
         height: 'auto',
@@ -229,7 +216,7 @@ function waitActionDialog(dialogOptions, actionOptions) {
     }, dialogOptions);
     myOptions.options = actionOptions;
 
-    const component = new __WEBPACK_IMPORTED_MODULE_7__LegacyActionAdapter__["a" /* default */]({
+    var component = new _LegacyActionAdapter2.default({
         data: {
             dialog: true,
             actionOptions: myOptions
@@ -239,40 +226,42 @@ function waitActionDialog(dialogOptions, actionOptions) {
     return component;
 }
 
-
 function createPayload(payload, fields, extra) {
     // fields: ['a', 'b', 'c'] -> u.pick(payload, fields);
     // fields: ['a', ['id', 'userId'], 'c'] ->
-    const requestPayload = fields ? {} : __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.extend({}, payload);
-    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(fields, key => {
-        if (__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isArray(key)) {
-            const [a, b] = key;
+    var requestPayload = fields ? {} : _lodash2.default.extend({}, payload);
+    _lodash2.default.each(fields, function (key) {
+        if (_lodash2.default.isArray(key)) {
+            var _key = _slicedToArray(key, 2),
+                a = _key[0],
+                b = _key[1];
+
             requestPayload[b] = payload[a];
-        }
-        else if (__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isString(key)) {
+        } else if (_lodash2.default.isString(key)) {
             requestPayload[key] = payload[key];
         }
     });
-    return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.extend(requestPayload, extra);
+    return _lodash2.default.extend(requestPayload, extra);
 }
 
 function createToolbar(toolbar) {
-    return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.map(toolbar, item => {
+    return _lodash2.default.map(toolbar, function (item) {
         if (item.type === 'button') {
-            const btn = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.clone(item);
+            var btn = _lodash2.default.clone(item);
             if (btn.primary) {
                 btn.skin = 'primary';
             }
             return btn;
-        }
-        else if (item.type === 'button-group') {
-            const btnGroup = {
+        } else if (item.type === 'button-group') {
+            var btnGroup = {
                 type: item.type,
                 value: item.$value || item.buttons[0].$value,
-                datasource: __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.map(item.buttons, btn => {
-                    const {label, $value} = btn;
-                    const props = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.omit(btn, 'label', '$value');
-                    return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.extend({text: label, value: $value}, props);
+                datasource: _lodash2.default.map(item.buttons, function (btn) {
+                    var label = btn.label,
+                        $value = btn.$value;
+
+                    var props = _lodash2.default.omit(btn, 'label', '$value');
+                    return _lodash2.default.extend({ text: label, value: $value }, props);
                 })
             };
             return btnGroup;
@@ -281,12 +270,11 @@ function createToolbar(toolbar) {
     });
 }
 
-
 function matchAll(compProxy, when) {
-    const keys = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.keys(when);
-    for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        const value = when[key];
+    var keys = _lodash2.default.keys(when);
+    for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var value = when[key];
         if (compProxy.data.get(key) !== value) {
             return false;
         }
@@ -295,19 +283,18 @@ function matchAll(compProxy, when) {
 }
 
 function valueTransform(formData) {
-    const transformedData = {};
-    const keyMap = formData.__s_key || [];
-    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(formData, (v, k) => {
+    var transformedData = {};
+    var keyMap = formData.__s_key || [];
+    _lodash2.default.each(formData, function (v, k) {
         if (/^__key_(.*)$/.test(k)) {
-            const config = keyMap[+RegExp.$1];
+            var config = keyMap[+RegExp.$1];
             if (!config) {
                 return;
             }
             if (config.type === 'p') {
                 // 没有对应的 key，把 v 直接合并到 transformedData 里面去
-                __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.extend(transformedData, v);
-            }
-            else if (config.type === 'j') {
+                _lodash2.default.extend(transformedData, v);
+            } else if (config.type === 'j') {
                 // 对应的 key 是 JSON，重新处理恢复一下
                 //
                 // 针对 type: rangecalendar 的特殊情况
@@ -319,114 +306,99 @@ function valueTransform(formData) {
                 //   begin: ...,
                 //   end: ...
                 // }
-                __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(config.value, (name, valueKey) => {
-                    const value = v[valueKey];
+                _lodash2.default.each(config.value, function (name, valueKey) {
+                    var value = v[valueKey];
                     if (value != null) {
                         transformedData[name] = value;
                     }
                 });
             }
-        }
-        else if (k !== '__s_key') {
+        } else if (k !== '__s_key') {
             transformedData[k] = v;
         }
     });
 
-    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(transformedData, (v, k) => {
-        if (__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isDate(v)) {
-            transformedData[k] = __WEBPACK_IMPORTED_MODULE_1_moment___default()(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
+    _lodash2.default.each(transformedData, function (v, k) {
+        if (_lodash2.default.isDate(v)) {
+            transformedData[k] = (0, _moment2.default)(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
         }
     });
 
     return transformedData;
 }
 
-
 /***/ }),
 
 /***/ 76:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Dialog__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Button__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Toast__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ActionLoader__ = __webpack_require__(70);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(18);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Toast = __webpack_require__(56);
+
+var _Toast2 = _interopRequireDefault(_Toast);
+
+var _ActionLoader = __webpack_require__(70);
+
+var _ActionLoader2 = _interopRequireDefault(_ActionLoader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n    <ui-dialog\n        s-if="dialog"\n        s-ref="dialog"\n        open="{=actionOptions.open=}"\n        height="{{actionOptions.height}}"\n        width="{{actionOptions.width}}"\n        foot="{{foot}}"\n        on-close="onCloseDialog">\n        <span slot="head">{{actionOptions.title}}</span>\n        <ui-actionloader\n            on-actionloaded="onActionLoaded($event)"\n            url="{{actionOptions.url}}"\n            module="{{actionOptions.module}}"\n            options="{{actionOptions.options}}" />\n        <div slot="foot" s-if="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>\n            <ui-button on-click="onCloseDialog">\u53D6\u6D88</ui-button>\n        </div>\n    </ui-dialog>\n    <ui-actionloader\n        s-else\n        on-actionloaded="onActionLoaded($event)"\n        url="{{actionOptions.url}}"\n        options="{{actionOptions.options}}"\n        module="{{actionOptions.module}}" />\n</template>';
+/* eslint-enable */
+
 /**
  * @file san-xui/x/biz/LegacyActionAdapter.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-    <ui-dialog
-        s-if="dialog"
-        s-ref="dialog"
-        open="{=actionOptions.open=}"
-        height="{{actionOptions.height}}"
-        width="{{actionOptions.width}}"
-        foot="{{foot}}"
-        on-close="onCloseDialog">
-        <span slot="head">{{actionOptions.title}}</span>
-        <ui-actionloader
-            on-actionloaded="onActionLoaded($event)"
-            url="{{actionOptions.url}}"
-            module="{{actionOptions.module}}"
-            options="{{actionOptions.options}}" />
-        <div slot="foot" s-if="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>
-            <ui-button on-click="onCloseDialog">取消</ui-button>
-        </div>
-    </ui-dialog>
-    <ui-actionloader
-        s-else
-        on-actionloaded="onActionLoaded($event)"
-        url="{{actionOptions.url}}"
-        options="{{actionOptions.options}}"
-        module="{{actionOptions.module}}" />
-</template>`;
-/* eslint-enable */
-
 function isSanPage(erAction) {
     return !!(erAction && erAction.page && erAction.SanPage);
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'ui-actionloader': __WEBPACK_IMPORTED_MODULE_4__components_ActionLoader__["a" /* default */],
-        'ui-button': __WEBPACK_IMPORTED_MODULE_2__components_Button__["a" /* default */],
-        'ui-dialog': __WEBPACK_IMPORTED_MODULE_1__components_Dialog__["a" /* default */]
+        'ui-actionloader': _ActionLoader2.default,
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
     },
     dataTypes: {
-        dialog: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-        foot: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-        confirm: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].objectOf({
-            label: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-            disabled: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool
+        dialog: _san.DataTypes.bool,
+        foot: _san.DataTypes.bool,
+        confirm: _san.DataTypes.objectOf({
+            label: _san.DataTypes.string,
+            disabled: _san.DataTypes.bool
         }),
-        actionOptions: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].objectOf({
-            open: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-            width: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-            height: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].number,
-            title: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-            url: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-            module: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-            options: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].objectOf({
-                parentAction: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].object
+        actionOptions: _san.DataTypes.objectOf({
+            open: _san.DataTypes.bool,
+            width: _san.DataTypes.number,
+            height: _san.DataTypes.number,
+            title: _san.DataTypes.string,
+            url: _san.DataTypes.string,
+            module: _san.DataTypes.string,
+            options: _san.DataTypes.objectOf({
+                parentAction: _san.DataTypes.object
             })
         })
     },
-    initData() {
+    initData: function initData() {
         return {
             dialog: false,
             foot: true,
@@ -439,135 +411,111 @@ function isSanPage(erAction) {
             }
         };
     },
-    inited() {
+    inited: function inited() {
         this.erAction = null;
     },
-    closeDialog() {
+    closeDialog: function closeDialog() {
         this.data.set('actionOptions.open', false);
     },
+    onActionLoaded: function onActionLoaded(e) {
+        var _this = this;
 
-    onActionLoaded(e) {
-        const erAction = e.action;
-        const compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
-        compInstance.on('legacyactioncustomevent', e => {
-            const type = e.legacyActionFireCustomType;
+        var erAction = e.action;
+        var compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
+        compInstance.on('legacyactioncustomevent', function (e) {
+            var type = e.legacyActionFireCustomType;
             // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
-            erAction.owner ? this.fire(type, e.value) : this.dispatch(type, e.value);
+            erAction.owner ? _this.fire(type, e.value) : _this.dispatch(type, e.value);
         });
         this.erAction = erAction;
         // action加载完成调整dialog位置
         if (this.data.get('dialog')) {
             this.ref('dialog').__resize();
         }
+        this.fire('actionloaded', e);
     },
-    onConfirmDialog() {
-        const erAction = this.erAction;
-        const isSan = isSanPage(erAction);
-        const compInstance = isSan ? erAction.page.children[0] : erAction;
+    onConfirmDialog: function onConfirmDialog(e) {
+        var _this2 = this;
 
+        this.fire('beforeok', { action: this.erAction, e: e });
+        // TODO 判断默认事件是否被阻止 (ER的isDefaultPrevented)
+        if (e.defaultPrevented) {
+            return;
+        }
+        var erAction = this.erAction;
+        var isSan = isSanPage(erAction);
+        var compInstance = isSan ? erAction.page.children[0] : erAction;
         if (compInstance && typeof compInstance.doSubmit === 'function') {
             this.data.set('confirm.label', '处理中...');
             this.data.set('confirm.disabled', true);
-            return compInstance.doSubmit()
-                .then(() => {
-                    this.data.set('confirm.label', '确定');
-                    this.data.set('confirm.disabled', false);
-                    this.closeDialog();
-                })
-                .then(null, (error = {}) => {
-                    // san
-                    // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
-                    if (isSan && error.global) {
-                        __WEBPACK_IMPORTED_MODULE_3__components_Toast__["a" /* default */].error(error.global);
-                    }
+            return compInstance.doSubmit().then(function () {
+                _this2.data.set('confirm.label', '确定');
+                _this2.data.set('confirm.disabled', false);
+                _this2.closeDialog();
+                _this2.fire('ok');
+            }).then(null, function () {
+                var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-                    // er
-                    // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
-                    // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
-                    // 3. 如果后端返回message.field 指定了错误字段，因为错误都在此处处理，故执行view.notifyErrors
-                    if (!isSan && error.field) {
-                        compInstance.view && compInstance.view.notifyErrors && compInstance.view.notifyErrors(error.field);
-                    }
+                // san
+                // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
+                if (isSan && error.global) {
+                    _Toast2.default.error(error.global);
+                }
+                // er
+                // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
+                // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
+                // 3. 如果后端返回message.field 指定了错误字段，因为错误都在此处处理，故执行view.notifyErrors
+                if (!isSan && error.field) {
+                    compInstance.view && compInstance.view.notifyErrors && compInstance.view.notifyErrors(error.field);
+                }
 
-                    this.data.set('confirm.label', '确定');
-                    this.data.set('confirm.disabled', false);
-                });
+                _this2.data.set('confirm.label', '确定');
+                _this2.data.set('confirm.disabled', false);
+            });
         }
         this.closeDialog();
+        this.fire('ok');
     },
-    onCloseDialog() {
+    onCloseDialog: function onCloseDialog() {
+        this.fire('beforeclose', { action: this.erAction });
         this.closeDialog();
         this.fire('close');
     }
-}));
-
+});
 
 /***/ }),
 
 /***/ 77:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_util__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Breadcrumbs__ = __webpack_require__(78);
-/**
- * @file san-xui/x/biz/Page.es6
- * @author leeight
- */
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _san = __webpack_require__(0);
 
+var _util = __webpack_require__(2);
 
+var _Breadcrumbs = __webpack_require__(78);
 
-const cx = Object(__WEBPACK_IMPORTED_MODULE_1__components_util__["f" /* create */])('list-page');
+var _Breadcrumbs2 = _interopRequireDefault(_Breadcrumbs);
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({      // eslint-disable-line
-    template: `<div class="{{mainClass}}">
-        <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-        <div class="${cx('body')}">
-            <div class="${cx('title')}" s-if="title || navs">
-                <h2 s-if="title">{{title}}<span s-if="remark">{{remark}}</span></h2>
-                <div class="ui-tab ui-tab-x" s-elif="navs">
-                    <ul class="ui-tab-navigator">
-                        <li
-                            s-for="item in navs"
-                            class="{{item.active ? 'ui-tab-item ui-tab-item-active' : 'ui-tab-item'}}"
-                        >
-                            <a href="{{item.link}}" s-if="item.link">{{item.text}}</a>
-                            <span s-else>{{item.text}}</span>
-                        </li>
-                    </ul>
-                </div>
-                <slot name="helps" />
-            </div>
-            <div class="${cx('content')}">
-                <div class="${cx('tip')}" s-if="withTip">
-                    <slot name="tip" />
-                </div>
+var cx = (0, _util.create)('list-page'); /**
+                                          * @file san-xui/x/biz/Page.es6
+                                          * @author leeight
+                                          */
 
-                <slot name="filter" />
-
-                <div class="${cx('toolbar')}" s-if="withToolbar">
-                    <div class="${cx('tb-left')}">
-                        <slot name="tb-left" />
-                        <slot name="tb-filter" />
-                    </div>
-                    <div class="${cx('tb-right')}">
-                        <slot name="tb-right" />
-                    </div>
-                </div>
-                <slot/>
-            </div>
-        </div>
-    </div>`,
+exports.default = (0, _san.defineComponent)({ // eslint-disable-line
+    template: '<div class="{{mainClass}}">\n        <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />\n\n        <div class="' + cx('body') + '">\n            <div class="' + cx('title') + '" s-if="title || navs">\n                <h2 s-if="title">{{title}}<span s-if="remark">{{remark | raw}}</span></h2>\n                <div class="ui-tab ui-tab-x" s-elif="navs">\n                    <ul class="ui-tab-navigator">\n                        <li\n                            s-for="item in navs"\n                            class="{{item.active ? \'ui-tab-item ui-tab-item-active\' : \'ui-tab-item\'}}"\n                        >\n                            <a href="{{item.link}}" s-if="item.link">{{item.text}}</a>\n                            <span s-else>{{item.text}}</span>\n                        </li>\n                    </ul>\n                </div>\n                <slot name="helps" />\n            </div>\n            <div class="' + cx('content') + '">\n                <div class="' + cx('tip') + '" s-if="withTip">\n                    <slot name="tip" />\n                </div>\n\n                <slot name="filter" />\n\n                <div class="' + cx('toolbar') + '" s-if="withToolbar">\n                    <div class="' + cx('tb-left') + '">\n                        <slot name="tb-left" />\n                        <slot name="tb-filter" />\n                    </div>\n                    <div class="' + cx('tb-right') + '">\n                        <slot name="tb-right" />\n                    </div>\n                </div>\n                <slot/>\n            </div>\n        </div>\n    </div>',
     components: {
-        breadcrumbs: __WEBPACK_IMPORTED_MODULE_2__Breadcrumbs__["a" /* default */]
+        breadcrumbs: _Breadcrumbs2.default
     },
-    initData() {
+    initData: function initData() {
         return {
             withSidebar: false,
             withTip: false,
@@ -578,10 +526,11 @@ const cx = Object(__WEBPACK_IMPORTED_MODULE_1__components_util__["f" /* create *
             breadcrumbs: null
         };
     },
+
     computed: {
-        mainClass() {
-            const klass = [cx()];
-            const withSidebar = this.data.get('withSidebar');
+        mainClass: function mainClass() {
+            var klass = [cx()];
+            var withSidebar = this.data.get('withSidebar');
             if (withSidebar) {
                 klass.push(cx('with-sidebar'));
             }
@@ -589,76 +538,72 @@ const cx = Object(__WEBPACK_IMPORTED_MODULE_1__components_util__["f" /* create *
             return klass;
         }
     },
-    hasSlot(name) {
-        return Object(__WEBPACK_IMPORTED_MODULE_1__components_util__["g" /* hasSlot */])(this, name);
+    hasSlot: function hasSlot(name) {
+        return (0, _util.hasSlot)(this, name);
     },
-    attached() {
-        const withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');
+    attached: function attached() {
+        var withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');
         this.data.set('withToolbar', withToolbar);
     }
-}));
-
+});
 
 /***/ }),
 
 /***/ 78:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_util__ = __webpack_require__(2);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
 /**
  * @file san-xui/x/biz/Breadcrumbs.es6
  * @author leeight
  */
 
-
-
-
-
-const cx = Object(__WEBPACK_IMPORTED_MODULE_1__components_util__["f" /* create */])('ui-breadcrumbs');
+var cx = (0, _util.create)('ui-breadcrumbs');
 
 /* eslint-disable */
-const template = `<div class="${cx()}">
-    <div class="${cx('item')}" san-for="item, index in items">
-        <span class="${cx('divider')}" san-if="index > 0">/</span>
-        <a href="{{item.href}}" s-if="item.href">{{item.text}}</a>
-        <span s-else class="${cx('label')}">{{item.text}}</span>
-    </div>
-</div>`;
+var template = '<div class="' + cx() + '">\n    <div class="' + cx('item') + '" san-for="item, index in items">\n        <span class="' + cx('divider') + '" san-if="index > 0">/</span>\n        <a href="{{item.href}}" s-if="item.href">{{item.text}}</a>\n        <span s-else class="' + cx('label') + '">{{item.text}}</span>\n    </div>\n</div>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
-    initData() {
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    initData: function initData() {
         return {
             items: []
         };
     }
-}));
-
+});
 
 /***/ }),
 
 /***/ 79:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/**
- * @file biz/Ghost.es6
- * @author leeight
- */
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template: '<template><slot/></template>'
-}));
+var _san = __webpack_require__(0);
 
+exports.default = (0, _san.defineComponent)({
+  template: '<template><slot/></template>'
+}); /**
+     * @file biz/Ghost.es6
+     * @author leeight
+     */
 
 /***/ })
 
-},[429])});;
+},[434])});;

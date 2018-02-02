@@ -11,7 +11,7 @@ import {asInput} from './asInput';
 const cx = create('ui-checkbox');
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}">
+const template = `<div class="{{mainClass}}" on-click="onClick($event)">
     <label>
         <input
             type="checkbox"
@@ -57,6 +57,9 @@ const CheckBox = defineComponent({
     },
     onChange(e) {
         this.fire('change', {value: e.target.checked});
+    },
+    onClick(e) {
+        this.fire('click', e);
     }
 });
 

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([33],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([35],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,52 +7,42 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 447:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 452:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-pager size="{{pager.size}}"\n        page="{{pager.page}}"\n        count="{{pager.count}}"\n        on-change="onPagerChange($event)" />\n</x-row>\n<x-row label="back-text=\u4E0A\u4E00\u9875,forward-text=\u4E0B\u4E00\u9875">\n    <xui-pager size="{{pager.size}}"\n        with-total-count\n        page="{{pager.page}}"\n        count="{{pager.count}}"\n        back-text="\u4E0A\u4E00\u9875"\n        forward-text="\u4E0B\u4E00\u9875"\n        on-change="onPagerChange($event)" />\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-pager.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    <xui-pager size="{{pager.size}}"
-        page="{{pager.page}}"
-        count="{{pager.count}}"
-        on-change="onPagerChange($event)" />
-</x-row>
-<x-row label="back-text=上一页,forward-text=下一页">
-    <xui-pager size="{{pager.size}}"
-        with-total-count
-        page="{{pager.page}}"
-        count="{{pager.count}}"
-        back-text="上一页"
-        forward-text="下一页"
-        on-change="onPagerChange($event)" />
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-pager': __WEBPACK_IMPORTED_MODULE_1_san_xui__["x" /* Pager */]
+        'x-row': _Row2.default,
+        'xui-pager': _sanXui.Pager
     },
-    initData() {
+    initData: function initData() {
         return {
             pager: {
                 size: 10,
@@ -61,12 +51,13 @@ const template = `<template>
             }
         };
     },
-    onPagerChange({pageNo}) {
+    onPagerChange: function onPagerChange(_ref) {
+        var pageNo = _ref.pageNo;
+
         this.data.set('pager.page', pageNo);
     }
-}));
-
+});
 
 /***/ })
 
-},[447])});;
+},[452])});;

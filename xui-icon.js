@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([41],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([43],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,71 +7,66 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 439:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 444:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
 /**
  * @file demos/xui-icon.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-loading s-if="loading" />
-<div s-else>
-    <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />
-    Total count: {{filteredIcons.length}}
-    <br />
-    <x-row label="{{g.name}} ({{g.icons.length}})" s-for="g in groupedIcons">
-        <div class="icons">
-            <div s-for="icon in g.icons" class="tooltipped tooltipped-n" aria-label="{{icon}}">
-                <xui-icon name="{{icon}}" /><br />{{icon}}
-            </div>
-        </div>
-    </x-row>
-</div>
-</template>`;
+var template = '<template>\n<xui-loading s-if="loading" />\n<div s-else>\n    <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />\n    Total count: {{filteredIcons.length}}\n    <br />\n    <x-row label="{{g.name}} ({{g.icons.length}})" s-for="g in groupedIcons">\n        <div class="icons">\n            <div s-for="icon in g.icons" class="tooltipped tooltipped-n" aria-label="{{icon}}">\n                <xui-icon name="{{icon}}" /><br />{{icon}}\n            </div>\n        </div>\n    </x-row>\n</div>\n</template>';
 /* eslint-enable */
 
 function getIcons() {
-    return fetch('https://cdn.bdstatic.com/iconfont/iconfont.css')
-        .then(response => response.text())
-        .then(response => {
-            // .icon-artec:before
-            const pattern = /\.icon\-([^:]+):before/g;
-            const icons = [];
+    return fetch('https://cdn.bdstatic.com/iconfont/iconfont.css').then(function (response) {
+        return response.text();
+    }).then(function (response) {
+        // .icon-artec:before
+        var pattern = /\.icon\-([^:]+):before/g;
+        var icons = [];
 
-            let match = null;
-            while (match = pattern.exec(response)) {
-                icons.push(match[1]);
-            }
+        var match = null;
+        while (match = pattern.exec(response)) {
+            icons.push(match[1]);
+        }
 
-            icons.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-
-            return icons;
+        icons.sort(function (a, b) {
+            return a.toLowerCase().localeCompare(b.toLowerCase());
         });
+
+        return icons;
+    });
 }
 
 function groupIcons(icons) {
-    const groups = [];
+    var groups = [];
 
-    let group = null;
-    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(icons, icon => {
-        const groupName = icon.substr(0, 1).toUpperCase();
+    var group = null;
+    _lodash2.default.each(icons, function (icon) {
+        var groupName = icon.substr(0, 1).toUpperCase();
         if (!group || group.name !== groupName) {
             group = {
                 name: groupName,
@@ -85,15 +80,15 @@ function groupIcons(icons) {
     return groups;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-loading': __WEBPACK_IMPORTED_MODULE_2_san_xui__["t" /* Loading */],
-        'xui-textbox': __WEBPACK_IMPORTED_MODULE_2_san_xui__["N" /* TextBox */],
-        'xui-icon': __WEBPACK_IMPORTED_MODULE_2_san_xui__["p" /* Icon */]
+        'x-row': _Row2.default,
+        'xui-loading': _sanXui.Loading,
+        'xui-textbox': _sanXui.TextBox,
+        'xui-icon': _sanXui.Icon
     },
-    initData() {
+    initData: function initData() {
         return {
             loading: true,
             keyword: '',
@@ -101,28 +96,32 @@ function groupIcons(icons) {
             icons: []
         };
     },
+
     computed: {
-        groupedIcons() {
+        groupedIcons: function groupedIcons() {
             return groupIcons(this.data.get('filteredIcons'));
         },
-        filteredIcons() {
-            const keyword = this.data.get('keyword');
-            const icons = this.data.get('icons');
+        filteredIcons: function filteredIcons() {
+            var keyword = this.data.get('keyword');
+            var icons = this.data.get('icons');
             if (!keyword) {
                 return icons;
             }
-            return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.filter(icons, icon => icon.indexOf(keyword) !== -1);
+            return _lodash2.default.filter(icons, function (icon) {
+                return icon.indexOf(keyword) !== -1;
+            });
         }
     },
-    attached() {
-        getIcons().then(icons => {
-            this.data.set('icons', icons);
-            this.data.set('loading', false);
+    attached: function attached() {
+        var _this = this;
+
+        getIcons().then(function (icons) {
+            _this.data.set('icons', icons);
+            _this.data.set('loading', false);
         });
     }
-}));
-
+});
 
 /***/ })
 
-},[439])});;
+},[444])});;

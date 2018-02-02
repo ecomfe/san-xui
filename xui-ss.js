@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([23],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([25],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,64 +7,42 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 459:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 464:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-ss style="{{myStyle}}">\n        \u8FD9\u4E2A\u5BB9\u5668\uFF0C\u6EDA\u52A8\u5230\u5E95\u90E8\uFF0C\u4E0D\u4F1A\u5F71\u54CD\u9875\u9762\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n    </xui-ss>\n\n    <div style="{{myStyle}}">\n        \u8FD9\u4E2A\u5BB9\u5668\uFF0C\u6EDA\u52A8\u5230\u5E95\u90E8\uFF0C\u9875\u9762\u5F00\u59CB\u6EDA\u52A8\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n        <br />\n    </div>\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-ss.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    <xui-ss style="{{myStyle}}">
-        这个容器，滚动到底部，不会影响页面
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-    </xui-ss>
-
-    <div style="{{myStyle}}">
-        这个容器，滚动到底部，页面开始滚动
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-    </div>
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-ss': __WEBPACK_IMPORTED_MODULE_1_san_xui__["G" /* StopScroll */]
+        'x-row': _Row2.default,
+        'xui-ss': _sanXui.StopScroll
     },
-    initData() {
+    initData: function initData() {
         return {
             myStyle: {
                 'display': 'inline-block',
@@ -77,10 +55,8 @@ const template = `<template>
             }
         };
     }
-}));
-
-
+});
 
 /***/ })
 
-},[459])});;
+},[464])});;

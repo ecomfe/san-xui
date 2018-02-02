@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([51],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([53],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,78 +7,49 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 421:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 426:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<xui-toastlabel>\u597D\u50CF\u8DDF xui-select \u633A\u50CF\u7684</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-button-menu\n        label="Default"\n        menus="{{menus}}"\n        />\n\n    <xui-button-menu\n        label="Primary"\n        skin="primary"\n        menus="{{menus}}"\n        />\n\n    <xui-button-menu\n        label="Danger"\n        skin="danger"\n        menus="{{menus}}"\n        />\n</x-row>\n\n<x-row label="disabled">\n    <xui-button-menu\n        label="Hi"\n        disabled\n        menus="{{menus}}"\n        />\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-button-menu.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-toastlabel>好像跟 xui-select 挺像的</xui-toastlabel>
-
-<x-row label="[default]">
-    <xui-button-menu
-        label="Default"
-        menus="{{menus}}"
-        />
-
-    <xui-button-menu
-        label="Primary"
-        skin="primary"
-        menus="{{menus}}"
-        />
-
-    <xui-button-menu
-        label="Danger"
-        skin="danger"
-        menus="{{menus}}"
-        />
-</x-row>
-
-<x-row label="disabled">
-    <xui-button-menu
-        label="Hi"
-        disabled
-        menus="{{menus}}"
-        />
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-toastlabel': __WEBPACK_IMPORTED_MODULE_1_san_xui__["Q" /* ToastLabel */],
-        'xui-button-menu': __WEBPACK_IMPORTED_MODULE_1_san_xui__["f" /* ButtonMenu */]
+        'x-row': _Row2.default,
+        'xui-toastlabel': _sanXui.ToastLabel,
+        'xui-button-menu': _sanXui.ButtonMenu
     },
-    initData() {
+    initData: function initData() {
         return {
-            menus: [
-                {text: 'foo'},
-                {text: 'bar'},
-                {text: 'abc123', disabled: true},
-                {text: 'abc456'}
-            ]
+            menus: [{ text: 'foo' }, { text: 'bar' }, { text: 'abc123', disabled: true }, { text: 'abc456' }]
         };
     }
-}));
-
+});
 
 /***/ })
 
-},[421])});;
+},[426])});;

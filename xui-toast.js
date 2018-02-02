@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([16],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([17],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,53 +7,48 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 466:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 472:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+/* eslint-disable */
 /**
  * @file demos/xui-toast.es6
  * @author leeight
  */
 
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-button on-click="showToast('success')">Show Success Toast</xui-button>
-<xui-button on-click="showToast('info')">Show Info Toast</xui-button>
-<xui-button on-click="showToast('warning')">Show Warning Toast</xui-button>
-<xui-button on-click="showToast('error')">Show Error Toast</xui-button>
-</template>`;
+var template = '<template>\n<xui-button on-click="showToast(\'success\')">Show Success Toast</xui-button>\n<xui-button on-click="showToast(\'info\')">Show Info Toast</xui-button>\n<xui-button on-click="showToast(\'warning\')">Show Warning Toast</xui-button>\n<xui-button on-click="showToast(\'error\')">Show Error Toast</xui-button>\n</template>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'xui-button': __WEBPACK_IMPORTED_MODULE_1_san_xui__["e" /* Button */],
-        'xui-toast': __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */]
+        'xui-button': _sanXui.Button,
+        'xui-toast': _sanXui.Toast
     },
-    initData() {
-        return {
-        };
+    initData: function initData() {
+        return {};
     },
-    showToast(level) {
-        if (typeof __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */][level] === 'function') {
-            const message = 'This is a toast message';
-            __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */][level](message);
-        }
-        else {
+    showToast: function showToast(level) {
+        if (typeof _sanXui.Toast[level] === 'function') {
+            var message = 'This is a toast message';
+            _sanXui.Toast[level](message);
+        } else {
             alert('Unsupported toast level = ' + level);
         }
     }
-}));
-
+});
 
 /***/ })
 
-},[466])});;
+},[472])});;

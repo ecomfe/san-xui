@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([27],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([29],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,76 +7,53 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 453:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 458:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_RichTextEditor__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-richtexteditor value="{=value=}" />\n</x-row>\n\n<x-row label="options=...">\n    <xui-richtexteditor\n        options="{{options}}"\n        value="{=value=}" />\n    <strong class="large">\n        Value is: {{value}}\n    </strong>\n</x-row>\n\n<x-row label="s-if">\n    <xui-switch checked="{=show=}" />\n    <form s-if="show">\n        <xui-richtexteditor options="{{options}}" />\n    </form>\n</x-row>\n\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-richtexteditor.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    <xui-richtexteditor value="{=value=}" />
-</x-row>
-
-<x-row label="options=...">
-    <xui-richtexteditor
-        options="{{options}}"
-        value="{=value=}" />
-    <strong class="large">
-        Value is: {{value}}
-    </strong>
-</x-row>
-
-<x-row label="s-if">
-    <xui-switch checked="{=show=}" />
-    <form s-if="show">
-        <xui-richtexteditor options="{{options}}" />
-    </form>
-</x-row>
-
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-switch': __WEBPACK_IMPORTED_MODULE_1_san_xui__["H" /* Switch */],
-        'xui-richtexteditor': __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_RichTextEditor__["a" /* default */]
+        'x-row': _Row2.default,
+        'xui-switch': _sanXui.Switch,
+        'xui-richtexteditor': _sanXui.RichTextEditor
     },
-    initData() {
+    initData: function initData() {
         return {
             show: true,
             value: 'Hello world! <strong> This is the initialize content </strong>',
             options: {
-                toolbars: [
-                    [
-                        'fullscreen', 'source', '|', 'undo', 'redo', '|',
-                        'bold', 'italic', 'underline', 'fontborder', 'strikethrough'
-                    ]
-                ]
+                toolbars: [['fullscreen', 'source', '|', 'undo', 'redo', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough']]
             }
         };
     }
-}));
-
+});
 
 /***/ })
 
-},[453])});;
+},[458])});;

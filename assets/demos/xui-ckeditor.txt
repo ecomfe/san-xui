@@ -4,7 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import CKEditor from 'san-xui/x/components/CKEditor';
+import {CKEditor} from 'san-xui';
 
 import Row from './Row';
 

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([24],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([26],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,48 +7,43 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 458:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 463:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+/* eslint-disable */
 /**
  * @file demos/xui-smscode.es6
  * @author leeight
  */
 
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-smscode
-    value="{=smscode.mobile=}"
-    freeze-time="{{10}}" />
-<strong class="large">
-    Value is: {{smscode.mobile}}
-</strong>
-</template>`;
+var template = '<template>\n<xui-smscode\n    value="{=smscode.mobile=}"\n    freeze-time="{{10}}" />\n<strong class="large">\n    Value is: {{smscode.mobile}}\n</strong>\n</template>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'xui-smscode': __WEBPACK_IMPORTED_MODULE_1_san_xui__["D" /* SMSCodeBox */]
+        'xui-smscode': _sanXui.SMSCodeBox
     },
-    initData() {
+    initData: function initData() {
         return {
             smscode: {
                 mobile: '13062694617'
             }
         };
     }
-}));
-
+});
 
 /***/ })
 
-},[458])});;
+},[463])});;

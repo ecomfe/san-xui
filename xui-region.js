@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([29],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([31],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,65 +7,49 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 451:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 456:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-region value="{=value=}" />\n    <strong class="large">\n        Value is: {{value}}\n    </strong>\n</x-row>\n\n<x-row label="value">\n    <xui-region value="{=value2=}" />\n    <strong class="large">\n        Value is: {{value2}}\n    </strong>\n</x-row>\n\n<x-row label="value;disabled">\n    <xui-region disabled value="{=value2=}" />\n    <strong class="large">\n        Value is: {{value2}}\n    </strong>\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-region.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    <xui-region value="{=value=}" />
-    <strong class="large">
-        Value is: {{value}}
-    </strong>
-</x-row>
-
-<x-row label="value">
-    <xui-region value="{=value2=}" />
-    <strong class="large">
-        Value is: {{value2}}
-    </strong>
-</x-row>
-
-<x-row label="value;disabled">
-    <xui-region disabled value="{=value2=}" />
-    <strong class="large">
-        Value is: {{value2}}
-    </strong>
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-region': __WEBPACK_IMPORTED_MODULE_1_san_xui__["C" /* Region */]
+        'x-row': _Row2.default,
+        'xui-region': _sanXui.Region
     },
-    initData() {
+    initData: function initData() {
         return {
             value: [],
             value2: [110000, 110100, 110104]
         };
     }
-}));
-
+});
 
 /***/ })
 
-},[451])});;
+},[456])});;

@@ -7,89 +7,53 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 474:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 481:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_WebUploader__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n\n<x-row label="initialize error">\n    <xui-webuploader />\n</x-row>\n\n<x-row label="[default]">\n    <xui-webuploader\n        url="/api/null/upload"\n        on-accept="onAccept($event)"\n    />\n</x-row>\n\n<x-row label="hide & show">\n    <xui-button on-click="toggleUploader">{{show ? \'Hide\' : \'Show\'}}</xui-button>\n    <xui-webuploader\n        url="/api/null/upload"\n        on-accept="onAccept($event)"\n        style="{{uploaderStyle}}"\n    />\n</x-row>\n\n<x-row label="jpg,gif,png;auto-start=false;multiple=true;options=...">\n    <xui-webuploader\n        url="/api/null/upload"\n        auto-start="{{false}}"\n        multiple\n        label="\u8BF7\u9009\u62E9\u56FE\u7247"\n        options="{{uploader.options}}"\n    />\n</x-row>\n\n<x-row label="disabled">\n    <xui-switch checked="{=uploader.disabled=}" />\n    <xui-webuploader\n        disabled="{=uploader.disabled=}"\n        url="/api/null/upload"\n    />\n</x-row>\n\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-webuploader.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-
-<x-row label="initialize error">
-    <xui-webuploader />
-</x-row>
-
-<x-row label="[default]">
-    <xui-webuploader
-        url="/api/null/upload"
-        on-accept="onAccept($event)"
-    />
-</x-row>
-
-<x-row label="hide & show">
-    <xui-button on-click="toggleUploader">{{show ? 'Hide' : 'Show'}}</xui-button>
-    <xui-webuploader
-        url="/api/null/upload"
-        on-accept="onAccept($event)"
-        style="{{uploaderStyle}}"
-    />
-</x-row>
-
-<x-row label="jpg,gif,png;auto-start=false;multiple=true;options=...">
-    <xui-webuploader
-        url="/api/null/upload"
-        auto-start="{{false}}"
-        multiple
-        label="请选择图片"
-        options="{{uploader.options}}"
-    />
-</x-row>
-
-<x-row label="disabled">
-    <xui-switch checked="{=uploader.disabled=}" />
-    <xui-webuploader
-        disabled="{=uploader.disabled=}"
-        url="/api/null/upload"
-    />
-</x-row>
-
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-button': __WEBPACK_IMPORTED_MODULE_1_san_xui__["e" /* Button */],
-        'xui-switch': __WEBPACK_IMPORTED_MODULE_1_san_xui__["H" /* Switch */],
-        'xui-webuploader': __WEBPACK_IMPORTED_MODULE_2_san_xui_x_components_WebUploader__["a" /* default */]
+        'x-row': _Row2.default,
+        'xui-button': _sanXui.Button,
+        'xui-switch': _sanXui.Switch,
+        'xui-webuploader': _sanXui.WebUploader
     },
     computed: {
-        uploaderStyle() {
-            const show = this.data.get('show');
-            const style = {
+        uploaderStyle: function uploaderStyle() {
+            var show = this.data.get('show');
+            var style = {
                 display: show ? 'inline-block' : 'none'
             };
             return style;
         }
     },
-    initData() {
+    initData: function initData() {
         return {
             show: false,
             uploader: {
@@ -104,19 +68,18 @@ const template = `<template>
             }
         };
     },
-    toggleUploader() {
-        const show = this.data.get('show');
+    toggleUploader: function toggleUploader() {
+        var show = this.data.get('show');
         this.data.set('show', !show);
     },
-    onAccept(event) {
-        const ret = event.ret;
+    onAccept: function onAccept(event) {
+        var ret = event.ret;
         if (ret.success) {
-            __WEBPACK_IMPORTED_MODULE_1_san_xui__["P" /* Toast */].success('上传成功');
+            _sanXui.Toast.success('上传成功');
         }
     }
-}));
-
+});
 
 /***/ })
 
-},[474])});;
+},[481])});;

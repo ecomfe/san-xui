@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([30],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([32],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,48 +7,48 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 450:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 455:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui__ = __webpack_require__(3);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _moment = __webpack_require__(1);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<xui-rangecalendar value="{=rangecalendar.value=}" />\n<xui-rangecalendar value="{=rangecalendar.value=}" disabled="{{true}}" />\n<xui-rangecalendar value="{=rangecalendar.value=}" shortcut="{{false}}" />\n<xui-rangecalendar value="{=rangecalendar.value=}" time="{{true}}" />\n<strong class="large">\n    Value is: {{rangecalendar.value.begin | datetime(\'YYYY-MM-DD\')}} - {{rangecalendar.value.end | datetime(\'YYYY-MM-DD\')}}\n</strong>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-rangecalendar.es6
  * @author leeight
  */
 
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-rangecalendar value="{=rangecalendar.value=}" />
-<xui-rangecalendar value="{=rangecalendar.value=}" disabled="{{true}}" />
-<xui-rangecalendar value="{=rangecalendar.value=}" shortcut="{{false}}" />
-<xui-rangecalendar value="{=rangecalendar.value=}" time="{{true}}" />
-<strong class="large">
-    Value is: {{rangecalendar.value.begin | datetime('YYYY-MM-DD')}} - {{rangecalendar.value.end | datetime('YYYY-MM-DD')}}
-</strong>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'xui-rangecalendar': __WEBPACK_IMPORTED_MODULE_2_san_xui__["B" /* RangeCalendar */]
+        'xui-rangecalendar': _sanXui.RangeCalendar
     },
     filters: {
-        datetime(value, f = 'YYYY-MM-DD HH:mm:ss') {
-            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(value).format(f);
+        datetime: function datetime(value) {
+            var f = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY-MM-DD HH:mm:ss';
+
+            return (0, _moment2.default)(value).format(f);
         }
     },
-    initData() {
+    initData: function initData() {
         return {
             rangecalendar: {
                 value: {
@@ -62,9 +62,8 @@ const template = `<template>
             }
         };
     }
-}));
-
+});
 
 /***/ })
 
-},[450])});;
+},[455])});;

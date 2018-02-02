@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([37],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([39],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,52 +7,46 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 443:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 448:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]size=normal">\n    <xui-loading />\n</x-row>\n<x-row label="[default]size=middle">\n    <xui-loading size="middle" />\n</x-row>\n<x-row label="[default]size=small">\n    <xui-loading size="small" />\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-loading.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]size=normal">
-    <xui-loading />
-</x-row>
-<x-row label="[default]size=middle">
-    <xui-loading size="middle" />
-</x-row>
-<x-row label="[default]size=small">
-    <xui-loading size="small" />
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-loading': __WEBPACK_IMPORTED_MODULE_1_san_xui__["t" /* Loading */]
+        'x-row': _Row2.default,
+        'xui-loading': _sanXui.Loading
     },
-    initData() {
-        return {
-        };
+    initData: function initData() {
+        return {};
     }
-}));
-
+});
 
 /***/ })
 
-},[443])});;
+},[448])});;

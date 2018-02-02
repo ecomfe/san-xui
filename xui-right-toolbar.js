@@ -7,107 +7,98 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 454:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 459:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui_x_biz_RightToolbar__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _RightToolbar = __webpack_require__(460);
+
+var _RightToolbar2 = _interopRequireDefault(_RightToolbar);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
 /**
  * @file demos/xui-right-toolbar.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<xui-toastlabel>通过JSON配置，来生成工具栏(Toolbar)区域的组件。当前支持的类型：button, button-group, link, divider</xui-toastlabel>
-
-<x-row label="[default]">
-    <div>
-    显示搜索框：<xui-switch checked="{=withSearchbox=}" />
-    显示自定义列：<xui-switch checked="{=withTct=}" />
-    </div>
-    <hr />
-    <xui-right-toolbar
-        loading="{{disabled}}"
-
-        with-searchbox="{{withSearchbox}}"
-        searchbox-value="{{searchboxValue}}"
-        searchbox-keyword-type="{{searchboxKeywordType}}"
-        searchbox-placeholder="{{searchboxPlaceholder}}"
-        searchbox-keyword-types="{{searchboxKeywordTypes}}"
-
-        with-tct="{{withTct}}"
-        tct-value="{{tctValue}}"
-        tct-datasource="{{tctDatasource}}"
-
-        on-search="onSearch"
-        on-refresh="onRefresh"
-        on-table-columns-changed="onTableColumnsChanged"
-    />
-</x-row>
-</template>`;
+var template = '<template>\n<xui-toastlabel>\u901A\u8FC7JSON\u914D\u7F6E\uFF0C\u6765\u751F\u6210\u5DE5\u5177\u680F(Toolbar)\u533A\u57DF\u7684\u7EC4\u4EF6\u3002\u5F53\u524D\u652F\u6301\u7684\u7C7B\u578B\uFF1Abutton, button-group, link, divider</xui-toastlabel>\n\n<x-row label="[default]">\n    <div>\n    \u663E\u793A\u641C\u7D22\u6846\uFF1A<xui-switch checked="{=withSearchbox=}" />\n    \u663E\u793A\u81EA\u5B9A\u4E49\u5217\uFF1A<xui-switch checked="{=withTct=}" />\n    </div>\n    <hr />\n    <xui-right-toolbar\n        loading="{{disabled}}"\n\n        with-searchbox="{{withSearchbox}}"\n        searchbox-value="{{searchboxValue}}"\n        searchbox-keyword-type="{{searchboxKeywordType}}"\n        searchbox-placeholder="{{searchboxPlaceholder}}"\n        searchbox-keyword-types="{{searchboxKeywordTypes}}"\n\n        with-tct="{{withTct}}"\n        tct-value="{{tctValue}}"\n        tct-datasource="{{tctDatasource}}"\n\n        on-search="onSearch"\n        on-refresh="onRefresh"\n        on-table-columns-changed="onTableColumnsChanged"\n    />\n</x-row>\n</template>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-switch': __WEBPACK_IMPORTED_MODULE_2_san_xui__["H" /* Switch */],
-        'xui-right-toolbar': __WEBPACK_IMPORTED_MODULE_1_san_xui_x_biz_RightToolbar__["a" /* default */],
-        'xui-toastlabel': __WEBPACK_IMPORTED_MODULE_2_san_xui__["Q" /* ToastLabel */]
+        'x-row': _Row2.default,
+        'xui-switch': _sanXui.Switch,
+        'xui-right-toolbar': _RightToolbar2.default,
+        'xui-toastlabel': _sanXui.ToastLabel
     },
-    initData() {
+    initData: function initData() {
         return {
             withSearchbox: true,
             searchboxValue: '默认值',
             searchboxPlaceholder: 'searchboxPlaceholder',
             searchboxKeywordType: 'FOO',
-            searchboxKeywordTypes: [
-                {text: '--BAR--', value: 'BAR'},
-                {text: '--FOO--', value: 'FOO'}
-            ],
+            searchboxKeywordTypes: [{ text: '--BAR--', value: 'BAR' }, { text: '--FOO--', value: 'FOO' }],
             withTct: true,
             tctValue: ['name', 'age', 'gender'],
-            tctDatasource: [
-                {text: '姓名', value: 'name'},
-                {text: '年龄', value: 'age'},
-                {text: '性别', value: 'gender'}
-            ]
+            tctDatasource: [{ text: '姓名', value: 'name' }, { text: '年龄', value: 'age' }, { text: '性别', value: 'gender' }]
         };
     },
-    onSearch() {
-        __WEBPACK_IMPORTED_MODULE_2_san_xui__["P" /* Toast */].normal('onSearch');
+    onSearch: function onSearch() {
+        _sanXui.Toast.normal('onSearch');
     },
-    onRefresh() {
-        __WEBPACK_IMPORTED_MODULE_2_san_xui__["P" /* Toast */].normal('onRefresh');
+    onRefresh: function onRefresh() {
+        _sanXui.Toast.normal('onRefresh');
     },
-    onTableColumnsChanged() {
-        __WEBPACK_IMPORTED_MODULE_2_san_xui__["P" /* Toast */].normal('onTableColumnsChanged');
+    onTableColumnsChanged: function onTableColumnsChanged() {
+        _sanXui.Toast.normal('onTableColumnsChanged');
     }
-}));
-
+});
 
 /***/ }),
 
-/***/ 455:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 460:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_TableColumnToggle__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SearchBox__ = __webpack_require__(42);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _TableColumnToggle = __webpack_require__(218);
+
+var _TableColumnToggle2 = _interopRequireDefault(_TableColumnToggle);
+
+var _SearchBox = __webpack_require__(42);
+
+var _SearchBox2 = _interopRequireDefault(_SearchBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="{=searchboxValue=}"\n    keyword-type="{=searchboxKeywordType=}"\n    placeholder="{{searchboxPlaceholder}}"\n    datasource="{{searchboxKeywordTypes}}"\n    on-search="onSearch"\n/>\n\n<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />\n\n<ui-table-column-toggle\n    s-if="withTct"\n    on-change="onTableColumnsChanged"\n    layer-align="right"\n    layer-offset-left="{{0}}"\n    value="{=tctValue=}"\n    datasource="{{tctDatasource}}"\n    />\n</template>';
+/* eslint-enable */
+
 /**
  * 右侧工具条的区域，包括 SearchBox, RefreshButton, 自定义表格列的按钮
  *
@@ -115,66 +106,36 @@ const template = `<template>
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<ui-searchbox
-    s-if="withSearchbox"
-    value="{=searchboxValue=}"
-    keyword-type="{=searchboxKeywordType=}"
-    placeholder="{{searchboxPlaceholder}}"
-    datasource="{{searchboxKeywordTypes}}"
-    on-search="onSearch"
-/>
-
-<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />
-
-<ui-table-column-toggle
-    s-if="withTct"
-    on-change="onTableColumnsChanged"
-    layer-align="right"
-    layer-offset-left="{{0}}"
-    value="{=tctValue=}"
-    datasource="{{tctDatasource}}"
-    />
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'ui-table-column-toggle': __WEBPACK_IMPORTED_MODULE_1__components_TableColumnToggle__["a" /* default */],
-        'ui-searchbox': __WEBPACK_IMPORTED_MODULE_2__components_SearchBox__["a" /* default */]
+        'ui-table-column-toggle': _TableColumnToggle2.default,
+        'ui-searchbox': _SearchBox2.default
     },
     dataTypes: {
-        loading: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
+        loading: _san.DataTypes.bool,
 
-        withSearchbox: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-        searchboxValue: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].any,
-        searchboxKeywordType: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-        searchboxPlaceholder: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].string,
-        searchboxKeywordTypes: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].array,
+        withSearchbox: _san.DataTypes.bool,
+        searchboxValue: _san.DataTypes.any,
+        searchboxKeywordType: _san.DataTypes.string,
+        searchboxPlaceholder: _san.DataTypes.string,
+        searchboxKeywordTypes: _san.DataTypes.array,
 
-        withTct: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].bool,
-        tctValue: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].any,
-        tctDatasource: __WEBPACK_IMPORTED_MODULE_0_san__["DataTypes"].array
+        withTct: _san.DataTypes.bool,
+        tctValue: _san.DataTypes.any,
+        tctDatasource: _san.DataTypes.array
     },
-    onSearch() {
+    onSearch: function onSearch() {
         this.fire('search');
     },
-    onRefresh() {
+    onRefresh: function onRefresh() {
         this.fire('refresh');
     },
-    onTableColumnsChanged() {
+    onTableColumnsChanged: function onTableColumnsChanged() {
         this.fire('table-columns-changed');
     }
-}));
-
+});
 
 /***/ })
 
-},[454])});;
+},[459])});;

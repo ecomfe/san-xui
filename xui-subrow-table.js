@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([22],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([23],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,171 +7,110 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 460:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 466:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_promise__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Row__ = __webpack_require__(4);
-/**
- * @file demos/xui-subrow-table.es6
- * @author huangyunzhi(huangyunzhi@baidu.com)
- */
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _lodash = __webpack_require__(5);
 
+var _lodash2 = _interopRequireDefault(_lodash);
 
+var _promise = __webpack_require__(9);
 
+var _promise2 = _interopRequireDefault(_promise);
 
+var _san = __webpack_require__(0);
 
-const kTableColumns = [
-    {name: 'name', label: '姓名', labelClassName: 'col-name'},
-    {name: 'age', label: '年龄', sortable: true},
-    {name: 'gender', label: '性别', sortable: true}
-];
+var _sanXui = __webpack_require__(3);
 
-const template = `
-<template>
+var _Row = __webpack_require__(4);
 
-<xui-toastlabel>
-    有时候后端为了性能不会把subrow的内容一次性给出，所以提供了on-subrow-expand方法和on-subrow-collapse方法，可以在每次展开时请求数据从而提升体验
-</xui-toastlabel>
+var _Row2 = _interopRequireDefault(_Row);
 
-<x-row label="[default]">
-    <xui-table
-        datasource="{{table.datasource}}"
-        hasSubrow="{{table.hasSubrow}}"
-        on-subrow-expand="onSubrowExpand"
-        expandedIndex="{=_table1ExpandedIndex=}"
-        on-subrow-collapse="onSubrowCollapse"
-        schema="{{table.schema}}"
-    >
-        <div slot="sub-foo" class="subrow-content-row">
-            <xui-table
-                datasource="{{table.datasource}}"
-                schema="{{table.schema}}"
-                hasSubrow="{{table.hasSubrow}}"
-            >
-                <div slot="c-gender">
-                    <xui-button on-click="incAge(rowIndex)">{{row.gender}}, CLICK TO INC THE AGE</xui-button>
-                </div>
-            </xui-table>
-        </div>
-        <div slot="sub-bar">
-            <div class="ui-table-subrow">
-                <div class="row">姓名：{{row.name}}</div>
-                <div class="row">年龄：{{row.age}}</div>
-                <div class="row">性别：{{row.gender}}</div>
-                <div class="row">爱好：{{subrow.like}}</div>
-                <div class="row">技能：{{subrow.skills}}</div>
-            </div>
-        </div> 
-        <div slot="sub-xxx">
-            <div class="ui-table-subrow">
-                <xui-loading s-if="row.xui__loading"></xui-loading>
-                <strong s-else class="large">
-                    This row.subrowData is: {{row.subrowData}}!
-                </strong>
-            </div>
-        </div>
-    </xui-table>
-</x-row>
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<x-row label="[select=multi hasSubrow=true]">
-    <xui-table
-        datasource="{{table.datasource}}"
-        hasSubrow="{{table.hasSubrow}}"
-        select="{{table.select}}"
-        expandedIndex="{=table.expandedIndex=}"
-        on-selected-change="onSelectedChange"
-        schema="{{table.schema}}"
-    >
-        <div slot="c-name" on-click="onClick(rowIndex)">{{row.name}}</div>
-        <div slot="sub-foo" class="subrow-content-row">
-            <div class="ui-table-subrow">
-                <strong class="large">The selectedIndex is {{selectedIndex}}</strong>
-            </div>
-        </div>
-    </xui-table>
-</x-row>
+var kTableColumns = [{ name: 'name', label: '姓名', labelClassName: 'col-name' }, { name: 'age', label: '年龄', sortable: true }, { name: 'gender', label: '性别', sortable: true }]; /**
+                                                                                                                                                                                 * @file demos/xui-subrow-table.es6
+                                                                                                                                                                                 * @author huangyunzhi(huangyunzhi@baidu.com)
+                                                                                                                                                                                 */
 
-</template>
-`;
+var template = '\n<template>\n\n<xui-toastlabel>\n    \u6709\u65F6\u5019\u540E\u7AEF\u4E3A\u4E86\u6027\u80FD\u4E0D\u4F1A\u628Asubrow\u7684\u5185\u5BB9\u4E00\u6B21\u6027\u7ED9\u51FA\uFF0C\u6240\u4EE5\u63D0\u4F9B\u4E86on-subrow-expand\u65B9\u6CD5\u548Con-subrow-collapse\u65B9\u6CD5\uFF0C\u53EF\u4EE5\u5728\u6BCF\u6B21\u5C55\u5F00\u65F6\u8BF7\u6C42\u6570\u636E\u4ECE\u800C\u63D0\u5347\u4F53\u9A8C\n</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-table\n        datasource="{{table.datasource}}"\n        hasSubrow="{{table.hasSubrow}}"\n        on-subrow-expand="onSubrowExpand"\n        expandedIndex="{=_table1ExpandedIndex=}"\n        on-subrow-collapse="onSubrowCollapse"\n        schema="{{table.schema}}"\n    >\n        <div slot="sub-foo" class="subrow-content-row">\n            <xui-table\n                datasource="{{table.datasource}}"\n                schema="{{table.schema}}"\n                hasSubrow="{{table.hasSubrow}}"\n            >\n                <div slot="c-gender">\n                    <xui-button on-click="incAge(rowIndex)">{{row.gender}}, CLICK TO INC THE AGE</xui-button>\n                </div>\n            </xui-table>\n        </div>\n        <div slot="sub-bar">\n            <div class="ui-table-subrow">\n                <div class="row">\u59D3\u540D\uFF1A{{row.name}}</div>\n                <div class="row">\u5E74\u9F84\uFF1A{{row.age}}</div>\n                <div class="row">\u6027\u522B\uFF1A{{row.gender}}</div>\n                <div class="row">\u7231\u597D\uFF1A{{subrow.like}}</div>\n                <div class="row">\u6280\u80FD\uFF1A{{subrow.skills}}</div>\n            </div>\n        </div> \n        <div slot="sub-xxx">\n            <div class="ui-table-subrow">\n                <xui-loading s-if="row.xui__loading"></xui-loading>\n                <strong s-else class="large">\n                    This row.subrowData is: {{row.subrowData}}!\n                </strong>\n            </div>\n        </div>\n    </xui-table>\n</x-row>\n\n<x-row label="[select=multi hasSubrow=true]">\n    <xui-table\n        datasource="{{table.datasource}}"\n        hasSubrow="{{table.hasSubrow}}"\n        select="{{table.select}}"\n        expandedIndex="{=table.expandedIndex=}"\n        on-selected-change="onSelectedChange"\n        schema="{{table.schema}}"\n    >\n        <div slot="c-name" on-click="onClick(rowIndex)">{{row.name}}</div>\n        <div slot="sub-foo" class="subrow-content-row">\n            <div class="ui-table-subrow">\n                <strong class="large">The selectedIndex is {{selectedIndex}}</strong>\n            </div>\n        </div>\n    </xui-table>\n</x-row>\n\n</template>\n';
 
 function delay(payload, ms) {
-    return new __WEBPACK_IMPORTED_MODULE_1_promise___default.a(resolve => setTimeout(() => resolve(payload), ms));
+    return new _promise2.default(function (resolve) {
+        return setTimeout(function () {
+            return resolve(payload);
+        }, ms);
+    });
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_4__Row__["a" /* default */],
-        'xui-toastlabel': __WEBPACK_IMPORTED_MODULE_3_san_xui__["Q" /* ToastLabel */],
-        'xui-button': __WEBPACK_IMPORTED_MODULE_3_san_xui__["e" /* Button */],
-        'xui-table': __WEBPACK_IMPORTED_MODULE_3_san_xui__["L" /* Table */],
-        'xui-loading': __WEBPACK_IMPORTED_MODULE_3_san_xui__["t" /* Loading */]
+        'x-row': _Row2.default,
+        'xui-toastlabel': _sanXui.ToastLabel,
+        'xui-button': _sanXui.Button,
+        'xui-table': _sanXui.Table,
+        'xui-loading': _sanXui.Loading
     },
     filters: {
-        stringify(value) {
+        stringify: function stringify(value) {
             return JSON.stringify(value);
         }
     },
-    initData() {
+    initData: function initData() {
         return {
             table: {
                 schema: kTableColumns,
                 hasSubrow: true,
                 expandedIndex: [0],
                 select: 'multi',
-                datasource: [
-                    {name: 'foo', age: 10, gender: 'M'},
-                    {name: 'bar', age: 20, gender: 'F', subrow: {like: '写代码', skills: ['javascript', 'er', 'san']}},
-                    {name: 'xxx', age: 20, gender: '未知'}
-                ]
+                datasource: [{ name: 'foo', age: 10, gender: 'M' }, { name: 'bar', age: 20, gender: 'F', subrow: { like: '写代码', skills: ['javascript', 'er', 'san'] } }, { name: 'xxx', age: 20, gender: '未知' }]
             },
             _table1ExpandedIndex: [0],
             selectedIndex: []
         };
     },
-    incAge(rowIndex) {
-        const key = `table.datasource[${rowIndex}].age`;
-        const age = this.data.get(key);
+    incAge: function incAge(rowIndex) {
+        var key = 'table.datasource[' + rowIndex + '].age';
+        var age = this.data.get(key);
         this.data.set(key, age + 10);
     },
-    onSubrowExpand({rowIndex}) {
-        __WEBPACK_IMPORTED_MODULE_3_san_xui__["P" /* Toast */].success('Expand Subrow!');
+    onSubrowExpand: function onSubrowExpand(_ref) {
+        var _this = this;
+
+        var rowIndex = _ref.rowIndex;
+
+        _sanXui.Toast.success('Expand Subrow!');
         if (rowIndex === 2) {
-            this.data.set(`table.datasource[${rowIndex}].xui__loading`, true);
-            delay(rowIndex, 2000).then(data => {
-                this.data.set(`table.datasource[${rowIndex}].xui__loading`, false);
-                this.data.set(`table.datasource[${rowIndex}].subrowData`, data);
+            this.data.set('table.datasource[' + rowIndex + '].xui__loading', true);
+            delay(rowIndex, 2000).then(function (data) {
+                _this.data.set('table.datasource[' + rowIndex + '].xui__loading', false);
+                _this.data.set('table.datasource[' + rowIndex + '].subrowData', data);
             });
         }
     },
-    onSubrowCollapse({rowIndex}) {
-        __WEBPACK_IMPORTED_MODULE_3_san_xui__["P" /* Toast */].success(`Collapse ${rowIndex}th Subrow!`);
+    onSubrowCollapse: function onSubrowCollapse(_ref2) {
+        var rowIndex = _ref2.rowIndex;
+
+        _sanXui.Toast.success('Collapse ' + rowIndex + 'th Subrow!');
     },
-    onSelectedChange(e) {
-        __WEBPACK_IMPORTED_MODULE_3_san_xui__["P" /* Toast */].success('Open the subrow and see change!');
+    onSelectedChange: function onSelectedChange(e) {
+        _sanXui.Toast.success('Open the subrow and see change!');
         this.data.set('selectedIndex', e.selectedIndex);
     },
-    onClick(rowIndex) {
-        const expandedIndex = this.data.get('table.expandedIndex');
-        __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.indexOf(expandedIndex, rowIndex) > -1
-            ? this.data.remove('table.expandedIndex', rowIndex)
-            : this.data.push('table.expandedIndex', rowIndex);
+    onClick: function onClick(rowIndex) {
+        var expandedIndex = this.data.get('table.expandedIndex');
+        _lodash2.default.indexOf(expandedIndex, rowIndex) > -1 ? this.data.remove('table.expandedIndex', rowIndex) : this.data.push('table.expandedIndex', rowIndex);
     }
-}));
-
+});
 
 /***/ })
 
-},[460])});;
+},[466])});;

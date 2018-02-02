@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([39],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([41],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,95 +7,63 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 441:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 446:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _promise = __webpack_require__(9);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
 /**
  * @file demos/xui-instanteditor.es6
  * @author leeight
  */
 
-
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    <table border="1" cellpadding="5" class="bordered-table">
-        <tbody>
-            <tr>
-                <th width="50px">名称</th>
-                <td>
-                    {{formData.name}}
-                    <xui-instanteditor
-                        active="{=active.name=}"
-                        submiting="{=submiting.name=}"
-                        error="{=error.name=}"
-                        on-submit="onInstantEditSubmit($event, 'name')">
-                        <xui-textbox value="{{formData.name}}" />
-                    </xui-instanteditor>
-                </td>
-            </tr>
-            <tr>
-                <th>描述</th>
-                <td>
-                    {{formData.description}}
-                    <xui-instanteditor
-                        active="{=active.description=}"
-                        submiting="{=submiting.description=}"
-                        error="{=error.description=}"
-                        on-submit="onInstantEditSubmit($event, 'description')">
-                        <xui-select
-                            datasource="{{ee.datasource}}"
-                            value="{{formData.description}}" />
-                    </xui-instanteditor>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</x-row>
-</template>`;
+var template = '<template>\n<x-row label="[default]">\n    <table border="1" cellpadding="5" class="bordered-table">\n        <tbody>\n            <tr>\n                <th width="50px">\u540D\u79F0</th>\n                <td>\n                    {{formData.name}}\n                    <xui-instanteditor\n                        active="{=active.name=}"\n                        submiting="{=submiting.name=}"\n                        error="{=error.name=}"\n                        on-submit="onInstantEditSubmit($event, \'name\')">\n                        <xui-textbox value="{{formData.name}}" />\n                    </xui-instanteditor>\n                </td>\n            </tr>\n            <tr>\n                <th>\u63CF\u8FF0</th>\n                <td>\n                    {{formData.description}}\n                    <xui-instanteditor\n                        active="{=active.description=}"\n                        submiting="{=submiting.description=}"\n                        error="{=error.description=}"\n                        on-submit="onInstantEditSubmit($event, \'description\')">\n                        <xui-select\n                            datasource="{{ee.datasource}}"\n                            value="{{formData.description}}" />\n                    </xui-instanteditor>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</x-row>\n</template>';
 /* eslint-enable */
 
 function doSubmit(key, value) {
-    return new __WEBPACK_IMPORTED_MODULE_0_promise___default.a((resolve, reject) => {
-        setTimeout(() => {
+    return new _promise2.default(function (resolve, reject) {
+        setTimeout(function () {
             if (Math.random() >= .8) {
                 reject(new Error('RANDOM error happened!'));
-            }
-            else {
+            } else {
                 resolve();
             }
         }, 1000);
     });
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
-        'xui-textbox': __WEBPACK_IMPORTED_MODULE_2_san_xui__["N" /* TextBox */],
-        'xui-select': __WEBPACK_IMPORTED_MODULE_2_san_xui__["F" /* Select */],
-        'xui-instanteditor': __WEBPACK_IMPORTED_MODULE_2_san_xui__["r" /* InstantEditor */]
+        'x-row': _Row2.default,
+        'xui-textbox': _sanXui.TextBox,
+        'xui-select': _sanXui.Select,
+        'xui-instanteditor': _sanXui.InstantEditor
     },
-    initData() {
+    initData: function initData() {
         return {
             ee: {
-                datasource: [
-                    {text: 'Option 1', value: 'foo'},
-                    {text: 'Option 2', value: 'bar'}
-                ]
+                datasource: [{ text: 'Option 1', value: 'foo' }, { text: 'Option 2', value: 'bar' }]
             },
             formData: {
                 name: 'i-5cSGjffb',
@@ -103,22 +71,23 @@ function doSubmit(key, value) {
             }
         };
     },
-    onInstantEditSubmit({value}, key) {
-        this.data.set(`submiting.${key}`, true);
-        doSubmit(key, value)
-            .then(() => {
-                this.data.set(`submiting.${key}`, false);
-                this.data.set(`active.${key}`, false);
-                this.data.set(`formData.${key}`, value);
-            })
-            .catch(error => {
-                this.data.set(`submiting.${key}`, false);
-                this.data.set(`error.${key}`, error);
-            });
-    }
-}));
+    onInstantEditSubmit: function onInstantEditSubmit(_ref, key) {
+        var _this = this;
 
+        var value = _ref.value;
+
+        this.data.set('submiting.' + key, true);
+        doSubmit(key, value).then(function () {
+            _this.data.set('submiting.' + key, false);
+            _this.data.set('active.' + key, false);
+            _this.data.set('formData.' + key, value);
+        }).catch(function (error) {
+            _this.data.set('submiting.' + key, false);
+            _this.data.set('error.' + key, error);
+        });
+    }
+});
 
 /***/ })
 
-},[441])});;
+},[446])});;

@@ -7,61 +7,54 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 473:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 480:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n\n<xui-toastlabel>\u57FA\u4E8E vse.baidu.com \u63D0\u4F9B\u7684\u670D\u52A1\u5B9E\u73B0\u8BED\u97F3\u8BC6\u522B\uFF0C\u8DDF\u767E\u5EA6PC\u7248\u672C\u9996\u9875\u7684\u5B9E\u73B0\u65B9\u6848\u4E00\u81F4\u3002</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-voice on-change="onChange" />\n    <strong class="large">\n    TEXT: {{voiceText}}\n    </strong>\n</x-row>\n\n<x-row label="error">\n    <xui-voice error="\u521D\u59CB\u5316\u5931\u8D25" />\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-voice.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-
-<xui-toastlabel>基于 vse.baidu.com 提供的服务实现语音识别，跟百度PC版本首页的实现方案一致。</xui-toastlabel>
-
-<x-row label="[default]">
-    <xui-voice on-change="onChange" />
-    <strong class="large">
-    TEXT: {{voiceText}}
-    </strong>
-</x-row>
-
-<x-row label="error">
-    <xui-voice error="初始化失败" />
-</x-row>
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-voice': __WEBPACK_IMPORTED_MODULE_1_san_xui__["U" /* Voice */],
-        'xui-toastlabel': __WEBPACK_IMPORTED_MODULE_1_san_xui__["Q" /* ToastLabel */]
+        'x-row': _Row2.default,
+        'xui-voice': _sanXui.Voice,
+        'xui-toastlabel': _sanXui.ToastLabel
     },
-    initData() {
+    initData: function initData() {
         return {
             voiceText: null
         };
     },
-    onChange({value}) {
+    onChange: function onChange(_ref) {
+        var value = _ref.value;
+
         this.data.set('voiceText', value.text);
     }
-}));
-
+});
 
 /***/ })
 
-},[473])});;
+},[480])});;

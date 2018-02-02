@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([20],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([21],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,129 +7,64 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 462:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 468:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n<xui-tab>\n    <xui-tab-panel title="\u56FE\u7247\u5904\u7406">\n        <xui-button>\u56FE\u7247\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u56FE\u50CF\u5BA1\u6838">\n        <xui-button>\u56FE\u50CF\u5BA1\u6838</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u97F3\u89C6\u9891\u5904\u7406">\n        <xui-button>\u97F3\u89C6\u9891\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="Android\u6279\u91CF\u6253\u5305">\n        <xui-monthview />\n    </xui-tab-panel>\n</xui-tab>\n</x-row>\n\n<x-row label="[skin=card]">\n<xui-tab skin="card">\n    <xui-tab-panel title="\u56FE\u7247\u5904\u7406">\n        <xui-button>\u56FE\u7247\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u56FE\u50CF\u5BA1\u6838">\n        <xui-button>\u56FE\u50CF\u5BA1\u6838</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u97F3\u89C6\u9891\u5904\u7406">\n        <xui-button>\u97F3\u89C6\u9891\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="Android\u6279\u91CF\u6253\u5305">\n        <xui-monthview />\n    </xui-tab-panel>\n</xui-tab>\n</x-row>\n\n<x-row label="[skin=sub]">\n<xui-tab skin="sub">\n    <xui-tab-panel title="\u56FE\u7247\u5904\u7406">\n        <xui-button>\u56FE\u7247\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u56FE\u50CF\u5BA1\u6838">\n        <xui-button>\u56FE\u50CF\u5BA1\u6838</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u97F3\u89C6\u9891\u5904\u7406">\n        <xui-button>\u97F3\u89C6\u9891\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="Android\u6279\u91CF\u6253\u5305">\n        <xui-monthview />\n    </xui-tab-panel>\n</xui-tab>\n</x-row>\n\n<x-row label="dynamic tabs">\n<xui-button on-click="toggleTab" skin="primary">Toggle Tab</xui-button>\n<br/>\n<br/>\n<xui-tab s-ref="tab">\n    <xui-tab-panel title="\u56FE\u7247\u5904\u7406">\n        <xui-button>\u56FE\u7247\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u56FE\u50CF\u5BA1\u6838">\n        <xui-button>\u56FE\u50CF\u5BA1\u6838</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="\u97F3\u89C6\u9891\u5904\u7406" s-if="show">\n        <xui-button>\u97F3\u89C6\u9891\u5904\u7406</xui-button>\n    </xui-tab-panel>\n    <xui-tab-panel title="Android\u6279\u91CF\u6253\u5305">\n        <xui-monthview />\n    </xui-tab-panel>\n</xui-tab>\n</x-row>\n\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-tab.es6
  * @author leeight
  */
 
-
-
-
-
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-<xui-tab>
-    <xui-tab-panel title="图片处理">
-        <xui-button>图片处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="图像审核">
-        <xui-button>图像审核</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="音视频处理">
-        <xui-button>音视频处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="Android批量打包">
-        <xui-monthview />
-    </xui-tab-panel>
-</xui-tab>
-</x-row>
-
-<x-row label="[skin=card]">
-<xui-tab skin="card">
-    <xui-tab-panel title="图片处理">
-        <xui-button>图片处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="图像审核">
-        <xui-button>图像审核</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="音视频处理">
-        <xui-button>音视频处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="Android批量打包">
-        <xui-monthview />
-    </xui-tab-panel>
-</xui-tab>
-</x-row>
-
-<x-row label="[skin=sub]">
-<xui-tab skin="sub">
-    <xui-tab-panel title="图片处理">
-        <xui-button>图片处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="图像审核">
-        <xui-button>图像审核</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="音视频处理">
-        <xui-button>音视频处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="Android批量打包">
-        <xui-monthview />
-    </xui-tab-panel>
-</xui-tab>
-</x-row>
-
-<x-row label="dynamic tabs">
-<xui-button on-click="toggleTab" skin="primary">Toggle Tab</xui-button>
-<br/>
-<br/>
-<xui-tab s-ref="tab">
-    <xui-tab-panel title="图片处理">
-        <xui-button>图片处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="图像审核">
-        <xui-button>图像审核</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="音视频处理" s-if="show">
-        <xui-button>音视频处理</xui-button>
-    </xui-tab-panel>
-    <xui-tab-panel title="Android批量打包">
-        <xui-monthview />
-    </xui-tab-panel>
-</xui-tab>
-</x-row>
-
-</template>`;
-/* eslint-enable */
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-button': __WEBPACK_IMPORTED_MODULE_1_san_xui__["e" /* Button */],
-        'xui-monthview': __WEBPACK_IMPORTED_MODULE_1_san_xui__["u" /* MonthView */],
-        'xui-tab': __WEBPACK_IMPORTED_MODULE_1_san_xui__["J" /* Tab */],
-        'xui-tab-panel': __WEBPACK_IMPORTED_MODULE_1_san_xui__["K" /* TabPanel */]
+        'x-row': _Row2.default,
+        'xui-button': _sanXui.Button,
+        'xui-monthview': _sanXui.MonthView,
+        'xui-tab': _sanXui.Tab,
+        'xui-tab-panel': _sanXui.TabPanel
     },
-    initData() {
+    initData: function initData() {
         return {
             show: false
         };
     },
-    toggleTab() {
-        const show = this.data.get('show');
+    toggleTab: function toggleTab() {
+        var _this = this;
+
+        var show = this.data.get('show');
         this.data.set('show', !show);
-        Object(__WEBPACK_IMPORTED_MODULE_0_san__["nextTick"])(() => {
-            const tab = this.ref('tab');
+        (0, _san.nextTick)(function () {
+            var tab = _this.ref('tab');
             if (tab) {
                 // XXX(leeight) 临时解决方案
                 tab.refreshTabs();
             }
         });
     }
-}));
-
+});
 
 /***/ })
 
-},[462])});;
+},[468])});;

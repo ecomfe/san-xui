@@ -7,90 +7,68 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 471:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 478:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_san___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_san__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_san_xui__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__(4);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _Row = __webpack_require__(4);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function searchRequester(keyword) {
+    return fetch('https://randomuser.me/api/?results=5').then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        var results = response.results;
+        return results.map(function (o) {
+            // 必须要有 accountId 和 username 两个属性
+            o.accountId = o.email;
+            o.username = o.name.first + ' ' + o.name.last;
+            return o;
+        });
+    });
+}
+
+/* eslint-disable */
 /**
  * @file demos/xui-userpicker.es6
  * @author leeight
  */
 
-
-
-
-
-
-function searchRequester(keyword) {
-    return fetch('https://randomuser.me/api/?results=5')
-        .then(response => response.json())
-        .then(response => {
-            const results = response.results;
-            return results.map(o => {
-                // 必须要有 accountId 和 username 两个属性
-                o.accountId = o.email;
-                o.username = o.name.first + ' ' + o.name.last;
-                return o;
-            });
-        });
-}
-
-/* eslint-disable */
-const template = `<template>
-<x-row label="[default]">
-    请输入用户名：
-    <xui-userpicker
-        search-requester="{{searchRequester}}"
-    >
-        <div slot="layer-item">
-            <img width="30" height="30" src="{{item.picture.thumbnail}}" />
-            <span>{{item.name.title}} {{item.username}}</span>
-        </div>
-    </xui-userpicker>
-</x-row>
-<x-row label="initialized by value">
-    <xui-userpicker
-        search-requester="{{searchRequester}}"
-        value="{=value=}"
-    >
-        <div slot="layer-item">
-            <img width="30" height="30" src="{{item.picture.thumbnail}}" />
-            <span>{{item.name.title}} {{item.username}}</span>
-        </div>
-    </xui-userpicker>
-    <pre><code>{{value | stringify}}</code></pre>
-</x-row>
-</template>`;
+var template = '<template>\n<x-row label="[default]">\n    \u8BF7\u8F93\u5165\u7528\u6237\u540D\uFF1A\n    <xui-userpicker\n        search-requester="{{searchRequester}}"\n    >\n        <div slot="layer-item">\n            <img width="30" height="30" src="{{item.picture.thumbnail}}" />\n            <span>{{item.name.title}} {{item.username}}</span>\n        </div>\n    </xui-userpicker>\n</x-row>\n<x-row label="initialized by value">\n    <xui-userpicker\n        search-requester="{{searchRequester}}"\n        value="{=value=}"\n    >\n        <div slot="layer-item">\n            <img width="30" height="30" src="{{item.picture.thumbnail}}" />\n            <span>{{item.name.title}} {{item.username}}</span>\n        </div>\n    </xui-userpicker>\n    <pre><code>{{value | stringify}}</code></pre>\n</x-row>\n</template>';
 /* eslint-enable */
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_0_san__["defineComponent"])({
-    template,
+exports.default = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'x-row': __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
-        'xui-userpicker': __WEBPACK_IMPORTED_MODULE_1_san_xui__["S" /* UserPicker */]
+        'x-row': _Row2.default,
+        'xui-userpicker': _sanXui.UserPicker
     },
     filters: {
-        stringify(value) {
+        stringify: function stringify(value) {
             return JSON.stringify(value, null, 2);
         }
     },
-    initData() {
+    initData: function initData() {
         return {
-            value: [
-                {username: '李玉北', accountId: 'liyubei'}
-            ],
-            searchRequester
+            value: [{ username: '李玉北', accountId: 'liyubei' }],
+            searchRequester: searchRequester
         };
     }
-}));
-
-
+});
 
 /***/ })
 
-},[471])});;
+},[478])});;
