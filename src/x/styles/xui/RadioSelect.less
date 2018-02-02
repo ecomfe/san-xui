@@ -7,11 +7,24 @@
     overflow: visible;
     display: inline-block;
     vertical-align: middle;
+    height: auto;
+    margin-bottom: -1px;
 }
 .ui-radioselect-x .ui-radio-block {
     position: relative;
     min-width: 28px;
+    height: auto;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    margin-bottom: 1px;
 }
 .ui-radioselect-x .ui-radio-disabled {
     background-color: @san-ui-disabled-color !important;
+}
+.ui-radioselect-x .ui-radio-item-hover {
+    display: none;
+    position: absolute;
+    top: 30px;
+    white-space: nowrap;
 }
