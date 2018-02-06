@@ -56,5 +56,8 @@
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "promise": "^8.0.1"
+  },
+  "peerDependencies": {
+    "san": "^3.4.2"
   }
 }

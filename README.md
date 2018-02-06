@@ -28,6 +28,9 @@ import 'san-xui/dist/xui.css';
 import {defineComponent} from 'san';
 import {Button} from 'san-xui';
 
+// 引入单个的组件
+import Button from 'san-xui/lib/x/components/Button';
+
 const App = defineComponent({
     template: `<template><ui-button>Hello san-xui</ui-button></template>`,
     components: {
