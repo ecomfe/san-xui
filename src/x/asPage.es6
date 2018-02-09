@@ -44,7 +44,7 @@ export function asPage(schema, MainComponent) {
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
-                form-data="{{$filterPayload}}"
+                form-data="{=$filterPayload=}"
                 submit-text="{{filter.submitText}}"
                 controls="{{filter.controls}}"
                 on-submit="onXFilter($event)" />
@@ -54,7 +54,7 @@ export function asPage(schema, MainComponent) {
             <x-filter
                 s-ref="filter"
                 title="{{filter.title}}"
-                form-data="{{$filterPayload}}"
+                form-data="{=$filterPayload=}"
                 submit-text="{{filter.submitText}}"
                 controls="{{filter.controls}}"
                 on-submit="onXFilter($event)" />
@@ -476,9 +476,16 @@ export function asPage(schema, MainComponent) {
             return tableData;
         },
 
-        __doRequest(url, payload) {
-            return this.$post(url, payload)
-                .then(page => {
+        __doRequest(api, payload) {
+            let promise = '';
+            if (_.isString(api)) {
+                promise = this.$post(api, payload);
+            }
+            else {
+                promise = api.then(request => request(payload))
+                    .then(response => response.body);
+            }
+            return promise.then(page => {
                     return {
                         searchCriteria: payload,
                         searchResponse: page

@@ -9,6 +9,7 @@ import {DataTypes, defineComponent} from 'san';
 
 import TableColumnToggle from '../components/TableColumnToggle';
 import SearchBox from '../components/SearchBox';
+import Button from '../components/Button';
 
 /* eslint-disable */
 const template = `<template>
@@ -38,7 +39,8 @@ export default defineComponent({
     template,
     components: {
         'ui-table-column-toggle': TableColumnToggle,
-        'ui-searchbox': SearchBox
+        'ui-searchbox': SearchBox,
+        'ui-button': Button
     },
     dataTypes: {
         loading: DataTypes.bool,

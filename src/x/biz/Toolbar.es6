@@ -8,6 +8,7 @@ import {DataTypes, defineComponent} from 'san';
 
 import Button from '../components/Button';
 import RadioSelect from '../components/RadioSelect';
+import Icon from '../components/Icon';
 import {Ghost} from './helper';
 
 /* eslint-disable */
@@ -31,7 +32,10 @@ const template = `<template>
     <a
         s-if="item.type === 'link'"
         target="_blank"
-        href="{{item.link}}">{{item.label}}</a>
+        href="{{item.link}}">
+        <ui-icon s-if="{{item.icon}}" name="{{item.icon}}" />
+        {{item.label}}
+    </a>
     <span s-if="item.type === 'divider'">&nbsp;</span>
 </ui-ghost>
 </template>`;
@@ -42,7 +46,8 @@ export default defineComponent({
     components: {
         'ui-ghost': Ghost,
         'ui-button': Button,
-        'ui-radioselect': RadioSelect
+        'ui-radioselect': RadioSelect,
+        'ui-icon': Icon
     },
     dataTypes: {
         controls: DataTypes.array

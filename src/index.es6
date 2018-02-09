@@ -65,5 +65,7 @@ export {default as Voice} from './x/components/Voice';
 export {default as WebUploader} from './x/components/WebUploader';
 export {default as asDrawer} from './x/components/asDrawer';
 export {default as Uploader} from './x/forms/Uploader';
+export {create} from './x/components/util';
+export {asInput} from './x/components/asInput';
 export {asForm, registerFormItem} from './x/forms/asForm';
 export {createForm} from './x/forms/createForm';

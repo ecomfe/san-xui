@@ -18,6 +18,8 @@ export default {
                 search-api="{{${prefix}.searchApi}}"
                 keyword-name="{{${prefix}.keywordName}}"
                 keyword="{{${prefix}.keyword}}"
+                max="{{${prefix}.max}}"
+                disabled="{{${prefix}.disabled}}"
                 layer-width="{{${prefix}.layerWidth}}"
                 auto-layer-width="{{${prefix}.autoLayerWidth}}"
                 value="{=formData.${item.name}=}"

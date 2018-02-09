@@ -18,7 +18,7 @@ const template = `<template>
 <div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">
     <div class="${cx('head', 'head-panel')}" s-if="head">
         <div class="${cx('title')}">
-            <slot name="head">Title</slot>
+            <slot name="head">{{title}}</slot>
         </div>
         <div class="${cx('close-icon')}" on-click="onCloseDialog"></div>
     </div>
@@ -54,6 +54,7 @@ export default defineComponent({
             dialogZindex: zIndex + 1,
             width: 'auto',
             height: 'auto',
+            title: 'Title',
             left: null,
             top: '-10000px',
             open: false,
