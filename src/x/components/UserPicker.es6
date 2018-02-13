@@ -6,7 +6,7 @@
 import _ from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 
-import {$post} from '../../mixins/ajax'
+import {$post} from '../../mixins/ajax';
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
 import TextBox from './TextBox';

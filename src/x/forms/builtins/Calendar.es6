@@ -13,6 +13,7 @@ export default {
     builder(item, prefix) {
         return `
             <${tagName} s-if="!preview"
+                close-on-change
                 range="{{${prefix}.range}}"
                 prev="{{${prefix}.prev}}"
                 next="{{${prefix}.next}}"

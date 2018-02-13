@@ -145,7 +145,7 @@ const RangeCalendar = defineComponent({
                 end: new Date()
             },
             time: null,
-            range: {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)},
+            range: {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)},
             // BEGIN 临时的数据
             begin: {
                 value: null
@@ -176,7 +176,7 @@ const RangeCalendar = defineComponent({
 
         /**
          * 日期可以选择的范围
-         * @default {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)}
+         * @default {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)}
          */
         range: DataTypes.object,
 

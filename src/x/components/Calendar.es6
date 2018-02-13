@@ -12,7 +12,7 @@ import MonthView from './MonthView';
 import Button from './Button';
 
 const cx = create('ui-calendar');
-const kDefaultRange = {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)};
+const kDefaultRange = {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)};
 
 /* eslint-disable */
 const template = `<div class="${cx('xx')}">
@@ -70,7 +70,8 @@ const Calendar = defineComponent({  // eslint-disable-line
             next: false,
             active: false,
             range: kDefaultRange,
-            format: 'YYYY-MM-DD'
+            format: 'YYYY-MM-DD',
+            closeOnChange: false
         };
     },
     dataTypes: {
@@ -79,6 +80,12 @@ const Calendar = defineComponent({  // eslint-disable-line
          * @default false
          */
         disabled: DataTypes.bool,
+
+        /**
+         * 选择日期之后是否关闭浮层
+         * @default false
+         */
+        closeOnChange: DataTypes.bool,
 
         /**
          * 是否可以编辑 HH:mm:ss
@@ -132,7 +139,14 @@ const Calendar = defineComponent({  // eslint-disable-line
         }
         // 只有 new Date(value), 数据才会同步到外部的组件里面去
         this.data.set('value', new Date(value));
-        this.watch('value', value => this.fire('change', {value}));
+        this.watch('value', value => {
+            this.fire('change', {value});
+
+            const closeOnChange = this.data.get('closeOnChange');
+            if (closeOnChange) {
+                this.data.set('active', false);
+            }
+        });
     },
     nextDay() {
         const value = this.data.get('value');
@@ -154,7 +168,7 @@ const Calendar = defineComponent({  // eslint-disable-line
     },
     onChange({value}) {
         if (value !== this.data.get('value')) {
-            this.fire('change', {value});
+            this.data.set('value', value);
         }
     }
 });
