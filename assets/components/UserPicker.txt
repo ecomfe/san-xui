@@ -6,6 +6,7 @@
 import _ from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 
+import {$post} from '../../mixins/ajax';
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
 import TextBox from './TextBox';
@@ -35,9 +36,10 @@ const cx = create('ui-userpicker');
 const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onClick">
 <div class="${cx('preview')}">
     <div class="${cx('preview-item')}" s-for="item, i in value">
-        {{item.username}}<i class="iconfont icon-close" on-click="removeItem($event, i)"></i>
+        {{item.username}}<i s-if="!disabled" class="iconfont icon-close" on-click="removeItem($event, i)"></i>
     </div>
     <ui-textbox
+        s-if="inputVisible"
         s-ref="input"
         value="{=keyword=}"
         on-input="onInput"
@@ -103,6 +105,15 @@ const UUAP = defineComponent({
         mainStyle() {
             return cx.mainStyle(this);
         },
+        inputVisible() {
+            const disabled = this.data.get('disabled');
+            if (disabled) {
+                return false;
+            }
+            const max = this.data.get('max');
+            const size = this.data.get('value.length');
+            return size < max;
+        },
         realLayerWidth() {
             const layerWidth = this.data.get('layerWidth');
             const autoLayerWidth = this.data.get('autoLayerWidth');
@@ -121,6 +132,7 @@ const UUAP = defineComponent({
         return {
             active: false,
             loading: false, // 是不是正在查询中
+            disabled: false,
             keyword: '',
             keywordName: 'keyword',
             searchApi: '/api/product/center/uid/search',
@@ -130,6 +142,7 @@ const UUAP = defineComponent({
             autoLayerWidth: null,
             value: [],
             selectedIndex: 0,
+            max: Infinity,
             itemsTransformer: kDefaultTransformer,
             items: [] // 预览数据
         };
@@ -140,6 +153,18 @@ const UUAP = defineComponent({
          * @default false
          */
         active: DataTypes.bool,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: DataTypes.bool,
+
+        /**
+         * 最多允许输入的数量
+         * @default Infinity
+         */
+        max: DataTypes.number,
 
         /**
          * 数据是否正在加载
@@ -255,7 +280,7 @@ const UUAP = defineComponent({
         }
 
         const payload = {[keywordName]: keyword};
-        return this.$post(searchApi, payload)
+        return $post(searchApi, payload)
             .then(result => {
                 if (this.data.get('keyword') !== keyword) {
                     return;

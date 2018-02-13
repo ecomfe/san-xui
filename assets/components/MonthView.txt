@@ -12,7 +12,7 @@ import TextBox from './TextBox';
 
 const cx = create('ui-monthview');
 
-const kDefaultRange = {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)};
+const kDefaultRange = {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)};
 
 /* eslint-disable */
 const template = `<div on-click="onClick" class="{{mainClass}}">
@@ -144,7 +144,7 @@ const MonthView = defineComponent({
 
         /**
          * 日期的可选范围
-         * @default {begin: new Date(1982, 10, 4), end: new Date(2046, 10, 4)}
+         * @default {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)}
          */
         range: DataTypes.object,
 

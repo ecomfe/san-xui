@@ -22,7 +22,9 @@ import UserPicker from './builtins/UserPicker';
 import ACEEditor from './builtins/ACEEditor';
 import CKEditor from './builtins/CKEditor';
 import RichTextEditor from './builtins/RichTextEditor';
+import ComboForm from './builtins/ComboForm';
 
+registerFormItem(ComboForm);
 registerFormItem(Number);
 registerFormItem(Text);
 registerFormItem(Select);

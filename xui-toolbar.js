@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([2],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([1],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 474:
+/***/ 476:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,7 +19,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _Toolbar = __webpack_require__(475);
+var _Toolbar = __webpack_require__(477);
 
 var _Toolbar2 = _interopRequireDefault(_Toolbar);
 
@@ -73,7 +73,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 475:
+/***/ 477:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93,26 +93,31 @@ var _RadioSelect = __webpack_require__(53);
 
 var _RadioSelect2 = _interopRequireDefault(_RadioSelect);
 
-var _helper = __webpack_require__(75);
+var _Icon = __webpack_require__(18);
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _helper = __webpack_require__(76);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
+var template = '<template>\n<ui-ghost s-for="item in controls">\n    <ui-button\n        s-if="item.type === \'button\'"\n        on-click="onToolbarEvent(item)"\n        disabled="{{item.disabled}}"\n        icon="{{item.icon}}"\n        label="{{item.label}}"\n        skin="{{item.skin}}"\n        />\n    <ui-radioselect\n        s-if="item.type === \'button-group\'"\n        value="{{item.value}}"\n        disabled="{{item.disabled}}"\n        on-change="onToolbarEvent($event)"\n        datasource="{{item.datasource}}"\n        />\n    <a\n        s-if="item.type === \'link\'"\n        target="_blank"\n        href="{{item.link}}">\n        <ui-icon s-if="{{item.icon}}" name="{{item.icon}}" />\n        {{item.label}}\n    </a>\n    <span s-if="item.type === \'divider\'">&nbsp;</span>\n</ui-ghost>\n</template>';
+/* eslint-enable */
+
 /**
  * 左侧工具栏的区域，包括 Button, ButtonGroupp, 链接 等等
  * @file san-xui/x/biz/Toolbar.es6
  * @author leeight
  */
 
-var template = '<template>\n<ui-ghost s-for="item in controls">\n    <ui-button\n        s-if="item.type === \'button\'"\n        on-click="onToolbarEvent(item)"\n        disabled="{{item.disabled}}"\n        icon="{{item.icon}}"\n        label="{{item.label}}"\n        skin="{{item.skin}}"\n        />\n    <ui-radioselect\n        s-if="item.type === \'button-group\'"\n        value="{{item.value}}"\n        disabled="{{item.disabled}}"\n        on-change="onToolbarEvent($event)"\n        datasource="{{item.datasource}}"\n        />\n    <a\n        s-if="item.type === \'link\'"\n        target="_blank"\n        href="{{item.link}}">{{item.label}}</a>\n    <span s-if="item.type === \'divider\'">&nbsp;</span>\n</ui-ghost>\n</template>';
-/* eslint-enable */
-
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
         'ui-ghost': _helper.Ghost,
         'ui-button': _Button2.default,
-        'ui-radioselect': _RadioSelect2.default
+        'ui-radioselect': _RadioSelect2.default,
+        'ui-icon': _Icon2.default
     },
     dataTypes: {
         controls: _san.DataTypes.array
@@ -124,7 +129,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -176,17 +181,17 @@ var _PlainDialog = __webpack_require__(52);
 
 var _PlainDialog2 = _interopRequireDefault(_PlainDialog);
 
-var _asDialog = __webpack_require__(74);
+var _asDialog = __webpack_require__(75);
 
-var _LegacyActionAdapter = __webpack_require__(76);
+var _LegacyActionAdapter = __webpack_require__(77);
 
 var _LegacyActionAdapter2 = _interopRequireDefault(_LegacyActionAdapter);
 
-var _Page2 = __webpack_require__(77);
+var _Page2 = __webpack_require__(78);
 
 var _Page3 = _interopRequireDefault(_Page2);
 
-var _Ghost2 = __webpack_require__(79);
+var _Ghost2 = __webpack_require__(80);
 
 var _Ghost3 = _interopRequireDefault(_Ghost2);
 
@@ -357,7 +362,7 @@ function valueTransform(formData) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -369,7 +374,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _Dialog = __webpack_require__(18);
+var _Dialog = __webpack_require__(19);
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -381,7 +386,7 @@ var _Toast = __webpack_require__(56);
 
 var _Toast2 = _interopRequireDefault(_Toast);
 
-var _ActionLoader = __webpack_require__(70);
+var _ActionLoader = __webpack_require__(72);
 
 var _ActionLoader2 = _interopRequireDefault(_ActionLoader);
 
@@ -513,7 +518,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 77:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -527,7 +532,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Breadcrumbs = __webpack_require__(78);
+var _Breadcrumbs = __webpack_require__(79);
 
 var _Breadcrumbs2 = _interopRequireDefault(_Breadcrumbs);
 
@@ -577,7 +582,7 @@ exports.default = (0, _san.defineComponent)({ // eslint-disable-line
 
 /***/ }),
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -613,7 +618,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 79:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -634,4 +639,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[474])});;
+},[476])});;

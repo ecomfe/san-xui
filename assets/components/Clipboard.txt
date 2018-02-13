@@ -53,6 +53,9 @@ export default defineComponent({
          */
         text: DataTypes.string.isRequired
     },
+    detached() {
+        this.client.destroy();
+    },
     attached() {
         this.client = new XClipboard(this.el, {
             action: () => 'copy',                   // eslint-disable-line

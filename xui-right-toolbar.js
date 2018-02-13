@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 459:
+/***/ 461:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,7 +19,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _RightToolbar = __webpack_require__(460);
+var _RightToolbar = __webpack_require__(462);
 
 var _RightToolbar2 = _interopRequireDefault(_RightToolbar);
 
@@ -73,7 +73,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 460:
+/***/ 462:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85,7 +85,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _TableColumnToggle = __webpack_require__(218);
+var _TableColumnToggle = __webpack_require__(219);
 
 var _TableColumnToggle2 = _interopRequireDefault(_TableColumnToggle);
 
@@ -93,12 +93,13 @@ var _SearchBox = __webpack_require__(42);
 
 var _SearchBox2 = _interopRequireDefault(_SearchBox);
 
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
-var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="{=searchboxValue=}"\n    keyword-type="{=searchboxKeywordType=}"\n    placeholder="{{searchboxPlaceholder}}"\n    datasource="{{searchboxKeywordTypes}}"\n    on-search="onSearch"\n/>\n\n<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />\n\n<ui-table-column-toggle\n    s-if="withTct"\n    on-change="onTableColumnsChanged"\n    layer-align="right"\n    layer-offset-left="{{0}}"\n    value="{=tctValue=}"\n    datasource="{{tctDatasource}}"\n    />\n</template>';
-/* eslint-enable */
-
 /**
  * 右侧工具条的区域，包括 SearchBox, RefreshButton, 自定义表格列的按钮
  *
@@ -106,11 +107,15 @@ var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="
  * @author leeight
  */
 
+var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="{=searchboxValue=}"\n    keyword-type="{=searchboxKeywordType=}"\n    placeholder="{{searchboxPlaceholder}}"\n    datasource="{{searchboxKeywordTypes}}"\n    on-search="onSearch"\n/>\n\n<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />\n\n<ui-table-column-toggle\n    s-if="withTct"\n    on-change="onTableColumnsChanged"\n    layer-align="right"\n    layer-offset-left="{{0}}"\n    value="{=tctValue=}"\n    datasource="{{tctDatasource}}"\n    />\n</template>';
+/* eslint-enable */
+
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
         'ui-table-column-toggle': _TableColumnToggle2.default,
-        'ui-searchbox': _SearchBox2.default
+        'ui-searchbox': _SearchBox2.default,
+        'ui-button': _Button2.default
     },
     dataTypes: {
         loading: _san.DataTypes.bool,
@@ -138,4 +143,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[459])});;
+},[461])});;

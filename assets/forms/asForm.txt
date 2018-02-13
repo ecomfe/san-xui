@@ -125,7 +125,7 @@ function generateTemplate(controls) {
                     throw new Error('invalid control type = ' + colItem.type);
                 }
                 const prefix = `schema[${i}][${j}]`;
-                template.push(`<div class="${cx('col')}"
+                template.push(`<div class="${cx('col', 'col-' + j)}"
                     s-if="{{!hiddenOn.${colItem.name} && visibleOn.${colItem.name} !== false}}">`);
                 template.push(asFormItem(colItem, prefix, builder(colItem, prefix)));
                 template.push('</div>');
@@ -166,7 +166,7 @@ export function asForm(schema) {
 
     /* eslint-disable */
     const template = `<template>
-    <div class="${cx()}">
+    <div class="{{mainClass}}">
         <div class="${cx('title')}" s-if="title">
             <h4>{{title}}</h4>
             <slot name="actions" s-if="editable">
@@ -186,7 +186,14 @@ export function asForm(schema) {
     const Form = defineComponent({
         template,
         components,
-        computed: {},
+        computed: {
+            mainClass() {
+                const klass = cx.mainClass(this);
+                const size = this.data.get('itemSize');
+                klass.push(cx(String(size)));
+                return klass;
+            }
+        },
         filters: {
             filename(url) {
                 if (!url) {
@@ -307,6 +314,7 @@ export function asForm(schema) {
 
             // 给 requiredOn 加上默认值，从 config.required 解析出来的
             this.data.set('requiredOn', requiredOnInitValues);
+            this.data.set('itemSize', _.size(this.itemsMap));
         },
 
         attached() {
