@@ -13,17 +13,18 @@ export default {
     builder(item, prefix) {
         return `
             <${tagName}
-                s-if="!preview"
+                preview="{{preview}}"
                 search-requester="{{${prefix}.searchRequester}}"
                 search-api="{{${prefix}.searchApi}}"
                 keyword-name="{{${prefix}.keywordName}}"
                 keyword="{{${prefix}.keyword}}"
                 max="{{${prefix}.max}}"
+                width="{{${prefix}.width}}"
                 disabled="{{${prefix}.disabled}}"
                 layer-width="{{${prefix}.layerWidth}}"
                 auto-layer-width="{{${prefix}.autoLayerWidth}}"
                 value="{=formData.${item.name}=}"
             />
-            <span s-else>{{formData.${item.name}}}</span>`;
+        `;
     }
 };

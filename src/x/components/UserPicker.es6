@@ -33,7 +33,15 @@ const cx = create('ui-userpicker');
 // }
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onClick">
+const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
+<div s-if="preview" class="${cx('preview')}">
+    <slot name="preview" var-users="value">
+        <div class="${cx('preview-item')}" s-for="user in users">
+            {{user.username}}
+        </div>
+    </slot>
+</div>
+<div s-else on-click="onClick">
 <div class="${cx('preview')}">
     <div class="${cx('preview-item')}" s-for="item, i in value">
         {{item.username}}<i s-if="!disabled" class="iconfont icon-close" on-click="removeItem($event, i)"></i>
@@ -65,7 +73,9 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onC
         </div>
     </div>
 </ui-layer>
-</div>`;
+</div>
+</div>
+`;
 /* eslint-enable */
 
 function kDefaultTransformer(result) {
@@ -100,6 +110,10 @@ const UUAP = defineComponent({
                 klass.push(cx('active'));
                 klass.push(cx('x-active'));
             }
+            const preview = this.data.get('preview');
+            if (preview) {
+                klass.push(cx('x-preview'));
+            }
             return klass;
         },
         mainStyle() {
@@ -133,6 +147,7 @@ const UUAP = defineComponent({
             active: false,
             loading: false, // 是不是正在查询中
             disabled: false,
+            preview: false,
             keyword: '',
             keywordName: 'keyword',
             searchApi: '/api/product/center/uid/search',
@@ -153,6 +168,12 @@ const UUAP = defineComponent({
          * @default false
          */
         active: DataTypes.bool,
+
+        /**
+         * 是否是预览模式
+         * @default false
+         */
+        preview: DataTypes.bool,
 
         /**
          * 组件的禁用状态

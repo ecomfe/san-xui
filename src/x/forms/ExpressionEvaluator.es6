@@ -35,7 +35,7 @@ function expressionComparison(oper, expectedValue, realValue) {
 /**
  * 计算一个表达式的值
  *
- * @param {string|Object} expression The expression.
+ * @param {string|Object|Array.<Object>} expression The expression.
  * @param {Object} scope The value scope.
  * @return {boolean}
  */
@@ -46,6 +46,15 @@ export function evalExpr(expression, scope) {
 
     if (_.isString(expression)) {
         return !!scope.get(expression);
+    }
+
+    if (_.isArray(expression)) {
+        for (let i = 0, subExpr; subExpr = expression[i]; i++) {
+            if (evalExpr(subExpr, scope)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // {

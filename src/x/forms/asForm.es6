@@ -190,7 +190,11 @@ export function asForm(schema) {
             mainClass() {
                 const klass = cx.mainClass(this);
                 const size = this.data.get('itemSize');
+                const preview = this.data.get('preview');
                 klass.push(cx(String(size)));
+                if (preview) {
+                    klass.push(cx('preview'));
+                }
                 return klass;
             }
         },
@@ -212,6 +216,10 @@ export function asForm(schema) {
                     format = 'YYYY-MM-DD';    // eslint-disable-line
                 }
                 return moment(value).format(format);
+            },
+            pluck(value, name) {
+                let key = !name ? 'name' : name;
+                return _.pluck(value, key).join(',');
             }
         },
         messages: {
@@ -262,36 +270,53 @@ export function asForm(schema) {
             const requiredOn = {};
             const requiredOnInitValues = {};
 
+
+            function appendToMapImpl(map, item, key) {
+                const expr = item[key];
+                if (!expr) {
+                    return;
+                }
+
+                const keys = [];
+                if (_.isString(expr)) {
+                    keys.push(expr);
+                }
+                else if (_.isPlainObject(expr)) {
+                    // requiredOn: {
+                    //   a: ...
+                    //   b: ...
+                    //   c: ...
+                    // }
+                    keys.push.apply(keys, _.keys(expr));
+                    // _.each(expr, (config, key) => appendList(map, key, value));
+                }
+                else if (_.isArray(expr)) {
+                    // requiredOn: [
+                    //   // case 1
+                    //   {},
+                    //   // case 2
+                    //   {},
+                    //   // case 3
+                    //   {}
+                    // ]
+                    _.each(expr, subExpr => keys.push.apply(keys, _.keys(subExpr)));
+                }
+
+                const value = item.name;
+                _.each(keys, key => appendList(map, key, value));
+            }
+
             function appendToMap(item) {
+                if (itemsMap[item.name]) {
+                    throw new Error('Found duplicated form name: ' + item.name);
+                }
+
                 itemsMap[item.name] = item;
                 requiredOnInitValues[item.name] = !!item.required;
 
-                if (item.visibleOn) {
-                    if (_.isString(item.visibleOn)) {
-                        appendList(visibleOn, item.visibleOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.visibleOn)) {
-                        _.each(item.visibleOn, (config, key) => appendList(visibleOn, key, item.name));
-                    }
-                }
-
-                if (item.hiddenOn) {
-                    if (_.isString(item.hiddenOn)) {
-                        appendList(hiddenOn, item.hiddenOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.hiddenOn)) {
-                        _.each(item.hiddenOn, (config, key) => appendList(hiddenOn, key, item.name));
-                    }
-                }
-
-                if (item.requiredOn) {
-                    if (_.isString(item.requiredOn)) {
-                        appendList(requiredOn, item.requiredOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.requiredOn)) {
-                        _.each(item.requiredOn, (config, key) => appendList(requiredOn, key, item.name));
-                    }
-                }
+                appendToMapImpl(visibleOn, item, 'visibleOn');
+                appendToMapImpl(hiddenOn, item, 'hiddenOn');
+                appendToMapImpl(requiredOn, item, 'requiredOn');
             }
 
             const controls = this.data.get('schema');

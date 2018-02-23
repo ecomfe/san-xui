@@ -22,6 +22,6 @@ export default {
                 width="{{${prefix}.width}}"
                 value="{=formData.${item.name}=}"
             />
-            <span s-else>{{formData.${item.name}}}</span>`;
+            <span s-else>{{formData.${item.name} | pluck(${prefix}.previewKey)}}</span>`;
     }
 };

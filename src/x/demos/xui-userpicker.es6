@@ -47,6 +47,9 @@ const template = `<template>
     </xui-userpicker>
     <pre><code>{{value | stringify}}</code></pre>
 </x-row>
+<x-row label="preview">
+    <xui-userpicker preview value="{=value=}" />
+</x-row>
 </template>`;
 /* eslint-enable */
 

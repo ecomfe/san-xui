@@ -23,6 +23,7 @@ import ACEEditor from './builtins/ACEEditor';
 import CKEditor from './builtins/CKEditor';
 import RichTextEditor from './builtins/RichTextEditor';
 import ComboForm from './builtins/ComboForm';
+import StaticItem from './builtins/StaticItem';
 
 registerFormItem(ComboForm);
 registerFormItem(Number);
@@ -43,6 +44,7 @@ registerFormItem(RangeCalendar);
 registerFormItem(ACEEditor);
 registerFormItem(CKEditor);
 registerFormItem(RichTextEditor);
+registerFormItem(StaticItem);
 
 export function createForm(schema) {
     return asForm(schema);
