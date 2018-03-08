@@ -14,3 +14,4 @@ export function i18n(value, ...args) {
     let counter = 0;
     return String(value).replace(/%s/g, word => args[counter++]);
 }
+

@@ -69,3 +69,4 @@ export {create} from './x/components/util';
 export {asInput} from './x/components/asInput';
 export {asForm, registerFormItem} from './x/forms/asForm';
 export {createForm} from './x/forms/createForm';
+export {default as FormDialog} from './x/forms/FormDialog';

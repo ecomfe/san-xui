@@ -10,27 +10,73 @@ import {create} from '../components/util';
 import {asInput} from '../components/asInput';
 import Button from '../components/Button';
 import {asForm} from './asForm';
+import StaticItem from './StaticItem';
 
 const cx = create('ui-combo');
 
 /* eslint-disable */
 const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
-    <div s-if="multiple">
-        <div class="${cx('item')}" s-for="v, i in value">
-            <ui-form form-data="{=v=}" />
-            <ui-button icon="minus" on-click="removeElement(i)" />
+    <template s-if="!preview">
+        <div s-if="multiple">
+            <div class="${cx('item')}" s-for="v, i in value">
+                <ui-form form-data="{=v=}" />
+                <ui-button icon="minus" on-click="removeElement(i)" />
+            </div>
+            <ui-button s-if="btnVisible" icon="plus" on-click="addElement" />
         </div>
-        <ui-button s-if="btnVisible" icon="plus" on-click="addElement" />
-    </div>
-    <div class="${cx('item')}" s-else>
-        <ui-form form-data="{=value=}" />
-    </div>
+        <div class="${cx('item')}" s-else>
+            <ui-form form-data="{=value=}" />
+        </div>
+    </template>
+    
+    <template s-else>
+        <slot name="preview">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <template s-if="multiple">
+                        <tr s-for="item in value">
+                            <td s-for="col in previewCols">
+                                <ui-static 
+                                    mapper="{{col.mapper}}"
+                                    datasource="{{col.datasource}}"
+                                    value="{{item[col.name]}}"/>
+                            </td>
+                        </tr>
+                    </template>
+                    
+                    <template s-else>
+                        <tr>
+                            <td s-for="col in previewCols">
+                                <ui-static 
+                                    mapper="{{col.mapper}}"
+                                    datasource="{{col.datasource}}"
+                                    value="{{value[col.name]}}"/>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </slot>
+    </template>
 </div>`;
 /* eslint-enable */
 
 const ComboForm = defineComponent({
     template,
     dataTypes: {
+        /**
+         * 是否预览状态
+         * @default false
+         */
+        preview: DataTypes.bool,
+
+        /**
+         * 预览时显示的数据项。如果没有配置，会默认使用的controls变量的 name datasource 参数。
+         * 如果自定义preview slot， 该参数可做扩展。
+         * @default null
+         */
+        previewCols: DataTypes.array,
+
         /**
          * 是否支持添加多项目
          * @default false
@@ -89,16 +135,19 @@ const ComboForm = defineComponent({
     },
     initData() {
         return {
+            preview: false,
             min: 0,
             max: Infinity,
             multiple: false,
             inline: true,
             value: null,
+            previewCols: null,
             controls: []
         };
     },
     inited() {
-        let {controls, multiple, value} = this.data.get();
+        let {controls, multiple, value, previewCols} = this.data.get();
+
         if (multiple) {
             if (!_.isArray(value)) {
                 this.data.set('value', []);
@@ -110,9 +159,14 @@ const ComboForm = defineComponent({
             }
         }
 
+        if (!previewCols) {
+            this.data.set('previewCols', _.map(controls, item => _.pick(item, ['name', 'datasource'])));
+        }
+
         const Component = asForm({controls});
         this.components = {
             'ui-button': Button,
+            'ui-static': StaticItem,
             'ui-form': Component
         };
 

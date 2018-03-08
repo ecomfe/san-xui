@@ -31,6 +31,7 @@ const template = `<div class="{{mainClass}}">
         on-keypress="onKeyPress($event)"
         on-focus="onFocus($event)"
         on-blur="onBlur($event)"
+        on-click="onClick($event)"
         value="{=value=}"
         min="{{min}}",
         max="{{max}}"
@@ -57,6 +58,7 @@ const TextBox = defineComponent({
         return {
             disabled: false,
             autofocus: false,
+            focusPosition: 'end', // 'end' | 'begin' | 'all'
             type: 'text',
             multiline: false,
             skin: '',
@@ -81,6 +83,13 @@ const TextBox = defineComponent({
          * @default false
          */
         autofocus: DataTypes.bool,
+
+        /**
+         * 光标出现的位置
+         *
+         * @default end
+         */
+        focusPosition: DataTypes.string,
 
         /**
          * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
@@ -159,9 +168,21 @@ const TextBox = defineComponent({
     },
     focus() {
         const inputEl = this.ref('inputEl');
+        const focusPosition = this.data.get('focusPosition');
         if (inputEl) {
             if (document.activeElement === inputEl) {
                 return;
+            }
+            if (typeof inputEl.selectionStart === 'number') {
+                if (focusPosition === 'end') {
+                    // 光标在内容的后面
+                    inputEl.selectionStart = inputEl.selectionEnd = this.data.get('value').length;
+                }
+                else if (focusPosition === 'all') {
+                    // 全选
+                    inputEl.selectionStart = 0;
+                    inputEl.selectionEnd = this.data.get('value').length;
+                }
             }
             inputEl.focus();
         }
@@ -185,9 +206,12 @@ const TextBox = defineComponent({
     onKeyPress(e) {
         const keyCode = e.which || e.keyCode;
         if (keyCode === 13) {
-            this.fire('enter');
+            this.fire('enter', e);
         }
         this.fire('keypress', e);
+    },
+    onClick(e) {
+        this.fire('click', e);
     }
 });
 

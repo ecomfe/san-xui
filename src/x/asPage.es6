@@ -72,6 +72,7 @@ export function asPage(schema, MainComponent) {
                 loading="{{table.loading}}"
 
                 with-searchbox="{{withSearchbox}}"
+                with-batch-delete="{{withBatchDelete}}"
                 searchbox-value="{=$filterPayload.keyword=}"
                 searchbox-placeholder="{{filter.$searchbox.placeholder}}"
                 searchbox-keyword-type="{=$filterPayload.keywordType=}"
@@ -83,6 +84,7 @@ export function asPage(schema, MainComponent) {
 
                 on-refresh="refreshTable"
                 on-search="doSearch"
+                on-batch-delete="batchDelete"
                 on-table-columns-changed="toggleTableColumns"
             />
         </div>
@@ -195,8 +197,8 @@ export function asPage(schema, MainComponent) {
         initData() {
             /* eslint-disable */
             const {
-                $pageClass, $breadcrumbs, $navs, $helps, $persistState,
-                $withTip, $withPager, $withPagerSize, $withTotalCount, $withSearchbox, $withSidebar,
+                $pageClass, $breadcrumbs, $navs, $helps, $persistState, $autoToPrevPage,
+                $withTip, $withPager, $withPagerSize, $withTotalCount, $withSearchbox, $withSidebar, $withBatchDelete,
                 remark, title, toolbar, body
             } = schema;
             /* eslint-enable */
@@ -237,9 +239,11 @@ export function asPage(schema, MainComponent) {
                 withSidebar: !!$withSidebar,
                 withPagerSize: !!$withPagerSize,
                 withTotalCount: !!$withTotalCount,
+                autoToPrevPage: !!$autoToPrevPage,
                 withSearchbox: $withSearchbox !== false,
                 withPager: $withPager !== false,
                 withTip: !!$withTip,
+                withBatchDelete: !!$withBatchDelete, // 是否支持批量删除
                 withPersistState,
 
                 loading: false, // 数据是否在加载中
@@ -394,6 +398,12 @@ export function asPage(schema, MainComponent) {
 
         onToolbarEvent(item) {
             const config = item;
+            if (config.actionType === 'custom') {
+                if (typeof config.action === 'function') {
+                    config.action.apply(this);
+                }
+                return;
+            }
             const select = this.data.get('table.select');
             const payload = select === 'single'
                 ? this.__selectedItems[0]
@@ -554,6 +564,12 @@ export function asPage(schema, MainComponent) {
                         ? this.$onResponse(page) || page
                         : page;
                     const {result, pageNo, totalCount} = responsePayload;
+
+                    // 尝试请求前一页数据
+                    const autoToPrevPage = this.data.get('autoToPrevPage');
+                    if (autoToPrevPage && pageNo > 1 && result.length <= 0) {
+                        return this.loadPage({...payload, pageNo: pageNo - 1});
+                    }
                     const tableData = this.transformTable(result);
                     // 有些接口返回的 page.totalCount 是 0，但是 page.result 居然有内容
                     const resultTotalCount = totalCount > 0 ? totalCount : tableData.length;
@@ -579,7 +595,7 @@ export function asPage(schema, MainComponent) {
                         this.$onError(error);
                     }
                     this.data.set('table.loading', false);
-                    this.data.set('table.error', error);
+                    this.data.set('table.error', error && error.global ? error.global : error);
                 });
         },
 
@@ -615,6 +631,25 @@ export function asPage(schema, MainComponent) {
                 // TODO(leeight) rowIndex 可能会错，如何处理？
                 this.onTableCommand({type, payload});
             }
+        },
+
+        // 根据查询条件批量删除数据
+        batchDelete() {
+            const payload = _.clone(this.getSearchCriteria());
+            const reqOptions = {
+                url: schema.body.deleteApi
+            };
+            const requestPayload = typeof this.$onRequest === 'function'
+                ? this.$onRequest(payload, reqOptions) || payload
+                : payload;
+
+            const config = {
+                actionType: 'ajax',
+                api: schema.body.deleteApi,
+                confirmText: '危险！是否确认删除当前筛选的所有数据？删除后数据将无法恢复。',
+                $toastMessage: '批量删除成功'
+            };
+            this.dispatchAction(config, payload);
         }
     });
 

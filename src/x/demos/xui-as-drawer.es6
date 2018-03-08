@@ -19,7 +19,7 @@ class BizComponent extends Component {
     }
 
     inited() {
-        this.watch('payload.id', (id) => this._fetchData(id));
+        this.watch('payload.id', id => this._fetchData(id));
     }
 
     _fetchData(id) {
@@ -28,7 +28,7 @@ class BizComponent extends Component {
         setTimeout(() => {
             this.data.set('data', 'asdfasfasdf');
             this.dispatch('loading', false);
-        }, 1000)
+        }, 1000);
     }
 }
 
@@ -87,5 +87,5 @@ export default defineComponent({
             this.data.set('expandTo', 'bottom');
             this.data.set('expand', true);
         }, 100);
-    },
+    }
 });

@@ -155,7 +155,8 @@ export default defineComponent({
         const events = [
             'dndAccept', 'beforeFileQueued', 'fileQueued', 'fileDequeued',
             'reset', 'startUpload', 'stopUpload', 'uploadFinished',
-            'uploadProgress', 'uploadSuccess', 'uploadComplete', 'ready'
+            'uploadProgress', 'uploadSuccess', 'uploadComplete', 'ready',
+            'uploadBeforeSend'
         ];
         u.each(events, eventType => uploader.on(eventType,
             (...args) => this.fire('uploader-event', {eventType, args})));

@@ -14,14 +14,16 @@ export default {
     builder(item, prefix) {
         return `
             <${tagName}
-                s-if="!preview"
+                preview="{{preview}}"
+                preview-cols="{{${prefix}.previewCols}}"
                 multiple="{{${prefix}.multiple}}"
                 controls="{{${prefix}.controls}}"
                 max="{{${prefix}.max}}"
                 min="{{${prefix}.min}}"
                 width="{{${prefix}.width}}"
                 value="{=formData.${item.name}=}"
-            />
-            <span s-else>{{formData.${item.name} | pluck(${prefix}.previewKey)}}</span>`;
+            >
+            ${item.slot}
+            </${tagName}>`;
     }
 };

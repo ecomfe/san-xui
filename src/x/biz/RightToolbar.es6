@@ -21,7 +21,7 @@ const template = `<template>
     datasource="{{searchboxKeywordTypes}}"
     on-search="onSearch"
 />
-
+<ui-button s-if="withBatchDelete" on-click="onBatchDelete">批量删除</ui-button>
 <ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />
 
 <ui-table-column-toggle
@@ -46,6 +46,7 @@ export default defineComponent({
         loading: DataTypes.bool,
 
         withSearchbox: DataTypes.bool,
+        withBatchDelete: DataTypes.bool,
         searchboxValue: DataTypes.any,
         searchboxKeywordType: DataTypes.string,
         searchboxPlaceholder: DataTypes.string,
@@ -63,5 +64,8 @@ export default defineComponent({
     },
     onTableColumnsChanged() {
         this.fire('table-columns-changed');
+    },
+    onBatchDelete() {
+        this.fire('batch-delete');
     }
 });

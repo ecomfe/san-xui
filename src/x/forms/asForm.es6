@@ -216,10 +216,6 @@ export function asForm(schema) {
                     format = 'YYYY-MM-DD';    // eslint-disable-line
                 }
                 return moment(value).format(format);
-            },
-            pluck(value, name) {
-                let key = !name ? 'name' : name;
-                return _.pluck(value, key).join(',');
             }
         },
         messages: {

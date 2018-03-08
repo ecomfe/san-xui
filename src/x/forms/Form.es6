@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import {defineComponent, DataTypes} from 'san';
 import Promise from 'promise';
 
 import {create} from '../components/util';
@@ -13,6 +13,23 @@ const cx = create('ui-form');
 export default defineComponent({
     roleType: 'Form',
     template: '<form class="{{mainClass}}"><slot/></form>',
+    dataTypes: {
+        /**
+         * 校验规则
+         */
+        rules: DataTypes.objectOf(DataTypes.function),
+
+        /**
+         * 表单错误
+         */
+        errors: DataTypes.object,
+
+        /**
+         * 表单数据
+         * @default false
+         */
+        formData: DataTypes.object
+    },
     computed: {
         mainClass() {
             return cx.mainClass(this);

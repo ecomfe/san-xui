@@ -58,6 +58,9 @@
 
     .ui-tree-content-wrapper:hover {
         background-color: #EAF6FE;
+        .ui-tree-edit-content {
+            display: inline-block;
+        }
     }
     .ui-tree-root-empty.ui-tree-node-active {
         .ui-tree-content-wrapper {
@@ -67,6 +70,21 @@
             &:hover {
                 background-color: #f6f7fb;
             }
+        }
+    }
+    .ui-tree-item-content {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .ui-tree-edit-content {
+        margin-left: 10px;
+        display: none;
+        vertical-align: middle;
+        a {
+            margin-right: 2px;
+        }
+        .iconfont {
+            font-size: 12px;
         }
     }
 }

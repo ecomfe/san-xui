@@ -3,7 +3,8 @@
  * @author leeight
  */
 
-import {defineComponent} from 'san';
+import _ from 'lodash';
+import {defineComponent, NodeType} from 'san';
 
 import {hasUnit, create} from './util';
 import Layer from './Layer';
@@ -77,7 +78,8 @@ export default defineComponent({
     getInputComp() {
         try {
             const slots = this.slot();
-            return slots[0].children[0];
+            const children = _.filter(slots[0].children, n => n.nodeType !== NodeType.TEXT);
+            return children[0];
         }
         catch (ex) {
             return null;

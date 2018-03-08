@@ -6,10 +6,11 @@
  */
 
 @checkbox-primary-color-bg: @bce-ui-primary-color-bg;
-@checkbox-disabled-primary-color-bg: @bce-ui-disabled-primary-color-bg;
+@checkbox-primary-color-border: @bce-ui-disabled-color;
 @checkbox-disable-color-bg: @bce-ui-disabled-color-bg;
 @checkbox-disable-color-border: @bce-ui-disabled-color-border;
-@checkbox-disable-color: @bce-ui-disabled-color;
+@checkbox-disabled-primary-color-bg: #eeeeee;
+@checkbox-disable-color: #f7f7f7;
 
 input[type=checkbox] {
     position: relative;
@@ -20,7 +21,7 @@ input[type=checkbox] {
     outline: none;
     cursor: pointer;
     vertical-align: -3px;
-    border: 1px solid @checkbox-primary-color-bg;
+    border: 1px solid @checkbox-primary-color-border;
     // 注意只开启safri、chrome, 不支持ie、firefox
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -28,6 +29,7 @@ input[type=checkbox] {
 
     &:checked {
         background-color: @checkbox-primary-color-bg;
+        border: 1px solid @checkbox-primary-color-bg;
 
         &:before {
             top: 1.5px;
@@ -44,18 +46,22 @@ input[type=checkbox] {
         }
     }
 
+    &:hover {
+        border: 1px solid @checkbox-primary-color-bg;
+    }
+
     &:disabled {
         cursor: not-allowed;
         border-color: @checkbox-disable-color-border;
-        background-color: @checkbox-disable-color-bg;
-
-        &:checked:before {
-            border-color: @checkbox-disable-color;
-        }
+        background-color: @checkbox-disable-color;
 
         &:checked {
             border-color: @checkbox-disabled-primary-color-bg;
             background-color: @checkbox-disabled-primary-color-bg;
+
+            &:before {
+                color: @checkbox-disable-color-border;
+            }
         }
     }
 }

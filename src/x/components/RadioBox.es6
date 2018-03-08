@@ -16,6 +16,7 @@ const template = `<div class="{{mainClass}}">
         <input
             type="radio"
             checked="{=checked=}"
+            name="{{name}}"
             on-change="onChange($event)"
             disabled="{{disabled}}" />
         <span s-if="title">{{title}}</span>
@@ -28,12 +29,32 @@ const RadioBox = defineComponent({
     initData() {
         return {
             checked: false,
+            name: '',
             title: null
         };
     },
     dataTypes: {
+        /**
+         * 设置或者获取控件的选中状态
+         *
+         * @bindx
+         * @default false
+         */
         checked: DataTypes.bool,
+
+        /**
+         * 单选按钮的 name
+         */
+        name: DataTypes.string,
+
+        /**
+         * 控件的禁用状态
+         */
         disabled: DataTypes.bool,
+
+        /**
+         * 控件的文案
+         */
         title: DataTypes.string
     },
     computed: {

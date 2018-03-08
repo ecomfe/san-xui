@@ -24,6 +24,7 @@ import CKEditor from './builtins/CKEditor';
 import RichTextEditor from './builtins/RichTextEditor';
 import ComboForm from './builtins/ComboForm';
 import StaticItem from './builtins/StaticItem';
+import CheckBox from './builtins/CheckBox';
 
 registerFormItem(ComboForm);
 registerFormItem(Number);
@@ -45,6 +46,7 @@ registerFormItem(ACEEditor);
 registerFormItem(CKEditor);
 registerFormItem(RichTextEditor);
 registerFormItem(StaticItem);
+registerFormItem(CheckBox);
 
 export function createForm(schema) {
     return asForm(schema);

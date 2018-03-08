@@ -201,8 +201,8 @@ export default defineComponent({
 
         const layerElement = getOffset(layer);
 
-        //dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
-        //实际中的width 属性不包括 。直接用jquery的 width()会抹去小数点，可能出现获取的值小于实际的值。
+        // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
+        // 实际中的width 属性不包括 。直接用jquery的 width()会抹去小数点，可能出现获取的值小于实际的值。
         let widthValue = 'auto';
         let heightValue = 'auto';
 

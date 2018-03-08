@@ -21,7 +21,7 @@ export default (Klass, data = {}) => {
     const Drawer = defineComponent({
         // 压制窗口隐藏
         _isSuppressing: false,
-        _suppressHandler: _.debounce(function() {this._isSuppressing = false;}, 10),
+        _suppressHandler: _.debounce(function () {this._isSuppressing = false;}, 10),
 
         template: `
             <div class="{{mainClass}}" style="{{mainStyle}}" on-click="suppressHide">

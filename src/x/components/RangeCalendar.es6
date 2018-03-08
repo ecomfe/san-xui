@@ -236,7 +236,7 @@ const RangeCalendar = defineComponent({
     onSelect() {
         const begin = this.data.get('begin.value');
         const end = this.data.get('end.value');
-        this.data.set('value', {begin, end});
+        this.data.set('value', begin > end ? {begin: end, end: begin} : {begin, end});
         this.closeLayer();
     },
     closeLayer() {

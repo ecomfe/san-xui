@@ -145,7 +145,7 @@ export function asTable(columns) {
             <tbody class="${cx('body')}">
                 <tr s-if="error">
                     <td colSpan="{{columnCount}}" class="${cx('error')}">
-                        <slot name="error">{{error}}</slot>
+                        <slot name="error">{{error | raw}}</slot>
                     </td>
                 </tr>
                 <tr s-elif="!loading && !datasource.length">
@@ -243,7 +243,7 @@ export function asTable(columns) {
                 }
                 const selectedIndex = this.data.get('selectedIndex');
                 const datasource = this.data.get('datasource');
-                return selectedIndex && selectedIndex.length === datasource.length ? ['all'] : [];
+                return selectedIndex && selectedIndex.length > 0 && selectedIndex.length === datasource.length ? ['all'] : [];
             },
             selectedItems() {
                 const datasource = this.data.get('datasource');

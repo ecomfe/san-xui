@@ -20,6 +20,9 @@ export const blocks = [
                 text: 'xui-checkbox'
             },
             {
+                text: 'xui-radiobox'
+            },
+            {
                 text: 'xui-dragger'
             },
             {
@@ -149,6 +152,9 @@ export const blocks = [
             },
             {
                 text: 'xui-register-form-item'
+            },
+            {
+                text: 'xui-form-dialog'
             }
         ]
     },

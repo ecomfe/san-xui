@@ -29,11 +29,18 @@ const template = `<template>
 </table>
 <div s-else>暂无定义，请给组件添加 <code>dataTypes</code> 属性</div>
 </template>`;
+
 /* eslint-enable */
 
 function hasF(x) {
     return x.bindx || x.required;
 }
+
+// 不是所有的组件都在components下面
+const folderMap = {
+    Form: 'forms',
+    FormDialog: 'forms'
+};
 
 export default defineComponent({
     template,
@@ -57,9 +64,14 @@ export default defineComponent({
 
             const compName = match[1];
             const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.es6';
-            const moduleId = typeof G_PREFIX === 'object'
+            let moduleId = typeof G_PREFIX === 'object'
                 ? `${G_PREFIX.componentsCode}${compName}`
                 : `\x69nf-ui/x/components/${compName}`;
+            const folder = folderMap[compName];
+            if (folder) {
+                moduleId = moduleId.replace('components', folder);
+            }
+
             const sourceUrl = window.require.toUrl(moduleId).replace(/\?.*/, '') + ext;
             fetch(sourceUrl)
                 .then(response => {
