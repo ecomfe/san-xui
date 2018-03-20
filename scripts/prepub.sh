@@ -4,7 +4,7 @@ set -e
 
 rm -rf lib dist es
 
-babel src --presets babel-preset-es2015 --out-dir lib
+babel src --out-dir lib --no-babelrc --presets=es2015 --plugins=transform-object-rest-spread
 
 # cp -r src es
 # find es -name '*.es6' -exec sh -c 'mv "$0" "${0%.es6}.js"' {} \;
