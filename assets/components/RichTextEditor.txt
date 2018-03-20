@@ -1,5 +1,5 @@
 /**
- * @file components/RichTextEditor.es6
+ * @file components/RichTextEditor.js
  * @author leeight
  */
 
@@ -10,6 +10,7 @@ import u from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
+import {asInput} from './asInput';
 import Loading from './Loading';
 
 const cx = create('ui-richtexteditor');
@@ -57,7 +58,7 @@ const template = `<template>
 </template>`;
 /* eslint-enable */
 
-export default defineComponent({
+const RichTextEditor = defineComponent({
     template,
     components: {
         'ui-loading': Loading
@@ -145,6 +146,7 @@ export default defineComponent({
                     const value = this.editor.getContent();
                     // FIXME(leeight) 递归的问题如何处理呢？
                     this.data.set('value', value);
+                    this.fire('change', {value});
                 }
             });
         });
@@ -162,3 +164,5 @@ export default defineComponent({
         }
     }
 });
+
+export default asInput(RichTextEditor);

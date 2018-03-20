@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 454:
+/***/ 461:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-pager size="{{pa
 /* eslint-enable */
 
 /**
- * @file demos/xui-pager.es6
+ * @file demos/xui-pager.js
  * @author leeight
  */
 
@@ -60,4 +60,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[454])});;
+},[461])});;

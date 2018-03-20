@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([56],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([58],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 419:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28,7 +28,7 @@ var _Row2 = _interopRequireDefault(_Row);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var kTableColumns = [{ name: 'name', label: '姓名', labelClassName: 'col-name' }, { name: 'age', label: '年龄', sortable: true }, { name: 'gender', label: '性别', sortable: true }]; /**
-                                                                                                                                                                                 * @file demos/xui-as-table.es6
+                                                                                                                                                                                 * @file demos/xui-as-table.js
                                                                                                                                                                                  * @author leeight
                                                                                                                                                                                  */
 
@@ -63,4 +63,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[419])});;
+},[425])});;

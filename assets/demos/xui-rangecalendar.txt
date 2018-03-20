@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-rangecalendar.es6
+ * @file demos/xui-rangecalendar.js
  * @author leeight
  */
 

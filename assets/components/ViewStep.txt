@@ -1,5 +1,5 @@
 /**
- * @file components/ViewStep.es6
+ * @file components/ViewStep.js
  * @author leeight
  */
 

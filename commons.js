@@ -34,7 +34,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		59: 0
+/******/ 		61: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -1996,7 +1996,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(265)("./" + name);
+            __webpack_require__(263)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4688,7 +4688,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)(module)))
 
 /***/ }),
 /* 2 */
@@ -4701,6 +4701,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.hasUnit = hasUnit;
+exports.html = html;
 exports.create = create;
 exports.isComponent = isComponent;
 exports.nextZindex = nextZindex;
@@ -4728,15 +4729,25 @@ function hasUnit(value) {
     return (/%|px|auto/.test(value)
     );
 } /**
-   * @file util.es6
+   * @file util.js
    * @author leeight
    */
+
+function html(strings) {
+    for (var _len = arguments.length, values = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        values[_key - 1] = arguments[_key];
+    }
+
+    return values.reduce(function (s, v, i) {
+        return s + String(v) + strings[i + 1];
+    }, strings[0]);
+}
 
 function create(prefix) {
     var type = prefix.replace(/^ui\-/, '');
     var cx = function cx() {
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
+        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            args[_key2] = arguments[_key2];
         }
 
         if (args.length) {
@@ -5008,7 +5019,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ACEEditor = __webpack_require__(205);
+var _ACEEditor = __webpack_require__(196);
 
 Object.defineProperty(exports, 'ACEEditor', {
   enumerable: true,
@@ -5017,7 +5028,7 @@ Object.defineProperty(exports, 'ACEEditor', {
   }
 });
 
-var _AlertDialog = __webpack_require__(47);
+var _AlertDialog = __webpack_require__(197);
 
 Object.defineProperty(exports, 'AlertDialog', {
   enumerable: true,
@@ -5026,7 +5037,7 @@ Object.defineProperty(exports, 'AlertDialog', {
   }
 });
 
-var _BosUploader = __webpack_require__(207);
+var _BosUploader = __webpack_require__(199);
 
 Object.defineProperty(exports, 'BosUploader', {
   enumerable: true,
@@ -5035,7 +5046,7 @@ Object.defineProperty(exports, 'BosUploader', {
   }
 });
 
-var _BoxGroup = __webpack_require__(208);
+var _BoxGroup = __webpack_require__(200);
 
 Object.defineProperty(exports, 'BoxGroup', {
   enumerable: true,
@@ -5044,7 +5055,7 @@ Object.defineProperty(exports, 'BoxGroup', {
   }
 });
 
-var _Breadcrumbs = __webpack_require__(272);
+var _Breadcrumbs = __webpack_require__(270);
 
 Object.defineProperty(exports, 'Breadcrumbs', {
   enumerable: true,
@@ -5062,7 +5073,7 @@ Object.defineProperty(exports, 'Button', {
   }
 });
 
-var _ButtonMenu = __webpack_require__(273);
+var _ButtonMenu = __webpack_require__(271);
 
 Object.defineProperty(exports, 'ButtonMenu', {
   enumerable: true,
@@ -5071,7 +5082,7 @@ Object.defineProperty(exports, 'ButtonMenu', {
   }
 });
 
-var _BuyBucket = __webpack_require__(274);
+var _BuyBucket = __webpack_require__(272);
 
 Object.defineProperty(exports, 'BuyBucket', {
   enumerable: true,
@@ -5080,7 +5091,7 @@ Object.defineProperty(exports, 'BuyBucket', {
   }
 });
 
-var _CKEditor = __webpack_require__(209);
+var _CKEditor = __webpack_require__(201);
 
 Object.defineProperty(exports, 'CKEditor', {
   enumerable: true,
@@ -5098,7 +5109,7 @@ Object.defineProperty(exports, 'Calendar', {
   }
 });
 
-var _Chart = __webpack_require__(210);
+var _Chart = __webpack_require__(202);
 
 Object.defineProperty(exports, 'Chart', {
   enumerable: true,
@@ -5107,7 +5118,7 @@ Object.defineProperty(exports, 'Chart', {
   }
 });
 
-var _CheckBox = __webpack_require__(211);
+var _CheckBox = __webpack_require__(50);
 
 Object.defineProperty(exports, 'CheckBox', {
   enumerable: true,
@@ -5116,7 +5127,7 @@ Object.defineProperty(exports, 'CheckBox', {
   }
 });
 
-var _Clipboard = __webpack_require__(276);
+var _Clipboard = __webpack_require__(274);
 
 Object.defineProperty(exports, 'Clipboard', {
   enumerable: true,
@@ -5125,7 +5136,7 @@ Object.defineProperty(exports, 'Clipboard', {
   }
 });
 
-var _ConfirmDialog = __webpack_require__(50);
+var _ConfirmDialog = __webpack_require__(203);
 
 Object.defineProperty(exports, 'ConfirmDialog', {
   enumerable: true,
@@ -5143,7 +5154,7 @@ Object.defineProperty(exports, 'Dialog', {
   }
 });
 
-var _Dragger = __webpack_require__(212);
+var _Dragger = __webpack_require__(204);
 
 Object.defineProperty(exports, 'Dragger', {
   enumerable: true,
@@ -5152,7 +5163,7 @@ Object.defineProperty(exports, 'Dragger', {
   }
 });
 
-var _Filter = __webpack_require__(285);
+var _Filter = __webpack_require__(283);
 
 Object.defineProperty(exports, 'Filter', {
   enumerable: true,
@@ -5161,7 +5172,7 @@ Object.defineProperty(exports, 'Filter', {
   }
 });
 
-var _FrozenColumnTable = __webpack_require__(286);
+var _FrozenColumnTable = __webpack_require__(284);
 
 Object.defineProperty(exports, 'FrozenColumnTable', {
   enumerable: true,
@@ -5170,7 +5181,7 @@ Object.defineProperty(exports, 'FrozenColumnTable', {
   }
 });
 
-var _Ghost = __webpack_require__(288);
+var _Ghost = __webpack_require__(286);
 
 Object.defineProperty(exports, 'Ghost', {
   enumerable: true,
@@ -5179,7 +5190,7 @@ Object.defineProperty(exports, 'Ghost', {
   }
 });
 
-var _Go = __webpack_require__(289);
+var _Go = __webpack_require__(287);
 
 Object.defineProperty(exports, 'Go', {
   enumerable: true,
@@ -5197,7 +5208,7 @@ Object.defineProperty(exports, 'Icon', {
   }
 });
 
-var _InfiniteScroll = __webpack_require__(290);
+var _InfiniteScroll = __webpack_require__(288);
 
 Object.defineProperty(exports, 'InfiniteScroll', {
   enumerable: true,
@@ -5206,7 +5217,7 @@ Object.defineProperty(exports, 'InfiniteScroll', {
   }
 });
 
-var _InstantEditor = __webpack_require__(291);
+var _InstantEditor = __webpack_require__(289);
 
 Object.defineProperty(exports, 'InstantEditor', {
   enumerable: true,
@@ -5251,7 +5262,7 @@ Object.defineProperty(exports, 'MultiPicker', {
   }
 });
 
-var _NumberTextline = __webpack_require__(215);
+var _NumberTextline = __webpack_require__(207);
 
 Object.defineProperty(exports, 'NumberTextline', {
   enumerable: true,
@@ -5260,7 +5271,7 @@ Object.defineProperty(exports, 'NumberTextline', {
   }
 });
 
-var _Pager = __webpack_require__(293);
+var _Pager = __webpack_require__(291);
 
 Object.defineProperty(exports, 'Pager', {
   enumerable: true,
@@ -5269,7 +5280,7 @@ Object.defineProperty(exports, 'Pager', {
   }
 });
 
-var _PlainDialog = __webpack_require__(52);
+var _PlainDialog = __webpack_require__(208);
 
 Object.defineProperty(exports, 'PlainDialog', {
   enumerable: true,
@@ -5278,7 +5289,7 @@ Object.defineProperty(exports, 'PlainDialog', {
   }
 });
 
-var _Progress = __webpack_require__(294);
+var _Progress = __webpack_require__(292);
 
 Object.defineProperty(exports, 'Progress', {
   enumerable: true,
@@ -5287,7 +5298,7 @@ Object.defineProperty(exports, 'Progress', {
   }
 });
 
-var _RadioBox = __webpack_require__(295);
+var _RadioBox = __webpack_require__(293);
 
 Object.defineProperty(exports, 'RadioBox', {
   enumerable: true,
@@ -5296,7 +5307,7 @@ Object.defineProperty(exports, 'RadioBox', {
   }
 });
 
-var _RadioSelect = __webpack_require__(53);
+var _RadioSelect = __webpack_require__(52);
 
 Object.defineProperty(exports, 'RadioSelect', {
   enumerable: true,
@@ -5305,7 +5316,7 @@ Object.defineProperty(exports, 'RadioSelect', {
   }
 });
 
-var _RangeCalendar = __webpack_require__(54);
+var _RangeCalendar = __webpack_require__(53);
 
 Object.defineProperty(exports, 'RangeCalendar', {
   enumerable: true,
@@ -5314,7 +5325,7 @@ Object.defineProperty(exports, 'RangeCalendar', {
   }
 });
 
-var _Region = __webpack_require__(216);
+var _Region = __webpack_require__(209);
 
 Object.defineProperty(exports, 'Region', {
   enumerable: true,
@@ -5323,7 +5334,7 @@ Object.defineProperty(exports, 'Region', {
   }
 });
 
-var _RichTextEditor = __webpack_require__(217);
+var _RichTextEditor = __webpack_require__(210);
 
 Object.defineProperty(exports, 'RichTextEditor', {
   enumerable: true,
@@ -5332,7 +5343,7 @@ Object.defineProperty(exports, 'RichTextEditor', {
   }
 });
 
-var _SMSCodeBox = __webpack_require__(297);
+var _SMSCodeBox = __webpack_require__(295);
 
 Object.defineProperty(exports, 'SMSCodeBox', {
   enumerable: true,
@@ -5341,7 +5352,7 @@ Object.defineProperty(exports, 'SMSCodeBox', {
   }
 });
 
-var _ScrollIntoView = __webpack_require__(203);
+var _ScrollIntoView = __webpack_require__(194);
 
 Object.defineProperty(exports, 'ScrollIntoView', {
   enumerable: true,
@@ -5350,7 +5361,7 @@ Object.defineProperty(exports, 'ScrollIntoView', {
   }
 });
 
-var _SearchBox = __webpack_require__(42);
+var _SearchBox = __webpack_require__(44);
 
 Object.defineProperty(exports, 'SearchBox', {
   enumerable: true,
@@ -5368,7 +5379,7 @@ Object.defineProperty(exports, 'Select', {
   }
 });
 
-var _StopScroll = __webpack_require__(45);
+var _StopScroll = __webpack_require__(32);
 
 Object.defineProperty(exports, 'StopScroll', {
   enumerable: true,
@@ -5377,7 +5388,7 @@ Object.defineProperty(exports, 'StopScroll', {
   }
 });
 
-var _Switch = __webpack_require__(218);
+var _Switch = __webpack_require__(211);
 
 Object.defineProperty(exports, 'Switch', {
   enumerable: true,
@@ -5386,7 +5397,7 @@ Object.defineProperty(exports, 'Switch', {
   }
 });
 
-var _Sticky = __webpack_require__(298);
+var _Sticky = __webpack_require__(296);
 
 Object.defineProperty(exports, 'Sticky', {
   enumerable: true,
@@ -5395,7 +5406,7 @@ Object.defineProperty(exports, 'Sticky', {
   }
 });
 
-var _SyntaxHighlighter = __webpack_require__(204);
+var _SyntaxHighlighter = __webpack_require__(195);
 
 Object.defineProperty(exports, 'SyntaxHighlighter', {
   enumerable: true,
@@ -5404,7 +5415,7 @@ Object.defineProperty(exports, 'SyntaxHighlighter', {
   }
 });
 
-var _Tab = __webpack_require__(299);
+var _Tab = __webpack_require__(297);
 
 Object.defineProperty(exports, 'Tab', {
   enumerable: true,
@@ -5413,7 +5424,7 @@ Object.defineProperty(exports, 'Tab', {
   }
 });
 
-var _TabPanel = __webpack_require__(300);
+var _TabPanel = __webpack_require__(298);
 
 Object.defineProperty(exports, 'TabPanel', {
   enumerable: true,
@@ -5422,7 +5433,7 @@ Object.defineProperty(exports, 'TabPanel', {
   }
 });
 
-var _Table = __webpack_require__(213);
+var _Table = __webpack_require__(205);
 
 Object.defineProperty(exports, 'Table', {
   enumerable: true,
@@ -5431,7 +5442,7 @@ Object.defineProperty(exports, 'Table', {
   }
 });
 
-var _TableColumnToggle = __webpack_require__(219);
+var _TableColumnToggle = __webpack_require__(212);
 
 Object.defineProperty(exports, 'TableColumnToggle', {
   enumerable: true,
@@ -5440,7 +5451,7 @@ Object.defineProperty(exports, 'TableColumnToggle', {
   }
 });
 
-var _TableFilter = __webpack_require__(214);
+var _TableFilter = __webpack_require__(206);
 
 Object.defineProperty(exports, 'TableFilter', {
   enumerable: true,
@@ -5449,7 +5460,7 @@ Object.defineProperty(exports, 'TableFilter', {
   }
 });
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 Object.defineProperty(exports, 'TextBox', {
   enumerable: true,
@@ -5458,7 +5469,7 @@ Object.defineProperty(exports, 'TextBox', {
   }
 });
 
-var _Tip = __webpack_require__(55);
+var _Tip = __webpack_require__(54);
 
 Object.defineProperty(exports, 'Tip', {
   enumerable: true,
@@ -5467,7 +5478,7 @@ Object.defineProperty(exports, 'Tip', {
   }
 });
 
-var _Toast = __webpack_require__(56);
+var _Toast = __webpack_require__(213);
 
 Object.defineProperty(exports, 'Toast', {
   enumerable: true,
@@ -5476,7 +5487,7 @@ Object.defineProperty(exports, 'Toast', {
   }
 });
 
-var _ToastLabel = __webpack_require__(301);
+var _ToastLabel = __webpack_require__(299);
 
 Object.defineProperty(exports, 'ToastLabel', {
   enumerable: true,
@@ -5485,7 +5496,7 @@ Object.defineProperty(exports, 'ToastLabel', {
   }
 });
 
-var _Tree = __webpack_require__(302);
+var _Tree = __webpack_require__(300);
 
 Object.defineProperty(exports, 'Tree', {
   enumerable: true,
@@ -5494,7 +5505,7 @@ Object.defineProperty(exports, 'Tree', {
   }
 });
 
-var _UserPicker = __webpack_require__(220);
+var _UserPicker = __webpack_require__(223);
 
 Object.defineProperty(exports, 'UserPicker', {
   enumerable: true,
@@ -5503,7 +5514,7 @@ Object.defineProperty(exports, 'UserPicker', {
   }
 });
 
-var _ViewStep = __webpack_require__(323);
+var _ViewStep = __webpack_require__(334);
 
 Object.defineProperty(exports, 'ViewStep', {
   enumerable: true,
@@ -5512,7 +5523,7 @@ Object.defineProperty(exports, 'ViewStep', {
   }
 });
 
-var _Voice = __webpack_require__(324);
+var _Voice = __webpack_require__(335);
 
 Object.defineProperty(exports, 'Voice', {
   enumerable: true,
@@ -5521,7 +5532,7 @@ Object.defineProperty(exports, 'Voice', {
   }
 });
 
-var _WebUploader = __webpack_require__(327);
+var _WebUploader = __webpack_require__(338);
 
 Object.defineProperty(exports, 'WebUploader', {
   enumerable: true,
@@ -5530,7 +5541,7 @@ Object.defineProperty(exports, 'WebUploader', {
   }
 });
 
-var _asDrawer = __webpack_require__(328);
+var _asDrawer = __webpack_require__(339);
 
 Object.defineProperty(exports, 'asDrawer', {
   enumerable: true,
@@ -5539,7 +5550,7 @@ Object.defineProperty(exports, 'asDrawer', {
   }
 });
 
-var _Uploader = __webpack_require__(227);
+var _Uploader = __webpack_require__(230);
 
 Object.defineProperty(exports, 'Uploader', {
   enumerable: true,
@@ -5556,6 +5567,12 @@ Object.defineProperty(exports, 'create', {
     return _util.create;
   }
 });
+Object.defineProperty(exports, 'html', {
+  enumerable: true,
+  get: function get() {
+    return _util.html;
+  }
+});
 
 var _asInput = __webpack_require__(7);
 
@@ -5566,7 +5583,7 @@ Object.defineProperty(exports, 'asInput', {
   }
 });
 
-var _asForm = __webpack_require__(58);
+var _asForm = __webpack_require__(35);
 
 Object.defineProperty(exports, 'asForm', {
   enumerable: true,
@@ -5581,12 +5598,21 @@ Object.defineProperty(exports, 'registerFormItem', {
   }
 });
 
-var _createForm = __webpack_require__(384);
+var _createForm = __webpack_require__(395);
 
 Object.defineProperty(exports, 'createForm', {
   enumerable: true,
   get: function get() {
     return _createForm.createForm;
+  }
+});
+
+var _FormDialog = __webpack_require__(246);
+
+Object.defineProperty(exports, 'FormDialog', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_FormDialog).default;
   }
 });
 
@@ -5608,7 +5634,7 @@ var _san = __webpack_require__(0);
 exports.default = (0, _san.defineComponent)({
     template: '<div class="x-row">\n        <div class="label" s-if="label">{{label}}</div>\n        <div class="content"><slot/></div>\n    </div>'
 }); /**
-     * @file demos/Row.es6
+     * @file demos/Row.js
      * @author leeight
      */
 
@@ -22702,7 +22728,7 @@ exports.default = (0, _san.defineComponent)({
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41), __webpack_require__(81)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43), __webpack_require__(72)(module)))
 
 /***/ }),
 /* 6 */
@@ -22715,6 +22741,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="', '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="', '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>'], ['\n<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="', '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="', '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>']);
+
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
@@ -22725,15 +22753,15 @@ var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * @file components/Button.js
+                                                                                                                                                   * @author leeight
+                                                                                                                                                   */
+
 var cx = (0, _util.create)('ui-button');
 
 /* eslint-disable */
-/**
- * @file components/Button.es6
- * @author leeight
- */
-
-var template = '<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="' + cx('label') + '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="' + cx('label') + '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>';
+var template = (0, _util.html)(_templateObject, cx('label'), cx('label'));
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -22856,7 +22884,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * @file components/asInput.es6
+ * @file components/asInput.js
  * @author leeight
  */
 
@@ -22902,9 +22930,9 @@ function asInput(Klass) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = asyncMap;
 /* harmony export (immutable) */ __webpack_exports__["b"] = complementError;
 /* harmony export (immutable) */ __webpack_exports__["c"] = deepMerge;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__);
 
 
@@ -23094,20 +23122,10 @@ function deepMerge(target, source) {
   }
   return target;
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(32)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(33)))
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(256)
-
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -33367,6 +33385,16 @@ return jQuery;
 
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(254)
+
+
+/***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33382,7 +33410,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file Loading.es6
+ * @file Loading.js
  * @author leeight
  */
 
@@ -33440,12 +33468,12 @@ exports.default = (0, _san.defineComponent)({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__required__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__whitespace__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__range__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enum__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pattern__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__required__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__whitespace__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__range__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enum__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pattern__ = __webpack_require__(378);
 
 
 
@@ -33469,8 +33497,208 @@ exports.default = (0, _san.defineComponent)({
 "use strict";
 
 
-var bind = __webpack_require__(222);
-var isBuffer = __webpack_require__(306);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _asInput = __webpack_require__(7);
+
+var cx = (0, _util.create)('ui-textbox');
+
+/* eslint-disable */
+/**
+ * @file TextBox.js
+ * @author leeight
+ */
+
+var template = '<div class="{{mainClass}}">\n    <div s-if="addon && addonPosition === \'begin\'" class="' + cx('addon') + '">{{addon}}</div>\n    <textarea s-if="multiline"\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}"></textarea>\n    <input s-else\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        on-focus="onFocus($event)"\n        on-blur="onBlur($event)"\n        on-click="onClick($event)"\n        value="{=value=}"\n        min="{{min}}",\n        max="{{max}}"\n        step="{{step}}"\n        type="{{type}}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}" />\n    <div s-if="addon && addonPosition === \'end\'" class="' + cx('addon', 'addon-end') + '">{{addon}}</div>\n</div>';
+/* eslint-enable */
+
+var TextBox = (0, _san.defineComponent)({
+    template: template,
+    computed: {
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        },
+        textboxStyle: function textboxStyle() {
+            return cx.mainStyle(this);
+        }
+    },
+    initData: function initData() {
+        return {
+            disabled: false,
+            autofocus: false,
+            focusPosition: 'end', // 'end' | 'begin' | 'all'
+            type: 'text',
+            multiline: false,
+            skin: '',
+            placeholder: '',
+            addon: '',
+            addonPosition: 'begin', // 'begin' | 'end'
+            width: null,
+            height: null
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 控件的禁用状态
+         *
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 是否默认获取焦点
+         *
+         * @default false
+         */
+        autofocus: _san.DataTypes.bool,
+
+        /**
+         * 光标出现的位置
+         *
+         * @default end
+         */
+        focusPosition: _san.DataTypes.string,
+
+        /**
+         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
+         *
+         * @default text
+         */
+        type: _san.DataTypes.string,
+
+        /**
+         * 获取或者设置控件的值
+         *
+         * @bindx
+         */
+        value: _san.DataTypes.string,
+
+        /**
+         * 是否展示成多行输入的文本框(textarea)
+         *
+         * @default false
+         */
+        multiline: _san.DataTypes.bool,
+
+        /**
+         * 皮肤样式
+         */
+        skin: _san.DataTypes.string,
+
+        /**
+         * 设置 placeholder 的内容
+         */
+        placeholder: _san.DataTypes.string,
+
+        /**
+         * 输入框的前缀或者后缀文案
+         */
+        addon: _san.DataTypes.string,
+
+        /**
+         * addon 文案的位置，可以设置 begin 或者 end
+         *
+         * @default begin
+         */
+        addonPosition: _san.DataTypes.string,
+
+        /**
+         * 输入框的宽度
+         */
+        width: _san.DataTypes.number,
+
+        /**
+         * 输入框的高度
+         */
+        height: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        min: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        max: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        step: _san.DataTypes.number
+    },
+    attached: function attached() {
+        var autofocus = this.data.get('autofocus');
+        if (autofocus) {
+            this.focus();
+        }
+    },
+    focus: function focus() {
+        var inputEl = this.ref('inputEl');
+        var focusPosition = this.data.get('focusPosition');
+        if (inputEl) {
+            if (document.activeElement === inputEl) {
+                return;
+            }
+            if (typeof inputEl.selectionStart === 'number') {
+                if (focusPosition === 'end') {
+                    // 光标在内容的后面
+                    inputEl.selectionStart = inputEl.selectionEnd = this.data.get('value').length;
+                } else if (focusPosition === 'all') {
+                    // 全选
+                    inputEl.selectionStart = 0;
+                    inputEl.selectionEnd = this.data.get('value').length;
+                }
+            }
+            inputEl.focus();
+        }
+    },
+    onInput: function onInput() {
+        var value = this.data.get('value');
+        this.fire('input', { value: value });
+    },
+    onFocus: function onFocus(e) {
+        this.fire('focus', e);
+    },
+    onBlur: function onBlur(e) {
+        this.fire('blur', e);
+    },
+    onKeyUp: function onKeyUp(e) {
+        this.fire('keyup', e);
+    },
+    onKeyDown: function onKeyDown(e) {
+        this.fire('keydown', e);
+    },
+    onKeyPress: function onKeyPress(e) {
+        var keyCode = e.which || e.keyCode;
+        if (keyCode === 13) {
+            this.fire('enter', e);
+        }
+        this.fire('keypress', e);
+    },
+    onClick: function onClick(e) {
+        this.fire('click', e);
+    }
+});
+
+exports.default = (0, _asInput.asInput)(TextBox);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(225);
+var isBuffer = __webpack_require__(317);
 
 /*global toString:true*/
 
@@ -33773,21 +34001,19 @@ module.exports = {
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
+/**
+ * @file 默认的加载器的主入口
+ * @author Leo Wang(leowang721@gmail.com)
+ */
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _promise = __webpack_require__(9);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * 默认的主入口
@@ -33797,198 +34023,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @return {string} i18n化后的字面，如果没有match，则使用原字面
  */
 function getText(keyword) {
-  return keyword;
-} /**
-   * @file 默认的加载器的主入口
-   * @author Leo Wang(leowang721@gmail.com)
-   */
+    return keyword;
+}
 
-getText.activate = function () {
-  return _promise2.default.resolve();
-};
-getText.getLanguage = function () {
-  return 'zh-cn';
-};
+getText.activate = () => __WEBPACK_IMPORTED_MODULE_0_promise___default.a.resolve();
+getText.getLanguage = () => 'zh-cn';
 
-exports.default = getText;
+/* harmony default export */ __webpack_exports__["default"] = (getText);
 
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var cx = (0, _util.create)('ui-textbox');
-
-/* eslint-disable */
-/**
- * @file TextBox.es6
- * @author leeight
- */
-
-var template = '<div class="{{mainClass}}">\n    <div s-if="addon && addonPosition === \'begin\'" class="' + cx('addon') + '">{{addon}}</div>\n    <textarea s-if="multiline"\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}"></textarea>\n    <input s-else\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        on-focus="onFocus($event)"\n        on-blur="onBlur($event)"\n        value="{=value=}"\n        min="{{min}}",\n        max="{{max}}"\n        step="{{step}}"\n        type="{{type}}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}" />\n    <div s-if="addon && addonPosition === \'end\'" class="' + cx('addon', 'addon-end') + '">{{addon}}</div>\n</div>';
-/* eslint-enable */
-
-var TextBox = (0, _san.defineComponent)({
-    template: template,
-    computed: {
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        },
-        textboxStyle: function textboxStyle() {
-            return cx.mainStyle(this);
-        }
-    },
-    initData: function initData() {
-        return {
-            disabled: false,
-            autofocus: false,
-            type: 'text',
-            multiline: false,
-            skin: '',
-            placeholder: '',
-            addon: '',
-            addonPosition: 'begin', // 'begin' | 'end'
-            width: null,
-            height: null
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 控件的禁用状态
-         *
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 是否默认获取焦点
-         *
-         * @default false
-         */
-        autofocus: _san.DataTypes.bool,
-
-        /**
-         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
-         *
-         * @default text
-         */
-        type: _san.DataTypes.string,
-
-        /**
-         * 获取或者设置控件的值
-         *
-         * @bindx
-         */
-        value: _san.DataTypes.string,
-
-        /**
-         * 是否展示成多行输入的文本框(textarea)
-         *
-         * @default false
-         */
-        multiline: _san.DataTypes.bool,
-
-        /**
-         * 皮肤样式
-         */
-        skin: _san.DataTypes.string,
-
-        /**
-         * 设置 placeholder 的内容
-         */
-        placeholder: _san.DataTypes.string,
-
-        /**
-         * 输入框的前缀或者后缀文案
-         */
-        addon: _san.DataTypes.string,
-
-        /**
-         * addon 文案的位置，可以设置 begin 或者 end
-         *
-         * @default begin
-         */
-        addonPosition: _san.DataTypes.string,
-
-        /**
-         * 输入框的宽度
-         */
-        width: _san.DataTypes.number,
-
-        /**
-         * 输入框的高度
-         */
-        height: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        min: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        max: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        step: _san.DataTypes.number
-    },
-    attached: function attached() {
-        var autofocus = this.data.get('autofocus');
-        if (autofocus) {
-            this.focus();
-        }
-    },
-    focus: function focus() {
-        var inputEl = this.ref('inputEl');
-        if (inputEl) {
-            if (document.activeElement === inputEl) {
-                return;
-            }
-            inputEl.focus();
-        }
-    },
-    onInput: function onInput() {
-        var value = this.data.get('value');
-        this.fire('input', { value: value });
-    },
-    onFocus: function onFocus(e) {
-        this.fire('focus', e);
-    },
-    onBlur: function onBlur(e) {
-        this.fire('blur', e);
-    },
-    onKeyUp: function onKeyUp(e) {
-        this.fire('keyup', e);
-    },
-    onKeyDown: function onKeyDown(e) {
-        this.fire('keydown', e);
-    },
-    onKeyPress: function onKeyPress(e) {
-        var keyCode = e.which || e.keyCode;
-        if (keyCode === 13) {
-            this.fire('enter');
-        }
-        this.fire('keypress', e);
-    }
-});
-
-exports.default = (0, _asInput.asInput)(TextBox);
 
 /***/ }),
 /* 16 */
@@ -34001,7 +34043,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -34013,11 +34055,11 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _opacity = __webpack_require__(202);
+var _opacity = __webpack_require__(193);
 
-var _dom = __webpack_require__(43);
+var _dom = __webpack_require__(45);
 
-var _page = __webpack_require__(44);
+var _page = __webpack_require__(46);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34025,7 +34067,7 @@ var cx = (0, _util.create)('ui-layer');
 
 /* eslint-disable */
 /**
- * @file Layer.es6
+ * @file Layer.js
  * @author leeight
  */
 var template = '\n<template>\n    <div s-ref="layer" s-if="open" s-transition="$fxOpacity" class="' + cx() + '" style="{{layerStyle}}"><slot/></div>\n</template>\n';
@@ -34216,8 +34258,8 @@ exports.default = (0, _san.defineComponent)({
 
         var layerElement = (0, _dom.getOffset)(layer);
 
-        //dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
-        //实际中的width 属性不包括 。直接用jquery的 width()会抹去小数点，可能出现获取的值小于实际的值。
+        // dom 中的width 计算使用的是 getBoundingClientRect 。这个方法的宽度包含了padding 和 boarder。
+        // 实际中的width 属性不包括 。直接用jquery的 width()会抹去小数点，可能出现获取的值小于实际的值。
         var widthValue = 'auto';
         var heightValue = 'auto';
 
@@ -34376,7 +34418,7 @@ exports.default = (0, _san.defineComponent)({
     title: _san.DataTypes.string
   }
 }); /**
-     * @file Icon.es6
+     * @file Icon.js
      * @author leeight
      */
 
@@ -34391,7 +34433,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -34403,11 +34445,11 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _filters = __webpack_require__(206);
+var _filters = __webpack_require__(198);
 
-var _opacity = __webpack_require__(202);
+var _opacity = __webpack_require__(193);
 
-var _page = __webpack_require__(44);
+var _page = __webpack_require__(46);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34415,7 +34457,7 @@ var cx = (0, _util.create)('ui-dialog');
 
 /* eslint-disable */
 /**
- * @file components/Dialog.es6
+ * @file components/Dialog.js
  * @author leeight
  */
 var template = '<template>\n<div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">\n    <div class="' + cx('head', 'head-panel') + '" s-if="head">\n        <div class="' + cx('title') + '">\n            <slot name="head">{{title}}</slot>\n        </div>\n        <div class="' + cx('close-icon') + '" on-click="onCloseDialog"></div>\n    </div>\n    <div class="' + cx('body', 'body-panel') + '" style="{{dialogBodyStyle}}">\n        <slot />\n    </div>\n    <div class="' + cx('foot', 'foot-panel') + '" s-if="foot">\n        <slot name="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u8BA4\'|i18n}}</ui-button>\n            <ui-button on-click="onCloseDialog">{{\'\u53D6\u6D88\'|i18n}}</ui-button>\n        </slot>\n    </div>\n</div>\n<div s-if="open && mask" on-click="onClickMask" class="' + cx('mask', 'mask-x') + '" style="{{maskStyle}}"></div>\n</template>';
@@ -34601,7 +34643,7 @@ module.exports = function (it, key) {
 "use strict";
 
 
-var asap = __webpack_require__(82);
+var asap = __webpack_require__(73);
 
 function noop() {}
 
@@ -34839,22 +34881,22 @@ var _Layer = __webpack_require__(16);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
-var _ScrollIntoView = __webpack_require__(203);
+var _ScrollIntoView = __webpack_require__(194);
 
 var _ScrollIntoView2 = _interopRequireDefault(_ScrollIntoView);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _StopScroll = __webpack_require__(45);
+var _StopScroll = __webpack_require__(32);
 
 var _StopScroll2 = _interopRequireDefault(_StopScroll);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file Select.es6
+ * @file Select.js
  * @author leeight
  */
 
@@ -34868,7 +34910,7 @@ function defaultFilter(datasource, keyword) {
 
     var rv = [];
     _lodash2.default.each(datasource, function (item) {
-        if (item.text && item.text.indexOf(keyword) !== -1) {
+        if (item.text && item.text.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
             rv.push(item);
         }
     });
@@ -34876,7 +34918,7 @@ function defaultFilter(datasource, keyword) {
 }
 
 /* eslint-disable */
-var template = '<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">\n    <span class="' + cx('text') + '" s-if="multi">{{multiLabel|raw}}</span>\n    <span class="' + cx('text') + '" s-else>{{label|raw}}</span>\n    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{layerOffsetTop}}" offset-left="{{layerOffsetLeft}}">\n        <ui-ss class="' + cx('layer') + ' ' + cx('layer-x') + '" style="{{layerStyle}}">\n        <ul s-if="multi">\n            <ui-textbox s-if="filter"\n                value="{=keyword=}"\n                placeholder="{{filterPlaceholder}}"\n                width="{{realLayerWidth - 50}}"\n                />\n            <li class="' + cx('item', 'item-all') + '" s-if="filteredDatasource.length">\n                <label>\n                    <input type="checkbox" on-change="onToggleAll" checked="{=checkedAll=}" />\u5168\u9009/\u5168\u4E0D\u9009\n                </label>\n            </li>\n            <li class="' + cx('x-group') + '"\n                s-for="group in groupedDatasource">\n                <div s-if="group.title !== \'-\' "\n                    class="' + cx('group-title') + '" title="{{group.title}}">{{group.title}}</div>\n                <ul class="' + cx('group-list') + '">\n                    <li class="{{item | itemClass}}"\n                        aria-label="{{item.tip}}"\n                        s-for="item in group.datasource">\n                        <label>\n                            <input type="checkbox"\n                                value="{{item.value}}"\n                                class="' + cx('selected-box') + '"\n                                disabled="{{item.disabled}}"\n                                checked="{=value=}" /><span>{{item.text}}</span>\n                        </label>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n        <ul s-else>\n            <ui-textbox s-if="filter"\n                value="{=keyword=}"\n                placeholder="{{filterPlaceholder}}"\n                width="{{realLayerWidth - 50}}"\n                />\n            <li class="' + cx('x-group') + '"\n                s-for="group in groupedDatasource">\n                <div s-if="group.title !== \'-\' "\n                    class="' + cx('group-title') + '" title="{{group.title}}">{{group.title}}</div>\n                <ul class="' + cx('group-list') + '">\n                    <li on-click="selectItem($event, item)"\n                        class="{{item | itemClass}}"\n                        aria-label="{{item.tip}}"\n                        s-for="item in group.datasource">\n                        <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>\n                        <span s-else>{{item.text}}</span>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n        </ui-ss>\n    </ui-layer>\n</div>';
+var template = '<div on-click="toggleLayer($event)" class="{{mainClass}}" style="{{mainStyle}}">\n    <span class="' + cx('text') + '" s-if="multi">{{multiLabel|raw}}</span>\n    <span class="' + cx('text') + '" s-else>{{label|raw}}</span>\n    <ui-layer open="{=active=}" follow-scroll="{{false}}" s-ref="layer" offset-top="{{layerOffsetTop}}" offset-left="{{layerOffsetLeft}}">\n        <ui-ss class="' + cx('layer') + ' ' + cx('layer-x') + '" style="{{layerStyle}}">\n        <ul s-if="multi">\n            <ui-textbox s-if="filter"\n                value="{=keyword=}"\n                placeholder="{{filterPlaceholder}}"\n                width="{{realLayerWidth - 50}}"\n                />\n            <li class="' + cx('item', 'item-all') + '" s-if="filteredDatasource.length">\n                <label>\n                    <input type="checkbox" on-change="onToggleAll" checked="{=checkedAll=}" />\u5168\u9009/\u5168\u4E0D\u9009\n                </label>\n            </li>\n            <li class="' + cx('x-group') + '"\n                s-for="group in groupedDatasource">\n                <div s-if="group.title !== \'-\' "\n                    class="' + cx('group-title') + '" title="{{group.title}}">{{group.title}}</div>\n                <ul class="' + cx('group-list') + '">\n                    <li class="{{item | itemClass}}"\n                        aria-label="{{item.tip}}"\n                        s-for="item in group.datasource">\n                        <label>\n                            <input type="checkbox"\n                                value="{{item.value}}"\n                                class="' + cx('selected-box') + '"\n                                disabled="{{item.disabled}}"\n                                checked="{=value=}" /><span style="{{textStyle}}">{{item.text}}</span>\n                        </label>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n        <ul s-else>\n            <ui-textbox s-if="filter"\n                value="{=keyword=}"\n                placeholder="{{filterPlaceholder}}"\n                width="{{realLayerWidth - 50}}"\n                />\n            <li class="' + cx('x-group') + '"\n                s-for="group in groupedDatasource">\n                <div s-if="group.title !== \'-\' "\n                    class="' + cx('group-title') + '" title="{{group.title}}">{{group.title}}</div>\n                <ul class="' + cx('group-list') + '">\n                    <li on-click="selectItem($event, item)"\n                        class="{{item | itemClass}}"\n                        aria-label="{{item.tip}}"\n                        s-for="item in group.datasource">\n                        <ui-siv s-if="item.value === value"><span>{{item.text}}</span></ui-siv>\n                        <span s-else>{{item.text}}</span>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n        </ui-ss>\n    </ui-layer>\n</div>';
 /* eslint-enable */
 
 var Select = (0, _san.defineComponent)({ // eslint-disable-line
@@ -34901,6 +34943,7 @@ var Select = (0, _san.defineComponent)({ // eslint-disable-line
             filterCallback: defaultFilter,
             keyword: '', // 过滤的关键词
 
+            defaultLabel: kDefaultLabel,
             value: '', // any | any[]
             checkedAll: false
         };
@@ -34932,6 +34975,13 @@ var Select = (0, _san.defineComponent)({ // eslint-disable-line
          * }</code></pre>
          */
         datasource: _san.DataTypes.array,
+
+        /**
+         * 未选中任何项时的文字
+         *
+         * @default '请选择'
+         */
+        defaultLabel: _san.DataTypes.string,
 
         /**
          * 是否支持选择多项，如果设置为 true，那么 value 的类型是 any[]
@@ -34979,20 +35029,20 @@ var Select = (0, _san.defineComponent)({ // eslint-disable-line
         multiLabel: function multiLabel() {
             // const datasource = this.data.get('datasource');
             var values = this.data.get('value');
-            return values && values.length > 0 ? '\u60A8\u5DF2\u7ECF\u9009\u62E9\u4E86' + values.length + '\u9879' : kDefaultLabel;
+            return values && values.length > 0 ? '\u60A8\u5DF2\u7ECF\u9009\u62E9\u4E86' + values.length + '\u9879' : this.data.get('defaultLabel');
             /**
-            const labels = [];
-            u.each(datasource, item => {
+             const labels = [];
+             u.each(datasource, item => {
                 if (u.indexOf(values, item.value) !== -1) {
                     labels.push(item.text);
                 }
             });
-             return labels.length > 0 ? labels.join(',') : kDefaultLabel;
+             return labels.length > 0 ? labels.join(',') : this.data.get('defaultLabel');
             */
         },
         label: function label() {
             var selectedItem = this.data.get('selectedItem');
-            return selectedItem ? selectedItem.text : kDefaultLabel;
+            return selectedItem ? selectedItem.text : this.data.get('defaultLabel');
         },
         filteredDatasource: function filteredDatasource() {
             // XXX(leeight) https://github.com/ecomfe/san/issues/97
@@ -35050,6 +35100,14 @@ var Select = (0, _san.defineComponent)({ // eslint-disable-line
             var realLayerWidth = this.data.get('realLayerWidth');
             if (realLayerWidth != null) {
                 style.width = (0, _util.hasUnit)(realLayerWidth) ? realLayerWidth : realLayerWidth + 'px';
+            }
+            return style;
+        },
+        textStyle: function textStyle() {
+            var style = {};
+            var realLayerWidth = this.data.get('realLayerWidth');
+            if (realLayerWidth != null) {
+                style.width = realLayerWidth - 60 + 'px';
             }
             return style;
         },
@@ -35162,81 +35220,6 @@ exports.default = (0, _asInput.asInput)(Select);
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(24);
-var createDesc = __webpack_require__(35);
-module.exports = __webpack_require__(25) ? function (object, key, value) {
-  return dP.f(object, key, createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(34);
-var IE8_DOM_DEFINE = __webpack_require__(231);
-var toPrimitive = __webpack_require__(60);
-var dP = Object.defineProperty;
-
-exports.f = __webpack_require__(25) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(30)(function () {
-  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(234);
-var defined = __webpack_require__(61);
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var store = __webpack_require__(64)('wks');
-var uid = __webpack_require__(37);
-var Symbol = __webpack_require__(17).Symbol;
-var USE_SYMBOL = typeof Symbol == 'function';
-
-var $exports = module.exports = function (name) {
-  return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-};
-
-$exports.store = store;
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * ER (Enterprise RIA)
  * Copyright 2013 Baidu Inc. All rights reserved.
@@ -35246,9 +35229,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @author otakustay
  */
 !(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(74);
-        var Event = __webpack_require__(244);
-        var EventQueue = __webpack_require__(410);
+        var lib = __webpack_require__(57);
+        var Event = __webpack_require__(218);
+        var EventQueue = __webpack_require__(307);
 
         /**
          * 提供事件相关操作的基类
@@ -35445,7 +35428,100 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(25);
+var createDesc = __webpack_require__(38);
+module.exports = __webpack_require__(26) ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(37);
+var IE8_DOM_DEFINE = __webpack_require__(234);
+var toPrimitive = __webpack_require__(60);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(26) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(31)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(237);
+var defined = __webpack_require__(61);
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__(64)('wks');
+var uid = __webpack_require__(40);
+var Symbol = __webpack_require__(17).Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
 /* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * @file eoo/0.1.4/src/main.js
+ * @author Created by exodia on 14-8-28.
+ */
+
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+    var oo = __webpack_require__(305);
+    oo.defineAccessor = __webpack_require__(306);
+
+    return oo;
+}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -35454,7 +35530,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -35467,25 +35543,59 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/main.js
- * @author Created by exodia on 14-8-28.
- */
+"use strict";
 
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var oo = __webpack_require__(408);
-    oo.defineAccessor = __webpack_require__(409);
 
-    return oo;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _san = __webpack_require__(0);
+
+exports.default = (0, _san.defineComponent)({
+    template: '<div on-wheel="onWheel"><slot/></div>',
+    initData: function initData() {
+        return {
+            disabled: false
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: _san.DataTypes.bool
+    },
+    onWheel: function onWheel(e) {
+        var disabled = this.data.get('disabled');
+        if (disabled) {
+            return;
+        }
+
+        var layer = e.currentTarget;
+        if (!layer) {
+            return;
+        }
+        if (layer.scrollTop + e.deltaY + layer.clientHeight >= layer.scrollHeight) {
+            e.preventDefault();
+            layer.scrollTop = layer.scrollHeight;
+        }
+        if (layer.scrollTop + e.deltaY <= 0) {
+            e.preventDefault();
+            layer.scrollTop = 0;
+        }
+    }
+}); /**
+     * @file san-xui/x/components/StopScroll.js
+     * @author leeight
+     */
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -35675,98 +35785,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-var core = module.exports = { version: '2.5.3' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-
-/***/ }),
 /* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(29);
-module.exports = function (it) {
-  if (!isObject(it)) throw TypeError(it + ' is not an object!');
-  return it;
-};
-
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports) {
-
-module.exports = function (bitmap, value) {
-  return {
-    enumerable: !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable: !(bitmap & 4),
-    value: value
-  };
-};
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(233);
-var enumBugKeys = __webpack_require__(65);
-
-module.exports = Object.keys || function keys(O) {
-  return $keys(O, enumBugKeys);
-};
-
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports) {
-
-var id = 0;
-var px = Math.random();
-module.exports = function (key) {
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports) {
-
-exports.f = {}.propertyIsEnumerable;
-
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _iterator = __webpack_require__(338);
-
-var _iterator2 = _interopRequireDefault(_iterator);
-
-var _symbol = __webpack_require__(350);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
-  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
-} : function (obj) {
-  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
-};
-
-/***/ }),
-/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -35805,7 +35824,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             return error;
         };
 
-        var EventBus = __webpack_require__(31).create(__webpack_require__(28), exports);
+        var EventBus = __webpack_require__(29).create(__webpack_require__(23), exports);
         var instance = new EventBus();
         instance.EventBus = EventBus;
         return instance;
@@ -35952,7 +35971,736 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.registerFormItem = registerFormItem;
+exports.asForm = asForm;
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _moment = __webpack_require__(1);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _promise = __webpack_require__(10);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _asyncValidator = __webpack_require__(232);
+
+var AsyncValidator = _interopRequireWildcard(_asyncValidator);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _ExpressionEvaluator = __webpack_require__(393);
+
+var _buildValidator = __webpack_require__(394);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } /**
+                                                                                                                                                                                                     * @file san-xui/x/forms/asForm.js
+                                                                                                                                                                                                     * @author leeight
+                                                                                                                                                                                                     */
+
+var cx = (0, _util.create)('as-form');
+var cx2 = (0, _util.create)('ui-form');
+var kFormItemComponents = {};
+var kFormItemBuilders = {};
+var Schema = AsyncValidator.default;
+
+// FIXME(leeight) 如何跟 forms/FormItem.js 复用呢?
+var FormItem = (0, _san.defineComponent)({
+    template: '<div class="{{mainClass}}">\n        <div class="{{labelClass}}" s-if="label">{{label | raw}}\uFF1A</div>\n        <div class="{{contentClass}}">\n            <slot />\n            <div class="{{errorClass}}" s-if="!preview && error">{{error | raw}}</div>\n            <div class="{{helpClass}}" s-if="!preview && help">{{help | raw}}</div>\n        </div>\n    </div>',
+    messages: {
+        'input-comp-value-changed': function inputCompValueChanged(arg) {
+            var payload = arg.value;
+            var name = this.data.get('name');
+            this.dispatch('form-element-changed', { name: name, value: payload.value });
+        }
+    },
+    computed: {
+        errorClass: function errorClass() {
+            return [cx2('item-invalid-label')];
+        },
+        helpClass: function helpClass() {
+            return [cx2('item-help')];
+        },
+        mainClass: function mainClass() {
+            var klass = [cx2('item')];
+            var name = this.data.get('name');
+            var inline = this.data.get('inline');
+            if (inline) {
+                klass.push(cx2('item-inline'));
+            }
+            if (name) {
+                klass.push(cx2('item-' + name));
+            }
+            return klass;
+        },
+        labelClass: function labelClass() {
+            var klass = [cx2('item-label')];
+            var required = this.data.get('required');
+            if (required) {
+                klass.push('required-label');
+            }
+            return klass;
+        },
+        contentClass: function contentClass() {
+            var klass = [cx2('item-content')];
+            return klass;
+        }
+    },
+    initData: function initData() {
+        return {
+            name: null,
+            label: null,
+            error: null,
+            help: null,
+            required: false,
+            preview: false,
+            inline: true
+        };
+    }
+});
+
+function asFormItem(item, prefix, content) {
+    return '\n    <as-form-item\n        inline\n        name="' + item.name + '"\n        label="{{' + prefix + '.label}}"\n        help="{{' + prefix + '.help}}"\n        required="{{requiredOn.' + item.name + '}}"\n        error="{{formErrors.' + item.name + '}}"\n        preview="{{preview}}"\n    >' + content + '</as-form-item>\n    ';
+}
+
+function appendList(root, key, value) {
+    if (!root[key]) {
+        root[key] = [];
+    }
+    root[key].push(value);
+}
+
+function schemaTraversal(controls, cb) {
+    _lodash2.default.each(controls, function (item) {
+        if (_lodash2.default.isArray(item)) {
+            _lodash2.default.each(item, function (colItem) {
+                return cb(colItem);
+            });
+        } else {
+            cb(item);
+        }
+    });
+}
+
+function generateTemplate(controls) {
+    var template = [];
+    _lodash2.default.each(controls, function (item, i) {
+        if (_lodash2.default.isArray(item)) {
+            template.push('<div class="' + cx('row') + '">');
+            _lodash2.default.each(item, function (colItem, j) {
+                var builder = kFormItemBuilders[colItem.type];
+                if (typeof builder !== 'function') {
+                    throw new Error('invalid control type = ' + colItem.type);
+                }
+                var prefix = 'schema[' + i + '][' + j + ']';
+                template.push('<div class="' + cx('col', 'col-' + j) + '"\n                    s-if="{{!hiddenOn.' + colItem.name + ' && visibleOn.' + colItem.name + ' !== false}}">');
+                template.push(asFormItem(colItem, prefix, builder(colItem, prefix)));
+                template.push('</div>');
+            });
+            template.push('</div>');
+        } else {
+            var builder = kFormItemBuilders[item.type];
+            if (typeof builder !== 'function') {
+                throw new Error('invalid control type = ' + item.type);
+            }
+            var prefix = 'schema[' + i + ']';
+            template.push('<div class="' + cx('row') + '"\n                s-if="{{!hiddenOn.' + item.name + ' && visibleOn.' + item.name + ' !== false}}">');
+            template.push(asFormItem(item, prefix, builder(item, prefix)));
+            template.push('</div>');
+        }
+    });
+
+    return template.join('\n');
+}
+
+function registerFormItem(_ref) {
+    var type = _ref.type,
+        tagName = _ref.tagName,
+        Component = _ref.Component,
+        builder = _ref.builder;
+
+    if (kFormItemBuilders[type]) {
+        throw new Error(type + ' already registered!');
+    }
+
+    var $tagName = tagName || 'ui-' + type;
+    kFormItemComponents[$tagName] = Component;
+    kFormItemBuilders[type] = builder;
+}
+
+function asForm(schema) {
+    var controls = schema.controls;
+    var components = _lodash2.default.extend({
+        'as-form-item': FormItem
+    }, kFormItemComponents);
+
+    /* eslint-disable */
+    var template = '<template>\n    <div class="{{mainClass}}">\n        <div class="' + cx('title') + '" s-if="title">\n            <h4>{{title}}</h4>\n            <slot name="actions" s-if="editable">\n                <div class="' + cx('title-actions') + '">\n                    <ui-button on-click="startEditing" s-if="!editing">\u7F16\u8F91</ui-button>\n                    <ui-button disabled="{{submitting}}" on-click="submitEditing" skin="primary" s-if="editing">{{submitting ? \'\u4FDD\u5B58\u4E2D...\' : \'\u4FDD\u5B58\'}}</ui-button>\n                    <ui-button disabled="{{submitting}}" on-click="cancelEditing" s-if="editing">\u53D6\u6D88\u4FEE\u6539</ui-button>\n                </div>\n            </slot>\n        </div>\n        <div class="' + cx2('x') + '">' + generateTemplate(controls) + '</div>\n    </div>\n    </template>';
+    /* eslint-enable */
+
+    // text, number, select, switch, calendar, uploader
+    var Form = (0, _san.defineComponent)({
+        template: template,
+        components: components,
+        computed: {
+            mainClass: function mainClass() {
+                var klass = cx.mainClass(this);
+                var size = this.data.get('itemSize');
+                var preview = this.data.get('preview');
+                klass.push(cx(String(size)));
+                if (preview) {
+                    klass.push(cx('preview'));
+                }
+                return klass;
+            }
+        },
+        filters: {
+            filename: function filename(url) {
+                if (!url) {
+                    return '';
+                }
+                var lastSlashIndex = url.lastIndexOf('/');
+                try {
+                    return decodeURIComponent(url.substr(lastSlashIndex + 1));
+                } catch (ex) {
+                    return url.substr(lastSlashIndex + 1);
+                }
+            },
+            datetime: function datetime(value, format) {
+                if (!format) {
+                    format = 'YYYY-MM-DD'; // eslint-disable-line
+                }
+                return (0, _moment2.default)(value).format(format);
+            }
+        },
+        messages: {
+            'form-element-changed': function formElementChanged(arg) {
+                // eslint-disable-line
+                var instantValidation = this.data.get('instantValidation');
+                if (instantValidation) {
+                    var payload = arg.value;
+                    this.validateFormItem(payload.name);
+                }
+            }
+        },
+        initData: function initData() {
+            return {
+                title: null,
+                instantValidation: true,
+                preview: false, // 预览模式
+                editing: false, // 编辑状态
+                submitting: false, // 提交状态
+                editable: false, // 预览模式下是否允许编辑
+                schema: controls,
+                formData: {},
+                formErrors: null,
+                visibleOn: {},
+                hiddenOn: {},
+                requiredOn: {},
+                // 这个disabled并不是HTML FORM中的disabled。它更接近于readonly，即使组件被设置为disabled，其值依然能获取。
+                disabledOn: {}
+            };
+        },
+        inited: function inited() {
+            var _this = this;
+
+            // 根据 Name 来快速定位相关的配置
+            var itemsMap = {};
+
+            // {
+            //   当 formData.a 变化的时候，需要重新计算 hiddenOn.b 和 hiddenOn.c 的值
+            //   计算的逻辑就参考 schema 里面配置的内容
+            //   1. 如果 hiddenOn 是字符串，就从 formData 中获取对应的值
+            //   然后按照 js 里面 value to boolean 的逻辑计算结果，通常是 !!this.data.get('formData.$deps');
+            //
+            //   2. 如果 hiddenOn 是一个对象，那么就需要考虑多种比较的情况了，比如 $in, $nin, $eq, $ne, $gt, $lt, $gte, $lte 等等
+            //   实际上是(MongoDb Comparison Query Operators的语法)
+            //
+            //   'a': ['b', 'c']
+            // }
+            var hiddenOn = {};
+            var visibleOn = {};
+            var requiredOn = {};
+            var disabledOn = {};
+            var requiredOnInitValues = {};
+
+            function appendToMapImpl(map, item, key) {
+                var expr = item[key];
+                if (!expr) {
+                    return;
+                }
+
+                var keys = [];
+                if (_lodash2.default.isString(expr)) {
+                    keys.push(expr);
+                } else if (_lodash2.default.isPlainObject(expr)) {
+                    // requiredOn: {
+                    //   a: ...
+                    //   b: ...
+                    //   c: ...
+                    // }
+                    keys.push.apply(keys, _lodash2.default.keys(expr));
+                    // _.each(expr, (config, key) => appendList(map, key, value));
+                } else if (_lodash2.default.isArray(expr)) {
+                    // requiredOn: [
+                    //   // case 1
+                    //   {},
+                    //   // case 2
+                    //   {},
+                    //   // case 3
+                    //   {}
+                    // ]
+                    _lodash2.default.each(expr, function (subExpr) {
+                        return keys.push.apply(keys, _lodash2.default.keys(subExpr));
+                    });
+                }
+
+                var value = item.name;
+                _lodash2.default.each(keys, function (key) {
+                    return appendList(map, key, value);
+                });
+            }
+
+            function appendToMap(item) {
+                if (itemsMap[item.name]) {
+                    throw new Error('Found duplicated form name: ' + item.name);
+                }
+
+                itemsMap[item.name] = item;
+                requiredOnInitValues[item.name] = !!item.required;
+
+                appendToMapImpl(visibleOn, item, 'visibleOn');
+                appendToMapImpl(hiddenOn, item, 'hiddenOn');
+                appendToMapImpl(requiredOn, item, 'requiredOn');
+                appendToMapImpl(disabledOn, item, 'disabledOn');
+            }
+
+            var controls = this.data.get('schema');
+            schemaTraversal(controls, function (item) {
+                return item.name && appendToMap(item);
+            });
+
+            this.itemsMap = itemsMap;
+            this.visibleOn = visibleOn;
+            this.hiddenOn = hiddenOn;
+            this.requiredOn = requiredOn;
+            this.disabledOn = disabledOn;
+            // 监控特定数据项的变化
+            var triggerKeys = this.__getTriggerKeys();
+            _lodash2.default.each(triggerKeys, function (name) {
+                return _this.watch('formData.' + name, function () {
+                    return _this.__refreshRelatedFields(name);
+                });
+            });
+            this.watch('submitting', function (submitting) {
+                if (!submitting) {
+                    _this.data.set('editing', false);
+                    _this.data.set('preview', true);
+                }
+            });
+
+            // 给 requiredOn 加上默认值，从 config.required 解析出来的
+            this.data.set('requiredOn', requiredOnInitValues);
+            this.data.set('itemSize', _lodash2.default.size(this.itemsMap));
+        },
+        attached: function attached() {
+            var _this2 = this;
+
+            var triggerKeys = this.__getTriggerKeys();
+            _lodash2.default.each(triggerKeys, function (name) {
+                return _this2.__refreshRelatedFields(name);
+            });
+        },
+        __getTriggerKeys: function __getTriggerKeys() {
+            return _lodash2.default.uniq([].concat(_toConsumableArray(_lodash2.default.keys(this.visibleOn)), _toConsumableArray(_lodash2.default.keys(this.hiddenOn)), _toConsumableArray(_lodash2.default.keys(this.requiredOn)), _toConsumableArray(_lodash2.default.keys(this.disabledOn))));
+        },
+        __refreshRelatedFields: function __refreshRelatedFields(name) {
+            var _this3 = this;
+
+            this.nextTick(function () {
+                var get = function get(name) {
+                    return _this3.data.get('formData.' + name);
+                };
+                var scope = { get: get };
+
+                if (_this3.visibleOn[name]) {
+                    _lodash2.default.each(_this3.visibleOn[name], function (itemName) {
+                        var config = _this3.itemsMap[itemName];
+                        var visible = (0, _ExpressionEvaluator.evalExpr)(config.visibleOn, scope);
+                        _this3.data.set('visibleOn.' + itemName, visible);
+                        if (!visible && config.unsetValueOnInvisible) {
+                            _this3.data.set('formData.' + itemName, undefined);
+                        }
+                    });
+                }
+
+                if (_this3.hiddenOn[name]) {
+                    _lodash2.default.each(_this3.hiddenOn[name], function (itemName) {
+                        var config = _this3.itemsMap[itemName];
+                        var hidden = (0, _ExpressionEvaluator.evalExpr)(config.hiddenOn, scope);
+                        _this3.data.set('hiddenOn.' + itemName, hidden);
+                        if (hidden && config.unsetValueOnInvisible) {
+                            _this3.data.set('formData.' + itemName, undefined);
+                        }
+                    });
+                }
+
+                if (_this3.requiredOn[name]) {
+                    _lodash2.default.each(_this3.requiredOn[name], function (itemName) {
+                        var config = _this3.itemsMap[itemName];
+                        var required = (0, _ExpressionEvaluator.evalExpr)(config.requiredOn, scope);
+                        _this3.data.set('requiredOn.' + itemName, required);
+                    });
+                }
+
+                if (_this3.disabledOn[name]) {
+                    _lodash2.default.each(_this3.disabledOn[name], function (itemName) {
+                        var config = _this3.itemsMap[itemName];
+                        var disabled = (0, _ExpressionEvaluator.evalExpr)(config.disabledOn, scope);
+                        _this3.data.set('disabledOn.' + itemName, disabled);
+                    });
+                }
+            });
+        },
+        getBindInfo: function getBindInfo(key) {
+            var binds = this.aNode.binds || this.binds;
+            if (binds && typeof binds.get === 'function') {
+                return binds.get(key);
+            }
+            for (var i = 0; i < binds.length; i++) {
+                var bindInfo = binds[i];
+                if (bindInfo.name === key) {
+                    return bindInfo;
+                }
+            }
+            return null;
+        },
+        getFormKey: function getFormKey() {
+            var formKey = this.data.get('formKey');
+            if (formKey != null) {
+                return formKey;
+            }
+
+            var bindInfo = this.getBindInfo('formData');
+            if (bindInfo && bindInfo.x) {
+                // 双绑
+                return bindInfo.expr.raw;
+            } else if (bindInfo) {
+                return bindInfo.raw;
+            }
+            throw new Error('Please specify `form-key` prop');
+        },
+        startEditing: function startEditing() {
+            // 保存一下当前数据的快照，如果 cancelEditing 之后，就恢复当时的数据
+            this.dataSnapshot = _lodash2.default.pick(this.data.get('formData'), Form.$fields);
+
+            this.data.set('editing', true);
+            this.data.set('preview', false);
+            this.data.set('formErrors', null);
+        },
+        cancelEditing: function cancelEditing() {
+            var _this4 = this;
+
+            if (this.dataSnapshot) {
+                _lodash2.default.each(Form.$fields, function (name) {
+                    if (_this4.dataSnapshot[name] != null) {
+                        _this4.data.set('formData.' + name, _this4.dataSnapshot[name]);
+                    }
+                });
+                this.dataSnapshot = null;
+            }
+            this.nextTick(function () {
+                _this4.data.set('editing', false);
+                _this4.data.set('preview', true);
+                _this4.data.set('formErrors', null);
+            });
+        },
+        submitEditing: function submitEditing() {
+            var _this5 = this;
+
+            this.validateForm().then(function () {
+                var formKey = _this5.getFormKey();
+                var formData = _this5.getFormData();
+                _this5.data.set('submitting', true);
+                _this5.dispatch('submit', { formKey: formKey, formData: formData });
+            });
+        },
+        buildFormItemValidator: function buildFormItemValidator(name, config) {
+            var rules = [];
+            var validator = config.validator,
+                validations = config.validations,
+                validationErrors = config.validationErrors;
+
+            if (validator) {
+                // 自定义的验证规则
+                rules.push({ validator: validator });
+            }
+
+            if (validations) {
+                // amis 的验证规则，转化一下
+                rules.push.apply(rules, (0, _buildValidator.buildValidator)(validations, validationErrors));
+            }
+
+            var required = this.data.get('requiredOn.' + name);
+            if (required) {
+                var message = validationErrors && validationErrors.required ? validationErrors.required : (config.label || name) + '\u5FC5\u586B';
+
+                var type = 'string';
+                if (config.requiredRuleType) {
+                    // 针对一些自定义的组件，如果设置了 required: true，那么生成验证规则的时候
+                    // 需要考虑到 value 的类型
+                    type = config.requiredRuleType;
+                } else {
+                    if (config.type === 'select' && config.multi) {
+                        type = 'array';
+                    } else if (config.type === 'calendar') {
+                        type = 'date';
+                    } else if (config.type === 'number') {
+                        type = 'number';
+                    } else if (config.type === 'switch') {
+                        type = 'boolean';
+                    }
+                }
+                rules.push({ type: type, required: required, message: message });
+            }
+            // TODO(leeight) max, min, maxLength 等配置的处理
+            // TODO(leeight) value 等配置的处理
+            return rules;
+        },
+        buildFormValidator: function buildFormValidator(name) {
+            var _this6 = this;
+
+            var formValidator = {};
+            if (name) {
+                var config = this.itemsMap[name];
+                var rules = this.buildFormItemValidator(name, config);
+                if (rules.length) {
+                    formValidator[name] = rules;
+                }
+            } else {
+                _lodash2.default.each(this.itemsMap, function (config, name) {
+                    var rules = _this6.buildFormItemValidator(name, config);
+                    if (rules.length) {
+                        formValidator[name] = rules;
+                    }
+                });
+            }
+            return new Schema(formValidator);
+        },
+        validateFormItem: function validateFormItem(name) {
+            var _this7 = this;
+
+            var preview = this.data.get('preview');
+            if (preview) {
+                return _promise2.default.resolve();
+            }
+
+            return new _promise2.default(function (resolve, reject) {
+                var formData = _this7.getFormData();
+                var validator = _this7.buildFormValidator(name);
+                validator.validate(formData, function (errors, fields) {
+                    // 不要改变整个 formErrors ，只修改它特定的 item
+                    var key = 'formErrors.' + name;
+                    if (!errors) {
+                        _this7.data.set(key, null);
+                        resolve();
+                    } else {
+                        var errorMessages = _lodash2.default.map(errors, function (e) {
+                            return e.message;
+                        }).join('<br/>');
+                        _this7.data.set(key, errorMessages);
+                        reject(errors);
+                    }
+                });
+            });
+        },
+        validateForm: function validateForm() {
+            var _this8 = this;
+
+            var preview = this.data.get('preview');
+            if (preview) {
+                return _promise2.default.resolve();
+            }
+
+            return new _promise2.default(function (resolve, reject) {
+                var formData = _this8.getFormData();
+                var validator = _this8.buildFormValidator();
+                validator.validate(formData, function (errors, fields) {
+                    if (!errors) {
+                        _this8.data.set('formErrors', null);
+                        resolve();
+                        return;
+                    }
+
+                    var formErrors = {};
+                    for (var i = 0; i < errors.length; i++) {
+                        var item = errors[i];
+                        var visible = _this8.data.get('visibleOn.' + item.field);
+                        var hidden = _this8.data.get('hiddenOn.' + item.field);
+                        // TODO(leeight) disable 的情况。
+                        // 当disabledOn符合条件时，校验依然保留, 因为disabled是否打开是基于用户的行为, 在这里只是相当于readonly。
+                        if (!hidden && visible !== false) {
+                            // 如果输入项是可见的，那么才考虑这个错误信息
+                            formErrors[item.field] = item.message;
+                        }
+                    }
+
+                    if (_lodash2.default.isEmpty(formErrors)) {
+                        _this8.data.set('formErrors', null);
+                        resolve();
+                    }
+
+                    _this8.data.set('formErrors', formErrors);
+                    reject(formErrors);
+                });
+            });
+        },
+        getFormData: function getFormData() {
+            var _this9 = this;
+
+            var formData = _lodash2.default.pick(this.data.get('formData'), Form.$fields);
+            // 转化一下类型
+            _lodash2.default.each(formData, function (value, key) {
+                var config = _this9.itemsMap[key];
+                if (value == null) {
+                    return;
+                }
+                if (config.type === 'number') {
+                    // 把 string 类型转化为 number 类型，否则验证的时候会失败
+                    formData[key] = parseFloat(value, 10);
+                } else if (config.type === 'text') {
+                    // 把 其它 类型转化为 string 类型，否则验证的时候会失败
+                    formData[key] = String(value);
+                }
+                // TODO(leeight)
+                // 其它的类型应该如何处理呢？或许考虑换一个 validator 的库了??
+            });
+            return formData;
+        }
+    });
+
+    var $fields = [];
+    schemaTraversal(controls, function (item) {
+        if (item.name) {
+            $fields.push(item.name);
+        }
+    });
+    Form.$fields = $fields;
+
+    return Form;
+}
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.3' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(30);
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+module.exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys = __webpack_require__(236);
+var enumBugKeys = __webpack_require__(65);
+
+module.exports = Object.keys || function keys(O) {
+  return $keys(O, enumBugKeys);
+};
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+var id = 0;
+var px = Math.random();
+module.exports = function (key) {
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+
+/***/ }),
 /* 41 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _iterator = __webpack_require__(349);
+
+var _iterator2 = _interopRequireDefault(_iterator);
+
+var _symbol = __webpack_require__(361);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
+  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
+} : function (obj) {
+  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+};
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports) {
 
 var g;
@@ -35979,7 +36727,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36001,7 +36749,7 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -36012,7 +36760,7 @@ var _Select2 = _interopRequireDefault(_Select);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file SearchBox.es6
+ * @file SearchBox.js
  * @author leeight
  */
 
@@ -36144,7 +36892,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36204,7 +36952,7 @@ function getOffset(element) {
 }
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36310,113 +37058,7 @@ function getClientLeft() {
 }
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-exports.default = (0, _san.defineComponent)({
-    template: '<div on-wheel="onWheel"><slot/></div>',
-    initData: function initData() {
-        return {
-            disabled: false
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: _san.DataTypes.bool
-    },
-    onWheel: function onWheel(e) {
-        var disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-
-        var layer = e.currentTarget;
-        if (!layer) {
-            return;
-        }
-        if (layer.scrollTop + e.deltaY + layer.clientHeight >= layer.scrollHeight) {
-            e.preventDefault();
-            layer.scrollTop = layer.scrollHeight;
-        }
-        if (layer.scrollTop + e.deltaY <= 0) {
-            e.preventDefault();
-            layer.scrollTop = 0;
-        }
-    }
-}); /**
-     * @file san-xui/x/components/StopScroll.es6
-     * @author leeight
-     */
-
-/***/ }),
-/* 46 */,
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _infI18n = __webpack_require__(14);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _filters = __webpack_require__(206);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = (0, _san.defineComponent)({
-    template: '<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'|i18n}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
-    components: {
-        'ui-button': _Button2.default,
-        'ui-dialog': _Dialog2.default
-    },
-    filters: {
-        i18n: _filters.i18n
-    },
-    initData: function initData() {
-        return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('确认')
-        };
-    },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
-    }
-}); /**
-     * @file components/AlertDialog.es6
-     * @author leeight
-     */
-
-/***/ }),
+/* 47 */,
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36452,7 +37094,7 @@ var _Button2 = _interopRequireDefault(_Button);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-calendar'); /**
-                                            * @file Calendar.es6
+                                            * @file Calendar.js
                                             * @author leeight
                                             */
 
@@ -36639,14 +37281,14 @@ var _Select = __webpack_require__(22);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file MonthView.es6
+ * @file MonthView.js
  * @author leeight
  */
 var cx = (0, _util.create)('ui-monthview');
@@ -36931,42 +37573,65 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _infI18n = __webpack_require__(14);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
 var _san = __webpack_require__(0);
 
-var _Dialog = __webpack_require__(19);
+var _util = __webpack_require__(2);
 
-var _Dialog2 = _interopRequireDefault(_Dialog);
+var _asInput = __webpack_require__(7);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var cx = (0, _util.create)('ui-checkbox');
 
-exports.default = (0, _san.defineComponent)({
-    template: '<template>\n    <ui-dialog open="{=open=}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-confirm"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n    </ui-dialog>\n    </template>',
-    components: {
-        'ui-dialog': _Dialog2.default
-    },
+/* eslint-disable */
+/**
+ * @file components/CheckBox.js
+ * @author leeight
+ */
+
+var template = '<div class="{{mainClass}}" on-click="onClick($event)">\n    <label>\n        <input\n            type="checkbox"\n            checked="{=checked=}"\n            on-change="onChange($event)"\n            disabled="{{disabled}}" />\n        <span s-if="title">{{title}}</span>\n    </label>\n</div>';
+/* eslint-enable */
+
+var CheckBox = (0, _san.defineComponent)({
+    template: template,
     initData: function initData() {
         return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('请确认')
+            checked: false,
+            title: null
         };
     },
-    onCloseDialog: function onCloseDialog() {
-        this.fire('close');
-        this.data.set('open', false);
+
+    dataTypes: {
+        /**
+         * 设置或者获取控件的选中状态
+         *
+         * @bindx
+         * @default false
+         */
+        checked: _san.DataTypes.bool,
+
+        /**
+         * 控件的禁用状态
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 控件的文案
+         */
+        title: _san.DataTypes.string
     },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
+    computed: {
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        }
+    },
+    onChange: function onChange(e) {
+        this.fire('change', { value: e.target.checked });
+    },
+    onClick: function onClick(e) {
+        this.fire('click', e);
     }
-}); /**
-     * @file components/ConfirmDialog.es6
-     * @author leeight
-     */
+});
+
+exports.default = (0, _asInput.asInput)(CheckBox);
 
 /***/ }),
 /* 51 */
@@ -37001,7 +37666,7 @@ var _Loading = __webpack_require__(11);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _StopScroll = __webpack_require__(45);
+var _StopScroll = __webpack_require__(32);
 
 var _StopScroll2 = _interopRequireDefault(_StopScroll);
 
@@ -37255,62 +37920,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _infI18n = __webpack_require__(14);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @file components/PlainDialog.es6
- * @author leeight
- */
-
-exports.default = (0, _san.defineComponent)({
-    template: '<template>\n    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n        <span slot="head">{{title}}</span>\n        {{message | raw}}\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
-    components: {
-        'ui-button': _Button2.default,
-        'ui-dialog': _Dialog2.default
-    },
-    initData: function initData() {
-        return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('确认'),
-            foot: {
-                okBtn: {
-                    label: (0, _infI18n2.default)('确定')
-                }
-            }
-        };
-    },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
-    }
-});
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
@@ -37318,7 +37927,7 @@ var _util = __webpack_require__(2);
 var _asInput = __webpack_require__(7);
 
 var cx = (0, _util.create)('ui-radioselect'); /**
-                                               * @file RadioSelect.es6
+                                               * @file RadioSelect.js
                                                * @author leeight
                                                */
 
@@ -37393,7 +38002,7 @@ var RadioSelect = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(RadioSelect);
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37428,7 +38037,7 @@ var _asInput = __webpack_require__(7);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-rangecalendar'); /**
-                                                 * @file RangeCalendar.es6
+                                                 * @file RangeCalendar.js
                                                  * @author leeight
                                                  */
 
@@ -37618,7 +38227,7 @@ var RangeCalendar = (0, _san.defineComponent)({
     onSelect: function onSelect() {
         var begin = this.data.get('begin.value');
         var end = this.data.get('end.value');
-        this.data.set('value', { begin: begin, end: end });
+        this.data.set('value', begin > end ? { begin: end, end: begin } : { begin: begin, end: end });
         this.closeLayer();
     },
     closeLayer: function closeLayer() {
@@ -37645,7 +38254,7 @@ var RangeCalendar = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(RangeCalendar);
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37657,7 +38266,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _dom = __webpack_require__(43);
+var _dom = __webpack_require__(45);
 
 var _util = __webpack_require__(2);
 
@@ -37668,7 +38277,7 @@ var _Layer2 = _interopRequireDefault(_Layer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file Tip.es6
+ * @file Tip.js
  * @author leeight
  */
 var cx = (0, _util.create)('ui-tip');
@@ -37812,7 +38421,7 @@ exports.default = (0, _san.defineComponent)({ // eslint-disable-line
 });
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37821,228 +38430,24 @@ exports.default = (0, _san.defineComponent)({ // eslint-disable-line
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.Ghost = exports.Page = undefined;
 
-var _jquery = __webpack_require__(10);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @file san-xui/x/biz/helper.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @author leeight
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
 
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('ui-toast'); /**
-                                         * @file Toast.es6
-                                         * @author leeight
-                                         */
-
-var kToastContainerId = cx('container') + '-' + new Date().getTime();
-
-/* eslint-disable */
-var template = '<template>\n    <div class="{{mainClass}}" style="{{style}}">\n        {{message | raw}}\n    </div>\n</template>';
-/* eslint-enable */
-
-var Toast = (0, _san.defineComponent)({ // eslint-disable-line
-    template: template,
-    components: {},
-    computed: {
-        style: function style() {
-            return {};
-        },
-        mainClass: function mainClass() {
-            var klass = [cx(), cx('x')];
-            var level = this.data.get('level');
-            if (level) {
-                klass.push(cx(level));
-            }
-            return klass;
-        }
-    },
-    initData: function initData() {
-        return {
-            message: null,
-            duration: 5000,
-            level: 'success' // 'success' | 'info' | 'warning' | 'error'
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 需要展示的信息
-         */
-        message: _san.DataTypes.string,
-
-        /**
-         * 最长展示的时间
-         * @default 5000
-         */
-        duration: _san.DataTypes.number,
-
-        /**
-         * 组件的样式，可选的参数有 success, info, warning, error
-         * @default success
-         */
-        level: _san.DataTypes.string
-    },
-    attached: function attached() {
-        var _this = this;
-
-        setTimeout(function () {
-            (0, _jquery2.default)(_this.el).fadeOut({
-                duration: 1000,
-                easing: 'swing',
-                complete: function complete() {
-                    return _this.dispose();
-                }
-            });
-        }, this.data.get('duration'));
-    }
-});
-
-function getToastContainer() {
-    var container = document.getElementById(kToastContainerId);
-    if (!container) {
-        container = document.createElement('DIV');
-        container.id = kToastContainerId;
-        container.className = cx('container');
-        document.body.appendChild(container);
-    }
-    return container;
-}
-
-function toastBuilder(level) {
-    return function (message) {
-        var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
-
-        var comp = new Toast({ data: { message: message, level: level, duration: duration } });
-        var container = getToastContainer();
-        container.style.zIndex = (0, _util.nextZindex)();
-        comp.attach(container);
-    };
-}
-
-Toast.success = toastBuilder('success');
-Toast.info = toastBuilder('info');
-Toast.warning = toastBuilder('warning');
-Toast.error = toastBuilder('error');
-Toast.alert = toastBuilder('warning'); // 兼容历史用法
-Toast.normal = toastBuilder('success'); // 兼容bat-ria/mvc/FormAction里调用Toast的方式
-
-exports.default = Toast;
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(13);
-var normalizeHeaderName = __webpack_require__(308);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
-
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(223);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(223);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
-};
-
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-});
-
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.registerFormItem = registerFormItem;
-exports.asForm = asForm;
+exports.asPromise = asPromise;
+exports.displayDialog = displayDialog;
+exports.buildDialog = buildDialog;
+exports.plain = plain;
+exports.alert = alert;
+exports.confirm = confirm;
+exports.waitActionDialog = waitActionDialog;
+exports.createPayload = createPayload;
+exports.createToolbar = createToolbar;
+exports.matchAll = matchAll;
+exports.valueTransform = valueTransform;
 
 var _lodash = __webpack_require__(5);
 
@@ -38052,1000 +38457,203 @@ var _moment = __webpack_require__(1);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _asyncValidator = __webpack_require__(229);
+var _ConfirmDialog = __webpack_require__(203);
 
-var AsyncValidator = _interopRequireWildcard(_asyncValidator);
+var _ConfirmDialog2 = _interopRequireDefault(_ConfirmDialog);
 
-var _san = __webpack_require__(0);
+var _AlertDialog = __webpack_require__(197);
 
-var _util = __webpack_require__(2);
+var _AlertDialog2 = _interopRequireDefault(_AlertDialog);
 
-var _ExpressionEvaluator = __webpack_require__(382);
+var _PlainDialog = __webpack_require__(208);
 
-var _buildValidator = __webpack_require__(383);
+var _PlainDialog2 = _interopRequireDefault(_PlainDialog);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _asDialog = __webpack_require__(214);
+
+var _LegacyActionAdapter = __webpack_require__(302);
+
+var _LegacyActionAdapter2 = _interopRequireDefault(_LegacyActionAdapter);
+
+var _Page2 = __webpack_require__(312);
+
+var _Page3 = _interopRequireDefault(_Page2);
+
+var _Ghost2 = __webpack_require__(314);
+
+var _Ghost3 = _interopRequireDefault(_Ghost2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } /**
-                                                                                                                                                                                                     * @file san-xui/x/forms/asForm.es6
-                                                                                                                                                                                                     * @author leeight
-                                                                                                                                                                                                     */
-
-var cx = (0, _util.create)('as-form');
-var cx2 = (0, _util.create)('ui-form');
-var kFormItemComponents = {};
-var kFormItemBuilders = {};
-var Schema = AsyncValidator.default;
-
-// FIXME(leeight) 如何跟 forms/FormItem.es6 复用呢?
-var FormItem = (0, _san.defineComponent)({
-    template: '<div class="{{mainClass}}">\n        <div class="{{labelClass}}" s-if="label">{{label | raw}}\uFF1A</div>\n        <div class="{{contentClass}}">\n            <slot />\n            <div class="{{errorClass}}" s-if="!preview && error">{{error | raw}}</div>\n            <div class="{{helpClass}}" s-if="!preview && help">{{help | raw}}</div>\n        </div>\n    </div>',
-    messages: {
-        'input-comp-value-changed': function inputCompValueChanged(arg) {
-            var payload = arg.value;
-            var name = this.data.get('name');
-            this.dispatch('form-element-changed', { name: name, value: payload.value });
-        }
-    },
-    computed: {
-        errorClass: function errorClass() {
-            return [cx2('item-invalid-label')];
-        },
-        helpClass: function helpClass() {
-            return [cx2('item-help')];
-        },
-        mainClass: function mainClass() {
-            var klass = [cx2('item')];
-            var name = this.data.get('name');
-            var inline = this.data.get('inline');
-            if (inline) {
-                klass.push(cx2('item-inline'));
-            }
-            if (name) {
-                klass.push(cx2('item-' + name));
-            }
-            return klass;
-        },
-        labelClass: function labelClass() {
-            var klass = [cx2('item-label')];
-            var required = this.data.get('required');
-            if (required) {
-                klass.push('required-label');
-            }
-            return klass;
-        },
-        contentClass: function contentClass() {
-            var klass = [cx2('item-content')];
-            return klass;
-        }
-    },
-    initData: function initData() {
-        return {
-            name: null,
-            label: null,
-            error: null,
-            help: null,
-            required: false,
-            preview: false,
-            inline: true
-        };
-    }
-});
-
-function asFormItem(item, prefix, content) {
-    return '\n    <as-form-item\n        inline\n        name="' + item.name + '"\n        label="{{' + prefix + '.label}}"\n        help="{{' + prefix + '.help}}"\n        required="{{requiredOn.' + item.name + '}}"\n        error="{{formErrors.' + item.name + '}}"\n        preview="{{preview}}"\n    >' + content + '</as-form-item>\n    ';
-}
-
-function appendList(root, key, value) {
-    if (!root[key]) {
-        root[key] = [];
-    }
-    root[key].push(value);
-}
-
-function schemaTraversal(controls, cb) {
-    _lodash2.default.each(controls, function (item) {
-        if (_lodash2.default.isArray(item)) {
-            _lodash2.default.each(item, function (colItem) {
-                return cb(colItem);
-            });
-        } else {
-            cb(item);
-        }
-    });
-}
-
-function generateTemplate(controls) {
-    var template = [];
-
-    _lodash2.default.each(controls, function (item, i) {
-        if (_lodash2.default.isArray(item)) {
-            template.push('<div class="' + cx('row') + '">');
-            _lodash2.default.each(item, function (colItem, j) {
-                var builder = kFormItemBuilders[colItem.type];
-                if (typeof builder !== 'function') {
-                    throw new Error('invalid control type = ' + colItem.type);
-                }
-                var prefix = 'schema[' + i + '][' + j + ']';
-                template.push('<div class="' + cx('col', 'col-' + j) + '"\n                    s-if="{{!hiddenOn.' + colItem.name + ' && visibleOn.' + colItem.name + ' !== false}}">');
-                template.push(asFormItem(colItem, prefix, builder(colItem, prefix)));
-                template.push('</div>');
-            });
-            template.push('</div>');
-        } else {
-            var builder = kFormItemBuilders[item.type];
-            if (typeof builder !== 'function') {
-                throw new Error('invalid control type = ' + item.type);
-            }
-            var prefix = 'schema[' + i + ']';
-            template.push('<div class="' + cx('row') + '"\n                s-if="{{!hiddenOn.' + item.name + ' && visibleOn.' + item.name + ' !== false}}">');
-            template.push(asFormItem(item, prefix, builder(item, prefix)));
-            template.push('</div>');
-        }
-    });
-
-    return template.join('\n');
-}
-
-function registerFormItem(_ref) {
-    var type = _ref.type,
-        tagName = _ref.tagName,
-        Component = _ref.Component,
-        builder = _ref.builder;
-
-    if (kFormItemBuilders[type]) {
-        throw new Error(type + ' already registered!');
-    }
-
-    var $tagName = tagName || 'ui-' + type;
-    kFormItemComponents[$tagName] = Component;
-    kFormItemBuilders[type] = builder;
-}
-
-function asForm(schema) {
-    var controls = schema.controls;
-    var components = _lodash2.default.extend({
-        'as-form-item': FormItem
-    }, kFormItemComponents);
-
-    /* eslint-disable */
-    var template = '<template>\n    <div class="{{mainClass}}">\n        <div class="' + cx('title') + '" s-if="title">\n            <h4>{{title}}</h4>\n            <slot name="actions" s-if="editable">\n                <div class="' + cx('title-actions') + '">\n                    <ui-button on-click="startEditing" s-if="!editing">\u7F16\u8F91</ui-button>\n                    <ui-button disabled="{{submitting}}" on-click="submitEditing" skin="primary" s-if="editing">{{submitting ? \'\u4FDD\u5B58\u4E2D...\' : \'\u4FDD\u5B58\'}}</ui-button>\n                    <ui-button disabled="{{submitting}}" on-click="cancelEditing" s-if="editing">\u53D6\u6D88\u4FEE\u6539</ui-button>\n                </div>\n            </slot>\n        </div>\n        <div class="' + cx2('x') + '">' + generateTemplate(controls) + '</div>\n    </div>\n    </template>';
-    /* eslint-enable */
-
-    // text, number, select, switch, calendar, uploader
-    var Form = (0, _san.defineComponent)({
-        template: template,
-        components: components,
-        computed: {
-            mainClass: function mainClass() {
-                var klass = cx.mainClass(this);
-                var size = this.data.get('itemSize');
-                klass.push(cx(String(size)));
-                return klass;
-            }
-        },
-        filters: {
-            filename: function filename(url) {
-                if (!url) {
-                    return '';
-                }
-                var lastSlashIndex = url.lastIndexOf('/');
-                try {
-                    return decodeURIComponent(url.substr(lastSlashIndex + 1));
-                } catch (ex) {
-                    return url.substr(lastSlashIndex + 1);
-                }
-            },
-            datetime: function datetime(value, format) {
-                if (!format) {
-                    format = 'YYYY-MM-DD'; // eslint-disable-line
-                }
-                return (0, _moment2.default)(value).format(format);
-            }
-        },
-        messages: {
-            'form-element-changed': function formElementChanged(arg) {
-                // eslint-disable-line
-                var instantValidation = this.data.get('instantValidation');
-                if (instantValidation) {
-                    var payload = arg.value;
-                    this.validateFormItem(payload.name);
-                }
-            }
-        },
-        initData: function initData() {
-            return {
-                title: null,
-                instantValidation: true,
-                preview: false, // 预览模式
-                editing: false, // 编辑状态
-                submitting: false, // 提交状态
-                editable: false, // 预览模式下是否允许编辑
-                schema: controls,
-                formData: {},
-                formErrors: null,
-                visibleOn: {},
-                hiddenOn: {},
-                requiredOn: {}
-
-                // disabledOn: {},
-            };
-        },
-        inited: function inited() {
-            var _this = this;
-
-            // 根据 Name 来快速定位相关的配置
-            var itemsMap = {};
-
-            // {
-            //   当 formData.a 变化的时候，需要重新计算 hiddenOn.b 和 hiddenOn.c 的值
-            //   计算的逻辑就参考 schema 里面配置的内容
-            //   1. 如果 hiddenOn 是字符串，就从 formData 中获取对应的值
-            //   然后按照 js 里面 value to boolean 的逻辑计算结果，通常是 !!this.data.get('formData.$deps');
-            //
-            //   2. 如果 hiddenOn 是一个对象，那么就需要考虑多种比较的情况了，比如 $in, $nin, $eq, $ne, $gt, $lt, $gte, $lte 等等
-            //   实际上是(MongoDb Comparison Query Operators的语法)
-            //
-            //   'a': ['b', 'c']
-            // }
-            var hiddenOn = {};
-            var visibleOn = {};
-            var requiredOn = {};
-            var requiredOnInitValues = {};
-
-            function appendToMap(item) {
-                itemsMap[item.name] = item;
-                requiredOnInitValues[item.name] = !!item.required;
-
-                if (item.visibleOn) {
-                    if (_lodash2.default.isString(item.visibleOn)) {
-                        appendList(visibleOn, item.visibleOn, item.name);
-                    } else if (_lodash2.default.isPlainObject(item.visibleOn)) {
-                        _lodash2.default.each(item.visibleOn, function (config, key) {
-                            return appendList(visibleOn, key, item.name);
-                        });
-                    }
-                }
-
-                if (item.hiddenOn) {
-                    if (_lodash2.default.isString(item.hiddenOn)) {
-                        appendList(hiddenOn, item.hiddenOn, item.name);
-                    } else if (_lodash2.default.isPlainObject(item.hiddenOn)) {
-                        _lodash2.default.each(item.hiddenOn, function (config, key) {
-                            return appendList(hiddenOn, key, item.name);
-                        });
-                    }
-                }
-
-                if (item.requiredOn) {
-                    if (_lodash2.default.isString(item.requiredOn)) {
-                        appendList(requiredOn, item.requiredOn, item.name);
-                    } else if (_lodash2.default.isPlainObject(item.requiredOn)) {
-                        _lodash2.default.each(item.requiredOn, function (config, key) {
-                            return appendList(requiredOn, key, item.name);
-                        });
-                    }
-                }
-            }
-
-            var controls = this.data.get('schema');
-            schemaTraversal(controls, function (item) {
-                return item.name && appendToMap(item);
-            });
-
-            this.itemsMap = itemsMap;
-            this.visibleOn = visibleOn;
-            this.hiddenOn = hiddenOn;
-            this.requiredOn = requiredOn;
-
-            // 监控特定数据项的变化
-            var triggerKeys = this.__getTriggerKeys();
-            _lodash2.default.each(triggerKeys, function (name) {
-                return _this.watch('formData.' + name, function () {
-                    return _this.__refreshRelatedFields(name);
-                });
-            });
-            this.watch('submitting', function (submitting) {
-                if (!submitting) {
-                    _this.data.set('editing', false);
-                    _this.data.set('preview', true);
-                }
-            });
-
-            // 给 requiredOn 加上默认值，从 config.required 解析出来的
-            this.data.set('requiredOn', requiredOnInitValues);
-            this.data.set('itemSize', _lodash2.default.size(this.itemsMap));
-        },
-        attached: function attached() {
-            var _this2 = this;
-
-            var triggerKeys = this.__getTriggerKeys();
-            _lodash2.default.each(triggerKeys, function (name) {
-                return _this2.__refreshRelatedFields(name);
-            });
-        },
-        __getTriggerKeys: function __getTriggerKeys() {
-            return _lodash2.default.uniq([].concat(_toConsumableArray(_lodash2.default.keys(this.visibleOn)), _toConsumableArray(_lodash2.default.keys(this.hiddenOn)), _toConsumableArray(_lodash2.default.keys(this.requiredOn))));
-        },
-        __refreshRelatedFields: function __refreshRelatedFields(name) {
-            var _this3 = this;
-
-            this.nextTick(function () {
-                var get = function get(name) {
-                    return _this3.data.get('formData.' + name);
-                };
-                var scope = { get: get };
-
-                if (_this3.visibleOn[name]) {
-                    _lodash2.default.each(_this3.visibleOn[name], function (itemName) {
-                        var config = _this3.itemsMap[itemName];
-                        var visible = (0, _ExpressionEvaluator.evalExpr)(config.visibleOn, scope);
-                        _this3.data.set('visibleOn.' + itemName, visible);
-                        if (!visible && config.unsetValueOnInvisible) {
-                            _this3.data.set('formData.' + itemName, undefined);
-                        }
-                    });
-                }
-
-                if (_this3.hiddenOn[name]) {
-                    _lodash2.default.each(_this3.hiddenOn[name], function (itemName) {
-                        var config = _this3.itemsMap[itemName];
-                        var hidden = (0, _ExpressionEvaluator.evalExpr)(config.hiddenOn, scope);
-                        _this3.data.set('hiddenOn.' + itemName, hidden);
-                        if (hidden && config.unsetValueOnInvisible) {
-                            _this3.data.set('formData.' + itemName, undefined);
-                        }
-                    });
-                }
-
-                if (_this3.requiredOn[name]) {
-                    _lodash2.default.each(_this3.requiredOn[name], function (itemName) {
-                        var config = _this3.itemsMap[itemName];
-                        var required = (0, _ExpressionEvaluator.evalExpr)(config.requiredOn, scope);
-                        _this3.data.set('requiredOn.' + itemName, required);
-                    });
-                }
-            });
-        },
-        getFormKey: function getFormKey() {
-            var formKey = this.data.get('formKey');
-            if (formKey != null) {
-                return formKey;
-            }
-
-            var bindExpr = this.aNode.binds.get('formData');
-            if (bindExpr && bindExpr.x) {
-                // 双绑
-                return bindExpr.expr.raw;
-            } else if (bindExpr) {
-                return bindExpr.raw;
-            }
-            throw new Error('Please specify `form-key` prop');
-        },
-        startEditing: function startEditing() {
-            // 保存一下当前数据的快照，如果 cancelEditing 之后，就恢复当时的数据
-            this.dataSnapshot = _lodash2.default.pick(this.data.get('formData'), Form.$fields);
-
-            this.data.set('editing', true);
-            this.data.set('preview', false);
-            this.data.set('formErrors', null);
-        },
-        cancelEditing: function cancelEditing() {
-            var _this4 = this;
-
-            if (this.dataSnapshot) {
-                _lodash2.default.each(Form.$fields, function (name) {
-                    if (_this4.dataSnapshot[name] != null) {
-                        _this4.data.set('formData.' + name, _this4.dataSnapshot[name]);
-                    }
-                });
-                this.dataSnapshot = null;
-            }
-            this.nextTick(function () {
-                _this4.data.set('editing', false);
-                _this4.data.set('preview', true);
-                _this4.data.set('formErrors', null);
-            });
-        },
-        submitEditing: function submitEditing() {
-            var _this5 = this;
-
-            this.validateForm().then(function () {
-                var formKey = _this5.getFormKey();
-                var formData = _this5.getFormData();
-                _this5.data.set('submitting', true);
-                _this5.dispatch('submit', { formKey: formKey, formData: formData });
-            });
-        },
-        buildFormItemValidator: function buildFormItemValidator(name, config) {
-            var rules = [];
-            var validator = config.validator,
-                validations = config.validations,
-                validationErrors = config.validationErrors;
-
-            if (validator) {
-                // 自定义的验证规则
-                rules.push({ validator: validator });
-            }
-
-            if (validations) {
-                // amis 的验证规则，转化一下
-                rules.push.apply(rules, (0, _buildValidator.buildValidator)(validations, validationErrors));
-            }
-
-            var required = this.data.get('requiredOn.' + name);
-            if (required) {
-                var message = validationErrors && validationErrors.required ? validationErrors.required : (config.label || name) + '\u5FC5\u586B';
-
-                var type = 'string';
-                if (config.requiredRuleType) {
-                    // 针对一些自定义的组件，如果设置了 required: true，那么生成验证规则的时候
-                    // 需要考虑到 value 的类型
-                    type = config.requiredRuleType;
-                } else {
-                    if (config.type === 'select' && config.multi) {
-                        type = 'array';
-                    } else if (config.type === 'calendar') {
-                        type = 'date';
-                    } else if (config.type === 'number') {
-                        type = 'number';
-                    } else if (config.type === 'switch') {
-                        type = 'boolean';
-                    }
-                }
-                rules.push({ type: type, required: required, message: message });
-            }
-            // TODO(leeight) max, min, maxLength 等配置的处理
-            // TODO(leeight) value 等配置的处理
-            return rules;
-        },
-        buildFormValidator: function buildFormValidator(name) {
-            var _this6 = this;
-
-            var formValidator = {};
-            if (name) {
-                var config = this.itemsMap[name];
-                var rules = this.buildFormItemValidator(name, config);
-                if (rules.length) {
-                    formValidator[name] = rules;
-                }
-            } else {
-                _lodash2.default.each(this.itemsMap, function (config, name) {
-                    var rules = _this6.buildFormItemValidator(name, config);
-                    if (rules.length) {
-                        formValidator[name] = rules;
-                    }
-                });
-            }
-            return new Schema(formValidator);
-        },
-        validateFormItem: function validateFormItem(name) {
-            var _this7 = this;
-
-            var preview = this.data.get('preview');
-            if (preview) {
-                return _promise2.default.resolve();
-            }
-
-            return new _promise2.default(function (resolve, reject) {
-                var formData = _this7.getFormData();
-                var validator = _this7.buildFormValidator(name);
-                validator.validate(formData, function (errors, fields) {
-                    // 不要改变整个 formErrors ，只修改它特定的 item
-                    var key = 'formErrors.' + name;
-                    if (!errors) {
-                        _this7.data.set(key, null);
-                        resolve();
-                    } else {
-                        var errorMessages = _lodash2.default.map(errors, function (e) {
-                            return e.message;
-                        }).join('<br/>');
-                        _this7.data.set(key, errorMessages);
-                        reject(errors);
-                    }
-                });
-            });
-        },
-        validateForm: function validateForm() {
-            var _this8 = this;
-
-            var preview = this.data.get('preview');
-            if (preview) {
-                return _promise2.default.resolve();
-            }
-
-            return new _promise2.default(function (resolve, reject) {
-                var formData = _this8.getFormData();
-                var validator = _this8.buildFormValidator();
-                validator.validate(formData, function (errors, fields) {
-                    if (!errors) {
-                        _this8.data.set('formErrors', null);
-                        resolve();
-                        return;
-                    }
-
-                    var formErrors = {};
-                    for (var i = 0; i < errors.length; i++) {
-                        var item = errors[i];
-                        var visible = _this8.data.get('visibleOn.' + item.field);
-                        var hidden = _this8.data.get('hiddenOn.' + item.field);
-                        // TODO(leeight) disable 的情况
-                        if (!hidden && visible !== false) {
-                            // 如果输入项是可见的，那么才考虑这个错误信息
-                            formErrors[item.field] = item.message;
-                        }
-                    }
-
-                    if (_lodash2.default.isEmpty(formErrors)) {
-                        _this8.data.set('formErrors', null);
-                        resolve();
-                    }
-
-                    _this8.data.set('formErrors', formErrors);
-                    reject(formErrors);
-                });
-            });
-        },
-        getFormData: function getFormData() {
-            var _this9 = this;
-
-            var formData = _lodash2.default.pick(this.data.get('formData'), Form.$fields);
-            // 转化一下类型
-            _lodash2.default.each(formData, function (value, key) {
-                var config = _this9.itemsMap[key];
-                if (value == null) {
-                    return;
-                }
-                if (config.type === 'number') {
-                    // 把 string 类型转化为 number 类型，否则验证的时候会失败
-                    formData[key] = parseFloat(value, 10);
-                } else if (config.type === 'text') {
-                    // 把 其它 类型转化为 string 类型，否则验证的时候会失败
-                    formData[key] = String(value);
-                }
-                // TODO(leeight)
-                // 其它的类型应该如何处理呢？或许考虑换一个 validator 的库了??
-            });
-            return formData;
-        }
-    });
-
-    var $fields = [];
-    schemaTraversal(controls, function (item) {
-        if (item.name) {
-            $fields.push(item.name);
-        }
-    });
-    Form.$fields = $fields;
-
-    return Form;
-}
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(17);
-var core = __webpack_require__(33);
-var ctx = __webpack_require__(332);
-var hide = __webpack_require__(23);
-var PROTOTYPE = 'prototype';
-
-var $export = function (type, name, source) {
-  var IS_FORCED = type & $export.F;
-  var IS_GLOBAL = type & $export.G;
-  var IS_STATIC = type & $export.S;
-  var IS_PROTO = type & $export.P;
-  var IS_BIND = type & $export.B;
-  var IS_WRAP = type & $export.W;
-  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
-  var expProto = exports[PROTOTYPE];
-  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
-  var key, own, out;
-  if (IS_GLOBAL) source = name;
-  for (key in source) {
-    // contains in native
-    own = !IS_FORCED && target && target[key] !== undefined;
-    if (own && key in exports) continue;
-    // export native or passed
-    out = own ? target[key] : source[key];
-    // prevent global pollution for namespaces
-    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
-    // bind timers to global for call from export context
-    : IS_BIND && own ? ctx(out, global)
-    // wrap global constructors for prevent change them in library
-    : IS_WRAP && target[key] == out ? (function (C) {
-      var F = function (a, b, c) {
-        if (this instanceof C) {
-          switch (arguments.length) {
-            case 0: return new C();
-            case 1: return new C(a);
-            case 2: return new C(a, b);
-          } return new C(a, b, c);
-        } return C.apply(this, arguments);
-      };
-      F[PROTOTYPE] = C[PROTOTYPE];
-      return F;
-    // make static versions for prototype methods
-    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-    if (IS_PROTO) {
-      (exports.virtual || (exports.virtual = {}))[key] = out;
-      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
-    }
-  }
-};
-// type bitmap
-$export.F = 1;   // forced
-$export.G = 2;   // global
-$export.S = 4;   // static
-$export.P = 8;   // proto
-$export.B = 16;  // bind
-$export.W = 32;  // wrap
-$export.U = 64;  // safe
-$export.R = 128; // real proto method for `library`
-module.exports = $export;
-
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(29);
-// instead of the ES6 spec version, we didn't implement @@toPrimitive case
-// and the second argument - flag - preferred type is a string
-module.exports = function (it, S) {
-  if (!isObject(it)) return it;
-  var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  throw TypeError("Can't convert object to primitive value");
-};
-
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports) {
-
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function (it) {
-  if (it == undefined) throw TypeError("Can't call method on  " + it);
-  return it;
-};
-
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-// 7.1.4 ToInteger
-var ceil = Math.ceil;
-var floor = Math.floor;
-module.exports = function (it) {
-  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-};
-
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var shared = __webpack_require__(64)('keys');
-var uid = __webpack_require__(37);
-module.exports = function (key) {
-  return shared[key] || (shared[key] = uid(key));
-};
-
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(17);
-var SHARED = '__core-js_shared__';
-var store = global[SHARED] || (global[SHARED] = {});
-module.exports = function (key) {
-  return store[key] || (store[key] = {});
-};
-
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports) {
-
-// IE 8- don't enum bug keys
-module.exports = (
-  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
-).split(',');
-
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-exports.f = Object.getOwnPropertySymbols;
-
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports) {
-
-module.exports = true;
-
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports) {
-
-module.exports = {};
-
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var def = __webpack_require__(24).f;
-var has = __webpack_require__(20);
-var TAG = __webpack_require__(27)('toStringTag');
-
-module.exports = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
-};
-
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.f = __webpack_require__(27);
-
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(17);
-var core = __webpack_require__(33);
-var LIBRARY = __webpack_require__(67);
-var wksExt = __webpack_require__(70);
-var defineProperty = __webpack_require__(24).f;
-module.exports = function (name) {
-  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
-  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
-};
-
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _Deferred = __webpack_require__(242);
-
-var _Deferred2 = _interopRequireDefault(_Deferred);
-
-var _events = __webpack_require__(40);
-
-var _events2 = _interopRequireDefault(_events);
-
-var _miniEvent = __webpack_require__(411);
-
-var _miniEvent2 = _interopRequireDefault(_miniEvent);
-
-var _controller = __webpack_require__(245);
-
-var _controller2 = _interopRequireDefault(_controller);
-
-var _helper = __webpack_require__(414);
-
-var _util = __webpack_require__(2);
-
-var _Loading = __webpack_require__(11);
-
-var _Loading2 = _interopRequireDefault(_Loading);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * 之前的 ActionPanel 的功能
- * @file components/ActionLoader.es6
- * @author leeight
- */
-var cx = (0, _util.create)('ui-actionloader');
-
-/* eslint-disable */
-var template = '<div class="{{mainClass}}">\n    <div class="' + cx('error') + '" s-if="error"><pre>{{error}}</pre></div>\n    <ui-loading s-if="loading" />\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>';
-/* eslint-enable */
-
-function delegateActionEvent(e) {
-    var event = _miniEvent2.default.fromEvent(e, { preserveData: true, syncState: true });
-    event.type = 'action-' + e.type;
-    this.fire(event);
-}
-
-function attachAction(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    var action = this.action = e.action;
-
-    // 代理所有的子Action的事件
-    if (typeof action.on === 'function') {
-        action.on('*', delegateActionEvent, this);
-    }
-
-    this.fire('actionattach', e);
-}
-
-function notifyActionLoadComplete(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-    this.data.set('loading', false);
-    this.data.set('error', null);
-    this.fire('actionloaded', e);
-}
-
-function notifyActionLoadFailed(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    var url = this.data.get('url');
-
-    this.action = null;
-    this.data.set('loading', false);
-    this.data.set('error', new Error('Action Enter Failed, Url = ' + url + ', Reason: ' + e.reason));
-    this.fire('actionloadfail', { failType: e.failType, reason: e.reason });
-}
-
-function notifyActionLoadAborted(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    this.data.set('loading', false);
-    this.data.set('error', new Error('Action Load Aborted'));
-    this.fire('actionloadabort', e);
-}
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'ui-loading': _Loading2.default
-    },
-    initData: function initData() {
-        return {
-            loading: true,
-            error: null,
-            width: '100%',
-            height: null,
-            url: null,
-            options: null
-        };
-    },
-
-    computed: {
-        mainStyle: function mainStyle() {
-            var loading = this.data.get('loading');
-            var error = this.data.get('error');
-            var style = cx.mainStyle(this);
-            style.display = loading || error ? 'none' : 'block';
-            return style;
-        },
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-
-    inited: function inited() {
-        var _this = this;
-
-        var url = this.data.get('url');
-        if (!url) {
-            this.data.set('error', new Error('action-url MUST be provided.'));
-        }
-
-        this.watch('url', function (url) {
-            _this.disposeAction();
-            _this.data.set('loading', true);
-            _this.data.set('error', null);
-            _this.reloadAction();
+var Page = exports.Page = _Page3.default;
+var Ghost = exports.Ghost = _Ghost3.default;
+
+function asPromise(dialog) {
+    return new _promise2.default(function (resolve, reject) {
+        dialog.on('confirm', function () {
+            resolve();
+            dialog.dispose();
         });
+        dialog.on('close', function () {
+            reject();
+            dialog.dispose();
+        });
+    });
+}
 
-        _events2.default.on('enteraction', attachAction, this);
-        _events2.default.on('enteractioncomplete', notifyActionLoadComplete, this);
-        _events2.default.on('actionnotfound', notifyActionLoadFailed, this);
-        _events2.default.on('permissiondenied', notifyActionLoadFailed, this);
-        _events2.default.on('actionfail', notifyActionLoadFailed, this);
-        _events2.default.on('enteractionfail', notifyActionLoadFailed, this);
-        _events2.default.on('actionabort', notifyActionLoadAborted, this);
-    },
-    attached: function attached() {
-        this.reloadAction();
-    },
-    actionMatched: function actionMatched(e) {
-        var ghost = this.ref('ghost');
-        return e.isChildAction && ghost && ghost.id === e.container;
-    },
-    reloadAction: function reloadAction() {
-        var _this2 = this;
+function displayDialog(DialogComponent) {
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-        var module = this.data.get('module');
-        if (module) {
-            (0, _helper.loadAppInBackground)(module).then(function () {
-                return _this2.renderAction();
-            });
-        } else {
-            this.renderAction();
-        }
-    },
-    renderAction: function renderAction() {
-        var _data$get = this.data.get(),
-            url = _data$get.url,
-            options = _data$get.options;
-
-        var ghost = this.ref('ghost');
-        var action = this.action = _controller2.default.renderChildAction(url, ghost.id, options);
-
-        // 如果发生错误，因为事件是同步触发的，
-        // 因此先执行`notifyActionLoadFailed`再赋值，导致没清掉。
-        // 错误时返回的`Promise`对象是没有`abort`方法的，
-        // 这种对象我们也不需要，因此直接清掉
-        if (typeof action.abort !== 'function') {
-            action.abort = null;
-        }
-    },
-    disposeAction: function disposeAction() {
-        var action = this.action;
-        if (!action) {
-            return;
-        }
-
-        if (_Deferred2.default.isPromise(action) && typeof action.abort === 'function') {
-            action.abort();
-        } else {
-            if (typeof action.un === 'function') {
-                action.un('*', delegateActionEvent, this);
-            }
-            if (typeof action.leave === 'function') {
-                action.leave();
-            }
-        }
-    },
-    dispose: function dispose(dontDetach) {
-        this.disposeAction();
-        _events2.default.un('enteraction', attachAction, this);
-        _events2.default.un('enteractioncomplete', notifyActionLoadComplete, this);
-        _events2.default.un('actionnotfound', notifyActionLoadFailed, this);
-        _events2.default.un('permissiondenied', notifyActionLoadFailed, this);
-        _events2.default.un('actionfail', notifyActionLoadFailed, this);
-        _events2.default.un('enteractionfail', notifyActionLoadFailed, this);
-        _events2.default.un('actionabort', notifyActionLoadAborted, this);
-        _san.Component.prototype.dispose.call(this, dontDetach);
+    if (typeof data === 'string') {
+        data = { message: data };
     }
-});
+    var dialog = new DialogComponent({ data: data });
+    dialog.attach(document.body);
+    return asPromise(dialog);
+}
+
+function buildDialog(Klass) {
+    return (0, _asDialog.asDialog)(Klass);
+}
+
+function plain(data) {
+    return displayDialog(_PlainDialog2.default, data);
+}
+
+function alert(data) {
+    return displayDialog(_AlertDialog2.default, data);
+}
+
+function confirm(data) {
+    return displayDialog(_ConfirmDialog2.default, data);
+}
+
+function waitActionDialog(dialogOptions, actionOptions) {
+    var myOptions = _lodash2.default.extend({
+        open: true,
+        width: 'auto',
+        height: 'auto',
+        title: 'Dialog Title'
+    }, dialogOptions);
+    myOptions.options = actionOptions;
+
+    var component = new _LegacyActionAdapter2.default({
+        data: {
+            dialog: true,
+            actionOptions: myOptions
+        }
+    });
+    component.attach(document.body);
+    return component;
+}
+
+function createPayload(payload, fields, extra) {
+    // fields: ['a', 'b', 'c'] -> u.pick(payload, fields);
+    // fields: ['a', ['id', 'userId'], 'c'] ->
+    var requestPayload = fields ? {} : _lodash2.default.extend({}, payload);
+    _lodash2.default.each(fields, function (key) {
+        if (_lodash2.default.isArray(key)) {
+            var _key = _slicedToArray(key, 2),
+                a = _key[0],
+                b = _key[1];
+
+            requestPayload[b] = payload[a];
+        } else if (_lodash2.default.isString(key)) {
+            requestPayload[key] = payload[key];
+        }
+    });
+    return _lodash2.default.extend(requestPayload, extra);
+}
+
+function createToolbar(toolbar) {
+    return _lodash2.default.map(toolbar, function (item) {
+        if (item.type === 'button') {
+            var btn = _lodash2.default.clone(item);
+            if (btn.primary) {
+                btn.skin = 'primary';
+            }
+            return btn;
+        } else if (item.type === 'button-group') {
+            var btnGroup = {
+                type: item.type,
+                value: item.$value || item.buttons[0].$value,
+                datasource: _lodash2.default.map(item.buttons, function (btn) {
+                    var label = btn.label,
+                        $value = btn.$value;
+
+                    var props = _lodash2.default.omit(btn, 'label', '$value');
+                    return _lodash2.default.extend({ text: label, value: $value }, props);
+                })
+            };
+            return btnGroup;
+        }
+        return item;
+    });
+}
+
+function matchAll(compProxy, when) {
+    var keys = _lodash2.default.keys(when);
+    for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var value = when[key];
+        if (compProxy.data.get(key) !== value) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function valueTransform(formData) {
+    var transformedData = {};
+    var keyMap = formData.__s_key || [];
+    _lodash2.default.each(formData, function (v, k) {
+        if (/^__key_(.*)$/.test(k)) {
+            var config = keyMap[+RegExp.$1];
+            if (!config) {
+                return;
+            }
+            if (config.type === 'p') {
+                // 没有对应的 key，把 v 直接合并到 transformedData 里面去
+                _lodash2.default.extend(transformedData, v);
+            } else if (config.type === 'j') {
+                // 对应的 key 是 JSON，重新处理恢复一下
+                //
+                // 针对 type: rangecalendar 的特殊情况
+                // name: {
+                //   begin: 'beginTime',
+                //   end: 'endTime'
+                // },
+                // value: {
+                //   begin: ...,
+                //   end: ...
+                // }
+                _lodash2.default.each(config.value, function (name, valueKey) {
+                    var value = v[valueKey];
+                    if (value != null) {
+                        transformedData[name] = value;
+                    }
+                });
+            }
+        } else if (k !== '__s_key') {
+            transformedData[k] = v;
+        }
+    });
+
+    _lodash2.default.each(transformedData, function (v, k) {
+        if (_lodash2.default.isDate(v)) {
+            transformedData[k] = (0, _moment2.default)(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
+        }
+    });
+
+    return transformedData;
+}
 
 /***/ }),
-/* 73 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -39237,7 +38845,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 74 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -39290,96 +38898,304 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 75 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
 
+var utils = __webpack_require__(14);
+var normalizeHeaderName = __webpack_require__(319);
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.asDialog = asDialog;
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
 
-var _infI18n = __webpack_require__(14);
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
 
-var _infI18n2 = _interopRequireDefault(_infI18n);
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(226);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(226);
+  }
+  return adapter;
+}
 
-var _lodash = __webpack_require__(5);
+var defaults = {
+  adapter: getDefaultAdapter(),
 
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function asDialog(Klass) {
-    if (Klass.__dialogComponent) {
-        return Klass.__dialogComponent;
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
     }
-    var dataTypes = _lodash2.default.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
-    var klassTemplate = dataTypes.length <= 0 ? '<x-biz payload="{{payload}}" />' : '<x-biz ' + _lodash2.default.map(dataTypes, function (prop) {
-        return prop + '="{{payload.' + prop + '}}"';
-    }).join(' ') + ' />';
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
 
-    var WrappedComponent = (0, _san.defineComponent)({
-        template: '<template>\n        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n            <span slot="head">{{title}}</span>\n            ' + klassTemplate + '\n            <div slot="foot" s-if="foot">\n                <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n            </div>\n        </ui-dialog>\n        </template>',
-        components: {
-            'x-biz': Klass,
-            'ui-button': _Button2.default,
-            'ui-dialog': _Dialog2.default
-        },
-        initData: function initData() {
-            return {
-                open: true,
-                title: (0, _infI18n2.default)('确认'),
-                payload: null
-            };
-        },
-        inited: function inited() {
-            // 设置foot默认值
-            if (this.data.get('foot') === undefined) {
-                this.data.set('foot', {
-                    okBtn: {
-                        label: (0, _infI18n2.default)('确定')
-                    }
-                });
-            }
-        },
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
 
-        messages: {
-            resize: function resize() {
-                this.ref('dialog').__resize();
-            }
-        },
-        onConfirmDialog: function onConfirmDialog() {
-            this.fire('confirm');
-            this.data.set('open', false);
-        }
-    });
-    Klass.__dialogComponent = WrappedComponent;
+  timeout: 0,
 
-    return WrappedComponent;
-} /**
-   * @file components/asDialog.es6
-   * @author leeight
-   */
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
 
 /***/ }),
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(17);
+var core = __webpack_require__(36);
+var ctx = __webpack_require__(343);
+var hide = __webpack_require__(24);
+var PROTOTYPE = 'prototype';
+
+var $export = function (type, name, source) {
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var IS_WRAP = type & $export.W;
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE];
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+  var key, own, out;
+  if (IS_GLOBAL) source = name;
+  for (key in source) {
+    // contains in native
+    own = !IS_FORCED && target && target[key] !== undefined;
+    if (own && key in exports) continue;
+    // export native or passed
+    out = own ? target[key] : source[key];
+    // prevent global pollution for namespaces
+    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+    // bind timers to global for call from export context
+    : IS_BIND && own ? ctx(out, global)
+    // wrap global constructors for prevent change them in library
+    : IS_WRAP && target[key] == out ? (function (C) {
+      var F = function (a, b, c) {
+        if (this instanceof C) {
+          switch (arguments.length) {
+            case 0: return new C();
+            case 1: return new C(a);
+            case 2: return new C(a, b);
+          } return new C(a, b, c);
+        } return C.apply(this, arguments);
+      };
+      F[PROTOTYPE] = C[PROTOTYPE];
+      return F;
+    // make static versions for prototype methods
+    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+    if (IS_PROTO) {
+      (exports.virtual || (exports.virtual = {}))[key] = out;
+      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
+    }
+  }
+};
+// type bitmap
+$export.F = 1;   // forced
+$export.G = 2;   // global
+$export.S = 4;   // static
+$export.P = 8;   // proto
+$export.B = 16;  // bind
+$export.W = 32;  // wrap
+$export.U = 64;  // safe
+$export.R = 128; // real proto method for `library`
+module.exports = $export;
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__(30);
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
+  var fn, val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function (it) {
+  if (it == undefined) throw TypeError("Can't call method on  " + it);
+  return it;
+};
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+// 7.1.4 ToInteger
+var ceil = Math.ceil;
+var floor = Math.floor;
+module.exports = function (it) {
+  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+};
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var shared = __webpack_require__(64)('keys');
+var uid = __webpack_require__(40);
+module.exports = function (key) {
+  return shared[key] || (shared[key] = uid(key));
+};
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(17);
+var SHARED = '__core-js_shared__';
+var store = global[SHARED] || (global[SHARED] = {});
+module.exports = function (key) {
+  return store[key] || (store[key] = {});
+};
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+// IE 8- don't enum bug keys
+module.exports = (
+  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+).split(',');
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+exports.f = Object.getOwnPropertySymbols;
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+module.exports = true;
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+module.exports = {};
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__(25).f;
+var has = __webpack_require__(20);
+var TAG = __webpack_require__(28)('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+};
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.f = __webpack_require__(28);
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(17);
+var core = __webpack_require__(36);
+var LIBRARY = __webpack_require__(67);
+var wksExt = __webpack_require__(70);
+var defineProperty = __webpack_require__(25).f;
+module.exports = function (name) {
+  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
+  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
+};
+
+
+/***/ }),
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -39407,7 +39223,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 82 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39635,10 +39451,10 @@ rawAsap.makeRequestCallFromTimer = makeRequestCallFromTimer;
 // back into ASAP proper.
 // https://github.com/tildeio/rsvp.js/blob/cddf7232546a9cf858524b75cde6f9edf72620a7/lib/rsvp/asap.js
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
 /***/ }),
-/* 83 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39717,7 +39533,7 @@ return af;
 
 
 /***/ }),
-/* 84 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39865,7 +39681,7 @@ return ar;
 
 
 /***/ }),
-/* 85 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39930,7 +39746,7 @@ return arDz;
 
 
 /***/ }),
-/* 86 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39995,7 +39811,7 @@ return arKw;
 
 
 /***/ }),
-/* 87 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40127,7 +39943,7 @@ return arLy;
 
 
 /***/ }),
-/* 88 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40193,7 +40009,7 @@ return arMa;
 
 
 /***/ }),
-/* 89 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40304,7 +40120,7 @@ return arSa;
 
 
 /***/ }),
-/* 90 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40369,7 +40185,7 @@ return arTn;
 
 
 /***/ }),
-/* 91 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40480,7 +40296,7 @@ return az;
 
 
 /***/ }),
-/* 92 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40620,7 +40436,7 @@ return be;
 
 
 /***/ }),
-/* 93 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40716,7 +40532,7 @@ return bg;
 
 
 /***/ }),
-/* 94 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40781,7 +40597,7 @@ return bm;
 
 
 /***/ }),
-/* 95 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40906,7 +40722,7 @@ return bn;
 
 
 /***/ }),
-/* 96 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41031,7 +40847,7 @@ return bo;
 
 
 /***/ }),
-/* 97 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41145,7 +40961,7 @@ return br;
 
 
 /***/ }),
-/* 98 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41303,7 +41119,7 @@ return bs;
 
 
 /***/ }),
-/* 99 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41397,7 +41213,7 @@ return ca;
 
 
 /***/ }),
-/* 100 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41582,7 +41398,7 @@ return cs;
 
 
 /***/ }),
-/* 101 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41651,7 +41467,7 @@ return cv;
 
 
 /***/ }),
-/* 102 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41738,7 +41554,7 @@ return cy;
 
 
 /***/ }),
-/* 103 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41804,7 +41620,7 @@ return da;
 
 
 /***/ }),
-/* 104 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41888,7 +41704,7 @@ return de;
 
 
 /***/ }),
-/* 105 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41973,7 +41789,7 @@ return deAt;
 
 
 /***/ }),
-/* 106 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42057,7 +41873,7 @@ return deCh;
 
 
 /***/ }),
-/* 107 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42163,7 +41979,7 @@ return dv;
 
 
 /***/ }),
-/* 108 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42269,7 +42085,7 @@ return el;
 
 
 /***/ }),
-/* 109 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42342,7 +42158,7 @@ return enAu;
 
 
 /***/ }),
-/* 110 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42411,7 +42227,7 @@ return enCa;
 
 
 /***/ }),
-/* 111 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42484,7 +42300,7 @@ return enGb;
 
 
 /***/ }),
-/* 112 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42557,7 +42373,7 @@ return enIe;
 
 
 /***/ }),
-/* 113 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42630,7 +42446,7 @@ return enNz;
 
 
 /***/ }),
-/* 114 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42709,7 +42525,7 @@ return eo;
 
 
 /***/ }),
-/* 115 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42807,7 +42623,7 @@ return es;
 
 
 /***/ }),
-/* 116 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42904,7 +42720,7 @@ return esDo;
 
 
 /***/ }),
-/* 117 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42993,7 +42809,7 @@ return esUs;
 
 
 /***/ }),
-/* 118 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43080,7 +42896,7 @@ return et;
 
 
 /***/ }),
-/* 119 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43152,7 +42968,7 @@ return eu;
 
 
 /***/ }),
-/* 120 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43265,7 +43081,7 @@ return fa;
 
 
 /***/ }),
-/* 121 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43380,7 +43196,7 @@ return fi;
 
 
 /***/ }),
-/* 122 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43446,7 +43262,7 @@ return fo;
 
 
 /***/ }),
-/* 123 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43535,7 +43351,7 @@ return fr;
 
 
 /***/ }),
-/* 124 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43615,7 +43431,7 @@ return frCa;
 
 
 /***/ }),
-/* 125 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43699,7 +43515,7 @@ return frCh;
 
 
 /***/ }),
-/* 126 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43780,7 +43596,7 @@ return fy;
 
 
 /***/ }),
-/* 127 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43862,7 +43678,7 @@ return gd;
 
 
 /***/ }),
-/* 128 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43945,7 +43761,7 @@ return gl;
 
 
 /***/ }),
-/* 129 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44074,7 +43890,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 130 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44204,7 +44020,7 @@ return gu;
 
 
 /***/ }),
-/* 131 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44309,7 +44125,7 @@ return he;
 
 
 /***/ }),
-/* 132 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44439,7 +44255,7 @@ return hi;
 
 
 /***/ }),
-/* 133 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44599,7 +44415,7 @@ return hr;
 
 
 /***/ }),
-/* 134 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44715,7 +44531,7 @@ return hu;
 
 
 /***/ }),
-/* 135 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44816,7 +44632,7 @@ return hyAm;
 
 
 /***/ }),
-/* 136 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44905,7 +44721,7 @@ return id;
 
 
 /***/ }),
-/* 137 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45043,7 +44859,7 @@ return is;
 
 
 /***/ }),
-/* 138 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45119,7 +44935,7 @@ return it;
 
 
 /***/ }),
-/* 139 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45205,7 +45021,7 @@ return ja;
 
 
 /***/ }),
-/* 140 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45294,7 +45110,7 @@ return jv;
 
 
 /***/ }),
-/* 141 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45389,7 +45205,7 @@ return ka;
 
 
 /***/ }),
-/* 142 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45482,7 +45298,7 @@ return kk;
 
 
 /***/ }),
-/* 143 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45546,7 +45362,7 @@ return km;
 
 
 /***/ }),
-/* 144 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45678,7 +45494,7 @@ return kn;
 
 
 /***/ }),
-/* 145 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45766,7 +45582,7 @@ return ko;
 
 
 /***/ }),
-/* 146 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45860,7 +45676,7 @@ return ky;
 
 
 /***/ }),
-/* 147 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46003,7 +45819,7 @@ return lb;
 
 
 /***/ }),
-/* 148 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46079,7 +45895,7 @@ return lo;
 
 
 /***/ }),
-/* 149 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46203,7 +46019,7 @@ return lt;
 
 
 /***/ }),
-/* 150 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46307,7 +46123,7 @@ return lv;
 
 
 /***/ }),
-/* 151 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46425,7 +46241,7 @@ return me;
 
 
 /***/ }),
-/* 152 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46495,7 +46311,7 @@ return mi;
 
 
 /***/ }),
-/* 153 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46591,7 +46407,7 @@ return mk;
 
 
 /***/ }),
-/* 154 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46678,7 +46494,7 @@ return ml;
 
 
 /***/ }),
-/* 155 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46845,7 +46661,7 @@ return mr;
 
 
 /***/ }),
-/* 156 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46933,7 +46749,7 @@ return ms;
 
 
 /***/ }),
-/* 157 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47022,7 +46838,7 @@ return msMy;
 
 
 /***/ }),
-/* 158 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47088,7 +46904,7 @@ return mt;
 
 
 /***/ }),
-/* 159 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47190,7 +47006,7 @@ return my;
 
 
 /***/ }),
-/* 160 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47259,7 +47075,7 @@ return nb;
 
 
 /***/ }),
-/* 161 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47388,7 +47204,7 @@ return ne;
 
 
 /***/ }),
-/* 162 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47482,7 +47298,7 @@ return nl;
 
 
 /***/ }),
-/* 163 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47576,7 +47392,7 @@ return nlBe;
 
 
 /***/ }),
-/* 164 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47642,7 +47458,7 @@ return nn;
 
 
 /***/ }),
-/* 165 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47772,7 +47588,7 @@ return paIn;
 
 
 /***/ }),
-/* 166 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47904,7 +47720,7 @@ return pl;
 
 
 /***/ }),
-/* 167 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47975,7 +47791,7 @@ return pt;
 
 
 /***/ }),
-/* 168 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48042,7 +47858,7 @@ return ptBr;
 
 
 /***/ }),
-/* 169 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48124,7 +47940,7 @@ return ro;
 
 
 /***/ }),
-/* 170 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48314,7 +48130,7 @@ return ru;
 
 
 /***/ }),
-/* 171 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48418,7 +48234,7 @@ return sd;
 
 
 /***/ }),
-/* 172 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48485,7 +48301,7 @@ return se;
 
 
 /***/ }),
-/* 173 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48562,7 +48378,7 @@ return si;
 
 
 /***/ }),
-/* 174 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48725,7 +48541,7 @@ return sk;
 
 
 /***/ }),
-/* 175 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48904,7 +48720,7 @@ return sl;
 
 
 /***/ }),
-/* 176 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48980,7 +48796,7 @@ return sq;
 
 
 /***/ }),
-/* 177 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49097,7 +48913,7 @@ return sr;
 
 
 /***/ }),
-/* 178 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49214,7 +49030,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 179 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49309,7 +49125,7 @@ return ss;
 
 
 /***/ }),
-/* 180 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49384,7 +49200,7 @@ return sv;
 
 
 /***/ }),
-/* 181 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49449,7 +49265,7 @@ return sw;
 
 
 /***/ }),
-/* 182 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49585,7 +49401,7 @@ return ta;
 
 
 /***/ }),
-/* 183 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49680,7 +49496,7 @@ return te;
 
 
 /***/ }),
-/* 184 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49754,7 +49570,7 @@ return tet;
 
 
 /***/ }),
-/* 185 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49827,7 +49643,7 @@ return th;
 
 
 /***/ }),
-/* 186 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49895,7 +49711,7 @@ return tlPh;
 
 
 /***/ }),
-/* 187 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50023,7 +49839,7 @@ return tlh;
 
 
 /***/ }),
-/* 188 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50119,7 +49935,7 @@ return tr;
 
 
 /***/ }),
-/* 189 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50217,7 +50033,7 @@ return tzl;
 
 
 /***/ }),
-/* 190 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50281,7 +50097,7 @@ return tzm;
 
 
 /***/ }),
-/* 191 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50345,7 +50161,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 192 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50503,7 +50319,7 @@ return uk;
 
 
 /***/ }),
-/* 193 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50608,7 +50424,7 @@ return ur;
 
 
 /***/ }),
-/* 194 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50672,7 +50488,7 @@ return uz;
 
 
 /***/ }),
-/* 195 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50736,7 +50552,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 196 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50821,7 +50637,7 @@ return vi;
 
 
 /***/ }),
-/* 197 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50895,7 +50711,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 198 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50961,7 +50777,7 @@ return yo;
 
 
 /***/ }),
-/* 199 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51078,7 +50894,7 @@ return zhCn;
 
 
 /***/ }),
-/* 200 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51189,7 +51005,7 @@ return zhHk;
 
 
 /***/ }),
-/* 201 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51299,7 +51115,7 @@ return zhTw;
 
 
 /***/ }),
-/* 202 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51310,7 +51126,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.opacity = opacity;
 /**
- * @file san-xui/x/components/fx/opacity.es6
+ * @file san-xui/x/components/fx/opacity.js
  * @author leeight
  */
 
@@ -51353,7 +51169,7 @@ function opacity() {
 }
 
 /***/ }),
-/* 203 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51377,12 +51193,12 @@ exports.default = (0, _san.defineComponent)({
         element.parentNode.scrollTop = element.offsetTop;
     }
 }); /**
-     * @file ScrollIntoView.es6
+     * @file ScrollIntoView.js
      * @author leeight
      */
 
 /***/ }),
-/* 204 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51397,7 +51213,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file components/SyntaxHighlighter.es6
+ * @file components/SyntaxHighlighter.js
  * @author leeight
  */
 
@@ -51456,7 +51272,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 205 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51465,6 +51281,8 @@ exports.default = (0, _san.defineComponent)({
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _templateObject = _taggedTemplateLiteral(['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>'], ['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>']);
 
 var _san = __webpack_require__(0);
 
@@ -51478,10 +51296,10 @@ var _asInput = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @file components/ACEEditor.es6
- * @author leeight
- */
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * @file components/ACEEditor.js
+                                                                                                                                                   * @author leeight
+                                                                                                                                                   */
 
 /* global ace */
 
@@ -51489,7 +51307,7 @@ var cx = (0, _util.create)('ui-aceeditor');
 var kUrl = typeof window.require === 'function' ? window.require.toUrl('ace-builds/ace.js').replace(/\?.*/, '') : 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
 
 /* eslint-disable */
-var template = '<div class="{{mainClass}}">\n    <div class="' + cx('error') + '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>';
+var template = (0, _util.html)(_templateObject, cx('error'));
 /* eslint-enable */
 
 var ACEEditor = (0, _san.defineComponent)({
@@ -51616,7 +51434,67 @@ var ACEEditor = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(ACEEditor);
 
 /***/ }),
-/* 206 */
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'|i18n}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>'], ['<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'|i18n}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>']);
+
+var _infI18n = __webpack_require__(15);
+
+var _infI18n2 = _interopRequireDefault(_infI18n);
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(19);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _filters = __webpack_require__(198);
+
+var _util = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * @file components/AlertDialog.js
+                                                                                                                                                   * @author leeight
+                                                                                                                                                   */
+
+exports.default = (0, _san.defineComponent)({
+    template: (0, _util.html)(_templateObject),
+    components: {
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
+    },
+    filters: {
+        i18n: _filters.i18n
+    },
+    initData: function initData() {
+        return {
+            open: true,
+            width: 500,
+            title: (0, _infI18n2.default)('确认')
+        };
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
+    }
+});
+
+/***/ }),
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51627,7 +51505,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.i18n = i18n;
 
-var _infI18n = __webpack_require__(14);
+var _infI18n = __webpack_require__(15);
 
 var _infI18n2 = _interopRequireDefault(_infI18n);
 
@@ -51647,13 +51525,13 @@ function i18n(value) {
         return args[counter++];
     });
 } /**
-   * @file mixins/filters.es6
+   * @file mixins/filters.js
    * @author chenbo09
    *
    */
 
 /***/ }),
-/* 207 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51665,11 +51543,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _kStatusText;
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _humanize = __webpack_require__(271);
+var _humanize = __webpack_require__(269);
 
 var _humanize2 = _interopRequireDefault(_humanize);
 
@@ -51684,7 +51562,7 @@ var _Button2 = _interopRequireDefault(_Button);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /**
-                                                                                                                                                                                                                   * @file components/BosUploader.es6
+                                                                                                                                                                                                                   * @file components/BosUploader.js
                                                                                                                                                                                                                    * @author leeight
                                                                                                                                                                                                                    */
 
@@ -52004,7 +51882,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 208 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52027,7 +51905,7 @@ var _asInput = __webpack_require__(7);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file components/BoxGroup.es6
+ * @file components/BoxGroup.js
  * @author leeight
  */
 
@@ -52233,7 +52111,7 @@ var BoxGroup = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(BoxGroup);
 
 /***/ }),
-/* 209 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52257,7 +52135,7 @@ var cx = (0, _util.create)('ui-ckeditor');
 
 /* eslint-disable */
 /**
- * @file components/CKEditor.es6
+ * @file components/CKEditor.js
  * @author leeight
  */
 
@@ -52346,7 +52224,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 210 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52356,13 +52234,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
 var _san = __webpack_require__(0);
 
-var _ResizeObserver = __webpack_require__(275);
+var _ResizeObserver = __webpack_require__(273);
 
 var _ResizeObserver2 = _interopRequireDefault(_ResizeObserver);
 
@@ -52371,7 +52249,7 @@ var _util = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file components/Chart.es6
+ * @file components/Chart.js
  * @author leeight
  */
 
@@ -52527,7 +52405,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 211 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52536,69 +52414,46 @@ exports.default = (0, _san.defineComponent)({
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _infI18n = __webpack_require__(15);
+
+var _infI18n2 = _interopRequireDefault(_infI18n);
 
 var _san = __webpack_require__(0);
 
-var _util = __webpack_require__(2);
+var _Dialog = __webpack_require__(19);
 
-var _asInput = __webpack_require__(7);
+var _Dialog2 = _interopRequireDefault(_Dialog);
 
-var cx = (0, _util.create)('ui-checkbox');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable */
-/**
- * @file components/CheckBox.es6
- * @author leeight
- */
-
-var template = '<div class="{{mainClass}}" on-click="onClick($event)">\n    <label>\n        <input\n            type="checkbox"\n            checked="{=checked=}"\n            on-change="onChange($event)"\n            disabled="{{disabled}}" />\n        <span s-if="title">{{title}}</span>\n    </label>\n</div>';
-/* eslint-enable */
-
-var CheckBox = (0, _san.defineComponent)({
-    template: template,
+exports.default = (0, _san.defineComponent)({
+    template: '<template>\n    <ui-dialog open="{=open=}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-confirm"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n    </ui-dialog>\n    </template>',
+    components: {
+        'ui-dialog': _Dialog2.default
+    },
     initData: function initData() {
         return {
-            checked: false,
-            title: null
+            open: true,
+            width: 500,
+            title: (0, _infI18n2.default)('请确认')
         };
     },
-
-    dataTypes: {
-        /**
-         * 设置或者获取控件的选中状态
-         *
-         * @bindx
-         * @default false
-         */
-        checked: _san.DataTypes.bool,
-
-        /**
-         * 控件的禁用状态
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 控件的文案
-         */
-        title: _san.DataTypes.string
+    onCloseDialog: function onCloseDialog() {
+        this.fire('close');
+        this.data.set('open', false);
     },
-    computed: {
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-    onChange: function onChange(e) {
-        this.fire('change', { value: e.target.checked });
-    },
-    onClick: function onClick(e) {
-        this.fire('click', e);
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
     }
-});
-
-exports.default = (0, _asInput.asInput)(CheckBox);
+}); /**
+     * @file components/ConfirmDialog.js
+     * @author leeight
+     */
 
 /***/ }),
-/* 212 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52608,7 +52463,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -52616,7 +52471,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -52625,7 +52480,7 @@ var _asInput = __webpack_require__(7);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-dragger'); /**
-                                           * @file components/Dragger.es6
+                                           * @file components/Dragger.js
                                            * @author leeight
                                            */
 
@@ -52869,7 +52724,7 @@ var Dragger = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Dragger);
 
 /***/ }),
-/* 213 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52879,15 +52734,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _asTable = __webpack_require__(287);
+var _asTable = __webpack_require__(285);
 
 exports.default = (0, _asTable.asTable)(); /**
-                                            * @file san-xui/x/components/Table.es6
+                                            * @file san-xui/x/components/Table.js
                                             * @author leeight
                                             */
 
 /***/ }),
-/* 214 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52908,7 +52763,7 @@ var _Layer2 = _interopRequireDefault(_Layer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-table'); /**
-                                         * @file components/TableFilter.es6
+                                         * @file components/TableFilter.js
                                          * @author leeight
                                          */
 
@@ -52937,7 +52792,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 215 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52947,7 +52802,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _big = __webpack_require__(292);
+var _big = __webpack_require__(290);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -52957,7 +52812,7 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -52968,7 +52823,7 @@ var _asInput = __webpack_require__(7);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file components/NumberTextline.es6
+ * @file components/NumberTextline.js
  * @author leeight
  */
 
@@ -53107,7 +52962,63 @@ var NumberTextline = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(NumberTextline);
 
 /***/ }),
-/* 216 */
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _infI18n = __webpack_require__(15);
+
+var _infI18n2 = _interopRequireDefault(_infI18n);
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(19);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/PlainDialog.js
+ * @author leeight
+ */
+
+exports.default = (0, _san.defineComponent)({
+    template: '<template>\n    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n        <span slot="head">{{title}}</span>\n        {{message | raw}}\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
+    components: {
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
+    },
+    initData: function initData() {
+        return {
+            open: true,
+            width: 500,
+            title: (0, _infI18n2.default)('确认'),
+            foot: {
+                okBtn: {
+                    label: (0, _infI18n2.default)('确定')
+                }
+            }
+        };
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
+    }
+});
+
+/***/ }),
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53127,7 +53038,7 @@ var _asInput = __webpack_require__(7);
 
 var _util = __webpack_require__(2);
 
-var _regions = __webpack_require__(296);
+var _regions = __webpack_require__(294);
 
 var _regions2 = _interopRequireDefault(_regions);
 
@@ -53137,7 +53048,7 @@ var cx = (0, _util.create)('ui-region');
 
 /* eslint-disable */
 /**
- * @file san-xui/x/components/Region.es6
+ * @file san-xui/x/components/Region.js
  * @author leeight
  */
 
@@ -53192,7 +53103,7 @@ var Region = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(Region);
 
 /***/ }),
-/* 217 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53202,7 +53113,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -53214,19 +53125,22 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
+var _asInput = __webpack_require__(7);
+
 var _Loading = __webpack_require__(11);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var cx = (0, _util.create)('ui-richtexteditor'); /**
-                                                  * @file components/RichTextEditor.es6
-                                                  * @author leeight
-                                                  */
+/**
+ * @file components/RichTextEditor.js
+ * @author leeight
+ */
 
 /* global UE */
 
+var cx = (0, _util.create)('ui-richtexteditor');
 var kLinkUrl = typeof window.require === 'function' ? window.require.toUrl('ueditor/dialogs/link/link.html') : null;
 
 var kDefaultEditorOptions = {
@@ -53249,7 +53163,7 @@ var kDefaultEditorOptions = {
 var template = '<template>\n<div class="' + cx() + '">\n    <ui-loading s-if="loading" />\n    <div class="' + cx('error') + '" s-if="error">{{error}}</div>\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>\n</template>';
 /* eslint-enable */
 
-exports.default = (0, _san.defineComponent)({
+var RichTextEditor = (0, _san.defineComponent)({
     template: template,
     components: {
         'ui-loading': _Loading2.default
@@ -53340,6 +53254,7 @@ exports.default = (0, _san.defineComponent)({
                     var _value = _this.editor.getContent();
                     // FIXME(leeight) 递归的问题如何处理呢？
                     _this.data.set('value', _value);
+                    _this.fire('change', { value: _value });
                 }
             });
         });
@@ -53356,8 +53271,10 @@ exports.default = (0, _san.defineComponent)({
     }
 });
 
+exports.default = (0, _asInput.asInput)(RichTextEditor);
+
 /***/ }),
-/* 218 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53377,7 +53294,7 @@ var cx = (0, _util.create)('ui-togglebutton');
 
 /* eslint-disable */
 /**
- * @file Switch.es6
+ * @file Switch.js
  * @author leeight
  */
 
@@ -53440,7 +53357,7 @@ var Switch = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Switch);
 
 /***/ }),
-/* 219 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53465,7 +53382,7 @@ var _Layer2 = _interopRequireDefault(_Layer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file components/TableColumnToggle.es6
+ * @file components/TableColumnToggle.js
  * @author leeight
  */
 
@@ -53538,7 +53455,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 220 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53547,6 +53464,131 @@ exports.default = (0, _san.defineComponent)({
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _jquery = __webpack_require__(9);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var cx = (0, _util.create)('ui-toast'); /**
+                                         * @file Toast.js
+                                         * @author leeight
+                                         */
+
+var kToastContainerId = cx('container') + '-' + new Date().getTime();
+
+/* eslint-disable */
+var template = '<template>\n    <div class="{{mainClass}}" style="{{style}}">\n        {{message | raw}}\n    </div>\n</template>';
+/* eslint-enable */
+
+var Toast = (0, _san.defineComponent)({ // eslint-disable-line
+    template: template,
+    components: {},
+    computed: {
+        style: function style() {
+            return {};
+        },
+        mainClass: function mainClass() {
+            var klass = [cx(), cx('x')];
+            var level = this.data.get('level');
+            if (level) {
+                klass.push(cx(level));
+            }
+            return klass;
+        }
+    },
+    initData: function initData() {
+        return {
+            message: null,
+            duration: 5000,
+            level: 'success' // 'success' | 'info' | 'warning' | 'error'
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 需要展示的信息
+         */
+        message: _san.DataTypes.string,
+
+        /**
+         * 最长展示的时间
+         * @default 5000
+         */
+        duration: _san.DataTypes.number,
+
+        /**
+         * 组件的样式，可选的参数有 success, info, warning, error
+         * @default success
+         */
+        level: _san.DataTypes.string
+    },
+    attached: function attached() {
+        var _this = this;
+
+        setTimeout(function () {
+            (0, _jquery2.default)(_this.el).fadeOut({
+                duration: 1000,
+                easing: 'swing',
+                complete: function complete() {
+                    return _this.dispose();
+                }
+            });
+        }, this.data.get('duration'));
+    }
+});
+
+function getToastContainer() {
+    var container = document.getElementById(kToastContainerId);
+    if (!container) {
+        container = document.createElement('DIV');
+        container.id = kToastContainerId;
+        container.className = cx('container');
+        document.body.appendChild(container);
+    }
+    return container;
+}
+
+function toastBuilder(level) {
+    return function (message) {
+        var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
+
+        var comp = new Toast({ data: { message: message, level: level, duration: duration } });
+        var container = getToastContainer();
+        container.style.zIndex = (0, _util.nextZindex)();
+        comp.attach(container);
+    };
+}
+
+Toast.success = toastBuilder('success');
+Toast.info = toastBuilder('info');
+Toast.warning = toastBuilder('warning');
+Toast.error = toastBuilder('error');
+Toast.alert = toastBuilder('warning'); // 兼容历史用法
+Toast.normal = toastBuilder('success'); // 兼容bat-ria/mvc/FormAction里调用Toast的方式
+
+exports.default = Toast;
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.asDialog = asDialog;
+
+var _infI18n = __webpack_require__(15);
+
+var _infI18n2 = _interopRequireDefault(_infI18n);
 
 var _lodash = __webpack_require__(5);
 
@@ -53554,1724 +53596,294 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 var _san = __webpack_require__(0);
 
-var _ajax = __webpack_require__(221);
+var _Dialog = __webpack_require__(19);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function asDialog(Klass) {
+    if (Klass.__dialogComponent) {
+        return Klass.__dialogComponent;
+    }
+    var dataTypes = _lodash2.default.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
+    var klassTemplate = dataTypes.length <= 0 ? '<x-biz payload="{{payload}}" />' : '<x-biz ' + _lodash2.default.map(dataTypes, function (prop) {
+        return prop + '="{{payload.' + prop + '}}"';
+    }).join(' ') + ' />';
+
+    var WrappedComponent = (0, _san.defineComponent)({
+        template: '<template>\n        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n            <span slot="head">{{title}}</span>\n            ' + klassTemplate + '\n            <div slot="foot" s-if="foot">\n                <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n            </div>\n        </ui-dialog>\n        </template>',
+        components: {
+            'x-biz': Klass,
+            'ui-button': _Button2.default,
+            'ui-dialog': _Dialog2.default
+        },
+        initData: function initData() {
+            return {
+                open: true,
+                title: (0, _infI18n2.default)('确认'),
+                payload: null
+            };
+        },
+        inited: function inited() {
+            // 设置foot默认值
+            if (this.data.get('foot') === undefined) {
+                this.data.set('foot', {
+                    okBtn: {
+                        label: (0, _infI18n2.default)('确定')
+                    }
+                });
+            }
+        },
+
+        messages: {
+            resize: function resize() {
+                this.ref('dialog').__resize();
+            }
+        },
+        onConfirmDialog: function onConfirmDialog() {
+            this.fire('confirm');
+            this.data.set('open', false);
+        }
+    });
+    Klass.__dialogComponent = WrappedComponent;
+
+    return WrappedComponent;
+} /**
+   * @file components/asDialog.js
+   * @author leeight
+   */
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error"><pre>{{error}}</pre></div>\n    <ui-loading s-if="loading" />\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>'], ['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error"><pre>{{error}}</pre></div>\n    <ui-loading s-if="loading" />\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>']);
+
+var _san = __webpack_require__(0);
+
+var _Deferred = __webpack_require__(216);
+
+var _Deferred2 = _interopRequireDefault(_Deferred);
+
+var _events = __webpack_require__(34);
+
+var _events2 = _interopRequireDefault(_events);
+
+var _miniEvent = __webpack_require__(308);
+
+var _miniEvent2 = _interopRequireDefault(_miniEvent);
+
+var _controller = __webpack_require__(219);
+
+var _controller2 = _interopRequireDefault(_controller);
+
+var _helper = __webpack_require__(311);
 
 var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var _TextBox = __webpack_require__(15);
-
-var _TextBox2 = _interopRequireDefault(_TextBox);
 
 var _Loading = __webpack_require__(11);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _Layer = __webpack_require__(16);
-
-var _Layer2 = _interopRequireDefault(_Layer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /**
-                                                                                                                                                                                                                   * @file san-xui/x/components/UserPicker.es6
-                                                                                                                                                                                                                   * @author leeight
-                                                                                                                                                                                                                   */
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * 之前的 ActionPanel 的功能
+                                                                                                                                                   * @file components/ActionLoader.js
+                                                                                                                                                   * @author leeight
+                                                                                                                                                   */
 
-var cx = (0, _util.create)('ui-userpicker');
 
-// /api/product/center/uid/search
-// {keyword: string}
-// {
-//   success: true,
-//   result: {
-//     items: [
-//       {
-//         departmentName: string,
-//         displayName: string,
-//         email: string,
-//         name: string,
-//         username: string
-//       }
-//     }
-//   }
-// }
+var cx = (0, _util.create)('ui-actionloader');
 
 /* eslint-disable */
-var template = '<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onClick">\n<div class="' + cx('preview') + '">\n    <div class="' + cx('preview-item') + '" s-for="item, i in value">\n        {{item.username}}<i s-if="!disabled" class="iconfont icon-close" on-click="removeItem($event, i)"></i>\n    </div>\n    <ui-textbox\n        s-if="inputVisible"\n        s-ref="input"\n        value="{=keyword=}"\n        on-input="onInput"\n        on-focus="onFoucs"\n        on-blur="onBlur"\n        on-enter="onEnter"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n    />\n</div>\n<ui-layer open="{=layerOpened=}" follow-scroll="{{false}}">\n    <div class="' + cx('layer') + ' ' + cx('layer-x') + '" style="{{layerStyle}}">\n        <div class="' + cx('layer-main') + '">\n            <ui-loading s-if="loading" size="small" />\n            <ul s-elif="!items.length"><li>\u6682\u65E0\u6570\u636E</li></ul>\n            <ul s-else>\n                <li class="{{selectedIndex === i ? \'' + cx('layer-item', 'layer-actived-item') + '\' : \'' + cx('layer-item') + '\'}}"\n                    on-click="addItem(item)"\n                    s-for="item, i in items">\n                    <slot name="layer-item" var-item="{{item}}">{{item.displayName}}</slot>\n                </li>\n            </ul>\n        </div>\n    </div>\n</ui-layer>\n</div>';
+var template = (0, _util.html)(_templateObject, cx('error'));
 /* eslint-enable */
 
-function kDefaultTransformer(result) {
-    return _lodash2.default.map(result.items, function (item) {
-        var accountId = item.email.replace(/@.*/, '');
-        var username = item.name;
-        var displayName = item.displayName;
-        return {
-            accountId: accountId, username: username, displayName: displayName
-        };
-    });
+function delegateActionEvent(e) {
+    var event = _miniEvent2.default.fromEvent(e, { preserveData: true, syncState: true });
+    event.type = 'action-' + e.type;
+    this.fire(event);
 }
 
-var UUAP = (0, _san.defineComponent)({
+function attachAction(e) {
+    if (!this.actionMatched(e)) {
+        return;
+    }
+
+    var action = this.action = e.action;
+
+    // 代理所有的子Action的事件
+    if (typeof action.on === 'function') {
+        action.on('*', delegateActionEvent, this);
+    }
+
+    this.fire('actionattach', e);
+}
+
+function notifyActionLoadComplete(e) {
+    if (!this.actionMatched(e)) {
+        return;
+    }
+    this.data.set('loading', false);
+    this.data.set('error', null);
+    this.fire('actionloaded', e);
+}
+
+function notifyActionLoadFailed(e) {
+    if (!this.actionMatched(e)) {
+        return;
+    }
+
+    var url = this.data.get('url');
+
+    this.action = null;
+    this.data.set('loading', false);
+    this.data.set('error', new Error('Action Enter Failed, Url = ' + url + ', Reason: ' + e.reason));
+    this.fire('actionloadfail', { failType: e.failType, reason: e.reason });
+}
+
+function notifyActionLoadAborted(e) {
+    if (!this.actionMatched(e)) {
+        return;
+    }
+
+    this.data.set('loading', false);
+    this.data.set('error', new Error('Action Load Aborted'));
+    this.fire('actionloadabort', e);
+}
+
+exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'ui-loading': _Loading2.default,
-        'ui-layer': _Layer2.default,
-        'ui-textbox': _TextBox2.default
-    },
-    messages: {
-        'input-comp-value-changed': function inputCompValueChanged() {
-            // 忽略子控件的消息
-        }
-    },
-    computed: {
-        mainClass: function mainClass() {
-            var klass = cx.mainClass(this);
-            var active = this.data.get('active');
-            if (active) {
-                klass.push('state-active');
-                klass.push(cx('active'));
-                klass.push(cx('x-active'));
-            }
-            return klass;
-        },
-        mainStyle: function mainStyle() {
-            return cx.mainStyle(this);
-        },
-        inputVisible: function inputVisible() {
-            var disabled = this.data.get('disabled');
-            if (disabled) {
-                return false;
-            }
-            var max = this.data.get('max');
-            var size = this.data.get('value.length');
-            return size < max;
-        },
-        realLayerWidth: function realLayerWidth() {
-            var layerWidth = this.data.get('layerWidth');
-            var autoLayerWidth = this.data.get('autoLayerWidth');
-            return layerWidth || autoLayerWidth;
-        },
-        layerStyle: function layerStyle() {
-            var style = {};
-            var realLayerWidth = this.data.get('realLayerWidth');
-            if (realLayerWidth != null) {
-                style.width = (0, _util.hasUnit)(realLayerWidth) ? realLayerWidth : realLayerWidth + 'px';
-            }
-            return style;
-        }
+        'ui-loading': _Loading2.default
     },
     initData: function initData() {
         return {
-            active: false,
-            loading: false, // 是不是正在查询中
-            disabled: false,
-            keyword: '',
-            keywordName: 'keyword',
-            searchApi: '/api/product/center/uid/search',
-            searchRequester: null,
-            layerOpened: false,
-            layerWidth: null,
-            autoLayerWidth: null,
-            value: [],
-            selectedIndex: 0,
-            max: Infinity,
-            itemsTransformer: kDefaultTransformer,
-            items: [] // 预览数据
+            loading: true,
+            error: null,
+            width: '100%',
+            height: null,
+            url: null,
+            options: null
         };
     },
 
-    dataTypes: {
-        /**
-         * 是否是聚焦的状态，当点击内容可输入区域的时候，自动设置未 true
-         * @default false
-         */
-        active: _san.DataTypes.bool,
-
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 最多允许输入的数量
-         * @default Infinity
-         */
-        max: _san.DataTypes.number,
-
-        /**
-         * 数据是否正在加载
-         * @default false
-         */
-        loading: _san.DataTypes.bool,
-
-        /**
-         * 用户输入的关键词
-         */
-        keyword: _san.DataTypes.string,
-
-        /**
-         * 搜索的时候，关键词的名字
-         * @default keyword
-         */
-        keywordName: _san.DataTypes.string,
-
-        /**
-         * 搜索 API 的地址
-         * @default /api/product/center/uid/search
-         */
-        searchApi: _san.DataTypes.string,
-
-        /**
-         * 自定义的请求函数，如果设置了 search-requester，那么会忽略 search-api 的配置<br>
-         * function({[keywordName]: keyword}): Promise&lt;{items: object[]}, Error&gt;
-         */
-        searchRequester: _san.DataTypes.func,
-
-        /**
-         * 浮层是否打开
-         * @bindx
-         * @default false
-         */
-        layerOpened: _san.DataTypes.bool,
-
-        /**
-         * 手工设置浮层的宽度，如果没有设置的话，会在展开的时候动态计算
-         */
-        layerWidth: _san.DataTypes.number,
-
-        /**
-         * UserPicker 的内容
-         * <pre><code>{
-         *   username: string,
-         *   accountId: string
-         * }</code></pre>
-         * @bindx
-         * @default []
-         */
-        value: _san.DataTypes.array,
-
-        /**
-         * 转化后端返回的数据格式<br>
-         * function({items: object[]}): object[]
-         */
-        itemsTransformer: _san.DataTypes.func,
-
-        /**
-         * 浮层里面所展示的数据源
-         * <pre><code>{
-         *   username: string,
-         *   accountId: string,
-         *   displayName: string
-         * }</code></pre>
-         * 每一项的格式需要符合下面的约束，如果后端API返回的数据格式不同<br>
-         * 那么可以通过设置 items-transformer 来调整数据格式
-         * @default []
-         */
-        items: _san.DataTypes.array
+    computed: {
+        mainStyle: function mainStyle() {
+            var loading = this.data.get('loading');
+            var error = this.data.get('error');
+            var style = cx.mainStyle(this);
+            style.display = loading || error ? 'none' : 'block';
+            return style;
+        },
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        }
     },
+
     inited: function inited() {
         var _this = this;
 
-        this.searchByKeyword = _lodash2.default.debounce(function () {
-            return _this.doSearch.apply(_this, arguments);
-        }, 300);
-        var value = this.data.get('value');
-        if (!value || !_lodash2.default.isArray(value)) {
-            this.data.set('value', []);
+        var url = this.data.get('url');
+        if (!url) {
+            this.data.set('error', new Error('action-url MUST be provided.'));
         }
-        this.watch('value', function (value) {
-            return _this.fire('change', { value: value });
+
+        this.watch('url', function (url) {
+            _this.disposeAction();
+            _this.data.set('loading', true);
+            _this.data.set('error', null);
+            _this.reloadAction();
         });
+
+        _events2.default.on('enteraction', attachAction, this);
+        _events2.default.on('enteractioncomplete', notifyActionLoadComplete, this);
+        _events2.default.on('actionnotfound', notifyActionLoadFailed, this);
+        _events2.default.on('permissiondenied', notifyActionLoadFailed, this);
+        _events2.default.on('actionfail', notifyActionLoadFailed, this);
+        _events2.default.on('enteractionfail', notifyActionLoadFailed, this);
+        _events2.default.on('actionabort', notifyActionLoadAborted, this);
     },
     attached: function attached() {
-        this.__setLayerWidth();
+        this.reloadAction();
     },
-    onClick: function onClick() {
-        // focus the input area
-        this.focusInput();
+    actionMatched: function actionMatched(e) {
+        var ghost = this.ref('ghost');
+        return e.isChildAction && ghost && ghost.id === e.container;
     },
-    focusInput: function focusInput() {
-        var input = this.ref('input');
-        if (input) {
-            input.focus();
-        }
-    },
-    doSearch: function doSearch(keyword) {
+    reloadAction: function reloadAction() {
         var _this2 = this;
 
-        var _data$get = this.data.get(),
-            searchRequester = _data$get.searchRequester,
-            searchApi = _data$get.searchApi,
-            keywordName = _data$get.keywordName;
-
-        if (typeof searchRequester === 'function') {
-            return searchRequester(keyword).then(function (items) {
-                if (_this2.data.get('keyword') !== keyword) {
-                    return;
-                }
-                _this2.data.set('loading', false);
-                _this2.data.set('selectedIndex', 0);
-                _this2.data.set('items', items);
-            }).catch(function (error) {
-                if (_this2.data.get('keyword') !== keyword) {
-                    return;
-                }
-                _this2.data.set('loading', false);
-                _this2.data.set('items', []);
+        var module = this.data.get('module');
+        if (module) {
+            (0, _helper.loadAppInBackground)(module).then(function () {
+                return _this2.renderAction();
             });
-        }
-
-        var payload = _defineProperty({}, keywordName, keyword);
-        return (0, _ajax.$post)(searchApi, payload).then(function (result) {
-            if (_this2.data.get('keyword') !== keyword) {
-                return;
-            }
-            var itemsTransformer = _this2.data.get('itemsTransformer');
-            _this2.data.set('loading', false);
-            _this2.data.set('selectedIndex', 0);
-            if (typeof itemsTransformer === 'function') {
-                _this2.data.set('items', itemsTransformer(result));
-            } else {
-                _this2.data.set('items', result.items);
-            }
-        }).catch(function (error) {
-            if (_this2.data.get('keyword') !== keyword) {
-                return;
-            }
-            _this2.data.set('loading', false);
-            _this2.data.set('items', []);
-        });
-    },
-    onInput: function onInput() {
-        var _this3 = this;
-
-        this.nextTick(function () {
-            var keyword = _this3.data.get('keyword');
-            if (!keyword) {
-                _this3.data.set('layerOpened', false);
-                _this3.data.set('loading', false);
-            } else {
-                // 虽然还没有真正的发起请求，不过先展示一个 loading 的提示再说
-                _this3.data.set('layerOpened', true);
-                _this3.data.set('loading', true);
-                _this3.searchByKeyword(keyword);
-            }
-        });
-    },
-    onFoucs: function onFoucs() {
-        this.data.set('active', true);
-    },
-    onBlur: function onBlur() {
-        this.data.set('active', false);
-    },
-    onKeyDown: function onKeyDown(e) {
-        var keyCode = e.which || e.keyCode;
-        if (keyCode === 8 && !e.target.value) {
-            this.__shouldRemovePreviousItem = true;
         } else {
-            this.__shouldRemovePreviousItem = false;
+            this.renderAction();
         }
     },
-    onKeyUp: function onKeyUp(e) {
-        var keyCode = e.which || e.keyCode;
-        if (keyCode === 8 && this.__shouldRemovePreviousItem) {
-            var length = this.data.get('value.length');
-            if (length > 0) {
-                this.data.removeAt('value', length - 1);
-                this.focusInput();
-            }
-        } else if (keyCode === 40) {
-            // down arrow
-            this.data.set('selectedIndex', this.getNextIndex());
-        } else if (keyCode === 38) {
-            // up arrow
-            this.data.set('selectedIndex', this.getPrevIndex());
-        }
-        this.__shouldRemovePreviousItem = false;
-    },
-    onEnter: function onEnter() {
-        var i = this.data.get('selectedIndex');
-        var item = this.data.get('items[' + i + ']');
-        if (item) {
-            this.addItem(item);
+    renderAction: function renderAction() {
+        var _data$get = this.data.get(),
+            url = _data$get.url,
+            options = _data$get.options;
+
+        var ghost = this.ref('ghost');
+        var action = this.action = _controller2.default.renderChildAction(url, ghost.id, options);
+
+        // 如果发生错误，因为事件是同步触发的，
+        // 因此先执行`notifyActionLoadFailed`再赋值，导致没清掉。
+        // 错误时返回的`Promise`对象是没有`abort`方法的，
+        // 这种对象我们也不需要，因此直接清掉
+        if (typeof action.abort !== 'function') {
+            action.abort = null;
         }
     },
-    getNextIndex: function getNextIndex() {
-        var itemSize = this.data.get('items.length');
-        var selectedIndex = this.data.get('selectedIndex');
-        if (itemSize > 0) {
-            if (selectedIndex + 1 >= itemSize) {
-                return 0;
-            }
-            return selectedIndex + 1;
+    disposeAction: function disposeAction() {
+        var action = this.action;
+        if (!action) {
+            return;
         }
-        return 0;
-    },
-    getPrevIndex: function getPrevIndex() {
-        var itemSize = this.data.get('items.length');
-        var selectedIndex = this.data.get('selectedIndex');
-        if (itemSize > 0) {
-            if (selectedIndex <= 0) {
-                return itemSize - 1;
-            }
-            return selectedIndex - 1;
-        }
-        return 0;
-    },
-    addItem: function addItem(item) {
-        var value = this.data.get('value');
-        // 检查有没有重复的
-        var found = _lodash2.default.find(value, function (o) {
-            return o.accountId === item.accountId;
-        });
-        if (!found) {
-            this.data.push('value', _lodash2.default.pick(item, 'accountId', 'username'));
-        }
-        this.data.set('layerOpened', false);
-        this.data.set('keyword', '');
-        this.focusInput();
-    },
-    removeItem: function removeItem(nativeEvent, index) {
-        nativeEvent.stopPropagation();
-        this.data.removeAt('value', index);
-    },
-    __setLayerWidth: function __setLayerWidth() {
-        var layerWidth = this.data.get('layerWidth');
-        if (layerWidth == null) {
-            this.data.set('autoLayerWidth', this.el.clientWidth + 2);
-        }
-    }
-});
 
-exports.default = (0, _asInput.asInput)(UUAP);
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.$post = $post;
-
-var _axios = __webpack_require__(304);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function $post(url, data, options) {
-  return _axios2.default.post(url, data, options);
-} /**
-   * @file mixins/ajax.es6
-   * @author leeight
-   */
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function bind(fn, thisArg) {
-  return function wrap() {
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-    return fn.apply(thisArg, args);
-  };
-};
-
-
-/***/ }),
-/* 223 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(13);
-var settle = __webpack_require__(309);
-var buildURL = __webpack_require__(311);
-var parseHeaders = __webpack_require__(312);
-var isURLSameOrigin = __webpack_require__(313);
-var createError = __webpack_require__(224);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(314);
-
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
-
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
-
-    var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if (process.env.NODE_ENV !== 'test' &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
-
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-      var password = config.auth.password || '';
-      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
-
-    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
-
-    // Set the request timeout in MS
-    request.timeout = config.timeout;
-
-    // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
-        return;
-      }
-
-      // The request errored out and we didn't get a response, this will be
-      // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-        return;
-      }
-
-      // Prepare the response
-      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
-      var response = {
-        data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
-        headers: responseHeaders,
-        config: config,
-        request: request
-      };
-
-      settle(resolve, reject, response);
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle low level network errors
-    request.onerror = function handleError() {
-      // Real errors are hidden from us by the browser
-      // onerror should only fire if it's a network error
-      reject(createError('Network Error', config, null, request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle timeout
-    request.ontimeout = function handleTimeout() {
-      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
-        request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Add xsrf header
-    // This is only done if running in a standard browser environment.
-    // Specifically not if we're in a web worker, or react-native.
-    if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(315);
-
-      // Add xsrf header
-      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
-          undefined;
-
-      if (xsrfValue) {
-        requestHeaders[config.xsrfHeaderName] = xsrfValue;
-      }
-    }
-
-    // Add headers to the request
-    if ('setRequestHeader' in request) {
-      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
-          // Remove Content-Type if data is undefined
-          delete requestHeaders[key];
+        if (_Deferred2.default.isPromise(action) && typeof action.abort === 'function') {
+            action.abort();
         } else {
-          // Otherwise add header to the request
-          request.setRequestHeader(key, val);
-        }
-      });
-    }
-
-    // Add withCredentials to request if needed
-    if (config.withCredentials) {
-      request.withCredentials = true;
-    }
-
-    // Add responseType to request if needed
-    if (config.responseType) {
-      try {
-        request.responseType = config.responseType;
-      } catch (e) {
-        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
-        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
-        if (config.responseType !== 'json') {
-          throw e;
-        }
-      }
-    }
-
-    // Handle progress if needed
-    if (typeof config.onDownloadProgress === 'function') {
-      request.addEventListener('progress', config.onDownloadProgress);
-    }
-
-    // Not all browsers support upload events
-    if (typeof config.onUploadProgress === 'function' && request.upload) {
-      request.upload.addEventListener('progress', config.onUploadProgress);
-    }
-
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        if (!request) {
-          return;
-        }
-
-        request.abort();
-        reject(cancel);
-        // Clean up request
-        request = null;
-      });
-    }
-
-    if (requestData === undefined) {
-      requestData = null;
-    }
-
-    // Send the request
-    request.send(requestData);
-  });
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
-
-/***/ }),
-/* 224 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var enhanceError = __webpack_require__(310);
-
-/**
- * Create an Error with the specified message, config, error code, request and response.
- *
- * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The created error.
- */
-module.exports = function createError(message, config, code, request, response) {
-  var error = new Error(message);
-  return enhanceError(error, config, code, request, response);
-};
-
-
-/***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isCancel(value) {
-  return !!(value && value.__CANCEL__);
-};
-
-
-/***/ }),
-/* 226 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * A `Cancel` is an object that is thrown when an operation is canceled.
- *
- * @class
- * @param {string=} message The message.
- */
-function Cancel(message) {
-  this.message = message;
-}
-
-Cancel.prototype.toString = function toString() {
-  return 'Cancel' + (this.message ? ': ' + this.message : '');
-};
-
-Cancel.prototype.__CANCEL__ = true;
-
-module.exports = Cancel;
-
-
-/***/ }),
-/* 227 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _BosUploader = __webpack_require__(207);
-
-var _BosUploader2 = _interopRequireDefault(_BosUploader);
-
-var _asInput = __webpack_require__(7);
-
-var _uuid = __webpack_require__(228);
-
-var _uuid2 = _interopRequireDefault(_uuid);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* eslint-disable */
-/**
- * @file san-xui/x/forms/Uploader.es6
- * @author leeight
- */
-
-var template = '<template>\n    <xui-bosuploader\n        auto-start\n        files="{{files}}"\n        with-speed-info="{{false}}"\n        key-cb="{{keyCb}}"\n        bos-endpoint="https://bce-bos-uploader.bj.bcebos.com"\n        uptoken-url="https://cloud.baidu.com/api/authorization"\n        on-complete="onComplete"\n    >\n        <div slot="preview">\n            <div s-for="f in files">\n                <a s-if="f.url" href="{{f.url}}" target="_blank">{{f.name}}</a>\n                <span s-else>{{f.name}} ({{f.progress}})</span>\n            </div>\n        </div>\n    </xui-bosuploader>\n</template>';
-/* eslint-enable */
-
-var Uploader = (0, _san.defineComponent)({ // eslint-disable-line
-    template: template,
-    components: {
-        'xui-bosuploader': _BosUploader2.default
-    },
-    dataTypes: {
-        /**
-         * 获取或者设置当前上传组件的文件地址
-         * @bindx
-         */
-        value: _san.DataTypes.string,
-
-        /**
-         * 需要上传的文件列表<br>
-         * 上传成功之后，可以通过访问数组中元素的 url 属性获取文件地址
-         */
-        files: _san.DataTypes.array,
-
-        /**
-         * 计算文件的地址，默认的文件路径是如下的格式"YYYY/MM/dd/[uuid]/[name].[ext]"
-         * <pre><code>function(file:File): string</code></pre>
-         */
-        keyCb: _san.DataTypes.func
-    },
-    initData: function initData() {
-        return {
-            value: null,
-            files: [],
-            keyCb: function keyCb(file) {
-                var date = new Date();
-                var year = date.getFullYear();
-
-                var month = date.getMonth() + 1;
-                if (month < 10) {
-                    month = '0' + month;
-                }
-
-                var day = date.getDate();
-                if (day < 10) {
-                    day = '0' + day;
-                }
-
-                var uuid = _uuid2.default.generate();
-                var key = year + '/' + month + '/' + day + '/' + uuid + '/' + file.name;
-                return key;
+            if (typeof action.un === 'function') {
+                action.un('*', delegateActionEvent, this);
             }
-        };
-    },
-    inited: function inited() {
-        var value = this.data.get('value');
-        if (value) {
-            var lastSlashIndex = value.lastIndexOf('/');
-            var name = value.substr(lastSlashIndex + 1);
-            try {
-                name = decodeURIComponent(name);
-            } catch (ex) {}
-            this.data.set('files', [{ name: name, url: value }]);
+            if (typeof action.leave === 'function') {
+                action.leave();
+            }
         }
     },
-    onComplete: function onComplete(_ref) {
-        var files = _ref.files;
-
-        if (files && files.length) {
-            var value = files[0].url;
-            this.data.set('value', value);
-            this.fire('change', { value: value });
-        }
+    dispose: function dispose(dontDetach) {
+        this.disposeAction();
+        _events2.default.un('enteraction', attachAction, this);
+        _events2.default.un('enteractioncomplete', notifyActionLoadComplete, this);
+        _events2.default.un('actionnotfound', notifyActionLoadFailed, this);
+        _events2.default.un('permissiondenied', notifyActionLoadFailed, this);
+        _events2.default.un('actionfail', notifyActionLoadFailed, this);
+        _events2.default.un('enteractionfail', notifyActionLoadFailed, this);
+        _events2.default.un('actionabort', notifyActionLoadAborted, this);
+        _san.Component.prototype.dispose.call(this, dontDetach);
     }
 });
 
-exports.default = (0, _asInput.asInput)(Uploader);
-
 /***/ }),
-/* 228 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-/**
- * UUID.js - RFC-compliant UUID Generator for JavaScript
- *
- * @file
- * @author  LiosK
- * @version v3.6.1
- * @license The MIT License: Copyright (c) 2010-2017 LiosK.
- */
-
-/* eslint-disable */
-// create local namespace
-function UUID() {}
-
-// Core Component {{{
-
-/**
- * Generates a version 4 UUID as a hexadecimal string.
- * @returns {string} Hexadecimal UUID string.
- */
-UUID.generate = function () {
-    var rand = UUID._getRandomInt,
-        hex = UUID._hexAligner;
-    return hex(rand(32), 8) // time_low
-    + '-' + hex(rand(16), 4) // time_mid
-    + '-' + hex(0x4000 | rand(12), 4) // time_hi_and_version
-    + '-' + hex(0x8000 | rand(14), 4) // clock_seq_hi_and_reserved clock_seq_low
-    + '-' + hex(rand(48), 12); // node
-};
-
-/**
- * Returns an unsigned x-bit random integer.
- * @private
- * @param {number} x Unsigned integer ranging from 0 to 53, inclusive.
- * @returns {number} Unsigned x-bit random integer (0 <= f(x) < 2^x).
- */
-UUID._getRandomInt = function (x) {
-    if (x < 0 || x > 53) {
-        return NaN;
-    }
-
-    var n = 0 | Math.random() * 0x40000000; // 1 << 30
-    return x > 30 ? n + (0 | Math.random() * (1 << x - 30)) * 0x40000000 : n >>> 30 - x;
-};
-
-/**
- * Converts an integer to a zero-filled hexadecimal string.
- * @private
- * @param {number} num
- * @param {number} length
- * @returns {string}
- */
-UUID._hexAligner = function (num, length) {
-    var str = num.toString(16),
-        i = length - str.length,
-        z = '0';
-    for (; i > 0; i >>>= 1, z += z) {
-        if (i & 1) {
-            str = z + str;
-        }
-    }
-    return str;
-};
-
-// }}}
-
-// UUID Object Component {{{
-
-/**
- * Names of UUID internal fields.
- * @type {string[]}
- * @constant
- * @since 3.0
- */
-UUID.FIELD_NAMES = ['timeLow', 'timeMid', 'timeHiAndVersion', 'clockSeqHiAndReserved', 'clockSeqLow', 'node'];
-
-/**
- * Sizes of UUID internal fields.
- * @type {number[]}
- * @constant
- * @since 3.0
- */
-UUID.FIELD_SIZES = [32, 16, 16, 8, 8, 48];
-
-/**
- * Creates a version 4 {@link UUID} object.
- * @returns {UUID} Version 4 {@link UUID} object.
- * @since 3.0
- */
-UUID.genV4 = function () {
-    var rand = UUID._getRandomInt;
-    return new UUID()._init(rand(32), rand(16), // time_low time_mid
-    0x4000 | rand(12), // time_hi_and_version
-    0x80 | rand(6), // clock_seq_hi_and_reserved
-    rand(8), rand(48)); // clock_seq_low node
-};
-
-/**
- * Converts a hexadecimal UUID string to a {@link UUID} object.
- * @param {string} strId Hexadecimal UUID string ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
- * @returns {UUID} {@link UUID} object or null.
- * @since 3.0
- */
-UUID.parse = function (strId) {
-    var r = void 0,
-        p = /^\s*(urn:uuid:|\{)?([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{2})([0-9a-f]{2})-([0-9a-f]{12})(\})?\s*$/i;
-    if (r = p.exec(strId)) {
-        var l = r[1] || '',
-            t = r[8] || '';
-        if (l + t === '' || l === '{' && t === '}' || l.toLowerCase() === 'urn:uuid:' && t === '') {
-            return new UUID()._init(parseInt(r[2], 16), parseInt(r[3], 16), parseInt(r[4], 16), parseInt(r[5], 16), parseInt(r[6], 16), parseInt(r[7], 16));
-        }
-    }
-
-    return null;
-};
-
-/**
- * Initializes a {@link UUID} object.
- * @private
- * @constructs UUID
- * @param {number} [timeLow=0] time_low field (octet 0-3, uint32).
- * @param {number} [timeMid=0] time_mid field (octet 4-5, uint16).
- * @param {number} [timeHiAndVersion=0] time_hi_and_version field (octet 6-7, uint16).
- * @param {number} [clockSeqHiAndReserved=0] clock_seq_hi_and_reserved field (octet 8, uint8).
- * @param {number} [clockSeqLow=0] clock_seq_low field (octet 9, uint8).
- * @param {number} [node=0] node field (octet 10-15, uint48).
- * @returns {UUID} this.
- */
-UUID.prototype._init = function () {
-    var names = UUID.FIELD_NAMES,
-        sizes = UUID.FIELD_SIZES;
-    var bin = UUID._binAligner,
-        hex = UUID._hexAligner;
-
-    /**
-    * UUID internal field values as an array of integers.
-    * @type {number[]}
-    */
-    this.intFields = new Array(6);
-
-    /**
-    * UUID internal field values as an array of binary strings.
-    * @type {string[]}
-    */
-    this.bitFields = new Array(6);
-
-    /**
-    * UUID internal field values as an array of hexadecimal strings.
-    * @type {string[]}
-    */
-    this.hexFields = new Array(6);
-
-    for (var i = 0; i < 6; i++) {
-        var intValue = parseInt(arguments[i] || 0, 10);
-        this.intFields[i] = this.intFields[names[i]] = intValue;
-        this.bitFields[i] = this.bitFields[names[i]] = bin(intValue, sizes[i]);
-        this.hexFields[i] = this.hexFields[names[i]] = hex(intValue, sizes[i] >>> 2);
-    }
-
-    /**
-    * UUID version number.
-    * @type {number}
-    */
-    this.version = this.intFields.timeHiAndVersion >>> 12 & 0xF;
-
-    /**
-    * 128-bit binary string representation.
-    * @type {string}
-    */
-    this.bitString = this.bitFields.join('');
-
-    /**
-    * Non-delimited hexadecimal string representation ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx").
-    * @type {string}
-    * @since v3.3.0
-    */
-    this.hexNoDelim = this.hexFields.join('');
-
-    /**
-    * Hexadecimal string representation ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
-    * @type {string}
-    */
-    this.hexString = this.hexFields[0] + '-' + this.hexFields[1] + '-' + this.hexFields[2] + '-' + this.hexFields[3] + this.hexFields[4] + '-' + this.hexFields[5];
-
-    /**
-    * URN string representation ("urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
-    * @type {string}
-    */
-    this.urn = 'urn:uuid:' + this.hexString;
-
-    return this;
-};
-
-/**
- * Converts an integer to a zero-filled binary string.
- * @private
- * @param {number} num
- * @param {number} length
- * @returns {string}
- */
-UUID._binAligner = function (num, length) {
-    var str = num.toString(2),
-        i = length - str.length,
-        z = '0';
-    for (; i > 0; i >>>= 1, z += z) {
-        if (i & 1) {
-            str = z + str;
-        }
-    }
-    return str;
-};
-
-/**
- * Returns the hexadecimal string representation.
- * @returns {string} {@link UUID#hexString}.
- */
-UUID.prototype.toString = function () {
-    return this.hexString;
-};
-
-/**
- * Tests if two {@link UUID} objects are equal.
- * @param {UUID} uuid
- * @returns {boolean} True if two {@link UUID} objects are equal.
- */
-UUID.prototype.equals = function (uuid) {
-    if (!(uuid instanceof UUID)) {
-        return false;
-    }
-
-    for (var i = 0; i < 6; i++) {
-        if (this.intFields[i] !== uuid.intFields[i]) {
-            return false;
-        }
-    }
-    return true;
-};
-
-/**
- * Nil UUID object.
- * @type {UUID}
- * @constant
- * @since v3.4.0
- */
-UUID.NIL = new UUID()._init(0, 0, 0, 0, 0, 0);
-
-// }}}
-
-// UUID Version 1 Component {{{
-
-/**
- * Creates a version 1 {@link UUID} object.
- * @returns {UUID} Version 1 {@link UUID} object.
- * @since 3.0
- */
-UUID.genV1 = function () {
-    if (UUID._state == null) {
-        UUID.resetState();
-    }
-
-    var now = new Date().getTime(),
-        st = UUID._state;
-    if (now != st.timestamp) {
-        if (now < st.timestamp) {
-            st.sequence++;
-        }
-
-        st.timestamp = now;
-        st.tick = UUID._getRandomInt(4);
-    } else if (Math.random() < UUID._tsRatio && st.tick < 9984) {
-        // advance the timestamp fraction at a probability
-        // to compensate for the low timestamp resolution
-        st.tick += 1 + UUID._getRandomInt(4);
-    } else {
-        st.sequence++;
-    }
-
-    // format time fields
-    var tf = UUID._getTimeFieldValues(st.timestamp);
-    var tl = tf.low + st.tick;
-    var thav = tf.hi & 0xFFF | 0x1000; // set version '0001'
-
-    // format clock sequence
-    st.sequence &= 0x3FFF;
-    var cshar = st.sequence >>> 8 | 0x80; // set variant '10'
-    var csl = st.sequence & 0xFF;
-
-    return new UUID()._init(tl, tf.mid, thav, cshar, csl, st.node);
-};
-
-/**
- * Re-initializes the internal state for version 1 UUID creation.
- * @since 3.0
- */
-UUID.resetState = function () {
-    UUID._state = new UUIDState();
-};
-
-function UUIDState() {
-    var rand = UUID._getRandomInt;
-    this.timestamp = 0;
-    this.sequence = rand(14);
-    this.node = (rand(8) | 1) * 0x10000000000 + rand(40); // set multicast bit '1'
-    this.tick = rand(4); // timestamp fraction smaller than a millisecond
-}
-
-/**
- * Probability to advance the timestamp fraction: the ratio of tick movements to sequence increments.
- * @private
- * @type {number}
- */
-UUID._tsRatio = 1 / 4;
-
-/**
- * Persistent internal state for version 1 UUID creation.
- * @private
- * @type {UUIDState}
- */
-UUID._state = null;
-
-/**
- * @private
- * @param {Date|number} time ECMAScript Date Object or milliseconds from 1970-01-01.
- * @returns {any}
- */
-UUID._getTimeFieldValues = function (time) {
-    var ts = time - Date.UTC(1582, 9, 15);
-    var hm = ts / 0x100000000 * 10000 & 0xFFFFFFF;
-    return {
-        low: (ts & 0xFFFFFFF) * 10000 % 0x100000000,
-        mid: hm & 0xFFFF,
-        hi: hm >>> 16,
-        timestamp: ts
-    };
-};
-
-// }}}
-
-// Backward Compatibility Component {{{
-
-/**
- * Reinstalls {@link UUID.generate} method to emulate the interface of UUID.js version 2.x.
- * @since 3.1
- * @deprecated Version 2.x compatible interface is not recommended.
- */
-UUID.makeBackwardCompatible = function () {
-    var f = UUID.generate;
-    UUID.generate = function (o) {
-        return o && o.version == 1 ? UUID.genV1().hexString : f.call(UUID);
-    };
-    UUID.makeBackwardCompatible = function () {};
-};
-
-// }}}
-
-exports.default = UUID;
-
-/***/ }),
-/* 229 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validator___ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages__ = __webpack_require__(381);
-
-
-
-
-
-
-/**
- *  Encapsulates a validation schema.
- *
- *  @param descriptor An object declaring validation rules
- *  for this schema.
- */
-function Schema(descriptor) {
-  this.rules = null;
-  this._messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
-  this.define(descriptor);
-}
-
-Schema.prototype = {
-  messages: function messages(_messages) {
-    if (_messages) {
-      this._messages = Object(__WEBPACK_IMPORTED_MODULE_2__util__["c" /* deepMerge */])(Object(__WEBPACK_IMPORTED_MODULE_4__messages__["b" /* newMessages */])(), _messages);
-    }
-    return this._messages;
-  },
-  define: function define(rules) {
-    if (!rules) {
-      throw new Error('Cannot configure a schema with no rules');
-    }
-    if ((typeof rules === 'undefined' ? 'undefined' : __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rules)) !== 'object' || Array.isArray(rules)) {
-      throw new Error('Rules must be an object');
-    }
-    this.rules = {};
-    var z = void 0;
-    var item = void 0;
-    for (z in rules) {
-      if (rules.hasOwnProperty(z)) {
-        item = rules[z];
-        this.rules[z] = Array.isArray(item) ? item : [item];
-      }
-    }
-  },
-  validate: function validate(source_) {
-    var _this = this;
-
-    var o = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var oc = arguments[2];
-
-    var source = source_;
-    var options = o;
-    var callback = oc;
-    if (typeof options === 'function') {
-      callback = options;
-      options = {};
-    }
-    if (!this.rules || Object.keys(this.rules).length === 0) {
-      if (callback) {
-        callback();
-      }
-      return;
-    }
-    function complete(results) {
-      var i = void 0;
-      var field = void 0;
-      var errors = [];
-      var fields = {};
-
-      function add(e) {
-        if (Array.isArray(e)) {
-          errors = errors.concat.apply(errors, e);
-        } else {
-          errors.push(e);
-        }
-      }
-
-      for (i = 0; i < results.length; i++) {
-        add(results[i]);
-      }
-      if (!errors.length) {
-        errors = null;
-        fields = null;
-      } else {
-        for (i = 0; i < errors.length; i++) {
-          field = errors[i].field;
-          fields[field] = fields[field] || [];
-          fields[field].push(errors[i]);
-        }
-      }
-      callback(errors, fields);
-    }
-
-    if (options.messages) {
-      var messages = this.messages();
-      if (messages === __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */]) {
-        messages = Object(__WEBPACK_IMPORTED_MODULE_4__messages__["b" /* newMessages */])();
-      }
-      Object(__WEBPACK_IMPORTED_MODULE_2__util__["c" /* deepMerge */])(messages, options.messages);
-      options.messages = messages;
-    } else {
-      options.messages = this.messages();
-    }
-    var arr = void 0;
-    var value = void 0;
-    var series = {};
-    var keys = options.keys || Object.keys(this.rules);
-    keys.forEach(function (z) {
-      arr = _this.rules[z];
-      value = source[z];
-      arr.forEach(function (r) {
-        var rule = r;
-        if (typeof rule.transform === 'function') {
-          if (source === source_) {
-            source = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, source);
-          }
-          value = source[z] = rule.transform(value);
-        }
-        if (typeof rule === 'function') {
-          rule = {
-            validator: rule
-          };
-        } else {
-          rule = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, rule);
-        }
-        rule.validator = _this.getValidationMethod(rule);
-        rule.field = z;
-        rule.fullField = rule.fullField || z;
-        rule.type = _this.getType(rule);
-        if (!rule.validator) {
-          return;
-        }
-        series[z] = series[z] || [];
-        series[z].push({
-          rule: rule,
-          value: value,
-          source: source,
-          field: z
-        });
-      });
-    });
-    var errorFields = {};
-    Object(__WEBPACK_IMPORTED_MODULE_2__util__["a" /* asyncMap */])(series, options, function (data, doIt) {
-      var rule = data.rule;
-      var deep = (rule.type === 'object' || rule.type === 'array') && (__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rule.fields) === 'object' || __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rule.defaultField) === 'object');
-      deep = deep && (rule.required || !rule.required && data.value);
-      rule.field = data.field;
-      function addFullfield(key, schema) {
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, schema, {
-          fullField: rule.fullField + '.' + key
-        });
-      }
-
-      function cb() {
-        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-
-        var errors = e;
-        if (!Array.isArray(errors)) {
-          errors = [errors];
-        }
-        if (errors.length) {
-          Object(__WEBPACK_IMPORTED_MODULE_2__util__["f" /* warning */])('async-validator:', errors);
-        }
-        if (errors.length && rule.message) {
-          errors = [].concat(rule.message);
-        }
-
-        errors = errors.map(Object(__WEBPACK_IMPORTED_MODULE_2__util__["b" /* complementError */])(rule));
-
-        if (options.first && errors.length) {
-          errorFields[rule.field] = 1;
-          return doIt(errors);
-        }
-        if (!deep) {
-          doIt(errors);
-        } else {
-          // if rule is required but the target object
-          // does not exist fail at the rule level and don't
-          // go deeper
-          if (rule.required && !data.value) {
-            if (rule.message) {
-              errors = [].concat(rule.message).map(Object(__WEBPACK_IMPORTED_MODULE_2__util__["b" /* complementError */])(rule));
-            } else if (options.error) {
-              errors = [options.error(rule, Object(__WEBPACK_IMPORTED_MODULE_2__util__["d" /* format */])(options.messages.required, rule.field))];
-            } else {
-              errors = [];
-            }
-            return doIt(errors);
-          }
-
-          var fieldsSchema = {};
-          if (rule.defaultField) {
-            for (var k in data.value) {
-              if (data.value.hasOwnProperty(k)) {
-                fieldsSchema[k] = rule.defaultField;
-              }
-            }
-          }
-          fieldsSchema = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, fieldsSchema, data.rule.fields);
-          for (var f in fieldsSchema) {
-            if (fieldsSchema.hasOwnProperty(f)) {
-              var fieldSchema = Array.isArray(fieldsSchema[f]) ? fieldsSchema[f] : [fieldsSchema[f]];
-              fieldsSchema[f] = fieldSchema.map(addFullfield.bind(null, f));
-            }
-          }
-          var schema = new Schema(fieldsSchema);
-          schema.messages(options.messages);
-          if (data.rule.options) {
-            data.rule.options.messages = options.messages;
-            data.rule.options.error = options.error;
-          }
-          schema.validate(data.value, data.rule.options || options, function (errs) {
-            doIt(errs && errs.length ? errors.concat(errs) : errs);
-          });
-        }
-      }
-
-      var res = rule.validator(rule, data.value, cb, data.source, options);
-      if (res && res.then) {
-        res.then(function () {
-          return cb();
-        }, function (e) {
-          return cb(e);
-        });
-      }
-    }, function (results) {
-      complete(results);
-    });
-  },
-  getType: function getType(rule) {
-    if (rule.type === undefined && rule.pattern instanceof RegExp) {
-      rule.type = 'pattern';
-    }
-    if (typeof rule.validator !== 'function' && rule.type && !__WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */].hasOwnProperty(rule.type)) {
-      throw new Error(Object(__WEBPACK_IMPORTED_MODULE_2__util__["d" /* format */])('Unknown rule type %s', rule.type));
-    }
-    return rule.type || 'string';
-  },
-  getValidationMethod: function getValidationMethod(rule) {
-    if (typeof rule.validator === 'function') {
-      return rule.validator;
-    }
-    var keys = Object.keys(rule);
-    var messageIndex = keys.indexOf('message');
-    if (messageIndex !== -1) {
-      keys.splice(messageIndex, 1);
-    }
-    if (keys.length === 1 && keys[0] === 'required') {
-      return __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */].required;
-    }
-    return __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */][this.getType(rule)] || false;
-  }
-};
-
-Schema.register = function register(type, validator) {
-  if (typeof validator !== 'function') {
-    throw new Error('Cannot register a validator by type, validator is not a function');
-  }
-  __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */][type] = validator;
-};
-
-Schema.messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
-
-/* harmony default export */ __webpack_exports__["default"] = (Schema);
-
-/***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _assign = __webpack_require__(329);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _assign2.default || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-/***/ }),
-/* 231 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(25) && !__webpack_require__(30)(function () {
-  return Object.defineProperty(__webpack_require__(232)('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 232 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(29);
-var document = __webpack_require__(17).document;
-// typeof document.createElement is 'object' in old IE
-var is = isObject(document) && isObject(document.createElement);
-module.exports = function (it) {
-  return is ? document.createElement(it) : {};
-};
-
-
-/***/ }),
-/* 233 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var has = __webpack_require__(20);
-var toIObject = __webpack_require__(26);
-var arrayIndexOf = __webpack_require__(335)(false);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
-
-module.exports = function (object, names) {
-  var O = toIObject(object);
-  var i = 0;
-  var result = [];
-  var key;
-  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
-  // Don't enum bug & hidden keys
-  while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
-  }
-  return result;
-};
-
-
-/***/ }),
-/* 234 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(235);
-// eslint-disable-next-line no-prototype-builtins
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-  return cof(it) == 'String' ? it.split('') : Object(it);
-};
-
-
-/***/ }),
-/* 235 */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = function (it) {
-  return toString.call(it).slice(8, -1);
-};
-
-
-/***/ }),
-/* 236 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.13 ToObject(argument)
-var defined = __webpack_require__(61);
-module.exports = function (it) {
-  return Object(defined(it));
-};
-
-
-/***/ }),
-/* 237 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var LIBRARY = __webpack_require__(67);
-var $export = __webpack_require__(59);
-var redefine = __webpack_require__(238);
-var hide = __webpack_require__(23);
-var has = __webpack_require__(20);
-var Iterators = __webpack_require__(68);
-var $iterCreate = __webpack_require__(342);
-var setToStringTag = __webpack_require__(69);
-var getPrototypeOf = __webpack_require__(345);
-var ITERATOR = __webpack_require__(27)('iterator');
-var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
-var FF_ITERATOR = '@@iterator';
-var KEYS = 'keys';
-var VALUES = 'values';
-
-var returnThis = function () { return this; };
-
-module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
-  $iterCreate(Constructor, NAME, next);
-  var getMethod = function (kind) {
-    if (!BUGGY && kind in proto) return proto[kind];
-    switch (kind) {
-      case KEYS: return function keys() { return new Constructor(this, kind); };
-      case VALUES: return function values() { return new Constructor(this, kind); };
-    } return function entries() { return new Constructor(this, kind); };
-  };
-  var TAG = NAME + ' Iterator';
-  var DEF_VALUES = DEFAULT == VALUES;
-  var VALUES_BUG = false;
-  var proto = Base.prototype;
-  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
-  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
-  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
-  var methods, key, IteratorPrototype;
-  // Fix native
-  if ($anyNative) {
-    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
-    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
-      // Set @@toStringTag to native iterators
-      setToStringTag(IteratorPrototype, TAG, true);
-      // fix for some old engines
-      if (!LIBRARY && !has(IteratorPrototype, ITERATOR)) hide(IteratorPrototype, ITERATOR, returnThis);
-    }
-  }
-  // fix Array#{values, @@iterator}.name in V8 / FF
-  if (DEF_VALUES && $native && $native.name !== VALUES) {
-    VALUES_BUG = true;
-    $default = function values() { return $native.call(this); };
-  }
-  // Define iterator
-  if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
-    hide(proto, ITERATOR, $default);
-  }
-  // Plug for library
-  Iterators[NAME] = $default;
-  Iterators[TAG] = returnThis;
-  if (DEFAULT) {
-    methods = {
-      values: DEF_VALUES ? $default : getMethod(VALUES),
-      keys: IS_SET ? $default : getMethod(KEYS),
-      entries: $entries
-    };
-    if (FORCED) for (key in methods) {
-      if (!(key in proto)) redefine(proto, key, methods[key]);
-    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-  }
-  return methods;
-};
-
-
-/***/ }),
-/* 238 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(23);
-
-
-/***/ }),
-/* 239 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(34);
-var dPs = __webpack_require__(343);
-var enumBugKeys = __webpack_require__(65);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
-var Empty = function () { /* empty */ };
-var PROTOTYPE = 'prototype';
-
-// Create object with fake `null` prototype: use iframe Object with cleared prototype
-var createDict = function () {
-  // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(232)('iframe');
-  var i = enumBugKeys.length;
-  var lt = '<';
-  var gt = '>';
-  var iframeDocument;
-  iframe.style.display = 'none';
-  __webpack_require__(344).appendChild(iframe);
-  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
-  // createDict = iframe.contentWindow.Object;
-  // html.removeChild(iframe);
-  iframeDocument = iframe.contentWindow.document;
-  iframeDocument.open();
-  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
-  iframeDocument.close();
-  createDict = iframeDocument.F;
-  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
-  return createDict();
-};
-
-module.exports = Object.create || function create(O, Properties) {
-  var result;
-  if (O !== null) {
-    Empty[PROTOTYPE] = anObject(O);
-    result = new Empty();
-    Empty[PROTOTYPE] = null;
-    // add "__proto__" for Object.getPrototypeOf polyfill
-    result[IE_PROTO] = O;
-  } else result = createDict();
-  return Properties === undefined ? result : dPs(result, Properties);
-};
-
-
-/***/ }),
-/* 240 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(233);
-var hiddenKeys = __webpack_require__(65).concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return $keys(O, hiddenKeys);
-};
-
-
-/***/ }),
-/* 241 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
-
-
-/**
- *  Rule for validating required fields.
- *
- *  @param rule The validation rule.
- *  @param value The value of the field on the source object.
- *  @param source The source object being validated.
- *  @param errors An array of errors that this rule may add
- *  validation errors to.
- *  @param options The validation options.
- *  @param options.messages The validation messages.
- */
-function required(rule, value, source, errors, options, type) {
-  if (rule.required && (!source.hasOwnProperty(rule.field) || __WEBPACK_IMPORTED_MODULE_0__util__["e" /* isEmptyValue */](value, type || rule.type))) {
-    errors.push(__WEBPACK_IMPORTED_MODULE_0__util__["d" /* format */](options.messages.required, rule.fullField));
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (required);
-
-/***/ }),
-/* 242 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -55284,8 +53896,8 @@ function required(rule, value, source, errors, options, type) {
  */
 !(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
         /* jshint nomen: false */
-        var util = __webpack_require__(73);
-        var assert = __webpack_require__(243);
+        var util = __webpack_require__(56);
+        var assert = __webpack_require__(217);
 
         var setImmediate = typeof window.setImmediate === 'function'
             ? function (fn) { window.setImmediate(fn); }
@@ -55574,8 +54186,8 @@ function required(rule, value, source, errors, options, type) {
         // 暂不支持`progress`，
         // 社区对`progress`处理函数的返回值和异常的传递还在讨论中
 
-        var Deferred = __webpack_require__(31).create(exports);
-        __webpack_require__(28).enable(Deferred);
+        var Deferred = __webpack_require__(29).create(exports);
+        __webpack_require__(23).enable(Deferred);
 
         /**
          * 判断一个对象是否是一个{@link meta.Promise}对象
@@ -55727,10 +54339,10 @@ function required(rule, value, source, errors, options, type) {
     }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(406).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(303).setImmediate))
 
 /***/ }),
-/* 243 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -55866,7 +54478,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 244 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -55878,7 +54490,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @author otakustay
  */
 !(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(74);
+        var lib = __webpack_require__(57);
 
         function returnTrue() {
             return true;
@@ -56159,7 +54771,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 245 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -56171,11 +54783,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @author otakustay, erik
  */
 !(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var Deferred = __webpack_require__(242);
-        var URL = __webpack_require__(246);
-        var config = __webpack_require__(247);
-        var util = __webpack_require__(73);
-        var assert = __webpack_require__(243);
+        var Deferred = __webpack_require__(216);
+        var URL = __webpack_require__(220);
+        var config = __webpack_require__(221);
+        var util = __webpack_require__(56);
+        var assert = __webpack_require__(217);
 
         /**
          * @class Controller
@@ -56977,7 +55589,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             };
             controller.childActionMapping[container.id] = info;
 
-            var EventTarget = __webpack_require__(28);
+            var EventTarget = __webpack_require__(23);
             if (action instanceof EventTarget) {
                 // 在Action销毁的时候要取消掉
                 action.on(
@@ -57182,12 +55794,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             return loadingChildAction;
         };
 
-        var Controller = __webpack_require__(31).create(__webpack_require__(28), exports);
+        var Controller = __webpack_require__(29).create(__webpack_require__(23), exports);
         var instance = new Controller();
-        instance.setLocator(__webpack_require__(248));
-        instance.setRouter(__webpack_require__(412));
-        instance.setEventBus(__webpack_require__(40));
-        instance.setPermissionProvider(__webpack_require__(413));
+        instance.setLocator(__webpack_require__(222));
+        instance.setRouter(__webpack_require__(309));
+        instance.setEventBus(__webpack_require__(34));
+        instance.setPermissionProvider(__webpack_require__(310));
         instance.Controller = Controller;
         return instance;
     }).call(exports, __webpack_require__, exports, module),
@@ -57195,7 +55807,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 246 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -57207,7 +55819,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @author otakustay
  */
 !(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var util = __webpack_require__(73);
+        var util = __webpack_require__(56);
 
         /**
          * @class URL
@@ -57355,7 +55967,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             return result;
         };
 
-        var URL = __webpack_require__(31).create(exports);
+        var URL = __webpack_require__(29).create(exports);
 
         /**
          * 解析完整的URL
@@ -57487,7 +56099,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 247 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -57538,7 +56150,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 248 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -57694,7 +56306,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
             // 未给定url时，指向起始页
             if (!url || url === '/') {
-                url = __webpack_require__(247).indexURL;
+                url = __webpack_require__(221).indexURL;
             }
 
             return url;
@@ -57728,7 +56340,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
                     );
                 }
 
-                __webpack_require__(40).fire(
+                __webpack_require__(34).fire(
                     'redirect',
                     { url: url, referrer: referrer }
                 );
@@ -57746,36 +56358,2051 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             }
         };
 
-        __webpack_require__(28).enable(locator);
+        __webpack_require__(23).enable(locator);
         return locator;
     }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
 /***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _ajax = __webpack_require__(224);
+
+var _util = __webpack_require__(2);
+
+var _asInput = __webpack_require__(7);
+
+var _TextBox = __webpack_require__(13);
+
+var _TextBox2 = _interopRequireDefault(_TextBox);
+
+var _Loading = __webpack_require__(11);
+
+var _Loading2 = _interopRequireDefault(_Loading);
+
+var _Layer = __webpack_require__(16);
+
+var _Layer2 = _interopRequireDefault(_Layer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /**
+                                                                                                                                                                                                                   * @file san-xui/x/components/UserPicker.js
+                                                                                                                                                                                                                   * @author leeight
+                                                                                                                                                                                                                   */
+
+var cx = (0, _util.create)('ui-userpicker');
+
+// /api/product/center/uid/search
+// {keyword: string}
+// {
+//   success: true,
+//   result: {
+//     items: [
+//       {
+//         departmentName: string,
+//         displayName: string,
+//         email: string,
+//         name: string,
+//         username: string
+//       }
+//     }
+//   }
+// }
+
+/* eslint-disable */
+var template = '<div class="{{mainClass}}" style="{{mainStyle}}">\n<div s-if="preview" class="' + cx('preview') + '">\n    <slot name="preview" var-users="value">\n        <div class="' + cx('preview-item') + '" s-for="user in users">\n            {{user.username}}\n        </div>\n    </slot>\n</div>\n<div s-else on-click="onClick">\n<div class="' + cx('preview') + '">\n    <div class="' + cx('preview-item') + '" s-for="item, i in value">\n        {{item.username}}<i s-if="!disabled" class="iconfont icon-close" on-click="removeItem($event, i)"></i>\n    </div>\n    <ui-textbox\n        s-if="inputVisible"\n        s-ref="input"\n        value="{=keyword=}"\n        placeholder="{{inputPlaceholder}}"\n        width="{{userWidth}}"\n        on-input="onInput"\n        on-focus="onFoucs"\n        on-blur="onBlur"\n        on-enter="onEnter"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n    />\n</div>\n<ui-layer open="{=layerOpened=}" follow-scroll="{{false}}">\n    <div class="' + cx('layer') + ' ' + cx('layer-x') + '" style="{{layerStyle}}">\n        <div class="' + cx('layer-main') + '">\n            <ui-loading s-if="loading" size="small" />\n            <ul s-elif="!items.length"><li>\u6682\u65E0\u6570\u636E</li></ul>\n            <ul s-else>\n                <li class="{{selectedIndex === i ? \'' + cx('layer-item', 'layer-actived-item') + '\' : \'' + cx('layer-item') + '\'}}"\n                    on-click="addItem(item)"\n                    s-for="item, i in items">\n                    <slot name="layer-item" var-item="{{item}}">{{item.displayName}}</slot>\n                </li>\n            </ul>\n        </div>\n    </div>\n</ui-layer>\n</div>\n</div>\n';
+
+/* eslint-enable */
+
+function kDefaultTransformer(result) {
+    return _lodash2.default.map(result.items, function (item) {
+        var accountId = item.username || item.email.replace(/@.*/, '');
+        var username = item.name;
+        var displayName = item.displayName;
+        return {
+            accountId: accountId, username: username, displayName: displayName
+        };
+    });
+}
+
+var UUAP = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'ui-loading': _Loading2.default,
+        'ui-layer': _Layer2.default,
+        'ui-textbox': _TextBox2.default
+    },
+    messages: {
+        'input-comp-value-changed': function inputCompValueChanged() {
+            // 忽略子控件的消息
+        }
+    },
+    computed: {
+        mainClass: function mainClass() {
+            var klass = cx.mainClass(this);
+            var active = this.data.get('active');
+            if (active) {
+                klass.push('state-active');
+                klass.push(cx('active'));
+                klass.push(cx('x-active'));
+            }
+            var preview = this.data.get('preview');
+            if (preview) {
+                klass.push(cx('x-preview'));
+            }
+            return klass;
+        },
+        mainStyle: function mainStyle() {
+            return cx.mainStyle(this);
+        },
+        inputVisible: function inputVisible() {
+            var disabled = this.data.get('disabled');
+            if (disabled) {
+                return false;
+            }
+            var max = this.data.get('max');
+            var size = this.data.get('value.length');
+            return size < max;
+        },
+        realLayerWidth: function realLayerWidth() {
+            var layerWidth = this.data.get('layerWidth');
+            var autoLayerWidth = this.data.get('autoLayerWidth');
+            return layerWidth || autoLayerWidth;
+        },
+        layerStyle: function layerStyle() {
+            var style = {};
+            var realLayerWidth = this.data.get('realLayerWidth');
+            if (realLayerWidth != null) {
+                style.width = (0, _util.hasUnit)(realLayerWidth) ? realLayerWidth : realLayerWidth + 'px';
+            }
+            return style;
+        },
+        inputPlaceholder: function inputPlaceholder() {
+            var size = this.data.get('value.length');
+            if (size < 1) {
+                return this.data.get('placeholder');
+            }
+            return null;
+        }
+    },
+    initData: function initData() {
+        return {
+            active: false,
+            loading: false, // 是不是正在查询中
+            disabled: false,
+            preview: false,
+            keyword: '',
+            keywordName: 'keyword',
+            placeholder: '',
+            searchApi: '/api/product/center/uid/search',
+            searchRequester: null,
+            layerOpened: false,
+            layerWidth: null,
+            autoLayerWidth: null,
+            value: [],
+            selectedIndex: 0,
+            max: Infinity,
+            itemsTransformer: kDefaultTransformer,
+            items: [] // 预览数据
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 是否是聚焦的状态，当点击内容可输入区域的时候，自动设置未 true
+         * @default false
+         */
+        active: _san.DataTypes.bool,
+
+        /**
+         * 是否是预览模式
+         * @default false
+         */
+        preview: _san.DataTypes.bool,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 最多允许输入的数量
+         * @default Infinity
+         */
+        max: _san.DataTypes.number,
+
+        /**
+         * 数据是否正在加载
+         * @default false
+         */
+        loading: _san.DataTypes.bool,
+
+        /**
+         * 用户输入的关键词
+         */
+        keyword: _san.DataTypes.string,
+
+        /**
+         * 搜索的时候，关键词的名字
+         * @default keyword
+         */
+        keywordName: _san.DataTypes.string,
+
+        /**
+         * 搜索 API 的地址
+         * @default /api/product/center/uid/search
+         */
+        searchApi: _san.DataTypes.string,
+
+        /**
+         * 自定义的请求函数，如果设置了 search-requester，那么会忽略 search-api 的配置<br>
+         * function({[keywordName]: keyword}): Promise&lt;{items: object[]}, Error&gt;
+         */
+        searchRequester: _san.DataTypes.func,
+
+        /**
+         * 浮层是否打开
+         * @bindx
+         * @default false
+         */
+        layerOpened: _san.DataTypes.bool,
+
+        /**
+         * 手工设置浮层的宽度，如果没有设置的话，会在展开的时候动态计算
+         */
+        layerWidth: _san.DataTypes.number,
+
+        /**
+         * UserPicker 的内容
+         * <pre><code>{
+         *   username: string,
+         *   accountId: string
+         * }</code></pre>
+         * @bindx
+         * @default []
+         */
+        value: _san.DataTypes.array,
+
+        /**
+         * 转化后端返回的数据格式<br>
+         * function({items: object[]}): object[]
+         */
+        itemsTransformer: _san.DataTypes.func,
+
+        /**
+         * 浮层里面所展示的数据源
+         * <pre><code>{
+         *   username: string,
+         *   accountId: string,
+         *   displayName: string
+         * }</code></pre>
+         * 每一项的格式需要符合下面的约束，如果后端API返回的数据格式不同<br>
+         * 那么可以通过设置 items-transformer 来调整数据格式
+         * @default []
+         */
+        items: _san.DataTypes.array,
+
+        /**
+         * placeholder
+         * @default 请填写用户
+         */
+        placeholder: _san.DataTypes.string,
+
+        /**
+         * 单个用户所占的宽度
+         */
+        width: _san.DataTypes.number
+    },
+    inited: function inited() {
+        var _this = this;
+
+        this.searchByKeyword = _lodash2.default.debounce(function () {
+            return _this.doSearch.apply(_this, arguments);
+        }, 300);
+        var value = this.data.get('value');
+        if (!value || !_lodash2.default.isArray(value)) {
+            this.data.set('value', []);
+        }
+        this.watch('value', function (value) {
+            return _this.fire('change', { value: value });
+        });
+    },
+    attached: function attached() {
+        this.__setLayerWidth();
+    },
+    onClick: function onClick() {
+        // focus the input area
+        this.focusInput();
+    },
+    focusInput: function focusInput() {
+        var input = this.ref('input');
+        if (input) {
+            input.focus();
+        }
+    },
+    doSearch: function doSearch(keyword) {
+        var _this2 = this;
+
+        var _data$get = this.data.get(),
+            searchRequester = _data$get.searchRequester,
+            searchApi = _data$get.searchApi,
+            keywordName = _data$get.keywordName;
+
+        if (typeof searchRequester === 'function') {
+            return searchRequester(keyword).then(function (items) {
+                if (_this2.data.get('keyword') !== keyword) {
+                    return;
+                }
+                _this2.data.set('loading', false);
+                _this2.data.set('selectedIndex', 0);
+                _this2.data.set('items', items);
+            }).catch(function (error) {
+                if (_this2.data.get('keyword') !== keyword) {
+                    return;
+                }
+                _this2.data.set('loading', false);
+                _this2.data.set('items', []);
+            });
+        }
+
+        var payload = _defineProperty({}, keywordName, keyword);
+        return (0, _ajax.$post)(searchApi, payload).then(function (result) {
+            if (_this2.data.get('keyword') !== keyword) {
+                return;
+            }
+            var itemsTransformer = _this2.data.get('itemsTransformer');
+            _this2.data.set('loading', false);
+            _this2.data.set('selectedIndex', 0);
+            if (typeof itemsTransformer === 'function') {
+                _this2.data.set('items', itemsTransformer(result));
+            } else {
+                _this2.data.set('items', result.items);
+            }
+        }).catch(function (error) {
+            if (_this2.data.get('keyword') !== keyword) {
+                return;
+            }
+            _this2.data.set('loading', false);
+            _this2.data.set('items', []);
+        });
+    },
+    onInput: function onInput() {
+        var _this3 = this;
+
+        this.nextTick(function () {
+            var keyword = _this3.data.get('keyword');
+            if (!keyword) {
+                _this3.data.set('layerOpened', false);
+                _this3.data.set('loading', false);
+            } else {
+                // 虽然还没有真正的发起请求，不过先展示一个 loading 的提示再说
+                _this3.data.set('layerOpened', true);
+                _this3.data.set('loading', true);
+                _this3.searchByKeyword(keyword);
+            }
+        });
+    },
+    onFoucs: function onFoucs() {
+        this.data.set('active', true);
+    },
+    onBlur: function onBlur() {
+        this.data.set('active', false);
+    },
+    onKeyDown: function onKeyDown(e) {
+        var keyCode = e.which || e.keyCode;
+        if (keyCode === 8 && !e.target.value) {
+            this.__shouldRemovePreviousItem = true;
+        } else {
+            this.__shouldRemovePreviousItem = false;
+        }
+    },
+    onKeyUp: function onKeyUp(e) {
+        var keyCode = e.which || e.keyCode;
+        if (keyCode === 8 && this.__shouldRemovePreviousItem) {
+            var length = this.data.get('value.length');
+            if (length > 0) {
+                this.data.removeAt('value', length - 1);
+                this.focusInput();
+            }
+        } else if (keyCode === 40) {
+            // down arrow
+            this.data.set('selectedIndex', this.getNextIndex());
+        } else if (keyCode === 38) {
+            // up arrow
+            this.data.set('selectedIndex', this.getPrevIndex());
+        }
+        this.__shouldRemovePreviousItem = false;
+    },
+    onEnter: function onEnter() {
+        var i = this.data.get('selectedIndex');
+        var item = this.data.get('items[' + i + ']');
+        if (item) {
+            this.addItem(item);
+        }
+    },
+    getNextIndex: function getNextIndex() {
+        var itemSize = this.data.get('items.length');
+        var selectedIndex = this.data.get('selectedIndex');
+        if (itemSize > 0) {
+            if (selectedIndex + 1 >= itemSize) {
+                return 0;
+            }
+            return selectedIndex + 1;
+        }
+        return 0;
+    },
+    getPrevIndex: function getPrevIndex() {
+        var itemSize = this.data.get('items.length');
+        var selectedIndex = this.data.get('selectedIndex');
+        if (itemSize > 0) {
+            if (selectedIndex <= 0) {
+                return itemSize - 1;
+            }
+            return selectedIndex - 1;
+        }
+        return 0;
+    },
+    addItem: function addItem(item) {
+        var value = this.data.get('value');
+        // 检查有没有重复的
+        var found = _lodash2.default.find(value, function (o) {
+            return o.accountId === item.accountId;
+        });
+        if (!found) {
+            this.data.push('value', _lodash2.default.pick(item, 'accountId', 'username'));
+        }
+        this.data.set('layerOpened', false);
+        this.data.set('keyword', '');
+        this.focusInput();
+    },
+    removeItem: function removeItem(nativeEvent, index) {
+        nativeEvent.stopPropagation();
+        this.data.removeAt('value', index);
+    },
+    __setLayerWidth: function __setLayerWidth() {
+        var layerWidth = this.data.get('layerWidth');
+        if (layerWidth == null) {
+            this.data.set('autoLayerWidth', this.el.clientWidth + 2);
+        }
+    }
+});
+
+exports.default = (0, _asInput.asInput)(UUAP);
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.$post = $post;
+
+var _axios = __webpack_require__(315);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function $post(url, data, options) {
+  return _axios2.default.post(url, data, options);
+} /**
+   * @file mixins/ajax.js
+   * @author leeight
+   */
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(14);
+var settle = __webpack_require__(320);
+var buildURL = __webpack_require__(322);
+var parseHeaders = __webpack_require__(323);
+var isURLSameOrigin = __webpack_require__(324);
+var createError = __webpack_require__(227);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(325);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if (process.env.NODE_ENV !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(326);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(321);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _BosUploader = __webpack_require__(199);
+
+var _BosUploader2 = _interopRequireDefault(_BosUploader);
+
+var _asInput = __webpack_require__(7);
+
+var _uuid = __webpack_require__(231);
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+/**
+ * @file san-xui/x/forms/Uploader.js
+ * @author leeight
+ */
+
+var template = '<template>\n    <xui-bosuploader\n        auto-start\n        files="{{files}}"\n        with-speed-info="{{false}}"\n        key-cb="{{keyCb}}"\n        bos-endpoint="https://bce-bos-uploader.bj.bcebos.com"\n        uptoken-url="https://cloud.baidu.com/api/authorization"\n        on-complete="onComplete"\n    >\n        <div slot="preview">\n            <div s-for="f in files">\n                <a s-if="f.url" href="{{f.url}}" target="_blank">{{f.name}}</a>\n                <span s-else>{{f.name}} ({{f.progress}})</span>\n            </div>\n        </div>\n    </xui-bosuploader>\n</template>';
+/* eslint-enable */
+
+var Uploader = (0, _san.defineComponent)({ // eslint-disable-line
+    template: template,
+    components: {
+        'xui-bosuploader': _BosUploader2.default
+    },
+    dataTypes: {
+        /**
+         * 获取或者设置当前上传组件的文件地址
+         * @bindx
+         */
+        value: _san.DataTypes.string,
+
+        /**
+         * 需要上传的文件列表<br>
+         * 上传成功之后，可以通过访问数组中元素的 url 属性获取文件地址
+         */
+        files: _san.DataTypes.array,
+
+        /**
+         * 计算文件的地址，默认的文件路径是如下的格式"YYYY/MM/dd/[uuid]/[name].[ext]"
+         * <pre><code>function(file:File): string</code></pre>
+         */
+        keyCb: _san.DataTypes.func
+    },
+    initData: function initData() {
+        return {
+            value: null,
+            files: [],
+            keyCb: function keyCb(file) {
+                var date = new Date();
+                var year = date.getFullYear();
+
+                var month = date.getMonth() + 1;
+                if (month < 10) {
+                    month = '0' + month;
+                }
+
+                var day = date.getDate();
+                if (day < 10) {
+                    day = '0' + day;
+                }
+
+                var uuid = _uuid2.default.generate();
+                var key = year + '/' + month + '/' + day + '/' + uuid + '/' + file.name;
+                return key;
+            }
+        };
+    },
+    inited: function inited() {
+        var value = this.data.get('value');
+        if (value) {
+            var lastSlashIndex = value.lastIndexOf('/');
+            var name = value.substr(lastSlashIndex + 1);
+            try {
+                name = decodeURIComponent(name);
+            } catch (ex) {}
+            this.data.set('files', [{ name: name, url: value }]);
+        }
+    },
+    onComplete: function onComplete(_ref) {
+        var files = _ref.files;
+
+        if (files && files.length) {
+            var value = files[0].url;
+            this.data.set('value', value);
+            this.fire('change', { value: value });
+        }
+    }
+});
+
+exports.default = (0, _asInput.asInput)(Uploader);
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/**
+ * UUID.js - RFC-compliant UUID Generator for JavaScript
+ *
+ * @file
+ * @author  LiosK
+ * @version v3.6.1
+ * @license The MIT License: Copyright (c) 2010-2017 LiosK.
+ */
+
+/* eslint-disable */
+// create local namespace
+function UUID() {}
+
+// Core Component {{{
+
+/**
+ * Generates a version 4 UUID as a hexadecimal string.
+ * @returns {string} Hexadecimal UUID string.
+ */
+UUID.generate = function () {
+    var rand = UUID._getRandomInt,
+        hex = UUID._hexAligner;
+    return hex(rand(32), 8) // time_low
+    + '-' + hex(rand(16), 4) // time_mid
+    + '-' + hex(0x4000 | rand(12), 4) // time_hi_and_version
+    + '-' + hex(0x8000 | rand(14), 4) // clock_seq_hi_and_reserved clock_seq_low
+    + '-' + hex(rand(48), 12); // node
+};
+
+/**
+ * Returns an unsigned x-bit random integer.
+ * @private
+ * @param {number} x Unsigned integer ranging from 0 to 53, inclusive.
+ * @returns {number} Unsigned x-bit random integer (0 <= f(x) < 2^x).
+ */
+UUID._getRandomInt = function (x) {
+    if (x < 0 || x > 53) {
+        return NaN;
+    }
+
+    var n = 0 | Math.random() * 0x40000000; // 1 << 30
+    return x > 30 ? n + (0 | Math.random() * (1 << x - 30)) * 0x40000000 : n >>> 30 - x;
+};
+
+/**
+ * Converts an integer to a zero-filled hexadecimal string.
+ * @private
+ * @param {number} num
+ * @param {number} length
+ * @returns {string}
+ */
+UUID._hexAligner = function (num, length) {
+    var str = num.toString(16),
+        i = length - str.length,
+        z = '0';
+    for (; i > 0; i >>>= 1, z += z) {
+        if (i & 1) {
+            str = z + str;
+        }
+    }
+    return str;
+};
+
+// }}}
+
+// UUID Object Component {{{
+
+/**
+ * Names of UUID internal fields.
+ * @type {string[]}
+ * @constant
+ * @since 3.0
+ */
+UUID.FIELD_NAMES = ['timeLow', 'timeMid', 'timeHiAndVersion', 'clockSeqHiAndReserved', 'clockSeqLow', 'node'];
+
+/**
+ * Sizes of UUID internal fields.
+ * @type {number[]}
+ * @constant
+ * @since 3.0
+ */
+UUID.FIELD_SIZES = [32, 16, 16, 8, 8, 48];
+
+/**
+ * Creates a version 4 {@link UUID} object.
+ * @returns {UUID} Version 4 {@link UUID} object.
+ * @since 3.0
+ */
+UUID.genV4 = function () {
+    var rand = UUID._getRandomInt;
+    return new UUID()._init(rand(32), rand(16), // time_low time_mid
+    0x4000 | rand(12), // time_hi_and_version
+    0x80 | rand(6), // clock_seq_hi_and_reserved
+    rand(8), rand(48)); // clock_seq_low node
+};
+
+/**
+ * Converts a hexadecimal UUID string to a {@link UUID} object.
+ * @param {string} strId Hexadecimal UUID string ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
+ * @returns {UUID} {@link UUID} object or null.
+ * @since 3.0
+ */
+UUID.parse = function (strId) {
+    var r = void 0,
+        p = /^\s*(urn:uuid:|\{)?([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{2})([0-9a-f]{2})-([0-9a-f]{12})(\})?\s*$/i;
+    if (r = p.exec(strId)) {
+        var l = r[1] || '',
+            t = r[8] || '';
+        if (l + t === '' || l === '{' && t === '}' || l.toLowerCase() === 'urn:uuid:' && t === '') {
+            return new UUID()._init(parseInt(r[2], 16), parseInt(r[3], 16), parseInt(r[4], 16), parseInt(r[5], 16), parseInt(r[6], 16), parseInt(r[7], 16));
+        }
+    }
+
+    return null;
+};
+
+/**
+ * Initializes a {@link UUID} object.
+ * @private
+ * @constructs UUID
+ * @param {number} [timeLow=0] time_low field (octet 0-3, uint32).
+ * @param {number} [timeMid=0] time_mid field (octet 4-5, uint16).
+ * @param {number} [timeHiAndVersion=0] time_hi_and_version field (octet 6-7, uint16).
+ * @param {number} [clockSeqHiAndReserved=0] clock_seq_hi_and_reserved field (octet 8, uint8).
+ * @param {number} [clockSeqLow=0] clock_seq_low field (octet 9, uint8).
+ * @param {number} [node=0] node field (octet 10-15, uint48).
+ * @returns {UUID} this.
+ */
+UUID.prototype._init = function () {
+    var names = UUID.FIELD_NAMES,
+        sizes = UUID.FIELD_SIZES;
+    var bin = UUID._binAligner,
+        hex = UUID._hexAligner;
+
+    /**
+    * UUID internal field values as an array of integers.
+    * @type {number[]}
+    */
+    this.intFields = new Array(6);
+
+    /**
+    * UUID internal field values as an array of binary strings.
+    * @type {string[]}
+    */
+    this.bitFields = new Array(6);
+
+    /**
+    * UUID internal field values as an array of hexadecimal strings.
+    * @type {string[]}
+    */
+    this.hexFields = new Array(6);
+
+    for (var i = 0; i < 6; i++) {
+        var intValue = parseInt(arguments[i] || 0, 10);
+        this.intFields[i] = this.intFields[names[i]] = intValue;
+        this.bitFields[i] = this.bitFields[names[i]] = bin(intValue, sizes[i]);
+        this.hexFields[i] = this.hexFields[names[i]] = hex(intValue, sizes[i] >>> 2);
+    }
+
+    /**
+    * UUID version number.
+    * @type {number}
+    */
+    this.version = this.intFields.timeHiAndVersion >>> 12 & 0xF;
+
+    /**
+    * 128-bit binary string representation.
+    * @type {string}
+    */
+    this.bitString = this.bitFields.join('');
+
+    /**
+    * Non-delimited hexadecimal string representation ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx").
+    * @type {string}
+    * @since v3.3.0
+    */
+    this.hexNoDelim = this.hexFields.join('');
+
+    /**
+    * Hexadecimal string representation ("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
+    * @type {string}
+    */
+    this.hexString = this.hexFields[0] + '-' + this.hexFields[1] + '-' + this.hexFields[2] + '-' + this.hexFields[3] + this.hexFields[4] + '-' + this.hexFields[5];
+
+    /**
+    * URN string representation ("urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").
+    * @type {string}
+    */
+    this.urn = 'urn:uuid:' + this.hexString;
+
+    return this;
+};
+
+/**
+ * Converts an integer to a zero-filled binary string.
+ * @private
+ * @param {number} num
+ * @param {number} length
+ * @returns {string}
+ */
+UUID._binAligner = function (num, length) {
+    var str = num.toString(2),
+        i = length - str.length,
+        z = '0';
+    for (; i > 0; i >>>= 1, z += z) {
+        if (i & 1) {
+            str = z + str;
+        }
+    }
+    return str;
+};
+
+/**
+ * Returns the hexadecimal string representation.
+ * @returns {string} {@link UUID#hexString}.
+ */
+UUID.prototype.toString = function () {
+    return this.hexString;
+};
+
+/**
+ * Tests if two {@link UUID} objects are equal.
+ * @param {UUID} uuid
+ * @returns {boolean} True if two {@link UUID} objects are equal.
+ */
+UUID.prototype.equals = function (uuid) {
+    if (!(uuid instanceof UUID)) {
+        return false;
+    }
+
+    for (var i = 0; i < 6; i++) {
+        if (this.intFields[i] !== uuid.intFields[i]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+/**
+ * Nil UUID object.
+ * @type {UUID}
+ * @constant
+ * @since v3.4.0
+ */
+UUID.NIL = new UUID()._init(0, 0, 0, 0, 0, 0);
+
+// }}}
+
+// UUID Version 1 Component {{{
+
+/**
+ * Creates a version 1 {@link UUID} object.
+ * @returns {UUID} Version 1 {@link UUID} object.
+ * @since 3.0
+ */
+UUID.genV1 = function () {
+    if (UUID._state == null) {
+        UUID.resetState();
+    }
+
+    var now = new Date().getTime(),
+        st = UUID._state;
+    if (now != st.timestamp) {
+        if (now < st.timestamp) {
+            st.sequence++;
+        }
+
+        st.timestamp = now;
+        st.tick = UUID._getRandomInt(4);
+    } else if (Math.random() < UUID._tsRatio && st.tick < 9984) {
+        // advance the timestamp fraction at a probability
+        // to compensate for the low timestamp resolution
+        st.tick += 1 + UUID._getRandomInt(4);
+    } else {
+        st.sequence++;
+    }
+
+    // format time fields
+    var tf = UUID._getTimeFieldValues(st.timestamp);
+    var tl = tf.low + st.tick;
+    var thav = tf.hi & 0xFFF | 0x1000; // set version '0001'
+
+    // format clock sequence
+    st.sequence &= 0x3FFF;
+    var cshar = st.sequence >>> 8 | 0x80; // set variant '10'
+    var csl = st.sequence & 0xFF;
+
+    return new UUID()._init(tl, tf.mid, thav, cshar, csl, st.node);
+};
+
+/**
+ * Re-initializes the internal state for version 1 UUID creation.
+ * @since 3.0
+ */
+UUID.resetState = function () {
+    UUID._state = new UUIDState();
+};
+
+function UUIDState() {
+    var rand = UUID._getRandomInt;
+    this.timestamp = 0;
+    this.sequence = rand(14);
+    this.node = (rand(8) | 1) * 0x10000000000 + rand(40); // set multicast bit '1'
+    this.tick = rand(4); // timestamp fraction smaller than a millisecond
+}
+
+/**
+ * Probability to advance the timestamp fraction: the ratio of tick movements to sequence increments.
+ * @private
+ * @type {number}
+ */
+UUID._tsRatio = 1 / 4;
+
+/**
+ * Persistent internal state for version 1 UUID creation.
+ * @private
+ * @type {UUIDState}
+ */
+UUID._state = null;
+
+/**
+ * @private
+ * @param {Date|number} time ECMAScript Date Object or milliseconds from 1970-01-01.
+ * @returns {any}
+ */
+UUID._getTimeFieldValues = function (time) {
+    var ts = time - Date.UTC(1582, 9, 15);
+    var hm = ts / 0x100000000 * 10000 & 0xFFFFFFF;
+    return {
+        low: (ts & 0xFFFFFFF) * 10000 % 0x100000000,
+        mid: hm & 0xFFFF,
+        hi: hm >>> 16,
+        timestamp: ts
+    };
+};
+
+// }}}
+
+// Backward Compatibility Component {{{
+
+/**
+ * Reinstalls {@link UUID.generate} method to emulate the interface of UUID.js version 2.x.
+ * @since 3.1
+ * @deprecated Version 2.x compatible interface is not recommended.
+ */
+UUID.makeBackwardCompatible = function () {
+    var f = UUID.generate;
+    UUID.generate = function (o) {
+        return o && o.version == 1 ? UUID.genV1().hexString : f.call(UUID);
+    };
+    UUID.makeBackwardCompatible = function () {};
+};
+
+// }}}
+
+exports.default = UUID;
+
+/***/ }),
+/* 232 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validator___ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages__ = __webpack_require__(392);
+
+
+
+
+
+
+/**
+ *  Encapsulates a validation schema.
+ *
+ *  @param descriptor An object declaring validation rules
+ *  for this schema.
+ */
+function Schema(descriptor) {
+  this.rules = null;
+  this._messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
+  this.define(descriptor);
+}
+
+Schema.prototype = {
+  messages: function messages(_messages) {
+    if (_messages) {
+      this._messages = Object(__WEBPACK_IMPORTED_MODULE_2__util__["c" /* deepMerge */])(Object(__WEBPACK_IMPORTED_MODULE_4__messages__["b" /* newMessages */])(), _messages);
+    }
+    return this._messages;
+  },
+  define: function define(rules) {
+    if (!rules) {
+      throw new Error('Cannot configure a schema with no rules');
+    }
+    if ((typeof rules === 'undefined' ? 'undefined' : __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rules)) !== 'object' || Array.isArray(rules)) {
+      throw new Error('Rules must be an object');
+    }
+    this.rules = {};
+    var z = void 0;
+    var item = void 0;
+    for (z in rules) {
+      if (rules.hasOwnProperty(z)) {
+        item = rules[z];
+        this.rules[z] = Array.isArray(item) ? item : [item];
+      }
+    }
+  },
+  validate: function validate(source_) {
+    var _this = this;
+
+    var o = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var oc = arguments[2];
+
+    var source = source_;
+    var options = o;
+    var callback = oc;
+    if (typeof options === 'function') {
+      callback = options;
+      options = {};
+    }
+    if (!this.rules || Object.keys(this.rules).length === 0) {
+      if (callback) {
+        callback();
+      }
+      return;
+    }
+    function complete(results) {
+      var i = void 0;
+      var field = void 0;
+      var errors = [];
+      var fields = {};
+
+      function add(e) {
+        if (Array.isArray(e)) {
+          errors = errors.concat.apply(errors, e);
+        } else {
+          errors.push(e);
+        }
+      }
+
+      for (i = 0; i < results.length; i++) {
+        add(results[i]);
+      }
+      if (!errors.length) {
+        errors = null;
+        fields = null;
+      } else {
+        for (i = 0; i < errors.length; i++) {
+          field = errors[i].field;
+          fields[field] = fields[field] || [];
+          fields[field].push(errors[i]);
+        }
+      }
+      callback(errors, fields);
+    }
+
+    if (options.messages) {
+      var messages = this.messages();
+      if (messages === __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */]) {
+        messages = Object(__WEBPACK_IMPORTED_MODULE_4__messages__["b" /* newMessages */])();
+      }
+      Object(__WEBPACK_IMPORTED_MODULE_2__util__["c" /* deepMerge */])(messages, options.messages);
+      options.messages = messages;
+    } else {
+      options.messages = this.messages();
+    }
+    var arr = void 0;
+    var value = void 0;
+    var series = {};
+    var keys = options.keys || Object.keys(this.rules);
+    keys.forEach(function (z) {
+      arr = _this.rules[z];
+      value = source[z];
+      arr.forEach(function (r) {
+        var rule = r;
+        if (typeof rule.transform === 'function') {
+          if (source === source_) {
+            source = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, source);
+          }
+          value = source[z] = rule.transform(value);
+        }
+        if (typeof rule === 'function') {
+          rule = {
+            validator: rule
+          };
+        } else {
+          rule = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, rule);
+        }
+        rule.validator = _this.getValidationMethod(rule);
+        rule.field = z;
+        rule.fullField = rule.fullField || z;
+        rule.type = _this.getType(rule);
+        if (!rule.validator) {
+          return;
+        }
+        series[z] = series[z] || [];
+        series[z].push({
+          rule: rule,
+          value: value,
+          source: source,
+          field: z
+        });
+      });
+    });
+    var errorFields = {};
+    Object(__WEBPACK_IMPORTED_MODULE_2__util__["a" /* asyncMap */])(series, options, function (data, doIt) {
+      var rule = data.rule;
+      var deep = (rule.type === 'object' || rule.type === 'array') && (__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rule.fields) === 'object' || __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default()(rule.defaultField) === 'object');
+      deep = deep && (rule.required || !rule.required && data.value);
+      rule.field = data.field;
+      function addFullfield(key, schema) {
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, schema, {
+          fullField: rule.fullField + '.' + key
+        });
+      }
+
+      function cb() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+        var errors = e;
+        if (!Array.isArray(errors)) {
+          errors = [errors];
+        }
+        if (errors.length) {
+          Object(__WEBPACK_IMPORTED_MODULE_2__util__["f" /* warning */])('async-validator:', errors);
+        }
+        if (errors.length && rule.message) {
+          errors = [].concat(rule.message);
+        }
+
+        errors = errors.map(Object(__WEBPACK_IMPORTED_MODULE_2__util__["b" /* complementError */])(rule));
+
+        if (options.first && errors.length) {
+          errorFields[rule.field] = 1;
+          return doIt(errors);
+        }
+        if (!deep) {
+          doIt(errors);
+        } else {
+          // if rule is required but the target object
+          // does not exist fail at the rule level and don't
+          // go deeper
+          if (rule.required && !data.value) {
+            if (rule.message) {
+              errors = [].concat(rule.message).map(Object(__WEBPACK_IMPORTED_MODULE_2__util__["b" /* complementError */])(rule));
+            } else if (options.error) {
+              errors = [options.error(rule, Object(__WEBPACK_IMPORTED_MODULE_2__util__["d" /* format */])(options.messages.required, rule.field))];
+            } else {
+              errors = [];
+            }
+            return doIt(errors);
+          }
+
+          var fieldsSchema = {};
+          if (rule.defaultField) {
+            for (var k in data.value) {
+              if (data.value.hasOwnProperty(k)) {
+                fieldsSchema[k] = rule.defaultField;
+              }
+            }
+          }
+          fieldsSchema = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, fieldsSchema, data.rule.fields);
+          for (var f in fieldsSchema) {
+            if (fieldsSchema.hasOwnProperty(f)) {
+              var fieldSchema = Array.isArray(fieldsSchema[f]) ? fieldsSchema[f] : [fieldsSchema[f]];
+              fieldsSchema[f] = fieldSchema.map(addFullfield.bind(null, f));
+            }
+          }
+          var schema = new Schema(fieldsSchema);
+          schema.messages(options.messages);
+          if (data.rule.options) {
+            data.rule.options.messages = options.messages;
+            data.rule.options.error = options.error;
+          }
+          schema.validate(data.value, data.rule.options || options, function (errs) {
+            doIt(errs && errs.length ? errors.concat(errs) : errs);
+          });
+        }
+      }
+
+      var res = rule.validator(rule, data.value, cb, data.source, options);
+      if (res && res.then) {
+        res.then(function () {
+          return cb();
+        }, function (e) {
+          return cb(e);
+        });
+      }
+    }, function (results) {
+      complete(results);
+    });
+  },
+  getType: function getType(rule) {
+    if (rule.type === undefined && rule.pattern instanceof RegExp) {
+      rule.type = 'pattern';
+    }
+    if (typeof rule.validator !== 'function' && rule.type && !__WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */].hasOwnProperty(rule.type)) {
+      throw new Error(Object(__WEBPACK_IMPORTED_MODULE_2__util__["d" /* format */])('Unknown rule type %s', rule.type));
+    }
+    return rule.type || 'string';
+  },
+  getValidationMethod: function getValidationMethod(rule) {
+    if (typeof rule.validator === 'function') {
+      return rule.validator;
+    }
+    var keys = Object.keys(rule);
+    var messageIndex = keys.indexOf('message');
+    if (messageIndex !== -1) {
+      keys.splice(messageIndex, 1);
+    }
+    if (keys.length === 1 && keys[0] === 'required') {
+      return __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */].required;
+    }
+    return __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */][this.getType(rule)] || false;
+  }
+};
+
+Schema.register = function register(type, validator) {
+  if (typeof validator !== 'function') {
+    throw new Error('Cannot register a validator by type, validator is not a function');
+  }
+  __WEBPACK_IMPORTED_MODULE_3__validator___["a" /* default */][type] = validator;
+};
+
+Schema.messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
+
+/* harmony default export */ __webpack_exports__["default"] = (Schema);
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(340);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _assign2.default || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(26) && !__webpack_require__(31)(function () {
+  return Object.defineProperty(__webpack_require__(235)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(30);
+var document = __webpack_require__(17).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__(20);
+var toIObject = __webpack_require__(27);
+var arrayIndexOf = __webpack_require__(346)(false);
+var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = __webpack_require__(238);
+// eslint-disable-next-line no-prototype-builtins
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = function (it) {
+  return toString.call(it).slice(8, -1);
+};
+
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(61);
+module.exports = function (it) {
+  return Object(defined(it));
+};
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var LIBRARY = __webpack_require__(67);
+var $export = __webpack_require__(59);
+var redefine = __webpack_require__(241);
+var hide = __webpack_require__(24);
+var has = __webpack_require__(20);
+var Iterators = __webpack_require__(68);
+var $iterCreate = __webpack_require__(353);
+var setToStringTag = __webpack_require__(69);
+var getPrototypeOf = __webpack_require__(356);
+var ITERATOR = __webpack_require__(28)('iterator');
+var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
+var FF_ITERATOR = '@@iterator';
+var KEYS = 'keys';
+var VALUES = 'values';
+
+var returnThis = function () { return this; };
+
+module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
+  $iterCreate(Constructor, NAME, next);
+  var getMethod = function (kind) {
+    if (!BUGGY && kind in proto) return proto[kind];
+    switch (kind) {
+      case KEYS: return function keys() { return new Constructor(this, kind); };
+      case VALUES: return function values() { return new Constructor(this, kind); };
+    } return function entries() { return new Constructor(this, kind); };
+  };
+  var TAG = NAME + ' Iterator';
+  var DEF_VALUES = DEFAULT == VALUES;
+  var VALUES_BUG = false;
+  var proto = Base.prototype;
+  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
+  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
+  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
+  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
+  var methods, key, IteratorPrototype;
+  // Fix native
+  if ($anyNative) {
+    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
+    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
+      // Set @@toStringTag to native iterators
+      setToStringTag(IteratorPrototype, TAG, true);
+      // fix for some old engines
+      if (!LIBRARY && !has(IteratorPrototype, ITERATOR)) hide(IteratorPrototype, ITERATOR, returnThis);
+    }
+  }
+  // fix Array#{values, @@iterator}.name in V8 / FF
+  if (DEF_VALUES && $native && $native.name !== VALUES) {
+    VALUES_BUG = true;
+    $default = function values() { return $native.call(this); };
+  }
+  // Define iterator
+  if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
+    hide(proto, ITERATOR, $default);
+  }
+  // Plug for library
+  Iterators[NAME] = $default;
+  Iterators[TAG] = returnThis;
+  if (DEFAULT) {
+    methods = {
+      values: DEF_VALUES ? $default : getMethod(VALUES),
+      keys: IS_SET ? $default : getMethod(KEYS),
+      entries: $entries
+    };
+    if (FORCED) for (key in methods) {
+      if (!(key in proto)) redefine(proto, key, methods[key]);
+    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+  }
+  return methods;
+};
+
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(24);
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+var anObject = __webpack_require__(37);
+var dPs = __webpack_require__(354);
+var enumBugKeys = __webpack_require__(65);
+var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+var Empty = function () { /* empty */ };
+var PROTOTYPE = 'prototype';
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var createDict = function () {
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = __webpack_require__(235)('iframe');
+  var i = enumBugKeys.length;
+  var lt = '<';
+  var gt = '>';
+  var iframeDocument;
+  iframe.style.display = 'none';
+  __webpack_require__(355).appendChild(iframe);
+  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+  // createDict = iframe.contentWindow.Object;
+  // html.removeChild(iframe);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+  iframeDocument.close();
+  createDict = iframeDocument.F;
+  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
+  return createDict();
+};
+
+module.exports = Object.create || function create(O, Properties) {
+  var result;
+  if (O !== null) {
+    Empty[PROTOTYPE] = anObject(O);
+    result = new Empty();
+    Empty[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = createDict();
+  return Properties === undefined ? result : dPs(result, Properties);
+};
+
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+var $keys = __webpack_require__(236);
+var hiddenKeys = __webpack_require__(65).concat('length', 'prototype');
+
+exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
+  return $keys(O, hiddenKeys);
+};
+
+
+/***/ }),
+/* 244 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+
+
+/**
+ *  Rule for validating required fields.
+ *
+ *  @param rule The validation rule.
+ *  @param value The value of the field on the source object.
+ *  @param source The source object being validated.
+ *  @param errors An array of errors that this rule may add
+ *  validation errors to.
+ *  @param options The validation options.
+ *  @param options.messages The validation messages.
+ */
+function required(rule, value, source, errors, options, type) {
+  if (rule.required && (!source.hasOwnProperty(rule.field) || __WEBPACK_IMPORTED_MODULE_0__util__["e" /* isEmptyValue */](value, type || rule.type))) {
+    errors.push(__WEBPACK_IMPORTED_MODULE_0__util__["d" /* format */](options.messages.required, rule.fullField));
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (required);
+
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var cx = (0, _util.create)('ui-static');
+
+/* eslint-disable */
+/**
+ * @file san-xui/x/forms/StaticItem.js
+ * @author leeight
+ */
+
+var template = '<div class="{{mainClass}}">{{label | raw}}</div>';
+/* eslint-enable */
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    computed: {
+        mainClass: function mainClass() {
+            var klass = cx.mainClass(this);
+            var value = this.data.get('value');
+            var mapper = this.data.get('mapper');
+            if (_lodash2.default.isFunction(mapper)) {
+                var mappedValue = mapper(value);
+                if (mappedValue && mappedValue.klass) {
+                    klass.push(mappedValue.klass);
+                }
+            }
+            return klass;
+        },
+        label: function label() {
+            var value = this.data.get('value');
+            var mapper = this.data.get('mapper');
+            if (_lodash2.default.isFunction(mapper)) {
+                var mappedValue = mapper(value);
+                if (mappedValue && mappedValue.text) {
+                    return mappedValue.text;
+                }
+                return mappedValue;
+            }
+            return value;
+        }
+    },
+    dataTypes: {
+        /**
+         * 需要展示的数据
+         */
+        value: _san.DataTypes.any,
+
+        /**
+         * 数据源
+         */
+        datasource: _san.DataTypes.array,
+
+        /**
+         * value 到 label 的转换函数
+         * <pre><code>function(v:any): any</code></pre>
+         */
+        mapper: _san.DataTypes.func
+    },
+    inited: function inited() {
+        var _this = this;
+
+        var mapper = this.data.get('mapper');
+        if (_lodash2.default.isFunction(mapper)) {
+            return;
+        }
+        this.data.set('mapper', function (v) {
+            var datasource = _this.data.get('datasource');
+            if (_lodash2.default.isArray(datasource)) {
+                for (var i = 0, item; item = datasource[i]; i++) {
+                    if (item.value === v) {
+                        return item;
+                    }
+                }
+            }
+            return v;
+        });
+    }
+});
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _StopScroll = __webpack_require__(32);
+
+var _StopScroll2 = _interopRequireDefault(_StopScroll);
+
+var _Dialog = __webpack_require__(19);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file x/forms/FormDialog.js
+ * @author leeight
+ * @author chenbo09
+ */
+
+var template = '<template>\n    <ui-dialog open title="{{title}}" width="{{width}}" on-close="onCloseDialog">\n        <ui-ss disabled="{{ssDisabled}}" class="ui-form-dialog-ss" style="{{ssStyle}}">\n            <x-form\n                s-ref="form"\n                preview="{{preview}}"\n                editable="{{editable}}"\n                form-data="{{formData}}"\n            />\n        </ui-ss>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{confirmLabel}}</ui-button>\n            <ui-button s-if="!confirm" on-click="onCloseDialog">{{cancelLabel}}</ui-button>\n        </div>\n    </ui-dialog>\n</template>';
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    initData: function initData() {
+        return {
+            title: 'Dialog Title',
+            confirmLabel: '确认',
+            cancelLabel: '取消',
+            width: 800,
+            confirm: false,
+            preview: false,
+            editable: true
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 弹出框宽度
+         * @default 800
+         */
+        width: _san.DataTypes.number,
+
+        /**
+         * 弹出框高度
+         */
+        height: _san.DataTypes.number,
+
+        /**
+         * 标题
+         */
+        title: _san.DataTypes.string,
+
+        /**
+         * 是否预览
+         * @default false
+         */
+        preview: _san.DataTypes.bool,
+
+        /**
+         * 是否能编辑
+         * @default false
+         */
+        editable: _san.DataTypes.bool,
+
+        /**
+         * 是否需要确认
+         * @default false
+         */
+        confirm: _san.DataTypes.bool,
+
+        /**
+         * form组件构造函数
+         * @default false
+         */
+        formComp: _san.DataTypes.func.isRequired,
+
+        /**
+         * 表单数据
+         * @default false
+         */
+        formData: _san.DataTypes.object.isRequired
+    },
+    computed: {
+        ssDisabled: function ssDisabled() {
+            // 如果没有设置过 height 属性，那么就禁用
+            var height = this.data.get('height');
+            if (!height) {
+                return true;
+            }
+            return false;
+        },
+        ssStyle: function ssStyle() {
+            var style = {};
+            var ssDisabled = this.data.get('ssDisabled');
+            if (ssDisabled) {
+                return style;
+            }
+
+            var height = this.data.get('height');
+
+            style['max-height'] = height + 'px';
+            style.overflow = 'hidden';
+            style['overflow-y'] = 'scroll';
+
+            return style;
+        }
+    },
+    inited: function inited() {
+        // 动态的组件
+        var formComp = this.data.get('formComp');
+        this.components = {
+            'ui-dialog': _Dialog2.default,
+            'ui-button': _Button2.default,
+            'ui-ss': _StopScroll2.default,
+            'x-form': formComp
+        };
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        var _this = this;
+
+        var confirm = this.data.get('confirm');
+        if (confirm) {
+            this.fire('close');
+            return;
+        }
+
+        var editable = this.data.get('editable');
+        var form = this.ref('form');
+        if (editable && form) {
+            form.validateForm().then(function () {
+                // form.getFormData() 返回的是过滤之后的数据，一些无关紧要的东西都被干掉了
+                var formData = form.getFormData();
+                _this.fire('ok', formData);
+            });
+        }
+    },
+    onCloseDialog: function onCloseDialog() {
+        this.fire('close');
+    }
+});
+
+/***/ }),
+/* 247 */,
+/* 248 */,
 /* 249 */,
 /* 250 */,
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = __webpack_require__(21);
+__webpack_require__(255);
+__webpack_require__(256);
 __webpack_require__(257);
 __webpack_require__(258);
-__webpack_require__(259);
 __webpack_require__(260);
-__webpack_require__(262);
 
 
 /***/ }),
-/* 257 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57795,7 +58422,7 @@ Promise.prototype.done = function (onFulfilled, onRejected) {
 
 
 /***/ }),
-/* 258 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57818,7 +58445,7 @@ Promise.prototype['finally'] = function (f) {
 
 
 /***/ }),
-/* 259 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57932,7 +58559,7 @@ Promise.prototype['catch'] = function (onRejected) {
 
 
 /***/ }),
-/* 260 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57942,7 +58569,7 @@ Promise.prototype['catch'] = function (onRejected) {
 // for node.js interop
 
 var Promise = __webpack_require__(21);
-var asap = __webpack_require__(261);
+var asap = __webpack_require__(259);
 
 module.exports = Promise;
 
@@ -58069,14 +58696,14 @@ Promise.prototype.nodeify = function (callback, ctx) {
 
 
 /***/ }),
-/* 261 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // rawAsap provides everything we need except exception management.
-var rawAsap = __webpack_require__(82);
+var rawAsap = __webpack_require__(73);
 // RawTasks are recycled to reduce GC churn.
 var freeTasks = [];
 // We queue errors to ensure they are thrown in right order (FIFO).
@@ -58142,7 +58769,7 @@ RawTask.prototype.call = function () {
 
 
 /***/ }),
-/* 262 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58211,250 +58838,250 @@ Promise.disableSynchronous = function() {
 
 
 /***/ }),
-/* 263 */,
-/* 264 */,
-/* 265 */
+/* 261 */,
+/* 262 */,
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 83,
-	"./af.js": 83,
-	"./ar": 84,
-	"./ar-dz": 85,
-	"./ar-dz.js": 85,
-	"./ar-kw": 86,
-	"./ar-kw.js": 86,
-	"./ar-ly": 87,
-	"./ar-ly.js": 87,
-	"./ar-ma": 88,
-	"./ar-ma.js": 88,
-	"./ar-sa": 89,
-	"./ar-sa.js": 89,
-	"./ar-tn": 90,
-	"./ar-tn.js": 90,
-	"./ar.js": 84,
-	"./az": 91,
-	"./az.js": 91,
-	"./be": 92,
-	"./be.js": 92,
-	"./bg": 93,
-	"./bg.js": 93,
-	"./bm": 94,
-	"./bm.js": 94,
-	"./bn": 95,
-	"./bn.js": 95,
-	"./bo": 96,
-	"./bo.js": 96,
-	"./br": 97,
-	"./br.js": 97,
-	"./bs": 98,
-	"./bs.js": 98,
-	"./ca": 99,
-	"./ca.js": 99,
-	"./cs": 100,
-	"./cs.js": 100,
-	"./cv": 101,
-	"./cv.js": 101,
-	"./cy": 102,
-	"./cy.js": 102,
-	"./da": 103,
-	"./da.js": 103,
-	"./de": 104,
-	"./de-at": 105,
-	"./de-at.js": 105,
-	"./de-ch": 106,
-	"./de-ch.js": 106,
-	"./de.js": 104,
-	"./dv": 107,
-	"./dv.js": 107,
-	"./el": 108,
-	"./el.js": 108,
-	"./en-au": 109,
-	"./en-au.js": 109,
-	"./en-ca": 110,
-	"./en-ca.js": 110,
-	"./en-gb": 111,
-	"./en-gb.js": 111,
-	"./en-ie": 112,
-	"./en-ie.js": 112,
-	"./en-nz": 113,
-	"./en-nz.js": 113,
-	"./eo": 114,
-	"./eo.js": 114,
-	"./es": 115,
-	"./es-do": 116,
-	"./es-do.js": 116,
-	"./es-us": 117,
-	"./es-us.js": 117,
-	"./es.js": 115,
-	"./et": 118,
-	"./et.js": 118,
-	"./eu": 119,
-	"./eu.js": 119,
-	"./fa": 120,
-	"./fa.js": 120,
-	"./fi": 121,
-	"./fi.js": 121,
-	"./fo": 122,
-	"./fo.js": 122,
-	"./fr": 123,
-	"./fr-ca": 124,
-	"./fr-ca.js": 124,
-	"./fr-ch": 125,
-	"./fr-ch.js": 125,
-	"./fr.js": 123,
-	"./fy": 126,
-	"./fy.js": 126,
-	"./gd": 127,
-	"./gd.js": 127,
-	"./gl": 128,
-	"./gl.js": 128,
-	"./gom-latn": 129,
-	"./gom-latn.js": 129,
-	"./gu": 130,
-	"./gu.js": 130,
-	"./he": 131,
-	"./he.js": 131,
-	"./hi": 132,
-	"./hi.js": 132,
-	"./hr": 133,
-	"./hr.js": 133,
-	"./hu": 134,
-	"./hu.js": 134,
-	"./hy-am": 135,
-	"./hy-am.js": 135,
-	"./id": 136,
-	"./id.js": 136,
-	"./is": 137,
-	"./is.js": 137,
-	"./it": 138,
-	"./it.js": 138,
-	"./ja": 139,
-	"./ja.js": 139,
-	"./jv": 140,
-	"./jv.js": 140,
-	"./ka": 141,
-	"./ka.js": 141,
-	"./kk": 142,
-	"./kk.js": 142,
-	"./km": 143,
-	"./km.js": 143,
-	"./kn": 144,
-	"./kn.js": 144,
-	"./ko": 145,
-	"./ko.js": 145,
-	"./ky": 146,
-	"./ky.js": 146,
-	"./lb": 147,
-	"./lb.js": 147,
-	"./lo": 148,
-	"./lo.js": 148,
-	"./lt": 149,
-	"./lt.js": 149,
-	"./lv": 150,
-	"./lv.js": 150,
-	"./me": 151,
-	"./me.js": 151,
-	"./mi": 152,
-	"./mi.js": 152,
-	"./mk": 153,
-	"./mk.js": 153,
-	"./ml": 154,
-	"./ml.js": 154,
-	"./mr": 155,
-	"./mr.js": 155,
-	"./ms": 156,
-	"./ms-my": 157,
-	"./ms-my.js": 157,
-	"./ms.js": 156,
-	"./mt": 158,
-	"./mt.js": 158,
-	"./my": 159,
-	"./my.js": 159,
-	"./nb": 160,
-	"./nb.js": 160,
-	"./ne": 161,
-	"./ne.js": 161,
-	"./nl": 162,
-	"./nl-be": 163,
-	"./nl-be.js": 163,
-	"./nl.js": 162,
-	"./nn": 164,
-	"./nn.js": 164,
-	"./pa-in": 165,
-	"./pa-in.js": 165,
-	"./pl": 166,
-	"./pl.js": 166,
-	"./pt": 167,
-	"./pt-br": 168,
-	"./pt-br.js": 168,
-	"./pt.js": 167,
-	"./ro": 169,
-	"./ro.js": 169,
-	"./ru": 170,
-	"./ru.js": 170,
-	"./sd": 171,
-	"./sd.js": 171,
-	"./se": 172,
-	"./se.js": 172,
-	"./si": 173,
-	"./si.js": 173,
-	"./sk": 174,
-	"./sk.js": 174,
-	"./sl": 175,
-	"./sl.js": 175,
-	"./sq": 176,
-	"./sq.js": 176,
-	"./sr": 177,
-	"./sr-cyrl": 178,
-	"./sr-cyrl.js": 178,
-	"./sr.js": 177,
-	"./ss": 179,
-	"./ss.js": 179,
-	"./sv": 180,
-	"./sv.js": 180,
-	"./sw": 181,
-	"./sw.js": 181,
-	"./ta": 182,
-	"./ta.js": 182,
-	"./te": 183,
-	"./te.js": 183,
-	"./tet": 184,
-	"./tet.js": 184,
-	"./th": 185,
-	"./th.js": 185,
-	"./tl-ph": 186,
-	"./tl-ph.js": 186,
-	"./tlh": 187,
-	"./tlh.js": 187,
-	"./tr": 188,
-	"./tr.js": 188,
-	"./tzl": 189,
-	"./tzl.js": 189,
-	"./tzm": 190,
-	"./tzm-latn": 191,
-	"./tzm-latn.js": 191,
-	"./tzm.js": 190,
-	"./uk": 192,
-	"./uk.js": 192,
-	"./ur": 193,
-	"./ur.js": 193,
-	"./uz": 194,
-	"./uz-latn": 195,
-	"./uz-latn.js": 195,
-	"./uz.js": 194,
-	"./vi": 196,
-	"./vi.js": 196,
-	"./x-pseudo": 197,
-	"./x-pseudo.js": 197,
-	"./yo": 198,
-	"./yo.js": 198,
-	"./zh-cn": 199,
-	"./zh-cn.js": 199,
-	"./zh-hk": 200,
-	"./zh-hk.js": 200,
-	"./zh-tw": 201,
-	"./zh-tw.js": 201
+	"./af": 74,
+	"./af.js": 74,
+	"./ar": 75,
+	"./ar-dz": 76,
+	"./ar-dz.js": 76,
+	"./ar-kw": 77,
+	"./ar-kw.js": 77,
+	"./ar-ly": 78,
+	"./ar-ly.js": 78,
+	"./ar-ma": 79,
+	"./ar-ma.js": 79,
+	"./ar-sa": 80,
+	"./ar-sa.js": 80,
+	"./ar-tn": 81,
+	"./ar-tn.js": 81,
+	"./ar.js": 75,
+	"./az": 82,
+	"./az.js": 82,
+	"./be": 83,
+	"./be.js": 83,
+	"./bg": 84,
+	"./bg.js": 84,
+	"./bm": 85,
+	"./bm.js": 85,
+	"./bn": 86,
+	"./bn.js": 86,
+	"./bo": 87,
+	"./bo.js": 87,
+	"./br": 88,
+	"./br.js": 88,
+	"./bs": 89,
+	"./bs.js": 89,
+	"./ca": 90,
+	"./ca.js": 90,
+	"./cs": 91,
+	"./cs.js": 91,
+	"./cv": 92,
+	"./cv.js": 92,
+	"./cy": 93,
+	"./cy.js": 93,
+	"./da": 94,
+	"./da.js": 94,
+	"./de": 95,
+	"./de-at": 96,
+	"./de-at.js": 96,
+	"./de-ch": 97,
+	"./de-ch.js": 97,
+	"./de.js": 95,
+	"./dv": 98,
+	"./dv.js": 98,
+	"./el": 99,
+	"./el.js": 99,
+	"./en-au": 100,
+	"./en-au.js": 100,
+	"./en-ca": 101,
+	"./en-ca.js": 101,
+	"./en-gb": 102,
+	"./en-gb.js": 102,
+	"./en-ie": 103,
+	"./en-ie.js": 103,
+	"./en-nz": 104,
+	"./en-nz.js": 104,
+	"./eo": 105,
+	"./eo.js": 105,
+	"./es": 106,
+	"./es-do": 107,
+	"./es-do.js": 107,
+	"./es-us": 108,
+	"./es-us.js": 108,
+	"./es.js": 106,
+	"./et": 109,
+	"./et.js": 109,
+	"./eu": 110,
+	"./eu.js": 110,
+	"./fa": 111,
+	"./fa.js": 111,
+	"./fi": 112,
+	"./fi.js": 112,
+	"./fo": 113,
+	"./fo.js": 113,
+	"./fr": 114,
+	"./fr-ca": 115,
+	"./fr-ca.js": 115,
+	"./fr-ch": 116,
+	"./fr-ch.js": 116,
+	"./fr.js": 114,
+	"./fy": 117,
+	"./fy.js": 117,
+	"./gd": 118,
+	"./gd.js": 118,
+	"./gl": 119,
+	"./gl.js": 119,
+	"./gom-latn": 120,
+	"./gom-latn.js": 120,
+	"./gu": 121,
+	"./gu.js": 121,
+	"./he": 122,
+	"./he.js": 122,
+	"./hi": 123,
+	"./hi.js": 123,
+	"./hr": 124,
+	"./hr.js": 124,
+	"./hu": 125,
+	"./hu.js": 125,
+	"./hy-am": 126,
+	"./hy-am.js": 126,
+	"./id": 127,
+	"./id.js": 127,
+	"./is": 128,
+	"./is.js": 128,
+	"./it": 129,
+	"./it.js": 129,
+	"./ja": 130,
+	"./ja.js": 130,
+	"./jv": 131,
+	"./jv.js": 131,
+	"./ka": 132,
+	"./ka.js": 132,
+	"./kk": 133,
+	"./kk.js": 133,
+	"./km": 134,
+	"./km.js": 134,
+	"./kn": 135,
+	"./kn.js": 135,
+	"./ko": 136,
+	"./ko.js": 136,
+	"./ky": 137,
+	"./ky.js": 137,
+	"./lb": 138,
+	"./lb.js": 138,
+	"./lo": 139,
+	"./lo.js": 139,
+	"./lt": 140,
+	"./lt.js": 140,
+	"./lv": 141,
+	"./lv.js": 141,
+	"./me": 142,
+	"./me.js": 142,
+	"./mi": 143,
+	"./mi.js": 143,
+	"./mk": 144,
+	"./mk.js": 144,
+	"./ml": 145,
+	"./ml.js": 145,
+	"./mr": 146,
+	"./mr.js": 146,
+	"./ms": 147,
+	"./ms-my": 148,
+	"./ms-my.js": 148,
+	"./ms.js": 147,
+	"./mt": 149,
+	"./mt.js": 149,
+	"./my": 150,
+	"./my.js": 150,
+	"./nb": 151,
+	"./nb.js": 151,
+	"./ne": 152,
+	"./ne.js": 152,
+	"./nl": 153,
+	"./nl-be": 154,
+	"./nl-be.js": 154,
+	"./nl.js": 153,
+	"./nn": 155,
+	"./nn.js": 155,
+	"./pa-in": 156,
+	"./pa-in.js": 156,
+	"./pl": 157,
+	"./pl.js": 157,
+	"./pt": 158,
+	"./pt-br": 159,
+	"./pt-br.js": 159,
+	"./pt.js": 158,
+	"./ro": 160,
+	"./ro.js": 160,
+	"./ru": 161,
+	"./ru.js": 161,
+	"./sd": 162,
+	"./sd.js": 162,
+	"./se": 163,
+	"./se.js": 163,
+	"./si": 164,
+	"./si.js": 164,
+	"./sk": 165,
+	"./sk.js": 165,
+	"./sl": 166,
+	"./sl.js": 166,
+	"./sq": 167,
+	"./sq.js": 167,
+	"./sr": 168,
+	"./sr-cyrl": 169,
+	"./sr-cyrl.js": 169,
+	"./sr.js": 168,
+	"./ss": 170,
+	"./ss.js": 170,
+	"./sv": 171,
+	"./sv.js": 171,
+	"./sw": 172,
+	"./sw.js": 172,
+	"./ta": 173,
+	"./ta.js": 173,
+	"./te": 174,
+	"./te.js": 174,
+	"./tet": 175,
+	"./tet.js": 175,
+	"./th": 176,
+	"./th.js": 176,
+	"./tl-ph": 177,
+	"./tl-ph.js": 177,
+	"./tlh": 178,
+	"./tlh.js": 178,
+	"./tr": 179,
+	"./tr.js": 179,
+	"./tzl": 180,
+	"./tzl.js": 180,
+	"./tzm": 181,
+	"./tzm-latn": 182,
+	"./tzm-latn.js": 182,
+	"./tzm.js": 181,
+	"./uk": 183,
+	"./uk.js": 183,
+	"./ur": 184,
+	"./ur.js": 184,
+	"./uz": 185,
+	"./uz-latn": 186,
+	"./uz-latn.js": 186,
+	"./uz.js": 185,
+	"./vi": 187,
+	"./vi.js": 187,
+	"./x-pseudo": 188,
+	"./x-pseudo.js": 188,
+	"./yo": 189,
+	"./yo.js": 189,
+	"./zh-cn": 190,
+	"./zh-cn.js": 190,
+	"./zh-hk": 191,
+	"./zh-hk.js": 191,
+	"./zh-tw": 192,
+	"./zh-tw.js": 192
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -58470,15 +59097,15 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 265;
+webpackContext.id = 263;
 
 /***/ }),
+/* 264 */,
+/* 265 */,
 /* 266 */,
 /* 267 */,
 /* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -58958,7 +59585,7 @@ webpackContext.id = 265;
 
 
 /***/ }),
-/* 272 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58973,7 +59600,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file v3/components/Breadcrumbs.es6
+ * @file v3/components/Breadcrumbs.js
  * @author leeight
  */
 
@@ -58993,7 +59620,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 273 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59022,7 +59649,7 @@ var _Icon2 = _interopRequireDefault(_Icon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-button-menu'); /**
-                                               * @file components/ButtonMenu.es6
+                                               * @file components/ButtonMenu.js
                                                * @author leeight
                                                */
 
@@ -59075,7 +59702,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 274 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59099,7 +59726,7 @@ var cx = (0, _util.create)('ui-buybucket');
 
 /* eslint-disable */
 /**
- * @file BuyBucket.es6
+ * @file BuyBucket.js
  * @author leeight
  */
 
@@ -59135,7 +59762,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 275 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59305,7 +59932,7 @@ setFrameWait(frameHandler);
 exports.default = ResizeObserver;
 
 /***/ }),
-/* 276 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59317,11 +59944,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _infI18n = __webpack_require__(14);
+var _infI18n = __webpack_require__(15);
 
 var _infI18n2 = _interopRequireDefault(_infI18n);
 
-var _clipboard = __webpack_require__(277);
+var _clipboard = __webpack_require__(275);
 
 var _clipboard2 = _interopRequireDefault(_clipboard);
 
@@ -59330,7 +59957,7 @@ var _util = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file Clipboard.es6
+ * @file Clipboard.js
  * @author leeight
  */
 
@@ -59410,12 +60037,12 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 277 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(278), __webpack_require__(280), __webpack_require__(281)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(276), __webpack_require__(278), __webpack_require__(279)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -59625,12 +60252,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 278 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(279)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(277)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -59862,7 +60489,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 279 */
+/* 277 */
 /***/ (function(module, exports) {
 
 function select(element) {
@@ -59911,7 +60538,7 @@ module.exports = select;
 
 
 /***/ }),
-/* 280 */
+/* 278 */
 /***/ (function(module, exports) {
 
 function E () {
@@ -59983,11 +60610,11 @@ module.exports = E;
 
 
 /***/ }),
-/* 281 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var is = __webpack_require__(282);
-var delegate = __webpack_require__(283);
+var is = __webpack_require__(280);
+var delegate = __webpack_require__(281);
 
 /**
  * Validates all params and calls the right
@@ -60084,7 +60711,7 @@ module.exports = listen;
 
 
 /***/ }),
-/* 282 */
+/* 280 */
 /***/ (function(module, exports) {
 
 /**
@@ -60139,10 +60766,10 @@ exports.fn = function(value) {
 
 
 /***/ }),
-/* 283 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var closest = __webpack_require__(284);
+var closest = __webpack_require__(282);
 
 /**
  * Delegates event to a selector.
@@ -60223,7 +60850,7 @@ module.exports = delegate;
 
 
 /***/ }),
-/* 284 */
+/* 282 */
 /***/ (function(module, exports) {
 
 var DOCUMENT_NODE_TYPE = 9;
@@ -60262,7 +60889,7 @@ module.exports = closest;
 
 
 /***/ }),
-/* 285 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60275,7 +60902,7 @@ Object.defineProperty(exports, "__esModule", {
 var _san = __webpack_require__(0);
 
 var template = '<template></template>'; /**
-                                         * @file Filter.es6
+                                         * @file Filter.js
                                          * @author leeight
                                          */
 
@@ -60284,7 +60911,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 286 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60298,7 +60925,7 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -60306,7 +60933,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Table = __webpack_require__(213);
+var _Table = __webpack_require__(205);
 
 var _Table2 = _interopRequireDefault(_Table);
 
@@ -60318,7 +60945,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * 实现方案是两个 Table 重叠起来
- * @file components/FrozenColumnTable.es6
+ * @file components/FrozenColumnTable.js
  * @author leeight
  */
 var cx = (0, _util.create)('ui-frozen-column-table');
@@ -60555,7 +61182,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 287 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60570,7 +61197,7 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -60582,7 +61209,7 @@ var _Loading = __webpack_require__(11);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _TableFilter = __webpack_require__(214);
+var _TableFilter = __webpack_require__(206);
 
 var _TableFilter2 = _interopRequireDefault(_TableFilter);
 
@@ -60591,7 +61218,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } /**
-                                                                                                                                                                                                     * @file san-xui/x/components/asTable.es6
+                                                                                                                                                                                                     * @file san-xui/x/components/asTable.js
                                                                                                                                                                                                      * @author leeight
                                                                                                                                                                                                      */
 
@@ -60622,7 +61249,7 @@ function asTable(columns) {
     : _lodash2.default.map(columns, buildTableHead).join('\n');
 
     /* eslint-disable */
-    var template = '<div class="{{mainClass}}" style="{{mainStyle}}" on-scroll="onScroll($event)">\n        <table cellpadding="0" cellspacing="0" width="{{tableWidth}}">\n            <thead class="' + cx('head') + '">\n                <tr>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="select === \'multi\'">\n                        <div class="' + cx('hcell-text') + '">\n                            <input disabled="{{disabledSelectAll || loading}}"\n                                checked="{=selectAll=}"\n                                on-click="onSelectAllClicked($event)"\n                                value="all"\n                                type="checkbox"\n                                class="' + cx('select-all') + '" />\n                        </div>\n                    </th>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="select === \'single\'">\n                    </th>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="hasSubrow">\n                    </th>\n                    ' + tableHeadsTemplate + '\n                </tr>\n            </thead>\n            <tbody class="' + cx('body') + '">\n                <tr s-if="error">\n                    <td colSpan="{{columnCount}}" class="' + cx('error') + '">\n                        <slot name="error">{{error}}</slot>\n                    </td>\n                </tr>\n                <tr s-elif="!loading && !datasource.length">\n                    <td colSpan="{{columnCount}}" class="' + cx('empty') + '">\n                        <slot name="empty">{{emptyText}}</slot>\n                    </td>\n                </tr>\n                <template s-else s-for="item, rowIndex in datasource">\n                <tr class="{{item | rowClass(rowIndex)}}"\n                    on-mouseenter="onEnterRow(item, rowIndex)"\n                    on-mouseleave="onLeaveRow(item, rowIndex)">\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="select === \'multi\'">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <input disabled="{=item.xui__disabled=}"\n                                checked="{=selectedIndex=}"\n                                value="{{rowIndex}}"\n                                type="checkbox"\n                                class="' + cx('multi-select') + '" />\n                        </div>\n                    </td>\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="select === \'single\'">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <input disabled="{=item.xui__disabled=}"\n                                checked="{=selectedIndex=}"\n                                value="{{rowIndex}}"\n                                name="{{radioName}}"\n                                type="radio"\n                                class="' + cx('single-select') + '" />\n                        </div>\n                    </td>\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="hasSubrow">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <label class="' + cx('subrow-label') + ' {{item.xui__expanded ? \'open\' : \'close\'}} iconfont icon-downarrow"\n                                on-click="toggleSubrow(rowIndex)"></label>\n                        </div>\n                    </td>\n                    ' + tableCellsTemplate + '\n                </tr>\n                <tr s-if="item.xui__expanded">\n                    <td colspan="{{columnCount}}">\n                        <div class="' + cx('subrow-wrapper') + '">\n                            <slot\n                                name="sub-{{item.name}}"\n                                var-row="item"\n                                var-subrow="item.subrow"\n                                var-rowIndex="rowIndex"\n                            >\n                                {{row | raw}}\n                            </slot>\n                        </div>\n                    </td>\n                </tr>\n                </template>\n            </tbody>\n        </table>\n        <div class="' + cx('loading') + '" s-if="loading"><slot name="loading"><ui-loading /></slot></div>\n    </div>';
+    var template = '<div class="{{mainClass}}" style="{{mainStyle}}" on-scroll="onScroll($event)">\n        <table cellpadding="0" cellspacing="0" width="{{tableWidth}}">\n            <thead class="' + cx('head') + '">\n                <tr>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="select === \'multi\'">\n                        <div class="' + cx('hcell-text') + '">\n                            <input disabled="{{disabledSelectAll || loading}}"\n                                checked="{=selectAll=}"\n                                on-click="onSelectAllClicked($event)"\n                                value="all"\n                                type="checkbox"\n                                class="' + cx('select-all') + '" />\n                        </div>\n                    </th>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="select === \'single\'">\n                    </th>\n                    <th class="' + cx('hcell', 'hcell-sel') + '" s-if="hasSubrow">\n                    </th>\n                    ' + tableHeadsTemplate + '\n                </tr>\n            </thead>\n            <tbody class="' + cx('body') + '">\n                <tr s-if="error">\n                    <td colSpan="{{columnCount}}" class="' + cx('error') + '">\n                        <slot name="error">{{error | raw}}</slot>\n                    </td>\n                </tr>\n                <tr s-elif="!loading && !datasource.length">\n                    <td colSpan="{{columnCount}}" class="' + cx('empty') + '">\n                        <slot name="empty">{{emptyText}}</slot>\n                    </td>\n                </tr>\n                <template s-else s-for="item, rowIndex in datasource">\n                <tr class="{{item | rowClass(rowIndex)}}"\n                    on-mouseenter="onEnterRow(item, rowIndex)"\n                    on-mouseleave="onLeaveRow(item, rowIndex)"\n                    data-row-index="{{rowIndex}}">\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="select === \'multi\'">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <input disabled="{=item.xui__disabled=}"\n                                checked="{=selectedIndex=}"\n                                value="{{rowIndex}}"\n                                type="checkbox"\n                                class="' + cx('multi-select') + '" />\n                        </div>\n                    </td>\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="select === \'single\'">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <input disabled="{=item.xui__disabled=}"\n                                checked="{=selectedIndex=}"\n                                value="{{rowIndex}}"\n                                name="{{radioName}}"\n                                type="radio"\n                                class="' + cx('single-select') + '" />\n                        </div>\n                    </td>\n                    <td class="' + cx('cell', 'cell-sel') + '" s-if="hasSubrow">\n                        <div class="' + cx('cell-text', 'cell-sel') + '">\n                            <label class="' + cx('subrow-label') + ' {{item.xui__expanded ? \'open\' : \'close\'}} iconfont icon-downarrow"\n                                on-click="toggleSubrow(rowIndex)"></label>\n                        </div>\n                    </td>\n                    ' + tableCellsTemplate + '\n                </tr>\n                <tr s-if="item.xui__expanded">\n                    <td colspan="{{columnCount}}">\n                        <div class="' + cx('subrow-wrapper') + '">\n                            <slot\n                                name="sub-{{item.name}}"\n                                var-row="item"\n                                var-subrow="item.subrow"\n                                var-rowIndex="rowIndex"\n                            >\n                                {{row | raw}}\n                            </slot>\n                        </div>\n                    </td>\n                </tr>\n                </template>\n            </tbody>\n        </table>\n        <div class="' + cx('loading') + '" s-if="loading"><slot name="loading"><ui-loading /></slot></div>\n    </div>';
     /* eslint-enable */
 
     return (0, _san.defineComponent)({
@@ -60665,7 +61292,7 @@ function asTable(columns) {
                 }
                 var selectedIndex = this.data.get('selectedIndex');
                 var datasource = this.data.get('datasource');
-                return selectedIndex && selectedIndex.length === datasource.length ? ['all'] : [];
+                return selectedIndex && selectedIndex.length > 0 && selectedIndex.length === datasource.length ? ['all'] : [];
             },
             selectedItems: function selectedItems() {
                 var datasource = this.data.get('datasource');
@@ -60836,14 +61463,15 @@ function asTable(columns) {
                 });
             }
             (0, _jquery2.default)(this.el).on('click', 'a[data-command]', function (e) {
-                // 因为有 head 的存在，rowIndex 是从 1开始的
                 var type = (0, _jquery2.default)(e.currentTarget).data('command');
                 if (!type) {
                     return;
                 }
-
-                var rowIndex = (0, _jquery2.default)(e.target).parents('tr').prop('rowIndex');
-                var payload = _this2.data.get('datasource[' + (rowIndex - 1) + ']');
+                // 这个rowIndex从0开始
+                var rowIndex = (0, _jquery2.default)(e.target).parents('tr').data('rowIndex');
+                var payload = _this2.data.get('datasource[' + rowIndex + ']');
+                // zhangzhe 2018-03-14 为了兼容之前这里的rowIndex从1开始，所以依旧加了1
+                rowIndex++;
                 if (payload) {
                     _this2.fire('command', { type: type, payload: payload, rowIndex: rowIndex, domEvent: e });
                 }
@@ -60856,7 +61484,7 @@ function asTable(columns) {
 }
 
 /***/ }),
-/* 288 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60874,12 +61502,12 @@ exports.default = (0, _san.defineComponent)({
         this.fire('click', e);
     }
 }); /**
-     * @file Ghost.es6
+     * @file Ghost.js
      * @author leeight
      */
 
 /***/ }),
-/* 289 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60889,11 +61517,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -60907,7 +61535,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import {createClient, errorHandler} from './helper';
 
 var template = '<a on-click="switchTo($event)"\n    target="{{target}}"\n    title="{{title}}"\n    href="{{href}}"><slot/></a>'; /**
-                                                                                                                                   * @file components/Go.es6
+                                                                                                                                   * @file components/Go.js
                                                                                                                                    * @author leeight
                                                                                                                                    */
 
@@ -60973,7 +61601,7 @@ Go.setSwitchHandler = function (handler) {
 exports.default = Go; // eslint-disable-line
 
 /***/ }),
-/* 290 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60992,7 +61620,7 @@ var _Loading2 = _interopRequireDefault(_Loading);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file san-xui/x/components/InfiniteScroll.es6
+ * @file san-xui/x/components/InfiniteScroll.js
  * @author xuli07
  */
 
@@ -61044,7 +61672,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 291 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61053,6 +61681,10 @@ exports.default = (0, _san.defineComponent)({
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _san = __webpack_require__(0);
 
@@ -61068,14 +61700,14 @@ var _Button2 = _interopRequireDefault(_Button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @file components/InstantEditor.es6
- * @author leeight
- */
-
 var cx = (0, _util.create)('ui-instanteditor');
 
 /* eslint-disable */
+/**
+ * @file components/InstantEditor.js
+ * @author leeight
+ */
+
 var template = '<div on-click="toggleLayer($event)" class="{{mainClass}}">\n    <span s-if="label" class="' + cx('text') + '">{{label|raw}}</span>\n    <ui-layer\n        follow-scroll="{{false}}"\n        auto-hide="{{true}}"\n        open="{=active=}"\n        offset-left="{{layerOffsetLeft}}"\n        layer-style="{{position}}"\n        s-ref="layer"\n    >\n        <div class="' + cx('layer') + ' ' + cx('layer-x') + '" style="{{layerStyle}}">\n            <div class="' + cx('input-field') + '">\n                <slot />\n                <div class="' + cx('error') + '" s-if="error">{{error}}</div>\n            </div>\n            <div class="' + cx('help') + '" s-if="help">{{help | raw}}</div>\n            <div class="' + cx('btns') + '">\n                <ui-button disabled="{{submitDisabled}}" on-click="onSubmit" skin="primary">{{submiting ? \'\u63D0\u4EA4\u4E2D...\' : \'\u786E\u5B9A\'}}</ui-button>\n                <ui-button on-click="toggleLayer">\u53D6\u6D88</ui-button>\n            </div>\n        </div>\n    </ui-layer>\n</div>';
 /* eslint-enable */
 
@@ -61120,7 +61752,10 @@ exports.default = (0, _san.defineComponent)({
     getInputComp: function getInputComp() {
         try {
             var slots = this.slot();
-            return slots[0].children[0];
+            var children = _lodash2.default.filter(slots[0].children, function (n) {
+                return n.nodeType !== _san.NodeType.TEXT;
+            });
+            return children[0];
         } catch (ex) {
             return null;
         }
@@ -61141,7 +61776,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 292 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/big.js/LICENCE */
@@ -62294,7 +62929,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/bi
 
 
 /***/ }),
-/* 293 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62309,7 +62944,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file Pager.es6
+ * @file Pager.js
  * @author leeight
  */
 
@@ -62409,7 +63044,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 294 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62424,7 +63059,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file Progress.es6
+ * @file Progress.js
  * @author leeight
  */
 
@@ -62478,7 +63113,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 295 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62498,11 +63133,11 @@ var cx = (0, _util.create)('ui-radiobox');
 
 /* eslint-disable */
 /**
- * @file components/RadioBox.es6
+ * @file components/RadioBox.js
  * @author leeight
  */
 
-var template = '<div class="{{mainClass}}">\n    <label>\n        <input\n            type="radio"\n            checked="{=checked=}"\n            on-change="onChange($event)"\n            disabled="{{disabled}}" />\n        <span s-if="title">{{title}}</span>\n    </label>\n</div>';
+var template = '<div class="{{mainClass}}">\n    <label>\n        <input\n            type="radio"\n            checked="{=checked=}"\n            name="{{name}}"\n            on-change="onChange($event)"\n            disabled="{{disabled}}" />\n        <span s-if="title">{{title}}</span>\n    </label>\n</div>';
 /* eslint-enable */
 
 var RadioBox = (0, _san.defineComponent)({
@@ -62510,13 +63145,33 @@ var RadioBox = (0, _san.defineComponent)({
     initData: function initData() {
         return {
             checked: false,
+            name: '',
             title: null
         };
     },
 
     dataTypes: {
+        /**
+         * 设置或者获取控件的选中状态
+         *
+         * @bindx
+         * @default false
+         */
         checked: _san.DataTypes.bool,
+
+        /**
+         * 单选按钮的 name
+         */
+        name: _san.DataTypes.string,
+
+        /**
+         * 控件的禁用状态
+         */
         disabled: _san.DataTypes.bool,
+
+        /**
+         * 控件的文案
+         */
         title: _san.DataTypes.string
     },
     computed: {
@@ -62532,7 +63187,7 @@ var RadioBox = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(RadioBox);
 
 /***/ }),
-/* 296 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62542,14 +63197,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
- * @file components/data/regions.es6
+ * @file components/data/regions.js
  * @author Guoyao Wu(wuguoyao@baidu.com)
  */
 
 exports.default = [{ value: 110000, text: '北京市', children: [{ value: 110100, text: '市辖区', children: [{ value: 110101, text: '东城区' }, { value: 110102, text: '西城区' }, { value: 110103, text: '崇文区' }, { value: 110104, text: '宣武区' }, { value: 110105, text: '朝阳区' }, { value: 110106, text: '丰台区' }, { value: 110107, text: '石景山区' }, { value: 110108, text: '海淀区' }, { value: 110109, text: '门头沟区' }, { value: 110111, text: '房山区' }, { value: 110112, text: '通州区' }, { value: 110113, text: '顺义区' }, { value: 110114, text: '昌平区' }, { value: 110115, text: '大兴区' }, { value: 110116, text: '怀柔区' }, { value: 110117, text: '平谷区' }] }, { value: 110200, text: '县', children: [{ value: 110228, text: '密云县' }, { value: 110229, text: '延庆县' }] }] }, { value: 120000, text: '天津市', children: [{ value: 120100, text: '市辖区', children: [{ value: 120101, text: '和平区' }, { value: 120102, text: '河东区' }, { value: 120103, text: '河西区' }, { value: 120104, text: '南开区' }, { value: 120105, text: '河北区' }, { value: 120106, text: '红桥区' }, { value: 120110, text: '东丽区' }, { value: 120111, text: '西青区' }, { value: 120112, text: '津南区' }, { value: 120113, text: '北辰区' }, { value: 120114, text: '武清区' }, { value: 120115, text: '宝坻区' }, { value: 120116, text: '滨海新区' }] }, { value: 120200, text: '县', children: [{ value: 120221, text: '宁河县' }, { value: 120223, text: '静海县' }, { value: 120225, text: '蓟县' }] }] }, { value: 130000, text: '河北省', children: [{ value: 130100, text: '石家庄市', children: [{ value: 130101, text: '市辖区' }, { value: 130102, text: '长安区' }, { value: 130103, text: '桥东区' }, { value: 130104, text: '桥西区' }, { value: 130105, text: '新华区' }, { value: 130107, text: '井陉矿区' }, { value: 130108, text: '裕华区' }, { value: 130121, text: '井陉县' }, { value: 130123, text: '正定县' }, { value: 130124, text: '栾城县' }, { value: 130125, text: '行唐县' }, { value: 130126, text: '灵寿县' }, { value: 130127, text: '高邑县' }, { value: 130128, text: '深泽县' }, { value: 130129, text: '赞皇县' }, { value: 130130, text: '无极县' }, { value: 130131, text: '平山县' }, { value: 130132, text: '元氏县' }, { value: 130133, text: '赵县' }, { value: 130181, text: '辛集市' }, { value: 130182, text: '藁城市' }, { value: 130183, text: '晋州市' }, { value: 130184, text: '新乐市' }, { value: 130185, text: '鹿泉市' }] }, { value: 130200, text: '唐山市', children: [{ value: 130201, text: '市辖区' }, { value: 130202, text: '路南区' }, { value: 130203, text: '路北区' }, { value: 130204, text: '古冶区' }, { value: 130205, text: '开平区' }, { value: 130207, text: '丰南区' }, { value: 130208, text: '丰润区' }, { value: 130223, text: '滦县' }, { value: 130224, text: '滦南县' }, { value: 130225, text: '乐亭县' }, { value: 130227, text: '迁西县' }, { value: 130229, text: '玉田县' }, { value: 130230, text: '唐海县' }, { value: 130281, text: '遵化市' }, { value: 130283, text: '迁安市' }] }, { value: 130300, text: '秦皇岛市', children: [{ value: 130301, text: '市辖区' }, { value: 130302, text: '海港区' }, { value: 130303, text: '山海关区' }, { value: 130304, text: '北戴河区' }, { value: 130321, text: '青龙满族自治县' }, { value: 130322, text: '昌黎县' }, { value: 130323, text: '抚宁县' }, { value: 130324, text: '卢龙县' }] }, { value: 130400, text: '邯郸市', children: [{ value: 130401, text: '市辖区' }, { value: 130402, text: '邯山区' }, { value: 130403, text: '丛台区' }, { value: 130404, text: '复兴区' }, { value: 130406, text: '峰峰矿区' }, { value: 130421, text: '邯郸县' }, { value: 130423, text: '临漳县' }, { value: 130424, text: '成安县' }, { value: 130425, text: '大名县' }, { value: 130426, text: '涉县' }, { value: 130427, text: '磁县' }, { value: 130428, text: '肥乡县' }, { value: 130429, text: '永年县' }, { value: 130430, text: '邱县' }, { value: 130431, text: '鸡泽县' }, { value: 130432, text: '广平县' }, { value: 130433, text: '馆陶县' }, { value: 130434, text: '魏县' }, { value: 130435, text: '曲周县' }, { value: 130481, text: '武安市' }] }, { value: 130500, text: '邢台市', children: [{ value: 130501, text: '市辖区' }, { value: 130502, text: '桥东区' }, { value: 130503, text: '桥西区' }, { value: 130521, text: '邢台县' }, { value: 130522, text: '临城县' }, { value: 130523, text: '内丘县' }, { value: 130524, text: '柏乡县' }, { value: 130525, text: '隆尧县' }, { value: 130526, text: '任县' }, { value: 130527, text: '南和县' }, { value: 130528, text: '宁晋县' }, { value: 130529, text: '巨鹿县' }, { value: 130530, text: '新河县' }, { value: 130531, text: '广宗县' }, { value: 130532, text: '平乡县' }, { value: 130533, text: '威县' }, { value: 130534, text: '清河县' }, { value: 130535, text: '临西县' }, { value: 130581, text: '南宫市' }, { value: 130582, text: '沙河市' }] }, { value: 130600, text: '保定市', children: [{ value: 130601, text: '市辖区' }, { value: 130602, text: '新市区' }, { value: 130603, text: '北市区' }, { value: 130604, text: '南市区' }, { value: 130621, text: '满城县' }, { value: 130622, text: '清苑县' }, { value: 130623, text: '涞水县' }, { value: 130624, text: '阜平县' }, { value: 130625, text: '徐水县' }, { value: 130626, text: '定兴县' }, { value: 130627, text: '唐县' }, { value: 130628, text: '高阳县' }, { value: 130629, text: '容城县' }, { value: 130630, text: '涞源县' }, { value: 130631, text: '望都县' }, { value: 130632, text: '安新县' }, { value: 130633, text: '易县' }, { value: 130634, text: '曲阳县' }, { value: 130635, text: '蠡县' }, { value: 130636, text: '顺平县' }, { value: 130637, text: '博野县' }, { value: 130638, text: '雄县' }, { value: 130681, text: '涿州市' }, { value: 130682, text: '定州市' }, { value: 130683, text: '安国市' }, { value: 130684, text: '高碑店市' }] }, { value: 130700, text: '张家口市', children: [{ value: 130701, text: '市辖区' }, { value: 130702, text: '桥东区' }, { value: 130703, text: '桥西区' }, { value: 130705, text: '宣化区' }, { value: 130706, text: '下花园区' }, { value: 130721, text: '宣化县' }, { value: 130722, text: '张北县' }, { value: 130723, text: '康保县' }, { value: 130724, text: '沽源县' }, { value: 130725, text: '尚义县' }, { value: 130726, text: '蔚县' }, { value: 130727, text: '阳原县' }, { value: 130728, text: '怀安县' }, { value: 130729, text: '万全县' }, { value: 130730, text: '怀来县' }, { value: 130731, text: '涿鹿县' }, { value: 130732, text: '赤城县' }, { value: 130733, text: '崇礼县' }] }, { value: 130800, text: '承德市', children: [{ value: 130801, text: '市辖区' }, { value: 130802, text: '双桥区' }, { value: 130803, text: '双滦区' }, { value: 130804, text: '鹰手营子矿区' }, { value: 130821, text: '承德县' }, { value: 130822, text: '兴隆县' }, { value: 130823, text: '平泉县' }, { value: 130824, text: '滦平县' }, { value: 130825, text: '隆化县' }, { value: 130826, text: '丰宁满族自治县' }, { value: 130827, text: '宽城满族自治县' }, { value: 130828, text: '围场满族蒙古族自治县' }] }, { value: 130900, text: '沧州市', children: [{ value: 130901, text: '市辖区' }, { value: 130902, text: '新华区' }, { value: 130903, text: '运河区' }, { value: 130921, text: '沧县' }, { value: 130922, text: '青县' }, { value: 130923, text: '东光县' }, { value: 130924, text: '海兴县' }, { value: 130925, text: '盐山县' }, { value: 130926, text: '肃宁县' }, { value: 130927, text: '南皮县' }, { value: 130928, text: '吴桥县' }, { value: 130929, text: '献县' }, { value: 130930, text: '孟村回族自治县' }, { value: 130981, text: '泊头市' }, { value: 130982, text: '任丘市' }, { value: 130983, text: '黄骅市' }, { value: 130984, text: '河间市' }] }, { value: 131000, text: '廊坊市', children: [{ value: 131001, text: '市辖区' }, { value: 131002, text: '安次区' }, { value: 131003, text: '广阳区' }, { value: 131022, text: '固安县' }, { value: 131023, text: '永清县' }, { value: 131024, text: '香河县' }, { value: 131025, text: '大城县' }, { value: 131026, text: '文安县' }, { value: 131028, text: '大厂回族自治县' }, { value: 131081, text: '霸州市' }, { value: 131082, text: '三河市' }] }, { value: 131100, text: '衡水市', children: [{ value: 131101, text: '市辖区' }, { value: 131102, text: '桃城区' }, { value: 131121, text: '枣强县' }, { value: 131122, text: '武邑县' }, { value: 131123, text: '武强县' }, { value: 131124, text: '饶阳县' }, { value: 131125, text: '安平县' }, { value: 131126, text: '故城县' }, { value: 131127, text: '景县' }, { value: 131128, text: '阜城县' }, { value: 131181, text: '冀州市' }, { value: 131182, text: '深州市' }] }] }, { value: 140000, text: '山西省', children: [{ value: 140100, text: '太原市', children: [{ value: 140101, text: '市辖区' }, { value: 140105, text: '小店区' }, { value: 140106, text: '迎泽区' }, { value: 140107, text: '杏花岭区' }, { value: 140108, text: '尖草坪区' }, { value: 140109, text: '万柏林区' }, { value: 140110, text: '晋源区' }, { value: 140121, text: '清徐县' }, { value: 140122, text: '阳曲县' }, { value: 140123, text: '娄烦县' }, { value: 140181, text: '古交市' }] }, { value: 140200, text: '大同市', children: [{ value: 140201, text: '市辖区' }, { value: 140202, text: '城区' }, { value: 140203, text: '矿区' }, { value: 140211, text: '南郊区' }, { value: 140212, text: '新荣区' }, { value: 140221, text: '阳高县' }, { value: 140222, text: '天镇县' }, { value: 140223, text: '广灵县' }, { value: 140224, text: '灵丘县' }, { value: 140225, text: '浑源县' }, { value: 140226, text: '左云县' }, { value: 140227, text: '大同县' }] }, { value: 140300, text: '阳泉市', children: [{ value: 140301, text: '市辖区' }, { value: 140302, text: '城区' }, { value: 140303, text: '矿区' }, { value: 140311, text: '郊区' }, { value: 140321, text: '平定县' }, { value: 140322, text: '盂县' }] }, { value: 140400, text: '长治市', children: [{ value: 140401, text: '市辖区' }, { value: 140402, text: '城区' }, { value: 140411, text: '郊区' }, { value: 140421, text: '长治县' }, { value: 140423, text: '襄垣县' }, { value: 140424, text: '屯留县' }, { value: 140425, text: '平顺县' }, { value: 140426, text: '黎城县' }, { value: 140427, text: '壶关县' }, { value: 140428, text: '长子县' }, { value: 140429, text: '武乡县' }, { value: 140430, text: '沁县' }, { value: 140431, text: '沁源县' }, { value: 140481, text: '潞城市' }] }, { value: 140500, text: '晋城市', children: [{ value: 140501, text: '市辖区' }, { value: 140502, text: '城区' }, { value: 140521, text: '沁水县' }, { value: 140522, text: '阳城县' }, { value: 140524, text: '陵川县' }, { value: 140525, text: '泽州县' }, { value: 140581, text: '高平市' }] }, { value: 140600, text: '朔州市', children: [{ value: 140601, text: '市辖区' }, { value: 140602, text: '朔城区' }, { value: 140603, text: '平鲁区' }, { value: 140621, text: '山阴县' }, { value: 140622, text: '应县' }, { value: 140623, text: '右玉县' }, { value: 140624, text: '怀仁县' }] }, { value: 140700, text: '晋中市', children: [{ value: 140701, text: '市辖区' }, { value: 140702, text: '榆次区' }, { value: 140721, text: '榆社县' }, { value: 140722, text: '左权县' }, { value: 140723, text: '和顺县' }, { value: 140724, text: '昔阳县' }, { value: 140725, text: '寿阳县' }, { value: 140726, text: '太谷县' }, { value: 140727, text: '祁县' }, { value: 140728, text: '平遥县' }, { value: 140729, text: '灵石县' }, { value: 140781, text: '介休市' }] }, { value: 140800, text: '运城市', children: [{ value: 140801, text: '市辖区' }, { value: 140802, text: '盐湖区' }, { value: 140821, text: '临猗县' }, { value: 140822, text: '万荣县' }, { value: 140823, text: '闻喜县' }, { value: 140824, text: '稷山县' }, { value: 140825, text: '新绛县' }, { value: 140826, text: '绛县' }, { value: 140827, text: '垣曲县' }, { value: 140828, text: '夏县' }, { value: 140829, text: '平陆县' }, { value: 140830, text: '芮城县' }, { value: 140881, text: '永济市' }, { value: 140882, text: '河津市' }] }, { value: 140900, text: '忻州市', children: [{ value: 140901, text: '市辖区' }, { value: 140902, text: '忻府区' }, { value: 140921, text: '定襄县' }, { value: 140922, text: '五台县' }, { value: 140923, text: '代县' }, { value: 140924, text: '繁峙县' }, { value: 140925, text: '宁武县' }, { value: 140926, text: '静乐县' }, { value: 140927, text: '神池县' }, { value: 140928, text: '五寨县' }, { value: 140929, text: '岢岚县' }, { value: 140930, text: '河曲县' }, { value: 140931, text: '保德县' }, { value: 140932, text: '偏关县' }, { value: 140981, text: '原平市' }] }, { value: 141000, text: '临汾市', children: [{ value: 141001, text: '市辖区' }, { value: 141002, text: '尧都区' }, { value: 141021, text: '曲沃县' }, { value: 141022, text: '翼城县' }, { value: 141023, text: '襄汾县' }, { value: 141024, text: '洪洞县' }, { value: 141025, text: '古县' }, { value: 141026, text: '安泽县' }, { value: 141027, text: '浮山县' }, { value: 141028, text: '吉县' }, { value: 141029, text: '乡宁县' }, { value: 141030, text: '大宁县' }, { value: 141031, text: '隰县' }, { value: 141032, text: '永和县' }, { value: 141033, text: '蒲县' }, { value: 141034, text: '汾西县' }, { value: 141081, text: '侯马市' }, { value: 141082, text: '霍州市' }] }, { value: 141100, text: '吕梁市', children: [{ value: 141101, text: '市辖区' }, { value: 141102, text: '离石区' }, { value: 141121, text: '文水县' }, { value: 141122, text: '交城县' }, { value: 141123, text: '兴县' }, { value: 141124, text: '临县' }, { value: 141125, text: '柳林县' }, { value: 141126, text: '石楼县' }, { value: 141127, text: '岚县' }, { value: 141128, text: '方山县' }, { value: 141129, text: '中阳县' }, { value: 141130, text: '交口县' }, { value: 141181, text: '孝义市' }, { value: 141182, text: '汾阳市' }] }] }, { value: 150000, text: '内蒙古自治区', children: [{ value: 150100, text: '呼和浩特市', children: [{ value: 150101, text: '市辖区' }, { value: 150102, text: '新城区' }, { value: 150103, text: '回民区' }, { value: 150104, text: '玉泉区' }, { value: 150105, text: '赛罕区' }, { value: 150121, text: '土默特左旗' }, { value: 150122, text: '托克托县' }, { value: 150123, text: '和林格尔县' }, { value: 150124, text: '清水河县' }, { value: 150125, text: '武川县' }] }, { value: 150200, text: '包头市', children: [{ value: 150201, text: '市辖区' }, { value: 150202, text: '东河区' }, { value: 150203, text: '昆都仑区' }, { value: 150204, text: '青山区' }, { value: 150205, text: '石拐区' }, { value: 150206, text: '白云矿区' }, { value: 150207, text: '九原区' }, { value: 150221, text: '土默特右旗' }, { value: 150222, text: '固阳县' }, { value: 150223, text: '达尔罕茂明安联合旗' }] }, { value: 150300, text: '乌海市', children: [{ value: 150301, text: '市辖区' }, { value: 150302, text: '海勃湾区' }, { value: 150303, text: '海南区' }, { value: 150304, text: '乌达区' }] }, { value: 150400, text: '赤峰市', children: [{ value: 150401, text: '市辖区' }, { value: 150402, text: '红山区' }, { value: 150403, text: '元宝山区' }, { value: 150404, text: '松山区' }, { value: 150421, text: '阿鲁科尔沁旗' }, { value: 150422, text: '巴林左旗' }, { value: 150423, text: '巴林右旗' }, { value: 150424, text: '林西县' }, { value: 150425, text: '克什克腾旗' }, { value: 150426, text: '翁牛特旗' }, { value: 150428, text: '喀喇沁旗' }, { value: 150429, text: '宁城县' }, { value: 150430, text: '敖汉旗' }] }, { value: 150500, text: '通辽市', children: [{ value: 150501, text: '市辖区' }, { value: 150502, text: '科尔沁区' }, { value: 150521, text: '科尔沁左翼中旗' }, { value: 150522, text: '科尔沁左翼后旗' }, { value: 150523, text: '开鲁县' }, { value: 150524, text: '库伦旗' }, { value: 150525, text: '奈曼旗' }, { value: 150526, text: '扎鲁特旗' }, { value: 150581, text: '霍林郭勒市' }] }, { value: 150600, text: '鄂尔多斯市', children: [{ value: 150602, text: '东胜区' }, { value: 150621, text: '达拉特旗' }, { value: 150622, text: '准格尔旗' }, { value: 150623, text: '鄂托克前旗' }, { value: 150624, text: '鄂托克旗' }, { value: 150625, text: '杭锦旗' }, { value: 150626, text: '乌审旗' }, { value: 150627, text: '伊金霍洛旗' }] }, { value: 150700, text: '呼伦贝尔市', children: [{ value: 150701, text: '市辖区' }, { value: 150702, text: '海拉尔区' }, { value: 150721, text: '阿荣旗' }, { value: 150722, text: '莫力达瓦达斡尔族自治旗' }, { value: 150723, text: '鄂伦春自治旗' }, { value: 150724, text: '鄂温克族自治旗' }, { value: 150725, text: '陈巴尔虎旗' }, { value: 150726, text: '新巴尔虎左旗' }, { value: 150727, text: '新巴尔虎右旗' }, { value: 150781, text: '满洲里市' }, { value: 150782, text: '牙克石市' }, { value: 150783, text: '扎兰屯市' }, { value: 150784, text: '额尔古纳市' }, { value: 150785, text: '根河市' }] }, { value: 150800, text: '巴彦淖尔市', children: [{ value: 150801, text: '市辖区' }, { value: 150802, text: '临河区' }, { value: 150821, text: '五原县' }, { value: 150822, text: '磴口县' }, { value: 150823, text: '乌拉特前旗' }, { value: 150824, text: '乌拉特中旗' }, { value: 150825, text: '乌拉特后旗' }, { value: 150826, text: '杭锦后旗' }] }, { value: 150900, text: '乌兰察布市', children: [{ value: 150901, text: '市辖区' }, { value: 150902, text: '集宁区' }, { value: 150921, text: '卓资县' }, { value: 150922, text: '化德县' }, { value: 150923, text: '商都县' }, { value: 150924, text: '兴和县' }, { value: 150925, text: '凉城县' }, { value: 150926, text: '察哈尔右翼前旗' }, { value: 150927, text: '察哈尔右翼中旗' }, { value: 150928, text: '察哈尔右翼后旗' }, { value: 150929, text: '四子王旗' }, { value: 150981, text: '丰镇市' }] }, { value: 152200, text: '兴安盟', children: [{ value: 152201, text: '乌兰浩特市' }, { value: 152202, text: '阿尔山市' }, { value: 152221, text: '科尔沁右翼前旗' }, { value: 152222, text: '科尔沁右翼中旗' }, { value: 152223, text: '扎赉特旗' }, { value: 152224, text: '突泉县' }] }, { value: 152500, text: '锡林郭勒盟', children: [{ value: 152501, text: '二连浩特市' }, { value: 152502, text: '锡林浩特市' }, { value: 152522, text: '阿巴嘎旗' }, { value: 152523, text: '苏尼特左旗' }, { value: 152524, text: '苏尼特右旗' }, { value: 152525, text: '东乌珠穆沁旗' }, { value: 152526, text: '西乌珠穆沁旗' }, { value: 152527, text: '太仆寺旗' }, { value: 152528, text: '镶黄旗' }, { value: 152529, text: '正镶白旗' }, { value: 152530, text: '正蓝旗' }, { value: 152531, text: '多伦县' }] }, { value: 152900, text: '阿拉善盟', children: [{ value: 152921, text: '阿拉善左旗' }, { value: 152922, text: '阿拉善右旗' }, { value: 152923, text: '额济纳旗' }] }] }, { value: 210000, text: '辽宁省', children: [{ value: 210100, text: '沈阳市', children: [{ value: 210101, text: '市辖区' }, { value: 210102, text: '和平区' }, { value: 210103, text: '沈河区' }, { value: 210104, text: '大东区' }, { value: 210105, text: '皇姑区' }, { value: 210106, text: '铁西区' }, { value: 210111, text: '苏家屯区' }, { value: 210112, text: '东陵区' }, { value: 210113, text: '沈北新区' }, { value: 210114, text: '于洪区' }, { value: 210122, text: '辽中县' }, { value: 210123, text: '康平县' }, { value: 210124, text: '法库县' }, { value: 210181, text: '新民市' }] }, { value: 210200, text: '大连市', children: [{ value: 210201, text: '市辖区' }, { value: 210202, text: '中山区' }, { value: 210203, text: '西岗区' }, { value: 210204, text: '沙河口区' }, { value: 210211, text: '甘井子区' }, { value: 210212, text: '旅顺口区' }, { value: 210213, text: '金州区' }, { value: 210224, text: '长海县' }, { value: 210281, text: '瓦房店市' }, { value: 210282, text: '普兰店市' }, { value: 210283, text: '庄河市' }] }, { value: 210300, text: '鞍山市', children: [{ value: 210301, text: '市辖区' }, { value: 210302, text: '铁东区' }, { value: 210303, text: '铁西区' }, { value: 210304, text: '立山区' }, { value: 210311, text: '千山区' }, { value: 210321, text: '台安县' }, { value: 210323, text: '岫岩满族自治县' }, { value: 210381, text: '海城市' }] }, { value: 210400, text: '抚顺市', children: [{ value: 210401, text: '市辖区' }, { value: 210402, text: '新抚区' }, { value: 210403, text: '东洲区' }, { value: 210404, text: '望花区' }, { value: 210411, text: '顺城区' }, { value: 210421, text: '抚顺县' }, { value: 210422, text: '新宾满族自治县' }, { value: 210423, text: '清原满族自治县' }] }, { value: 210500, text: '本溪市', children: [{ value: 210501, text: '市辖区' }, { value: 210502, text: '平山区' }, { value: 210503, text: '溪湖区' }, { value: 210504, text: '明山区' }, { value: 210505, text: '南芬区' }, { value: 210521, text: '本溪满族自治县' }, { value: 210522, text: '桓仁满族自治县' }] }, { value: 210600, text: '丹东市', children: [{ value: 210601, text: '市辖区' }, { value: 210602, text: '元宝区' }, { value: 210603, text: '振兴区' }, { value: 210604, text: '振安区' }, { value: 210624, text: '宽甸满族自治县' }, { value: 210681, text: '东港市' }, { value: 210682, text: '凤城市' }] }, { value: 210700, text: '锦州市', children: [{ value: 210701, text: '市辖区' }, { value: 210702, text: '古塔区' }, { value: 210703, text: '凌河区' }, { value: 210711, text: '太和区' }, { value: 210726, text: '黑山县' }, { value: 210727, text: '义县' }, { value: 210781, text: '凌海市' }, { value: 210782, text: '北镇市' }] }, { value: 210800, text: '营口市', children: [{ value: 210801, text: '市辖区' }, { value: 210802, text: '站前区' }, { value: 210803, text: '西市区' }, { value: 210804, text: '鲅鱼圈区' }, { value: 210811, text: '老边区' }, { value: 210881, text: '盖州市' }, { value: 210882, text: '大石桥市' }] }, { value: 210900, text: '阜新市', children: [{ value: 210901, text: '市辖区' }, { value: 210902, text: '海州区' }, { value: 210903, text: '新邱区' }, { value: 210904, text: '太平区' }, { value: 210905, text: '清河门区' }, { value: 210911, text: '细河区' }, { value: 210921, text: '阜新蒙古族自治县' }, { value: 210922, text: '彰武县' }] }, { value: 211000, text: '辽阳市', children: [{ value: 211001, text: '市辖区' }, { value: 211002, text: '白塔区' }, { value: 211003, text: '文圣区' }, { value: 211004, text: '宏伟区' }, { value: 211005, text: '弓长岭区' }, { value: 211011, text: '太子河区' }, { value: 211021, text: '辽阳县' }, { value: 211081, text: '灯塔市' }] }, { value: 211100, text: '盘锦市', children: [{ value: 211101, text: '市辖区' }, { value: 211102, text: '双台子区' }, { value: 211103, text: '兴隆台区' }, { value: 211121, text: '大洼县' }, { value: 211122, text: '盘山县' }] }, { value: 211200, text: '铁岭市', children: [{ value: 211201, text: '市辖区' }, { value: 211202, text: '银州区' }, { value: 211204, text: '清河区' }, { value: 211221, text: '铁岭县' }, { value: 211223, text: '西丰县' }, { value: 211224, text: '昌图县' }, { value: 211281, text: '调兵山市' }, { value: 211282, text: '开原市' }] }, { value: 211300, text: '朝阳市', children: [{ value: 211301, text: '市辖区' }, { value: 211302, text: '双塔区' }, { value: 211303, text: '龙城区' }, { value: 211321, text: '朝阳县' }, { value: 211322, text: '建平县' }, { value: 211324, text: '喀喇沁左翼蒙古族自治县' }, { value: 211381, text: '北票市' }, { value: 211382, text: '凌源市' }] }, { value: 211400, text: '葫芦岛市', children: [{ value: 211401, text: '市辖区' }, { value: 211402, text: '连山区' }, { value: 211403, text: '龙港区' }, { value: 211404, text: '南票区' }, { value: 211421, text: '绥中县' }, { value: 211422, text: '建昌县' }, { value: 211481, text: '兴城市' }] }] }, { value: 220000, text: '吉林省', children: [{ value: 220100, text: '长春市', children: [{ value: 220101, text: '市辖区' }, { value: 220102, text: '南关区' }, { value: 220103, text: '宽城区' }, { value: 220104, text: '朝阳区' }, { value: 220105, text: '二道区' }, { value: 220106, text: '绿园区' }, { value: 220112, text: '双阳区' }, { value: 220122, text: '农安县' }, { value: 220181, text: '九台市' }, { value: 220182, text: '榆树市' }, { value: 220183, text: '德惠市' }] }, { value: 220200, text: '吉林市', children: [{ value: 220201, text: '市辖区' }, { value: 220202, text: '昌邑区' }, { value: 220203, text: '龙潭区' }, { value: 220204, text: '船营区' }, { value: 220211, text: '丰满区' }, { value: 220221, text: '永吉县' }, { value: 220281, text: '蛟河市' }, { value: 220282, text: '桦甸市' }, { value: 220283, text: '舒兰市' }, { value: 220284, text: '磐石市' }] }, { value: 220300, text: '四平市', children: [{ value: 220301, text: '市辖区' }, { value: 220302, text: '铁西区' }, { value: 220303, text: '铁东区' }, { value: 220322, text: '梨树县' }, { value: 220323, text: '伊通满族自治县' }, { value: 220381, text: '公主岭市' }, { value: 220382, text: '双辽市' }] }, { value: 220400, text: '辽源市', children: [{ value: 220401, text: '市辖区' }, { value: 220402, text: '龙山区' }, { value: 220403, text: '西安区' }, { value: 220421, text: '东丰县' }, { value: 220422, text: '东辽县' }] }, { value: 220500, text: '通化市', children: [{ value: 220501, text: '市辖区' }, { value: 220502, text: '东昌区' }, { value: 220503, text: '二道江区' }, { value: 220521, text: '通化县' }, { value: 220523, text: '辉南县' }, { value: 220524, text: '柳河县' }, { value: 220581, text: '梅河口市' }, { value: 220582, text: '集安市' }] }, { value: 220600, text: '白山市', children: [{ value: 220601, text: '市辖区' }, { value: 220602, text: '八道江区' }, { value: 220604, text: '江源区' }, { value: 220621, text: '抚松县' }, { value: 220622, text: '靖宇县' }, { value: 220623, text: '长白朝鲜族自治县' }, { value: 220681, text: '临江市' }] }, { value: 220700, text: '松原市', children: [{ value: 220701, text: '市辖区' }, { value: 220702, text: '宁江区' }, { value: 220721, text: '前郭尔罗斯蒙古族自治县' }, { value: 220722, text: '长岭县' }, { value: 220723, text: '乾安县' }, { value: 220724, text: '扶余县' }] }, { value: 220800, text: '白城市', children: [{ value: 220801, text: '市辖区' }, { value: 220802, text: '洮北区' }, { value: 220821, text: '镇赉县' }, { value: 220822, text: '通榆县' }, { value: 220881, text: '洮南市' }, { value: 220882, text: '大安市' }] }, { value: 222400, text: '延边朝鲜族自治州', children: [{ value: 222401, text: '延吉市' }, { value: 222402, text: '图们市' }, { value: 222403, text: '敦化市' }, { value: 222404, text: '珲春市' }, { value: 222405, text: '龙井市' }, { value: 222406, text: '和龙市' }, { value: 222424, text: '汪清县' }, { value: 222426, text: '安图县' }] }] }, { value: 230000, text: '黑龙江省', children: [{ value: 230100, text: '哈尔滨市', children: [{ value: 230101, text: '市辖区' }, { value: 230102, text: '道里区' }, { value: 230103, text: '南岗区' }, { value: 230104, text: '道外区' }, { value: 230108, text: '平房区' }, { value: 230109, text: '松北区' }, { value: 230110, text: '香坊区' }, { value: 230111, text: '呼兰区' }, { value: 230112, text: '阿城区' }, { value: 230123, text: '依兰县' }, { value: 230124, text: '方正县' }, { value: 230125, text: '宾县' }, { value: 230126, text: '巴彦县' }, { value: 230127, text: '木兰县' }, { value: 230128, text: '通河县' }, { value: 230129, text: '延寿县' }, { value: 230182, text: '双城市' }, { value: 230183, text: '尚志市' }, { value: 230184, text: '五常市' }] }, { value: 230200, text: '齐齐哈尔市', children: [{ value: 230201, text: '市辖区' }, { value: 230202, text: '龙沙区' }, { value: 230203, text: '建华区' }, { value: 230204, text: '铁锋区' }, { value: 230205, text: '昂昂溪区' }, { value: 230206, text: '富拉尔基区' }, { value: 230207, text: '碾子山区' }, { value: 230208, text: '梅里斯达斡尔族区' }, { value: 230221, text: '龙江县' }, { value: 230223, text: '依安县' }, { value: 230224, text: '泰来县' }, { value: 230225, text: '甘南县' }, { value: 230227, text: '富裕县' }, { value: 230229, text: '克山县' }, { value: 230230, text: '克东县' }, { value: 230231, text: '拜泉县' }, { value: 230281, text: '讷河市' }] }, { value: 230300, text: '鸡西市', children: [{ value: 230301, text: '市辖区' }, { value: 230302, text: '鸡冠区' }, { value: 230303, text: '恒山区' }, { value: 230304, text: '滴道区' }, { value: 230305, text: '梨树区' }, { value: 230306, text: '城子河区' }, { value: 230307, text: '麻山区' }, { value: 230321, text: '鸡东县' }, { value: 230381, text: '虎林市' }, { value: 230382, text: '密山市' }] }, { value: 230400, text: '鹤岗市', children: [{ value: 230401, text: '市辖区' }, { value: 230402, text: '向阳区' }, { value: 230403, text: '工农区' }, { value: 230404, text: '南山区' }, { value: 230405, text: '兴安区' }, { value: 230406, text: '东山区' }, { value: 230407, text: '兴山区' }, { value: 230421, text: '萝北县' }, { value: 230422, text: '绥滨县' }] }, { value: 230500, text: '双鸭山市', children: [{ value: 230501, text: '市辖区' }, { value: 230502, text: '尖山区' }, { value: 230503, text: '岭东区' }, { value: 230505, text: '四方台区' }, { value: 230506, text: '宝山区' }, { value: 230521, text: '集贤县' }, { value: 230522, text: '友谊县' }, { value: 230523, text: '宝清县' }, { value: 230524, text: '饶河县' }] }, { value: 230600, text: '大庆市', children: [{ value: 230601, text: '市辖区' }, { value: 230602, text: '萨尔图区' }, { value: 230603, text: '龙凤区' }, { value: 230604, text: '让胡路区' }, { value: 230605, text: '红岗区' }, { value: 230606, text: '大同区' }, { value: 230621, text: '肇州县' }, { value: 230622, text: '肇源县' }, { value: 230623, text: '林甸县' }, { value: 230624, text: '杜尔伯特蒙古族自治县' }] }, { value: 230700, text: '伊春市', children: [{ value: 230701, text: '市辖区' }, { value: 230702, text: '伊春区' }, { value: 230703, text: '南岔区' }, { value: 230704, text: '友好区' }, { value: 230705, text: '西林区' }, { value: 230706, text: '翠峦区' }, { value: 230707, text: '新青区' }, { value: 230708, text: '美溪区' }, { value: 230709, text: '金山屯区' }, { value: 230710, text: '五营区' }, { value: 230711, text: '乌马河区' }, { value: 230712, text: '汤旺河区' }, { value: 230713, text: '带岭区' }, { value: 230714, text: '乌伊岭区' }, { value: 230715, text: '红星区' }, { value: 230716, text: '上甘岭区' }, { value: 230722, text: '嘉荫县' }, { value: 230781, text: '铁力市' }] }, { value: 230800, text: '佳木斯市', children: [{ value: 230801, text: '市辖区' }, { value: 230803, text: '向阳区' }, { value: 230804, text: '前进区' }, { value: 230805, text: '东风区' }, { value: 230811, text: '郊区' }, { value: 230822, text: '桦南县' }, { value: 230826, text: '桦川县' }, { value: 230828, text: '汤原县' }, { value: 230833, text: '抚远县' }, { value: 230881, text: '同江市' }, { value: 230882, text: '富锦市' }] }, { value: 230900, text: '七台河市', children: [{ value: 230901, text: '市辖区' }, { value: 230902, text: '新兴区' }, { value: 230903, text: '桃山区' }, { value: 230904, text: '茄子河区' }, { value: 230921, text: '勃利县' }] }, { value: 231000, text: '牡丹江市', children: [{ value: 231001, text: '市辖区' }, { value: 231002, text: '东安区' }, { value: 231003, text: '阳明区' }, { value: 231004, text: '爱民区' }, { value: 231005, text: '西安区' }, { value: 231024, text: '东宁县' }, { value: 231025, text: '林口县' }, { value: 231081, text: '绥芬河市' }, { value: 231083, text: '海林市' }, { value: 231084, text: '宁安市' }, { value: 231085, text: '穆棱市' }] }, { value: 231100, text: '黑河市', children: [{ value: 231101, text: '市辖区' }, { value: 231102, text: '爱辉区' }, { value: 231121, text: '嫩江县' }, { value: 231123, text: '逊克县' }, { value: 231124, text: '孙吴县' }, { value: 231181, text: '北安市' }, { value: 231182, text: '五大连池市' }] }, { value: 231200, text: '绥化市', children: [{ value: 231201, text: '市辖区' }, { value: 231202, text: '北林区' }, { value: 231221, text: '望奎县' }, { value: 231222, text: '兰西县' }, { value: 231223, text: '青冈县' }, { value: 231224, text: '庆安县' }, { value: 231225, text: '明水县' }, { value: 231226, text: '绥棱县' }, { value: 231281, text: '安达市' }, { value: 231282, text: '肇东市' }, { value: 231283, text: '海伦市' }] }, { value: 232700, text: '大兴安岭地区', children: [{ value: 232701, text: '加格达奇区' }, { value: 232702, text: '松岭区' }, { value: 232703, text: '新林区' }, { value: 232704, text: '呼中区' }, { value: 232721, text: '呼玛县' }, { value: 232722, text: '塔河县' }, { value: 232723, text: '漠河县' }] }] }, { value: 310000, text: '上海市', children: [{ value: 310100, text: '市辖区', children: [{ value: 310101, text: '黄浦区' }, { value: 310103, text: '卢湾区' }, { value: 310104, text: '徐汇区' }, { value: 310105, text: '长宁区' }, { value: 310106, text: '静安区' }, { value: 310107, text: '普陀区' }, { value: 310108, text: '闸北区' }, { value: 310109, text: '虹口区' }, { value: 310110, text: '杨浦区' }, { value: 310112, text: '闵行区' }, { value: 310113, text: '宝山区' }, { value: 310114, text: '嘉定区' }, { value: 310115, text: '浦东新区' }, { value: 310116, text: '金山区' }, { value: 310117, text: '松江区' }, { value: 310118, text: '青浦区' }, { value: 310119, text: '南汇区' }, { value: 310120, text: '奉贤区' }] }, { value: 310200, text: '县', children: [{ value: 310230, text: '崇明县' }] }] }, { value: 320000, text: '江苏省', children: [{ value: 320100, text: '南京市', children: [{ value: 320101, text: '市辖区' }, { value: 320102, text: '玄武区' }, { value: 320103, text: '白下区' }, { value: 320104, text: '秦淮区' }, { value: 320105, text: '建邺区' }, { value: 320106, text: '鼓楼区' }, { value: 320107, text: '下关区' }, { value: 320111, text: '浦口区' }, { value: 320113, text: '栖霞区' }, { value: 320114, text: '雨花台区' }, { value: 320115, text: '江宁区' }, { value: 320116, text: '六合区' }, { value: 320124, text: '溧水县' }, { value: 320125, text: '高淳县' }] }, { value: 320200, text: '无锡市', children: [{ value: 320201, text: '市辖区' }, { value: 320202, text: '崇安区' }, { value: 320203, text: '南长区' }, { value: 320204, text: '北塘区' }, { value: 320205, text: '锡山区' }, { value: 320206, text: '惠山区' }, { value: 320211, text: '滨湖区' }, { value: 320281, text: '江阴市' }, { value: 320282, text: '宜兴市' }] }, { value: 320300, text: '徐州市', children: [{ value: 320301, text: '市辖区' }, { value: 320302, text: '鼓楼区' }, { value: 320303, text: '云龙区' }, { value: 320304, text: '九里区' }, { value: 320305, text: '贾汪区' }, { value: 320311, text: '泉山区' }, { value: 320321, text: '丰县' }, { value: 320322, text: '沛县' }, { value: 320323, text: '铜山县' }, { value: 320324, text: '睢宁县' }, { value: 320381, text: '新沂市' }, { value: 320382, text: '邳州市' }] }, { value: 320400, text: '常州市', children: [{ value: 320401, text: '市辖区' }, { value: 320402, text: '天宁区' }, { value: 320404, text: '钟楼区' }, { value: 320405, text: '戚墅堰区' }, { value: 320411, text: '新北区' }, { value: 320412, text: '武进区' }, { value: 320481, text: '溧阳市' }, { value: 320482, text: '金坛市' }] }, { value: 320500, text: '苏州市', children: [{ value: 320501, text: '市辖区' }, { value: 320502, text: '沧浪区' }, { value: 320503, text: '平江区' }, { value: 320504, text: '金阊区' }, { value: 320505, text: '虎丘区' }, { value: 320506, text: '吴中区' }, { value: 320507, text: '相城区' }, { value: 320581, text: '常熟市' }, { value: 320582, text: '张家港市' }, { value: 320583, text: '昆山市' }, { value: 320584, text: '吴江市' }, { value: 320585, text: '太仓市' }] }, { value: 320600, text: '南通市', children: [{ value: 320601, text: '市辖区' }, { value: 320602, text: '崇川区' }, { value: 320611, text: '港闸区' }, { value: 320621, text: '海安县' }, { value: 320623, text: '如东县' }, { value: 320681, text: '启东市' }, { value: 320682, text: '如皋市' }, { value: 320683, text: '通州市' }, { value: 320684, text: '海门市' }] }, { value: 320700, text: '连云港市', children: [{ value: 320701, text: '市辖区' }, { value: 320703, text: '连云区' }, { value: 320705, text: '新浦区' }, { value: 320706, text: '海州区' }, { value: 320721, text: '赣榆县' }, { value: 320722, text: '东海县' }, { value: 320723, text: '灌云县' }, { value: 320724, text: '灌南县' }] }, { value: 320800, text: '淮安市', children: [{ value: 320801, text: '市辖区' }, { value: 320802, text: '清河区' }, { value: 320803, text: '楚州区' }, { value: 320804, text: '淮阴区' }, { value: 320811, text: '清浦区' }, { value: 320826, text: '涟水县' }, { value: 320829, text: '洪泽县' }, { value: 320830, text: '盱眙县' }, { value: 320831, text: '金湖县' }] }, { value: 320900, text: '盐城市', children: [{ value: 320901, text: '市辖区' }, { value: 320902, text: '亭湖区' }, { value: 320903, text: '盐都区' }, { value: 320921, text: '响水县' }, { value: 320922, text: '滨海县' }, { value: 320923, text: '阜宁县' }, { value: 320924, text: '射阳县' }, { value: 320925, text: '建湖县' }, { value: 320981, text: '东台市' }, { value: 320982, text: '大丰市' }] }, { value: 321000, text: '扬州市', children: [{ value: 321001, text: '市辖区' }, { value: 321002, text: '广陵区' }, { value: 321003, text: '邗江区' }, { value: 321011, text: '维扬区' }, { value: 321023, text: '宝应县' }, { value: 321081, text: '仪征市' }, { value: 321084, text: '高邮市' }, { value: 321088, text: '江都市' }] }, { value: 321100, text: '镇江市', children: [{ value: 321101, text: '市辖区' }, { value: 321102, text: '京口区' }, { value: 321111, text: '润州区' }, { value: 321112, text: '丹徒区' }, { value: 321181, text: '丹阳市' }, { value: 321182, text: '扬中市' }, { value: 321183, text: '句容市' }] }, { value: 321200, text: '泰州市', children: [{ value: 321201, text: '市辖区' }, { value: 321202, text: '海陵区' }, { value: 321203, text: '高港区' }, { value: 321281, text: '兴化市' }, { value: 321282, text: '靖江市' }, { value: 321283, text: '泰兴市' }, { value: 321284, text: '姜堰市' }] }, { value: 321300, text: '宿迁市', children: [{ value: 321301, text: '市辖区' }, { value: 321302, text: '宿城区' }, { value: 321311, text: '宿豫区' }, { value: 321322, text: '沭阳县' }, { value: 321323, text: '泗阳县' }, { value: 321324, text: '泗洪县' }] }] }, { value: 330000, text: '浙江省', children: [{ value: 330100, text: '杭州市', children: [{ value: 330101, text: '市辖区' }, { value: 330102, text: '上城区' }, { value: 330103, text: '下城区' }, { value: 330104, text: '江干区' }, { value: 330105, text: '拱墅区' }, { value: 330106, text: '西湖区' }, { value: 330108, text: '滨江区' }, { value: 330109, text: '萧山区' }, { value: 330110, text: '余杭区' }, { value: 330122, text: '桐庐县' }, { value: 330127, text: '淳安县' }, { value: 330182, text: '建德市' }, { value: 330183, text: '富阳市' }, { value: 330185, text: '临安市' }] }, { value: 330200, text: '宁波市', children: [{ value: 330201, text: '市辖区' }, { value: 330203, text: '海曙区' }, { value: 330204, text: '江东区' }, { value: 330205, text: '江北区' }, { value: 330206, text: '北仑区' }, { value: 330211, text: '镇海区' }, { value: 330212, text: '鄞州区' }, { value: 330225, text: '象山县' }, { value: 330226, text: '宁海县' }, { value: 330281, text: '余姚市' }, { value: 330282, text: '慈溪市' }, { value: 330283, text: '奉化市' }] }, { value: 330300, text: '温州市', children: [{ value: 330301, text: '市辖区' }, { value: 330302, text: '鹿城区' }, { value: 330303, text: '龙湾区' }, { value: 330304, text: '瓯海区' }, { value: 330322, text: '洞头县' }, { value: 330324, text: '永嘉县' }, { value: 330326, text: '平阳县' }, { value: 330327, text: '苍南县' }, { value: 330328, text: '文成县' }, { value: 330329, text: '泰顺县' }, { value: 330381, text: '瑞安市' }, { value: 330382, text: '乐清市' }] }, { value: 330400, text: '嘉兴市', children: [{ value: 330401, text: '市辖区' }, { value: 330402, text: '秀城区' }, { value: 330411, text: '秀洲区' }, { value: 330421, text: '嘉善县' }, { value: 330424, text: '海盐县' }, { value: 330481, text: '海宁市' }, { value: 330482, text: '平湖市' }, { value: 330483, text: '桐乡市' }] }, { value: 330500, text: '湖州市', children: [{ value: 330501, text: '市辖区' }, { value: 330502, text: '吴兴区' }, { value: 330503, text: '南浔区' }, { value: 330521, text: '德清县' }, { value: 330522, text: '长兴县' }, { value: 330523, text: '安吉县' }] }, { value: 330600, text: '绍兴市', children: [{ value: 330601, text: '市辖区' }, { value: 330602, text: '越城区' }, { value: 330621, text: '绍兴县' }, { value: 330624, text: '新昌县' }, { value: 330681, text: '诸暨市' }, { value: 330682, text: '上虞市' }, { value: 330683, text: '嵊州市' }] }, { value: 330700, text: '金华市', children: [{ value: 330701, text: '市辖区' }, { value: 330702, text: '婺城区' }, { value: 330703, text: '金东区' }, { value: 330723, text: '武义县' }, { value: 330726, text: '浦江县' }, { value: 330727, text: '磐安县' }, { value: 330781, text: '兰溪市' }, { value: 330782, text: '义乌市' }, { value: 330783, text: '东阳市' }, { value: 330784, text: '永康市' }] }, { value: 330800, text: '衢州市', children: [{ value: 330801, text: '市辖区' }, { value: 330802, text: '柯城区' }, { value: 330803, text: '衢江区' }, { value: 330822, text: '常山县' }, { value: 330824, text: '开化县' }, { value: 330825, text: '龙游县' }, { value: 330881, text: '江山市' }] }, { value: 330900, text: '舟山市', children: [{ value: 330901, text: '市辖区' }, { value: 330902, text: '定海区' }, { value: 330903, text: '普陀区' }, { value: 330921, text: '岱山县' }, { value: 330922, text: '嵊泗县' }] }, { value: 331000, text: '台州市', children: [{ value: 331001, text: '市辖区' }, { value: 331002, text: '椒江区' }, { value: 331003, text: '黄岩区' }, { value: 331004, text: '路桥区' }, { value: 331021, text: '玉环县' }, { value: 331022, text: '三门县' }, { value: 331023, text: '天台县' }, { value: 331024, text: '仙居县' }, { value: 331081, text: '温岭市' }, { value: 331082, text: '临海市' }] }, { value: 331100, text: '丽水市', children: [{ value: 331101, text: '市辖区' }, { value: 331102, text: '莲都区' }, { value: 331121, text: '青田县' }, { value: 331122, text: '缙云县' }, { value: 331123, text: '遂昌县' }, { value: 331124, text: '松阳县' }, { value: 331125, text: '云和县' }, { value: 331126, text: '庆元县' }, { value: 331127, text: '景宁畲族自治县' }, { value: 331181, text: '龙泉市' }] }] }, { value: 340000, text: '安徽省', children: [{ value: 340100, text: '合肥市', children: [{ value: 340101, text: '市辖区' }, { value: 340102, text: '瑶海区' }, { value: 340103, text: '庐阳区' }, { value: 340104, text: '蜀山区' }, { value: 340111, text: '包河区' }, { value: 340121, text: '长丰县' }, { value: 340122, text: '肥东县' }, { value: 340123, text: '肥西县' }] }, { value: 340200, text: '芜湖市', children: [{ value: 340201, text: '市辖区' }, { value: 340202, text: '镜湖区' }, { value: 340203, text: '弋江区' }, { value: 340207, text: '鸠江区' }, { value: 340208, text: '三山区' }, { value: 340221, text: '芜湖县' }, { value: 340222, text: '繁昌县' }, { value: 340223, text: '南陵县' }] }, { value: 340300, text: '蚌埠市', children: [{ value: 340301, text: '市辖区' }, { value: 340302, text: '龙子湖区' }, { value: 340303, text: '蚌山区' }, { value: 340304, text: '禹会区' }, { value: 340311, text: '淮上区' }, { value: 340321, text: '怀远县' }, { value: 340322, text: '五河县' }, { value: 340323, text: '固镇县' }] }, { value: 340400, text: '淮南市', children: [{ value: 340401, text: '市辖区' }, { value: 340402, text: '大通区' }, { value: 340403, text: '田家庵区' }, { value: 340404, text: '谢家集区' }, { value: 340405, text: '八公山区' }, { value: 340406, text: '潘集区' }, { value: 340421, text: '凤台县' }] }, { value: 340500, text: '马鞍山市', children: [{ value: 340501, text: '市辖区' }, { value: 340502, text: '金家庄区' }, { value: 340503, text: '花山区' }, { value: 340504, text: '雨山区' }, { value: 340521, text: '当涂县' }] }, { value: 340600, text: '淮北市', children: [{ value: 340601, text: '市辖区' }, { value: 340602, text: '杜集区' }, { value: 340603, text: '相山区' }, { value: 340604, text: '烈山区' }, { value: 340621, text: '濉溪县' }] }, { value: 340700, text: '铜陵市', children: [{ value: 340701, text: '市辖区' }, { value: 340702, text: '铜官山区' }, { value: 340703, text: '狮子山区' }, { value: 340711, text: '郊区' }, { value: 340721, text: '铜陵县' }] }, { value: 340800, text: '安庆市', children: [{ value: 340801, text: '市辖区' }, { value: 340802, text: '迎江区' }, { value: 340803, text: '大观区' }, { value: 340811, text: '宜秀区' }, { value: 340822, text: '怀宁县' }, { value: 340823, text: '枞阳县' }, { value: 340824, text: '潜山县' }, { value: 340825, text: '太湖县' }, { value: 340826, text: '宿松县' }, { value: 340827, text: '望江县' }, { value: 340828, text: '岳西县' }, { value: 340881, text: '桐城市' }] }, { value: 341000, text: '黄山市', children: [{ value: 341001, text: '市辖区' }, { value: 341002, text: '屯溪区' }, { value: 341003, text: '黄山区' }, { value: 341004, text: '徽州区' }, { value: 341021, text: '歙县' }, { value: 341022, text: '休宁县' }, { value: 341023, text: '黟县' }, { value: 341024, text: '祁门县' }] }, { value: 341100, text: '滁州市', children: [{ value: 341101, text: '市辖区' }, { value: 341102, text: '琅琊区' }, { value: 341103, text: '南谯区' }, { value: 341122, text: '来安县' }, { value: 341124, text: '全椒县' }, { value: 341125, text: '定远县' }, { value: 341126, text: '凤阳县' }, { value: 341181, text: '天长市' }, { value: 341182, text: '明光市' }] }, { value: 341200, text: '阜阳市', children: [{ value: 341201, text: '市辖区' }, { value: 341202, text: '颍州区' }, { value: 341203, text: '颍东区' }, { value: 341204, text: '颍泉区' }, { value: 341221, text: '临泉县' }, { value: 341222, text: '太和县' }, { value: 341225, text: '阜南县' }, { value: 341226, text: '颍上县' }, { value: 341282, text: '界首市' }] }, { value: 341300, text: '宿州市', children: [{ value: 341301, text: '市辖区' }, { value: 341302, text: '埇桥区' }, { value: 341321, text: '砀山县' }, { value: 341322, text: '萧县' }, { value: 341323, text: '灵璧县' }, { value: 341324, text: '泗县' }] }, { value: 341400, text: '巢湖市', children: [{ value: 341401, text: '市辖区' }, { value: 341402, text: '居巢区' }, { value: 341421, text: '庐江县' }, { value: 341422, text: '无为县' }, { value: 341423, text: '含山县' }, { value: 341424, text: '和县' }] }, { value: 341500, text: '六安市', children: [{ value: 341501, text: '市辖区' }, { value: 341502, text: '金安区' }, { value: 341503, text: '裕安区' }, { value: 341521, text: '寿县' }, { value: 341522, text: '霍邱县' }, { value: 341523, text: '舒城县' }, { value: 341524, text: '金寨县' }, { value: 341525, text: '霍山县' }] }, { value: 341600, text: '亳州市', children: [{ value: 341601, text: '市辖区' }, { value: 341602, text: '谯城区' }, { value: 341621, text: '涡阳县' }, { value: 341622, text: '蒙城县' }, { value: 341623, text: '利辛县' }] }, { value: 341700, text: '池州市', children: [{ value: 341701, text: '市辖区' }, { value: 341702, text: '贵池区' }, { value: 341721, text: '东至县' }, { value: 341722, text: '石台县' }, { value: 341723, text: '青阳县' }] }, { value: 341800, text: '宣城市', children: [{ value: 341801, text: '市辖区' }, { value: 341802, text: '宣州区' }, { value: 341821, text: '郎溪县' }, { value: 341822, text: '广德县' }, { value: 341823, text: '泾县' }, { value: 341824, text: '绩溪县' }, { value: 341825, text: '旌德县' }, { value: 341881, text: '宁国市' }] }] }, { value: 350000, text: '福建省', children: [{ value: 350100, text: '福州市', children: [{ value: 350101, text: '市辖区' }, { value: 350102, text: '鼓楼区' }, { value: 350103, text: '台江区' }, { value: 350104, text: '仓山区' }, { value: 350105, text: '马尾区' }, { value: 350111, text: '晋安区' }, { value: 350121, text: '闽侯县' }, { value: 350122, text: '连江县' }, { value: 350123, text: '罗源县' }, { value: 350124, text: '闽清县' }, { value: 350125, text: '永泰县' }, { value: 350128, text: '平潭县' }, { value: 350181, text: '福清市' }, { value: 350182, text: '长乐市' }] }, { value: 350200, text: '厦门市', children: [{ value: 350201, text: '市辖区' }, { value: 350203, text: '思明区' }, { value: 350205, text: '海沧区' }, { value: 350206, text: '湖里区' }, { value: 350211, text: '集美区' }, { value: 350212, text: '同安区' }, { value: 350213, text: '翔安区' }] }, { value: 350300, text: '莆田市', children: [{ value: 350301, text: '市辖区' }, { value: 350302, text: '城厢区' }, { value: 350303, text: '涵江区' }, { value: 350304, text: '荔城区' }, { value: 350305, text: '秀屿区' }, { value: 350322, text: '仙游县' }] }, { value: 350400, text: '三明市', children: [{ value: 350401, text: '市辖区' }, { value: 350402, text: '梅列区' }, { value: 350403, text: '三元区' }, { value: 350421, text: '明溪县' }, { value: 350423, text: '清流县' }, { value: 350424, text: '宁化县' }, { value: 350425, text: '大田县' }, { value: 350426, text: '尤溪县' }, { value: 350427, text: '沙县' }, { value: 350428, text: '将乐县' }, { value: 350429, text: '泰宁县' }, { value: 350430, text: '建宁县' }, { value: 350481, text: '永安市' }] }, { value: 350500, text: '泉州市', children: [{ value: 350501, text: '市辖区' }, { value: 350502, text: '鲤城区' }, { value: 350503, text: '丰泽区' }, { value: 350504, text: '洛江区' }, { value: 350505, text: '泉港区' }, { value: 350521, text: '惠安县' }, { value: 350524, text: '安溪县' }, { value: 350525, text: '永春县' }, { value: 350526, text: '德化县' }, { value: 350527, text: '金门县' }, { value: 350581, text: '石狮市' }, { value: 350582, text: '晋江市' }, { value: 350583, text: '南安市' }] }, { value: 350600, text: '漳州市', children: [{ value: 350601, text: '市辖区' }, { value: 350602, text: '芗城区' }, { value: 350603, text: '龙文区' }, { value: 350622, text: '云霄县' }, { value: 350623, text: '漳浦县' }, { value: 350624, text: '诏安县' }, { value: 350625, text: '长泰县' }, { value: 350626, text: '东山县' }, { value: 350627, text: '南靖县' }, { value: 350628, text: '平和县' }, { value: 350629, text: '华安县' }, { value: 350681, text: '龙海市' }] }, { value: 350700, text: '南平市', children: [{ value: 350701, text: '市辖区' }, { value: 350702, text: '延平区' }, { value: 350721, text: '顺昌县' }, { value: 350722, text: '浦城县' }, { value: 350723, text: '光泽县' }, { value: 350724, text: '松溪县' }, { value: 350725, text: '政和县' }, { value: 350781, text: '邵武市' }, { value: 350782, text: '武夷山市' }, { value: 350783, text: '建瓯市' }, { value: 350784, text: '建阳市' }] }, { value: 350800, text: '龙岩市', children: [{ value: 350801, text: '市辖区' }, { value: 350802, text: '新罗区' }, { value: 350821, text: '长汀县' }, { value: 350822, text: '永定县' }, { value: 350823, text: '上杭县' }, { value: 350824, text: '武平县' }, { value: 350825, text: '连城县' }, { value: 350881, text: '漳平市' }] }, { value: 350900, text: '宁德市', children: [{ value: 350901, text: '市辖区' }, { value: 350902, text: '蕉城区' }, { value: 350921, text: '霞浦县' }, { value: 350922, text: '古田县' }, { value: 350923, text: '屏南县' }, { value: 350924, text: '寿宁县' }, { value: 350925, text: '周宁县' }, { value: 350926, text: '柘荣县' }, { value: 350981, text: '福安市' }, { value: 350982, text: '福鼎市' }] }] }, { value: 360000, text: '江西省', children: [{ value: 360100, text: '南昌市', children: [{ value: 360101, text: '市辖区' }, { value: 360102, text: '东湖区' }, { value: 360103, text: '西湖区' }, { value: 360104, text: '青云谱区' }, { value: 360105, text: '湾里区' }, { value: 360111, text: '青山湖区' }, { value: 360121, text: '南昌县' }, { value: 360122, text: '新建县' }, { value: 360123, text: '安义县' }, { value: 360124, text: '进贤县' }] }, { value: 360200, text: '景德镇市', children: [{ value: 360201, text: '市辖区' }, { value: 360202, text: '昌江区' }, { value: 360203, text: '珠山区' }, { value: 360222, text: '浮梁县' }, { value: 360281, text: '乐平市' }] }, { value: 360300, text: '萍乡市', children: [{ value: 360301, text: '市辖区' }, { value: 360302, text: '安源区' }, { value: 360313, text: '湘东区' }, { value: 360321, text: '莲花县' }, { value: 360322, text: '上栗县' }, { value: 360323, text: '芦溪县' }] }, { value: 360400, text: '九江市', children: [{ value: 360401, text: '市辖区' }, { value: 360402, text: '庐山区' }, { value: 360403, text: '浔阳区' }, { value: 360421, text: '九江县' }, { value: 360423, text: '武宁县' }, { value: 360424, text: '修水县' }, { value: 360425, text: '永修县' }, { value: 360426, text: '德安县' }, { value: 360427, text: '星子县' }, { value: 360428, text: '都昌县' }, { value: 360429, text: '湖口县' }, { value: 360430, text: '彭泽县' }, { value: 360481, text: '瑞昌市' }] }, { value: 360500, text: '新余市', children: [{ value: 360501, text: '市辖区' }, { value: 360502, text: '渝水区' }, { value: 360521, text: '分宜县' }] }, { value: 360600, text: '鹰潭市', children: [{ value: 360601, text: '市辖区' }, { value: 360602, text: '月湖区' }, { value: 360622, text: '余江县' }, { value: 360681, text: '贵溪市' }] }, { value: 360700, text: '赣州市', children: [{ value: 360701, text: '市辖区' }, { value: 360702, text: '章贡区' }, { value: 360721, text: '赣县' }, { value: 360722, text: '信丰县' }, { value: 360723, text: '大余县' }, { value: 360724, text: '上犹县' }, { value: 360725, text: '崇义县' }, { value: 360726, text: '安远县' }, { value: 360727, text: '龙南县' }, { value: 360728, text: '定南县' }, { value: 360729, text: '全南县' }, { value: 360730, text: '宁都县' }, { value: 360731, text: '于都县' }, { value: 360732, text: '兴国县' }, { value: 360733, text: '会昌县' }, { value: 360734, text: '寻乌县' }, { value: 360735, text: '石城县' }, { value: 360781, text: '瑞金市' }, { value: 360782, text: '南康市' }] }, { value: 360800, text: '吉安市', children: [{ value: 360801, text: '市辖区' }, { value: 360802, text: '吉州区' }, { value: 360803, text: '青原区' }, { value: 360821, text: '吉安县' }, { value: 360822, text: '吉水县' }, { value: 360823, text: '峡江县' }, { value: 360824, text: '新干县' }, { value: 360825, text: '永丰县' }, { value: 360826, text: '泰和县' }, { value: 360827, text: '遂川县' }, { value: 360828, text: '万安县' }, { value: 360829, text: '安福县' }, { value: 360830, text: '永新县' }, { value: 360881, text: '井冈山市' }] }, { value: 360900, text: '宜春市', children: [{ value: 360901, text: '市辖区' }, { value: 360902, text: '袁州区' }, { value: 360921, text: '奉新县' }, { value: 360922, text: '万载县' }, { value: 360923, text: '上高县' }, { value: 360924, text: '宜丰县' }, { value: 360925, text: '靖安县' }, { value: 360926, text: '铜鼓县' }, { value: 360981, text: '丰城市' }, { value: 360982, text: '樟树市' }, { value: 360983, text: '高安市' }] }, { value: 361000, text: '抚州市', children: [{ value: 361001, text: '市辖区' }, { value: 361002, text: '临川区' }, { value: 361021, text: '南城县' }, { value: 361022, text: '黎川县' }, { value: 361023, text: '南丰县' }, { value: 361024, text: '崇仁县' }, { value: 361025, text: '乐安县' }, { value: 361026, text: '宜黄县' }, { value: 361027, text: '金溪县' }, { value: 361028, text: '资溪县' }, { value: 361029, text: '东乡县' }, { value: 361030, text: '广昌县' }] }, { value: 361100, text: '上饶市', children: [{ value: 361101, text: '市辖区' }, { value: 361102, text: '信州区' }, { value: 361121, text: '上饶县' }, { value: 361122, text: '广丰县' }, { value: 361123, text: '玉山县' }, { value: 361124, text: '铅山县' }, { value: 361125, text: '横峰县' }, { value: 361126, text: '弋阳县' }, { value: 361127, text: '余干县' }, { value: 361128, text: '鄱阳县' }, { value: 361129, text: '万年县' }, { value: 361130, text: '婺源县' }, { value: 361181, text: '德兴市' }] }] }, { value: 370000, text: '山东省', children: [{ value: 370100, text: '济南市', children: [{ value: 370101, text: '市辖区' }, { value: 370102, text: '历下区' }, { value: 370103, text: '市中区' }, { value: 370104, text: '槐荫区' }, { value: 370105, text: '天桥区' }, { value: 370112, text: '历城区' }, { value: 370113, text: '长清区' }, { value: 370124, text: '平阴县' }, { value: 370125, text: '济阳县' }, { value: 370126, text: '商河县' }, { value: 370181, text: '章丘市' }] }, { value: 370200, text: '青岛市', children: [{ value: 370201, text: '市辖区' }, { value: 370202, text: '市南区' }, { value: 370203, text: '市北区' }, { value: 370205, text: '四方区' }, { value: 370211, text: '黄岛区' }, { value: 370212, text: '崂山区' }, { value: 370213, text: '李沧区' }, { value: 370214, text: '城阳区' }, { value: 370281, text: '胶州市' }, { value: 370282, text: '即墨市' }, { value: 370283, text: '平度市' }, { value: 370284, text: '胶南市' }, { value: 370285, text: '莱西市' }] }, { value: 370300, text: '淄博市', children: [{ value: 370301, text: '市辖区' }, { value: 370302, text: '淄川区' }, { value: 370303, text: '张店区' }, { value: 370304, text: '博山区' }, { value: 370305, text: '临淄区' }, { value: 370306, text: '周村区' }, { value: 370321, text: '桓台县' }, { value: 370322, text: '高青县' }, { value: 370323, text: '沂源县' }] }, { value: 370400, text: '枣庄市', children: [{ value: 370401, text: '市辖区' }, { value: 370402, text: '市中区' }, { value: 370403, text: '薛城区' }, { value: 370404, text: '峄城区' }, { value: 370405, text: '台儿庄区' }, { value: 370406, text: '山亭区' }, { value: 370481, text: '滕州市' }] }, { value: 370500, text: '东营市', children: [{ value: 370501, text: '市辖区' }, { value: 370502, text: '东营区' }, { value: 370503, text: '河口区' }, { value: 370521, text: '垦利县' }, { value: 370522, text: '利津县' }, { value: 370523, text: '广饶县' }] }, { value: 370600, text: '烟台市', children: [{ value: 370601, text: '市辖区' }, { value: 370602, text: '芝罘区' }, { value: 370611, text: '福山区' }, { value: 370612, text: '牟平区' }, { value: 370613, text: '莱山区' }, { value: 370634, text: '长岛县' }, { value: 370681, text: '龙口市' }, { value: 370682, text: '莱阳市' }, { value: 370683, text: '莱州市' }, { value: 370684, text: '蓬莱市' }, { value: 370685, text: '招远市' }, { value: 370686, text: '栖霞市' }, { value: 370687, text: '海阳市' }] }, { value: 370700, text: '潍坊市', children: [{ value: 370701, text: '市辖区' }, { value: 370702, text: '潍城区' }, { value: 370703, text: '寒亭区' }, { value: 370704, text: '坊子区' }, { value: 370705, text: '奎文区' }, { value: 370724, text: '临朐县' }, { value: 370725, text: '昌乐县' }, { value: 370781, text: '青州市' }, { value: 370782, text: '诸城市' }, { value: 370783, text: '寿光市' }, { value: 370784, text: '安丘市' }, { value: 370785, text: '高密市' }, { value: 370786, text: '昌邑市' }] }, { value: 370800, text: '济宁市', children: [{ value: 370801, text: '市辖区' }, { value: 370802, text: '市中区' }, { value: 370811, text: '任城区' }, { value: 370826, text: '微山县' }, { value: 370827, text: '鱼台县' }, { value: 370828, text: '金乡县' }, { value: 370829, text: '嘉祥县' }, { value: 370830, text: '汶上县' }, { value: 370831, text: '泗水县' }, { value: 370832, text: '梁山县' }, { value: 370881, text: '曲阜市' }, { value: 370882, text: '兖州市' }, { value: 370883, text: '邹城市' }] }, { value: 370900, text: '泰安市', children: [{ value: 370901, text: '市辖区' }, { value: 370902, text: '泰山区' }, { value: 370903, text: '岱岳区' }, { value: 370921, text: '宁阳县' }, { value: 370923, text: '东平县' }, { value: 370982, text: '新泰市' }, { value: 370983, text: '肥城市' }] }, { value: 371000, text: '威海市', children: [{ value: 371001, text: '市辖区' }, { value: 371002, text: '环翠区' }, { value: 371081, text: '文登市' }, { value: 371082, text: '荣成市' }, { value: 371083, text: '乳山市' }] }, { value: 371100, text: '日照市', children: [{ value: 371101, text: '市辖区' }, { value: 371102, text: '东港区' }, { value: 371103, text: '岚山区' }, { value: 371121, text: '五莲县' }, { value: 371122, text: '莒县' }] }, { value: 371200, text: '莱芜市', children: [{ value: 371201, text: '市辖区' }, { value: 371202, text: '莱城区' }, { value: 371203, text: '钢城区' }] }, { value: 371300, text: '临沂市', children: [{ value: 371301, text: '市辖区' }, { value: 371302, text: '兰山区' }, { value: 371311, text: '罗庄区' }, { value: 371312, text: '河东区' }, { value: 371321, text: '沂南县' }, { value: 371322, text: '郯城县' }, { value: 371323, text: '沂水县' }, { value: 371324, text: '苍山县' }, { value: 371325, text: '费县' }, { value: 371326, text: '平邑县' }, { value: 371327, text: '莒南县' }, { value: 371328, text: '蒙阴县' }, { value: 371329, text: '临沭县' }] }, { value: 371400, text: '德州市', children: [{ value: 371401, text: '市辖区' }, { value: 371402, text: '德城区' }, { value: 371421, text: '陵县' }, { value: 371422, text: '宁津县' }, { value: 371423, text: '庆云县' }, { value: 371424, text: '临邑县' }, { value: 371425, text: '齐河县' }, { value: 371426, text: '平原县' }, { value: 371427, text: '夏津县' }, { value: 371428, text: '武城县' }, { value: 371481, text: '乐陵市' }, { value: 371482, text: '禹城市' }] }, { value: 371500, text: '聊城市', children: [{ value: 371501, text: '市辖区' }, { value: 371502, text: '东昌府区' }, { value: 371521, text: '阳谷县' }, { value: 371522, text: '莘县' }, { value: 371523, text: '茌平县' }, { value: 371524, text: '东阿县' }, { value: 371525, text: '冠县' }, { value: 371526, text: '高唐县' }, { value: 371581, text: '临清市' }] }, { value: 371600, text: '滨州市', children: [{ value: 371601, text: '市辖区' }, { value: 371602, text: '滨城区' }, { value: 371621, text: '惠民县' }, { value: 371622, text: '阳信县' }, { value: 371623, text: '无棣县' }, { value: 371624, text: '沾化县' }, { value: 371625, text: '博兴县' }, { value: 371626, text: '邹平县' }] }, { value: 371700, text: '菏泽市', children: [{ value: 371701, text: '市辖区' }, { value: 371702, text: '牡丹区' }, { value: 371721, text: '曹县' }, { value: 371722, text: '单县' }, { value: 371723, text: '成武县' }, { value: 371724, text: '巨野县' }, { value: 371725, text: '郓城县' }, { value: 371726, text: '鄄城县' }, { value: 371727, text: '定陶县' }, { value: 371728, text: '东明县' }] }] }, { value: 410000, text: '河南省', children: [{ value: 410100, text: '郑州市', children: [{ value: 410101, text: '市辖区' }, { value: 410102, text: '中原区' }, { value: 410103, text: '二七区' }, { value: 410104, text: '管城回族区' }, { value: 410105, text: '金水区' }, { value: 410106, text: '上街区' }, { value: 410108, text: '惠济区' }, { value: 410122, text: '中牟县' }, { value: 410181, text: '巩义市' }, { value: 410182, text: '荥阳市' }, { value: 410183, text: '新密市' }, { value: 410184, text: '新郑市' }, { value: 410185, text: '登封市' }] }, { value: 410200, text: '开封市', children: [{ value: 410201, text: '市辖区' }, { value: 410202, text: '龙亭区' }, { value: 410203, text: '顺河回族区' }, { value: 410204, text: '鼓楼区' }, { value: 410205, text: '禹王台区' }, { value: 410211, text: '金明区' }, { value: 410221, text: '杞县' }, { value: 410222, text: '通许县' }, { value: 410223, text: '尉氏县' }, { value: 410224, text: '开封县' }, { value: 410225, text: '兰考县' }] }, { value: 410300, text: '洛阳市', children: [{ value: 410301, text: '市辖区' }, { value: 410302, text: '老城区' }, { value: 410303, text: '西工区' }, { value: 410304, text: '廛河回族区' }, { value: 410305, text: '涧西区' }, { value: 410306, text: '吉利区' }, { value: 410307, text: '洛龙区' }, { value: 410322, text: '孟津县' }, { value: 410323, text: '新安县' }, { value: 410324, text: '栾川县' }, { value: 410325, text: '嵩县' }, { value: 410326, text: '汝阳县' }, { value: 410327, text: '宜阳县' }, { value: 410328, text: '洛宁县' }, { value: 410329, text: '伊川县' }, { value: 410381, text: '偃师市' }] }, { value: 410400, text: '平顶山市', children: [{ value: 410401, text: '市辖区' }, { value: 410402, text: '新华区' }, { value: 410403, text: '卫东区' }, { value: 410404, text: '石龙区' }, { value: 410411, text: '湛河区' }, { value: 410421, text: '宝丰县' }, { value: 410422, text: '叶县' }, { value: 410423, text: '鲁山县' }, { value: 410425, text: '郏县' }, { value: 410481, text: '舞钢市' }, { value: 410482, text: '汝州市' }] }, { value: 410500, text: '安阳市', children: [{ value: 410501, text: '市辖区' }, { value: 410502, text: '文峰区' }, { value: 410503, text: '北关区' }, { value: 410505, text: '殷都区' }, { value: 410506, text: '龙安区' }, { value: 410522, text: '安阳县' }, { value: 410523, text: '汤阴县' }, { value: 410526, text: '滑县' }, { value: 410527, text: '内黄县' }, { value: 410581, text: '林州市' }] }, { value: 410600, text: '鹤壁市', children: [{ value: 410601, text: '市辖区' }, { value: 410602, text: '鹤山区' }, { value: 410603, text: '山城区' }, { value: 410611, text: '淇滨区' }, { value: 410621, text: '浚县' }, { value: 410622, text: '淇县' }] }, { value: 410700, text: '新乡市', children: [{ value: 410701, text: '市辖区' }, { value: 410702, text: '红旗区' }, { value: 410703, text: '卫滨区' }, { value: 410704, text: '凤泉区' }, { value: 410711, text: '牧野区' }, { value: 410721, text: '新乡县' }, { value: 410724, text: '获嘉县' }, { value: 410725, text: '原阳县' }, { value: 410726, text: '延津县' }, { value: 410727, text: '封丘县' }, { value: 410728, text: '长垣县' }, { value: 410781, text: '卫辉市' }, { value: 410782, text: '辉县市' }] }, { value: 410800, text: '焦作市', children: [{ value: 410801, text: '市辖区' }, { value: 410802, text: '解放区' }, { value: 410803, text: '中站区' }, { value: 410804, text: '马村区' }, { value: 410811, text: '山阳区' }, { value: 410821, text: '修武县' }, { value: 410822, text: '博爱县' }, { value: 410823, text: '武陟县' }, { value: 410825, text: '温县' }, { value: 410881, text: '济源市' }, { value: 410882, text: '沁阳市' }, { value: 410883, text: '孟州市' }] }, { value: 410900, text: '濮阳市', children: [{ value: 410901, text: '市辖区' }, { value: 410902, text: '华龙区' }, { value: 410922, text: '清丰县' }, { value: 410923, text: '南乐县' }, { value: 410926, text: '范县' }, { value: 410927, text: '台前县' }, { value: 410928, text: '濮阳县' }] }, { value: 411000, text: '许昌市', children: [{ value: 411001, text: '市辖区' }, { value: 411002, text: '魏都区' }, { value: 411023, text: '许昌县' }, { value: 411024, text: '鄢陵县' }, { value: 411025, text: '襄城县' }, { value: 411081, text: '禹州市' }, { value: 411082, text: '长葛市' }] }, { value: 411100, text: '漯河市', children: [{ value: 411101, text: '市辖区' }, { value: 411102, text: '源汇区' }, { value: 411103, text: '郾城区' }, { value: 411104, text: '召陵区' }, { value: 411121, text: '舞阳县' }, { value: 411122, text: '临颍县' }] }, { value: 411200, text: '三门峡市', children: [{ value: 411201, text: '市辖区' }, { value: 411202, text: '湖滨区' }, { value: 411221, text: '渑池县' }, { value: 411222, text: '陕县' }, { value: 411224, text: '卢氏县' }, { value: 411281, text: '义马市' }, { value: 411282, text: '灵宝市' }] }, { value: 411300, text: '南阳市', children: [{ value: 411301, text: '市辖区' }, { value: 411302, text: '宛城区' }, { value: 411303, text: '卧龙区' }, { value: 411321, text: '南召县' }, { value: 411322, text: '方城县' }, { value: 411323, text: '西峡县' }, { value: 411324, text: '镇平县' }, { value: 411325, text: '内乡县' }, { value: 411326, text: '淅川县' }, { value: 411327, text: '社旗县' }, { value: 411328, text: '唐河县' }, { value: 411329, text: '新野县' }, { value: 411330, text: '桐柏县' }, { value: 411381, text: '邓州市' }] }, { value: 411400, text: '商丘市', children: [{ value: 411401, text: '市辖区' }, { value: 411402, text: '梁园区' }, { value: 411403, text: '睢阳区' }, { value: 411421, text: '民权县' }, { value: 411422, text: '睢县' }, { value: 411423, text: '宁陵县' }, { value: 411424, text: '柘城县' }, { value: 411425, text: '虞城县' }, { value: 411426, text: '夏邑县' }, { value: 411481, text: '永城市' }] }, { value: 411500, text: '信阳市', children: [{ value: 411501, text: '市辖区' }, { value: 411502, text: '浉河区' }, { value: 411503, text: '平桥区' }, { value: 411521, text: '罗山县' }, { value: 411522, text: '光山县' }, { value: 411523, text: '新县' }, { value: 411524, text: '商城县' }, { value: 411525, text: '固始县' }, { value: 411526, text: '潢川县' }, { value: 411527, text: '淮滨县' }, { value: 411528, text: '息县' }] }, { value: 411600, text: '周口市', children: [{ value: 411601, text: '市辖区' }, { value: 411602, text: '川汇区' }, { value: 411621, text: '扶沟县' }, { value: 411622, text: '西华县' }, { value: 411623, text: '商水县' }, { value: 411624, text: '沈丘县' }, { value: 411625, text: '郸城县' }, { value: 411626, text: '淮阳县' }, { value: 411627, text: '太康县' }, { value: 411628, text: '鹿邑县' }, { value: 411681, text: '项城市' }] }, { value: 411700, text: '驻马店市', children: [{ value: 411701, text: '市辖区' }, { value: 411702, text: '驿城区' }, { value: 411721, text: '西平县' }, { value: 411722, text: '上蔡县' }, { value: 411723, text: '平舆县' }, { value: 411724, text: '正阳县' }, { value: 411725, text: '确山县' }, { value: 411726, text: '泌阳县' }, { value: 411727, text: '汝南县' }, { value: 411728, text: '遂平县' }, { value: 411729, text: '新蔡县' }] }] }, { value: 420000, text: '湖北省', children: [{ value: 420100, text: '武汉市', children: [{ value: 420101, text: '市辖区' }, { value: 420102, text: '江岸区' }, { value: 420103, text: '江汉区' }, { value: 420104, text: '硚口区' }, { value: 420105, text: '汉阳区' }, { value: 420106, text: '武昌区' }, { value: 420107, text: '青山区' }, { value: 420111, text: '洪山区' }, { value: 420112, text: '东西湖区' }, { value: 420113, text: '汉南区' }, { value: 420114, text: '蔡甸区' }, { value: 420115, text: '江夏区' }, { value: 420116, text: '黄陂区' }, { value: 420117, text: '新洲区' }] }, { value: 420200, text: '黄石市', children: [{ value: 420201, text: '市辖区' }, { value: 420202, text: '黄石港区' }, { value: 420203, text: '西塞山区' }, { value: 420204, text: '下陆区' }, { value: 420205, text: '铁山区' }, { value: 420222, text: '阳新县' }, { value: 420281, text: '大冶市' }] }, { value: 420300, text: '十堰市', children: [{ value: 420301, text: '市辖区' }, { value: 420302, text: '茅箭区' }, { value: 420303, text: '张湾区' }, { value: 420321, text: '郧县' }, { value: 420322, text: '郧西县' }, { value: 420323, text: '竹山县' }, { value: 420324, text: '竹溪县' }, { value: 420325, text: '房县' }, { value: 420381, text: '丹江口市' }] }, { value: 420500, text: '宜昌市', children: [{ value: 420501, text: '市辖区' }, { value: 420502, text: '西陵区' }, { value: 420503, text: '伍家岗区' }, { value: 420504, text: '点军区' }, { value: 420505, text: '猇亭区' }, { value: 420506, text: '夷陵区' }, { value: 420525, text: '远安县' }, { value: 420526, text: '兴山县' }, { value: 420527, text: '秭归县' }, { value: 420528, text: '长阳土家族自治县' }, { value: 420529, text: '五峰土家族自治县' }, { value: 420581, text: '宜都市' }, { value: 420582, text: '当阳市' }, { value: 420583, text: '枝江市' }] }, { value: 420600, text: '襄樊市', children: [{ value: 420601, text: '市辖区' }, { value: 420602, text: '襄城区' }, { value: 420606, text: '樊城区' }, { value: 420607, text: '襄阳区' }, { value: 420624, text: '南漳县' }, { value: 420625, text: '谷城县' }, { value: 420626, text: '保康县' }, { value: 420682, text: '老河口市' }, { value: 420683, text: '枣阳市' }, { value: 420684, text: '宜城市' }] }, { value: 420700, text: '鄂州市', children: [{ value: 420701, text: '市辖区' }, { value: 420702, text: '梁子湖区' }, { value: 420703, text: '华容区' }, { value: 420704, text: '鄂城区' }] }, { value: 420800, text: '荆门市', children: [{ value: 420801, text: '市辖区' }, { value: 420802, text: '东宝区' }, { value: 420804, text: '掇刀区' }, { value: 420821, text: '京山县' }, { value: 420822, text: '沙洋县' }, { value: 420881, text: '钟祥市' }] }, { value: 420900, text: '孝感市', children: [{ value: 420901, text: '市辖区' }, { value: 420902, text: '孝南区' }, { value: 420921, text: '孝昌县' }, { value: 420922, text: '大悟县' }, { value: 420923, text: '云梦县' }, { value: 420981, text: '应城市' }, { value: 420982, text: '安陆市' }, { value: 420984, text: '汉川市' }] }, { value: 421000, text: '荆州市', children: [{ value: 421001, text: '市辖区' }, { value: 421002, text: '沙市区' }, { value: 421003, text: '荆州区' }, { value: 421022, text: '公安县' }, { value: 421023, text: '监利县' }, { value: 421024, text: '江陵县' }, { value: 421081, text: '石首市' }, { value: 421083, text: '洪湖市' }, { value: 421087, text: '松滋市' }] }, { value: 421100, text: '黄冈市', children: [{ value: 421101, text: '市辖区' }, { value: 421102, text: '黄州区' }, { value: 421121, text: '团风县' }, { value: 421122, text: '红安县' }, { value: 421123, text: '罗田县' }, { value: 421124, text: '英山县' }, { value: 421125, text: '浠水县' }, { value: 421126, text: '蕲春县' }, { value: 421127, text: '黄梅县' }, { value: 421181, text: '麻城市' }, { value: 421182, text: '武穴市' }] }, { value: 421200, text: '咸宁市', children: [{ value: 421201, text: '市辖区' }, { value: 421202, text: '咸安区' }, { value: 421221, text: '嘉鱼县' }, { value: 421222, text: '通城县' }, { value: 421223, text: '崇阳县' }, { value: 421224, text: '通山县' }, { value: 421281, text: '赤壁市' }] }, { value: 421300, text: '随州市', children: [{ value: 421301, text: '市辖区' }, { value: 421302, text: '曾都区' }, { value: 421381, text: '广水市' }] }, { value: 422800, text: '恩施土家族苗族自治州', children: [{ value: 422801, text: '恩施市' }, { value: 422802, text: '利川市' }, { value: 422822, text: '建始县' }, { value: 422823, text: '巴东县' }, { value: 422825, text: '宣恩县' }, { value: 422826, text: '咸丰县' }, { value: 422827, text: '来凤县' }, { value: 422828, text: '鹤峰县' }] }, { value: 429000, text: '省直辖行政单位', children: [{ value: 429004, text: '仙桃市' }, { value: 429005, text: '潜江市' }, { value: 429006, text: '天门市' }, { value: 429021, text: '神农架林区' }] }] }, { value: 430000, text: '湖南省', children: [{ value: 430100, text: '长沙市', children: [{ value: 430101, text: '市辖区' }, { value: 430102, text: '芙蓉区' }, { value: 430103, text: '天心区' }, { value: 430104, text: '岳麓区' }, { value: 430105, text: '开福区' }, { value: 430111, text: '雨花区' }, { value: 430121, text: '长沙县' }, { value: 430122, text: '望城县' }, { value: 430124, text: '宁乡县' }, { value: 430181, text: '浏阳市' }] }, { value: 430200, text: '株洲市', children: [{ value: 430201, text: '市辖区' }, { value: 430202, text: '荷塘区' }, { value: 430203, text: '芦淞区' }, { value: 430204, text: '石峰区' }, { value: 430211, text: '天元区' }, { value: 430221, text: '株洲县' }, { value: 430223, text: '攸县' }, { value: 430224, text: '茶陵县' }, { value: 430225, text: '炎陵县' }, { value: 430281, text: '醴陵市' }] }, { value: 430300, text: '湘潭市', children: [{ value: 430301, text: '市辖区' }, { value: 430302, text: '雨湖区' }, { value: 430304, text: '岳塘区' }, { value: 430321, text: '湘潭县' }, { value: 430381, text: '湘乡市' }, { value: 430382, text: '韶山市' }] }, { value: 430400, text: '衡阳市', children: [{ value: 430401, text: '市辖区' }, { value: 430405, text: '珠晖区' }, { value: 430406, text: '雁峰区' }, { value: 430407, text: '石鼓区' }, { value: 430408, text: '蒸湘区' }, { value: 430412, text: '南岳区' }, { value: 430421, text: '衡阳县' }, { value: 430422, text: '衡南县' }, { value: 430423, text: '衡山县' }, { value: 430424, text: '衡东县' }, { value: 430426, text: '祁东县' }, { value: 430481, text: '耒阳市' }, { value: 430482, text: '常宁市' }] }, { value: 430500, text: '邵阳市', children: [{ value: 430501, text: '市辖区' }, { value: 430502, text: '双清区' }, { value: 430503, text: '大祥区' }, { value: 430511, text: '北塔区' }, { value: 430521, text: '邵东县' }, { value: 430522, text: '新邵县' }, { value: 430523, text: '邵阳县' }, { value: 430524, text: '隆回县' }, { value: 430525, text: '洞口县' }, { value: 430527, text: '绥宁县' }, { value: 430528, text: '新宁县' }, { value: 430529, text: '城步苗族自治县' }, { value: 430581, text: '武冈市' }] }, { value: 430600, text: '岳阳市', children: [{ value: 430601, text: '市辖区' }, { value: 430602, text: '岳阳楼区' }, { value: 430603, text: '云溪区' }, { value: 430611, text: '君山区' }, { value: 430621, text: '岳阳县' }, { value: 430623, text: '华容县' }, { value: 430624, text: '湘阴县' }, { value: 430626, text: '平江县' }, { value: 430681, text: '汨罗市' }, { value: 430682, text: '临湘市' }] }, { value: 430700, text: '常德市', children: [{ value: 430701, text: '市辖区' }, { value: 430702, text: '武陵区' }, { value: 430703, text: '鼎城区' }, { value: 430721, text: '安乡县' }, { value: 430722, text: '汉寿县' }, { value: 430723, text: '澧县' }, { value: 430724, text: '临澧县' }, { value: 430725, text: '桃源县' }, { value: 430726, text: '石门县' }, { value: 430781, text: '津市市' }] }, { value: 430800, text: '张家界市', children: [{ value: 430801, text: '市辖区' }, { value: 430802, text: '永定区' }, { value: 430811, text: '武陵源区' }, { value: 430821, text: '慈利县' }, { value: 430822, text: '桑植县' }] }, { value: 430900, text: '益阳市', children: [{ value: 430901, text: '市辖区' }, { value: 430902, text: '资阳区' }, { value: 430903, text: '赫山区' }, { value: 430921, text: '南县' }, { value: 430922, text: '桃江县' }, { value: 430923, text: '安化县' }, { value: 430981, text: '沅江市' }] }, { value: 431000, text: '郴州市', children: [{ value: 431001, text: '市辖区' }, { value: 431002, text: '北湖区' }, { value: 431003, text: '苏仙区' }, { value: 431021, text: '桂阳县' }, { value: 431022, text: '宜章县' }, { value: 431023, text: '永兴县' }, { value: 431024, text: '嘉禾县' }, { value: 431025, text: '临武县' }, { value: 431026, text: '汝城县' }, { value: 431027, text: '桂东县' }, { value: 431028, text: '安仁县' }, { value: 431081, text: '资兴市' }] }, { value: 431100, text: '永州市', children: [{ value: 431101, text: '市辖区' }, { value: 431102, text: '零陵区' }, { value: 431103, text: '冷水滩区' }, { value: 431121, text: '祁阳县' }, { value: 431122, text: '东安县' }, { value: 431123, text: '双牌县' }, { value: 431124, text: '道县' }, { value: 431125, text: '江永县' }, { value: 431126, text: '宁远县' }, { value: 431127, text: '蓝山县' }, { value: 431128, text: '新田县' }, { value: 431129, text: '江华瑶族自治县' }] }, { value: 431200, text: '怀化市', children: [{ value: 431201, text: '市辖区' }, { value: 431202, text: '鹤城区' }, { value: 431221, text: '中方县' }, { value: 431222, text: '沅陵县' }, { value: 431223, text: '辰溪县' }, { value: 431224, text: '溆浦县' }, { value: 431225, text: '会同县' }, { value: 431226, text: '麻阳苗族自治县' }, { value: 431227, text: '新晃侗族自治县' }, { value: 431228, text: '芷江侗族自治县' }, { value: 431229, text: '靖州苗族侗族自治县' }, { value: 431230, text: '通道侗族自治县' }, { value: 431281, text: '洪江市' }] }, { value: 431300, text: '娄底市', children: [{ value: 431301, text: '市辖区' }, { value: 431302, text: '娄星区' }, { value: 431321, text: '双峰县' }, { value: 431322, text: '新化县' }, { value: 431381, text: '冷水江市' }, { value: 431382, text: '涟源市' }] }, { value: 433100, text: '湘西土家族苗族自治州', children: [{ value: 433101, text: '吉首市' }, { value: 433122, text: '泸溪县' }, { value: 433123, text: '凤凰县' }, { value: 433124, text: '花垣县' }, { value: 433125, text: '保靖县' }, { value: 433126, text: '古丈县' }, { value: 433127, text: '永顺县' }, { value: 433130, text: '龙山县' }] }] }, { value: 440000, text: '广东省', children: [{ value: 440100, text: '广州市', children: [{ value: 440101, text: '市辖区' }, { value: 440103, text: '荔湾区' }, { value: 440104, text: '越秀区' }, { value: 440105, text: '海珠区' }, { value: 440106, text: '天河区' }, { value: 440111, text: '白云区' }, { value: 440112, text: '黄埔区' }, { value: 440113, text: '番禺区' }, { value: 440114, text: '花都区' }, { value: 440115, text: '南沙区' }, { value: 440116, text: '萝岗区' }, { value: 440183, text: '增城市' }, { value: 440184, text: '从化市' }] }, { value: 440200, text: '韶关市', children: [{ value: 440201, text: '市辖区' }, { value: 440203, text: '武江区' }, { value: 440204, text: '浈江区' }, { value: 440205, text: '曲江区' }, { value: 440222, text: '始兴县' }, { value: 440224, text: '仁化县' }, { value: 440229, text: '翁源县' }, { value: 440232, text: '乳源瑶族自治县' }, { value: 440233, text: '新丰县' }, { value: 440281, text: '乐昌市' }, { value: 440282, text: '南雄市' }] }, { value: 440300, text: '深圳市', children: [{ value: 440301, text: '市辖区' }, { value: 440303, text: '罗湖区' }, { value: 440304, text: '福田区' }, { value: 440305, text: '南山区' }, { value: 440306, text: '宝安区' }, { value: 440307, text: '龙岗区' }, { value: 440308, text: '盐田区' }] }, { value: 440400, text: '珠海市', children: [{ value: 440401, text: '市辖区' }, { value: 440402, text: '香洲区' }, { value: 440403, text: '斗门区' }, { value: 440404, text: '金湾区' }] }, { value: 440500, text: '汕头市', children: [{ value: 440501, text: '市辖区' }, { value: 440507, text: '龙湖区' }, { value: 440511, text: '金平区' }, { value: 440512, text: '濠江区' }, { value: 440513, text: '潮阳区' }, { value: 440514, text: '潮南区' }, { value: 440515, text: '澄海区' }, { value: 440523, text: '南澳县' }] }, { value: 440600, text: '佛山市', children: [{ value: 440601, text: '市辖区' }, { value: 440604, text: '禅城区' }, { value: 440605, text: '南海区' }, { value: 440606, text: '顺德区' }, { value: 440607, text: '三水区' }, { value: 440608, text: '高明区' }] }, { value: 440700, text: '江门市', children: [{ value: 440701, text: '市辖区' }, { value: 440703, text: '蓬江区' }, { value: 440704, text: '江海区' }, { value: 440705, text: '新会区' }, { value: 440781, text: '台山市' }, { value: 440783, text: '开平市' }, { value: 440784, text: '鹤山市' }, { value: 440785, text: '恩平市' }] }, { value: 440800, text: '湛江市', children: [{ value: 440801, text: '市辖区' }, { value: 440802, text: '赤坎区' }, { value: 440803, text: '霞山区' }, { value: 440804, text: '坡头区' }, { value: 440811, text: '麻章区' }, { value: 440823, text: '遂溪县' }, { value: 440825, text: '徐闻县' }, { value: 440881, text: '廉江市' }, { value: 440882, text: '雷州市' }, { value: 440883, text: '吴川市' }] }, { value: 440900, text: '茂名市', children: [{ value: 440901, text: '市辖区' }, { value: 440902, text: '茂南区' }, { value: 440903, text: '茂港区' }, { value: 440923, text: '电白县' }, { value: 440981, text: '高州市' }, { value: 440982, text: '化州市' }, { value: 440983, text: '信宜市' }] }, { value: 441200, text: '肇庆市', children: [{ value: 441201, text: '市辖区' }, { value: 441202, text: '端州区' }, { value: 441203, text: '鼎湖区' }, { value: 441223, text: '广宁县' }, { value: 441224, text: '怀集县' }, { value: 441225, text: '封开县' }, { value: 441226, text: '德庆县' }, { value: 441283, text: '高要市' }, { value: 441284, text: '四会市' }] }, { value: 441300, text: '惠州市', children: [{ value: 441301, text: '市辖区' }, { value: 441302, text: '惠城区' }, { value: 441303, text: '惠阳区' }, { value: 441322, text: '博罗县' }, { value: 441323, text: '惠东县' }, { value: 441324, text: '龙门县' }] }, { value: 441400, text: '梅州市', children: [{ value: 441401, text: '市辖区' }, { value: 441402, text: '梅江区' }, { value: 441421, text: '梅县' }, { value: 441422, text: '大埔县' }, { value: 441423, text: '丰顺县' }, { value: 441424, text: '五华县' }, { value: 441426, text: '平远县' }, { value: 441427, text: '蕉岭县' }, { value: 441481, text: '兴宁市' }] }, { value: 441500, text: '汕尾市', children: [{ value: 441501, text: '市辖区' }, { value: 441502, text: '城区' }, { value: 441521, text: '海丰县' }, { value: 441523, text: '陆河县' }, { value: 441581, text: '陆丰市' }] }, { value: 441600, text: '河源市', children: [{ value: 441601, text: '市辖区' }, { value: 441602, text: '源城区' }, { value: 441621, text: '紫金县' }, { value: 441622, text: '龙川县' }, { value: 441623, text: '连平县' }, { value: 441624, text: '和平县' }, { value: 441625, text: '东源县' }] }, { value: 441700, text: '阳江市', children: [{ value: 441701, text: '市辖区' }, { value: 441702, text: '江城区' }, { value: 441721, text: '阳西县' }, { value: 441723, text: '阳东县' }, { value: 441781, text: '阳春市' }] }, { value: 441800, text: '清远市', children: [{ value: 441801, text: '市辖区' }, { value: 441802, text: '清城区' }, { value: 441821, text: '佛冈县' }, { value: 441823, text: '阳山县' }, { value: 441825, text: '连山壮族瑶族自治县' }, { value: 441826, text: '连南瑶族自治县' }, { value: 441827, text: '清新县' }, { value: 441881, text: '英德市' }, { value: 441882, text: '连州市' }] }, { value: 441900, text: '东莞市', children: [{ value: 441901, text: '东莞市市辖区' }] }, { value: 442000, text: '中山市', children: [{ value: 442001, text: '中山市市辖区' }] }, { value: 445100, text: '潮州市', children: [{ value: 445101, text: '市辖区' }, { value: 445102, text: '湘桥区' }, { value: 445121, text: '潮安县' }, { value: 445122, text: '饶平县' }] }, { value: 445200, text: '揭阳市', children: [{ value: 445201, text: '市辖区' }, { value: 445202, text: '榕城区' }, { value: 445221, text: '揭东县' }, { value: 445222, text: '揭西县' }, { value: 445224, text: '惠来县' }, { value: 445281, text: '普宁市' }] }, { value: 445300, text: '云浮市', children: [{ value: 445301, text: '市辖区' }, { value: 445302, text: '云城区' }, { value: 445321, text: '新兴县' }, { value: 445322, text: '郁南县' }, { value: 445323, text: '云安县' }, { value: 445381, text: '罗定市' }] }] }, { value: 450000, text: '广西壮族自治区', children: [{ value: 450100, text: '南宁市', children: [{ value: 450101, text: '市辖区' }, { value: 450102, text: '兴宁区' }, { value: 450103, text: '青秀区' }, { value: 450105, text: '江南区' }, { value: 450107, text: '西乡塘区' }, { value: 450108, text: '良庆区' }, { value: 450109, text: '邕宁区' }, { value: 450122, text: '武鸣县' }, { value: 450123, text: '隆安县' }, { value: 450124, text: '马山县' }, { value: 450125, text: '上林县' }, { value: 450126, text: '宾阳县' }, { value: 450127, text: '横县' }] }, { value: 450200, text: '柳州市', children: [{ value: 450201, text: '市辖区' }, { value: 450202, text: '城中区' }, { value: 450203, text: '鱼峰区' }, { value: 450204, text: '柳南区' }, { value: 450205, text: '柳北区' }, { value: 450221, text: '柳江县' }, { value: 450222, text: '柳城县' }, { value: 450223, text: '鹿寨县' }, { value: 450224, text: '融安县' }, { value: 450225, text: '融水苗族自治县' }, { value: 450226, text: '三江侗族自治县' }] }, { value: 450300, text: '桂林市', children: [{ value: 450301, text: '市辖区' }, { value: 450302, text: '秀峰区' }, { value: 450303, text: '叠彩区' }, { value: 450304, text: '象山区' }, { value: 450305, text: '七星区' }, { value: 450311, text: '雁山区' }, { value: 450321, text: '阳朔县' }, { value: 450322, text: '临桂县' }, { value: 450323, text: '灵川县' }, { value: 450324, text: '全州县' }, { value: 450325, text: '兴安县' }, { value: 450326, text: '永福县' }, { value: 450327, text: '灌阳县' }, { value: 450328, text: '龙胜各族自治县' }, { value: 450329, text: '资源县' }, { value: 450330, text: '平乐县' }, { value: 450331, text: '荔蒲县' }, { value: 450332, text: '恭城瑶族自治县' }] }, { value: 450400, text: '梧州市', children: [{ value: 450401, text: '市辖区' }, { value: 450403, text: '万秀区' }, { value: 450404, text: '蝶山区' }, { value: 450405, text: '长洲区' }, { value: 450421, text: '苍梧县' }, { value: 450422, text: '藤县' }, { value: 450423, text: '蒙山县' }, { value: 450481, text: '岑溪市' }] }, { value: 450500, text: '北海市', children: [{ value: 450501, text: '市辖区' }, { value: 450502, text: '海城区' }, { value: 450503, text: '银海区' }, { value: 450512, text: '铁山港区' }, { value: 450521, text: '合浦县' }] }, { value: 450600, text: '防城港市', children: [{ value: 450601, text: '市辖区' }, { value: 450602, text: '港口区' }, { value: 450603, text: '防城区' }, { value: 450621, text: '上思县' }, { value: 450681, text: '东兴市' }] }, { value: 450700, text: '钦州市', children: [{ value: 450701, text: '市辖区' }, { value: 450702, text: '钦南区' }, { value: 450703, text: '钦北区' }, { value: 450721, text: '灵山县' }, { value: 450722, text: '浦北县' }] }, { value: 450800, text: '贵港市', children: [{ value: 450801, text: '市辖区' }, { value: 450802, text: '港北区' }, { value: 450803, text: '港南区' }, { value: 450804, text: '覃塘区' }, { value: 450821, text: '平南县' }, { value: 450881, text: '桂平市' }] }, { value: 450900, text: '玉林市', children: [{ value: 450901, text: '市辖区' }, { value: 450902, text: '玉州区' }, { value: 450921, text: '容县' }, { value: 450922, text: '陆川县' }, { value: 450923, text: '博白县' }, { value: 450924, text: '兴业县' }, { value: 450981, text: '北流市' }] }, { value: 451000, text: '百色市', children: [{ value: 451001, text: '市辖区' }, { value: 451002, text: '右江区' }, { value: 451021, text: '田阳县' }, { value: 451022, text: '田东县' }, { value: 451023, text: '平果县' }, { value: 451024, text: '德保县' }, { value: 451025, text: '靖西县' }, { value: 451026, text: '那坡县' }, { value: 451027, text: '凌云县' }, { value: 451028, text: '乐业县' }, { value: 451029, text: '田林县' }, { value: 451030, text: '西林县' }, { value: 451031, text: '隆林各族自治县' }] }, { value: 451100, text: '贺州市', children: [{ value: 451101, text: '市辖区' }, { value: 451102, text: '八步区' }, { value: 451121, text: '昭平县' }, { value: 451122, text: '钟山县' }, { value: 451123, text: '富川瑶族自治县' }] }, { value: 451200, text: '河池市', children: [{ value: 451201, text: '市辖区' }, { value: 451202, text: '金城江区' }, { value: 451221, text: '南丹县' }, { value: 451222, text: '天峨县' }, { value: 451223, text: '凤山县' }, { value: 451224, text: '东兰县' }, { value: 451225, text: '罗城仫佬族自治县' }, { value: 451226, text: '环江毛南族自治县' }, { value: 451227, text: '巴马瑶族自治县' }, { value: 451228, text: '都安瑶族自治县' }, { value: 451229, text: '大化瑶族自治县' }, { value: 451281, text: '宜州市' }] }, { value: 451300, text: '来宾市', children: [{ value: 451301, text: '市辖区' }, { value: 451302, text: '兴宾区' }, { value: 451321, text: '忻城县' }, { value: 451322, text: '象州县' }, { value: 451323, text: '武宣县' }, { value: 451324, text: '金秀瑶族自治县' }, { value: 451381, text: '合山市' }] }, { value: 451400, text: '崇左市', children: [{ value: 451401, text: '市辖区' }, { value: 451402, text: '江洲区' }, { value: 451421, text: '扶绥县' }, { value: 451422, text: '宁明县' }, { value: 451423, text: '龙州县' }, { value: 451424, text: '大新县' }, { value: 451425, text: '天等县' }, { value: 451481, text: '凭祥市' }] }] }, { value: 460000, text: '海南省', children: [{ value: 460100, text: '海口市', children: [{ value: 460101, text: '市辖区' }, { value: 460105, text: '秀英区' }, { value: 460106, text: '龙华区' }, { value: 460107, text: '琼山区' }, { value: 460108, text: '美兰区' }] }, { value: 460200, text: '三亚市', children: [{ value: 460201, text: '市辖区' }] }, { value: 469000, text: '省直辖县级行政单位', children: [{ value: 469001, text: '五指山市' }, { value: 469002, text: '琼海市' }, { value: 469003, text: '儋州市' }, { value: 469005, text: '文昌市' }, { value: 469006, text: '万宁市' }, { value: 469007, text: '东方市' }, { value: 469025, text: '定安县' }, { value: 469026, text: '屯昌县' }, { value: 469027, text: '澄迈县' }, { value: 469028, text: '临高县' }, { value: 469030, text: '白沙黎族自治县' }, { value: 469031, text: '昌江黎族自治县' }, { value: 469033, text: '乐东黎族自治县' }, { value: 469034, text: '陵水黎族自治县' }, { value: 469035, text: '保亭黎族苗族自治县' }, { value: 469036, text: '琼中黎族苗族自治县' }, { value: 469037, text: '西沙群岛' }, { value: 469038, text: '南沙群岛' }, { value: 469039, text: '中沙群岛的岛礁及其海域' }] }] }, { value: 500000, text: '重庆市', children: [{ value: 500100, text: '市辖区', children: [{ value: 500101, text: '万州区' }, { value: 500102, text: '涪陵区' }, { value: 500103, text: '渝中区' }, { value: 500104, text: '大渡口区' }, { value: 500105, text: '江北区' }, { value: 500106, text: '沙坪坝区' }, { value: 500107, text: '九龙坡区' }, { value: 500108, text: '南岸区' }, { value: 500109, text: '北碚区' }, { value: 500110, text: '万盛区' }, { value: 500111, text: '双桥区' }, { value: 500112, text: '渝北区' }, { value: 500113, text: '巴南区' }, { value: 500114, text: '黔江区' }, { value: 500115, text: '长寿区' }, { value: 500116, text: '江津区' }, { value: 500117, text: '合川区' }, { value: 500118, text: '永川区' }, { value: 500119, text: '南川区' }] }, { value: 500200, text: '县', children: [{ value: 500222, text: '綦江县' }, { value: 500223, text: '潼南县' }, { value: 500224, text: '铜梁县' }, { value: 500225, text: '大足县' }, { value: 500226, text: '荣昌县' }, { value: 500227, text: '璧山县' }, { value: 500228, text: '梁平县' }, { value: 500229, text: '城口县' }, { value: 500230, text: '丰都县' }, { value: 500231, text: '垫江县' }, { value: 500232, text: '武隆县' }, { value: 500233, text: '忠县' }, { value: 500234, text: '开县' }, { value: 500235, text: '云阳县' }, { value: 500236, text: '奉节县' }, { value: 500237, text: '巫山县' }, { value: 500238, text: '巫溪县' }, { value: 500240, text: '石柱土家族自治县' }, { value: 500241, text: '秀山土家族苗族自治县' }, { value: 500242, text: '酉阳土家族苗族自治县' }, { value: 500243, text: '彭水苗族土家族自治县' }] }] }, { value: 510000, text: '四川省', children: [{ value: 510100, text: '成都市', children: [{ value: 510101, text: '市辖区' }, { value: 510104, text: '锦江区' }, { value: 510105, text: '青羊区' }, { value: 510106, text: '金牛区' }, { value: 510107, text: '武侯区' }, { value: 510108, text: '成华区' }, { value: 510112, text: '龙泉驿区' }, { value: 510113, text: '青白江区' }, { value: 510114, text: '新都区' }, { value: 510115, text: '温江区' }, { value: 510121, text: '金堂县' }, { value: 510122, text: '双流县' }, { value: 510124, text: '郫县' }, { value: 510129, text: '大邑县' }, { value: 510131, text: '蒲江县' }, { value: 510132, text: '新津县' }, { value: 510181, text: '都江堰市' }, { value: 510182, text: '彭州市' }, { value: 510183, text: '邛崃市' }, { value: 510184, text: '崇州市' }] }, { value: 510300, text: '自贡市', children: [{ value: 510301, text: '市辖区' }, { value: 510302, text: '自流井区' }, { value: 510303, text: '贡井区' }, { value: 510304, text: '大安区' }, { value: 510311, text: '沿滩区' }, { value: 510321, text: '荣县' }, { value: 510322, text: '富顺县' }] }, { value: 510400, text: '攀枝花市', children: [{ value: 510401, text: '市辖区' }, { value: 510402, text: '东区' }, { value: 510403, text: '西区' }, { value: 510411, text: '仁和区' }, { value: 510421, text: '米易县' }, { value: 510422, text: '盐边县' }] }, { value: 510500, text: '泸州市', children: [{ value: 510501, text: '市辖区' }, { value: 510502, text: '江阳区' }, { value: 510503, text: '纳溪区' }, { value: 510504, text: '龙马潭区' }, { value: 510521, text: '泸县' }, { value: 510522, text: '合江县' }, { value: 510524, text: '叙永县' }, { value: 510525, text: '古蔺县' }] }, { value: 510600, text: '德阳市', children: [{ value: 510601, text: '市辖区' }, { value: 510603, text: '旌阳区' }, { value: 510623, text: '中江县' }, { value: 510626, text: '罗江县' }, { value: 510681, text: '广汉市' }, { value: 510682, text: '什邡市' }, { value: 510683, text: '绵竹市' }] }, { value: 510700, text: '绵阳市', children: [{ value: 510701, text: '市辖区' }, { value: 510703, text: '涪城区' }, { value: 510704, text: '游仙区' }, { value: 510722, text: '三台县' }, { value: 510723, text: '盐亭县' }, { value: 510724, text: '安县' }, { value: 510725, text: '梓潼县' }, { value: 510726, text: '北川羌族自治县' }, { value: 510727, text: '平武县' }, { value: 510781, text: '江油市' }] }, { value: 510800, text: '广元市', children: [{ value: 510801, text: '市辖区' }, { value: 510802, text: '市中区' }, { value: 510811, text: '元坝区' }, { value: 510812, text: '朝天区' }, { value: 510821, text: '旺苍县' }, { value: 510822, text: '青川县' }, { value: 510823, text: '剑阁县' }, { value: 510824, text: '苍溪县' }] }, { value: 510900, text: '遂宁市', children: [{ value: 510901, text: '市辖区' }, { value: 510903, text: '船山区' }, { value: 510904, text: '安居区' }, { value: 510921, text: '蓬溪县' }, { value: 510922, text: '射洪县' }, { value: 510923, text: '大英县' }] }, { value: 511000, text: '内江市', children: [{ value: 511001, text: '市辖区' }, { value: 511002, text: '市中区' }, { value: 511011, text: '东兴区' }, { value: 511024, text: '威远县' }, { value: 511025, text: '资中县' }, { value: 511028, text: '隆昌县' }] }, { value: 511100, text: '乐山市', children: [{ value: 511101, text: '市辖区' }, { value: 511102, text: '市中区' }, { value: 511111, text: '沙湾区' }, { value: 511112, text: '五通桥区' }, { value: 511113, text: '金口河区' }, { value: 511123, text: '犍为县' }, { value: 511124, text: '井研县' }, { value: 511126, text: '夹江县' }, { value: 511129, text: '沐川县' }, { value: 511132, text: '峨边彝族自治县' }, { value: 511133, text: '马边彝族自治县' }, { value: 511181, text: '峨眉山市' }] }, { value: 511300, text: '南充市', children: [{ value: 511301, text: '市辖区' }, { value: 511302, text: '顺庆区' }, { value: 511303, text: '高坪区' }, { value: 511304, text: '嘉陵区' }, { value: 511321, text: '南部县' }, { value: 511322, text: '营山县' }, { value: 511323, text: '蓬安县' }, { value: 511324, text: '仪陇县' }, { value: 511325, text: '西充县' }, { value: 511381, text: '阆中市' }] }, { value: 511400, text: '眉山市', children: [{ value: 511401, text: '市辖区' }, { value: 511402, text: '东坡区' }, { value: 511421, text: '仁寿县' }, { value: 511422, text: '彭山县' }, { value: 511423, text: '洪雅县' }, { value: 511424, text: '丹棱县' }, { value: 511425, text: '青神县' }] }, { value: 511500, text: '宜宾市', children: [{ value: 511501, text: '市辖区' }, { value: 511502, text: '翠屏区' }, { value: 511521, text: '宜宾县' }, { value: 511522, text: '南溪县' }, { value: 511523, text: '江安县' }, { value: 511524, text: '长宁县' }, { value: 511525, text: '高县' }, { value: 511526, text: '珙县' }, { value: 511527, text: '筠连县' }, { value: 511528, text: '兴文县' }, { value: 511529, text: '屏山县' }] }, { value: 511600, text: '广安市', children: [{ value: 511601, text: '市辖区' }, { value: 511602, text: '广安区' }, { value: 511621, text: '岳池县' }, { value: 511622, text: '武胜县' }, { value: 511623, text: '邻水县' }, { value: 511681, text: '华蓥市' }] }, { value: 511700, text: '达州市', children: [{ value: 511701, text: '市辖区' }, { value: 511702, text: '通川区' }, { value: 511721, text: '达县' }, { value: 511722, text: '宣汉县' }, { value: 511723, text: '开江县' }, { value: 511724, text: '大竹县' }, { value: 511725, text: '渠县' }, { value: 511781, text: '万源市' }] }, { value: 511800, text: '雅安市', children: [{ value: 511801, text: '市辖区' }, { value: 511802, text: '雨城区' }, { value: 511821, text: '名山县' }, { value: 511822, text: '荥经县' }, { value: 511823, text: '汉源县' }, { value: 511824, text: '石棉县' }, { value: 511825, text: '天全县' }, { value: 511826, text: '芦山县' }, { value: 511827, text: '宝兴县' }] }, { value: 511900, text: '巴中市', children: [{ value: 511901, text: '市辖区' }, { value: 511902, text: '巴州区' }, { value: 511921, text: '通江县' }, { value: 511922, text: '南江县' }, { value: 511923, text: '平昌县' }] }, { value: 512000, text: '资阳市', children: [{ value: 512001, text: '市辖区' }, { value: 512002, text: '雁江区' }, { value: 512021, text: '安岳县' }, { value: 512022, text: '乐至县' }, { value: 512081, text: '简阳市' }] }, { value: 513200, text: '阿坝藏族羌族自治州', children: [{ value: 513221, text: '汶川县' }, { value: 513222, text: '理县' }, { value: 513223, text: '茂县' }, { value: 513224, text: '松潘县' }, { value: 513225, text: '九寨沟县' }, { value: 513226, text: '金川县' }, { value: 513227, text: '小金县' }, { value: 513228, text: '黑水县' }, { value: 513229, text: '马尔康县' }, { value: 513230, text: '壤塘县' }, { value: 513231, text: '阿坝县' }, { value: 513232, text: '若尔盖县' }, { value: 513233, text: '红原县' }] }, { value: 513300, text: '甘孜藏族自治州', children: [{ value: 513321, text: '康定县' }, { value: 513322, text: '泸定县' }, { value: 513323, text: '丹巴县' }, { value: 513324, text: '九龙县' }, { value: 513325, text: '雅江县' }, { value: 513326, text: '道孚县' }, { value: 513327, text: '炉霍县' }, { value: 513328, text: '甘孜县' }, { value: 513329, text: '新龙县' }, { value: 513330, text: '德格县' }, { value: 513331, text: '白玉县' }, { value: 513332, text: '石渠县' }, { value: 513333, text: '色达县' }, { value: 513334, text: '理塘县' }, { value: 513335, text: '巴塘县' }, { value: 513336, text: '乡城县' }, { value: 513337, text: '稻城县' }, { value: 513338, text: '得荣县' }] }, { value: 513400, text: '凉山彝族自治州', children: [{ value: 513401, text: '西昌市' }, { value: 513422, text: '木里藏族自治县' }, { value: 513423, text: '盐源县' }, { value: 513424, text: '德昌县' }, { value: 513425, text: '会理县' }, { value: 513426, text: '会东县' }, { value: 513427, text: '宁南县' }, { value: 513428, text: '普格县' }, { value: 513429, text: '布拖县' }, { value: 513430, text: '金阳县' }, { value: 513431, text: '昭觉县' }, { value: 513432, text: '喜德县' }, { value: 513433, text: '冕宁县' }, { value: 513434, text: '越西县' }, { value: 513435, text: '甘洛县' }, { value: 513436, text: '美姑县' }, { value: 513437, text: '雷波县' }] }] }, { value: 520000, text: '贵州省', children: [{ value: 520100, text: '贵阳市', children: [{ value: 520101, text: '市辖区' }, { value: 520102, text: '南明区' }, { value: 520103, text: '云岩区' }, { value: 520111, text: '花溪区' }, { value: 520112, text: '乌当区' }, { value: 520113, text: '白云区' }, { value: 520114, text: '小河区' }, { value: 520121, text: '开阳县' }, { value: 520122, text: '息烽县' }, { value: 520123, text: '修文县' }, { value: 520181, text: '清镇市' }] }, { value: 520200, text: '六盘水市', children: [{ value: 520201, text: '钟山区' }, { value: 520203, text: '六枝特区' }, { value: 520221, text: '水城县' }, { value: 520222, text: '盘县' }] }, { value: 520300, text: '遵义市', children: [{ value: 520301, text: '市辖区' }, { value: 520302, text: '红花岗区' }, { value: 520303, text: '汇川区' }, { value: 520321, text: '遵义县' }, { value: 520322, text: '桐梓县' }, { value: 520323, text: '绥阳县' }, { value: 520324, text: '正安县' }, { value: 520325, text: '道真仡佬族苗族自治县' }, { value: 520326, text: '务川仡佬族苗族自治县' }, { value: 520327, text: '凤冈县' }, { value: 520328, text: '湄潭县' }, { value: 520329, text: '余庆县' }, { value: 520330, text: '习水县' }, { value: 520381, text: '赤水市' }, { value: 520382, text: '仁怀市' }] }, { value: 520400, text: '安顺市', children: [{ value: 520401, text: '市辖区' }, { value: 520402, text: '西秀区' }, { value: 520421, text: '平坝县' }, { value: 520422, text: '普定县' }, { value: 520423, text: '镇宁布依族苗族自治县' }, { value: 520424, text: '关岭布依族苗族自治县' }, { value: 520425, text: '紫云苗族布依族自治县' }] }, { value: 522200, text: '铜仁地区', children: [{ value: 522201, text: '铜仁市' }, { value: 522222, text: '江口县' }, { value: 522223, text: '玉屏侗族自治县' }, { value: 522224, text: '石阡县' }, { value: 522225, text: '思南县' }, { value: 522226, text: '印江土家族苗族自治县' }, { value: 522227, text: '德江县' }, { value: 522228, text: '沿河土家族自治县' }, { value: 522229, text: '松桃苗族自治县' }, { value: 522230, text: '万山特区' }] }, { value: 522300, text: '黔西南布依族苗族自治州', children: [{ value: 522301, text: '兴义市' }, { value: 522322, text: '兴仁县' }, { value: 522323, text: '普安县' }, { value: 522324, text: '晴隆县' }, { value: 522325, text: '贞丰县' }, { value: 522326, text: '望谟县' }, { value: 522327, text: '册亨县' }, { value: 522328, text: '安龙县' }] }, { value: 522400, text: '毕节地区', children: [{ value: 522401, text: '毕节市' }, { value: 522422, text: '大方县' }, { value: 522423, text: '黔西县' }, { value: 522424, text: '金沙县' }, { value: 522425, text: '织金县' }, { value: 522426, text: '纳雍县' }, { value: 522427, text: '威宁彝族回族苗族自治县' }, { value: 522428, text: '赫章县' }] }, { value: 522600, text: '黔东南苗族侗族自治州', children: [{ value: 522601, text: '凯里市' }, { value: 522622, text: '黄平县' }, { value: 522623, text: '施秉县' }, { value: 522624, text: '三穗县' }, { value: 522625, text: '镇远县' }, { value: 522626, text: '岑巩县' }, { value: 522627, text: '天柱县' }, { value: 522628, text: '锦屏县' }, { value: 522629, text: '剑河县' }, { value: 522630, text: '台江县' }, { value: 522631, text: '黎平县' }, { value: 522632, text: '榕江县' }, { value: 522633, text: '从江县' }, { value: 522634, text: '雷山县' }, { value: 522635, text: '麻江县' }, { value: 522636, text: '丹寨县' }] }, { value: 522700, text: '黔南布依族苗族自治州', children: [{ value: 522701, text: '都匀市' }, { value: 522702, text: '福泉市' }, { value: 522722, text: '荔波县' }, { value: 522723, text: '贵定县' }, { value: 522725, text: '瓮安县' }, { value: 522726, text: '独山县' }, { value: 522727, text: '平塘县' }, { value: 522728, text: '罗甸县' }, { value: 522729, text: '长顺县' }, { value: 522730, text: '龙里县' }, { value: 522731, text: '惠水县' }, { value: 522732, text: '三都水族自治县' }] }] }, { value: 530000, text: '云南省', children: [{ value: 530100, text: '昆明市', children: [{ value: 530101, text: '市辖区' }, { value: 530102, text: '五华区' }, { value: 530103, text: '盘龙区' }, { value: 530111, text: '官渡区' }, { value: 530112, text: '西山区' }, { value: 530113, text: '东川区' }, { value: 530121, text: '呈贡县' }, { value: 530122, text: '晋宁县' }, { value: 530124, text: '富民县' }, { value: 530125, text: '宜良县' }, { value: 530126, text: '石林彝族自治县' }, { value: 530127, text: '嵩明县' }, { value: 530128, text: '禄劝彝族苗族自治县' }, { value: 530129, text: '寻甸回族彝族自治县' }, { value: 530181, text: '安宁市' }] }, { value: 530300, text: '曲靖市', children: [{ value: 530301, text: '市辖区' }, { value: 530302, text: '麒麟区' }, { value: 530321, text: '马龙县' }, { value: 530322, text: '陆良县' }, { value: 530323, text: '师宗县' }, { value: 530324, text: '罗平县' }, { value: 530325, text: '富源县' }, { value: 530326, text: '会泽县' }, { value: 530328, text: '沾益县' }, { value: 530381, text: '宣威市' }] }, { value: 530400, text: '玉溪市', children: [{ value: 530401, text: '市辖区' }, { value: 530402, text: '红塔区' }, { value: 530421, text: '江川县' }, { value: 530422, text: '澄江县' }, { value: 530423, text: '通海县' }, { value: 530424, text: '华宁县' }, { value: 530425, text: '易门县' }, { value: 530426, text: '峨山彝族自治县' }, { value: 530427, text: '新平彝族傣族自治县' }, { value: 530428, text: '元江哈尼族彝族傣族自治县' }] }, { value: 530500, text: '保山市', children: [{ value: 530501, text: '市辖区' }, { value: 530502, text: '隆阳区' }, { value: 530521, text: '施甸县' }, { value: 530522, text: '腾冲县' }, { value: 530523, text: '龙陵县' }, { value: 530524, text: '昌宁县' }] }, { value: 530600, text: '昭通市', children: [{ value: 530601, text: '市辖区' }, { value: 530602, text: '昭阳区' }, { value: 530621, text: '鲁甸县' }, { value: 530622, text: '巧家县' }, { value: 530623, text: '盐津县' }, { value: 530624, text: '大关县' }, { value: 530625, text: '永善县' }, { value: 530626, text: '绥江县' }, { value: 530627, text: '镇雄县' }, { value: 530628, text: '彝良县' }, { value: 530629, text: '威信县' }, { value: 530630, text: '水富县' }] }, { value: 530700, text: '丽江市', children: [{ value: 530701, text: '市辖区' }, { value: 530702, text: '古城区' }, { value: 530721, text: '玉龙纳西族自治县' }, { value: 530722, text: '永胜县' }, { value: 530723, text: '华坪县' }, { value: 530724, text: '宁蒗彝族自治县' }] }, { value: 530800, text: '普洱市      ', children: [{ value: 530801, text: '市辖区' }, { value: 530802, text: '思茅区      ' }, { value: 530821, text: '宁洱哈尼族彝族自治县      ' }, { value: 530822, text: '墨江哈尼族自治县' }, { value: 530823, text: '景东彝族自治县' }, { value: 530824, text: '景谷傣族彝族自治县' }, { value: 530825, text: '镇沅彝族哈尼族拉祜族自治县' }, { value: 530826, text: '江城哈尼族彝族自治县' }, { value: 530827, text: '孟连傣族拉祜族佤族自治县' }, { value: 530828, text: '澜沧拉祜族自治县' }, { value: 530829, text: '西盟佤族自治县' }] }, { value: 530900, text: '临沧市', children: [{ value: 530901, text: '市辖区' }, { value: 530902, text: '临翔区' }, { value: 530921, text: '凤庆县' }, { value: 530922, text: '云县' }, { value: 530923, text: '永德县' }, { value: 530924, text: '镇康县' }, { value: 530925, text: '双江拉祜族佤族布朗族傣族自治县' }, { value: 530926, text: '耿马傣族佤族自治县' }, { value: 530927, text: '沧源佤族自治县' }] }, { value: 532300, text: '楚雄彝族自治州', children: [{ value: 532301, text: '楚雄市' }, { value: 532322, text: '双柏县' }, { value: 532323, text: '牟定县' }, { value: 532324, text: '南华县' }, { value: 532325, text: '姚安县' }, { value: 532326, text: '大姚县' }, { value: 532327, text: '永仁县' }, { value: 532328, text: '元谋县' }, { value: 532329, text: '武定县' }, { value: 532331, text: '禄丰县' }] }, { value: 532500, text: '红河哈尼族彝族自治州', children: [{ value: 532501, text: '个旧市' }, { value: 532502, text: '开远市' }, { value: 532522, text: '蒙自县' }, { value: 532523, text: '屏边苗族自治县' }, { value: 532524, text: '建水县' }, { value: 532525, text: '石屏县' }, { value: 532526, text: '弥勒县' }, { value: 532527, text: '泸西县' }, { value: 532528, text: '元阳县' }, { value: 532529, text: '红河县' }, { value: 532530, text: '金平苗族瑶族傣族自治县' }, { value: 532531, text: '绿春县' }, { value: 532532, text: '河口瑶族自治县' }] }, { value: 532600, text: '文山壮族苗族自治州', children: [{ value: 532621, text: '文山县' }, { value: 532622, text: '砚山县' }, { value: 532623, text: '西畴县' }, { value: 532624, text: '麻栗坡县' }, { value: 532625, text: '马关县' }, { value: 532626, text: '丘北县' }, { value: 532627, text: '广南县' }, { value: 532628, text: '富宁县' }] }, { value: 532800, text: '西双版纳傣族自治州', children: [{ value: 532801, text: '景洪市' }, { value: 532822, text: '勐海县' }, { value: 532823, text: '勐腊县' }] }, { value: 532900, text: '大理白族自治州', children: [{ value: 532901, text: '大理市' }, { value: 532922, text: '漾濞彝族自治县' }, { value: 532923, text: '祥云县' }, { value: 532924, text: '宾川县' }, { value: 532925, text: '弥渡县' }, { value: 532926, text: '南涧彝族自治县' }, { value: 532927, text: '巍山彝族回族自治县' }, { value: 532928, text: '永平县' }, { value: 532929, text: '云龙县' }, { value: 532930, text: '洱源县' }, { value: 532931, text: '剑川县' }, { value: 532932, text: '鹤庆县' }] }, { value: 533100, text: '德宏傣族景颇族自治州', children: [{ value: 533102, text: '瑞丽市' }, { value: 533103, text: '潞西市' }, { value: 533122, text: '梁河县' }, { value: 533123, text: '盈江县' }, { value: 533124, text: '陇川县' }] }, { value: 533300, text: '怒江傈僳族自治州', children: [{ value: 533321, text: '泸水县' }, { value: 533323, text: '福贡县' }, { value: 533324, text: '贡山独龙族怒族自治县' }, { value: 533325, text: '兰坪白族普米族自治县' }] }, { value: 533400, text: '迪庆藏族自治州', children: [{ value: 533421, text: '香格里拉县' }, { value: 533422, text: '德钦县' }, { value: 533423, text: '维西傈僳族自治县' }] }] }, { value: 540000, text: '西藏自治区', children: [{ value: 540100, text: '拉萨市', children: [{ value: 540101, text: '市辖区' }, { value: 540102, text: '城关区' }, { value: 540121, text: '林周县' }, { value: 540122, text: '当雄县' }, { value: 540123, text: '尼木县' }, { value: 540124, text: '曲水县' }, { value: 540125, text: '堆龙德庆县' }, { value: 540126, text: '达孜县' }, { value: 540127, text: '墨竹工卡县' }] }, { value: 542100, text: '昌都地区', children: [{ value: 542121, text: '昌都县' }, { value: 542122, text: '江达县' }, { value: 542123, text: '贡觉县' }, { value: 542124, text: '类乌齐县' }, { value: 542125, text: '丁青县' }, { value: 542126, text: '察雅县' }, { value: 542127, text: '八宿县' }, { value: 542128, text: '左贡县' }, { value: 542129, text: '芒康县' }, { value: 542132, text: '洛隆县' }, { value: 542133, text: '边坝县' }] }, { value: 542200, text: '山南地区', children: [{ value: 542221, text: '乃东县' }, { value: 542222, text: '扎囊县' }, { value: 542223, text: '贡嘎县' }, { value: 542224, text: '桑日县' }, { value: 542225, text: '琼结县' }, { value: 542226, text: '曲松县' }, { value: 542227, text: '措美县' }, { value: 542228, text: '洛扎县' }, { value: 542229, text: '加查县' }, { value: 542231, text: '隆子县' }, { value: 542232, text: '错那县' }, { value: 542233, text: '浪卡子县' }] }, { value: 542300, text: '日喀则地区', children: [{ value: 542301, text: '日喀则市' }, { value: 542322, text: '南木林县' }, { value: 542323, text: '江孜县' }, { value: 542324, text: '定日县' }, { value: 542325, text: '萨迦县' }, { value: 542326, text: '拉孜县' }, { value: 542327, text: '昂仁县' }, { value: 542328, text: '谢通门县' }, { value: 542329, text: '白朗县' }, { value: 542330, text: '仁布县' }, { value: 542331, text: '康马县' }, { value: 542332, text: '定结县' }, { value: 542333, text: '仲巴县' }, { value: 542334, text: '亚东县' }, { value: 542335, text: '吉隆县' }, { value: 542336, text: '聂拉木县' }, { value: 542337, text: '萨嘎县' }, { value: 542338, text: '岗巴县' }] }, { value: 542400, text: '那曲地区', children: [{ value: 542421, text: '那曲县' }, { value: 542422, text: '嘉黎县' }, { value: 542423, text: '比如县' }, { value: 542424, text: '聂荣县' }, { value: 542425, text: '安多县' }, { value: 542426, text: '申扎县' }, { value: 542427, text: '索县' }, { value: 542428, text: '班戈县' }, { value: 542429, text: '巴青县' }, { value: 542430, text: '尼玛县' }] }, { value: 542500, text: '阿里地区', children: [{ value: 542521, text: '普兰县' }, { value: 542522, text: '札达县' }, { value: 542523, text: '噶尔县' }, { value: 542524, text: '日土县' }, { value: 542525, text: '革吉县' }, { value: 542526, text: '改则县' }, { value: 542527, text: '措勤县' }] }, { value: 542600, text: '林芝地区', children: [{ value: 542621, text: '林芝县' }, { value: 542622, text: '工布江达县' }, { value: 542623, text: '米林县' }, { value: 542624, text: '墨脱县' }, { value: 542625, text: '波密县' }, { value: 542626, text: '察隅县' }, { value: 542627, text: '朗县' }] }] }, { value: 610000, text: '陕西省', children: [{ value: 610100, text: '西安市', children: [{ value: 610101, text: '市辖区' }, { value: 610102, text: '新城区' }, { value: 610103, text: '碑林区' }, { value: 610104, text: '莲湖区' }, { value: 610111, text: '灞桥区' }, { value: 610112, text: '未央区' }, { value: 610113, text: '雁塔区' }, { value: 610114, text: '阎良区' }, { value: 610115, text: '临潼区' }, { value: 610116, text: '长安区' }, { value: 610122, text: '蓝田县' }, { value: 610124, text: '周至县' }, { value: 610125, text: '户县' }, { value: 610126, text: '高陵县' }] }, { value: 610200, text: '铜川市', children: [{ value: 610201, text: '市辖区' }, { value: 610202, text: '王益区' }, { value: 610203, text: '印台区' }, { value: 610204, text: '耀州区' }, { value: 610222, text: '宜君县' }] }, { value: 610300, text: '宝鸡市', children: [{ value: 610301, text: '市辖区' }, { value: 610302, text: '渭滨区' }, { value: 610303, text: '金台区' }, { value: 610304, text: '陈仓区' }, { value: 610322, text: '凤翔县' }, { value: 610323, text: '岐山县' }, { value: 610324, text: '扶风县' }, { value: 610326, text: '眉县' }, { value: 610327, text: '陇县' }, { value: 610328, text: '千阳县' }, { value: 610329, text: '麟游县' }, { value: 610330, text: '凤县' }, { value: 610331, text: '太白县' }] }, { value: 610400, text: '咸阳市', children: [{ value: 610401, text: '市辖区' }, { value: 610402, text: '秦都区' }, { value: 610403, text: '杨凌区' }, { value: 610404, text: '渭城区' }, { value: 610422, text: '三原县' }, { value: 610423, text: '泾阳县' }, { value: 610424, text: '乾县' }, { value: 610425, text: '礼泉县' }, { value: 610426, text: '永寿县' }, { value: 610427, text: '彬县' }, { value: 610428, text: '长武县' }, { value: 610429, text: '旬邑县' }, { value: 610430, text: '淳化县' }, { value: 610431, text: '武功县' }, { value: 610481, text: '兴平市' }] }, { value: 610500, text: '渭南市', children: [{ value: 610501, text: '市辖区' }, { value: 610502, text: '临渭区' }, { value: 610521, text: '华县' }, { value: 610522, text: '潼关县' }, { value: 610523, text: '大荔县' }, { value: 610524, text: '合阳县' }, { value: 610525, text: '澄城县' }, { value: 610526, text: '蒲城县' }, { value: 610527, text: '白水县' }, { value: 610528, text: '富平县' }, { value: 610581, text: '韩城市' }, { value: 610582, text: '华阴市' }] }, { value: 610600, text: '延安市', children: [{ value: 610601, text: '市辖区' }, { value: 610602, text: '宝塔区' }, { value: 610621, text: '延长县' }, { value: 610622, text: '延川县' }, { value: 610623, text: '子长县' }, { value: 610624, text: '安塞县' }, { value: 610625, text: '志丹县' }, { value: 610626, text: '吴起县' }, { value: 610627, text: '甘泉县' }, { value: 610628, text: '富县' }, { value: 610629, text: '洛川县' }, { value: 610630, text: '宜川县' }, { value: 610631, text: '黄龙县' }, { value: 610632, text: '黄陵县' }] }, { value: 610700, text: '汉中市', children: [{ value: 610701, text: '市辖区' }, { value: 610702, text: '汉台区' }, { value: 610721, text: '南郑县' }, { value: 610722, text: '城固县' }, { value: 610723, text: '洋县' }, { value: 610724, text: '西乡县' }, { value: 610725, text: '勉县' }, { value: 610726, text: '宁强县' }, { value: 610727, text: '略阳县' }, { value: 610728, text: '镇巴县' }, { value: 610729, text: '留坝县' }, { value: 610730, text: '佛坪县' }] }, { value: 610800, text: '榆林市', children: [{ value: 610801, text: '市辖区' }, { value: 610802, text: '榆阳区' }, { value: 610821, text: '神木县' }, { value: 610822, text: '府谷县' }, { value: 610823, text: '横山县' }, { value: 610824, text: '靖边县' }, { value: 610825, text: '定边县' }, { value: 610826, text: '绥德县' }, { value: 610827, text: '米脂县' }, { value: 610828, text: '佳县' }, { value: 610829, text: '吴堡县' }, { value: 610830, text: '清涧县' }, { value: 610831, text: '子洲县' }] }, { value: 610900, text: '安康市', children: [{ value: 610901, text: '市辖区' }, { value: 610902, text: '汉滨区' }, { value: 610921, text: '汉阴县' }, { value: 610922, text: '石泉县' }, { value: 610923, text: '宁陕县' }, { value: 610924, text: '紫阳县' }, { value: 610925, text: '岚皋县' }, { value: 610926, text: '平利县' }, { value: 610927, text: '镇坪县' }, { value: 610928, text: '旬阳县' }, { value: 610929, text: '白河县' }] }, { value: 611000, text: '商洛市', children: [{ value: 611001, text: '市辖区' }, { value: 611002, text: '商州区' }, { value: 611021, text: '洛南县' }, { value: 611022, text: '丹凤县' }, { value: 611023, text: '商南县' }, { value: 611024, text: '山阳县' }, { value: 611025, text: '镇安县' }, { value: 611026, text: '柞水县' }] }] }, { value: 620000, text: '甘肃省', children: [{ value: 620100, text: '兰州市', children: [{ value: 620101, text: '市辖区' }, { value: 620102, text: '城关区' }, { value: 620103, text: '七里河区' }, { value: 620104, text: '西固区' }, { value: 620105, text: '安宁区' }, { value: 620111, text: '红古区' }, { value: 620121, text: '永登县' }, { value: 620122, text: '皋兰县' }, { value: 620123, text: '榆中县' }] }, { value: 620200, text: '嘉峪关市', children: [{ value: 620201, text: '市辖区' }] }, { value: 620300, text: '金昌市', children: [{ value: 620301, text: '市辖区' }, { value: 620302, text: '金川区' }, { value: 620321, text: '永昌县' }] }, { value: 620400, text: '白银市', children: [{ value: 620401, text: '市辖区' }, { value: 620402, text: '白银区' }, { value: 620403, text: '平川区' }, { value: 620421, text: '靖远县' }, { value: 620422, text: '会宁县' }, { value: 620423, text: '景泰县' }] }, { value: 620500, text: '天水市', children: [{ value: 620501, text: '市辖区' }, { value: 620502, text: '秦城区' }, { value: 620503, text: '北道区' }, { value: 620521, text: '清水县' }, { value: 620522, text: '秦安县' }, { value: 620523, text: '甘谷县' }, { value: 620524, text: '武山县' }, { value: 620525, text: '张家川回族自治县' }] }, { value: 620600, text: '武威市', children: [{ value: 620601, text: '市辖区' }, { value: 620602, text: '凉州区' }, { value: 620621, text: '民勤县' }, { value: 620622, text: '古浪县' }, { value: 620623, text: '天祝藏族自治县' }] }, { value: 620700, text: '张掖市', children: [{ value: 620701, text: '市辖区' }, { value: 620702, text: '甘州区' }, { value: 620721, text: '肃南裕固族自治县' }, { value: 620722, text: '民乐县' }, { value: 620723, text: '临泽县' }, { value: 620724, text: '高台县' }, { value: 620725, text: '山丹县' }] }, { value: 620800, text: '平凉市', children: [{ value: 620801, text: '市辖区' }, { value: 620802, text: '崆峒区' }, { value: 620821, text: '泾川县' }, { value: 620822, text: '灵台县' }, { value: 620823, text: '崇信县' }, { value: 620824, text: '华亭县' }, { value: 620825, text: '庄浪县' }, { value: 620826, text: '静宁县' }] }, { value: 620900, text: '酒泉市', children: [{ value: 620901, text: '市辖区' }, { value: 620902, text: '肃州区' }, { value: 620921, text: '金塔县' }, { value: 620922, text: '瓜州县' }, { value: 620923, text: '肃北蒙古族自治县' }, { value: 620924, text: '阿克塞哈萨克族自治县' }, { value: 620981, text: '玉门市' }, { value: 620982, text: '敦煌市' }] }, { value: 621000, text: '庆阳市', children: [{ value: 621001, text: '市辖区' }, { value: 621002, text: '西峰区' }, { value: 621021, text: '庆城县' }, { value: 621022, text: '环县' }, { value: 621023, text: '华池县' }, { value: 621024, text: '合水县' }, { value: 621025, text: '正宁县' }, { value: 621026, text: '宁县' }, { value: 621027, text: '镇原县' }] }, { value: 621100, text: '定西市', children: [{ value: 621101, text: '市辖区' }, { value: 621102, text: '安定区' }, { value: 621121, text: '通渭县' }, { value: 621122, text: '陇西县' }, { value: 621123, text: '渭源县' }, { value: 621124, text: '临洮县' }, { value: 621125, text: '漳县' }, { value: 621126, text: '岷县' }] }, { value: 621200, text: '陇南市', children: [{ value: 621201, text: '市辖区' }, { value: 621202, text: '武都区' }, { value: 621221, text: '成县' }, { value: 621222, text: '文县' }, { value: 621223, text: '宕昌县' }, { value: 621224, text: '康县' }, { value: 621225, text: '西和县' }, { value: 621226, text: '礼县' }, { value: 621227, text: '徽县' }, { value: 621228, text: '两当县' }] }, { value: 622900, text: '临夏回族自治州', children: [{ value: 622901, text: '临夏市' }, { value: 622921, text: '临夏县' }, { value: 622922, text: '康乐县' }, { value: 622923, text: '永靖县' }, { value: 622924, text: '广河县' }, { value: 622925, text: '和政县' }, { value: 622926, text: '东乡族自治县' }, { value: 622927, text: '积石山保安族东乡族撒拉族自治县' }] }, { value: 623000, text: '甘南藏族自治州', children: [{ value: 623001, text: '合作市' }, { value: 623021, text: '临潭县' }, { value: 623022, text: '卓尼县' }, { value: 623023, text: '舟曲县' }, { value: 623024, text: '迭部县' }, { value: 623025, text: '玛曲县' }, { value: 623026, text: '碌曲县' }, { value: 623027, text: '夏河县' }] }] }, { value: 630000, text: '青海省', children: [{ value: 630100, text: '西宁市', children: [{ value: 630101, text: '市辖区' }, { value: 630102, text: '城东区' }, { value: 630103, text: '城中区' }, { value: 630104, text: '城西区' }, { value: 630105, text: '城北区' }, { value: 630121, text: '大通回族土族自治县' }, { value: 630122, text: '湟中县' }, { value: 630123, text: '湟源县' }] }, { value: 632100, text: '海东地区', children: [{ value: 632121, text: '平安县' }, { value: 632122, text: '民和回族土族自治县' }, { value: 632123, text: '乐都县' }, { value: 632126, text: '互助土族自治县' }, { value: 632127, text: '化隆回族自治县' }, { value: 632128, text: '循化撒拉族自治县' }] }, { value: 632200, text: '海北藏族自治州', children: [{ value: 632221, text: '门源回族自治县' }, { value: 632222, text: '祁连县' }, { value: 632223, text: '海晏县' }, { value: 632224, text: '刚察县' }] }, { value: 632300, text: '黄南藏族自治州', children: [{ value: 632321, text: '同仁县' }, { value: 632322, text: '尖扎县' }, { value: 632323, text: '泽库县' }, { value: 632324, text: '河南蒙古族自治县' }] }, { value: 632500, text: '海南藏族自治州', children: [{ value: 632521, text: '共和县' }, { value: 632522, text: '同德县' }, { value: 632523, text: '贵德县' }, { value: 632524, text: '兴海县' }, { value: 632525, text: '贵南县' }] }, { value: 632600, text: '果洛藏族自治州', children: [{ value: 632621, text: '玛沁县' }, { value: 632622, text: '班玛县' }, { value: 632623, text: '甘德县' }, { value: 632624, text: '达日县' }, { value: 632625, text: '久治县' }, { value: 632626, text: '玛多县' }] }, { value: 632700, text: '玉树藏族自治州', children: [{ value: 632721, text: '玉树县' }, { value: 632722, text: '杂多县' }, { value: 632723, text: '称多县' }, { value: 632724, text: '治多县' }, { value: 632725, text: '囊谦县' }, { value: 632726, text: '曲麻莱县' }] }, { value: 632800, text: '海西蒙古族藏族自治州', children: [{ value: 632801, text: '格尔木市' }, { value: 632802, text: '德令哈市' }, { value: 632821, text: '乌兰县' }, { value: 632822, text: '都兰县' }, { value: 632823, text: '天峻县' }, { value: 632824, text: '芒崖            ' }, { value: 632825, text: '冷湖' }, { value: 632826, text: '大柴旦      ' }] }] }, { value: 640000, text: '宁夏回族自治区', children: [{ value: 640100, text: '银川市', children: [{ value: 640101, text: '市辖区' }, { value: 640104, text: '兴庆区' }, { value: 640105, text: '西夏区' }, { value: 640106, text: '金凤区' }, { value: 640121, text: '永宁县' }, { value: 640122, text: '贺兰县' }, { value: 640181, text: '灵武市' }] }, { value: 640200, text: '石嘴山市', children: [{ value: 640201, text: '市辖区' }, { value: 640202, text: '大武口区' }, { value: 640205, text: '惠农区' }, { value: 640221, text: '平罗县' }] }, { value: 640300, text: '吴忠市', children: [{ value: 640301, text: '市辖区' }, { value: 640302, text: '利通区' }, { value: 640323, text: '盐池县' }, { value: 640324, text: '同心县' }, { value: 640381, text: '青铜峡市' }] }, { value: 640400, text: '固原市', children: [{ value: 640401, text: '市辖区' }, { value: 640402, text: '原州区' }, { value: 640422, text: '西吉县' }, { value: 640423, text: '隆德县' }, { value: 640424, text: '泾源县' }, { value: 640425, text: '彭阳县' }] }, { value: 640500, text: '中卫市', children: [{ value: 640501, text: '市辖区' }, { value: 640502, text: '沙坡头区' }, { value: 640521, text: '中宁县' }, { value: 640522, text: '海原县' }] }] }, { value: 650000, text: '新疆维吾尔自治区', children: [{ value: 650100, text: '乌鲁木齐市', children: [{ value: 650101, text: '市辖区' }, { value: 650102, text: '天山区' }, { value: 650103, text: '沙依巴克区' }, { value: 650104, text: '新市区' }, { value: 650105, text: '水磨沟区' }, { value: 650106, text: '头屯河区' }, { value: 650107, text: '达坂城区' }, { value: 650108, text: '东山区' }, { value: 650121, text: '乌鲁木齐县' }] }, { value: 650200, text: '克拉玛依市', children: [{ value: 650201, text: '市辖区' }, { value: 650202, text: '独山子区' }, { value: 650203, text: '克拉玛依区' }, { value: 650204, text: '白碱滩区' }, { value: 650205, text: '乌尔禾区' }] }, { value: 650300, text: '石河子市' }, { value: 652100, text: '吐鲁番地区', children: [{ value: 652101, text: '吐鲁番市' }, { value: 652122, text: '鄯善县' }, { value: 652123, text: '托克逊县' }] }, { value: 652200, text: '哈密地区', children: [{ value: 652201, text: '哈密市' }, { value: 652222, text: '巴里坤哈萨克自治县' }, { value: 652223, text: '伊吾县' }] }, { value: 652300, text: '昌吉回族自治州', children: [{ value: 652301, text: '昌吉市' }, { value: 652302, text: '阜康市' }, { value: 652303, text: '米泉市' }, { value: 652323, text: '呼图壁县' }, { value: 652324, text: '玛纳斯县' }, { value: 652325, text: '奇台县' }, { value: 652327, text: '吉木萨尔县' }, { value: 652328, text: '木垒哈萨克自治县' }] }, { value: 652700, text: '博尔塔拉蒙古自治州', children: [{ value: 652701, text: '博乐市' }, { value: 652722, text: '精河县' }, { value: 652723, text: '温泉县' }] }, { value: 652800, text: '巴音郭楞蒙古自治州', children: [{ value: 652801, text: '库尔勒市' }, { value: 652822, text: '轮台县' }, { value: 652823, text: '尉犁县' }, { value: 652824, text: '若羌县' }, { value: 652825, text: '且末县' }, { value: 652826, text: '焉耆回族自治县' }, { value: 652827, text: '和静县' }, { value: 652828, text: '和硕县' }, { value: 652829, text: '博湖县' }] }, { value: 652900, text: '阿克苏地区', children: [{ value: 652901, text: '阿克苏市' }, { value: 652922, text: '温宿县' }, { value: 652923, text: '库车县' }, { value: 652924, text: '沙雅县' }, { value: 652925, text: '新和县' }, { value: 652926, text: '拜城县' }, { value: 652927, text: '乌什县' }, { value: 652928, text: '阿瓦提县' }, { value: 652929, text: '柯坪县' }] }, { value: 653000, text: '克孜勒苏柯尔克孜自治州', children: [{ value: 653001, text: '阿图什市' }, { value: 653022, text: '阿克陶县' }, { value: 653023, text: '阿合奇县' }, { value: 653024, text: '乌恰县' }] }, { value: 653100, text: '喀什地区', children: [{ value: 653101, text: '喀什市' }, { value: 653121, text: '疏附县' }, { value: 653122, text: '疏勒县' }, { value: 653123, text: '英吉沙县' }, { value: 653124, text: '泽普县' }, { value: 653125, text: '莎车县' }, { value: 653126, text: '叶城县' }, { value: 653127, text: '麦盖提县' }, { value: 653128, text: '岳普湖县' }, { value: 653129, text: '伽师县' }, { value: 653130, text: '巴楚县' }, { value: 653131, text: '塔什库尔干塔吉克自治县' }] }, { value: 653200, text: '和田地区', children: [{ value: 653201, text: '和田市' }, { value: 653221, text: '和田县' }, { value: 653222, text: '墨玉县' }, { value: 653223, text: '皮山县' }, { value: 653224, text: '洛浦县' }, { value: 653225, text: '策勒县' }, { value: 653226, text: '于田县' }, { value: 653227, text: '民丰县' }] }, { value: 654000, text: '伊犁哈萨克自治州', children: [{ value: 654002, text: '伊宁市' }, { value: 654003, text: '奎屯市' }, { value: 654021, text: '伊宁县' }, { value: 654022, text: '察布查尔锡伯自治县' }, { value: 654023, text: '霍城县' }, { value: 654024, text: '巩留县' }, { value: 654025, text: '新源县' }, { value: 654026, text: '昭苏县' }, { value: 654027, text: '特克斯县' }, { value: 654028, text: '尼勒克县' }] }, { value: 654200, text: '塔城地区', children: [{ value: 654201, text: '塔城市' }, { value: 654202, text: '乌苏市' }, { value: 654221, text: '额敏县' }, { value: 654223, text: '沙湾县' }, { value: 654224, text: '托里县' }, { value: 654225, text: '裕民县' }, { value: 654226, text: '和布克赛尔蒙古自治县' }] }, { value: 654300, text: '阿勒泰地区', children: [{ value: 654301, text: '阿勒泰市' }, { value: 654321, text: '布尔津县' }, { value: 654322, text: '富蕴县' }, { value: 654323, text: '福海县' }, { value: 654324, text: '哈巴河县' }, { value: 654325, text: '青河县' }, { value: 654326, text: '吉木乃县' }] }, { value: 659000, text: '省直辖行政单位', children: [{ value: 659001, text: '石河子市' }, { value: 659002, text: '阿拉尔市' }, { value: 659003, text: '图木舒克市' }, { value: 659004, text: '五家渠市' }] }] }];
 
 /***/ }),
-/* 297 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62567,7 +63222,7 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -62579,7 +63234,7 @@ var cx = (0, _util.create)('ui-smscode');
 
 /* eslint-disable */
 /**
- * @file SMSCodeBox.es6
+ * @file SMSCodeBox.js
  * @author leeight
  */
 
@@ -62676,7 +63331,7 @@ var SMSCodeBox = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(SMSCodeBox);
 
 /***/ }),
-/* 298 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62686,29 +63341,31 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>'], ['<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>']);
+
 var _san = __webpack_require__(0);
 
 var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _dom = __webpack_require__(43);
+var _dom = __webpack_require__(45);
 
-var _page = __webpack_require__(44);
+var _page = __webpack_require__(46);
 
 var _util = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * @file components/Sticky.js
+                                                                                                                                                   * @author liyuan
+                                                                                                                                                   */
+
 var cx = (0, _util.create)('ui-sticky');
 
 /* eslint-disable */
-/**
- * @file components/Sticky.es6
- * @author liyuan
- */
-
-var template = '<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>';
+var template = (0, _util.html)(_templateObject);
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -62832,7 +63489,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 299 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62842,18 +63499,24 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-/**
- * @file Tab.es6
- * @author leeight
- */
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-tab');
 
 /* eslint-disable */
+/**
+ * @file Tab.js
+ * @author leeight
+ */
+
 var template = '<div class="{{mainClass}}">\n    <ul class="' + cx('navigator') + '">\n        <li\n            on-click="onTabClick(item, i)"\n            class="{{selectedIndex === i ? \'' + cx('item', 'item-active') + '\' : item.hide ? \'' + cx('item', 'item-hide') + '\' : \'' + cx('item') + '\'}}"\n            s-for="item, i in tabs"\n            >{{item.text}}</li>\n    </ul>\n    <div class="' + cx('content') + '">\n        <slot/>\n    </div>\n</div>';
 /* eslint-enable */
 
@@ -62883,11 +63546,20 @@ exports.default = (0, _san.defineComponent)({
         this.refreshTabs();
     },
     updated: function updated() {},
+    getTabPanels: function getTabPanels() {
+        // 获取当前所有的TabPanels
+        var defaultSlot = this.slot();
+        var slotChildren = defaultSlot[0].children;
+        // 这里排除“Text“类型，解决san升级到3.4.3导致的问题
+        var tabPanels = _lodash2.default.filter(slotChildren, function (n) {
+            return n.nodeType !== _san.NodeType.TEXT;
+        });
+        return tabPanels;
+    },
     refreshTabs: function refreshTabs() {
         this.assertOK();
 
-        var defaultSlot = this.slot();
-        var tabPanels = defaultSlot[0].children;
+        var tabPanels = this.getTabPanels();
         var tabs = [];
         var selectedIndex = this.data.get('selectedIndex');
         for (var i = 0; i < tabPanels.length; i++) {
@@ -62921,21 +63593,21 @@ exports.default = (0, _san.defineComponent)({
     onTabClick: function onTabClick(item, i) {
         this.assertOK();
 
-        var defaultSlot = this.slot();
-        var tabPanels = defaultSlot[0].children;
-
+        var tabPanels = this.getTabPanels();
         var selectedIndex = this.data.get('selectedIndex');
-        var currentActiveTab = tabPanels[selectedIndex];
-        this.__setTabPanelStatus(currentActiveTab, false);
+        var _ref = [tabPanels[selectedIndex], tabPanels[i]],
+            currentActiveTab = _ref[0],
+            tabPanel = _ref[1];
 
-        var tabPanel = tabPanels[i];
+        this.__setTabPanelStatus(currentActiveTab, false);
         this.__setTabPanelStatus(tabPanel, true);
+
         this.data.set('selectedIndex', i);
     }
 });
 
 /***/ }),
-/* 300 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62950,7 +63622,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file TabPanel.es6
+ * @file TabPanel.js
  * @author leeight
  */
 
@@ -62978,7 +63650,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 301 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62993,7 +63665,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file ToastLabel.es6
+ * @file ToastLabel.js
  * @author leeight
  */
 
@@ -63033,7 +63705,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 302 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63045,7 +63717,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _TreeNode = __webpack_require__(303);
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _TreeNode = __webpack_require__(301);
 
 var _TreeNode2 = _interopRequireDefault(_TreeNode);
 
@@ -63053,15 +63729,33 @@ var _util = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @file Tree.js
+ * @author zhangzhe(zhangzhe@baidu.com)
+ */
 var cx = (0, _util.create)('ui-tree');
 
 /* eslint-disable */
-/**
- * @file Tree.es6
- * @author zhangzhe(zhangzhe@baidu.com)
- */
-var template = '<div class="{{mainClass}}">\n    <ui-tree-node s-if="datasource.value"\n        value="{{datasource.value}}"\n        text="{{datasource.text}}"\n        level="{{0}}"\n        children="{{datasource.children}}"\n        expand-all="{{expandAll}}"\n        multi="{{multi}}"\n        tree-value="{{value}}"\n        active-value="{{activeValue}}" />\n</div>';
+var template = '<div class="{{mainClass}}">\n    <ui-tree-node s-if="datasource.value"\n        value="{{datasource.value}}"\n        text="{{datasource.text}}"\n        level="{{0}}"\n        children="{{datasource.children}}"\n        expand-all="{{expandAll}}"\n        multi="{{multi}}"\n        edit="{=edit=}"\n        tree-value="{{value}}"\n        active-value="{{activeValue}}" />\n</div>';
 /* eslint-enable */
+
+function getParentKeyByNode(datasource, node) {
+    var parentNodeKey = 'datasource';
+    var tempNode = datasource;
+
+    var _loop = function _loop(i) {
+        var index = _lodash2.default.findIndex(tempNode.children, function (n) {
+            return n.value === node.parents[i];
+        });
+        tempNode = tempNode.children[index];
+        parentNodeKey += '.children[' + index + ']';
+    };
+
+    for (var i = 1; i < node.parents.length; i++) {
+        _loop(i);
+    }
+    return parentNodeKey;
+}
 
 exports.default = (0, _san.defineComponent)({
     template: template,
@@ -63081,7 +63775,8 @@ exports.default = (0, _san.defineComponent)({
             expandAll: false, // 完全展开所有节点，默认只展开根节点
             multi: false, // 是否支持多选
             value: [], // 如果multi等于true，表示选中的节点集合，否则表示最新点击的叶子节点
-            activeValue: '' // 最新被点击的叶子节点value
+            activeValue: '', // 最新被点击的叶子节点value
+            edit: false // 是否可以编辑
         };
     },
 
@@ -63118,6 +63813,31 @@ exports.default = (0, _san.defineComponent)({
             }
             this.data.set('activeValue', node.value);
             this.fire('click', { node: node });
+        },
+        creating: function creating(evt) {
+            var parentNode = evt.value;
+            this.createNode(parentNode);
+        },
+        delete: function _delete(evt) {
+            var node = evt.value;
+            this.deleteNode(node);
+            this.fire('delete', { node: node });
+        },
+        confirm: function confirm(evt) {
+            var node = evt.value;
+            // 更新状态
+            this.resetNode(node);
+            var eventName = !node.value ? 'create' : 'update';
+            // 注意：如果是新添加的节点，为避免一些未知错误，在后端实际创建好之后，需要再把实际的value赋到这个节点的value上
+            this.fire(eventName, { node: node });
+        },
+        cancelEdit: function cancelEdit(evt) {
+            // 取消创建或编辑
+            var node = evt.value;
+            // 如果是添加的取消，则还需要把这个节点删除
+            if (!node.value) {
+                this.deleteNode(node);
+            }
         }
     },
     dataTypes: {
@@ -63152,12 +63872,69 @@ exports.default = (0, _san.defineComponent)({
          * 如果multi等于true，表示选中的节点集合
          * 如果multi等于false，则表示最近点击的叶子节点
          */
-        value: _san.DataTypes.any
+        value: _san.DataTypes.any,
+        /**
+         * 是否支持编辑（增删改）
+         *
+         * @default false
+         */
+        edit: _san.DataTypes.bool
+    },
+    deleteNode: function deleteNode(node) {
+        var datasource = this.data.get('datasource');
+        if (node.level === 0) {
+            // 整个树都删掉
+            this.data.set('datasource', {});
+        } else {
+            var parentNodeKey = getParentKeyByNode(datasource, node);
+            var tempNode = this.data.get('' + parentNodeKey);
+            // 获取要删除的节点index
+            var lastIndex = _lodash2.default.findIndex(tempNode.children, function (n) {
+                return n.value === node.value;
+            });
+            this.data.removeAt(parentNodeKey + '.children', lastIndex);
+        }
+    },
+    createNode: function createNode(parentNode) {
+        var datasource = this.data.get('datasource');
+        var parentNodeKey = getParentKeyByNode(datasource, parentNode);
+        var tempNode = this.data.get('' + parentNodeKey);
+        if (parentNode.level !== 0) {
+            var lastIndex = _lodash2.default.findIndex(tempNode.children, function (n) {
+                return n.value === parentNode.value;
+            });
+            parentNodeKey += '.children[' + lastIndex + ']';
+        }
+        // 添加新的子节点
+        if (!this.data.get(parentNodeKey + '.children')) {
+            this.data.set(parentNodeKey + '.children', []);
+        }
+        this.data.push(parentNodeKey + '.children', { value: '', text: '', isUpdating: true });
+    },
+    resetNode: function resetNode(node) {
+        var datasource = this.data.get('datasource');
+        var parentNodeKey = getParentKeyByNode(datasource, node);
+        var tempNode = this.data.get('' + parentNodeKey);
+        if (node.level !== 0) {
+            var lastIndex = _lodash2.default.findIndex(tempNode.children, function (n) {
+                return n.value === node.value;
+            });
+            parentNodeKey += '.children[' + lastIndex + ']';
+        }
+        if (this.data.get('' + parentNodeKey)) {
+            this.data.set(parentNodeKey + '.isUpdating', false);
+            this.data.set(parentNodeKey + '.text', node.text);
+            if (!this.data.get(parentNodeKey + '.value')) {
+                // 做个假的“value“
+                var mockValue = node.parents[node.parents.length - 1] + '_child-' + tempNode.children.length;
+                this.data.set(parentNodeKey + '.value', mockValue);
+            }
+        }
     }
 });
 
 /***/ }),
-/* 303 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63173,7 +63950,13 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _CheckBox = __webpack_require__(211);
+var _helper = __webpack_require__(55);
+
+var _TextBox = __webpack_require__(13);
+
+var _TextBox2 = _interopRequireDefault(_TextBox);
+
+var _CheckBox = __webpack_require__(50);
 
 var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
@@ -63182,13 +63965,13 @@ var _util = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file TreeNode.es6 Tree节点
+ * @file TreeNode.js Tree节点
  * @author zhangzhe(zhangzhe@baidu.com)
  */
 var cx = (0, _util.create)('ui-tree');
 
 /* eslint-disable */
-var commonTemplate = '\n<div class="' + cx('content-wrapper') + '" on-click="onNodeClick($event)">\n    <span class="{{indicatorClass}}"></span>\n    <div s-if="multi" class="' + cx('item-content') + '">\n        <ui-checkbox\n            checked="{=isSelected=}"\n            title="{{text}}"\n            on-change="onCheckboxChange($event)"\n            on-click="onCheckboxClick" />\n    </div>\n    <div s-else class="' + cx('item-content') + '">{{text}}</div>\n</div>\n<ul s-if="hasChildren" class="' + cx('sub-root') + ' ' + cx('sub-root-{{expandedFlag}}') + '">\n    <ui-tree-node s-for="node in children"\n        value="{{node.value}}"\n        text="{{node.text}}"\n        level="{{level + 1}}"\n        children="{{node.children}}"\n        expand-all="{{expandAll}}"\n        multi="{{multi}}"\n        tree-value="{{treeValue}}"\n        active-value="{{activeValue}}" />\n</ul>';
+var commonTemplate = '\n<div class="' + cx('content-wrapper') + '" on-click="onNodeClick($event)">\n    <span class="{{indicatorClass}}"></span>\n    <div s-if="multi && !isUpdating" class="' + cx('item-content') + '">\n        <ui-checkbox\n            checked="{=isSelected=}"\n            title="{{text}}"\n            on-change="onCheckboxChange($event)"\n            on-click="onCheckboxClick" />\n    </div>\n    <div s-if="!multi && !isUpdating" class="' + cx('item-content') + '">{{text}}</div>\n    <ui-textbox s-if="isUpdating"\n        class="' + cx('edit-input') + '"\n        autofocus="{{true}}"\n        focus-position="all"\n        value="{{text}}"\n        width="{{100}}"\n        on-enter="onTextboxEnter"\n        on-click="onTextboxClick"\n        on-blur="onTextboxBlur" />\n    <div s-if="edit" class="' + cx('edit-content') + '">\n        <a class="create" href="javascript:;" on-click="onCreate" title="\u6DFB\u52A0"><i class="iconfont icon-icon-test"></i></a>\n        <a class="update" href="javascript:;" on-click="onUpdate" title="\u66F4\u65B0"><i class="iconfont icon-business-consult"></i></a>\n        <a class="delete" href="javascript:;" on-click="onDelete" title="\u5220\u9664"><i class="iconfont icon-close"></i></a>\n    </div>\n</div>\n<ul s-if="hasChildren" class="' + cx('sub-root') + ' ' + cx('sub-root-{{expandedFlag}}') + '">\n    <ui-tree-node s-for="node in children"\n        value="{{node.value}}"\n        text="{{node.text}}"\n        level="{{level + 1}}"\n        children="{{node.children}}"\n        expand-all="{{expandAll}}"\n        multi="{{multi}}"\n        edit="{=edit=}"\n        isUpdating="{{node.isUpdating}}"\n        parents="{{newParents}}"\n        tree-value="{{treeValue}}"\n        active-value="{{activeValue}}" />\n</ul>';
 
 var template = '<template>\n<div s-if="isRoot" class="{{mainClass}}" data-value="{{value}}" data-level="{{level}}">' + commonTemplate + '</div>\n<li s-else class="{{mainClass}}" data-value="{{value}}" data-level="{{level}}">' + commonTemplate + '</li>\n</template>';
 /* eslint-enable */
@@ -63197,7 +63980,8 @@ exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
         'ui-tree-node': 'self',
-        'ui-checkbox': _CheckBox2.default
+        'ui-checkbox': _CheckBox2.default,
+        'ui-textbox': _TextBox2.default
     },
     computed: {
         isRoot: function isRoot() {
@@ -63206,7 +63990,9 @@ exports.default = (0, _san.defineComponent)({
         currentNode: function currentNode() {
             var node = {
                 value: this.data.get('value'),
-                text: this.data.get('text')
+                text: this.data.get('text'),
+                level: this.data.get('level'),
+                parents: this.data.get('parents')
             };
             if (this.data.get('hasChildren')) {
                 node.children = this.data.get('children');
@@ -63255,6 +64041,11 @@ exports.default = (0, _san.defineComponent)({
         isSelected: function isSelected() {
             // checkbox是否被选中
             return this.data.get('multi') && _lodash2.default.includes(this.data.get('treeValue'), this.data.get('value'));
+        },
+        newParents: function newParents() {
+            var newParents = _lodash2.default.clone(this.data.get('parents'));
+            newParents.push(this.data.get('value'));
+            return newParents;
         }
     },
     initData: function initData() {
@@ -63263,7 +64054,9 @@ exports.default = (0, _san.defineComponent)({
             level: 0, // level为0时，代表根节点
             text: '',
             children: [], // 儿子节点
-            isExpanded: false // 是否打开，当children.length > 0时有意义
+            isExpanded: false, // 是否打开，当children.length > 0时有意义
+            parents: [], // 完整的祖先路径
+            isUpdating: false // 是否在更新中
         };
     },
     inited: function inited() {
@@ -63293,7 +64086,12 @@ exports.default = (0, _san.defineComponent)({
         /**
          * 是否打开子节点
          */
-        isExpanded: _san.DataTypes.bool
+        isExpanded: _san.DataTypes.bool,
+        /**
+         * 所有祖先
+         */
+        parents: _san.DataTypes.array,
+        isUpdating: _san.DataTypes.bool
     },
     // 打开关闭操作
     onNodeClick: function onNodeClick(evt) {
@@ -63323,26 +64121,1429 @@ exports.default = (0, _san.defineComponent)({
         } else {
             this.dispatch('unselect', node);
         }
+    },
+    onCreate: function onCreate(evt) {
+        evt.stopPropagation();
+        // 默认展开当前节点
+        this.data.set('isExpanded', true);
+        this.data.set('edit', false);
+        var parentNode = this.data.get('currentNode');
+        this.dispatch('creating', parentNode);
+    },
+    onDelete: function onDelete(evt) {
+        var _this = this;
+
+        evt.stopPropagation();
+        var node = this.data.get('currentNode');
+        var text = this.data.get('text');
+        var title = '提示';
+        var message = '\u662F\u5426\u786E\u8BA4\u5220\u9664\u8282\u70B9\u201C' + text + '\u201C' + (this.data.get('hasChildren') ? '及其所有的子孙节点' : '') + '？';
+        (0, _helper.confirm)({ title: title, message: message, width: 600 }).then(function () {
+            return _this.dispatch('delete', node);
+        });
+    },
+    onUpdate: function onUpdate(evt) {
+        evt.stopPropagation();
+        this.data.set('isUpdating', true);
+        this.data.set('edit', false);
+    },
+    onTextboxClick: function onTextboxClick(evt) {
+        evt.stopPropagation();
+    },
+    onTextboxEnter: function onTextboxEnter(evt) {
+        // 确认更新
+        var text = evt.target.value;
+        if (text === '') {
+            return;
+        }
+        this.data.set('text', text);
+        var node = this.data.get('currentNode');
+        this.dispatch('confirm', node);
+        this.data.set('isUpdating', false);
+        this.data.set('edit', true);
+    },
+    onTextboxBlur: function onTextboxBlur(evt) {
+        var newText = evt.target.value;
+        var oldText = this.data.get('text');
+        this.data.set('isUpdating', false);
+        this.data.set('edit', true);
+        if (newText && newText !== oldText) {
+            // 确认编辑
+            this.data.set('text', newText);
+            var node = this.data.get('currentNode');
+            this.dispatch('confirm', node);
+        } else {
+            // 取消编辑
+            var _node = this.data.get('currentNode');
+            this.dispatch('cancelEdit', _node);
+        }
     }
 });
 
 /***/ }),
-/* 304 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(305);
-
-/***/ }),
-/* 305 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
-var bind = __webpack_require__(222);
-var Axios = __webpack_require__(307);
-var defaults = __webpack_require__(57);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(19);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Toast = __webpack_require__(213);
+
+var _Toast2 = _interopRequireDefault(_Toast);
+
+var _ActionLoader = __webpack_require__(215);
+
+var _ActionLoader2 = _interopRequireDefault(_ActionLoader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+var template = '<template>\n    <ui-dialog\n        s-if="dialog"\n        s-ref="dialog"\n        open="{=actionOptions.open=}"\n        height="{{actionOptions.height}}"\n        width="{{actionOptions.width}}"\n        foot="{{foot}}"\n        on-close="onCloseDialog">\n        <span slot="head">{{actionOptions.title}}</span>\n        <ui-actionloader\n            on-actionloaded="onActionLoaded($event)"\n            url="{{actionOptions.url}}"\n            module="{{actionOptions.module}}"\n            options="{{actionOptions.options}}" />\n        <div slot="foot" s-if="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>\n            <ui-button on-click="onCloseDialog">\u53D6\u6D88</ui-button>\n        </div>\n    </ui-dialog>\n    <ui-actionloader\n        s-else\n        on-actionloaded="onActionLoaded($event)"\n        url="{{actionOptions.url}}"\n        options="{{actionOptions.options}}"\n        module="{{actionOptions.module}}" />\n</template>';
+/* eslint-enable */
+
+/**
+ * @file san-xui/x/biz/LegacyActionAdapter.js
+ * @author leeight
+ */
+
+function isSanPage(erAction) {
+    return !!(erAction && erAction.page && erAction.SanPage);
+}
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'ui-actionloader': _ActionLoader2.default,
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
+    },
+    dataTypes: {
+        dialog: _san.DataTypes.bool,
+        foot: _san.DataTypes.bool,
+        confirm: _san.DataTypes.objectOf({
+            label: _san.DataTypes.string,
+            disabled: _san.DataTypes.bool
+        }),
+        actionOptions: _san.DataTypes.objectOf({
+            open: _san.DataTypes.bool,
+            width: _san.DataTypes.number,
+            height: _san.DataTypes.number,
+            title: _san.DataTypes.string,
+            url: _san.DataTypes.string,
+            module: _san.DataTypes.string,
+            needFoot: _san.DataTypes.bool,
+            options: _san.DataTypes.objectOf({
+                parentAction: _san.DataTypes.object
+            })
+        })
+    },
+    initData: function initData() {
+        return {
+            dialog: false,
+            foot: true,
+            confirm: {
+                label: '确定',
+                disabled: false
+            },
+            actionOptions: {
+                open: false
+            }
+        };
+    },
+    inited: function inited() {
+        this.erAction = null;
+        // 支持actionOptions.needFoot设置来隐藏foot
+        var actionOptions = this.data.get('actionOptions');
+        if (actionOptions && actionOptions.needFoot === false) {
+            this.data.set('foot', false);
+        }
+    },
+    closeDialog: function closeDialog() {
+        this.data.set('actionOptions.open', false);
+    },
+    onActionLoaded: function onActionLoaded(e) {
+        var _this = this;
+
+        var erAction = e.action;
+        var compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
+        compInstance.on('legacyactioncustomevent', function (e) {
+            var type = e.legacyActionFireCustomType;
+            // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
+            erAction.owner ? _this.fire(type, e.value) : _this.dispatch(type, e.value);
+        });
+        this.erAction = erAction;
+        // action加载完成调整dialog位置
+        if (this.data.get('dialog')) {
+            this.ref('dialog').__resize();
+        }
+        this.fire('actionloaded', e);
+    },
+    onConfirmDialog: function onConfirmDialog(e) {
+        var _this2 = this;
+
+        this.fire('beforeok', { action: this.erAction, e: e });
+        // TODO 判断默认事件是否被阻止 (ER的isDefaultPrevented)
+        if (e.defaultPrevented) {
+            return;
+        }
+        var erAction = this.erAction;
+        var isSan = isSanPage(erAction);
+        var compInstance = isSan ? erAction.page.children[0] : erAction;
+        if (compInstance && typeof compInstance.doSubmit === 'function') {
+            this.data.set('confirm.label', '处理中...');
+            this.data.set('confirm.disabled', true);
+            return compInstance.doSubmit().then(function () {
+                _this2.data.set('confirm.label', '确定');
+                _this2.data.set('confirm.disabled', false);
+                _this2.closeDialog();
+                _this2.fire('ok');
+            }).then(null, function () {
+                var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                // san
+                // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
+                if (isSan && error.global) {
+                    _Toast2.default.error(error.global);
+                }
+                // er
+                // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
+                // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
+                // 3. 如果后端返回message.field 指定了错误字段，因为错误都在此处处理，故执行view.notifyErrors
+                if (!isSan && error.field) {
+                    compInstance.view && compInstance.view.notifyErrors && compInstance.view.notifyErrors(error.field);
+                }
+
+                _this2.data.set('confirm.label', '确定');
+                _this2.data.set('confirm.disabled', false);
+            });
+        }
+        this.closeDialog();
+        this.fire('ok');
+    },
+    onCloseDialog: function onCloseDialog() {
+        this.fire('beforeclose', { action: this.erAction });
+        this.closeDialog();
+        this.fire('close');
+    }
+});
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(304);
+exports.setImmediate = setImmediate;
+exports.clearImmediate = clearImmediate;
+
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43), __webpack_require__(33)))
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * @file eoo/0.1.4/src/oo.js
+ * @author somebody
+ */
+
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+    var Empty = function () { };
+    var NAME_PROPERTY_NAME = '__eooName__';
+    var OWNER_PROPERTY_NAME = '__eooOwner__';
+
+    /**
+     * 简单的 js oo 库
+     *
+     * 用法:
+     *      @example
+     *      // 来个简单的基类，最简单的是 var Super = Class();
+     *      var Super = Class({
+     *          superProp1: 'superProp1',
+     *          superProp2: 'superProp2',
+     *          method: function(){
+     *              alert(this.superProp1);
+     *          },
+     *          superMethod2: function(){
+     *              alert(this.superProp2);
+     *          }
+     *      })
+     *
+     *      // 来个派生类，继承 Super
+     *      var Sub = Class(Super, {
+     *          // constructor 会在实例化时调用
+     *          constructor: function(prop){
+     *             // $super 会自动调用父类的同名方法
+     *             this.$super(arguments)
+     *             this.subProp = prop
+     *             alert("Sub init")
+     *          },
+     *          method: function(){
+     *              this.$super(arguments);
+     *              alert(this.subProp);
+     *          }
+     *      })
+     *
+     *      var Sub1 = Class(Sub, {
+     *          constructor: function(prop1, prop2){
+     *             this.$super(arguments)
+     *             this.sub1Prop = prop2;
+     *             alert("Sub1 init")
+     *          },
+     *          method: function(){
+     *              this.$super(arguments)
+     *              alert(this.sub1Prop)
+     *          }
+     *      })
+     *
+     *      var superIns = new Super();
+     *      var sub = new Sub('Sub'); // alert: Sub init
+     *      var sub1 = new Sub1('Sub', 'Sub1') // alert: Sub init, Sub1 init
+     *      superIns.method() // alert: superProp1
+     *      sub.method() // alert: superProp1, Sub
+     *      sub1.method() // alert: superProp1, Sub, Sub1
+     *      sub.superMethod() // alert: superProp2
+     *      sub1.superMethod() // alert: superProp2
+     *
+     */
+
+    /**
+     * Class构造函数
+     *
+     * @class Class
+     * @constructor
+     * @param {Function | Object} [BaseClass] 基类
+     * @param {Object} [overrides] 重写基类属性的对象
+     * @return {Function}
+     */
+    function Class() {
+        return Class.create.apply(Class, arguments);
+    }
+
+    /**
+     * 创建基类的继承类
+     *
+     * 3种重载方式
+     *
+     * - '.create()'
+     * - '.create(overrides)'
+     * - '.create(BaseClass, overrides)'
+     *
+     * @static
+     * @param {Function | Object} [BaseClass] 基类
+     * @param {Object} [overrides] 重写基类属性的对象
+     * @return {Function}
+     */
+    Class.create = function (BaseClass, overrides) {
+        overrides = overrides || {};
+        BaseClass = BaseClass || Class;
+        if (typeof BaseClass === 'object') {
+            overrides = BaseClass;
+            BaseClass = Class;
+        }
+
+        var kclass = inherit(BaseClass);
+        var proto = kclass.prototype;
+        eachObject(
+            overrides,
+            function (value, key) {
+                if (typeof value === 'function') {
+                    value[NAME_PROPERTY_NAME] = key;
+                    value[OWNER_PROPERTY_NAME] = kclass;
+                }
+
+                proto[key] = value;
+            }
+        );
+
+        kclass.toString = toString;
+
+        return kclass;
+    };
+
+    /**
+     * Class.static
+     *
+     * @type {Function} creates a new object with the specified prototype object and properties.
+     *  Just equals `Object.create` method.
+     * @param {Object} o The object which should be the prototype of the newly-created object.
+     * @return {Object}
+     */
+    Class.static = typeof Object.create === 'function'
+        ? Object.create
+        : function (o) {
+            if (arguments.length > 1) {
+                throw new Error('Second argument not supported');
+            }
+            if (!(o instanceof Object)) {
+                throw new TypeError('Argument must be an object');
+            }
+            Empty.prototype = o;
+            return new Empty();
+        };
+
+    /**
+     * 创建类的方法
+     *
+     * @param {Function} BaseClass 类构造函数
+     * @param {Object} [exports] 类属性的对象
+     */
+    Class.defineMembers = function (BaseClass, exports) {
+        exports = exports || {};
+        if (typeof BaseClass !== 'function') {
+            throw new TypeError('First argument must be a function');
+        }
+
+        var proto = BaseClass.prototype;
+        eachObject(
+            exports,
+            function (value, key) {
+                if (typeof value === 'function') {
+                    value[NAME_PROPERTY_NAME] = key;
+                    value[OWNER_PROPERTY_NAME] = BaseClass;
+                }
+                proto[key] = value;
+            }
+        );
+    };
+
+    /**
+     * 统一 toString 执行结果
+     *
+     * @static
+     * @return {string}
+     */
+    Class.toString = function () {
+        return 'function Class() { [native code] }';
+    };
+
+    Class.prototype = {
+        constructor: function () {},
+        $self: Class,
+        $superClass: Object,
+        $super: function (args) {
+            var method = this.$super.caller;
+            var name = method[NAME_PROPERTY_NAME];
+            var superClass = method[OWNER_PROPERTY_NAME].$superClass;
+            var superMethod = superClass.prototype[name];
+
+            if (typeof superMethod !== 'function') {
+                throw new TypeError('Call the super class\'s ' + name + ', but it is not a function!');
+            }
+
+            return superMethod.apply(this, args);
+        }
+    };
+
+    /**
+     * 返回基类的一个继承对象
+     *
+     * @ignore
+     * @param {Function} BaseClass 基类
+     * @return {Function}
+     */
+    function inherit(BaseClass) {
+        var kclass = function () {
+            // 若未进行 constructor 的重写，则klass.prototype.constructor指向BaseClass.prototype.constructor
+            return kclass.prototype.constructor.apply(this, arguments);
+        };
+
+        Empty.prototype = BaseClass.prototype;
+
+        var proto = kclass.prototype = new Empty();   // eslint-disable-line
+        proto.$self = kclass;
+        if (!('$super' in proto)) {
+            proto.$super = Class.prototype.$super;
+        }
+
+        kclass.$superClass = BaseClass;
+
+        return kclass;
+    }
+
+    var hasEnumBug = !({toString: 1}.propertyIsEnumerable('toString'));
+    var enumProperties = [
+        'constructor',
+        'hasOwnProperty',
+        'isPrototypeOf',
+        'propertyIsEnumerable',
+        'toString',
+        'toLocaleString',
+        'valueOf'
+    ];
+
+    /**
+     * hasOwnProperty函数的封装
+     *
+     * @ignore
+     * @param {Object} obj 对象
+     * @param {string} key 属性名
+     * @return {boolean}
+     */
+    function hasOwnProperty(obj, key) {
+        return Object.prototype.hasOwnProperty.call(obj, key);
+    }
+
+    /**
+     * 遍历对象操作
+     *
+     * @ignore
+     * @param {Object} obj 目标对象
+     * @param {Function} fn 遍历操作
+     */
+    function eachObject(obj, fn) {
+        for (var k in obj) {
+            hasOwnProperty(obj, k) && fn(obj[k], k, obj);
+        }
+        // ie6-8 enum bug
+        if (hasEnumBug) {
+            for (var i = enumProperties.length - 1; i > -1; --i) {
+                var key = enumProperties[i];
+                hasOwnProperty(obj, key) && fn(obj[key], key, obj);
+            }
+        }
+    }
+
+    /**
+     * toString method
+     *
+     * @ignore
+     * @return {string}
+     */
+    function toString() {
+        return this.prototype.constructor.toString();
+    }
+
+    return Class;
+}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * @file eoo/0.1.4/src/defineAccessor.js
+ * @author Created by exodia on 14-8-28.
+ */
+
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+    var MEMBERS = '__eooPrivateMembers__';
+
+    function simpleGetter(name) {
+        var body = 'return typeof this.' + MEMBERS + ' === \'object\' ? this.'
+            + MEMBERS + '[\'' + name + '\'] : undefined;';
+        return new Function(body);
+    }
+
+    function simpleSetter(name) {
+        var body = 'this.' + MEMBERS + ' = this.' + MEMBERS + ' || {};\n'
+            + 'this.' + MEMBERS + '[\'' + name + '\'] = value;';
+        return new Function('value', body);
+    }
+
+    /**
+     * 根据指定的属性名生成对应的accessor
+     *
+     * @param {Object | Function} obj 需要生成 accessor 的对象
+     * @param {string} name 需要生成 accessor 的属性名称
+     * @param {Object | Function} [accessor] 自定义的 getter 和 setter 配置
+     * @param {Function} [accessor.get] 自定义的 getter 函数, 配置了accessor，但未设置 get，则不会生成 getter
+     * @param {Function} [accessor.set] 自定义的 setter 函数, 配置了accessor，但未设置 set，则不会生成 setter
+     */
+    return function (obj, name, accessor) {
+        var upperName = name.charAt(0).toUpperCase() + name.slice(1);
+        var getter = 'get' + upperName;
+        var setter = 'set' + upperName;
+
+        if (!accessor) {
+            obj[getter] = !accessor || typeof accessor.get !== 'function' ? simpleGetter(name) : accessor.get;
+            obj[setter] = !accessor || typeof accessor.set !== 'function' ? simpleSetter(name) : accessor.set;
+        }
+        else {
+            typeof accessor.get === 'function' && (obj[getter] = accessor.get);
+            typeof accessor.set === 'function' && (obj[setter] = accessor.set);
+        }
+    };
+}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * mini-event
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @ignore
+ * @file 事件队列
+ * @author otakustay
+ */
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+        var lib = __webpack_require__(57);
+
+        /**
+         * 判断已有的一个事件上下文对象是否和提供的参数等同
+         *
+         * @param {Object} context 在队列中已有的事件上下文对象
+         * @param {Function | boolean} handler 处理函数，可以是`false`
+         * @param {Mixed} [thisObject] 处理函数的`this`对象
+         * @return {boolean}
+         * @ignore
+         */
+        function isContextIdentical(context, handler, thisObject) {
+            // `thisObject`为`null`和`undefined`时认为等同，所以用`==`
+            return context
+                && context.handler === handler
+                && context.thisObject == thisObject;
+        }
+
+        /**
+         * 事件队列
+         *
+         * @constructor
+         */
+        function EventQueue() {
+            this.queue = [];
+        }
+
+        /**
+         * 添加一个事件处理函数
+         *
+         * @param {Function | boolean} handler 处理函数，
+         * 可以传递`false`作为特殊的处理函数，参考{@link EventTarget#on}
+         * @param {Object} [options] 相关配置
+         * @param {Mixed} [options.thisObject] 执行处理函数时的`this`对象
+         * @param {boolean} [options.once=false] 设定函数仅执行一次
+         */
+        EventQueue.prototype.add = function (handler, options) {
+            if (handler !== false && typeof handler !== 'function') {
+                throw new Error(
+                    'event handler must be a function or const false');
+            }
+
+            var wrapper = {
+                handler: handler
+            };
+            lib.extend(wrapper, options);
+
+            for (var i = 0; i < this.queue.length; i++) {
+                var context = this.queue[i];
+                // 同样的处理函数，不同的`this`对象，相当于外面`bind`了一把再添加，
+                // 此时认为这是完全不同的2个处理函数，但`null`和`undefined`认为是一样的
+                if (isContextIdentical(context, handler, wrapper.thisObject)) {
+                    return;
+                }
+            }
+
+            this.queue.push(wrapper);
+        };
+
+        /**
+         * 移除一个或全部处理函数
+         *
+         * @param {Function | boolean} [handler] 指定移除的处理函数，
+         * 如不提供则移除全部处理函数，可以传递`false`作为特殊的处理函数
+         * @param {Mixed} [thisObject] 指定函数对应的`this`对象，
+         * 不提供则仅移除没有挂载`this`对象的那些处理函数
+         */
+        EventQueue.prototype.remove = function (handler, thisObject) {
+            // 如果没提供`handler`，则直接清空
+            if (!handler) {
+                this.clear();
+                return;
+            }
+
+            for (var i = 0; i < this.queue.length; i++) {
+                var context = this.queue[i];
+
+                if (isContextIdentical(context, handler, thisObject)) {
+                    // 为了让`execute`过程中调用的`remove`工作正常，
+                    // 这里不能用`splice`直接删除，仅设为`null`留下这个空间
+                    this.queue[i] = null;
+
+                    // 完全符合条件的处理函数在`add`时会去重，因此这里肯定只有一个
+                    return;
+                }
+            }
+        };
+
+        /**
+         * 移除全部处理函数，如果队列执行时调用这个函数，会导致剩余的处理函数不再执行
+         */
+        EventQueue.prototype.clear = function () {
+            this.queue.length = 0;
+        };
+
+        /**
+         * 执行所有处理函数
+         *
+         * @param {Event} event 事件对象
+         * @param {Mixed} thisObject 函数执行时的`this`对象
+         */
+        EventQueue.prototype.execute = function (event, thisObject) {
+            // 如果执行过程中销毁，`dispose`会把`this.queue`弄掉，所以这里留一个引用，
+            // 在`dispose`中会额外把数组清空，因此不用担心后续的函数会执行
+            var queue = this.queue;
+            for (var i = 0; i < queue.length; i++) {
+                if (typeof event.isImmediatePropagationStopped === 'function'
+                    && event.isImmediatePropagationStopped()
+                ) {
+                    return;
+                }
+
+                var context = queue[i];
+
+                // 移除事件时设置为`null`，因此可能无值
+                if (!context) {
+                    continue;
+                }
+
+                var handler = context.handler;
+
+                // `false`等同于两个方法的调用
+                if (handler === false) {
+                    if (typeof event.preventDefault === 'function') {
+                        event.preventDefault();
+                    }
+                    if (typeof event.stopPropagation === 'function') {
+                        event.stopPropagation();
+                    }
+                }
+                else {
+                    // 这里不需要做去重处理了，在`on`的时候会去重，因此这里不可能重复
+                    handler.call(context.thisObject || thisObject, event);
+                }
+
+                if (context.once) {
+                    this.remove(context.handler, context.thisObject);
+                }
+            }
+        };
+
+        /**
+         * 获取队列的长度
+         *
+         * @reutrn {number}
+         */
+        EventQueue.prototype.getLength = function () {
+            var count = 0;
+            for (var i = 0; i < this.queue.length; i++) {
+                if (this.queue[i]) {
+                    count++;
+                }
+            }
+            return count;
+        };
+
+        /**
+         * 获取队列的长度，与{@link EventQueue#getLength}相同
+         *
+         * @method
+         * @reutrn {number}
+         */
+        EventQueue.prototype.length = EventQueue.prototype.getLength;
+
+        /**
+         * 销毁
+         *
+         * 如果在队列执行的过程中销毁了对象，则在对象销毁后，剩余的处理函数不会再执行了
+         */
+        EventQueue.prototype.dispose = function () {
+            // 在执行过程中被销毁的情况下，这里`length`置为0，循环就走不下去了
+            this.clear();
+            this.queue = null;
+        };
+
+        return EventQueue;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * mini-event
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @ignore
+ * @file 入口
+ * @author otakustay
+ */
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+        var Event = __webpack_require__(218);
+
+        /**
+         * @class main
+         * @singleton
+         */
+        return {
+            /**
+             * 版本号
+             *
+             * @type {string}
+             */
+            version: '1.0.2',
+
+            /**
+             * {@link Event}类
+             *
+             * @type {Function}
+             */
+            Event: Event,
+
+            /**
+             * 参考{@link Event#fromDOMEvent}
+             */
+            fromDOMEvent: Event.fromDOMEvent,
+
+            /**
+             * 参考{@link Event#fromEvent}
+             */
+            fromEvent: Event.fromEvent,
+
+            /**
+             * 参考{@link Event#delegate}
+             */
+            delegate: Event.delegate
+        };
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * ER (Enterprise RIA)
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @ignore
+ * @file 路由器对象
+ * @author otakustay
+ */
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
+        /**
+         * @class Router
+         *
+         * 路由类
+         *
+         * 通过`require('er/router').Router`访问该类构造函数，其中`require('er/router')`是该类的全局实例
+         *
+         * 路由用于将特定的URL对应到特定的函数上，
+         * 并在URL变化（{@link locator}对象支持）时，执行相应的函数
+         *
+         * URL与函数的对应规则有3种形式：
+         *
+         * - 当使用字符串作为规则时，URL的`path`部分与字符串完全匹配
+         * - 当使用正则表达式作为规则时，URL的`path`部分匹配该正则
+         * - 当所有路由规则均不匹配某个URL时，会调用{@link Router#setBackup}提供的函数
+         *
+         * @extends mini-event.EventTarget
+         * @constructor
+         */
+        var exports = {};
+
+        var started = false;
+
+        exports.constructor = function () {
+            this.routes = [];
+            this.backup = null;
+        };
+
+        /**
+         * 在{{@locator#redirect}事件中，执行路由逻辑
+         *
+         * @param {mini-event.Event} e 事件对象
+         * @param {string} e.url 当前的URL
+         * @ignore
+         */
+        function executeRoute(e) {
+            var url = __webpack_require__(220).parse(e.url);
+            var path = url.getPath();
+            for (var i = 0; i < this.routes.length; i++) {
+                var route = this.routes[i];
+
+                if ((route.rule instanceof RegExp && route.rule.test(path)) || route.rule === path) {
+                    route.handler.call(this, url);
+                    return;
+                }
+            }
+
+            if (this.backup) {
+                this.backup(url);
+            }
+
+            this.getEventBus().fire('route', {url: url, router: this});
+        }
+
+        /**
+         * 添加一条路由规则
+         *
+         * @param {string | RegExp} rule 匹配URL的`path`部分的字符串或正则表达式
+         * @param {Function} handler 匹配成功时执行的函数
+         */
+        exports.add = function (rule, handler) {
+            this.routes.push({rule: rule, handler: handler});
+        };
+
+        /**
+         * 添加后备处理函数，当一个路径无规则命中时，将执行此函数
+         *
+         * @param {Function} handler 后备处理函数
+         */
+        exports.setBackup = function (handler) {
+            this.backup = handler;
+        };
+
+        /**
+         * 获取当前实例使用的{@link locator}对象
+         *
+         * @return {locator}
+         * @protected
+         */
+        exports.getLocator = function () {
+            return this.locator;
+        };
+
+        /**
+         * 设置当前实例使用的{@link locator}对象
+         *
+         * 可以为任意对象，按{@link locator#event-redirect}实现此事件即可
+         *
+         * @param {locator} locator 关联的{@link locator}实例
+         */
+        exports.setLocator = function (locator) {
+            this.locator = locator;
+        };
+
+        /**
+         * 获取当前实例使用的事件总线
+         *
+         * @return {mini-event.EventTarget}
+         * @protected
+         */
+        exports.getEventBus = function () {
+            return this.eventBus;
+        };
+
+        /**
+         * 设置当前实例使用的事件总线
+         *
+         * 事件总线可以是任何对象，只要实现`fire`方法供事件触发即可
+         *
+         * @param {mini-event.EventTarget} eventBus 事件总线对象
+         */
+        exports.setEventBus = function (eventBus) {
+            this.eventBus = eventBus;
+        };
+
+        /**
+         * 开始`router`对象的工作
+         */
+        exports.start = function () {
+            if (started) {
+                return;
+            }
+            started = true;
+            this.getLocator().on('redirect', executeRoute, this);
+        };
+
+        var Router = __webpack_require__(29).create(__webpack_require__(23), exports);
+        var instance = new Router();
+        instance.setLocator(__webpack_require__(222));
+        instance.setEventBus(__webpack_require__(34));
+        instance.Router = Router;
+        return instance;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * ER (Enterprise RIA)
+ * Copyright 2013 Baidu Inc. All rights reserved.
+ *
+ * @ignore
+ * @file 权限管理对象
+ * @author otakustay
+ */
+!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+        var authorities = {};
+
+        /**
+         * @class permission
+         *
+         * 权限管理器，提供权限的注册和判断功能
+         *
+         * @singleton
+         */
+        var permssion = {
+            /**
+             * 添加权限
+             *
+             * 权限以字符串作为名称，添加权限说明时，传递一个对象，
+             * 其中的健为权限名称，值为是否拥有该权限
+             *
+             * 权限说明可以嵌套，如：
+             *
+             *     {
+             *         books: { VIEW_BOOK: true, EDIT_BOOK: false },
+             *         authors: { VIEW_AUTHOR: true, EDIT_AUTHOR: true }
+             *     }
+             *
+             * @param {Object} data 权限说明
+             */
+            add: function (data) {
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        var value = data[key];
+                        if (typeof value === 'object') {
+                            this.add(value);
+                        }
+                        else {
+                            authorities[key] = value;
+                        }
+                    }
+                }
+            },
+
+            /**
+             * 判断是否拥有指定权限
+             *
+             * @param {string} name 权限名称
+             * @return {boolean} 是否拥有`name`表示的权限
+             */
+            isAllow: function (name) {
+                return !!authorities[name];
+            }
+        };
+
+        return permssion;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 311 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["loadAppInBackground"] = loadAppInBackground;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
+/**
+ * @file inf-ria/helper.es6
+ * @author leeight
+ */
+
+
+
+function loadAppInBackground() {
+    return __WEBPACK_IMPORTED_MODULE_0_promise___default.a.resolve();
+}
+
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _Breadcrumbs = __webpack_require__(313);
+
+var _Breadcrumbs2 = _interopRequireDefault(_Breadcrumbs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var cx = (0, _util.create)('list-page'); /**
+                                          * @file san-xui/x/biz/Page.js
+                                          * @author leeight
+                                          */
+
+exports.default = (0, _san.defineComponent)({ // eslint-disable-line
+    template: '<div class="{{mainClass}}">\n        <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />\n\n        <div class="' + cx('body') + '">\n            <div class="' + cx('title') + '" s-if="title || navs">\n                <h2 s-if="title">{{title}}<span s-if="remark">{{remark | raw}}</span></h2>\n                <div class="ui-tab ui-tab-x" s-elif="navs">\n                    <ul class="ui-tab-navigator">\n                        <li\n                            s-for="item in navs"\n                            class="{{item.active ? \'ui-tab-item ui-tab-item-active\' : \'ui-tab-item\'}}"\n                        >\n                            <a href="{{item.link}}" s-if="item.link">{{item.text}}</a>\n                            <span s-else>{{item.text}}</span>\n                        </li>\n                    </ul>\n                </div>\n                <slot name="helps" />\n            </div>\n            <div class="' + cx('content') + '">\n                <div class="' + cx('tip') + '" s-if="withTip">\n                    <slot name="tip" />\n                </div>\n\n                <slot name="filter" />\n\n                <div class="' + cx('toolbar') + '" s-if="withToolbar">\n                    <div class="' + cx('tb-left') + '">\n                        <slot name="tb-left" />\n                        <slot name="tb-filter" />\n                    </div>\n                    <div class="' + cx('tb-right') + '">\n                        <slot name="tb-right" />\n                    </div>\n                </div>\n                <slot/>\n            </div>\n        </div>\n    </div>',
+    components: {
+        breadcrumbs: _Breadcrumbs2.default
+    },
+    initData: function initData() {
+        return {
+            withSidebar: false,
+            withTip: false,
+            withToolbar: true,
+            title: null,
+            navs: null,
+            remark: null,
+            breadcrumbs: null
+        };
+    },
+
+    computed: {
+        mainClass: function mainClass() {
+            var klass = [cx()];
+            var withSidebar = this.data.get('withSidebar');
+            if (withSidebar) {
+                klass.push(cx('with-sidebar'));
+            }
+
+            return klass;
+        }
+    },
+    hasSlot: function hasSlot(name) {
+        return (0, _util.hasSlot)(this, name);
+    },
+    attached: function attached() {
+        var withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');
+        this.data.set('withToolbar', withToolbar);
+    }
+});
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+/**
+ * @file san-xui/x/biz/Breadcrumbs.js
+ * @author leeight
+ */
+
+var cx = (0, _util.create)('ui-breadcrumbs');
+
+/* eslint-disable */
+var template = '<div class="' + cx() + '">\n    <div class="' + cx('item') + '" san-for="item, index in items">\n        <span class="' + cx('divider') + '" san-if="index > 0">/</span>\n        <a href="{{item.href}}" s-if="item.href">{{item.text}}</a>\n        <span s-else class="' + cx('label') + '">{{item.text}}</span>\n    </div>\n</div>';
+/* eslint-enable */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    initData: function initData() {
+        return {
+            items: []
+        };
+    }
+});
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _san = __webpack_require__(0);
+
+exports.default = (0, _san.defineComponent)({
+  template: '<template><slot/></template>'
+}); /**
+     * @file biz/Ghost.js
+     * @author leeight
+     */
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(316);
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(14);
+var bind = __webpack_require__(225);
+var Axios = __webpack_require__(318);
+var defaults = __webpack_require__(58);
 
 /**
  * Create an instance of Axios
@@ -63375,15 +65576,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(226);
-axios.CancelToken = __webpack_require__(321);
-axios.isCancel = __webpack_require__(225);
+axios.Cancel = __webpack_require__(229);
+axios.CancelToken = __webpack_require__(332);
+axios.isCancel = __webpack_require__(228);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(322);
+axios.spread = __webpack_require__(333);
 
 module.exports = axios;
 
@@ -63392,7 +65593,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 306 */
+/* 317 */
 /***/ (function(module, exports) {
 
 /*!
@@ -63419,16 +65620,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 307 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(57);
-var utils = __webpack_require__(13);
-var InterceptorManager = __webpack_require__(316);
-var dispatchRequest = __webpack_require__(317);
+var defaults = __webpack_require__(58);
+var utils = __webpack_require__(14);
+var InterceptorManager = __webpack_require__(327);
+var dispatchRequest = __webpack_require__(328);
 
 /**
  * Create a new instance of Axios
@@ -63505,13 +65706,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 308 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -63524,13 +65725,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 309 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(224);
+var createError = __webpack_require__(227);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -63557,7 +65758,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 310 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63585,13 +65786,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 311 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -63660,13 +65861,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 312 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -63720,13 +65921,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 313 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -63795,7 +65996,7 @@ module.exports = (
 
 
 /***/ }),
-/* 314 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63838,13 +66039,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 315 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -63898,13 +66099,13 @@ module.exports = (
 
 
 /***/ }),
-/* 316 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -63957,18 +66158,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 317 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
-var transformData = __webpack_require__(318);
-var isCancel = __webpack_require__(225);
-var defaults = __webpack_require__(57);
-var isAbsoluteURL = __webpack_require__(319);
-var combineURLs = __webpack_require__(320);
+var utils = __webpack_require__(14);
+var transformData = __webpack_require__(329);
+var isCancel = __webpack_require__(228);
+var defaults = __webpack_require__(58);
+var isAbsoluteURL = __webpack_require__(330);
+var combineURLs = __webpack_require__(331);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -64050,13 +66251,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 318 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(14);
 
 /**
  * Transform the data for a request or a response
@@ -64077,7 +66278,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 319 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64098,7 +66299,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 320 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64119,13 +66320,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 321 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(226);
+var Cancel = __webpack_require__(229);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -64183,7 +66384,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 322 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64217,7 +66418,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 323 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64232,7 +66433,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file components/ViewStep.es6
+ * @file components/ViewStep.js
  * @author leeight
  */
 
@@ -64283,7 +66484,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 324 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64299,7 +66500,7 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Recorder = __webpack_require__(325);
+var _Recorder = __webpack_require__(336);
 
 var _Recorder2 = _interopRequireDefault(_Recorder);
 
@@ -64313,7 +66514,7 @@ var cx = (0, _util.create)('ui-voice');
 
 /* eslint-disable */
 /**
- * @file components/Voice.es6
+ * @file components/Voice.js
  * @author leeight
  */
 
@@ -64405,7 +66606,7 @@ var Voice = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(Voice);
 
 /***/ }),
-/* 325 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64415,18 +66616,18 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _RecorderWorker = __webpack_require__(326);
+var _RecorderWorker = __webpack_require__(337);
 
 var _RecorderWorker2 = _interopRequireDefault(_RecorderWorker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file san-xui/x/components/Recorder.es6
+ * @file san-xui/x/components/Recorder.js
  * @author xxx
  */
 
@@ -64741,7 +66942,7 @@ Recorder.init = function (t) {
 exports.default = Recorder;
 
 /***/ }),
-/* 326 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64751,13 +66952,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
- * @file components/RecorderWorker.es6
+ * @file components/RecorderWorker.js
  * @author leeight
  */
 exports.default = "\nfunction str2uint8(e) {\n    var t = new ArrayBuffer(e.length),\n        n = new Uint8Array(t);\n    for (var r = 0; r < e.length; r++) n[r] = e.charCodeAt(r);\n    return n;\n}\nfunction init(e) {\n    (sampleRate = e.sampleRate),\n        (outputChannels = e.outputChannels),\n        (outputSampleRate = e.outputSampleRate),\n        (uid = e.uid),\n        uid || (uid = 'test_uid');\n}\nfunction record(e) {\n    recBuffersL.push(e[0]), outputChannels == 2 && recBuffersR.push(e[1]);\n}\nfunction exportWAV(e) {\n    var t,\n        n = mergeBuffers(recBuffersL);\n    if (outputChannels == 2) {\n        var r = mergeBuffers(recBuffersR);\n        t = interleave(n, r);\n    } else t = n;\n    var i = encodeWAV(t),\n        s = new Blob([i], { type: e });\n    return s;\n}\nfunction getBuffer() {\n    var e = [];\n    return (\n        e.push(mergeBuffers(recBuffersL)),\n        outputChannels == 2 && e.push(mergeBuffers(recBuffersR)),\n        e\n    );\n}\nfunction getSendBuffer(e) {\n    var t = '-BD**VR+gzgzip',\n        n = '\\r\\n',\n        r = {\n            pfm: 'iOS&1&1&1&1',\n            ver: '1.0',\n            enc: 'utf-8',\n            rtn: 'json',\n            pdt: '818',\n            app_name: 'com.baidu.www.voice',\n            idx: sendIdx++ + '',\n            fun: '1',\n            glb: glb,\n            uid: uid\n        };\n    e && (r.idx = '-' + r.idx);\n    var i = JSON.stringify(r),\n        s = new Zlib.Gzip(str2uint8(i)),\n        o = s.compress();\n    if (sendOffset >= recBuffersL.length && !e) {\n        sendIdx--;\n        return null;\n    }\n    recBuffersL.slice(sendOffset);\n    var u = mergeBuffers(recBuffersL.slice(sendOffset));\n    sendOffset = recBuffersL.length;\n    var a = '--' + t,\n        f = new ArrayBuffer(\n            o.byteLength +\n                4 +\n                u.length * 2 +\n                (n.length + n.length + a.length) * 3 +\n                2\n        ),\n        l = new DataView(f),\n        c = 0;\n    return (\n        (c = writeString(l, c, n + a + n)),\n        (c = writeUint8Array(l, c, o)),\n        (c = writeString(l, c, n + a + n)),\n        l.setUint32(c, 1, !0),\n        (c += 4),\n        (c = writePcm(l, c, u)),\n        (c = writeString(l, c, n + a + '--' + n)),\n        { buffer: f, boundary: t, json: r }\n    );\n}\nfunction clear() {\n    (recBuffersL = []), (recBuffersR = []);\n}\nfunction mergeBuffers(e) {\n    var t = 0;\n    e.forEach(function(e) {\n        t += e.length;\n    });\n    var n = new Float32Array(t),\n        r = 0,\n        i;\n    for (i = 0; i < e.length; i++) n.set(e[i], r), (r += e[i].length);\n    var s = 0,\n        o = sampleRate / outputSampleRate,\n        u = Math.ceil(t * outputSampleRate / sampleRate),\n        a = new Float32Array(u);\n    for (i = 0; i < u; i++) (a[i] = n[Math.floor(s)]), (s += o);\n    return a;\n}\nfunction interleave(e, t) {\n    var n = e.length + t.length,\n        r = new Float32Array(n),\n        i = 0,\n        s = 0;\n    while (i < n) (r[i++] = e[s]), (r[i++] = t[s]), s++;\n    return r;\n}\nfunction floatTo16BitPCM(e, t, n) {\n    for (var r = 0; r < n.length; r++, t += 2) {\n        var i = Math.max(-1, Math.min(1, n[r]));\n        e.setInt16(t, i < 0 ? i * 32768 : i * 32767, !0);\n    }\n}\nfunction writeUint8Array(e, t, n) {\n    for (var r = 0; r < n.length; r++) e.setUint8(t + r, n[r]);\n    return t + n.length;\n}\nfunction writeString(e, t, n) {\n    for (var r = 0; r < n.length; r++) e.setUint8(t + r, n.charCodeAt(r));\n    return t + n.length;\n}\nfunction writePcm(e, t, n) {\n    return floatTo16BitPCM(e, t, n), t + n.length * 2;\n}\nfunction encodeWAV(e) {\n    var t = new ArrayBuffer(44 + e.length * 2),\n        n = new DataView(t);\n    return (\n        writeString(n, 0, 'RIFF'),\n        n.setUint32(4, 32 + e.length * 2, !0),\n        writeString(n, 8, 'WAVE'),\n        writeString(n, 12, 'fmt '),\n        n.setUint32(16, 16, !0),\n        n.setUint16(20, 1, !0),\n        n.setUint16(22, outputChannels, !0),\n        n.setUint32(24, outputSampleRate, !0),\n        n.setUint32(28, outputSampleRate, !0),\n        n.setUint16(32, outputChannels * 2, !0),\n        n.setUint16(34, 16, !0),\n        writeString(n, 36, 'data'),\n        n.setUint32(40, e.length * 2, !0),\n        floatTo16BitPCM(n, 44, e),\n        n\n    );\n}\n(function() {\n    'use strict';\n    function r(t, r) {\n        var i = t.split('.'),\n            s = n;\n        !(i[0] in s) && s.execScript && s.execScript('var ' + i[0]);\n        for (var o; i.length && (o = i.shift()); )\n            !i.length && r !== e ? (s[o] = r) : (s = s[o] ? s[o] : (s[o] = {}));\n    }\n    function s(e, t) {\n        (this.index = 'number' == typeof t ? t : 0),\n            (this.f = 0),\n            (this.buffer =\n                e instanceof (i ? Uint8Array : Array)\n                    ? e\n                    : new (i ? Uint8Array : Array)(32768));\n        if (2 * this.buffer.length <= this.index) throw Error('invalid index');\n        this.buffer.length <= this.index && o(this);\n    }\n    function o(e) {\n        var t = e.buffer,\n            n,\n            r = t.length,\n            s = new (i ? Uint8Array : Array)(r << 1);\n        if (i) s.set(t);\n        else for (n = 0; n < r; ++n) s[n] = t[n];\n        return (e.buffer = s);\n    }\n    function p(e, t, n) {\n        var r,\n            i = 'number' == typeof t ? t : (t = 0),\n            s = 'number' == typeof n ? n : e.length;\n        r = -1;\n        for (i = s & 7; i--; ++t) r = (r >>> 8) ^ v[(r ^ e[t]) & 255];\n        for (i = s >> 3; i--; t += 8)\n            (r = (r >>> 8) ^ v[(r ^ e[t]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 1]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 2]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 3]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 4]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 5]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 6]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 7]) & 255]);\n        return (r ^ 4294967295) >>> 0;\n    }\n    function m(e) {\n        (this.buffer = new (i ? Uint16Array : Array)(2 * e)), (this.length = 0);\n    }\n    function g(e, t) {\n        (this.h = y),\n            (this.j = 0),\n            (this.input = i && e instanceof Array ? new Uint8Array(e) : e),\n            (this.c = 0),\n            t &&\n                (t.lazy && (this.j = t.lazy),\n                'number' == typeof t.compressionType &&\n                    (this.h = t.compressionType),\n                t.outputBuffer &&\n                    (this.a =\n                        i && t.outputBuffer instanceof Array\n                            ? new Uint8Array(t.outputBuffer)\n                            : t.outputBuffer),\n                'number' == typeof t.outputIndex && (this.c = t.outputIndex)),\n            this.a || (this.a = new (i ? Uint8Array : Array)(32768));\n    }\n    function E(e, t) {\n        (this.length = e), (this.k = t);\n    }\n    function T(n, r) {\n        function s(e, n) {\n            var r = e.k,\n                i = [],\n                s = 0,\n                o;\n            (o = x[e.length]),\n                (i[s++] = o & 65535),\n                (i[s++] = (o >> 16) & 255),\n                (i[s++] = o >> 24);\n            var u;\n            switch (t) {\n                case 1 === r:\n                    u = [0, r - 1, 0];\n                    break;\n                case 2 === r:\n                    u = [1, r - 2, 0];\n                    break;\n                case 3 === r:\n                    u = [2, r - 3, 0];\n                    break;\n                case 4 === r:\n                    u = [3, r - 4, 0];\n                    break;\n                case 6 >= r:\n                    u = [4, r - 5, 1];\n                    break;\n                case 8 >= r:\n                    u = [5, r - 7, 1];\n                    break;\n                case 12 >= r:\n                    u = [6, r - 9, 2];\n                    break;\n                case 16 >= r:\n                    u = [7, r - 13, 2];\n                    break;\n                case 24 >= r:\n                    u = [8, r - 17, 3];\n                    break;\n                case 32 >= r:\n                    u = [9, r - 25, 3];\n                    break;\n                case 48 >= r:\n                    u = [10, r - 33, 4];\n                    break;\n                case 64 >= r:\n                    u = [11, r - 49, 4];\n                    break;\n                case 96 >= r:\n                    u = [12, r - 65, 5];\n                    break;\n                case 128 >= r:\n                    u = [13, r - 97, 5];\n                    break;\n                case 192 >= r:\n                    u = [14, r - 129, 6];\n                    break;\n                case 256 >= r:\n                    u = [15, r - 193, 6];\n                    break;\n                case 384 >= r:\n                    u = [16, r - 257, 7];\n                    break;\n                case 512 >= r:\n                    u = [17, r - 385, 7];\n                    break;\n                case 768 >= r:\n                    u = [18, r - 513, 8];\n                    break;\n                case 1024 >= r:\n                    u = [19, r - 769, 8];\n                    break;\n                case 1536 >= r:\n                    u = [20, r - 1025, 9];\n                    break;\n                case 2048 >= r:\n                    u = [21, r - 1537, 9];\n                    break;\n                case 3072 >= r:\n                    u = [22, r - 2049, 10];\n                    break;\n                case 4096 >= r:\n                    u = [23, r - 3073, 10];\n                    break;\n                case 6144 >= r:\n                    u = [24, r - 4097, 11];\n                    break;\n                case 8192 >= r:\n                    u = [25, r - 6145, 11];\n                    break;\n                case 12288 >= r:\n                    u = [26, r - 8193, 12];\n                    break;\n                case 16384 >= r:\n                    u = [27, r - 12289, 12];\n                    break;\n                case 24576 >= r:\n                    u = [28, r - 16385, 13];\n                    break;\n                case 32768 >= r:\n                    u = [29, r - 24577, 13];\n                    break;\n                default:\n                    throw 'invalid distance';\n            }\n            (o = u), (i[s++] = o[0]), (i[s++] = o[1]), (i[s++] = o[2]);\n            var a, f;\n            a = 0;\n            for (f = i.length; a < f; ++a) v[m++] = i[a];\n            y[i[0]]++, b[i[3]]++, (g = e.length + n - 1), (d = null);\n        }\n        var o,\n            u,\n            a,\n            f,\n            l,\n            c = {},\n            h,\n            p,\n            d,\n            v = i ? new Uint16Array(2 * r.length) : [],\n            m = 0,\n            g = 0,\n            y = new (i ? Uint32Array : Array)(286),\n            b = new (i ? Uint32Array : Array)(30),\n            w = n.j,\n            E;\n        if (!i) {\n            for (a = 0; 285 >= a; ) y[a++] = 0;\n            for (a = 0; 29 >= a; ) b[a++] = 0;\n        }\n        (y[256] = 1), (o = 0);\n        for (u = r.length; o < u; ++o) {\n            a = l = 0;\n            for (f = 3; a < f && o + a !== u; ++a) l = (l << 8) | r[o + a];\n            c[l] === e && (c[l] = []), (h = c[l]);\n            if (!(0 < g--)) {\n                for (; 0 < h.length && 32768 < o - h[0]; ) h.shift();\n                if (o + 3 >= u) {\n                    d && s(d, -1), (a = 0);\n                    for (f = u - o; a < f; ++a)\n                        (E = r[o + a]), (v[m++] = E), ++y[E];\n                    break;\n                }\n                0 < h.length\n                    ? ((p = N(r, o, h)),\n                      d\n                          ? d.length < p.length\n                            ? ((E = r[o - 1]), (v[m++] = E), ++y[E], s(p, 0))\n                            : s(d, -1)\n                          : p.length < w ? (d = p) : s(p, 0))\n                    : d ? s(d, -1) : ((E = r[o]), (v[m++] = E), ++y[E]);\n            }\n            h.push(o);\n        }\n        return (\n            (v[m++] = 256),\n            y[256]++,\n            (n.n = y),\n            (n.m = b),\n            i ? v.subarray(0, m) : v\n        );\n    }\n    function N(e, t, n) {\n        var r,\n            i,\n            s = 0,\n            o,\n            u,\n            a,\n            f,\n            l = e.length;\n        (u = 0), (f = n.length);\n        e: for (; u < f; u++) {\n            (r = n[f - u - 1]), (o = 3);\n            if (3 < s) {\n                for (a = s; 3 < a; a--)\n                    if (e[r + a - 1] !== e[t + a - 1]) continue e;\n                o = s;\n            }\n            for (; 258 > o && t + o < l && e[r + o] === e[t + o]; ) ++o;\n            o > s && ((i = r), (s = o));\n            if (258 === o) break;\n        }\n        return new E(s, t - i);\n    }\n    function C(e, t) {\n        var n = e.length,\n            r = new m(572),\n            s = new (i ? Uint8Array : Array)(n),\n            o,\n            u,\n            a,\n            f,\n            l;\n        if (!i) for (f = 0; f < n; f++) s[f] = 0;\n        for (f = 0; f < n; ++f) 0 < e[f] && r.push(f, e[f]);\n        (o = Array(r.length / 2)),\n            (u = new (i ? Uint32Array : Array)(r.length / 2));\n        if (1 === o.length) return (s[r.pop().index] = 1), s;\n        f = 0;\n        for (l = r.length / 2; f < l; ++f)\n            (o[f] = r.pop()), (u[f] = o[f].value);\n        (a = k(u, u.length, t)), (f = 0);\n        for (l = o.length; f < l; ++f) s[o[f].index] = a[f];\n        return s;\n    }\n    function k(e, t, n) {\n        function r(e) {\n            var n = f[e][l[e]];\n            n === t ? (r(e + 1), r(e + 1)) : --u[n], ++l[e];\n        }\n        var s = new (i ? Uint16Array : Array)(n),\n            o = new (i ? Uint8Array : Array)(n),\n            u = new (i ? Uint8Array : Array)(t),\n            a = Array(n),\n            f = Array(n),\n            l = Array(n),\n            c = (1 << n) - t,\n            h = 1 << (n - 1),\n            p,\n            d,\n            v,\n            m,\n            g;\n        s[n - 1] = t;\n        for (d = 0; d < n; ++d)\n            c < h ? (o[d] = 0) : ((o[d] = 1), (c -= h)),\n                (c <<= 1),\n                (s[n - 2 - d] = ((s[n - 1 - d] / 2) | 0) + t);\n        (s[0] = o[0]), (a[0] = Array(s[0])), (f[0] = Array(s[0]));\n        for (d = 1; d < n; ++d)\n            s[d] > 2 * s[d - 1] + o[d] && (s[d] = 2 * s[d - 1] + o[d]),\n                (a[d] = Array(s[d])),\n                (f[d] = Array(s[d]));\n        for (p = 0; p < t; ++p) u[p] = n;\n        for (v = 0; v < s[n - 1]; ++v) (a[n - 1][v] = e[v]), (f[n - 1][v] = v);\n        for (p = 0; p < n; ++p) l[p] = 0;\n        1 === o[n - 1] && (--u[0], ++l[n - 1]);\n        for (d = n - 2; 0 <= d; --d) {\n            (m = p = 0), (g = l[d + 1]);\n            for (v = 0; v < s[d]; v++)\n                (m = a[d + 1][g] + a[d + 1][g + 1]),\n                    m > e[p]\n                        ? ((a[d][v] = m), (f[d][v] = t), (g += 2))\n                        : ((a[d][v] = e[p]), (f[d][v] = p), ++p);\n            (l[d] = 0), 1 === o[d] && r(d);\n        }\n        return u;\n    }\n    function L(e) {\n        var t = new (i ? Uint16Array : Array)(e.length),\n            n = [],\n            r = [],\n            s = 0,\n            o,\n            u,\n            a,\n            f;\n        o = 0;\n        for (u = e.length; o < u; o++) n[e[o]] = (n[e[o]] | 0) + 1;\n        o = 1;\n        for (u = 16; o <= u; o++) (r[o] = s), (s += n[o] | 0), (s <<= 1);\n        o = 0;\n        for (u = e.length; o < u; o++) {\n            (s = r[e[o]]), (r[e[o]] += 1), (a = t[o] = 0);\n            for (f = e[o]; a < f; a++)\n                (t[o] = (t[o] << 1) | (s & 1)), (s >>>= 1);\n        }\n        return t;\n    }\n    function A(e, t) {\n        (this.input = e),\n            (this.c = this.i = 0),\n            (this.d = {}),\n            t &&\n                (t.flags && (this.d = t.flags),\n                'string' == typeof t.filename && (this.filename = t.filename),\n                'string' == typeof t.comment && (this.l = t.comment),\n                t.deflateOptions && (this.e = t.deflateOptions)),\n            this.e || (this.e = {});\n    }\n    var e = void 0,\n        t = !0,\n        n = this,\n        i =\n            'undefined' != typeof Uint8Array &&\n            'undefined' != typeof Uint16Array &&\n            'undefined' != typeof Uint32Array &&\n            'undefined' != typeof DataView;\n    (s.prototype.b = function(e, t, n) {\n        var r = this.buffer,\n            i = this.index,\n            s = this.f,\n            u = r[i],\n            a;\n        n &&\n            1 < t &&\n            (e =\n                8 < t\n                    ? ((h[e & 255] << 24) |\n                          (h[(e >>> 8) & 255] << 16) |\n                          (h[(e >>> 16) & 255] << 8) |\n                          h[(e >>> 24) & 255]) >>\n                      (32 - t)\n                    : h[e] >> (8 - t));\n        if (8 > t + s) (u = (u << t) | e), (s += t);\n        else\n            for (a = 0; a < t; ++a)\n                (u = (u << 1) | ((e >> (t - a - 1)) & 1)),\n                    8 === ++s &&\n                        ((s = 0),\n                        (r[i++] = h[u]),\n                        (u = 0),\n                        i === r.length && (r = o(this)));\n        (r[i] = u), (this.buffer = r), (this.f = s), (this.index = i);\n    }),\n        (s.prototype.finish = function() {\n            var e = this.buffer,\n                t = this.index,\n                n;\n            return (\n                0 < this.f && ((e[t] <<= 8 - this.f), (e[t] = h[e[t]]), t++),\n                i ? (n = e.subarray(0, t)) : ((e.length = t), (n = e)),\n                n\n            );\n        });\n    var u = new (i ? Uint8Array : Array)(256),\n        a;\n    for (a = 0; 256 > a; ++a) {\n        for (var f = a, l = f, c = 7, f = f >>> 1; f; f >>>= 1)\n            (l <<= 1), (l |= f & 1), --c;\n        u[a] = ((l << c) & 255) >>> 0;\n    }\n    var h = u,\n        d = [\n            0,\n            1996959894,\n            3993919788,\n            2567524794,\n            124634137,\n            1886057615,\n            3915621685,\n            2657392035,\n            249268274,\n            2044508324,\n            3772115230,\n            2547177864,\n            162941995,\n            2125561021,\n            3887607047,\n            2428444049,\n            498536548,\n            1789927666,\n            4089016648,\n            2227061214,\n            450548861,\n            1843258603,\n            4107580753,\n            2211677639,\n            325883990,\n            1684777152,\n            4251122042,\n            2321926636,\n            335633487,\n            1661365465,\n            4195302755,\n            2366115317,\n            997073096,\n            1281953886,\n            3579855332,\n            2724688242,\n            1006888145,\n            1258607687,\n            3524101629,\n            2768942443,\n            901097722,\n            1119000684,\n            3686517206,\n            2898065728,\n            853044451,\n            1172266101,\n            3705015759,\n            2882616665,\n            651767980,\n            1373503546,\n            3369554304,\n            3218104598,\n            565507253,\n            1454621731,\n            3485111705,\n            3099436303,\n            671266974,\n            1594198024,\n            3322730930,\n            2970347812,\n            795835527,\n            1483230225,\n            3244367275,\n            3060149565,\n            1994146192,\n            31158534,\n            2563907772,\n            4023717930,\n            1907459465,\n            112637215,\n            2680153253,\n            3904427059,\n            2013776290,\n            251722036,\n            2517215374,\n            3775830040,\n            2137656763,\n            141376813,\n            2439277719,\n            3865271297,\n            1802195444,\n            476864866,\n            2238001368,\n            4066508878,\n            1812370925,\n            453092731,\n            2181625025,\n            4111451223,\n            1706088902,\n            314042704,\n            2344532202,\n            4240017532,\n            1658658271,\n            366619977,\n            2362670323,\n            4224994405,\n            1303535960,\n            984961486,\n            2747007092,\n            3569037538,\n            1256170817,\n            1037604311,\n            2765210733,\n            3554079995,\n            1131014506,\n            879679996,\n            2909243462,\n            3663771856,\n            1141124467,\n            855842277,\n            2852801631,\n            3708648649,\n            1342533948,\n            654459306,\n            3188396048,\n            3373015174,\n            1466479909,\n            544179635,\n            3110523913,\n            3462522015,\n            1591671054,\n            702138776,\n            2966460450,\n            3352799412,\n            1504918807,\n            783551873,\n            3082640443,\n            3233442989,\n            3988292384,\n            2596254646,\n            62317068,\n            1957810842,\n            3939845945,\n            2647816111,\n            81470997,\n            1943803523,\n            3814918930,\n            2489596804,\n            225274430,\n            2053790376,\n            3826175755,\n            2466906013,\n            167816743,\n            2097651377,\n            4027552580,\n            2265490386,\n            503444072,\n            1762050814,\n            4150417245,\n            2154129355,\n            426522225,\n            1852507879,\n            4275313526,\n            2312317920,\n            282753626,\n            1742555852,\n            4189708143,\n            2394877945,\n            397917763,\n            1622183637,\n            3604390888,\n            2714866558,\n            953729732,\n            1340076626,\n            3518719985,\n            2797360999,\n            1068828381,\n            1219638859,\n            3624741850,\n            2936675148,\n            906185462,\n            1090812512,\n            3747672003,\n            2825379669,\n            829329135,\n            1181335161,\n            3412177804,\n            3160834842,\n            628085408,\n            1382605366,\n            3423369109,\n            3138078467,\n            570562233,\n            1426400815,\n            3317316542,\n            2998733608,\n            733239954,\n            1555261956,\n            3268935591,\n            3050360625,\n            752459403,\n            1541320221,\n            2607071920,\n            3965973030,\n            1969922972,\n            40735498,\n            2617837225,\n            3943577151,\n            1913087877,\n            83908371,\n            2512341634,\n            3803740692,\n            2075208622,\n            213261112,\n            2463272603,\n            3855990285,\n            2094854071,\n            198958881,\n            2262029012,\n            4057260610,\n            1759359992,\n            534414190,\n            2176718541,\n            4139329115,\n            1873836001,\n            414664567,\n            2282248934,\n            4279200368,\n            1711684554,\n            285281116,\n            2405801727,\n            4167216745,\n            1634467795,\n            376229701,\n            2685067896,\n            3608007406,\n            1308918612,\n            956543938,\n            2808555105,\n            3495958263,\n            1231636301,\n            1047427035,\n            2932959818,\n            3654703836,\n            1088359270,\n            936918e3,\n            2847714899,\n            3736837829,\n            1202900863,\n            817233897,\n            3183342108,\n            3401237130,\n            1404277552,\n            615818150,\n            3134207493,\n            3453421203,\n            1423857449,\n            601450431,\n            3009837614,\n            3294710456,\n            1567103746,\n            711928724,\n            3020668471,\n            3272380065,\n            1510334235,\n            755167117\n        ],\n        v = i ? new Uint32Array(d) : d;\n    (m.prototype.getParent = function(e) {\n        return 2 * (((e - 2) / 4) | 0);\n    }),\n        (m.prototype.push = function(e, t) {\n            var n,\n                r,\n                i = this.buffer,\n                s;\n            (n = this.length), (i[this.length++] = t);\n            for (i[this.length++] = e; 0 < n; ) {\n                if (((r = this.getParent(n)), !(i[n] > i[r]))) break;\n                (s = i[n]),\n                    (i[n] = i[r]),\n                    (i[r] = s),\n                    (s = i[n + 1]),\n                    (i[n + 1] = i[r + 1]),\n                    (i[r + 1] = s),\n                    (n = r);\n            }\n            return this.length;\n        }),\n        (m.prototype.pop = function() {\n            var e,\n                t,\n                n = this.buffer,\n                r,\n                i,\n                s;\n            (t = n[0]),\n                (e = n[1]),\n                (this.length -= 2),\n                (n[0] = n[this.length]),\n                (n[1] = n[this.length + 1]);\n            for (s = 0; ; ) {\n                i = 2 * s + 2;\n                if (i >= this.length) break;\n                i + 2 < this.length && n[i + 2] > n[i] && (i += 2);\n                if (!(n[i] > n[s])) break;\n                (r = n[s]),\n                    (n[s] = n[i]),\n                    (n[i] = r),\n                    (r = n[s + 1]),\n                    (n[s + 1] = n[i + 1]),\n                    (n[i + 1] = r),\n                    (s = i);\n            }\n            return { index: e, value: t, length: this.length };\n        });\n    var y = 2,\n        b = [],\n        w;\n    for (w = 0; 288 > w; w++)\n        switch (t) {\n            case 143 >= w:\n                b.push([w + 48, 8]);\n                break;\n            case 255 >= w:\n                b.push([w - 144 + 400, 9]);\n                break;\n            case 279 >= w:\n                b.push([w - 256 + 0, 7]);\n                break;\n            case 287 >= w:\n                b.push([w - 280 + 192, 8]);\n                break;\n            default:\n                throw 'invalid literal: ' + w;\n        }\n    g.prototype.g = function() {\n        var n,\n            r,\n            o,\n            u,\n            a = this.input;\n        switch (this.h) {\n            case 0:\n                o = 0;\n                for (u = a.length; o < u; ) {\n                    (r = i ? a.subarray(o, o + 65535) : a.slice(o, o + 65535)),\n                        (o += r.length);\n                    var f = r,\n                        l = o === u,\n                        c = e,\n                        h = e,\n                        p = e,\n                        d = e,\n                        v = e,\n                        m = this.a,\n                        g = this.c;\n                    if (i) {\n                        for (\n                            m = new Uint8Array(this.a.buffer);\n                            m.length <= g + f.length + 5;\n\n                        )\n                            m = new Uint8Array(m.length << 1);\n                        m.set(this.a);\n                    }\n                    (c = l ? 1 : 0),\n                        (m[g++] = c | 0),\n                        (h = f.length),\n                        (p = (~h + 65536) & 65535),\n                        (m[g++] = h & 255),\n                        (m[g++] = (h >>> 8) & 255),\n                        (m[g++] = p & 255),\n                        (m[g++] = (p >>> 8) & 255);\n                    if (i) m.set(f, g), (g += f.length), (m = m.subarray(0, g));\n                    else {\n                        d = 0;\n                        for (v = f.length; d < v; ++d) m[g++] = f[d];\n                        m.length = g;\n                    }\n                    (this.c = g), (this.a = m);\n                }\n                break;\n            case 1:\n                var w = new s(\n                    i ? new Uint8Array(this.a.buffer) : this.a,\n                    this.c\n                );\n                w.b(1, 1, t), w.b(1, 2, t);\n                var E = T(this, a),\n                    S,\n                    x,\n                    N;\n                S = 0;\n                for (x = E.length; S < x; S++)\n                    if (((N = E[S]), s.prototype.b.apply(w, b[N]), 256 < N))\n                        w.b(E[++S], E[++S], t),\n                            w.b(E[++S], 5),\n                            w.b(E[++S], E[++S], t);\n                    else if (256 === N) break;\n                (this.a = w.finish()), (this.c = this.a.length);\n                break;\n            case y:\n                var k = new s(\n                        i ? new Uint8Array(this.a.buffer) : this.a,\n                        this.c\n                    ),\n                    A,\n                    O,\n                    M,\n                    _,\n                    D,\n                    P = [\n                        16,\n                        17,\n                        18,\n                        0,\n                        8,\n                        7,\n                        9,\n                        6,\n                        10,\n                        5,\n                        11,\n                        4,\n                        12,\n                        3,\n                        13,\n                        2,\n                        14,\n                        1,\n                        15\n                    ],\n                    H,\n                    B,\n                    j,\n                    I,\n                    q,\n                    R = Array(19),\n                    U,\n                    z,\n                    W,\n                    X,\n                    $;\n                (A = y),\n                    k.b(1, 1, t),\n                    k.b(A, 2, t),\n                    (O = T(this, a)),\n                    (H = C(this.n, 15)),\n                    (B = L(H)),\n                    (j = C(this.m, 7)),\n                    (I = L(j));\n                for (M = 286; 257 < M && 0 === H[M - 1]; M--);\n                for (_ = 30; 1 < _ && 0 === j[_ - 1]; _--);\n                var J = M,\n                    K = _,\n                    Q = new (i ? Uint32Array : Array)(J + K),\n                    G,\n                    Y,\n                    Z,\n                    et,\n                    tt = new (i ? Uint32Array : Array)(316),\n                    nt,\n                    rt,\n                    it = new (i ? Uint8Array : Array)(19);\n                for (G = Y = 0; G < J; G++) Q[Y++] = H[G];\n                for (G = 0; G < K; G++) Q[Y++] = j[G];\n                if (!i) {\n                    G = 0;\n                    for (et = it.length; G < et; ++G) it[G] = 0;\n                }\n                G = nt = 0;\n                for (et = Q.length; G < et; G += Y) {\n                    for (Y = 1; G + Y < et && Q[G + Y] === Q[G]; ++Y);\n                    Z = Y;\n                    if (0 === Q[G])\n                        if (3 > Z) for (; 0 < Z--; ) (tt[nt++] = 0), it[0]++;\n                        else\n                            for (; 0 < Z; )\n                                (rt = 138 > Z ? Z : 138),\n                                    rt > Z - 3 && rt < Z && (rt = Z - 3),\n                                    10 >= rt\n                                        ? ((tt[nt++] = 17),\n                                          (tt[nt++] = rt - 3),\n                                          it[17]++)\n                                        : ((tt[nt++] = 18),\n                                          (tt[nt++] = rt - 11),\n                                          it[18]++),\n                                    (Z -= rt);\n                    else if (((tt[nt++] = Q[G]), it[Q[G]]++, Z--, 3 > Z))\n                        for (; 0 < Z--; ) (tt[nt++] = Q[G]), it[Q[G]]++;\n                    else\n                        for (; 0 < Z; )\n                            (rt = 6 > Z ? Z : 6),\n                                rt > Z - 3 && rt < Z && (rt = Z - 3),\n                                (tt[nt++] = 16),\n                                (tt[nt++] = rt - 3),\n                                it[16]++,\n                                (Z -= rt);\n                }\n                (n = i ? tt.subarray(0, nt) : tt.slice(0, nt)), (q = C(it, 7));\n                for (X = 0; 19 > X; X++) R[X] = q[P[X]];\n                for (D = 19; 4 < D && 0 === R[D - 1]; D--);\n                (U = L(q)),\n                    k.b(M - 257, 5, t),\n                    k.b(_ - 1, 5, t),\n                    k.b(D - 4, 4, t);\n                for (X = 0; X < D; X++) k.b(R[X], 3, t);\n                X = 0;\n                for ($ = n.length; X < $; X++)\n                    if (((z = n[X]), k.b(U[z], q[z], t), 16 <= z)) {\n                        X++;\n                        switch (z) {\n                            case 16:\n                                W = 2;\n                                break;\n                            case 17:\n                                W = 3;\n                                break;\n                            case 18:\n                                W = 7;\n                                break;\n                            default:\n                                throw 'invalid code: ' + z;\n                        }\n                        k.b(n[X], W, t);\n                    }\n                var st = [B, H],\n                    ot = [I, j],\n                    ut,\n                    at,\n                    ft,\n                    lt,\n                    ct,\n                    ht,\n                    pt,\n                    dt;\n                (ct = st[0]),\n                    (ht = st[1]),\n                    (pt = ot[0]),\n                    (dt = ot[1]),\n                    (ut = 0);\n                for (at = O.length; ut < at; ++ut)\n                    if (((ft = O[ut]), k.b(ct[ft], ht[ft], t), 256 < ft))\n                        k.b(O[++ut], O[++ut], t),\n                            (lt = O[++ut]),\n                            k.b(pt[lt], dt[lt], t),\n                            k.b(O[++ut], O[++ut], t);\n                    else if (256 === ft) break;\n                (this.a = k.finish()), (this.c = this.a.length);\n                break;\n            default:\n                throw 'invalid compression type';\n        }\n        return this.a;\n    };\n    var S = (function() {\n            function e(e) {\n                switch (t) {\n                    case 3 === e:\n                        return [257, e - 3, 0];\n                    case 4 === e:\n                        return [258, e - 4, 0];\n                    case 5 === e:\n                        return [259, e - 5, 0];\n                    case 6 === e:\n                        return [260, e - 6, 0];\n                    case 7 === e:\n                        return [261, e - 7, 0];\n                    case 8 === e:\n                        return [262, e - 8, 0];\n                    case 9 === e:\n                        return [263, e - 9, 0];\n                    case 10 === e:\n                        return [264, e - 10, 0];\n                    case 12 >= e:\n                        return [265, e - 11, 1];\n                    case 14 >= e:\n                        return [266, e - 13, 1];\n                    case 16 >= e:\n                        return [267, e - 15, 1];\n                    case 18 >= e:\n                        return [268, e - 17, 1];\n                    case 22 >= e:\n                        return [269, e - 19, 2];\n                    case 26 >= e:\n                        return [270, e - 23, 2];\n                    case 30 >= e:\n                        return [271, e - 27, 2];\n                    case 34 >= e:\n                        return [272, e - 31, 2];\n                    case 42 >= e:\n                        return [273, e - 35, 3];\n                    case 50 >= e:\n                        return [274, e - 43, 3];\n                    case 58 >= e:\n                        return [275, e - 51, 3];\n                    case 66 >= e:\n                        return [276, e - 59, 3];\n                    case 82 >= e:\n                        return [277, e - 67, 4];\n                    case 98 >= e:\n                        return [278, e - 83, 4];\n                    case 114 >= e:\n                        return [279, e - 99, 4];\n                    case 130 >= e:\n                        return [280, e - 115, 4];\n                    case 162 >= e:\n                        return [281, e - 131, 5];\n                    case 194 >= e:\n                        return [282, e - 163, 5];\n                    case 226 >= e:\n                        return [283, e - 195, 5];\n                    case 257 >= e:\n                        return [284, e - 227, 5];\n                    case 258 === e:\n                        return [285, e - 258, 0];\n                    default:\n                        throw 'invalid length: ' + e;\n                }\n            }\n            var n = [],\n                r,\n                i;\n            for (r = 3; 258 >= r; r++)\n                (i = e(r)), (n[r] = (i[2] << 24) | (i[1] << 16) | i[0]);\n            return n;\n        })(),\n        x = i ? new Uint32Array(S) : S;\n    A.prototype.g = function() {\n        var t,\n            n,\n            r,\n            s,\n            o,\n            u,\n            a,\n            f,\n            l = new (i ? Uint8Array : Array)(32768),\n            c = 0,\n            h = this.input,\n            d = this.i,\n            v = this.filename,\n            m = this.l;\n        (l[c++] = 31),\n            (l[c++] = 139),\n            (l[c++] = 8),\n            (t = 0),\n            this.d.fname && (t |= _),\n            this.d.fcomment && (t |= D),\n            this.d.fhcrc && (t |= M),\n            (l[c++] = t),\n            (n = ((Date.now ? Date.now() : +new Date()) / 1e3) | 0),\n            (l[c++] = n & 255),\n            (l[c++] = (n >>> 8) & 255),\n            (l[c++] = (n >>> 16) & 255),\n            (l[c++] = (n >>> 24) & 255),\n            (l[c++] = 0),\n            (l[c++] = O);\n        if (this.d.fname !== e) {\n            a = 0;\n            for (f = v.length; a < f; ++a)\n                (u = v.charCodeAt(a)),\n                    255 < u && (l[c++] = (u >>> 8) & 255),\n                    (l[c++] = u & 255);\n            l[c++] = 0;\n        }\n        if (this.d.comment) {\n            a = 0;\n            for (f = m.length; a < f; ++a)\n                (u = m.charCodeAt(a)),\n                    255 < u && (l[c++] = (u >>> 8) & 255),\n                    (l[c++] = u & 255);\n            l[c++] = 0;\n        }\n        return (\n            this.d.fhcrc &&\n                ((r = p(l, 0, c) & 65535),\n                (l[c++] = r & 255),\n                (l[c++] = (r >>> 8) & 255)),\n            (this.e.outputBuffer = l),\n            (this.e.outputIndex = c),\n            (o = new g(h, this.e)),\n            (l = o.g()),\n            (c = o.c),\n            i &&\n                (c + 8 > l.buffer.byteLength\n                    ? ((this.a = new Uint8Array(c + 8)),\n                      this.a.set(new Uint8Array(l.buffer)),\n                      (l = this.a))\n                    : (l = new Uint8Array(l.buffer))),\n            (s = p(h, e, e)),\n            (l[c++] = s & 255),\n            (l[c++] = (s >>> 8) & 255),\n            (l[c++] = (s >>> 16) & 255),\n            (l[c++] = (s >>> 24) & 255),\n            (f = h.length),\n            (l[c++] = f & 255),\n            (l[c++] = (f >>> 8) & 255),\n            (l[c++] = (f >>> 16) & 255),\n            (l[c++] = (f >>> 24) & 255),\n            (this.i = d),\n            i && c < l.length && (this.a = l = l.subarray(0, c)),\n            l\n        );\n    };\n    var O = 255,\n        M = 2,\n        _ = 8,\n        D = 16;\n    r('Zlib.Gzip', A), r('Zlib.Gzip.prototype.compress', A.prototype.g);\n}.call(this));\nvar createUUID = (function(e, t) {\n        return function() {\n            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'\n                .replace(e, t)\n                .toUpperCase();\n        };\n    })(/[xy]/g, function(e) {\n        var t = (Math.random() * 16) | 0,\n            n = e == 'x' ? t : (t & 3) | 8;\n        return n.toString(16);\n    }),\n    recBuffersL = [],\n    recBuffersR = [],\n    outputChannels,\n    outputSampleRate,\n    sendOffset = 0,\n    glb = createUUID(),\n    sendIdx = 1,\n    uid = '',\n    sampleRate;\nthis.onmessage = function(e) {\n    var t;\n    switch (e.data.command) {\n        case 'reinit':\n            (recBuffersL = []),\n                (recBuffersR = []),\n                (sendOffset = 0),\n                (sendIdx = 1),\n                (glb = createUUID());\n            break;\n        case 'init':\n            init(e.data.config);\n            break;\n        case 'record':\n            record(e.data.buffer);\n            break;\n        case 'exportWAV':\n            (t = exportWAV(e.data.type)),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getBuffer':\n            (t = getBuffer()),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getSendBuffer':\n            (t = getSendBuffer()),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getLastSendBuffer':\n            (t = getSendBuffer(!0)),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'clear':\n            clear();\n    }\n};\n";
 
 /***/ }),
-/* 327 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64771,11 +66972,11 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _infI18n = __webpack_require__(14);
+var _infI18n = __webpack_require__(15);
 
 var _infI18n2 = _interopRequireDefault(_infI18n);
 
@@ -64794,7 +66995,7 @@ var _Loading2 = _interopRequireDefault(_Loading);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-webuploader'); /**
-                                               * @file components/WebUploader.es6
+                                               * @file components/WebUploader.js
                                                * @author leeight
                                                */
 
@@ -64932,7 +67133,7 @@ exports.default = (0, _san.defineComponent)({
         var uploaderOptions = _lodash2.default.extend(pickOptions, options);
         var uploader = this.uploader = Uploader.create(uploaderOptions);
 
-        var events = ['dndAccept', 'beforeFileQueued', 'fileQueued', 'fileDequeued', 'reset', 'startUpload', 'stopUpload', 'uploadFinished', 'uploadProgress', 'uploadSuccess', 'uploadComplete', 'ready'];
+        var events = ['dndAccept', 'beforeFileQueued', 'fileQueued', 'fileDequeued', 'reset', 'startUpload', 'stopUpload', 'uploadFinished', 'uploadProgress', 'uploadSuccess', 'uploadComplete', 'ready', 'uploadBeforeSend'];
         _lodash2.default.each(events, function (eventType) {
             return uploader.on(eventType, function () {
                 for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
@@ -65031,7 +67232,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 328 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65045,7 +67246,7 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _jquery = __webpack_require__(10);
+var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -65058,7 +67259,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /**
                                                                                                                                                                                                                    * Drawer
                                                                                                                                                                                                                    *
-                                                                                                                                                                                                                   * @file components/asDrawer.es6
+                                                                                                                                                                                                                   * @file components/asDrawer.js
                                                                                                                                                                                                                    * @author zhanghao25
                                                                                                                                                                                                                    */
 
@@ -65230,35 +67431,35 @@ exports.default = function (Klass) {
 };
 
 /***/ }),
-/* 329 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(330), __esModule: true };
+module.exports = { "default": __webpack_require__(341), __esModule: true };
 
 /***/ }),
-/* 330 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(331);
-module.exports = __webpack_require__(33).Object.assign;
+__webpack_require__(342);
+module.exports = __webpack_require__(36).Object.assign;
 
 
 /***/ }),
-/* 331 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(59);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(334) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(345) });
 
 
 /***/ }),
-/* 332 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(333);
+var aFunction = __webpack_require__(344);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -65280,7 +67481,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 333 */
+/* 344 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -65290,21 +67491,21 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 334 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(36);
+var getKeys = __webpack_require__(39);
 var gOPS = __webpack_require__(66);
-var pIE = __webpack_require__(38);
-var toObject = __webpack_require__(236);
-var IObject = __webpack_require__(234);
+var pIE = __webpack_require__(41);
+var toObject = __webpack_require__(239);
+var IObject = __webpack_require__(237);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(30)(function () {
+module.exports = !$assign || __webpack_require__(31)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -65331,14 +67532,14 @@ module.exports = !$assign || __webpack_require__(30)(function () {
 
 
 /***/ }),
-/* 335 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(26);
-var toLength = __webpack_require__(336);
-var toAbsoluteIndex = __webpack_require__(337);
+var toIObject = __webpack_require__(27);
+var toLength = __webpack_require__(347);
+var toAbsoluteIndex = __webpack_require__(348);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -65360,7 +67561,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 336 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -65372,7 +67573,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 337 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(62);
@@ -65385,30 +67586,30 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 338 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(339), __esModule: true };
+module.exports = { "default": __webpack_require__(350), __esModule: true };
 
 /***/ }),
-/* 339 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(340);
-__webpack_require__(346);
+__webpack_require__(351);
+__webpack_require__(357);
 module.exports = __webpack_require__(70).f('iterator');
 
 
 /***/ }),
-/* 340 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(341)(true);
+var $at = __webpack_require__(352)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(237)(String, 'String', function (iterated) {
+__webpack_require__(240)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -65424,7 +67625,7 @@ __webpack_require__(237)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 341 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(62);
@@ -65447,18 +67648,18 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 342 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(239);
-var descriptor = __webpack_require__(35);
+var create = __webpack_require__(242);
+var descriptor = __webpack_require__(38);
 var setToStringTag = __webpack_require__(69);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(23)(IteratorPrototype, __webpack_require__(27)('iterator'), function () { return this; });
+__webpack_require__(24)(IteratorPrototype, __webpack_require__(28)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -65467,14 +67668,14 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 343 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(24);
-var anObject = __webpack_require__(34);
-var getKeys = __webpack_require__(36);
+var dP = __webpack_require__(25);
+var anObject = __webpack_require__(37);
+var getKeys = __webpack_require__(39);
 
-module.exports = __webpack_require__(25) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(26) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -65486,7 +67687,7 @@ module.exports = __webpack_require__(25) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 344 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(17).document;
@@ -65494,12 +67695,12 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 345 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = __webpack_require__(20);
-var toObject = __webpack_require__(236);
+var toObject = __webpack_require__(239);
 var IE_PROTO = __webpack_require__(63)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
@@ -65513,14 +67714,14 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 346 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(347);
+__webpack_require__(358);
 var global = __webpack_require__(17);
-var hide = __webpack_require__(23);
+var hide = __webpack_require__(24);
 var Iterators = __webpack_require__(68);
-var TO_STRING_TAG = __webpack_require__(27)('toStringTag');
+var TO_STRING_TAG = __webpack_require__(28)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -65538,21 +67739,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 347 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(348);
-var step = __webpack_require__(349);
+var addToUnscopables = __webpack_require__(359);
+var step = __webpack_require__(360);
 var Iterators = __webpack_require__(68);
-var toIObject = __webpack_require__(26);
+var toIObject = __webpack_require__(27);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(237)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(240)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -65579,14 +67780,14 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 348 */
+/* 359 */
 /***/ (function(module, exports) {
 
 module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 349 */
+/* 360 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -65595,24 +67796,24 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 350 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(351), __esModule: true };
+module.exports = { "default": __webpack_require__(362), __esModule: true };
 
 /***/ }),
-/* 351 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(352);
-__webpack_require__(358);
-__webpack_require__(359);
-__webpack_require__(360);
-module.exports = __webpack_require__(33).Symbol;
+__webpack_require__(363);
+__webpack_require__(369);
+__webpack_require__(370);
+__webpack_require__(371);
+module.exports = __webpack_require__(36).Symbol;
 
 
 /***/ }),
-/* 352 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65620,29 +67821,29 @@ module.exports = __webpack_require__(33).Symbol;
 // ECMAScript 6 symbols shim
 var global = __webpack_require__(17);
 var has = __webpack_require__(20);
-var DESCRIPTORS = __webpack_require__(25);
+var DESCRIPTORS = __webpack_require__(26);
 var $export = __webpack_require__(59);
-var redefine = __webpack_require__(238);
-var META = __webpack_require__(353).KEY;
-var $fails = __webpack_require__(30);
+var redefine = __webpack_require__(241);
+var META = __webpack_require__(364).KEY;
+var $fails = __webpack_require__(31);
 var shared = __webpack_require__(64);
 var setToStringTag = __webpack_require__(69);
-var uid = __webpack_require__(37);
-var wks = __webpack_require__(27);
+var uid = __webpack_require__(40);
+var wks = __webpack_require__(28);
 var wksExt = __webpack_require__(70);
 var wksDefine = __webpack_require__(71);
-var enumKeys = __webpack_require__(354);
-var isArray = __webpack_require__(355);
-var anObject = __webpack_require__(34);
-var isObject = __webpack_require__(29);
-var toIObject = __webpack_require__(26);
+var enumKeys = __webpack_require__(365);
+var isArray = __webpack_require__(366);
+var anObject = __webpack_require__(37);
+var isObject = __webpack_require__(30);
+var toIObject = __webpack_require__(27);
 var toPrimitive = __webpack_require__(60);
-var createDesc = __webpack_require__(35);
-var _create = __webpack_require__(239);
-var gOPNExt = __webpack_require__(356);
-var $GOPD = __webpack_require__(357);
-var $DP = __webpack_require__(24);
-var $keys = __webpack_require__(36);
+var createDesc = __webpack_require__(38);
+var _create = __webpack_require__(242);
+var gOPNExt = __webpack_require__(367);
+var $GOPD = __webpack_require__(368);
+var $DP = __webpack_require__(25);
+var $keys = __webpack_require__(39);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -65765,8 +67966,8 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(240).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(38).f = $propertyIsEnumerable;
+  __webpack_require__(243).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(41).f = $propertyIsEnumerable;
   __webpack_require__(66).f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__(67)) {
@@ -65843,7 +68044,7 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(23)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(24)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
@@ -65853,18 +68054,18 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 353 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(37)('meta');
-var isObject = __webpack_require__(29);
+var META = __webpack_require__(40)('meta');
+var isObject = __webpack_require__(30);
 var has = __webpack_require__(20);
-var setDesc = __webpack_require__(24).f;
+var setDesc = __webpack_require__(25).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !__webpack_require__(30)(function () {
+var FREEZE = !__webpack_require__(31)(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -65912,13 +68113,13 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 354 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(36);
+var getKeys = __webpack_require__(39);
 var gOPS = __webpack_require__(66);
-var pIE = __webpack_require__(38);
+var pIE = __webpack_require__(41);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -65933,23 +68134,23 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 355 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(235);
+var cof = __webpack_require__(238);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
 
 
 /***/ }),
-/* 356 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(26);
-var gOPN = __webpack_require__(240).f;
+var toIObject = __webpack_require__(27);
+var gOPN = __webpack_require__(243).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -65969,18 +68170,18 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 357 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE = __webpack_require__(38);
-var createDesc = __webpack_require__(35);
-var toIObject = __webpack_require__(26);
+var pIE = __webpack_require__(41);
+var createDesc = __webpack_require__(38);
+var toIObject = __webpack_require__(27);
 var toPrimitive = __webpack_require__(60);
 var has = __webpack_require__(20);
-var IE8_DOM_DEFINE = __webpack_require__(231);
+var IE8_DOM_DEFINE = __webpack_require__(234);
 var gOPD = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(25) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+exports.f = __webpack_require__(26) ? gOPD : function getOwnPropertyDescriptor(O, P) {
   O = toIObject(O);
   P = toPrimitive(P, true);
   if (IE8_DOM_DEFINE) try {
@@ -65991,44 +68192,44 @@ exports.f = __webpack_require__(25) ? gOPD : function getOwnPropertyDescriptor(O
 
 
 /***/ }),
-/* 358 */
+/* 369 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 359 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(71)('asyncIterator');
 
 
 /***/ }),
-/* 360 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(71)('observable');
 
 
 /***/ }),
-/* 361 */
+/* 372 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__string__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__method__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boolean__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__regexp__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__integer__ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__float__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__array__ = __webpack_require__(374);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__object__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__enum__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pattern__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__date__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__required__ = __webpack_require__(379);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__type__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__string__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__method__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boolean__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__regexp__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__integer__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__float__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__array__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__object__ = __webpack_require__(386);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__enum__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pattern__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__date__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__required__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__type__ = __webpack_require__(391);
 
 
 
@@ -66064,7 +68265,7 @@ __webpack_require__(71)('observable');
 });
 
 /***/ }),
-/* 362 */
+/* 373 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66106,7 +68307,7 @@ function string(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (string);
 
 /***/ }),
-/* 363 */
+/* 374 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66133,14 +68334,14 @@ function whitespace(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (whitespace);
 
 /***/ }),
-/* 364 */
+/* 375 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__required__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__required__ = __webpack_require__(244);
 
 
 
@@ -66231,7 +68432,7 @@ function type(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (type);
 
 /***/ }),
-/* 365 */
+/* 376 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66290,7 +68491,7 @@ function range(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (range);
 
 /***/ }),
-/* 366 */
+/* 377 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66319,7 +68520,7 @@ function enumerable(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (enumerable);
 
 /***/ }),
-/* 367 */
+/* 378 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66359,7 +68560,7 @@ function pattern(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (pattern);
 
 /***/ }),
-/* 368 */
+/* 379 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66396,7 +68597,7 @@ function method(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (method);
 
 /***/ }),
-/* 369 */
+/* 380 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66434,7 +68635,7 @@ function number(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (number);
 
 /***/ }),
-/* 370 */
+/* 381 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66471,7 +68672,7 @@ function boolean(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (boolean);
 
 /***/ }),
-/* 371 */
+/* 382 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66508,7 +68709,7 @@ function regexp(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (regexp);
 
 /***/ }),
-/* 372 */
+/* 383 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66546,7 +68747,7 @@ function integer(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (integer);
 
 /***/ }),
-/* 373 */
+/* 384 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66584,7 +68785,7 @@ function floatFn(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (floatFn);
 
 /***/ }),
-/* 374 */
+/* 385 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66621,7 +68822,7 @@ function array(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (array);
 
 /***/ }),
-/* 375 */
+/* 386 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66658,7 +68859,7 @@ function object(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (object);
 
 /***/ }),
-/* 376 */
+/* 387 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66696,7 +68897,7 @@ function enumerable(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (enumerable);
 
 /***/ }),
-/* 377 */
+/* 388 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66736,7 +68937,7 @@ function pattern(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (pattern);
 
 /***/ }),
-/* 378 */
+/* 389 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66768,11 +68969,11 @@ function date(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (date);
 
 /***/ }),
-/* 379 */
+/* 390 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rule___ = __webpack_require__(12);
 
@@ -66788,7 +68989,7 @@ function required(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (required);
 
 /***/ }),
-/* 380 */
+/* 391 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66816,7 +69017,7 @@ function type(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (type);
 
 /***/ }),
-/* 381 */
+/* 392 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66880,7 +69081,7 @@ function newMessages() {
 var messages = newMessages();
 
 /***/ }),
-/* 382 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66925,14 +69126,14 @@ function expressionComparison(oper, expectedValue, realValue) {
 /**
  * 计算一个表达式的值
  *
- * @param {string|Object} expression The expression.
+ * @param {string|Object|Array.<Object>} expression The expression.
  * @param {Object} scope The value scope.
  * @return {boolean}
  */
 /**
  * 本来 san 提供了 san.parseExpr 接口，但是没有开放 san.evalExpr 接口 :-(
  *
- * @file san-xui/x/forms/ExpressionEvaluator.es6
+ * @file san-xui/x/forms/ExpressionEvaluator.js
  * @author leeight
  */
 
@@ -66943,6 +69144,15 @@ function evalExpr(expression, scope) {
 
     if (_lodash2.default.isString(expression)) {
         return !!scope.get(expression);
+    }
+
+    if (_lodash2.default.isArray(expression)) {
+        for (var i = 0, subExpr; subExpr = expression[i]; i++) {
+            if (evalExpr(subExpr, scope)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // {
@@ -66957,8 +69167,8 @@ function evalExpr(expression, scope) {
     // 如果计算的过程中，有任何一个值是 false，那么就停止计算，返回 false，否则返回 true
 
     var keys = _lodash2.default.keys(expression);
-    for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
+    for (var _i = 0; _i < keys.length; _i++) {
+        var key = keys[_i];
         var realValue = scope.get(key);
         var value = expression[key];
         if (_lodash2.default.isPlainObject(value)) {
@@ -66986,7 +69196,7 @@ function evalExpr(expression, scope) {
 }
 
 /***/ }),
-/* 383 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66995,6 +69205,12 @@ function evalExpr(expression, scope) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @file san-xui/x/forms/buildValidator.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @author leeight
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
+
 exports.buildValidator = buildValidator;
 
 var _lodash = __webpack_require__(5);
@@ -67015,10 +69231,7 @@ function jsonValidator(errorMessage) {
             }
         }
     };
-} /**
-   * @file san-xui/x/forms/buildValidator.es6
-   * @author leeight
-   */
+}
 
 function toAsyncValidatorRule(type, param, message) {
     switch (type) {
@@ -67049,6 +69262,26 @@ function toAsyncValidatorRule(type, param, message) {
             return { type: 'number', min: parseFloat(param, 10), message: message || '\u6700\u5C0F\u503C' + param };
         case 'maximum':
             return { type: 'number', max: parseFloat(param, 10), message: message || '\u6700\u5927\u503C' + param };
+        case 'decimal':
+            // 简化版decimal 认为scale需要大于0 且暂不支持负号
+            var _param$split = param.split(','),
+                _param$split2 = _slicedToArray(_param$split, 2),
+                _param$split2$ = _param$split2[0],
+                precision = _param$split2$ === undefined ? '12' : _param$split2$,
+                _param$split2$2 = _param$split2[1],
+                scale = _param$split2$2 === undefined ? '2' : _param$split2$2;
+
+            precision = parseInt(precision, 10);
+            scale = parseInt(scale, 10);
+            if (precision && scale && precision > scale) {
+                return {
+                    type: 'string',
+                    pattern: RegExp('^\\d{1,' + (precision - scale) + '}(\\.\\d{0,' + scale + '})?$'),
+                    message: message
+                };
+            }
+            // 不符合条件就返回浮点型
+            return { type: 'string', pattern: /^\d+?\.\d+$/, message: '请输入浮点数' };
         case 'matchRegexp':
             return { type: 'string', pattern: new RegExp(param), message: message };
         default:
@@ -67090,7 +69323,7 @@ function buildValidator(validations, validationErrors) {
         var type = item;
         var param = null;
         var message = validationErrors[type];
-        if (/^(matchRegexp|minLength|maxLength|maximum|minimum):/.test(item)) {
+        if (/^(matchRegexp|minLength|maxLength|maximum|minimum|decimal):/.test(item)) {
             type = RegExp.$1;
             param = item.substr(type.length + 1);
             if (!param) {
@@ -67109,7 +69342,7 @@ function buildValidator(validations, validationErrors) {
 }
 
 /***/ }),
-/* 384 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67120,92 +69353,104 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.createForm = createForm;
 
-var _asForm = __webpack_require__(58);
+var _asForm = __webpack_require__(35);
 
-var _Number = __webpack_require__(385);
+var _Number = __webpack_require__(396);
 
 var _Number2 = _interopRequireDefault(_Number);
 
-var _Text = __webpack_require__(386);
+var _Text = __webpack_require__(397);
 
 var _Text2 = _interopRequireDefault(_Text);
 
-var _Select = __webpack_require__(387);
+var _Select = __webpack_require__(398);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _Calendar = __webpack_require__(388);
+var _Calendar = __webpack_require__(399);
 
 var _Calendar2 = _interopRequireDefault(_Calendar);
 
-var _Uploader = __webpack_require__(389);
+var _Uploader = __webpack_require__(400);
 
 var _Uploader2 = _interopRequireDefault(_Uploader);
 
-var _Switch = __webpack_require__(390);
+var _Switch = __webpack_require__(401);
 
 var _Switch2 = _interopRequireDefault(_Switch);
 
-var _BoxGroup = __webpack_require__(391);
+var _BoxGroup = __webpack_require__(402);
 
 var _BoxGroup2 = _interopRequireDefault(_BoxGroup);
 
-var _RangeCalendar = __webpack_require__(392);
+var _RangeCalendar = __webpack_require__(403);
 
 var _RangeCalendar2 = _interopRequireDefault(_RangeCalendar);
 
-var _NumberTextline = __webpack_require__(393);
+var _NumberTextline = __webpack_require__(404);
 
 var _NumberTextline2 = _interopRequireDefault(_NumberTextline);
 
-var _Dragger = __webpack_require__(394);
+var _Dragger = __webpack_require__(405);
 
 var _Dragger2 = _interopRequireDefault(_Dragger);
 
-var _RadioSelect = __webpack_require__(395);
+var _RadioSelect = __webpack_require__(406);
 
 var _RadioSelect2 = _interopRequireDefault(_RadioSelect);
 
-var _Tip = __webpack_require__(396);
+var _Tip = __webpack_require__(407);
 
 var _Tip2 = _interopRequireDefault(_Tip);
 
-var _MultiPicker = __webpack_require__(397);
+var _MultiPicker = __webpack_require__(408);
 
 var _MultiPicker2 = _interopRequireDefault(_MultiPicker);
 
-var _Region = __webpack_require__(398);
+var _Region = __webpack_require__(409);
 
 var _Region2 = _interopRequireDefault(_Region);
 
-var _UserPicker = __webpack_require__(399);
+var _UserPicker = __webpack_require__(410);
 
 var _UserPicker2 = _interopRequireDefault(_UserPicker);
 
-var _ACEEditor = __webpack_require__(400);
+var _ACEEditor = __webpack_require__(411);
 
 var _ACEEditor2 = _interopRequireDefault(_ACEEditor);
 
-var _CKEditor = __webpack_require__(401);
+var _CKEditor = __webpack_require__(412);
 
 var _CKEditor2 = _interopRequireDefault(_CKEditor);
 
-var _RichTextEditor = __webpack_require__(402);
+var _RichTextEditor = __webpack_require__(413);
 
 var _RichTextEditor2 = _interopRequireDefault(_RichTextEditor);
 
-var _ComboForm = __webpack_require__(403);
+var _ComboForm = __webpack_require__(414);
 
 var _ComboForm2 = _interopRequireDefault(_ComboForm);
 
+var _StaticItem = __webpack_require__(416);
+
+var _StaticItem2 = _interopRequireDefault(_StaticItem);
+
+var _CheckBox = __webpack_require__(417);
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
+var _SubForm = __webpack_require__(418);
+
+var _SubForm2 = _interopRequireDefault(_SubForm);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @file san-xui/x/forms/createForm.es6
- * @author leeight
- */
+// import {registerSubFormItem} from './helper';
+(0, _asForm.registerFormItem)(_ComboForm2.default); /**
+                                                     * @file san-xui/x/forms/createForm.js
+                                                     * @author leeight
+                                                     */
 
-(0, _asForm.registerFormItem)(_ComboForm2.default);
 (0, _asForm.registerFormItem)(_Number2.default);
 (0, _asForm.registerFormItem)(_Text2.default);
 (0, _asForm.registerFormItem)(_Select2.default);
@@ -67224,13 +69469,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _asForm.registerFormItem)(_ACEEditor2.default);
 (0, _asForm.registerFormItem)(_CKEditor2.default);
 (0, _asForm.registerFormItem)(_RichTextEditor2.default);
+(0, _asForm.registerFormItem)(_StaticItem2.default);
+(0, _asForm.registerFormItem)(_CheckBox2.default);
+(0, _asForm.registerFormItem)(_SubForm2.default);
 
 function createForm(schema) {
   return (0, _asForm.asForm)(schema);
 }
 
 /***/ }),
-/* 385 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67240,14 +69488,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-textbox'; /**
-                                  * @file san-xui/x/forms/builtins/Number.es6
+                                  * @file san-xui/x/forms/builtins/Number.js
                                   * @author leeight
                                   */
 
@@ -67261,7 +69509,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 386 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67271,14 +69519,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-textbox'; /**
-                                  * @file san-xui/x/forms/builtins/Text.es6
+                                  * @file san-xui/x/forms/builtins/Text.js
                                   * @author leeight
                                   */
 
@@ -67287,12 +69535,12 @@ exports.default = {
     tagName: tagName,
     Component: _TextBox2.default,
     builder: function builder(item, prefix) {
-        return '\n            <' + tagName + '\n                s-if="!preview"\n                type="{{' + prefix + '.inputType}}"\n                multiline="{{' + prefix + '.multiline}}"\n                width="{{' + prefix + '.width}}"\n                placeholder="{{' + prefix + '.placeholder}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
+        return '\n            <' + tagName + '\n                s-if="!preview"\n                disabled="{{disabledOn.' + item.name + '}}"\n                type="{{' + prefix + '.inputType}}"\n                multiline="{{' + prefix + '.multiline}}"\n                width="{{' + prefix + '.width}}"\n                placeholder="{{' + prefix + '.placeholder}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
     }
 };
 
 /***/ }),
-/* 387 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67309,7 +69557,7 @@ var _Select2 = _interopRequireDefault(_Select);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-select'; /**
-                                 * @file san-xui/x/forms/builtins/Select.es6
+                                 * @file san-xui/x/forms/builtins/Select.js
                                  * @author leeight
                                  */
 
@@ -67318,12 +69566,12 @@ exports.default = {
     tagName: tagName,
     Component: _Select2.default,
     builder: function builder(item, prefix) {
-        return '\n            <' + tagName + '\n                s-if="!preview"\n                datasource="{{' + prefix + '.datasource}}"\n                width="{{' + prefix + '.width}}"\n                multi="{{' + prefix + '.multi}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
+        return '\n            <' + tagName + '\n                s-if="!preview"\n                disabled="{{disabledOn.' + item.name + '}}"\n                datasource="{{' + prefix + '.datasource}}"\n                width="{{' + prefix + '.width}}"\n                multi="{{' + prefix + '.multi}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
     }
 };
 
 /***/ }),
-/* 388 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67340,7 +69588,7 @@ var _Calendar2 = _interopRequireDefault(_Calendar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-calendar'; /**
-                                   * @file san-xui/x/forms/builtins/Calendar.es6
+                                   * @file san-xui/x/forms/builtins/Calendar.js
                                    * @author leeight
                                    */
 
@@ -67354,7 +69602,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 389 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67364,14 +69612,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Uploader = __webpack_require__(227);
+var _Uploader = __webpack_require__(230);
 
 var _Uploader2 = _interopRequireDefault(_Uploader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-uploader'; /**
-                                   * @file san-xui/x/forms/builtins/Uploader.es6
+                                   * @file san-xui/x/forms/builtins/Uploader.js
                                    * @author leeight
                                    */
 
@@ -67385,7 +69633,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 390 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67395,14 +69643,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Switch = __webpack_require__(218);
+var _Switch = __webpack_require__(211);
 
 var _Switch2 = _interopRequireDefault(_Switch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-switch'; /**
-                                 * @file san-xui/x/forms/builtins/Switch.es6
+                                 * @file san-xui/x/forms/builtins/Switch.js
                                  * @author leeight
                                  */
 
@@ -67416,7 +69664,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 391 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67426,14 +69674,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _BoxGroup = __webpack_require__(208);
+var _BoxGroup = __webpack_require__(200);
 
 var _BoxGroup2 = _interopRequireDefault(_BoxGroup);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-boxgroup'; /**
-                                   * @file san-xui/x/forms/builtins/BoxGroup.es6
+                                   * @file san-xui/x/forms/builtins/BoxGroup.js
                                    * @author liyuan
                                    */
 
@@ -67447,7 +69695,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 392 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67457,14 +69705,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RangeCalendar = __webpack_require__(54);
+var _RangeCalendar = __webpack_require__(53);
 
 var _RangeCalendar2 = _interopRequireDefault(_RangeCalendar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-rangecalendar'; /**
-                                        * @file san-xui/x/forms/builtins/RangeCalendar.es6
+                                        * @file san-xui/x/forms/builtins/RangeCalendar.js
                                         * @author liyuan
                                         */
 
@@ -67478,7 +69726,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 393 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67488,14 +69736,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _NumberTextline = __webpack_require__(215);
+var _NumberTextline = __webpack_require__(207);
 
 var _NumberTextline2 = _interopRequireDefault(_NumberTextline);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-numbertextline'; /**
-                                         * @file san-xui/x/forms/builtins/NumberTextline.es6
+                                         * @file san-xui/x/forms/builtins/NumberTextline.js
                                          * @author liyuan
                                          */
 
@@ -67509,7 +69757,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 394 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67519,14 +69767,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Dragger = __webpack_require__(212);
+var _Dragger = __webpack_require__(204);
 
 var _Dragger2 = _interopRequireDefault(_Dragger);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-dragger'; /**
-                                  * @file san-xui/x/forms/builtins/Dragger.es6
+                                  * @file san-xui/x/forms/builtins/Dragger.js
                                   * @author liyuan
                                   */
 
@@ -67540,7 +69788,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 395 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67550,14 +69798,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RadioSelect = __webpack_require__(53);
+var _RadioSelect = __webpack_require__(52);
 
 var _RadioSelect2 = _interopRequireDefault(_RadioSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-radioselect'; /**
-                                      * @file san-xui/x/forms/builtins/RadioSelect.es6
+                                      * @file san-xui/x/forms/builtins/RadioSelect.js
                                       * @author liyuan
                                       */
 
@@ -67571,7 +69819,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 396 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67581,14 +69829,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Tip = __webpack_require__(55);
+var _Tip = __webpack_require__(54);
 
 var _Tip2 = _interopRequireDefault(_Tip);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-tip'; /**
-                              * @file san-xui/x/forms/builtins/Tip.es6
+                              * @file san-xui/x/forms/builtins/Tip.js
                               * @author liyuan
                               */
 
@@ -67602,7 +69850,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 397 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67619,7 +69867,7 @@ var _MultiPicker2 = _interopRequireDefault(_MultiPicker);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-multipicker'; /**
-                                      * @file san-xui/x/forms/builtins/MultiPicker.es6
+                                      * @file san-xui/x/forms/builtins/MultiPicker.js
                                       * @author liyuan
                                       */
 
@@ -67633,7 +69881,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 398 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67643,14 +69891,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Region = __webpack_require__(216);
+var _Region = __webpack_require__(209);
 
 var _Region2 = _interopRequireDefault(_Region);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-region'; /**
-                                 * @file san-xui/x/forms/builtins/Region.es6
+                                 * @file san-xui/x/forms/builtins/Region.js
                                  * @author leeight
                                  */
 
@@ -67664,7 +69912,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 399 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67674,14 +69922,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _UserPicker = __webpack_require__(220);
+var _UserPicker = __webpack_require__(223);
 
 var _UserPicker2 = _interopRequireDefault(_UserPicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-userpicker'; /**
-                                     * @file san-xui/x/forms/builtins/UserPicker.es6
+                                     * @file san-xui/x/forms/builtins/UserPicker.js
                                      * @author liyuan
                                      */
 
@@ -67690,12 +69938,12 @@ exports.default = {
     tagName: tagName,
     Component: _UserPicker2.default,
     builder: function builder(item, prefix) {
-        return '\n            <' + tagName + '\n                s-if="!preview"\n                search-requester="{{' + prefix + '.searchRequester}}"\n                search-api="{{' + prefix + '.searchApi}}"\n                keyword-name="{{' + prefix + '.keywordName}}"\n                keyword="{{' + prefix + '.keyword}}"\n                max="{{' + prefix + '.max}}"\n                disabled="{{' + prefix + '.disabled}}"\n                layer-width="{{' + prefix + '.layerWidth}}"\n                auto-layer-width="{{' + prefix + '.autoLayerWidth}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
+        return '\n            <' + tagName + '\n                preview="{{preview}}"\n                search-requester="{{' + prefix + '.searchRequester}}"\n                search-api="{{' + prefix + '.searchApi}}"\n                keyword-name="{{' + prefix + '.keywordName}}"\n                keyword="{{' + prefix + '.keyword}}"\n                placeholder="{{' + prefix + '.placeholder}}"\n                max="{{' + prefix + '.max}}"\n                width="{{' + prefix + '.width}}"\n                disabled="{{' + prefix + '.disabled}}"\n                layer-width="{{' + prefix + '.layerWidth}}"\n                auto-layer-width="{{' + prefix + '.autoLayerWidth}}"\n                value="{=formData.' + item.name + '=}"\n            />\n        ';
     }
 };
 
 /***/ }),
-/* 400 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67705,14 +69953,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _ACEEditor = __webpack_require__(205);
+var _ACEEditor = __webpack_require__(196);
 
 var _ACEEditor2 = _interopRequireDefault(_ACEEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-aceeditor'; /**
-                                    * @file san-xui/x/forms/builtins/ACEEditor.es6
+                                    * @file san-xui/x/forms/builtins/ACEEditor.js
                                     * @author liyuan
                                     */
 
@@ -67726,7 +69974,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 401 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67736,14 +69984,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _CKEditor = __webpack_require__(209);
+var _CKEditor = __webpack_require__(201);
 
 var _CKEditor2 = _interopRequireDefault(_CKEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-ckeditor'; /**
-                                   * @file san-xui/x/forms/builtins/CKEditor.es6
+                                   * @file san-xui/x/forms/builtins/CKEditor.js
                                    * @author liyuan
                                    */
 
@@ -67757,7 +70005,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 402 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67767,14 +70015,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RichTextEditor = __webpack_require__(217);
+var _RichTextEditor = __webpack_require__(210);
 
 var _RichTextEditor2 = _interopRequireDefault(_RichTextEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-form-richtexteditor'; /**
-                                         * @file san-xui/x/forms/builtins/RichTextEditor.es6
+                                         * @file san-xui/x/forms/builtins/RichTextEditor.js
                                          * @author liyuan
                                          */
 
@@ -67788,7 +70036,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 403 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67798,14 +70046,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _ComboForm = __webpack_require__(404);
+var _ComboForm = __webpack_require__(415);
 
 var _ComboForm2 = _interopRequireDefault(_ComboForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tagName = 'ui-combo'; /**
-                           * @file san-xui/x/forms/builtins/ComboForm.es6
+                           * @file san-xui/x/forms/builtins/ComboForm.js
                            * @author leeight
                            */
 
@@ -67814,12 +70062,12 @@ exports.default = {
     tagName: tagName,
     Component: _ComboForm2.default,
     builder: function builder(item, prefix) {
-        return '\n            <' + tagName + '\n                s-if="!preview"\n                multiple="{{' + prefix + '.multiple}}"\n                controls="{{' + prefix + '.controls}}"\n                max="{{' + prefix + '.max}}"\n                min="{{' + prefix + '.min}}"\n                width="{{' + prefix + '.width}}"\n                value="{=formData.' + item.name + '=}"\n            />\n            <span s-else>{{formData.' + item.name + '}}</span>';
+        return '\n            <' + tagName + '\n                preview="{{preview}}"\n                preview-cols="{{' + prefix + '.previewCols}}"\n                multiple="{{' + prefix + '.multiple}}"\n                controls="{{' + prefix + '.controls}}"\n                max="{{' + prefix + '.max}}"\n                min="{{' + prefix + '.min}}"\n                width="{{' + prefix + '.width}}"\n                value="{=formData.' + item.name + '=}"\n            >\n            ' + item.slot + '\n            </' + tagName + '>';
     }
 };
 
 /***/ }),
-/* 404 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67843,24 +70091,41 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _asForm = __webpack_require__(58);
+var _asForm = __webpack_require__(35);
+
+var _StaticItem = __webpack_require__(245);
+
+var _StaticItem2 = _interopRequireDefault(_StaticItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @file san-xui/x/forms/ComboForm.es6
- * @author leeight
- */
 
 var cx = (0, _util.create)('ui-combo');
 
 /* eslint-disable */
-var template = '<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div s-if="multiple">\n        <div class="' + cx('item') + '" s-for="v, i in value">\n            <ui-form form-data="{=v=}" />\n            <ui-button icon="minus" on-click="removeElement(i)" />\n        </div>\n        <ui-button s-if="btnVisible" icon="plus" on-click="addElement" />\n    </div>\n    <div class="' + cx('item') + '" s-else>\n        <ui-form form-data="{=value=}" />\n    </div>\n</div>';
+/**
+ * @file san-xui/x/forms/ComboForm.js
+ * @author leeight
+ */
+
+var template = '<div class="{{mainClass}}" style="{{mainStyle}}">\n    <template s-if="!preview">\n        <div s-if="multiple">\n            <div class="' + cx('item') + '" s-for="v, i in formData">\n                <ui-form form-data="{=v=}" />\n                <ui-button icon="minus" on-click="removeElement(i)" />\n            </div>\n            <ui-button s-if="btnVisible" icon="plus" on-click="addElement" />\n        </div>\n        <div class="' + cx('item') + '" s-else>\n            <ui-form form-data="{=formData=}" />\n        </div>\n    </template>\n    \n    <template s-else>\n        <slot name="preview">\n            <table width="100%" cellpadding="0" cellspacing="0">\n                <tbody>\n                    <template s-if="multiple">\n                        <tr s-for="item in value">\n                            <td s-for="col in previewCols">\n                                <ui-static \n                                    mapper="{{col.mapper}}"\n                                    datasource="{{col.datasource}}"\n                                    value="{{item[col.name]}}"/>\n                            </td>\n                        </tr>\n                    </template>\n                    \n                    <template s-else>\n                        <tr>\n                            <td s-for="col in previewCols">\n                                <ui-static \n                                    mapper="{{col.mapper}}"\n                                    datasource="{{col.datasource}}"\n                                    formData="{{formData[col.name]}}"/>\n                            </td>\n                        </tr>\n                    </template>\n                </tbody>\n            </table>\n        </slot>\n    </template>\n</div>';
 /* eslint-enable */
 
 var ComboForm = (0, _san.defineComponent)({
     template: template,
     dataTypes: {
+        /**
+         * 是否预览状态
+         * @default false
+         */
+        preview: _san.DataTypes.bool,
+
+        /**
+         * 预览时显示的数据项。如果没有配置，会默认使用的controls变量的 name datasource 参数。
+         * 如果自定义preview slot， 该参数可做扩展。
+         * @default null
+         */
+        previewCols: _san.DataTypes.array,
+
         /**
          * 是否支持添加多项目
          * @default false
@@ -67910,20 +70175,22 @@ var ComboForm = (0, _san.defineComponent)({
             return cx.mainStyle(this);
         },
         btnVisible: function btnVisible() {
-            var value = this.data.get('value');
+            var formData = this.data.get('formData');
             var max = this.data.get('max');
             var min = this.data.get('min');
-            var size = value && value.length;
+            var size = formData && formData.length;
             return size >= min && size < max;
         }
     },
     initData: function initData() {
         return {
+            preview: false,
             min: 0,
             max: Infinity,
             multiple: false,
             inline: true,
             value: null,
+            previewCols: null,
             controls: []
         };
     },
@@ -67933,7 +70200,8 @@ var ComboForm = (0, _san.defineComponent)({
         var _data$get = this.data.get(),
             controls = _data$get.controls,
             multiple = _data$get.multiple,
-            value = _data$get.value;
+            value = _data$get.value,
+            previewCols = _data$get.previewCols;
 
         if (multiple) {
             if (!_lodash2.default.isArray(value)) {
@@ -67945,1101 +70213,289 @@ var ComboForm = (0, _san.defineComponent)({
             }
         }
 
+        if (!previewCols) {
+            this.data.set('previewCols', _lodash2.default.map(controls, function (item) {
+                return _lodash2.default.pick(item, ['name', 'datasource']);
+            }));
+        }
+
         var Component = (0, _asForm.asForm)({ controls: controls });
         this.components = {
             'ui-button': _Button2.default,
+            'ui-static': _StaticItem2.default,
             'ui-form': Component
         };
 
-        this.watch('value', function (value) {
-            return _this.fire('change', { value: value });
+        this.data.set('formData', _lodash2.default.cloneDeep(this.data.get('value')));
+
+        // 此改动是处理combo类型为数组时, 控件没有填写值时，value值为[{}]，
+        this.watch('formData', function (formData) {
+            var value = _lodash2.default.isArray(formData) ? _lodash2.default.reject(formData, _lodash2.default.isEmpty) : formData;
+            _this.data.set('value', value);
+            _this.fire('change', { value: value });
         });
     },
     attached: function attached() {
         // TODO(leeight) 子表单的验证逻辑
+        // TODO(chenbo09) combo目前有二重校验（1， 3）。可增加一个行校验（待出现实际需求时，目前暂无）。
+        // 理想的校验如下：改动combo中组件的值（包括新增和删除）, 依次触发触发3， 2 ，1层级的校验，每层校验会使用下级校验的结果，比如1，2
+        // 的校验 是 自身 + 下级校验的组合。
+        // 行校验具体实现：通过diff当前的 value 和 formData，找到被改动的记录index。
+        // 执行自己的validateForm方法并ref到具体的form查看其校验结果，综合后显示error在form行的下一行。
+        // 1. combo顶层的校验。value是整个combo的值
+        // 2. combo行校验。仅仅在multiple模式下有效 value值是整个数组中的某一个对象，也就是combo中的子form。
+        // 3. 组件级自身校验，这个在controls中为每个组件配置即可，value是控件值。
+
+        // 目前的问题：
+        // 1. combo在顶层并没有机制去调用下层的校验。必须到修改了combo中的具体组件值时才能监听到事件，开始校验。
+        // 2. 在combo顶层的rules可以自定义较为复杂的校验，只是只有一个提示的地方。上述方案是否有必要？
     },
     addElement: function addElement() {
-        this.data.push('value', {});
+        this.data.push('formData', {});
     },
     removeElement: function removeElement(i) {
-        this.data.removeAt('value', i);
+        this.data.removeAt('formData', i);
     }
 });
 
 exports.default = (0, _asInput.asInput)(ComboForm);
 
 /***/ }),
-/* 405 */,
-/* 406 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var apply = Function.prototype.apply;
-
-// DOM APIs, for completeness
-
-exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
-};
-exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
-};
-exports.clearTimeout =
-exports.clearInterval = function(timeout) {
-  if (timeout) {
-    timeout.close();
-  }
-};
-
-function Timeout(id, clearFn) {
-  this._id = id;
-  this._clearFn = clearFn;
-}
-Timeout.prototype.unref = Timeout.prototype.ref = function() {};
-Timeout.prototype.close = function() {
-  this._clearFn.call(window, this._id);
-};
-
-// Does not start the time, just sets up the members needed.
-exports.enroll = function(item, msecs) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = msecs;
-};
-
-exports.unenroll = function(item) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = -1;
-};
-
-exports._unrefActive = exports.active = function(item) {
-  clearTimeout(item._idleTimeoutId);
-
-  var msecs = item._idleTimeout;
-  if (msecs >= 0) {
-    item._idleTimeoutId = setTimeout(function onTimeout() {
-      if (item._onTimeout)
-        item._onTimeout();
-    }, msecs);
-  }
-};
-
-// setimmediate attaches itself to the global object
-__webpack_require__(407);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
-
-
-/***/ }),
-/* 407 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
-
-    if (global.setImmediate) {
-        return;
-    }
-
-    var nextHandle = 1; // Spec says greater than zero
-    var tasksByHandle = {};
-    var currentlyRunningATask = false;
-    var doc = global.document;
-    var registerImmediate;
-
-    function setImmediate(callback) {
-      // Callback can either be a function or a string
-      if (typeof callback !== "function") {
-        callback = new Function("" + callback);
-      }
-      // Copy function arguments
-      var args = new Array(arguments.length - 1);
-      for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i + 1];
-      }
-      // Store and register the task
-      var task = { callback: callback, args: args };
-      tasksByHandle[nextHandle] = task;
-      registerImmediate(nextHandle);
-      return nextHandle++;
-    }
-
-    function clearImmediate(handle) {
-        delete tasksByHandle[handle];
-    }
-
-    function run(task) {
-        var callback = task.callback;
-        var args = task.args;
-        switch (args.length) {
-        case 0:
-            callback();
-            break;
-        case 1:
-            callback(args[0]);
-            break;
-        case 2:
-            callback(args[0], args[1]);
-            break;
-        case 3:
-            callback(args[0], args[1], args[2]);
-            break;
-        default:
-            callback.apply(undefined, args);
-            break;
-        }
-    }
-
-    function runIfPresent(handle) {
-        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
-        // So if we're currently running a task, we'll need to delay this invocation.
-        if (currentlyRunningATask) {
-            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
-            // "too much recursion" error.
-            setTimeout(runIfPresent, 0, handle);
-        } else {
-            var task = tasksByHandle[handle];
-            if (task) {
-                currentlyRunningATask = true;
-                try {
-                    run(task);
-                } finally {
-                    clearImmediate(handle);
-                    currentlyRunningATask = false;
-                }
-            }
-        }
-    }
-
-    function installNextTickImplementation() {
-        registerImmediate = function(handle) {
-            process.nextTick(function () { runIfPresent(handle); });
-        };
-    }
-
-    function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
-        // where `global.postMessage` means something completely different and can't be used for this purpose.
-        if (global.postMessage && !global.importScripts) {
-            var postMessageIsAsynchronous = true;
-            var oldOnMessage = global.onmessage;
-            global.onmessage = function() {
-                postMessageIsAsynchronous = false;
-            };
-            global.postMessage("", "*");
-            global.onmessage = oldOnMessage;
-            return postMessageIsAsynchronous;
-        }
-    }
-
-    function installPostMessageImplementation() {
-        // Installs an event handler on `global` for the `message` event: see
-        // * https://developer.mozilla.org/en/DOM/window.postMessage
-        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
-
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
-        var onGlobalMessage = function(event) {
-            if (event.source === global &&
-                typeof event.data === "string" &&
-                event.data.indexOf(messagePrefix) === 0) {
-                runIfPresent(+event.data.slice(messagePrefix.length));
-            }
-        };
-
-        if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
-        } else {
-            global.attachEvent("onmessage", onGlobalMessage);
-        }
-
-        registerImmediate = function(handle) {
-            global.postMessage(messagePrefix + handle, "*");
-        };
-    }
-
-    function installMessageChannelImplementation() {
-        var channel = new MessageChannel();
-        channel.port1.onmessage = function(event) {
-            var handle = event.data;
-            runIfPresent(handle);
-        };
-
-        registerImmediate = function(handle) {
-            channel.port2.postMessage(handle);
-        };
-    }
-
-    function installReadyStateChangeImplementation() {
-        var html = doc.documentElement;
-        registerImmediate = function(handle) {
-            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
-            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
-            script.onreadystatechange = function () {
-                runIfPresent(handle);
-                script.onreadystatechange = null;
-                html.removeChild(script);
-                script = null;
-            };
-            html.appendChild(script);
-        };
-    }
-
-    function installSetTimeoutImplementation() {
-        registerImmediate = function(handle) {
-            setTimeout(runIfPresent, 0, handle);
-        };
-    }
-
-    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
-    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
-    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
-
-    // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
-        // For Node.js before 0.9
-        installNextTickImplementation();
-
-    } else if (canUsePostMessage()) {
-        // For non-IE10 modern browsers
-        installPostMessageImplementation();
-
-    } else if (global.MessageChannel) {
-        // For web workers, where supported
-        installMessageChannelImplementation();
-
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
-        // For IE 6–8
-        installReadyStateChangeImplementation();
-
-    } else {
-        // For older browsers
-        installSetTimeoutImplementation();
-    }
-
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
-}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41), __webpack_require__(32)))
-
-/***/ }),
-/* 408 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/oo.js
- * @author somebody
- */
-
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var Empty = function () { };
-    var NAME_PROPERTY_NAME = '__eooName__';
-    var OWNER_PROPERTY_NAME = '__eooOwner__';
-
-    /**
-     * 简单的 js oo 库
-     *
-     * 用法:
-     *      @example
-     *      // 来个简单的基类，最简单的是 var Super = Class();
-     *      var Super = Class({
-     *          superProp1: 'superProp1',
-     *          superProp2: 'superProp2',
-     *          method: function(){
-     *              alert(this.superProp1);
-     *          },
-     *          superMethod2: function(){
-     *              alert(this.superProp2);
-     *          }
-     *      })
-     *
-     *      // 来个派生类，继承 Super
-     *      var Sub = Class(Super, {
-     *          // constructor 会在实例化时调用
-     *          constructor: function(prop){
-     *             // $super 会自动调用父类的同名方法
-     *             this.$super(arguments)
-     *             this.subProp = prop
-     *             alert("Sub init")
-     *          },
-     *          method: function(){
-     *              this.$super(arguments);
-     *              alert(this.subProp);
-     *          }
-     *      })
-     *
-     *      var Sub1 = Class(Sub, {
-     *          constructor: function(prop1, prop2){
-     *             this.$super(arguments)
-     *             this.sub1Prop = prop2;
-     *             alert("Sub1 init")
-     *          },
-     *          method: function(){
-     *              this.$super(arguments)
-     *              alert(this.sub1Prop)
-     *          }
-     *      })
-     *
-     *      var superIns = new Super();
-     *      var sub = new Sub('Sub'); // alert: Sub init
-     *      var sub1 = new Sub1('Sub', 'Sub1') // alert: Sub init, Sub1 init
-     *      superIns.method() // alert: superProp1
-     *      sub.method() // alert: superProp1, Sub
-     *      sub1.method() // alert: superProp1, Sub, Sub1
-     *      sub.superMethod() // alert: superProp2
-     *      sub1.superMethod() // alert: superProp2
-     *
-     */
-
-    /**
-     * Class构造函数
-     *
-     * @class Class
-     * @constructor
-     * @param {Function | Object} [BaseClass] 基类
-     * @param {Object} [overrides] 重写基类属性的对象
-     * @return {Function}
-     */
-    function Class() {
-        return Class.create.apply(Class, arguments);
-    }
-
-    /**
-     * 创建基类的继承类
-     *
-     * 3种重载方式
-     *
-     * - '.create()'
-     * - '.create(overrides)'
-     * - '.create(BaseClass, overrides)'
-     *
-     * @static
-     * @param {Function | Object} [BaseClass] 基类
-     * @param {Object} [overrides] 重写基类属性的对象
-     * @return {Function}
-     */
-    Class.create = function (BaseClass, overrides) {
-        overrides = overrides || {};
-        BaseClass = BaseClass || Class;
-        if (typeof BaseClass === 'object') {
-            overrides = BaseClass;
-            BaseClass = Class;
-        }
-
-        var kclass = inherit(BaseClass);
-        var proto = kclass.prototype;
-        eachObject(
-            overrides,
-            function (value, key) {
-                if (typeof value === 'function') {
-                    value[NAME_PROPERTY_NAME] = key;
-                    value[OWNER_PROPERTY_NAME] = kclass;
-                }
-
-                proto[key] = value;
-            }
-        );
-
-        kclass.toString = toString;
-
-        return kclass;
-    };
-
-    /**
-     * Class.static
-     *
-     * @type {Function} creates a new object with the specified prototype object and properties.
-     *  Just equals `Object.create` method.
-     * @param {Object} o The object which should be the prototype of the newly-created object.
-     * @return {Object}
-     */
-    Class.static = typeof Object.create === 'function'
-        ? Object.create
-        : function (o) {
-            if (arguments.length > 1) {
-                throw new Error('Second argument not supported');
-            }
-            if (!(o instanceof Object)) {
-                throw new TypeError('Argument must be an object');
-            }
-            Empty.prototype = o;
-            return new Empty();
-        };
-
-    /**
-     * 创建类的方法
-     *
-     * @param {Function} BaseClass 类构造函数
-     * @param {Object} [exports] 类属性的对象
-     */
-    Class.defineMembers = function (BaseClass, exports) {
-        exports = exports || {};
-        if (typeof BaseClass !== 'function') {
-            throw new TypeError('First argument must be a function');
-        }
-
-        var proto = BaseClass.prototype;
-        eachObject(
-            exports,
-            function (value, key) {
-                if (typeof value === 'function') {
-                    value[NAME_PROPERTY_NAME] = key;
-                    value[OWNER_PROPERTY_NAME] = BaseClass;
-                }
-                proto[key] = value;
-            }
-        );
-    };
-
-    /**
-     * 统一 toString 执行结果
-     *
-     * @static
-     * @return {string}
-     */
-    Class.toString = function () {
-        return 'function Class() { [native code] }';
-    };
-
-    Class.prototype = {
-        constructor: function () {},
-        $self: Class,
-        $superClass: Object,
-        $super: function (args) {
-            var method = this.$super.caller;
-            var name = method[NAME_PROPERTY_NAME];
-            var superClass = method[OWNER_PROPERTY_NAME].$superClass;
-            var superMethod = superClass.prototype[name];
-
-            if (typeof superMethod !== 'function') {
-                throw new TypeError('Call the super class\'s ' + name + ', but it is not a function!');
-            }
-
-            return superMethod.apply(this, args);
-        }
-    };
-
-    /**
-     * 返回基类的一个继承对象
-     *
-     * @ignore
-     * @param {Function} BaseClass 基类
-     * @return {Function}
-     */
-    function inherit(BaseClass) {
-        var kclass = function () {
-            // 若未进行 constructor 的重写，则klass.prototype.constructor指向BaseClass.prototype.constructor
-            return kclass.prototype.constructor.apply(this, arguments);
-        };
-
-        Empty.prototype = BaseClass.prototype;
-
-        var proto = kclass.prototype = new Empty();   // eslint-disable-line
-        proto.$self = kclass;
-        if (!('$super' in proto)) {
-            proto.$super = Class.prototype.$super;
-        }
-
-        kclass.$superClass = BaseClass;
-
-        return kclass;
-    }
-
-    var hasEnumBug = !({toString: 1}.propertyIsEnumerable('toString'));
-    var enumProperties = [
-        'constructor',
-        'hasOwnProperty',
-        'isPrototypeOf',
-        'propertyIsEnumerable',
-        'toString',
-        'toLocaleString',
-        'valueOf'
-    ];
-
-    /**
-     * hasOwnProperty函数的封装
-     *
-     * @ignore
-     * @param {Object} obj 对象
-     * @param {string} key 属性名
-     * @return {boolean}
-     */
-    function hasOwnProperty(obj, key) {
-        return Object.prototype.hasOwnProperty.call(obj, key);
-    }
-
-    /**
-     * 遍历对象操作
-     *
-     * @ignore
-     * @param {Object} obj 目标对象
-     * @param {Function} fn 遍历操作
-     */
-    function eachObject(obj, fn) {
-        for (var k in obj) {
-            hasOwnProperty(obj, k) && fn(obj[k], k, obj);
-        }
-        // ie6-8 enum bug
-        if (hasEnumBug) {
-            for (var i = enumProperties.length - 1; i > -1; --i) {
-                var key = enumProperties[i];
-                hasOwnProperty(obj, key) && fn(obj[key], key, obj);
-            }
-        }
-    }
-
-    /**
-     * toString method
-     *
-     * @ignore
-     * @return {string}
-     */
-    function toString() {
-        return this.prototype.constructor.toString();
-    }
-
-    return Class;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 409 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/defineAccessor.js
- * @author Created by exodia on 14-8-28.
- */
-
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var MEMBERS = '__eooPrivateMembers__';
-
-    function simpleGetter(name) {
-        var body = 'return typeof this.' + MEMBERS + ' === \'object\' ? this.'
-            + MEMBERS + '[\'' + name + '\'] : undefined;';
-        return new Function(body);
-    }
-
-    function simpleSetter(name) {
-        var body = 'this.' + MEMBERS + ' = this.' + MEMBERS + ' || {};\n'
-            + 'this.' + MEMBERS + '[\'' + name + '\'] = value;';
-        return new Function('value', body);
-    }
-
-    /**
-     * 根据指定的属性名生成对应的accessor
-     *
-     * @param {Object | Function} obj 需要生成 accessor 的对象
-     * @param {string} name 需要生成 accessor 的属性名称
-     * @param {Object | Function} [accessor] 自定义的 getter 和 setter 配置
-     * @param {Function} [accessor.get] 自定义的 getter 函数, 配置了accessor，但未设置 get，则不会生成 getter
-     * @param {Function} [accessor.set] 自定义的 setter 函数, 配置了accessor，但未设置 set，则不会生成 setter
-     */
-    return function (obj, name, accessor) {
-        var upperName = name.charAt(0).toUpperCase() + name.slice(1);
-        var getter = 'get' + upperName;
-        var setter = 'set' + upperName;
-
-        if (!accessor) {
-            obj[getter] = !accessor || typeof accessor.get !== 'function' ? simpleGetter(name) : accessor.get;
-            obj[setter] = !accessor || typeof accessor.set !== 'function' ? simpleSetter(name) : accessor.set;
-        }
-        else {
-            typeof accessor.get === 'function' && (obj[getter] = accessor.get);
-            typeof accessor.set === 'function' && (obj[setter] = accessor.set);
-        }
-    };
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 410 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 事件队列
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(74);
-
-        /**
-         * 判断已有的一个事件上下文对象是否和提供的参数等同
-         *
-         * @param {Object} context 在队列中已有的事件上下文对象
-         * @param {Function | boolean} handler 处理函数，可以是`false`
-         * @param {Mixed} [thisObject] 处理函数的`this`对象
-         * @return {boolean}
-         * @ignore
-         */
-        function isContextIdentical(context, handler, thisObject) {
-            // `thisObject`为`null`和`undefined`时认为等同，所以用`==`
-            return context
-                && context.handler === handler
-                && context.thisObject == thisObject;
-        }
-
-        /**
-         * 事件队列
-         *
-         * @constructor
-         */
-        function EventQueue() {
-            this.queue = [];
-        }
-
-        /**
-         * 添加一个事件处理函数
-         *
-         * @param {Function | boolean} handler 处理函数，
-         * 可以传递`false`作为特殊的处理函数，参考{@link EventTarget#on}
-         * @param {Object} [options] 相关配置
-         * @param {Mixed} [options.thisObject] 执行处理函数时的`this`对象
-         * @param {boolean} [options.once=false] 设定函数仅执行一次
-         */
-        EventQueue.prototype.add = function (handler, options) {
-            if (handler !== false && typeof handler !== 'function') {
-                throw new Error(
-                    'event handler must be a function or const false');
-            }
-
-            var wrapper = {
-                handler: handler
-            };
-            lib.extend(wrapper, options);
-
-            for (var i = 0; i < this.queue.length; i++) {
-                var context = this.queue[i];
-                // 同样的处理函数，不同的`this`对象，相当于外面`bind`了一把再添加，
-                // 此时认为这是完全不同的2个处理函数，但`null`和`undefined`认为是一样的
-                if (isContextIdentical(context, handler, wrapper.thisObject)) {
-                    return;
-                }
-            }
-
-            this.queue.push(wrapper);
-        };
-
-        /**
-         * 移除一个或全部处理函数
-         *
-         * @param {Function | boolean} [handler] 指定移除的处理函数，
-         * 如不提供则移除全部处理函数，可以传递`false`作为特殊的处理函数
-         * @param {Mixed} [thisObject] 指定函数对应的`this`对象，
-         * 不提供则仅移除没有挂载`this`对象的那些处理函数
-         */
-        EventQueue.prototype.remove = function (handler, thisObject) {
-            // 如果没提供`handler`，则直接清空
-            if (!handler) {
-                this.clear();
-                return;
-            }
-
-            for (var i = 0; i < this.queue.length; i++) {
-                var context = this.queue[i];
-
-                if (isContextIdentical(context, handler, thisObject)) {
-                    // 为了让`execute`过程中调用的`remove`工作正常，
-                    // 这里不能用`splice`直接删除，仅设为`null`留下这个空间
-                    this.queue[i] = null;
-
-                    // 完全符合条件的处理函数在`add`时会去重，因此这里肯定只有一个
-                    return;
-                }
-            }
-        };
-
-        /**
-         * 移除全部处理函数，如果队列执行时调用这个函数，会导致剩余的处理函数不再执行
-         */
-        EventQueue.prototype.clear = function () {
-            this.queue.length = 0;
-        };
-
-        /**
-         * 执行所有处理函数
-         *
-         * @param {Event} event 事件对象
-         * @param {Mixed} thisObject 函数执行时的`this`对象
-         */
-        EventQueue.prototype.execute = function (event, thisObject) {
-            // 如果执行过程中销毁，`dispose`会把`this.queue`弄掉，所以这里留一个引用，
-            // 在`dispose`中会额外把数组清空，因此不用担心后续的函数会执行
-            var queue = this.queue;
-            for (var i = 0; i < queue.length; i++) {
-                if (typeof event.isImmediatePropagationStopped === 'function'
-                    && event.isImmediatePropagationStopped()
-                ) {
-                    return;
-                }
-
-                var context = queue[i];
-
-                // 移除事件时设置为`null`，因此可能无值
-                if (!context) {
-                    continue;
-                }
-
-                var handler = context.handler;
-
-                // `false`等同于两个方法的调用
-                if (handler === false) {
-                    if (typeof event.preventDefault === 'function') {
-                        event.preventDefault();
-                    }
-                    if (typeof event.stopPropagation === 'function') {
-                        event.stopPropagation();
-                    }
-                }
-                else {
-                    // 这里不需要做去重处理了，在`on`的时候会去重，因此这里不可能重复
-                    handler.call(context.thisObject || thisObject, event);
-                }
-
-                if (context.once) {
-                    this.remove(context.handler, context.thisObject);
-                }
-            }
-        };
-
-        /**
-         * 获取队列的长度
-         *
-         * @reutrn {number}
-         */
-        EventQueue.prototype.getLength = function () {
-            var count = 0;
-            for (var i = 0; i < this.queue.length; i++) {
-                if (this.queue[i]) {
-                    count++;
-                }
-            }
-            return count;
-        };
-
-        /**
-         * 获取队列的长度，与{@link EventQueue#getLength}相同
-         *
-         * @method
-         * @reutrn {number}
-         */
-        EventQueue.prototype.length = EventQueue.prototype.getLength;
-
-        /**
-         * 销毁
-         *
-         * 如果在队列执行的过程中销毁了对象，则在对象销毁后，剩余的处理函数不会再执行了
-         */
-        EventQueue.prototype.dispose = function () {
-            // 在执行过程中被销毁的情况下，这里`length`置为0，循环就走不下去了
-            this.clear();
-            this.queue = null;
-        };
-
-        return EventQueue;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 411 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 入口
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var Event = __webpack_require__(244);
-
-        /**
-         * @class main
-         * @singleton
-         */
-        return {
-            /**
-             * 版本号
-             *
-             * @type {string}
-             */
-            version: '1.0.2',
-
-            /**
-             * {@link Event}类
-             *
-             * @type {Function}
-             */
-            Event: Event,
-
-            /**
-             * 参考{@link Event#fromDOMEvent}
-             */
-            fromDOMEvent: Event.fromDOMEvent,
-
-            /**
-             * 参考{@link Event#fromEvent}
-             */
-            fromEvent: Event.fromEvent,
-
-            /**
-             * 参考{@link Event#delegate}
-             */
-            delegate: Event.delegate
-        };
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 412 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 路由器对象
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /**
-         * @class Router
-         *
-         * 路由类
-         *
-         * 通过`require('er/router').Router`访问该类构造函数，其中`require('er/router')`是该类的全局实例
-         *
-         * 路由用于将特定的URL对应到特定的函数上，
-         * 并在URL变化（{@link locator}对象支持）时，执行相应的函数
-         *
-         * URL与函数的对应规则有3种形式：
-         *
-         * - 当使用字符串作为规则时，URL的`path`部分与字符串完全匹配
-         * - 当使用正则表达式作为规则时，URL的`path`部分匹配该正则
-         * - 当所有路由规则均不匹配某个URL时，会调用{@link Router#setBackup}提供的函数
-         *
-         * @extends mini-event.EventTarget
-         * @constructor
-         */
-        var exports = {};
-
-        var started = false;
-
-        exports.constructor = function () {
-            this.routes = [];
-            this.backup = null;
-        };
-
-        /**
-         * 在{{@locator#redirect}事件中，执行路由逻辑
-         *
-         * @param {mini-event.Event} e 事件对象
-         * @param {string} e.url 当前的URL
-         * @ignore
-         */
-        function executeRoute(e) {
-            var url = __webpack_require__(246).parse(e.url);
-            var path = url.getPath();
-            for (var i = 0; i < this.routes.length; i++) {
-                var route = this.routes[i];
-
-                if ((route.rule instanceof RegExp && route.rule.test(path)) || route.rule === path) {
-                    route.handler.call(this, url);
-                    return;
-                }
-            }
-
-            if (this.backup) {
-                this.backup(url);
-            }
-
-            this.getEventBus().fire('route', {url: url, router: this});
-        }
-
-        /**
-         * 添加一条路由规则
-         *
-         * @param {string | RegExp} rule 匹配URL的`path`部分的字符串或正则表达式
-         * @param {Function} handler 匹配成功时执行的函数
-         */
-        exports.add = function (rule, handler) {
-            this.routes.push({rule: rule, handler: handler});
-        };
-
-        /**
-         * 添加后备处理函数，当一个路径无规则命中时，将执行此函数
-         *
-         * @param {Function} handler 后备处理函数
-         */
-        exports.setBackup = function (handler) {
-            this.backup = handler;
-        };
-
-        /**
-         * 获取当前实例使用的{@link locator}对象
-         *
-         * @return {locator}
-         * @protected
-         */
-        exports.getLocator = function () {
-            return this.locator;
-        };
-
-        /**
-         * 设置当前实例使用的{@link locator}对象
-         *
-         * 可以为任意对象，按{@link locator#event-redirect}实现此事件即可
-         *
-         * @param {locator} locator 关联的{@link locator}实例
-         */
-        exports.setLocator = function (locator) {
-            this.locator = locator;
-        };
-
-        /**
-         * 获取当前实例使用的事件总线
-         *
-         * @return {mini-event.EventTarget}
-         * @protected
-         */
-        exports.getEventBus = function () {
-            return this.eventBus;
-        };
-
-        /**
-         * 设置当前实例使用的事件总线
-         *
-         * 事件总线可以是任何对象，只要实现`fire`方法供事件触发即可
-         *
-         * @param {mini-event.EventTarget} eventBus 事件总线对象
-         */
-        exports.setEventBus = function (eventBus) {
-            this.eventBus = eventBus;
-        };
-
-        /**
-         * 开始`router`对象的工作
-         */
-        exports.start = function () {
-            if (started) {
-                return;
-            }
-            started = true;
-            this.getLocator().on('redirect', executeRoute, this);
-        };
-
-        var Router = __webpack_require__(31).create(__webpack_require__(28), exports);
-        var instance = new Router();
-        instance.setLocator(__webpack_require__(248));
-        instance.setEventBus(__webpack_require__(40));
-        instance.Router = Router;
-        return instance;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 413 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 权限管理对象
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-        var authorities = {};
-
-        /**
-         * @class permission
-         *
-         * 权限管理器，提供权限的注册和判断功能
-         *
-         * @singleton
-         */
-        var permssion = {
-            /**
-             * 添加权限
-             *
-             * 权限以字符串作为名称，添加权限说明时，传递一个对象，
-             * 其中的健为权限名称，值为是否拥有该权限
-             *
-             * 权限说明可以嵌套，如：
-             *
-             *     {
-             *         books: { VIEW_BOOK: true, EDIT_BOOK: false },
-             *         authors: { VIEW_AUTHOR: true, EDIT_AUTHOR: true }
-             *     }
-             *
-             * @param {Object} data 权限说明
-             */
-            add: function (data) {
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        var value = data[key];
-                        if (typeof value === 'object') {
-                            this.add(value);
-                        }
-                        else {
-                            authorities[key] = value;
-                        }
-                    }
-                }
-            },
-
-            /**
-             * 判断是否拥有指定权限
-             *
-             * @param {string} name 权限名称
-             * @return {boolean} 是否拥有`name`表示的权限
-             */
-            isAllow: function (name) {
-                return !!authorities[name];
-            }
-        };
-
-        return permssion;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 414 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-exports.loadAppInBackground = loadAppInBackground;
 
-var _promise = __webpack_require__(9);
+var _StaticItem = __webpack_require__(245);
 
-var _promise2 = _interopRequireDefault(_promise);
+var _StaticItem2 = _interopRequireDefault(_StaticItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function loadAppInBackground() {
-  return _promise2.default.resolve();
-} /**
-   * @file inf-ria/helper.es6
-   * @author leeight
-   */
+var tagName = 'ui-form-static'; /**
+                                 * @file san-xui/x/forms/builtins/StaticItem.js
+                                 * @author leeight
+                                 */
+
+exports.default = {
+    type: 'static',
+    tagName: tagName,
+    Component: _StaticItem2.default,
+    builder: function builder(item, prefix) {
+        return '\n            <' + tagName + '\n                mapper="{{' + prefix + '.mapper}}"\n                datasource="{{' + prefix + '.datasource}}"\n                value="{{formData.' + item.name + '}}"\n            />';
+    }
+};
+
+/***/ }),
+/* 417 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _CheckBox = __webpack_require__(50);
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tagName = 'ui-form-checkbox'; /**
+                                   * @file san-xui/x/forms/builtins/CheckBox.js
+                                   * @author chenbo09
+                                   */
+
+exports.default = {
+    type: 'checkbox',
+    tagName: tagName,
+    Component: _CheckBox2.default,
+    builder: function builder(item, prefix) {
+        return '\n            <' + tagName + '\n                disabled="{{preview}}"\n                title="{{' + prefix + '.title}}"\n                checked="{=formData.' + item.name + '=}"\n            />';
+    }
+};
+
+/***/ }),
+/* 418 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _SubForm = __webpack_require__(419);
+
+var _SubForm2 = _interopRequireDefault(_SubForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tagName = 'ui-form-item-sub-form'; /**
+                                        * @file san-xui/x/forms/builtins/SubForm.js
+                                        * @author chenbo09
+                                        */
+
+exports.default = {
+    type: 'sub-form',
+    tagName: tagName,
+    Component: _SubForm2.default,
+    builder: function builder(item, prefix) {
+        return '\n            <ui-form-item-sub-form\n                preview="{{preview}}"\n                title="{{' + prefix + '.form.title}}"\n                icon="{{' + prefix + '.icon}}"\n                button-label="{{' + prefix + '.buttonLabel}}"\n                button-width="{{' + prefix + '.buttonWidth}}"\n                width="{{' + prefix + '.width}}"\n                pick-name="{{' + prefix + '.pickName}}"\n                controls="{{' + prefix + '.form.controls}}"\n                formData="{=formData.' + item.name + '=}"\n            />';
+    }
+};
+
+/***/ }),
+/* 419 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(5);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _asForm = __webpack_require__(35);
+
+var _FormDialog = __webpack_require__(246);
+
+var _FormDialog2 = _interopRequireDefault(_FormDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = '\n<div>\n    <ui-button\n        icon="{{icon}}"\n        label="{{buttonLabel}}"\n        width="{{buttonWidth}}"\n        on-click="showFormDialog"\n        />\n        \n    <ui-form-dialog\n        s-if="viewFormDialog"\n        title="{{title}}"\n        preview="{{preview}}"\n        on-ok="merge"\n        on-close="closeFormDialog"\n        form-comp="{{FormComp}}"\n        form-data="{{subFormData}}"\n     />\n</div>'; /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @file components/SubForm.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chenbo09
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'ui-button': _Button2.default,
+        'ui-form-dialog': _FormDialog2.default
+    },
+    initData: function initData() {
+        return {
+            preview: false,
+            icon: 'sdk',
+            buttonLabel: '设置子表单',
+            buttonWidth: null,
+            width: null,
+            formData: null,
+            formSchema: {},
+            title: '设置子表单',
+            controls: [],
+            pickName: '',
+
+            viewFormDialog: false,
+            FormComp: null,
+            subFormData: null
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 是否预览状态
+         * @default false
+         */
+        preview: _san.DataTypes.bool,
+
+        /**
+         * 按钮的icon
+         * @default sdk
+         */
+        icon: _san.DataTypes.string,
+
+        /**
+         * 按钮的文字
+         * @default 设置子表单
+         */
+        buttonLabel: _san.DataTypes.string,
+
+        /**
+         * 按钮的宽度
+         */
+        buttonWidth: _san.DataTypes.number,
+
+        /**
+         * 子表单弹框的宽度
+         */
+        width: _san.DataTypes.number,
+
+        /**
+         * 子表单弹框的标题
+         * @default 设置子表单
+         */
+        title: _san.DataTypes.number,
+
+        /**
+         * 子表单弹框的值
+         * @bindx
+         * @default null
+         */
+        formData: _san.DataTypes.object,
+
+        /**
+         * 可以输入的数据项
+         * @default []
+         */
+        controls: _san.DataTypes.array,
+
+        /**
+         * 只返回指定的数据项名称
+         */
+        pickName: _san.DataTypes.string
+    },
+    computed: {
+        subFormData: function subFormData() {
+            var pickName = this.data.get('pickName');
+            var formData = this.data.get('formData');
+            var subFormData = formData;
+            if (pickName) {
+                subFormData = {};
+                subFormData[pickName] = formData;
+            }
+            return subFormData;
+        }
+    },
+    inited: function inited() {
+        var controls = this.data.get('controls');
+        this.data.set('FormComp', (0, _asForm.asForm)({ controls: controls }));
+    },
+    showFormDialog: function showFormDialog() {
+        this.data.set('viewFormDialog', true);
+    },
+    closeFormDialog: function closeFormDialog() {
+        this.data.set('viewFormDialog', false);
+    },
+    merge: function merge(formData) {
+        // 在combo类型等情况下，需要的是一个数组，而不是 {name: [1, 2, 3]}
+        // 由于name参数在schema中必须保留，故增加pickName参数，如果非空，将只返回指定值。 在上例子中 将返回数组[1, 2, 3]
+
+        var pickName = this.data.get('pickName');
+        this.data.set('formData', pickName ? _lodash2.default.get(formData, pickName) : formData);
+        this.closeFormDialog();
+    }
+});
 
 /***/ })
 /******/ ]);

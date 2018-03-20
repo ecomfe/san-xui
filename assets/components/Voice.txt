@@ -1,5 +1,5 @@
 /**
- * @file components/Voice.es6
+ * @file components/Voice.js
  * @author leeight
  */
 

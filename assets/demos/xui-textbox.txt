@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-textbox.es6
+ * @file demos/xui-textbox.js
  * @author leeight
  */
 

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([32],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([31],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 457:
+/***/ 465:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<xui-rangecalendar value="{=rangecalendar.value=}" /
 /* eslint-enable */
 
 /**
- * @file demos/xui-rangecalendar.es6
+ * @file demos/xui-rangecalendar.js
  * @author leeight
  */
 
@@ -66,4 +66,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[457])});;
+},[465])});;

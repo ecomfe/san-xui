@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/forms/asForm.es6
+ * @file san-xui/x/forms/asForm.js
  * @author leeight
  */
 
@@ -19,7 +19,7 @@ const kFormItemComponents = {};
 const kFormItemBuilders = {};
 const Schema = AsyncValidator.default;
 
-// FIXME(leeight) 如何跟 forms/FormItem.es6 复用呢?
+// FIXME(leeight) 如何跟 forms/FormItem.js 复用呢?
 const FormItem = defineComponent({
     template: `<div class="{{mainClass}}">
         <div class="{{labelClass}}" s-if="label">{{label | raw}}：</div>
@@ -115,7 +115,6 @@ function schemaTraversal(controls, cb) {
 
 function generateTemplate(controls) {
     const template = [];
-
     _.each(controls, (item, i) => {
         if (_.isArray(item)) {
             template.push(`<div class="${cx('row')}">`);
@@ -190,7 +189,11 @@ export function asForm(schema) {
             mainClass() {
                 const klass = cx.mainClass(this);
                 const size = this.data.get('itemSize');
+                const preview = this.data.get('preview');
                 klass.push(cx(String(size)));
+                if (preview) {
+                    klass.push(cx('preview'));
+                }
                 return klass;
             }
         },
@@ -236,9 +239,9 @@ export function asForm(schema) {
                 formErrors: null,
                 visibleOn: {},
                 hiddenOn: {},
-                requiredOn: {}
-
-                // disabledOn: {},
+                requiredOn: {},
+                // 这个disabled并不是HTML FORM中的disabled。它更接近于readonly，即使组件被设置为disabled，其值依然能获取。
+                disabledOn: {}
             };
         },
 
@@ -260,38 +263,58 @@ export function asForm(schema) {
             const hiddenOn = {};
             const visibleOn = {};
             const requiredOn = {};
+            const disabledOn = {};
             const requiredOnInitValues = {};
 
+
+            function appendToMapImpl(map, item, key) {
+                const expr = item[key];
+                if (!expr) {
+                    return;
+                }
+
+                const keys = [];
+                if (_.isString(expr)) {
+                    keys.push(expr);
+                }
+                else if (_.isPlainObject(expr)) {
+                    // requiredOn: {
+                    //   a: ...
+                    //   b: ...
+                    //   c: ...
+                    // }
+                    keys.push.apply(keys, _.keys(expr));
+                    // _.each(expr, (config, key) => appendList(map, key, value));
+                }
+                else if (_.isArray(expr)) {
+                    // requiredOn: [
+                    //   // case 1
+                    //   {},
+                    //   // case 2
+                    //   {},
+                    //   // case 3
+                    //   {}
+                    // ]
+                    _.each(expr, subExpr => keys.push.apply(keys, _.keys(subExpr)));
+                }
+
+                const value = item.name;
+                _.each(keys, key => appendList(map, key, value));
+            }
+
             function appendToMap(item) {
+                if (itemsMap[item.name]) {
+                    throw new Error('Found duplicated form name: ' + item.name);
+                }
+
                 itemsMap[item.name] = item;
                 requiredOnInitValues[item.name] = !!item.required;
 
-                if (item.visibleOn) {
-                    if (_.isString(item.visibleOn)) {
-                        appendList(visibleOn, item.visibleOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.visibleOn)) {
-                        _.each(item.visibleOn, (config, key) => appendList(visibleOn, key, item.name));
-                    }
-                }
+                appendToMapImpl(visibleOn, item, 'visibleOn');
+                appendToMapImpl(hiddenOn, item, 'hiddenOn');
+                appendToMapImpl(requiredOn, item, 'requiredOn');
+                appendToMapImpl(disabledOn, item, 'disabledOn');
 
-                if (item.hiddenOn) {
-                    if (_.isString(item.hiddenOn)) {
-                        appendList(hiddenOn, item.hiddenOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.hiddenOn)) {
-                        _.each(item.hiddenOn, (config, key) => appendList(hiddenOn, key, item.name));
-                    }
-                }
-
-                if (item.requiredOn) {
-                    if (_.isString(item.requiredOn)) {
-                        appendList(requiredOn, item.requiredOn, item.name);
-                    }
-                    else if (_.isPlainObject(item.requiredOn)) {
-                        _.each(item.requiredOn, (config, key) => appendList(requiredOn, key, item.name));
-                    }
-                }
             }
 
             const controls = this.data.get('schema');
@@ -301,7 +324,7 @@ export function asForm(schema) {
             this.visibleOn = visibleOn;
             this.hiddenOn = hiddenOn;
             this.requiredOn = requiredOn;
-
+            this.disabledOn = disabledOn;
             // 监控特定数据项的变化
             const triggerKeys = this.__getTriggerKeys();
             _.each(triggerKeys, name => this.watch(`formData.${name}`, () => this.__refreshRelatedFields(name)));
@@ -326,7 +349,8 @@ export function asForm(schema) {
             return _.uniq([
                 ..._.keys(this.visibleOn),
                 ..._.keys(this.hiddenOn),
-                ..._.keys(this.requiredOn)
+                ..._.keys(this.requiredOn),
+                ..._.keys(this.disabledOn)
             ]);
         },
 
@@ -364,7 +388,29 @@ export function asForm(schema) {
                         this.data.set(`requiredOn.${itemName}`, required);
                     });
                 }
+
+                if (this.disabledOn[name]) {
+                    _.each(this.disabledOn[name], itemName => {
+                        const config = this.itemsMap[itemName];
+                        const disabled = evalExpr(config.disabledOn, scope);
+                        this.data.set(`disabledOn.${itemName}`, disabled);
+                    });
+                }
             });
+        },
+
+        getBindInfo(key) {
+            const binds = this.aNode.binds || this.binds;
+            if (binds && typeof binds.get === 'function') {
+                return binds.get(key);
+            }
+            for (let i = 0; i < binds.length; i++) {
+                const bindInfo = binds[i];
+                if (bindInfo.name === key) {
+                    return bindInfo;
+                }
+            }
+            return null;
         },
 
         getFormKey() {
@@ -373,13 +419,13 @@ export function asForm(schema) {
                 return formKey;
             }
 
-            const bindExpr = this.aNode.binds.get('formData');
-            if (bindExpr && bindExpr.x) {
+            const bindInfo = this.getBindInfo('formData');
+            if (bindInfo && bindInfo.x) {
                 // 双绑
-                return bindExpr.expr.raw;
+                return bindInfo.expr.raw;
             }
-            else if (bindExpr) {
-                return bindExpr.raw;
+            else if (bindInfo) {
+                return bindInfo.raw;
             }
             throw new Error('Please specify `form-key` prop');
         },
@@ -530,7 +576,8 @@ export function asForm(schema) {
                         const item = errors[i];
                         const visible = this.data.get(`visibleOn.${item.field}`);
                         const hidden = this.data.get(`hiddenOn.${item.field}`);
-                        // TODO(leeight) disable 的情况
+                        // TODO(leeight) disable 的情况。
+                        // 当disabledOn符合条件时，校验依然保留, 因为disabled是否打开是基于用户的行为, 在这里只是相当于readonly。
                         if (!hidden && visible !== false) {
                             // 如果输入项是可见的，那么才考虑这个错误信息
                             formErrors[item.field] = item.message;

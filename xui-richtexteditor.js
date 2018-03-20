@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([29],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([28],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 460:
+/***/ 468:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-richtexteditor v
 /* eslint-enable */
 
 /**
- * @file demos/xui-richtexteditor.es6
+ * @file demos/xui-richtexteditor.js
  * @author leeight
  */
 
@@ -56,4 +56,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[460])});;
+},[468])});;

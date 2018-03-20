@@ -1,5 +1,5 @@
 /**
- * @file Ghost.es6
+ * @file Ghost.js
  * @author leeight
  */
 

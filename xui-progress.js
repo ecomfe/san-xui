@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 455:
+/***/ 462:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default],value=20">\n    <xui-progres
 /* eslint-enable */
 
 /**
- * @file demos/xui-progress.es6
+ * @file demos/xui-progress.js
  * @author leeight
  */
 
@@ -49,4 +49,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[455])});;
+},[462])});;

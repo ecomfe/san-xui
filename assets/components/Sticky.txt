@@ -1,5 +1,5 @@
 /**
- * @file components/Sticky.es6
+ * @file components/Sticky.js
  * @author liyuan
  */
 
@@ -8,12 +8,12 @@ import _ from 'lodash';
 
 import {getOffset} from '../esui/dom';
 import {getScrollTop, getHeight} from '../esui/page';
-import {create} from './util';
+import {create, html} from './util';
 
 const cx = create('ui-sticky');
 
 /* eslint-disable */
-const template = `<template>
+const template = html`<template>
 <div class="{{mainClass}}" style="{{mainStyle}}">
     <div class="sticky" style="{{stickElementStyle}}">
         <slot name="sticky"></slot>
@@ -28,9 +28,9 @@ export default defineComponent({
 
     initData() {
         return {
-            active: false,  // sticky元素是否stuck
-            top: 0,   // sticky的时候距离container的高度
-            container: 'body'  // 设置sticky元素的容器，默认body
+            active: false, // sticky元素是否stuck
+            top: 0, // sticky的时候距离container的高度
+            container: 'body' // 设置sticky元素的容器，默认body
         };
     },
 
@@ -74,7 +74,7 @@ export default defineComponent({
         const top = this.data.get('top');
         this.data.set('top', parseInt(top, 10));
 
-        this.scrollHandler =  _.debounce(() => this.setPosition(), 20);
+        this.scrollHandler = _.debounce(() => this.setPosition(), 20);
     },
 
     setPosition() {

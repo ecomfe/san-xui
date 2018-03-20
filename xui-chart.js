@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([7],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([5],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 432:
+/***/ 438:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25,7 +25,7 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _config = __webpack_require__(46);
+var _config = __webpack_require__(47);
 
 var _Row = __webpack_require__(4);
 
@@ -38,7 +38,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-chart\n        l
 /* eslint-enable */
 
 /**
- * @file demos/xui-chart.es6
+ * @file demos/xui-chart.js
  * @author leeight
  */
 
@@ -193,7 +193,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -203,7 +203,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
- * @file demos/config.es6
+ * @file demos/config.js
  * @author leeight
  */
 
@@ -217,6 +217,8 @@ var blocks = exports.blocks = [{
         text: 'xui-numbertextline'
     }, {
         text: 'xui-checkbox'
+    }, {
+        text: 'xui-radiobox'
     }, {
         text: 'xui-dragger'
     }, {
@@ -302,6 +304,8 @@ var blocks = exports.blocks = [{
         text: 'xui-as-form'
     }, {
         text: 'xui-register-form-item'
+    }, {
+        text: 'xui-form-dialog'
     }]
 }, {
     title: '文件上传',
@@ -948,4 +952,4 @@ var metrics = exports.metrics = [{
 
 /***/ })
 
-},[432])});;
+},[438])});;

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([19],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([18],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 472:
+/***/ 480:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="type=text">\n    <xui-textbox placehol
 /* eslint-enable */
 
 /**
- * @file demos/xui-textbox.es6
+ * @file demos/xui-textbox.js
  * @author leeight
  */
 
@@ -62,4 +62,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[472])});;
+},[480])});;

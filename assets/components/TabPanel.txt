@@ -1,5 +1,5 @@
 /**
- * @file TabPanel.es6
+ * @file TabPanel.js
  * @author leeight
  */
 

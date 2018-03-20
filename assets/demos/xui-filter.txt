@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-filter.es6
+ * @file demos/xui-filter.js
  * @author leeight
  */
 

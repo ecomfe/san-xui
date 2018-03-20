@@ -1,5 +1,5 @@
 /**
- * @file Pager.es6
+ * @file Pager.js
  * @author leeight
  */
 

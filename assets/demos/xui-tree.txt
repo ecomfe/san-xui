@@ -1,16 +1,15 @@
 /**
- * @file demos/xui-tree.es6
+ * @file demos/xui-tree.js
  * @author zhangzhe(zhangzhe@baidu.com)
  */
 
 import {defineComponent} from 'san';
-import {Tree, ToastLabel} from 'san-xui';
+import {Tree} from 'san-xui';
 
 import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
-<xui-toastlabel>Tree 暂时还不支持增删改操作</xui-toastlabel>
 <x-row label="基本功能">
     <xui-tree datasource="{{tree.datasource}}" on-expand="onExpand" on-collapse="onCollapse"/>
 </x-row>
@@ -23,6 +22,10 @@ const template = `<template>
 <x-row label="multi=true,支持多选">
     <xui-tree datasource="{{tree.datasource}}" multi="{{true}}" on-select="onSelect" on-unselect="onUnselect"/>
 </x-row>
+<x-row label="edit=true,支持编辑">
+    <xui-tree datasource="{{tree.datasource}}" expand-all="{{true}}" edit="{{true}}"
+        on-create="onCreate" on-update="onUpdate" on-delete="onDelete"/>
+</x-row>
 </template>`;
 /* eslint-enable */
 
@@ -30,8 +33,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
-        'xui-tree': Tree,
-        'xui-toastlabel': ToastLabel
+        'xui-tree': Tree
     },
     computed: {
     },
@@ -41,7 +43,7 @@ export default defineComponent({
                 datasource: {
                     value: '00000',
                     text: '根节点名称',
-                    children:[
+                    children: [
                         {
                             value: '2',
                             text: '联盟研发部',
@@ -69,7 +71,6 @@ export default defineComponent({
                     ]
                 }
             }
-            
         };
     },
     onExpand(evt) {
@@ -88,6 +89,18 @@ export default defineComponent({
     },
     onNodeClick(evt) {
         console.log('当前选中的节点是：');
+        console.log(evt.node);
+    },
+    onCreate(evt) {
+        console.log('新增节点');
+        console.log(evt.node);
+    },
+    onUpdate(evt) {
+        console.log('更新节点');
+        console.log(evt.node);
+    },
+    onDelete(evt) {
+        console.log('删除节点');
         console.log(evt.node);
     }
 });

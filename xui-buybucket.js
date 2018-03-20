@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([51],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([53],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 430:
+/***/ 436:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default],previous">\n    <xui-buybuck
 /* eslint-enable */
 
 /**
- * @file demos/xui-buybucket.es6
+ * @file demos/xui-buybucket.js
  * @author leeight
  */
 
@@ -54,4 +54,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[430])});;
+},[436])});;

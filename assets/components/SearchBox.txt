@@ -1,5 +1,5 @@
 /**
- * @file SearchBox.es6
+ * @file SearchBox.js
  * @author leeight
  */
 

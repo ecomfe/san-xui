@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([28],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([27],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 463:
+/***/ 471:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-searchbox />\n</
 /* eslint-enable */
 
 /**
- * @file demos/xui-searchbox.es6
+ * @file demos/xui-searchbox.js
  * @author leeight
  */
 
@@ -58,4 +58,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[463])});;
+},[471])});;

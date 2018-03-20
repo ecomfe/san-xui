@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([18],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([17],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 473:
+/***/ 481:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<xui-toastlabel>esui\u91CC\u9762\u7684\u5B9E\u73B0\u
 /* eslint-enable */
 
 /**
- * @file demos/xui-tip.es6
+ * @file demos/xui-tip.js
  * @author leeight
  */
 
@@ -52,4 +52,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[473])});;
+},[481])});;

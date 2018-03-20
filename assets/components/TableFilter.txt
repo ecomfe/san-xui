@@ -1,5 +1,5 @@
 /**
- * @file components/TableFilter.es6
+ * @file components/TableFilter.js
  * @author leeight
  */
 import {defineComponent} from 'san';

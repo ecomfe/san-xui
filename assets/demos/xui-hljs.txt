@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-hljs.es6
+ * @file demos/xui-hljs.js
  * @author leeight
  */
 

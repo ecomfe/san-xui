@@ -1,5 +1,5 @@
 /**
- * @file components/CKEditor.es6
+ * @file components/CKEditor.js
  * @author leeight
  */
 

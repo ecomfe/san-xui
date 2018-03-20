@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 447:
+/***/ 454:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23,7 +23,7 @@ var _sanXui = __webpack_require__(3);
 
 /* eslint-disable */
 /**
- * @file xui-infinite-scroll.es6
+ * @file xui-infinite-scroll.js
  * @author xuli07
  */
 
@@ -65,4 +65,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[447])});;
+},[454])});;

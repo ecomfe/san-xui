@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/components/Recorder.es6
+ * @file san-xui/x/components/Recorder.js
  * @author xxx
  */
 

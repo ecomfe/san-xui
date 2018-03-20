@@ -1,5 +1,5 @@
 /**
- * @file components/BoxGroup.es6
+ * @file components/BoxGroup.js
  * @author leeight
  */
 

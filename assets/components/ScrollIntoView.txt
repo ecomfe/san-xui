@@ -1,5 +1,5 @@
 /**
- * @file ScrollIntoView.es6
+ * @file ScrollIntoView.js
  * @author leeight
  */
 

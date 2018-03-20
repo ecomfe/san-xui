@@ -1,15 +1,16 @@
 /**
- * @file demos/xui-webuploader.es6
+ * @file demos/xui-webuploader.js
  * @author leeight
  */
 
 import {defineComponent} from 'san';
-import {WebUploader, Switch, Toast, Button} from 'san-xui';
+import {WebUploader, Switch, Toast, Button, ToastLabel} from 'san-xui';
 
 import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>
+<xui-toastlabel>这个 demo 无法正常的工作，因为需要有一个在线的服务接收上传的请求，但是现在没有这个服务。</xui-toastlabel>
 
 <x-row label="initialize error">
     <xui-webuploader />
@@ -58,6 +59,7 @@ export default defineComponent({
         'x-row': Row,
         'xui-button': Button,
         'xui-switch': Switch,
+        'xui-toastlabel': ToastLabel,
         'xui-webuploader': WebUploader
     },
     computed: {

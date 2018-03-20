@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-checkbox.es6
+ * @file demos/xui-checkbox.js
  * @author leeight
  */
 

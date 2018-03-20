@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([16],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([15],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 475:
+/***/ 483:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _infI18n = __webpack_require__(14);
+var _infI18n = __webpack_require__(15);
 
 var _infI18n2 = _interopRequireDefault(_infI18n);
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-toastlabel.es6
+ * @file demos/xui-toastlabel.js
  * @author leeight
  */
 
@@ -55,4 +55,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[475])});;
+},[483])});;

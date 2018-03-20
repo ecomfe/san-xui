@@ -1,5 +1,5 @@
 /**
- * @file components/ButtonMenu.es6
+ * @file components/ButtonMenu.js
  * @author leeight
  */
 

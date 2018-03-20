@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/components/InfiniteScroll.es6
+ * @file san-xui/x/components/InfiniteScroll.js
  * @author xuli07
  */
 

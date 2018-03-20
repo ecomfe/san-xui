@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([11],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([10],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 482:
+/***/ 490:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n\n<xui-toastlabel>\u57FA\u4E8E vse.baidu.com \u63D0\
 /* eslint-enable */
 
 /**
- * @file demos/xui-voice.es6
+ * @file demos/xui-voice.js
  * @author leeight
  */
 
@@ -57,4 +57,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[482])});;
+},[490])});;

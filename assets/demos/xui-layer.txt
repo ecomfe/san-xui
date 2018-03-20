@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-layer.es6
+ * @file demos/xui-layer.js
  * @author chenbo09
  */
 

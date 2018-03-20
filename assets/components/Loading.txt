@@ -1,5 +1,5 @@
 /**
- * @file Loading.es6
+ * @file Loading.js
  * @author leeight
  */
 

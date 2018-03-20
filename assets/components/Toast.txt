@@ -1,5 +1,5 @@
 /**
- * @file Toast.es6
+ * @file Toast.js
  * @author leeight
  */
 import $ from 'jquery';

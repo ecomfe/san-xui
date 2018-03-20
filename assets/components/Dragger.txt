@@ -1,5 +1,5 @@
 /**
- * @file components/Dragger.es6
+ * @file components/Dragger.js
  * @author leeight
  */
 

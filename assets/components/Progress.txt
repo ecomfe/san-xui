@@ -1,5 +1,5 @@
 /**
- * @file Progress.es6
+ * @file Progress.js
  * @author leeight
  */
 

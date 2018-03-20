@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-richtexteditor.es6
+ * @file demos/xui-richtexteditor.js
  * @author leeight
  */
 

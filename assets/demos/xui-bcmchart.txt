@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-bcmchart.es6
+ * @file demos/xui-bcmchart.js
  * @author leeight
  */
 

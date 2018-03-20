@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 445:
+/***/ 452:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="lang=javascript">\n    <xui-hljs code=
 /* eslint-enable */
 
 /**
- * @file demos/xui-hljs.es6
+ * @file demos/xui-hljs.js
  * @author leeight
  */
 
@@ -54,4 +54,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[445])});;
+},[452])});;

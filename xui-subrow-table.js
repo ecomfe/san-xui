@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([23],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([22],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 468:
+/***/ 476:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,7 +21,7 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -36,7 +36,7 @@ var _Row2 = _interopRequireDefault(_Row);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var kTableColumns = [{ name: 'name', label: '姓名', labelClassName: 'col-name' }, { name: 'age', label: '年龄', sortable: true }, { name: 'gender', label: '性别', sortable: true }]; /**
-                                                                                                                                                                                 * @file demos/xui-subrow-table.es6
+                                                                                                                                                                                 * @file demos/xui-subrow-table.js
                                                                                                                                                                                  * @author huangyunzhi(huangyunzhi@baidu.com)
                                                                                                                                                                                  */
 
@@ -113,4 +113,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[468])});;
+},[476])});;

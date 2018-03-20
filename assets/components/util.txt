@@ -1,5 +1,5 @@
 /**
- * @file util.es6
+ * @file util.js
  * @author leeight
  */
 
@@ -9,6 +9,10 @@ import {NodeType, Component} from 'san';
 
 export function hasUnit(value) {
     return /%|px|auto/.test(value);
+}
+
+export function html(strings, ...values) {
+    return values.reduce((s, v, i) => s + String(v) + strings[i + 1], strings[0]);
 }
 
 export function create(prefix) {

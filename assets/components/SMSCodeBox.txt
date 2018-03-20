@@ -1,5 +1,5 @@
 /**
- * @file SMSCodeBox.es6
+ * @file SMSCodeBox.js
  * @author leeight
  */
 

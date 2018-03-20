@@ -1,5 +1,5 @@
 /**
- * @file Icon.es6
+ * @file Icon.js
  * @author leeight
  */
 

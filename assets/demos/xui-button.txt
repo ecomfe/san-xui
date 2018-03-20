@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-button.es6
+ * @file demos/xui-button.js
  * @author leeight
  */
 

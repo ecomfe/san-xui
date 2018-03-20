@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([22],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([21],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 469:
+/***/ 477:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23,7 +23,7 @@ var _sanXui = __webpack_require__(3);
 
 /* eslint-disable */
 /**
- * @file demos/xui-switch.es6
+ * @file demos/xui-switch.js
  * @author leeight
  */
 
@@ -47,4 +47,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[469])});;
+},[477])});;

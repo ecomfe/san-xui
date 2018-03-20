@@ -1,6 +1,6 @@
 /**
  * 之前的 ActionPanel 的功能
- * @file components/ActionLoader.es6
+ * @file components/ActionLoader.js
  * @author leeight
  */
 import {Component, defineComponent} from 'san';
@@ -10,13 +10,14 @@ import MiniEvent from 'mini-event';
 import controller from 'er/controller';
 import {loadAppInBackground} from 'inf-ria/helper';
 
-import {create} from './util';
+import {create, html} from './util';
 import Loading from './Loading';
 
 const cx = create('ui-actionloader');
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}">
+const template = html`
+<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error"><pre>{{error}}</pre></div>
     <ui-loading s-if="loading" />
     <div s-ref="ghost" style="{{mainStyle}}"></div>

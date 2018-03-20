@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([12],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([11],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 481:
+/***/ 489:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-viewstep\n      
 /* eslint-enable */
 
 /**
- * @file demos/xui-viewstep.es6
+ * @file demos/xui-viewstep.js
  * @author leeight
  */
 
@@ -51,4 +51,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[481])});;
+},[489])});;

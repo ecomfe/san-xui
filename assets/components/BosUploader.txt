@@ -1,5 +1,5 @@
 /**
- * @file components/BosUploader.es6
+ * @file components/BosUploader.js
  * @author leeight
  */
 

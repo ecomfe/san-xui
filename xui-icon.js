@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 446:
+/***/ 453:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-icon.es6
+ * @file demos/xui-icon.js
  * @author leeight
  */
 
@@ -124,4 +124,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[446])});;
+},[453])});;

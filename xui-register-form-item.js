@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([30],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([29],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 459:
+/***/ 467:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34,7 +34,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Color = (0, _san.defineComponent)({
     template: '<template>\n    <div class="ui-color-picker">\n       <input type="color" value="{=value=}" />\n    </div>\n    </template>'
 }); /**
-     * @file demos/xui-register-form-item.es6
+     * @file demos/xui-register-form-item.js
      * @author leeight
      */
 
@@ -94,4 +94,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[459])});;
+},[467])});;

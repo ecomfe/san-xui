@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([55],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([57],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 426:
+/***/ 432:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25,7 +25,7 @@ var _Row = __webpack_require__(4);
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _uuid = __webpack_require__(228);
+var _uuid = __webpack_require__(231);
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-bosuploader.es6
+ * @file demos/xui-bosuploader.js
  * @author leeight
  */
 
@@ -68,4 +68,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[426])});;
+},[432])});;

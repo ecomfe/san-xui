@@ -1,5 +1,5 @@
 /**
- * @file BulkActions.es6
+ * @file BulkActions.js
  * @author leeight
  */
 

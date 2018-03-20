@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-actionloader.es6
+ * @file demos/xui-actionloader.js
  * @author leeight
  */
 

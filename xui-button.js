@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([52],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([54],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 429:
+/***/ 435:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-button class="to
 /* eslint-enable */
 
 /**
- * @file demos/xui-button.es6
+ * @file demos/xui-button.js
  * @author leeight
  */
 
@@ -53,4 +53,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[429])});;
+},[435])});;

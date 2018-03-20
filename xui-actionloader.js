@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([5],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([3],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 405:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,11 +21,11 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _ActionLoader = __webpack_require__(72);
+var _ActionLoader = __webpack_require__(215);
 
 var _ActionLoader2 = _interopRequireDefault(_ActionLoader);
 
-var _controller = __webpack_require__(245);
+var _controller = __webpack_require__(219);
 
 var _controller2 = _interopRequireDefault(_controller);
 
@@ -33,12 +33,12 @@ var _Row = __webpack_require__(4);
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _util = __webpack_require__(415);
+var _util = __webpack_require__(421);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file demos/xui-actionloader.es6
+ * @file demos/xui-actionloader.js
  * @author leeight
  */
 
@@ -76,7 +76,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 415:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87,13 +87,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @file demos/util.es6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @file demos/util.js
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @author leeight
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
 
 exports.createAction = createAction;
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -146,4 +146,4 @@ function createAction() {
 
 /***/ })
 
-},[405])});;
+},[420])});;

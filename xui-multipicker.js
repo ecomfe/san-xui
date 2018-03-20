@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 452:
+/***/ 459:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-multipicker.es6
+ * @file demos/xui-multipicker.js
  * @author leeight
  */
 
@@ -163,4 +163,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[452])});;
+},[459])});;

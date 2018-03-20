@@ -1,5 +1,5 @@
 /**
- * @file components/Chart.es6
+ * @file components/Chart.js
  * @author leeight
  */
 

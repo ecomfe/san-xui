@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/forms/buildValidator.es6
+ * @file san-xui/x/forms/buildValidator.js
  * @author leeight
  */
 
@@ -49,6 +49,20 @@ function toAsyncValidatorRule(type, param, message) {
             return {type: 'number', min: parseFloat(param, 10), message: message || `最小值${param}`};
         case 'maximum':
             return {type: 'number', max: parseFloat(param, 10), message: message || `最大值${param}`};
+        case 'decimal':
+            // 简化版decimal 认为scale需要大于0 且暂不支持负号
+            let [precision = '12', scale = '2'] = param.split(',');
+            precision = parseInt(precision, 10);
+            scale = parseInt(scale, 10);
+            if (precision && scale && precision > scale) {
+                return {
+                    type: 'string',
+                    pattern: RegExp(`^\\d{1,${precision - scale}}(\\.\\d{0,${scale}})?$`),
+                    message
+                };
+            }
+            // 不符合条件就返回浮点型
+            return {type: 'string', pattern: /^\d+?\.\d+$/, message: '请输入浮点数'};
         case 'matchRegexp':
             return {type: 'string', pattern: new RegExp(param), message};
         default:
@@ -90,7 +104,7 @@ export function buildValidator(validations, validationErrors) {
         let type = item;
         let param = null;
         let message = validationErrors[type];
-        if (/^(matchRegexp|minLength|maxLength|maximum|minimum):/.test(item)) {
+        if (/^(matchRegexp|minLength|maxLength|maximum|minimum|decimal):/.test(item)) {
             type = RegExp.$1;
             param = item.substr(type.length + 1);
             if (!param) {

@@ -1,5 +1,5 @@
 /**
- * @file ToastLabel.es6
+ * @file ToastLabel.js
  * @author leeight
  */
 

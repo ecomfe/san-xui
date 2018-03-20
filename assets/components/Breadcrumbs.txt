@@ -1,5 +1,5 @@
 /**
- * @file v3/components/Breadcrumbs.es6
+ * @file v3/components/Breadcrumbs.js
  * @author leeight
  */
 

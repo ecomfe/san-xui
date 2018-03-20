@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([27],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([26],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 464:
+/***/ 472:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28,11 +28,11 @@ var _Row2 = _interopRequireDefault(_Row);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
-var template = '<template>\n<xui-toastlabel>Layer \u6682\u65F6\u8FD8\u4E0D\u652F\u6301\u591A\u7EA7\u83DC\u5355\u7684\u60C5\u51B5\uFF0C\u4E0D\u8FC7\u63A7\u5236\u53F0\u73B0\u5728\u5B58\u5728\u8FD9\u79CD\u7528\u6CD5</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    <xui-select datasource="{{select.datasource}}"  />\n    <xui-select datasource="{{select.datasource}}" disabled />\n    <xui-button on-click="showContainer">{{container.show ? \'\u9690\u85CF\' : \'\u663E\u793A\'}} Select</xui-button>\n    <div style="{{containerStyle}}">\n        <xui-select datasource="{{select.datasource}}"  />\n    </div>\n    <strong class="large">\n        Selected value: {{select.value}}\n    </strong>\n</x-row>\n<x-row label="multi=true">\n    <xui-select\n        multi\n        value="{=select.multi.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.multi.value}}\n    </strong>\n</x-row>\n<x-row label="multi=true,filter=true,layer-width=300">\n    <xui-select\n        multi\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=select.multi.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.multi.value}}\n    </strong>\n</x-row>\n<x-row label="filter=true,layer-width=300">\n    <xui-select\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=select.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.value}}\n    </strong>\n</x-row>\n<x-row label="\u5206\u7EC4\u5C55\u793A,filter=true,layer-width=300">\n    <xui-select\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=groupSelect.value=}"\n        datasource="{{groupSelect.datasource}}" />\n    <strong class="large">\n        Selected value: {{groupSelect.value}}\n    </strong>\n</x-row>\n</template>';
+var template = '<template>\n<xui-toastlabel>Layer \u6682\u65F6\u8FD8\u4E0D\u652F\u6301\u591A\u7EA7\u83DC\u5355\u7684\u60C5\u51B5\uFF0C\u4E0D\u8FC7\u63A7\u5236\u53F0\u73B0\u5728\u5B58\u5728\u8FD9\u79CD\u7528\u6CD5</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    <xui-select datasource="{{select.datasource}}" />\n    <xui-select datasource="{{select.datasource}}" default-label="\u6CA1\u6709\u9009\u4E2D\u4EFB\u4F55\u9879\u76EE" />\n    <xui-select datasource="{{select.datasource}}" disabled />\n    <xui-button on-click="showContainer">{{container.show ? \'\u9690\u85CF\' : \'\u663E\u793A\'}} Select</xui-button>\n    <div style="{{containerStyle}}">\n        <xui-select datasource="{{select.datasource}}"  />\n    </div>\n    <strong class="large">\n        Selected value: {{select.value}}\n    </strong>\n</x-row>\n<x-row label="multi=true">\n    <xui-select\n        multi\n        value="{=select.multi.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.multi.value}}\n    </strong>\n</x-row>\n<x-row label="multi=true,filter=true,layer-width=300">\n    <xui-select\n        multi\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=select.multi.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.multi.value}}\n    </strong>\n</x-row>\n<x-row label="filter=true,layer-width=300">\n    <xui-select\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=select.value=}"\n        datasource="{{select.datasource}}" />\n    <strong class="large">\n        Selected value: {{select.value}}\n    </strong>\n</x-row>\n<x-row label="\u5206\u7EC4\u5C55\u793A,filter=true,layer-width=300">\n    <xui-select\n        filter\n        filter-placeholder="\u8F93\u5165\u57DF\u540D\u67E5\u8BE2\uFF0C\u591A\u4E2A\u641C\u7D22\u9879\u4EE5\u7A7A\u683C\u5206\u9694"\n        layer-width="300"\n        value="{=groupSelect.value=}"\n        datasource="{{groupSelect.datasource}}" />\n    <strong class="large">\n        Selected value: {{groupSelect.value}}\n    </strong>\n</x-row>\n</template>';
 /* eslint-enable */
 
 /**
- * @file demos/xui-select.es6
+ * @file demos/xui-select.js
  * @author leeight
  */
 
@@ -79,4 +79,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[464])});;
+},[472])});;

@@ -1,5 +1,5 @@
 /**
- * @file components/PlainDialog.es6
+ * @file components/PlainDialog.js
  * @author leeight
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file components/SyntaxHighlighter.es6
+ * @file components/SyntaxHighlighter.js
  * @author leeight
  */
 

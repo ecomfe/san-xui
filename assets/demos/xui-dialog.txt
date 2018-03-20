@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-dialog.es6
+ * @file demos/xui-dialog.js
  * @author leeight
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/components/Region.es6
+ * @file san-xui/x/components/Region.js
  * @author leeight
  */
 

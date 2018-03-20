@@ -1,5 +1,5 @@
 /**
- * @file components/Dialog.es6
+ * @file components/Dialog.js
  * @author leeight
  */
 import $ from 'jquery';

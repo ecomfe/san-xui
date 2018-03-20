@@ -1,5 +1,5 @@
 /**
- * @file xui-infinite-scroll.es6
+ * @file xui-infinite-scroll.js
  * @author xuli07
  */
 

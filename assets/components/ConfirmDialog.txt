@@ -1,5 +1,5 @@
 /**
- * @file components/ConfirmDialog.es6
+ * @file components/ConfirmDialog.js
  * @author leeight
  */
 

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([47],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([49],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 435:
+/***/ 441:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-clipboard text="
 /* eslint-enable */
 
 /**
- * @file demos/xui-clipboard.es6
+ * @file demos/xui-clipboard.js
  * @author leeight
  */
 
@@ -58,4 +58,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[435])});;
+},[441])});;

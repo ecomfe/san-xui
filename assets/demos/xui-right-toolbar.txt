@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-right-toolbar.es6
+ * @file demos/xui-right-toolbar.js
  * @author leeight
  */
 
@@ -15,13 +15,14 @@ const template = `<template>
 
 <x-row label="[default]">
     <div>
+    显示批量删除：<xui-switch checked="{=withBatchDelete=}" />
     显示搜索框：<xui-switch checked="{=withSearchbox=}" />
     显示自定义列：<xui-switch checked="{=withTct=}" />
     </div>
     <hr />
     <xui-right-toolbar
         loading="{{disabled}}"
-
+        with-batch-delete="{{withBatchDelete}}"
         with-searchbox="{{withSearchbox}}"
         searchbox-value="{{searchboxValue}}"
         searchbox-keyword-type="{{searchboxKeywordType}}"
@@ -35,6 +36,7 @@ const template = `<template>
         on-search="onSearch"
         on-refresh="onRefresh"
         on-table-columns-changed="onTableColumnsChanged"
+        on-batch-delete="onBatchDelete"
     />
 </x-row>
 </template>`;
@@ -50,6 +52,7 @@ export default defineComponent({
     },
     initData() {
         return {
+            withBatchDelete: true,
             withSearchbox: true,
             searchboxValue: '默认值',
             searchboxPlaceholder: 'searchboxPlaceholder',
@@ -75,5 +78,8 @@ export default defineComponent({
     },
     onTableColumnsChanged() {
         Toast.normal('onTableColumnsChanged');
+    },
+    onBatchDelete() {
+        Toast.normal('onBatchDelete');
     }
 });

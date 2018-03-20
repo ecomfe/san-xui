@@ -1,5 +1,5 @@
 /**
- * @file components/asDialog.es6
+ * @file components/asDialog.js
  * @author leeight
  */
 

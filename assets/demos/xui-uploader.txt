@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-uploader.es6
+ * @file demos/xui-uploader.js
  * @author leeight
  */
 

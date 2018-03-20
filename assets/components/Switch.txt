@@ -1,5 +1,5 @@
 /**
- * @file Switch.es6
+ * @file Switch.js
  * @author leeight
  */
 

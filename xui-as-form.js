@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([6],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([4],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 417:
+/***/ 423:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25,7 +25,7 @@ var _Row = __webpack_require__(4);
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _formSchemas = __webpack_require__(418);
+var _formSchemas = __webpack_require__(424);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-as-form.es6
+ * @file demos/xui-as-form.js
  * @author leeight
  */
 
@@ -140,7 +140,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 418:
+/***/ 424:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -150,7 +150,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
- * @file demos/examples/formSchemas.es6
+ * @file demos/examples/formSchemas.js
  * @author leeight
  */
 
@@ -297,6 +297,64 @@ var kDefaultSchema = exports.kDefaultSchema = {
         required: true,
         width: 300,
         name: 'gACE'
+    }, {
+        label: 'SubForm',
+        name: 'subform',
+        type: 'sub-form',
+        buttonLabel: '查看明细',
+        buttonWidth: 200,
+        width: 100,
+        form: {
+            title: '子表单',
+            controls: [{
+                label: '文本类型',
+                placeholder: '请输入姓名',
+                type: 'text',
+                required: true,
+                name: 'aText',
+                validations: ['minLength:10', 'maxLength:20', 'isUrl'],
+                help: '最少10个字符，最多20个字符，URL格式'
+            }, {
+                label: '文本类型',
+                placeholder: '请输入姓名',
+                type: 'text',
+                required: true,
+                name: 'bText'
+            }]
+        }
+    }, {
+        label: 'SubForm',
+        name: 'subform2',
+        type: 'sub-form',
+        buttonLabel: '子表单pick模式',
+        pickName: 'todo',
+        buttonWidth: 200,
+        width: 100,
+        form: {
+            title: '子表单pick模式',
+            controls: [{
+                label: '待办事项',
+                name: 'todo',
+                type: 'combo',
+                required: true,
+                requiredRuleType: 'array',
+                multiple: true,
+                controls: [{
+                    name: 'isDone',
+                    type: 'checkbox',
+                    title: '完成',
+                    width: 40
+                }, {
+                    name: 'description',
+                    placeholder: '事项说明',
+                    type: 'text'
+                }, {
+                    name: 'signDeadline',
+                    type: 'calendar',
+                    width: 80
+                }]
+            }]
+        }
     }]
 };
 
@@ -482,4 +540,4 @@ var kSchema$requiredOn = exports.kSchema$requiredOn = {
 
 /***/ })
 
-},[417])});;
+},[423])});;

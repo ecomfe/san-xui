@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/components/UserPicker.es6
+ * @file san-xui/x/components/UserPicker.js
  * @author leeight
  */
 
@@ -33,7 +33,15 @@ const cx = create('ui-userpicker');
 // }
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onClick">
+const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
+<div s-if="preview" class="${cx('preview')}">
+    <slot name="preview" var-users="value">
+        <div class="${cx('preview-item')}" s-for="user in users">
+            {{user.username}}
+        </div>
+    </slot>
+</div>
+<div s-else on-click="onClick">
 <div class="${cx('preview')}">
     <div class="${cx('preview-item')}" s-for="item, i in value">
         {{item.username}}<i s-if="!disabled" class="iconfont icon-close" on-click="removeItem($event, i)"></i>
@@ -42,6 +50,8 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onC
         s-if="inputVisible"
         s-ref="input"
         value="{=keyword=}"
+        placeholder="{{inputPlaceholder}}"
+        width="{{userWidth}}"
         on-input="onInput"
         on-focus="onFoucs"
         on-blur="onBlur"
@@ -65,12 +75,15 @@ const template = `<div class="{{mainClass}}" style="{{mainStyle}}" on-click="onC
         </div>
     </div>
 </ui-layer>
-</div>`;
+</div>
+</div>
+`;
+
 /* eslint-enable */
 
 function kDefaultTransformer(result) {
     return _.map(result.items, item => {
-        const accountId = item.email.replace(/@.*/, '');
+        const accountId = item.username || item.email.replace(/@.*/, '');
         const username = item.name;
         const displayName = item.displayName;
         return {
@@ -100,6 +113,10 @@ const UUAP = defineComponent({
                 klass.push(cx('active'));
                 klass.push(cx('x-active'));
             }
+            const preview = this.data.get('preview');
+            if (preview) {
+                klass.push(cx('x-preview'));
+            }
             return klass;
         },
         mainStyle() {
@@ -126,6 +143,13 @@ const UUAP = defineComponent({
                 style.width = hasUnit(realLayerWidth) ? realLayerWidth : `${realLayerWidth}px`;
             }
             return style;
+        },
+        inputPlaceholder() {
+            const size = this.data.get('value.length');
+            if (size < 1) {
+                return this.data.get('placeholder');
+            }
+            return null;
         }
     },
     initData() {
@@ -133,8 +157,10 @@ const UUAP = defineComponent({
             active: false,
             loading: false, // 是不是正在查询中
             disabled: false,
+            preview: false,
             keyword: '',
             keywordName: 'keyword',
+            placeholder: '',
             searchApi: '/api/product/center/uid/search',
             searchRequester: null,
             layerOpened: false,
@@ -153,6 +179,12 @@ const UUAP = defineComponent({
          * @default false
          */
         active: DataTypes.bool,
+
+        /**
+         * 是否是预览模式
+         * @default false
+         */
+        preview: DataTypes.bool,
 
         /**
          * 组件的禁用状态
@@ -235,7 +267,18 @@ const UUAP = defineComponent({
          * 那么可以通过设置 items-transformer 来调整数据格式
          * @default []
          */
-        items: DataTypes.array
+        items: DataTypes.array,
+
+        /**
+         * placeholder
+         * @default 请填写用户
+         */
+        placeholder: DataTypes.string,
+
+        /**
+         * 单个用户所占的宽度
+         */
+        width: DataTypes.number
     },
     inited() {
         this.searchByKeyword = _.debounce((...args) => this.doSearch(...args), 300);
@@ -262,38 +305,13 @@ const UUAP = defineComponent({
         const {searchRequester, searchApi, keywordName} = this.data.get();
         if (typeof searchRequester === 'function') {
             return searchRequester(keyword)
-                .then(items => {
-                    if (this.data.get('keyword') !== keyword) {
-                        return;
-                    }
-                    this.data.set('loading', false);
-                    this.data.set('selectedIndex', 0);
-                    this.data.set('items', items);
-                })
-                .catch(error => {
-                    if (this.data.get('keyword') !== keyword) {
-                        return;
-                    }
-                    this.data.set('loading', false);
-                    this.data.set('items', []);
-                });
-        }
-
-        const payload = {[keywordName]: keyword};
-        return $post(searchApi, payload)
-            .then(result => {
+            .then(items => {
                 if (this.data.get('keyword') !== keyword) {
                     return;
                 }
-                const itemsTransformer = this.data.get('itemsTransformer');
                 this.data.set('loading', false);
                 this.data.set('selectedIndex', 0);
-                if (typeof itemsTransformer === 'function') {
-                    this.data.set('items', itemsTransformer(result));
-                }
-                else {
-                    this.data.set('items', result.items);
-                }
+                this.data.set('items', items);
             })
             .catch(error => {
                 if (this.data.get('keyword') !== keyword) {
@@ -302,6 +320,31 @@ const UUAP = defineComponent({
                 this.data.set('loading', false);
                 this.data.set('items', []);
             });
+        }
+
+        const payload = {[keywordName]: keyword};
+        return $post(searchApi, payload)
+        .then(result => {
+            if (this.data.get('keyword') !== keyword) {
+                return;
+            }
+            const itemsTransformer = this.data.get('itemsTransformer');
+            this.data.set('loading', false);
+            this.data.set('selectedIndex', 0);
+            if (typeof itemsTransformer === 'function') {
+                this.data.set('items', itemsTransformer(result));
+            }
+            else {
+                this.data.set('items', result.items);
+            }
+        })
+        .catch(error => {
+            if (this.data.get('keyword') !== keyword) {
+                return;
+            }
+            this.data.set('loading', false);
+            this.data.set('items', []);
+        });
     },
     onInput() {
         this.nextTick(() => {

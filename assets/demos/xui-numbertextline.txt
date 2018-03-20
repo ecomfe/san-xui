@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-numbertextline.es6
+ * @file demos/xui-numbertextline.js
  * @author leeight
  */
 

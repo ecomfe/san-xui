@@ -1,5 +1,5 @@
 /**
- * @file Select.es6
+ * @file Select.js
  * @author leeight
  */
 
@@ -23,7 +23,7 @@ function defaultFilter(datasource, keyword) {
 
     const rv = [];
     u.each(datasource, item => {
-        if (item.text && item.text.indexOf(keyword) !== -1) {
+        if (item.text && item.text.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
             rv.push(item);
         }
     });
@@ -60,7 +60,7 @@ const template = `<div on-click="toggleLayer($event)" class="{{mainClass}}" styl
                                 value="{{item.value}}"
                                 class="${cx('selected-box')}"
                                 disabled="{{item.disabled}}"
-                                checked="{=value=}" /><span>{{item.text}}</span>
+                                checked="{=value=}" /><span style="{{textStyle}}">{{item.text}}</span>
                         </label>
                     </li>
                 </ul>
@@ -114,6 +114,7 @@ const Select = defineComponent({    // eslint-disable-line
             filterCallback: defaultFilter,
             keyword: '', // 过滤的关键词
 
+            defaultLabel: kDefaultLabel,
             value: '', // any | any[]
             checkedAll: false
         };
@@ -144,6 +145,13 @@ const Select = defineComponent({    // eslint-disable-line
          * }</code></pre>
          */
         datasource: DataTypes.array,
+
+        /**
+         * 未选中任何项时的文字
+         *
+         * @default '请选择'
+         */
+        defaultLabel: DataTypes.string,
 
         /**
          * 是否支持选择多项，如果设置为 true，那么 value 的类型是 any[]
@@ -191,21 +199,21 @@ const Select = defineComponent({    // eslint-disable-line
         multiLabel() {
             // const datasource = this.data.get('datasource');
             const values = this.data.get('value');
-            return values && values.length > 0 ? `您已经选择了${values.length}项` : kDefaultLabel;
+            return values && values.length > 0 ? `您已经选择了${values.length}项` : this.data.get('defaultLabel');
             /**
-            const labels = [];
-            u.each(datasource, item => {
+             const labels = [];
+             u.each(datasource, item => {
                 if (u.indexOf(values, item.value) !== -1) {
                     labels.push(item.text);
                 }
             });
 
-            return labels.length > 0 ? labels.join(',') : kDefaultLabel;
+            return labels.length > 0 ? labels.join(',') : this.data.get('defaultLabel');
             */
         },
         label() {
             const selectedItem = this.data.get('selectedItem');
-            return selectedItem ? selectedItem.text : kDefaultLabel;
+            return selectedItem ? selectedItem.text : this.data.get('defaultLabel');
         },
         filteredDatasource() {
             // XXX(leeight) https://github.com/ecomfe/san/issues/97
@@ -259,6 +267,14 @@ const Select = defineComponent({    // eslint-disable-line
             const realLayerWidth = this.data.get('realLayerWidth');
             if (realLayerWidth != null) {
                 style.width = hasUnit(realLayerWidth) ? realLayerWidth : `${realLayerWidth}px`;
+            }
+            return style;
+        },
+        textStyle() {
+            const style = {};
+            const realLayerWidth = this.data.get('realLayerWidth');
+            if (realLayerWidth != null) {
+                style.width = `${realLayerWidth - 60}px`;
             }
             return style;
         },

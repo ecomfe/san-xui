@@ -1,5 +1,5 @@
 /**
- * @file components/Go.es6
+ * @file components/Go.js
  * @author leeight
  */
 import $ from 'jquery';

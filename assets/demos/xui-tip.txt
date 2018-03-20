@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-tip.es6
+ * @file demos/xui-tip.js
  * @author leeight
  */
 

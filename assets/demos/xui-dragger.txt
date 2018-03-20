@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-dragger.es6
+ * @file demos/xui-dragger.js
  * @author leeight
  */
 

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([49],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([51],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 433:
+/***/ 439:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="checked=true">\n    <xui-checkbox chec
 /* eslint-enable */
 
 /**
- * @file demos/xui-checkbox.es6
+ * @file demos/xui-checkbox.js
  * @author leeight
  */
 
@@ -55,4 +55,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[433])});;
+},[439])});;

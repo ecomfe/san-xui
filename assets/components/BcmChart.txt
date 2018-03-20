@@ -1,5 +1,5 @@
 /**
- * @file components/BcmChart.es6
+ * @file components/BcmChart.js
  * @author leeight
  */
 
@@ -7,7 +7,7 @@ import _ from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 import mtools from 'inf-ria/utils/mtools';
 
-import {create} from './util';
+import {create, html} from './util';
 import Chart from './Chart';
 import Select from './Select';
 import Tip from './Tip';
@@ -20,7 +20,8 @@ const cx = create('ui-bcmchart');
 const kMetricName = 'metricName';
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}" style="{{mainStyle}}">
+const template = html`
+<div class="{{mainClass}}" style="{{mainStyle}}">
 <div class="${cx('box')}">
     <h1 s-if="title && !withFilter">
         {{title}}

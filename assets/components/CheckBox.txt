@@ -1,5 +1,5 @@
 /**
- * @file components/CheckBox.es6
+ * @file components/CheckBox.js
  * @author leeight
  */
 

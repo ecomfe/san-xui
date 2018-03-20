@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 444:
+/***/ 451:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -36,7 +36,7 @@ _sanXui.Go.setSwitchHandler(function (event, comp) {
 
 /* eslint-disable */
 /**
- * @file demos/xui-go.es6
+ * @file demos/xui-go.js
  * @author leeight
  */
 
@@ -56,4 +56,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[444])});;
+},[451])});;

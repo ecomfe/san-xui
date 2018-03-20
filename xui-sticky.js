@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([24],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([23],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 467:
+/***/ 475:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="sticky\u5728\u67D0\u4E2A\u5BB9\u5668\u
 /* eslint-enable */
 
 /**
- * @file demos/xui-sticky.es6
+ * @file demos/xui-sticky.js
  * @author liyuan
  */
 
@@ -61,4 +61,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[467])});;
+},[475])});;

@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-toast.es6
+ * @file demos/xui-toast.js
  * @author leeight
  */
 

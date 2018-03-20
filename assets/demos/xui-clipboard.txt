@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-clipboard.es6
+ * @file demos/xui-clipboard.js
  * @author leeight
  */
 

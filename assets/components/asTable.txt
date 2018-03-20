@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/components/asTable.es6
+ * @file san-xui/x/components/asTable.js
  * @author leeight
  */
 
@@ -145,7 +145,7 @@ export function asTable(columns) {
             <tbody class="${cx('body')}">
                 <tr s-if="error">
                     <td colSpan="{{columnCount}}" class="${cx('error')}">
-                        <slot name="error">{{error}}</slot>
+                        <slot name="error">{{error | raw}}</slot>
                     </td>
                 </tr>
                 <tr s-elif="!loading && !datasource.length">
@@ -156,7 +156,8 @@ export function asTable(columns) {
                 <template s-else s-for="item, rowIndex in datasource">
                 <tr class="{{item | rowClass(rowIndex)}}"
                     on-mouseenter="onEnterRow(item, rowIndex)"
-                    on-mouseleave="onLeaveRow(item, rowIndex)">
+                    on-mouseleave="onLeaveRow(item, rowIndex)"
+                    data-row-index="{{rowIndex}}">
                     <td class="${cx('cell', 'cell-sel')}" s-if="select === 'multi'">
                         <div class="${cx('cell-text', 'cell-sel')}">
                             <input disabled="{=item.xui__disabled=}"
@@ -243,7 +244,7 @@ export function asTable(columns) {
                 }
                 const selectedIndex = this.data.get('selectedIndex');
                 const datasource = this.data.get('datasource');
-                return selectedIndex && selectedIndex.length === datasource.length ? ['all'] : [];
+                return selectedIndex && selectedIndex.length > 0 && selectedIndex.length === datasource.length ? ['all'] : [];
             },
             selectedItems() {
                 const datasource = this.data.get('datasource');
@@ -411,14 +412,15 @@ export function asTable(columns) {
                 _.forEach(expandedIndex, item => this.data.set(`datasource[${item}].xui__expanded`, true));
             }
             $(this.el).on('click', 'a[data-command]', e => {
-                // 因为有 head 的存在，rowIndex 是从 1开始的
                 const type = $(e.currentTarget).data('command');
                 if (!type) {
                     return;
                 }
-
-                const rowIndex = $(e.target).parents('tr').prop('rowIndex');
-                const payload = this.data.get(`datasource[${rowIndex - 1}]`);
+                // 这个rowIndex从0开始
+                let rowIndex = $(e.target).parents('tr').data('rowIndex');
+                const payload = this.data.get(`datasource[${rowIndex}]`);
+                // zhangzhe 2018-03-14 为了兼容之前这里的rowIndex从1开始，所以依旧加了1
+                rowIndex++;
                 if (payload) {
                     this.fire('command', {type, payload, rowIndex, domEvent: e});
                 }

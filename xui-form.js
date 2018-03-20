@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([4],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([2],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 440:
+/***/ 447:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,15 +19,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _asyncValidator = __webpack_require__(229);
+var _asyncValidator = __webpack_require__(232);
 
 var AsyncValidator = _interopRequireWildcard(_asyncValidator);
 
-var _Form = __webpack_require__(441);
+var _Form = __webpack_require__(448);
 
 var _Form2 = _interopRequireDefault(_Form);
 
-var _FormItem = __webpack_require__(442);
+var _FormItem = __webpack_require__(449);
 
 var _FormItem2 = _interopRequireDefault(_FormItem);
 
@@ -37,7 +37,7 @@ var _Row = __webpack_require__(4);
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _rules = __webpack_require__(443);
+var _rules = __webpack_require__(450);
 
 var rules = _interopRequireWildcard(_rules);
 
@@ -46,7 +46,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var Schema = AsyncValidator.default; /**
-                                      * @file demos/xui-form.es6
+                                      * @file demos/xui-form.js
                                       * @author leeight
                                       */
 
@@ -112,7 +112,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 441:
+/***/ 448:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -124,7 +124,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -133,13 +133,30 @@ var _util = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cx = (0, _util.create)('ui-form'); /**
-                                        * @file forms/Form.es6
+                                        * @file forms/Form.js
                                         * @author leeight
                                         */
 
 exports.default = (0, _san.defineComponent)({
     roleType: 'Form',
     template: '<form class="{{mainClass}}"><slot/></form>',
+    dataTypes: {
+        /**
+         * 校验规则
+         */
+        rules: _san.DataTypes.objectOf(_san.DataTypes.function),
+
+        /**
+         * 表单错误
+         */
+        errors: _san.DataTypes.object,
+
+        /**
+         * 表单数据
+         * @default false
+         */
+        formData: _san.DataTypes.object
+    },
     computed: {
         mainClass: function mainClass() {
             return cx.mainClass(this);
@@ -267,7 +284,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 442:
+/***/ 449:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -282,7 +299,7 @@ var _san = __webpack_require__(0);
 var _util = __webpack_require__(2);
 
 /**
- * @file forms/FormItem.es6
+ * @file forms/FormItem.js
  * @author leeight
  */
 
@@ -403,7 +420,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 443:
+/***/ 450:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,7 +433,7 @@ exports.noInvalidChar = noInvalidChar;
 exports.password = password;
 exports.equals = equals;
 /**
- * @file demos/rules.es6
+ * @file demos/rules.js
  * @author leeight
  */
 
@@ -461,4 +478,4 @@ function equals(key) {
 
 /***/ })
 
-},[440])});;
+},[447])});;

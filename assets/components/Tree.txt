@@ -1,8 +1,9 @@
 /**
- * @file Tree.es6
+ * @file Tree.js
  * @author zhangzhe(zhangzhe@baidu.com)
  */
 import {DataTypes, defineComponent} from 'san';
+import _ from 'lodash';
 
 import TreeNode from './TreeNode';
 import {create} from './util';
@@ -18,10 +19,22 @@ const template = `<div class="{{mainClass}}">
         children="{{datasource.children}}"
         expand-all="{{expandAll}}"
         multi="{{multi}}"
+        edit="{=edit=}"
         tree-value="{{value}}"
         active-value="{{activeValue}}" />
 </div>`;
 /* eslint-enable */
+
+function getParentKeyByNode(datasource, node) {
+    let parentNodeKey = 'datasource';
+    let tempNode = datasource;
+    for (let i = 1; i < node.parents.length; i++) {
+        const index =  _.findIndex(tempNode.children, n => n.value === node.parents[i]);
+        tempNode = tempNode.children[index];
+        parentNodeKey += `.children[${index}]`;
+    }
+    return parentNodeKey;
+}
 
 export default defineComponent({
     template,
@@ -41,7 +54,8 @@ export default defineComponent({
             expandAll: false, // 完全展开所有节点，默认只展开根节点
             multi: false, // 是否支持多选
             value: [], // 如果multi等于true，表示选中的节点集合，否则表示最新点击的叶子节点
-            activeValue: '' // 最新被点击的叶子节点value
+            activeValue: '', // 最新被点击的叶子节点value
+            edit: false // 是否可以编辑
         };
     },
     messages: {
@@ -77,6 +91,31 @@ export default defineComponent({
             }
             this.data.set('activeValue', node.value);
             this.fire('click', {node});
+        },
+        creating(evt) {
+            const parentNode = evt.value;
+            this.createNode(parentNode);
+        },
+        delete(evt) {
+            const node = evt.value;
+            this.deleteNode(node);
+            this.fire('delete', {node});
+        },
+        confirm(evt) {
+            const node = evt.value;
+            // 更新状态
+            this.resetNode(node);
+            const eventName = !node.value ? 'create' : 'update';
+            // 注意：如果是新添加的节点，为避免一些未知错误，在后端实际创建好之后，需要再把实际的value赋到这个节点的value上
+            this.fire(eventName, {node});
+        },
+        cancelEdit(evt) {
+            // 取消创建或编辑
+            const node = evt.value;
+            // 如果是添加的取消，则还需要把这个节点删除
+            if (!node.value) {
+                this.deleteNode(node);
+            }
         }
     },
     dataTypes: {
@@ -111,6 +150,58 @@ export default defineComponent({
          * 如果multi等于true，表示选中的节点集合
          * 如果multi等于false，则表示最近点击的叶子节点
          */
-        value: DataTypes.any
+        value: DataTypes.any,
+        /**
+         * 是否支持编辑（增删改）
+         *
+         * @default false
+         */
+        edit: DataTypes.bool
+    },
+    deleteNode(node) {
+        const datasource = this.data.get('datasource');
+        if (node.level === 0) {
+            // 整个树都删掉
+            this.data.set('datasource', {});
+        }
+        else {
+            let parentNodeKey = getParentKeyByNode(datasource, node);
+            const tempNode = this.data.get(`${parentNodeKey}`);
+            // 获取要删除的节点index
+            const lastIndex = _.findIndex(tempNode.children, n => n.value === node.value);
+            this.data.removeAt(`${parentNodeKey}.children`, lastIndex);
+        }
+    },
+    createNode(parentNode) {
+        const datasource = this.data.get('datasource');
+        let parentNodeKey = getParentKeyByNode(datasource, parentNode);
+        const tempNode = this.data.get(`${parentNodeKey}`);
+        if (parentNode.level !== 0) {
+            const lastIndex = _.findIndex(tempNode.children, n => n.value === parentNode.value);
+            parentNodeKey += `.children[${lastIndex}]`;
+        }
+        // 添加新的子节点
+        if (!this.data.get(`${parentNodeKey}.children`)) {
+            this.data.set(`${parentNodeKey}.children`, []);
+        }
+        this.data.push(`${parentNodeKey}.children`, {value: '', text: '', isUpdating: true});
+    },
+    resetNode(node) {
+        const datasource = this.data.get('datasource');
+        let parentNodeKey = getParentKeyByNode(datasource, node);
+        const tempNode = this.data.get(`${parentNodeKey}`);
+        if (node.level !== 0) {
+            const lastIndex = _.findIndex(tempNode.children, n => n.value === node.value);
+            parentNodeKey += `.children[${lastIndex}]`;
+        }
+        if (this.data.get(`${parentNodeKey}`)) {
+            this.data.set(`${parentNodeKey}.isUpdating`, false);
+            this.data.set(`${parentNodeKey}.text`, node.text);
+            if (!this.data.get(`${parentNodeKey}.value`)) {
+                // 做个假的“value“
+                const mockValue = node.parents[node.parents.length - 1] + '_child-' + tempNode.children.length;
+                this.data.set(`${parentNodeKey}.value`, mockValue);
+            }
+        }
     }
 });

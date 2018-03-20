@@ -1,5 +1,5 @@
 /**
- * @file components/ACEEditor.es6
+ * @file components/ACEEditor.js
  * @author leeight
  */
 
@@ -7,7 +7,7 @@
 
 import {DataTypes, defineComponent} from 'san';
 
-import {create} from './util';
+import {create, html} from './util';
 import Loading from './Loading';
 import {asInput} from './asInput';
 
@@ -17,7 +17,8 @@ const kUrl = typeof window.require === 'function'
     : 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
 
 /* eslint-disable */
-const template = `<div class="{{mainClass}}">
+const template = html`
+<div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error">{{error}}</div>
     <ui-loading s-if="loading" />
     <div s-else s-ref="ghost" style="{{mainStyle}}"></div>

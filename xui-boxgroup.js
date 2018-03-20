@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([54],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([56],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 427:
+/***/ 433:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="radio">\n    <xui-boxgroup\n        bo
 /* eslint-enable */
 
 /**
- * @file demos/xui-boxgroup.es6
+ * @file demos/xui-boxgroup.js
  * @author leeight
  */
 
@@ -58,4 +58,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[427])});;
+},[433])});;

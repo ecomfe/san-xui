@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([8],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([7],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 461:
+/***/ 469:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,7 +19,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _RightToolbar = __webpack_require__(462);
+var _RightToolbar = __webpack_require__(470);
 
 var _RightToolbar2 = _interopRequireDefault(_RightToolbar);
 
@@ -33,11 +33,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-right-toolbar.es6
+ * @file demos/xui-right-toolbar.js
  * @author leeight
  */
 
-var template = '<template>\n<xui-toastlabel>\u901A\u8FC7JSON\u914D\u7F6E\uFF0C\u6765\u751F\u6210\u5DE5\u5177\u680F(Toolbar)\u533A\u57DF\u7684\u7EC4\u4EF6\u3002\u5F53\u524D\u652F\u6301\u7684\u7C7B\u578B\uFF1Abutton, button-group, link, divider</xui-toastlabel>\n\n<x-row label="[default]">\n    <div>\n    \u663E\u793A\u641C\u7D22\u6846\uFF1A<xui-switch checked="{=withSearchbox=}" />\n    \u663E\u793A\u81EA\u5B9A\u4E49\u5217\uFF1A<xui-switch checked="{=withTct=}" />\n    </div>\n    <hr />\n    <xui-right-toolbar\n        loading="{{disabled}}"\n\n        with-searchbox="{{withSearchbox}}"\n        searchbox-value="{{searchboxValue}}"\n        searchbox-keyword-type="{{searchboxKeywordType}}"\n        searchbox-placeholder="{{searchboxPlaceholder}}"\n        searchbox-keyword-types="{{searchboxKeywordTypes}}"\n\n        with-tct="{{withTct}}"\n        tct-value="{{tctValue}}"\n        tct-datasource="{{tctDatasource}}"\n\n        on-search="onSearch"\n        on-refresh="onRefresh"\n        on-table-columns-changed="onTableColumnsChanged"\n    />\n</x-row>\n</template>';
+var template = '<template>\n<xui-toastlabel>\u901A\u8FC7JSON\u914D\u7F6E\uFF0C\u6765\u751F\u6210\u5DE5\u5177\u680F(Toolbar)\u533A\u57DF\u7684\u7EC4\u4EF6\u3002\u5F53\u524D\u652F\u6301\u7684\u7C7B\u578B\uFF1Abutton, button-group, link, divider</xui-toastlabel>\n\n<x-row label="[default]">\n    <div>\n    \u663E\u793A\u6279\u91CF\u5220\u9664\uFF1A<xui-switch checked="{=withBatchDelete=}" />\n    \u663E\u793A\u641C\u7D22\u6846\uFF1A<xui-switch checked="{=withSearchbox=}" />\n    \u663E\u793A\u81EA\u5B9A\u4E49\u5217\uFF1A<xui-switch checked="{=withTct=}" />\n    </div>\n    <hr />\n    <xui-right-toolbar\n        loading="{{disabled}}"\n        with-batch-delete="{{withBatchDelete}}"\n        with-searchbox="{{withSearchbox}}"\n        searchbox-value="{{searchboxValue}}"\n        searchbox-keyword-type="{{searchboxKeywordType}}"\n        searchbox-placeholder="{{searchboxPlaceholder}}"\n        searchbox-keyword-types="{{searchboxKeywordTypes}}"\n\n        with-tct="{{withTct}}"\n        tct-value="{{tctValue}}"\n        tct-datasource="{{tctDatasource}}"\n\n        on-search="onSearch"\n        on-refresh="onRefresh"\n        on-table-columns-changed="onTableColumnsChanged"\n        on-batch-delete="onBatchDelete"\n    />\n</x-row>\n</template>';
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -50,6 +50,7 @@ exports.default = (0, _san.defineComponent)({
     },
     initData: function initData() {
         return {
+            withBatchDelete: true,
             withSearchbox: true,
             searchboxValue: '默认值',
             searchboxPlaceholder: 'searchboxPlaceholder',
@@ -68,12 +69,15 @@ exports.default = (0, _san.defineComponent)({
     },
     onTableColumnsChanged: function onTableColumnsChanged() {
         _sanXui.Toast.normal('onTableColumnsChanged');
+    },
+    onBatchDelete: function onBatchDelete() {
+        _sanXui.Toast.normal('onBatchDelete');
     }
 });
 
 /***/ }),
 
-/***/ 462:
+/***/ 470:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85,11 +89,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _TableColumnToggle = __webpack_require__(219);
+var _TableColumnToggle = __webpack_require__(212);
 
 var _TableColumnToggle2 = _interopRequireDefault(_TableColumnToggle);
 
-var _SearchBox = __webpack_require__(42);
+var _SearchBox = __webpack_require__(44);
 
 var _SearchBox2 = _interopRequireDefault(_SearchBox);
 
@@ -103,11 +107,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * 右侧工具条的区域，包括 SearchBox, RefreshButton, 自定义表格列的按钮
  *
- * @file san-xui/x/biz/RightToolbar.es6
+ * @file san-xui/x/biz/RightToolbar.js
  * @author leeight
  */
 
-var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="{=searchboxValue=}"\n    keyword-type="{=searchboxKeywordType=}"\n    placeholder="{{searchboxPlaceholder}}"\n    datasource="{{searchboxKeywordTypes}}"\n    on-search="onSearch"\n/>\n\n<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />\n\n<ui-table-column-toggle\n    s-if="withTct"\n    on-change="onTableColumnsChanged"\n    layer-align="right"\n    layer-offset-left="{{0}}"\n    value="{=tctValue=}"\n    datasource="{{tctDatasource}}"\n    />\n</template>';
+var template = '<template>\n<ui-searchbox\n    s-if="withSearchbox"\n    value="{=searchboxValue=}"\n    keyword-type="{=searchboxKeywordType=}"\n    placeholder="{{searchboxPlaceholder}}"\n    datasource="{{searchboxKeywordTypes}}"\n    on-search="onSearch"\n/>\n<ui-button s-if="withBatchDelete" on-click="onBatchDelete">\u6279\u91CF\u5220\u9664</ui-button>\n<ui-button disabled="{{loading}}" on-click="onRefresh" icon="refresh" />\n\n<ui-table-column-toggle\n    s-if="withTct"\n    on-change="onTableColumnsChanged"\n    layer-align="right"\n    layer-offset-left="{{0}}"\n    value="{=tctValue=}"\n    datasource="{{tctDatasource}}"\n    />\n</template>';
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -121,6 +125,7 @@ exports.default = (0, _san.defineComponent)({
         loading: _san.DataTypes.bool,
 
         withSearchbox: _san.DataTypes.bool,
+        withBatchDelete: _san.DataTypes.bool,
         searchboxValue: _san.DataTypes.any,
         searchboxKeywordType: _san.DataTypes.string,
         searchboxPlaceholder: _san.DataTypes.string,
@@ -138,9 +143,12 @@ exports.default = (0, _san.defineComponent)({
     },
     onTableColumnsChanged: function onTableColumnsChanged() {
         this.fire('table-columns-changed');
+    },
+    onBatchDelete: function onBatchDelete() {
+        this.fire('batch-delete');
     }
 });
 
 /***/ })
 
-},[461])});;
+},[469])});;

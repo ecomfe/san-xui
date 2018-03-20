@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 453:
+/***/ 460:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n\n<x-row label="[default]">\n    <xui-numbertextline
 /* eslint-enable */
 
 /**
- * @file demos/xui-numbertextline.es6
+ * @file demos/xui-numbertextline.js
  * @author leeight
  */
 
@@ -52,4 +52,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[453])});;
+},[460])});;

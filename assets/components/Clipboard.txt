@@ -1,5 +1,5 @@
 /**
- * @file Clipboard.es6
+ * @file Clipboard.js
  * @author leeight
  */
 

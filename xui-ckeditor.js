@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([48],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([50],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 434:
+/***/ 440:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-ckeditor value="
 /* eslint-enable */
 
 /**
- * @file demos/xui-ckeditor.es6
+ * @file demos/xui-ckeditor.js
  * @author leeight
  */
 
@@ -54,4 +54,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[434])});;
+},[440])});;

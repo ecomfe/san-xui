@@ -1,5 +1,5 @@
 /**
- * @file Filter.es6
+ * @file Filter.js
  * @author leeight
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-voice.es6
+ * @file demos/xui-voice.js
  * @author leeight
  */
 

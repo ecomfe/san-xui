@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-userpicker.es6
+ * @file demos/xui-userpicker.js
  * @author leeight
  */
 
@@ -46,6 +46,9 @@ const template = `<template>
         </div>
     </xui-userpicker>
     <pre><code>{{value | stringify}}</code></pre>
+</x-row>
+<x-row label="preview">
+    <xui-userpicker preview value="{=value=}" />
 </x-row>
 </template>`;
 /* eslint-enable */

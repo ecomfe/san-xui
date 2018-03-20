@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([53],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([55],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 428:
+/***/ 434:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<xui-toastlabel>\u597D\u50CF\u8DDF xui-select \u633A
 /* eslint-enable */
 
 /**
- * @file demos/xui-button-menu.es6
+ * @file demos/xui-button-menu.js
  * @author leeight
  */
 
@@ -52,4 +52,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[428])});;
+},[434])});;

@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([9],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([8],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 438:
+/***/ 444:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,7 +19,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _Filter = __webpack_require__(439);
+var _Filter = __webpack_require__(445);
 
 var _Filter2 = _interopRequireDefault(_Filter);
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable */
 /**
- * @file demos/xui-filter.es6
+ * @file demos/xui-filter.js
  * @author leeight
  */
 
@@ -101,7 +101,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 439:
+/***/ 445:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -127,11 +127,11 @@ var _Select = __webpack_require__(22);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _RangeCalendar = __webpack_require__(54);
+var _RangeCalendar = __webpack_require__(53);
 
 var _RangeCalendar2 = _interopRequireDefault(_RangeCalendar);
 
-var _TextBox = __webpack_require__(15);
+var _TextBox = __webpack_require__(13);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -150,7 +150,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *   ui-calendar
  *   plain-text
  *
- * @file san-xui/x/biz/Filter.es6
+ * @file san-xui/x/biz/Filter.js
  * @author leeight
  */
 
@@ -255,4 +255,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[438])});;
+},[444])});;

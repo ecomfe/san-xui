@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-chart.es6
+ * @file demos/xui-chart.js
  * @author leeight
  */
 

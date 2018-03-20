@@ -1,6 +1,6 @@
 /**
  * 实现方案是两个 Table 重叠起来
- * @file components/FrozenColumnTable.es6
+ * @file components/FrozenColumnTable.js
  * @author leeight
  */
 import _ from 'lodash';

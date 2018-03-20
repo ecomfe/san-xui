@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-pager.es6
+ * @file demos/xui-pager.js
  * @author leeight
  */
 

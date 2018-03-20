@@ -1,5 +1,5 @@
 /**
- * @file san-xui/x/forms/Uploader.es6
+ * @file san-xui/x/forms/Uploader.js
  * @author leeight
  */
 

@@ -1,5 +1,5 @@
 /**
- * @file BuyBucket.es6
+ * @file BuyBucket.js
  * @author leeight
  */
 

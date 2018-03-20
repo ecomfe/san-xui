@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([46],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([47],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 437:
+/***/ 443:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-dragger max="{{2
 /* eslint-enable */
 
 /**
- * @file demos/xui-dragger.es6
+ * @file demos/xui-dragger.js
  * @author leeight
  */
 
@@ -49,4 +49,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[437])});;
+},[443])});;

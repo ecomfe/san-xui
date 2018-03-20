@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-select.es6
+ * @file demos/xui-select.js
  * @author leeight
  */
 
@@ -14,7 +14,8 @@ const template = `<template>
 
 <x-row label="[default]">
     <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />
-    <xui-select datasource="{{select.datasource}}"  />
+    <xui-select datasource="{{select.datasource}}" />
+    <xui-select datasource="{{select.datasource}}" default-label="没有选中任何项目" />
     <xui-select datasource="{{select.datasource}}" disabled />
     <xui-button on-click="showContainer">{{container.show ? '隐藏' : '显示'}} Select</xui-button>
     <div style="{{containerStyle}}">

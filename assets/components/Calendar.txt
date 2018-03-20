@@ -1,5 +1,5 @@
 /**
- * @file Calendar.es6
+ * @file Calendar.js
  * @author leeight
  */
 import moment from 'moment';

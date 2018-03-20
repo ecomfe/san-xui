@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([21],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([20],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 470:
+/***/ 478:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n<xui-tab>\n    <xui-tab-p
 /* eslint-enable */
 
 /**
- * @file demos/xui-tab.es6
+ * @file demos/xui-tab.js
  * @author leeight
  */
 
@@ -67,4 +67,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[470])});;
+},[478])});;

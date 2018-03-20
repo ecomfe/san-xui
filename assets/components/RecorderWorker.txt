@@ -1,5 +1,5 @@
 /**
- * @file components/RecorderWorker.es6
+ * @file components/RecorderWorker.js
  * @author leeight
  */
 export default `

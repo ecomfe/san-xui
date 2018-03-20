@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-searchbox.es6
+ * @file demos/xui-searchbox.js
  * @author leeight
  */
 

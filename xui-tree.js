@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([15],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([14],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 478:
+/***/ 486:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28,11 +28,11 @@ var _Row2 = _interopRequireDefault(_Row);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
-var template = '<template>\n<xui-toastlabel>Tree \u6682\u65F6\u8FD8\u4E0D\u652F\u6301\u589E\u5220\u6539\u64CD\u4F5C</xui-toastlabel>\n<x-row label="\u57FA\u672C\u529F\u80FD">\n    <xui-tree datasource="{{tree.datasource}}" on-expand="onExpand" on-collapse="onCollapse"/>\n</x-row>\n<x-row label="skin=block, expand-all=true \u8282\u70B9\u5168\u90E8\u5C55\u5F00">\n    <xui-tree datasource="{{tree.datasource}}" expand-all="{{true}}" skin="block"/>\n</x-row>\n<x-row label="skin=folder, expand-all=false">\n    <xui-tree datasource="{{tree.datasource}}" expand-all="{{false}}" skin="folder" on-click="onNodeClick"/>\n</x-row>\n<x-row label="multi=true,\u652F\u6301\u591A\u9009">\n    <xui-tree datasource="{{tree.datasource}}" multi="{{true}}" on-select="onSelect" on-unselect="onUnselect"/>\n</x-row>\n</template>';
+var template = '<template>\n<x-row label="\u57FA\u672C\u529F\u80FD">\n    <xui-tree datasource="{{tree.datasource}}" on-expand="onExpand" on-collapse="onCollapse"/>\n</x-row>\n<x-row label="skin=block, expand-all=true \u8282\u70B9\u5168\u90E8\u5C55\u5F00">\n    <xui-tree datasource="{{tree.datasource}}" expand-all="{{true}}" skin="block"/>\n</x-row>\n<x-row label="skin=folder, expand-all=false">\n    <xui-tree datasource="{{tree.datasource}}" expand-all="{{false}}" skin="folder" on-click="onNodeClick"/>\n</x-row>\n<x-row label="multi=true,\u652F\u6301\u591A\u9009">\n    <xui-tree datasource="{{tree.datasource}}" multi="{{true}}" on-select="onSelect" on-unselect="onUnselect"/>\n</x-row>\n<x-row label="edit=true,\u652F\u6301\u7F16\u8F91">\n    <xui-tree datasource="{{tree.datasource}}" expand-all="{{true}}" edit="{{true}}"\n        on-create="onCreate" on-update="onUpdate" on-delete="onDelete"/>\n</x-row>\n</template>';
 /* eslint-enable */
 
 /**
- * @file demos/xui-tree.es6
+ * @file demos/xui-tree.js
  * @author zhangzhe(zhangzhe@baidu.com)
  */
 
@@ -40,8 +40,7 @@ exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
         'x-row': _Row2.default,
-        'xui-tree': _sanXui.Tree,
-        'xui-toastlabel': _sanXui.ToastLabel
+        'xui-tree': _sanXui.Tree
     },
     computed: {},
     initData: function initData() {
@@ -64,7 +63,6 @@ exports.default = (0, _san.defineComponent)({
                     }]
                 }
             }
-
         };
     },
     onExpand: function onExpand(evt) {
@@ -84,9 +82,21 @@ exports.default = (0, _san.defineComponent)({
     onNodeClick: function onNodeClick(evt) {
         console.log('当前选中的节点是：');
         console.log(evt.node);
+    },
+    onCreate: function onCreate(evt) {
+        console.log('新增节点');
+        console.log(evt.node);
+    },
+    onUpdate: function onUpdate(evt) {
+        console.log('更新节点');
+        console.log(evt.node);
+    },
+    onDelete: function onDelete(evt) {
+        console.log('删除节点');
+        console.log(evt.node);
     }
 });
 
 /***/ })
 
-},[478])});;
+},[486])});;

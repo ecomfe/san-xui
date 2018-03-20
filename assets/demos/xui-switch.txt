@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-switch.es6
+ * @file demos/xui-switch.js
  * @author leeight
  */
 

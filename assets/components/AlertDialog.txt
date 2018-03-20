@@ -1,5 +1,5 @@
 /**
- * @file components/AlertDialog.es6
+ * @file components/AlertDialog.js
  * @author leeight
  */
 
@@ -9,9 +9,10 @@ import {defineComponent} from 'san';
 import Dialog from './Dialog';
 import Button from './Button';
 import {i18n} from '../../mixins/filters';
+import {html} from './util';
 
 export default defineComponent({
-    template: `<template>
+    template: html`<template>
     <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">
         <span slot="head">{{title}}</span>
         <div class="ui-dialog-icon ui-dialog-icon-warning"></div>

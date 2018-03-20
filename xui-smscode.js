@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([26],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([25],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 465:
+/***/ 473:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23,7 +23,7 @@ var _sanXui = __webpack_require__(3);
 
 /* eslint-disable */
 /**
- * @file demos/xui-smscode.es6
+ * @file demos/xui-smscode.js
  * @author leeight
  */
 
@@ -46,4 +46,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[465])});;
+},[473])});;

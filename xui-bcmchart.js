@@ -1,4 +1,4 @@
-define(["san","echarts"], function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_423__) { return webpackJsonp([3],{
+define(["san","echarts"], function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_429__) { return webpackJsonp([1],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 420:
+/***/ 426:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,13 +21,13 @@ var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _promise = __webpack_require__(9);
+var _promise = __webpack_require__(10);
 
 var _promise2 = _interopRequireDefault(_promise);
 
 var _san = __webpack_require__(0);
 
-var _BcmChart = __webpack_require__(421);
+var _BcmChart = __webpack_require__(427);
 
 var _BcmChart2 = _interopRequireDefault(_BcmChart);
 
@@ -35,12 +35,12 @@ var _Row = __webpack_require__(4);
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _bcmData = __webpack_require__(425);
+var _bcmData = __webpack_require__(431);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file demos/xui-bcmchart.es6
+ * @file demos/xui-bcmchart.js
  * @author leeight
  */
 
@@ -82,7 +82,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 421:
+/***/ 427:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,19 +92,21 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n<div class="{{mainClass}}" style="{{mainStyle}}">\n<div class="', '">\n    <h1 s-if="title && !withFilter">\n        {{title}}\n        <div on-click="showBigView" class="', '" s-if="!loading && showbigable"></div>\n    </h1>\n    <div class="', '" s-if="withFilter">\n        \u7EDF\u8BA1\u9879\uFF1A<ui-select datasource="{{ds.statistics}}" value="{=statistics=}" on-change="loadMetrics" />\n        \u91C7\u6837\u5468\u671F\uFF1A<ui-select datasource="{{ds.period}}" value="{=period=}" on-change="loadMetrics" />\n        \u6700\u8FD1\uFF1A<ui-select datasource="{{ds.timeRange}}" value="{=time=}" on-change="loadMetrics" />\n        <ui-tip skin="warning" message="\u6700\u591A\u652F\u63011440\u4E2A\u6570\u636E\u70B9\u7684\u67E5\u8BE2\u663E\u793A\uFF0C\u8BF7\u9009\u62E9\u5408\u9002\u7684\u91C7\u6837\u5468\u671F\u548C\u805A\u5408\u65F6\u95F4\u6BB5\u3002" />\n        <ui-button icon="refresh" on-click="loadMetrics" />\n    </div>\n    <div class="', '" style="{{chartStyle}}">\n        <ui-loading s-if="!chartOption && loading" />\n        <div class="', '" s-elif="error">{{error | raw}}</div>\n        <div class="', '" s-elif="isEmpty">{{noData | raw}}</div>\n        <ui-chart s-else option="{{chartOption}}" loading="{{loading}}" width="{{width}}" height="{{height}}" not-merge />\n    </div>\n</div>\n</div>'], ['\n<div class="{{mainClass}}" style="{{mainStyle}}">\n<div class="', '">\n    <h1 s-if="title && !withFilter">\n        {{title}}\n        <div on-click="showBigView" class="', '" s-if="!loading && showbigable"></div>\n    </h1>\n    <div class="', '" s-if="withFilter">\n        \u7EDF\u8BA1\u9879\uFF1A<ui-select datasource="{{ds.statistics}}" value="{=statistics=}" on-change="loadMetrics" />\n        \u91C7\u6837\u5468\u671F\uFF1A<ui-select datasource="{{ds.period}}" value="{=period=}" on-change="loadMetrics" />\n        \u6700\u8FD1\uFF1A<ui-select datasource="{{ds.timeRange}}" value="{=time=}" on-change="loadMetrics" />\n        <ui-tip skin="warning" message="\u6700\u591A\u652F\u63011440\u4E2A\u6570\u636E\u70B9\u7684\u67E5\u8BE2\u663E\u793A\uFF0C\u8BF7\u9009\u62E9\u5408\u9002\u7684\u91C7\u6837\u5468\u671F\u548C\u805A\u5408\u65F6\u95F4\u6BB5\u3002" />\n        <ui-button icon="refresh" on-click="loadMetrics" />\n    </div>\n    <div class="', '" style="{{chartStyle}}">\n        <ui-loading s-if="!chartOption && loading" />\n        <div class="', '" s-elif="error">{{error | raw}}</div>\n        <div class="', '" s-elif="isEmpty">{{noData | raw}}</div>\n        <ui-chart s-else option="{{chartOption}}" loading="{{loading}}" width="{{width}}" height="{{height}}" not-merge />\n    </div>\n</div>\n</div>']);
+
 var _lodash = __webpack_require__(5);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
 var _san = __webpack_require__(0);
 
-var _mtools = __webpack_require__(422);
+var _mtools = __webpack_require__(428);
 
 var _mtools2 = _interopRequireDefault(_mtools);
 
 var _util = __webpack_require__(2);
 
-var _Chart = __webpack_require__(210);
+var _Chart = __webpack_require__(202);
 
 var _Chart2 = _interopRequireDefault(_Chart);
 
@@ -112,7 +114,7 @@ var _Select = __webpack_require__(22);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _Tip = __webpack_require__(55);
+var _Tip = __webpack_require__(54);
 
 var _Tip2 = _interopRequireDefault(_Tip);
 
@@ -124,21 +126,22 @@ var _Loading = __webpack_require__(11);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _ajax = __webpack_require__(221);
+var _ajax = __webpack_require__(224);
 
-var _asDialog = __webpack_require__(75);
+var _asDialog = __webpack_require__(214);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var cx = (0, _util.create)('ui-bcmchart'); /**
-                                            * @file components/BcmChart.es6
-                                            * @author leeight
-                                            */
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
+                                                                                                                                                   * @file components/BcmChart.js
+                                                                                                                                                   * @author leeight
+                                                                                                                                                   */
 
+var cx = (0, _util.create)('ui-bcmchart');
 var kMetricName = 'metricName';
 
 /* eslint-disable */
-var template = '<div class="{{mainClass}}" style="{{mainStyle}}">\n<div class="' + cx('box') + '">\n    <h1 s-if="title && !withFilter">\n        {{title}}\n        <div on-click="showBigView" class="' + cx('showbig') + '" s-if="!loading && showbigable"></div>\n    </h1>\n    <div class="' + cx('filter') + '" s-if="withFilter">\n        \u7EDF\u8BA1\u9879\uFF1A<ui-select datasource="{{ds.statistics}}" value="{=statistics=}" on-change="loadMetrics" />\n        \u91C7\u6837\u5468\u671F\uFF1A<ui-select datasource="{{ds.period}}" value="{=period=}" on-change="loadMetrics" />\n        \u6700\u8FD1\uFF1A<ui-select datasource="{{ds.timeRange}}" value="{=time=}" on-change="loadMetrics" />\n        <ui-tip skin="warning" message="\u6700\u591A\u652F\u63011440\u4E2A\u6570\u636E\u70B9\u7684\u67E5\u8BE2\u663E\u793A\uFF0C\u8BF7\u9009\u62E9\u5408\u9002\u7684\u91C7\u6837\u5468\u671F\u548C\u805A\u5408\u65F6\u95F4\u6BB5\u3002" />\n        <ui-button icon="refresh" on-click="loadMetrics" />\n    </div>\n    <div class="' + cx('chart') + '" style="{{chartStyle}}">\n        <ui-loading s-if="!chartOption && loading" />\n        <div class="' + cx('error') + '" s-elif="error">{{error | raw}}</div>\n        <div class="' + cx('no-data') + '" s-elif="isEmpty">{{noData | raw}}</div>\n        <ui-chart s-else option="{{chartOption}}" loading="{{loading}}" width="{{width}}" height="{{height}}" not-merge />\n    </div>\n</div>\n</div>';
+var template = (0, _util.html)(_templateObject, cx('box'), cx('showbig'), cx('filter'), cx('chart'), cx('error'), cx('no-data'));
 /* eslint-enable */
 
 function parseMetrics(metrics) {
@@ -454,48 +457,35 @@ exports.default = BcmChart;
 
 /***/ }),
 
-/***/ 422:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 428:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _moment = __webpack_require__(1);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _lodash = __webpack_require__(5);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _infI18n = __webpack_require__(14);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _jquery = __webpack_require__(10);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _echarts = __webpack_require__(423);
-
-var _echarts2 = _interopRequireDefault(_echarts);
-
-var _formatter = __webpack_require__(424);
-
-var _formatter2 = _interopRequireDefault(_formatter);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inf_i18n__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formatter__ = __webpack_require__(430);
 /**
  * @file inf-ria/utils/mtools.es6
  * @author leeight
  */
 
-var IS_V3 = /^3\./.test(_echarts2.default.version);
+
+
+
+
+
+
+
+
+const IS_V3 = /^3\./.test(__WEBPACK_IMPORTED_MODULE_4_echarts___default.a.version);
 
 /**
  * 将utc时间转换为本地时间
@@ -506,7 +496,7 @@ var IS_V3 = /^3\./.test(_echarts2.default.version);
  */
 function utc2local(time, pattern) {
     pattern = pattern || 'MM-DD HH:mm';
-    return (0, _moment2.default)(time).format(pattern);
+    return __WEBPACK_IMPORTED_MODULE_0_moment___default()(time).format(pattern);
 }
 
 /**
@@ -518,7 +508,7 @@ function utc2local(time, pattern) {
  */
 function local2utc(time, pattern) {
     pattern = pattern || 'YYYY-MM-DDTHH:mm:ss';
-    return (0, _moment2.default)(time).utc().format(pattern) + 'Z';
+    return __WEBPACK_IMPORTED_MODULE_0_moment___default()(time).utc().format(pattern) + 'Z';
 }
 
 /**
@@ -529,24 +519,27 @@ function local2utc(time, pattern) {
  * @return {Object}
  */
 function getUTCTimeRange(timeRange, period) {
-    var mt = timeRange.match(/(\d+)(\w+)/);
-    var value = mt[1];
-    var unit = mt[2];
-    var m = (0, _moment2.default)();
+    let mt = timeRange.match(/(\d+)(\w+)/);
+    let value = mt[1];
+    let unit = mt[2];
+    let m = __WEBPACK_IMPORTED_MODULE_0_moment___default()();
 
-    var endTime = local2utc(m);
-    var startTime = '';
+    let endTime = local2utc(m);
+    let startTime = '';
 
     if (arguments.length === 1) {
         // 格式化时间：秒为0，起始时间加1分钟，解决时间区间超过范围问题
         startTime = local2utc(m.add('m', 1).subtract(unit, value), 'YYYY-MM-DDTHH:mm:00');
-    } else {
+    }
+    else {
         if (period < 60 * 60) {
-            startTime = local2utc((0, _moment2.default)(m.add('m', 1).subtract(unit, value).format('YYYY-MM-DDTHH:mm:00')));
-        } else if (period < 60 * 60 * 24) {
-            startTime = local2utc((0, _moment2.default)(m.add('h', 1).subtract(unit, value).format('YYYY-MM-DDTHH:00:00')));
-        } else {
-            startTime = local2utc((0, _moment2.default)(m.add('d', 1).subtract(unit, value).format('YYYY-MM-DDT00:00:00')));
+            startTime = local2utc(__WEBPACK_IMPORTED_MODULE_0_moment___default()(m.add('m', 1).subtract(unit, value).format('YYYY-MM-DDTHH:mm:00')));
+        }
+        else if (period < 60 * 60 * 24) {
+            startTime = local2utc(__WEBPACK_IMPORTED_MODULE_0_moment___default()(m.add('h', 1).subtract(unit, value).format('YYYY-MM-DDTHH:00:00')));
+        }
+        else {
+            startTime = local2utc(__WEBPACK_IMPORTED_MODULE_0_moment___default()(m.add('d', 1).subtract(unit, value).format('YYYY-MM-DDT00:00:00')));
         }
     }
     return {
@@ -566,27 +559,31 @@ function getUTCTimeRange(timeRange, period) {
 function truncate(source, length, tail) {
     source = String(source);
     tail = tail || '';
-    var byteLength = source.replace('/[^\x00-\xff]/g', '**').length;
+    let byteLength = source.replace('/[^\x00-\xff]/g', '**').length;
     if (length < 0 || byteLength <= length) {
         return source;
     }
 
     length = length - 2;
     source = source.substr(0, length).replace(/([^\x00-\xff])/g, '\x241 ') // 双字节字符替换成两个
-    .substr(0, length) // 截取长度
-    .replace(/[^\x00-\xff]$/, '') // 去掉临界双字节字符
-    .replace(/([^\x00-\xff]) /g, '\x241'); // 还原
+        .substr(0, length) // 截取长度
+        .replace(/[^\x00-\xff]$/, '') // 去掉临界双字节字符
+        .replace(/([^\x00-\xff]) /g, '\x241'); // 还原
     return source + tail;
 }
 
-var chartTheme = ['#4aaaff', '#f2605d', '#01B09B', '#E74684', '#6EC50F', '#FE863D', '#A45BFF', '#F6D622', '#0AC1D7', '#B569D4'];
+let chartTheme = [
+    '#4aaaff', '#f2605d', '#01B09B', '#E74684',
+    '#6EC50F', '#FE863D',
+    '#A45BFF', '#F6D622', '#0AC1D7', '#B569D4'
+];
 
 /**
  * 趋势图默认配置
  *
  * @type {Object}
  */
-var defaultChartOptions = {
+let defaultChartOptions = {
     color: chartTheme,
     calculable: false,
     animation: false,
@@ -597,12 +594,12 @@ var defaultChartOptions = {
         y2: IS_V3 ? 60 : 50
     }
 };
-var statisticsMap = {
-    average: (0, _infI18n2.default)('平均值'),
-    maximum: (0, _infI18n2.default)('最大值'),
-    minimum: (0, _infI18n2.default)('最小值'),
-    sum: (0, _infI18n2.default)('和值'),
-    sampleCount: (0, _infI18n2.default)('样本数')
+let statisticsMap = {
+    average: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('平均值'),
+    maximum: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('最大值'),
+    minimum: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('最小值'),
+    sum: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('和值'),
+    sampleCount: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('样本数')
 };
 
 /**
@@ -612,7 +609,7 @@ var statisticsMap = {
  * @return {Object} 最终配置
  */
 function mergeChartOptions(opt) {
-    return _lodash2.default.extend({}, defaultChartOptions, opt);
+    return __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.extend({}, defaultChartOptions, opt);
 }
 
 /**
@@ -634,13 +631,13 @@ function mergeChartOptions(opt) {
  * @return {Object}
  */
 function getChartOptions(data, metric, opt, addition) {
-    var category = [];
-    var unit = metric.unit;
-    var zoomStart = 0;
-    var legend = [];
-    var tmpData = {};
-    var seriesOpt = {};
-    var seriesData = [];
+    let category = [];
+    let unit = metric.unit;
+    let zoomStart = 0;
+    let legend = [];
+    let tmpData = {};
+    let seriesOpt = {};
+    let seriesData = [];
     opt = opt || {
         type: 'line'
     };
@@ -663,35 +660,37 @@ function getChartOptions(data, metric, opt, addition) {
                 }
             }
         };
-    } else if (opt.type === 'bar') {
+    }
+    else if (opt.type === 'bar') {
         seriesOpt = {
             type: 'bar'
         };
     }
 
-    seriesOpt = _lodash2.default.extend(seriesOpt, opt.chart || {});
+    seriesOpt = __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.extend(seriesOpt, opt.chart || {});
 
-    var spliteNumber = 5;
-    var yAxisFormatter = void 0;
-    var yAxisMax = void 0;
-    var tooltipFormatter = function tooltipFormatter(params) {
-        var arr = [];
+    let spliteNumber = 5;
+    let yAxisFormatter;
+    let yAxisMax;
+    let tooltipFormatter = function (params) {
+        let arr = [];
         if (params.length > 0) {
             arr.push(params[0].name + ' (' + statisticsMap[metric.statistics] + ')');
         }
 
-        _lodash2.default.each(params, function (item) {
-            var label = truncate(item.seriesName, 22, '…');
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item) {
+            let label = truncate(item.seriesName, 22, '…');
             arr.push(label + '：' + item.value);
         });
         return arr.join('<br/>');
     };
     if (data.category.length === 0) {
-        category.push(utc2local((0, _moment2.default)().utc()).replace(' ', '\n'));
+        category.push(utc2local(__WEBPACK_IMPORTED_MODULE_0_moment___default()().utc()).replace(' ', '\n'));
         category.push(utc2local()); // .replace(' ', '\n'));
         category.push(utc2local()); // .replace(' ', '\n'));
-    } else {
-        var pattern = 'MM-DD HH:mm';
+    }
+    else {
+        let pattern = 'MM-DD HH:mm';
         if (addition && addition.period) {
             if (addition.period >= 60 * 60 * 24) {
                 pattern = 'MM-DD';
@@ -703,15 +702,15 @@ function getChartOptions(data, metric, opt, addition) {
             }
         }
 
-        _lodash2.default.each(data.category, function (item) {
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(data.category, function (item) {
             category.push(utc2local(item, pattern));
         });
     }
     if (metric.nullPointMode === 0) {
-        _lodash2.default.each(data.series, function (item) {
-            var values = [];
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(data.series, function (item) {
+            let values = [];
 
-            _lodash2.default.each(item.data, function (value) {
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(item.data, function (value) {
                 if (typeof value === 'undefined') {
                     value = 0;
                 }
@@ -719,19 +718,20 @@ function getChartOptions(data, metric, opt, addition) {
                 values.push(value);
             });
             if (values.length === 0) {
-                for (var i = 0, len = category.length; i < len; i++) {
+                for (let i = 0, len = category.length; i < len; i++) {
                     values[i] = 0;
                 }
             }
 
             tmpData[item.name] = values;
         });
-    } else {
-        _lodash2.default.each(data.series, function (item) {
-            var values = [];
-            var tmpvalue = '';
+    }
+    else {
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(data.series, function (item) {
+            let values = [];
+            let tmpvalue = '';
 
-            _lodash2.default.each(item.data, function (value) {
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(item.data, function (value) {
                 if (typeof value === 'undefined') {
                     value = '-';
                 }
@@ -742,7 +742,8 @@ function getChartOptions(data, metric, opt, addition) {
                         value: value,
                         symbol: 'emptyCircle'
                     });
-                } else {
+                }
+                else {
                     values.push(value);
                     if (value !== '-' && values.length > 1) {
                         values[values.length - 2] = tmpvalue;
@@ -751,7 +752,7 @@ function getChartOptions(data, metric, opt, addition) {
                 tmpvalue = value;
             });
             if (values.length === 0) {
-                for (var i = 0, len = category.length; i < len; i++) {
+                for (let i = 0, len = category.length; i < len; i++) {
                     values[i] = '-';
                 }
             }
@@ -762,17 +763,18 @@ function getChartOptions(data, metric, opt, addition) {
 
     if (addition && addition.dataZoom) {
         zoomStart = addition.dataZoom.start;
-    } else {
+    }
+    else {
         zoomStart = Math.max((1 - 100 / category.length) * 100, 0);
     }
 
-    var metricNames = {};
-    _lodash2.default.each(metric.metrics, function (item, key) {
+    let metricNames = {};
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(metric.metrics, function (item, key) {
         metricNames[item.value] = item.name;
     });
-    _lodash2.default.each(tmpData, function (item, key) {
-        var name = metricNames[key] || key;
-        var obj = _jquery2.default.extend(true, {}, seriesOpt, {
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(tmpData, function (item, key) {
+        let name = metricNames[key] || key;
+        let obj = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.extend(true, {}, seriesOpt, {
             name: name,
             data: item
         });
@@ -781,15 +783,15 @@ function getChartOptions(data, metric, opt, addition) {
     });
     if (metric.statistics === 'sampleCount') {
         unit = '个';
-        tooltipFormatter = function tooltipFormatter(params) {
-            var str = '';
+        tooltipFormatter = function (params) {
+            let str = '';
             if (params.length > 0) {
                 str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
             }
 
-            _lodash2.default.each(params, function (item, index) {
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item, index) {
                 str += truncate(item.seriesName, 22, '…') + '：';
-                var value = item.value;
+                let value = item.value;
                 if (isNaN(value)) {
                     value = 0;
                 }
@@ -801,138 +803,147 @@ function getChartOptions(data, metric, opt, addition) {
     }
     // 状态的监控项需对返回值映射成文本
     else if (unit === 'enum') {
-            unit = '';
-            var enums = metric.src || {};
-            var count = (0, _lodash2.default)(enums).value().length;
-            if (count < 6) {
-                spliteNumber = count - 1;
-            }
-
-            tooltipFormatter = function tooltipFormatter(params) {
-                var str = '';
-                if (params.length > 0) {
-                    str += params[0].name;
-                }
-
-                str += ' (' + statisticsMap[metric.statistics] + ')';
-                _lodash2.default.each(params, function (item, index) {
-                    var value = item.value;
-                    str += '<br/>' + truncate(item.seriesName, 22, '…') + '：' + value;
-                    if (value !== '-') {
-                        str += '（' + (enums[value] || value) + '）';
-                    }
-                });
-                return str;
-            };
-        } else if (unit === (0, _infI18n2.default)('字节') || unit === (0, _infI18n2.default)('字节/秒')) {
-            var suffix = unit === (0, _infI18n2.default)('字节') ? '' : '/s';
-            tooltipFormatter = function tooltipFormatter(params) {
-                var str = '';
-                if (params.length > 0) {
-                    str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
-                }
-
-                _lodash2.default.each(params, function (item, index) {
-                    str += truncate(item.seriesName, 22, '…') + '：';
-                    var value = item.value;
-                    var prefix = void 0;
-                    var valueStr = '';
-                    if (isNaN(value)) {
-                        valueStr = '-';
-                    } else {
-                        prefix = value < 0 ? '-' : '';
-                        value = Math.abs(value);
-
-                        value = _formatter2.default.bytes(value, 2, metric.byteUnit);
-                        valueStr = prefix + value + suffix;
-                    }
-                    str += valueStr + '<br/>';
-                });
-                return str;
-            };
-
-            yAxisFormatter = function yAxisFormatter(value) {
-                var prefix = value < 0 ? '-' : '';
-                value = Math.abs(value);
-                value = _formatter2.default.bytes(value, 1, metric.byteUnit);
-                return prefix + value + suffix;
-            };
-        } else if (unit === 'bps') {
-            tooltipFormatter = function tooltipFormatter(params) {
-                var str = '';
-                if (params.length > 0) {
-                    str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
-                }
-
-                _lodash2.default.each(params, function (item, index) {
-                    str += truncate(item.seriesName, 22, '…') + '：';
-                    var value = item.value;
-                    var prefix = void 0;
-                    var valueStr = '';
-                    if (isNaN(value)) {
-                        valueStr = '-';
-                    } else {
-                        prefix = value < 0 ? '-' : '';
-                        value = Math.abs(value);
-
-                        value = _formatter2.default.bits(value, 2, metric.bitUnit).toUpperCase();
-                        valueStr = prefix + value + unit;
-                    }
-                    str += valueStr + '<br/>';
-                });
-                return str;
-            };
-
-            yAxisFormatter = function yAxisFormatter(value) {
-                var prefix = value < 0 ? '-' : '';
-                value = Math.abs(value);
-                // 保留1位小数的话
-                // 当纵坐标是0 0.125 0.15 0.175 0.2的时候
-                // 就会出现三个0.1
-                value = _formatter2.default.bits(value, 2, metric.bitUnit).toUpperCase();
-                return prefix + value;
-            };
-        } else if (unit === (0, _infI18n2.default)('百分比')) {
-            tooltipFormatter = function tooltipFormatter(params) {
-                var str = '';
-                if (params.length > 0) {
-                    str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
-                }
-
-                _lodash2.default.each(params, function (item, index) {
-                    str += truncate(item.seriesName, 22, '…') + '：' + item.value + (item.value === '-' ? '' : '%') + '<br/>';
-                });
-                return str;
-            };
-            yAxisFormatter = '{value}%';
-            yAxisMax = 100;
-        } else {
-            tooltipFormatter = function tooltipFormatter(params) {
-                var str = '';
-                if (params.length > 0) {
-                    str = params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
-                }
-
-                _lodash2.default.each(params, function (item) {
-                    str += truncate(item.seriesName, 22, '…') + '：';
-                    var value = item.value;
-                    var valueStr = '';
-                    if (isNaN(value)) {
-                        valueStr = '-';
-                    } else {
-                        valueStr = item.value;
-                    }
-                    str += valueStr + '<br/>';
-                });
-                return str;
-            };
-
-            yAxisFormatter = function yAxisFormatter(value) {
-                return _formatter2.default.number(value, 0);
-            };
+        unit = '';
+        let enums = metric.src || {};
+        let count = __WEBPACK_IMPORTED_MODULE_1_lodash___default()(enums).value().length;
+        if (count < 6) {
+            spliteNumber = count - 1;
         }
 
-    var opts = {
+        tooltipFormatter = function (params) {
+            let str = '';
+            if (params.length > 0) {
+                str += params[0].name;
+            }
+
+            str += ' (' + statisticsMap[metric.statistics] + ')';
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item, index) {
+                let value = item.value;
+                str += '<br/>' + truncate(item.seriesName, 22, '…') + '：' + value;
+                if (value !== '-') {
+                    str += '（' + (enums[value] || value) + '）';
+                }
+
+            });
+            return str;
+        };
+    }
+    else if (unit === Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('字节') || unit === Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('字节/秒')) {
+        let suffix = (unit === Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('字节') ? '' : '/s');
+        tooltipFormatter = function (params) {
+            let str = '';
+            if (params.length > 0) {
+                str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
+            }
+
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item, index) {
+                str += truncate(item.seriesName, 22, '…') + '：';
+                let value = item.value;
+                let prefix;
+                let valueStr = '';
+                if (isNaN(value)) {
+                    valueStr = '-';
+                }
+                else {
+                    prefix = value < 0 ? '-' : '';
+                    value = Math.abs(value);
+
+                    value = __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].bytes(value, 2, metric.byteUnit);
+                    valueStr = prefix + value + suffix;
+                }
+                str += valueStr + '<br/>';
+            });
+            return str;
+        };
+
+        yAxisFormatter = function (value) {
+            let prefix = value < 0 ? '-' : '';
+            value = Math.abs(value);
+            value = __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].bytes(value, 1, metric.byteUnit);
+            return prefix + value + suffix;
+        };
+    }
+    else if (unit === 'bps') {
+        tooltipFormatter = function (params) {
+            let str = '';
+            if (params.length > 0) {
+                str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
+            }
+
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item, index) {
+                str += truncate(item.seriesName, 22, '…') + '：';
+                let value = item.value;
+                let prefix;
+                let valueStr = '';
+                if (isNaN(value)) {
+                    valueStr = '-';
+                }
+                else {
+                    prefix = value < 0 ? '-' : '';
+                    value = Math.abs(value);
+
+                    value = __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].bits(value, 2, metric.bitUnit).toUpperCase();
+                    valueStr = prefix + value + unit;
+                }
+                str += valueStr + '<br/>';
+            });
+            return str;
+        };
+
+        yAxisFormatter = function (value) {
+            let prefix = value < 0 ? '-' : '';
+            value = Math.abs(value);
+            // 保留1位小数的话
+            // 当纵坐标是0 0.125 0.15 0.175 0.2的时候
+            // 就会出现三个0.1
+            value = __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].bits(value, 2, metric.bitUnit).toUpperCase();
+            return prefix + value;
+        };
+    }
+    else if (unit === Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('百分比')) {
+        tooltipFormatter = function (params) {
+            let str = '';
+            if (params.length > 0) {
+                str += params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
+            }
+
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item, index) {
+                str += truncate(item.seriesName, 22, '…')
+                    + '：' + item.value + (item.value === '-' ? '' : '%') + '<br/>';
+            });
+            return str;
+        };
+        yAxisFormatter = '{value}%';
+        yAxisMax = 100;
+    }
+    else {
+        tooltipFormatter = function (params) {
+            let str = '';
+            if (params.length > 0) {
+                str = params[0].name + ' (' + statisticsMap[metric.statistics] + ')<br/>';
+            }
+
+            __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(params, function (item) {
+                str += truncate(item.seriesName, 22, '…') + '：';
+                let value = item.value;
+                let valueStr = '';
+                if (isNaN(value)) {
+                    valueStr = '-';
+                }
+                else {
+                    valueStr = item.value;
+                }
+                str += valueStr + '<br/>';
+            });
+            return str;
+        };
+
+        yAxisFormatter = function (value) {
+            return __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].number(value, 0);
+        };
+    }
+
+    let opts = {
         legend: {
             data: legend,
             x: 'center',
@@ -952,67 +963,77 @@ function getChartOptions(data, metric, opt, addition) {
             height: 20,
             filterColor: 'rgba(74,170,255, 0.3)'
         },
-        xAxis: [{
-            type: 'category',
-            boundaryGap: opt.type === 'bar',
-            data: category,
-            splitLine: {
-                lineStyle: {
-                    color: '#eee'
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: opt.type === 'bar',
+                data: category,
+                splitLine: {
+                    lineStyle: {
+                        color: '#eee'
+                    }
                 }
             }
-        }],
-        yAxis: [{
-            type: 'value',
-            name: unit || '',
-            max: yAxisMax,
-            splitNumber: spliteNumber,
-            axisLabel: {
-                formatter: yAxisFormatter
-            },
-            splitLine: {
-                lineStyle: {
-                    color: '#eee'
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: unit || '',
+                max: yAxisMax,
+                splitNumber: spliteNumber,
+                axisLabel: {
+                    formatter: yAxisFormatter
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#eee'
+                    }
                 }
             }
-        }],
+        ],
         series: seriesData
     };
-    var forceOpt = opt.chartOptions || {};
+    let forceOpt = opt.chartOptions || {};
     deepExtend(opts, forceOpt);
     return mergeChartOptions(opts);
 }
 
 function getPieChartOptions(config) {
-    var options = {
+    let options = {
         tooltip: {
             trigger: 'item',
             formatter: '{b} <br/> {c} ({d}%)'
         },
-        color: ['#4aaaff', '#f2605d', '#F6D622', '#6EC50F', '#FE863D', '#B569D4', '#A45BFF', '#01B09B', '#E74684', '#0AC1D7'],
+        color: [
+            '#4aaaff', '#f2605d', '#F6D622',
+            '#6EC50F', '#FE863D', '#B569D4',
+            '#A45BFF', '#01B09B', '#E74684', '#0AC1D7'
+        ],
         legend: {
             orient: 'vertical',
             x: 'right',
             y: 'center',
             data: config.legend
         },
-        series: [{
-            type: 'pie',
-            radius: '65%',
-            center: ['30%', '50%'],
-            minAngle: 1,
-            itemStyle: {
-                normal: {
-                    label: {
-                        show: false
-                    },
-                    labelLine: {
-                        show: false
+        series: [
+            {
+                type: 'pie',
+                radius: '65%',
+                center: ['30%', '50%'],
+                minAngle: 1,
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
                     }
-                }
-            },
-            data: config.series
-        }]
+                },
+                data: config.series
+            }
+        ]
     };
     return options;
 }
@@ -1024,12 +1045,14 @@ function getPieChartOptions(config) {
  * @param {Object} opt 扩充对象
  */
 function deepExtend(src, opt) {
-    _lodash2.default.each(opt, function (item, key) {
-        if (_lodash2.default.isArray(item)) {
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(opt, function (item, key) {
+        if (__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.isArray(item)) {
             deepExtend(src[key] = src[key] || [], item);
-        } else if (_lodash2.default.isObject(item)) {
+        }
+        else if (__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.isObject(item)) {
             deepExtend(src[key] = src[key] || {}, item);
-        } else {
+        }
+        else {
             src[key] = item;
         }
     });
@@ -1042,13 +1065,14 @@ function deepExtend(src, opt) {
  * @return {boolean}
  */
 function isSeriesEmpty(series) {
-    var empty = true;
-    _lodash2.default.each(series, function (item, i) {
-        _lodash2.default.each(item.data, function (value) {
+    let empty = true;
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(series, function (item, i) {
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(item.data, function (value) {
             if (typeof value !== 'undefined') {
                 empty = false;
                 return false;
             }
+
         });
         return empty;
     });
@@ -1062,9 +1086,9 @@ function isSeriesEmpty(series) {
  * @return {Object}
  */
 function adjustToChartMetric(metrics) {
-    var chartMetric = {};
-    var defaultStatistics = 'average';
-    _lodash2.default.each(metrics, function (item, key) {
+    let chartMetric = {};
+    let defaultStatistics = 'average';
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(metrics, function (item, key) {
         chartMetric[key] = {
             metrics: [],
             unit: item.unit,
@@ -1073,11 +1097,12 @@ function adjustToChartMetric(metrics) {
             statistics: item.statistics || defaultStatistics
         };
         item.chartType && (chartMetric[key].type = item.chartType);
-        _lodash2.default.each(item.metrics, function (metric, i) {
-            var value = metric.value;
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(item.metrics, function (metric, i) {
+            let value = metric.value;
             chartMetric[key].metrics.push(value);
             chartMetric[key].names[value] = metric.name;
         });
+
     });
     return chartMetric;
 }
@@ -1090,8 +1115,8 @@ function adjustToChartMetric(metrics) {
  * @return {*}
  */
 function adjustSeriesData(result, key) {
-    _lodash2.default.each(result.series, function (item) {
-        item.data = _lodash2.default.map(item.data, key);
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(result.series, function (item) {
+        item.data = __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.map(item.data, key);
     });
     return result;
 }
@@ -1104,18 +1129,19 @@ function adjustSeriesData(result, key) {
  * @return {string}
  */
 function transferAlarmEventType(eventType, eventData) {
-    var EVENT_TYPE = {
-        ConfigurationUpdate: (0, _infI18n2.default)('配置变更'),
-        StateUpdate: (0, _infI18n2.default)('状态变化'),
-        Action: (0, _infI18n2.default)('触发报警')
+    let EVENT_TYPE = {
+        ConfigurationUpdate: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('配置变更'),
+        StateUpdate: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('状态变化'),
+        Action: Object(__WEBPACK_IMPORTED_MODULE_2_inf_i18n__["default"])('触发报警')
     };
-    var type = EVENT_TYPE[eventType] || eventType;
-    var ico = '';
+    let type = EVENT_TYPE[eventType] || eventType;
+    let ico = '';
     if (eventData) {
-        var data = {};
+        let data = {};
         try {
             data = new Function('return ' + eventData)();
-        } catch (e) {}
+        }
+        catch (e) {}
 
         switch (data.curAlarmStatus) {
             case 'NORMAL':
@@ -1141,17 +1167,19 @@ function transferAlarmEventType(eventType, eventData) {
  * @param {string} value 过滤字段值
  */
 function filterMetrics(metrics, filterName, value) {
-    _lodash2.default.each(metrics, function (item, k) {
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(metrics, function (item, k) {
         if (item.filter === filterName) {
-            for (var i = item.metrics.length - 1; i >= 0; i--) {
+            for (let i = item.metrics.length - 1; i >= 0; i--) {
                 if (item.metrics[i].filter === filterName && item.metrics[i].filterValue !== value) {
                     item.metrics.splice(i, 1);
                 }
+
             }
             if (item.metrics.length === 0) {
                 delete metrics[k];
             }
         }
+
     });
 }
 
@@ -1163,18 +1191,20 @@ function filterMetrics(metrics, filterName, value) {
  * @return {boolean}
  */
 function isMonitorTrendEmpty(series, statistics) {
-    var empty = true;
-    _lodash2.default.each(series, function (item, i) {
-        var itemData = [];
-        _lodash2.default.each(item.data, function (v, k) {
-            var value = v[statistics];
+    let empty = true;
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(series, function (item, i) {
+        let itemData = [];
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(item.data, function (v, k) {
+            let value = v[statistics];
             if (typeof value !== 'undefined') {
                 itemData.push(value);
             }
+
         });
         if (itemData.length > 0) {
             empty = false;
         }
+
     });
     return empty;
 }
@@ -1188,16 +1218,17 @@ function isMonitorTrendEmpty(series, statistics) {
   * @return {Array} 指标对象数组
   */
 function parseMetrics(str) {
-    var reg = /([^\(]+)(?:\((.+)\))*/;
-    var ret = [];
-    _lodash2.default.each(str.split(','), function (item) {
+    let reg = /([^\(]+)(?:\((.+)\))*/;
+    let ret = [];
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(str.split(','), function (item) {
         if (item) {
-            var tmp = item.match(reg);
+            let tmp = item.match(reg);
             ret.push({
                 name: tmp[2] || tmp[1],
                 value: tmp[1]
             });
         }
+
     });
     return ret;
 }
@@ -1211,16 +1242,17 @@ function parseMetrics(str) {
  * @return {Array} 维度列表 ["TaskId:1;Idc:jx", "TaskId:1;Idc:nj"]
  */
 function parseDimensions(str) {
-    var darr = [];
-    var arr = str.split(';');
+    let darr = [];
+    let arr = str.split(';');
     function xc(src, dist) {
-        var ret = [];
-        _lodash2.default.each(dist.value, function (item) {
+        let ret = [];
+        __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(dist.value, function (item) {
             if (src.length === 0) {
                 ret.push([dist.key + ':' + item]);
-            } else {
-                _lodash2.default.each(src, function (it) {
-                    var tmp = [];
+            }
+            else {
+                __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(src, function (it) {
+                    let tmp = [];
                     [].push.apply(tmp, it);
                     tmp.push(dist.key + ':' + item);
                     ret.push(tmp);
@@ -1229,31 +1261,32 @@ function parseDimensions(str) {
         });
         return ret;
     }
-    _lodash2.default.each(arr, function (item) {
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(arr, function (item) {
         if (item) {
-            var it = item.split(':');
+            let it = item.split(':');
             if (it[1]) {
-                var key = it[0];
-                var value = it[1].split('|');
+                let key = it[0];
+                let value = it[1].split('|');
                 darr.push({
                     key: key,
                     value: value
                 });
             }
         }
+
     });
-    var src = [];
-    _lodash2.default.each(darr, function (item) {
+    let src = [];
+    __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.each(darr, function (item) {
         src = xc(src, item);
     });
-    src = _lodash2.default.map(src, function (item) {
+    src = __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.map(src, function (item) {
         return item.join(';');
     });
     return src;
 }
 
 /* eslint-disable */
-exports.default = {
+/* harmony default export */ __webpack_exports__["default"] = ({
     utc2local: utc2local,
     local2utc: local2utc,
     getUTCTimeRange: getUTCTimeRange,
@@ -1262,95 +1295,82 @@ exports.default = {
     isSeriesEmpty: isSeriesEmpty,
     adjustToChartMetric: adjustToChartMetric,
     adjustSeriesData: adjustSeriesData,
-    formatBytes: _formatter2.default.bytes,
+    formatBytes: __WEBPACK_IMPORTED_MODULE_5__formatter__["a" /* default */].bytes,
     transferAlarmEventType: transferAlarmEventType,
     filterMetrics: filterMetrics,
     parseMetrics: parseMetrics,
     parseDimensions: parseDimensions,
     isMonitorTrendEmpty: isMonitorTrendEmpty
-};
-
-/***/ }),
-
-/***/ 423:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_423__;
-
-/***/ }),
-
-/***/ 424:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
 });
 
-var _infI18n = __webpack_require__(14);
 
-var _infI18n2 = _interopRequireDefault(_infI18n);
+/***/ }),
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/***/ 429:
+/***/ (function(module, exports) {
 
-var kByteUnit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB']; /**
-                                                                              * @file inf-ria/utils/formatter.es6
-                                                                              * @author leeight
-                                                                              */
+module.exports = __WEBPACK_EXTERNAL_MODULE_429__;
 
-var kBitUnit = ['', 'k', 'm', 'g', 't', 'p', 'e', 'z', 'y', 'b'];
+/***/ }),
 
-exports.default = {
-    percent: function percent(value) {
+/***/ 430:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_inf_i18n__ = __webpack_require__(15);
+/**
+ * @file inf-ria/utils/formatter.es6
+ * @author leeight
+ */
+
+
+
+const kByteUnit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB'];
+const kBitUnit = ['', 'k', 'm', 'g', 't', 'p', 'e', 'z', 'y', 'b'];
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    percent(value) {
         return value + '%';
     },
-    bytes: function bytes(value) {
-        var number = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-        var byteUnit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1024;
-
-        var idx = 0;
-        var len = kByteUnit.length - 1;
+    bytes(value, number = 2, byteUnit = 1024) {
+        let idx = 0;
+        let len = kByteUnit.length - 1;
         while (value >= byteUnit && idx < len) {
             value = value / byteUnit;
             idx++;
         }
         return value.toFixed(number) + kByteUnit[idx];
     },
-    bits: function bits(value) {
-        var number = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-        var bitUnit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1024;
-
-        var idx = 0;
-        var len = kBitUnit.length - 1;
+    bits(value, number = 2, bitUnit = 1024) {
+        let idx = 0;
+        let len = kBitUnit.length - 1;
         while (value >= bitUnit && idx < len) {
             value = value / bitUnit;
             idx++;
         }
         return value.toFixed(number) + kBitUnit[idx];
     },
-    number: function number(value) {
-        var number = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
+    number(value, number = 1) {
         if (value < 10000) {
             return value;
         }
         // 15000、20000，当number为0的时候，都是2万
         // 所以需要判断一下value是否能整除，不能整除的至少保留一位小数
         else if (value < 1000000) {
-                return (value / 10000).toFixed(value % 10000 === 0 ? number : Math.max(1, number)) + (0, _infI18n2.default)('万');
-            } else if (value < 10000000) {
-                return (value / 1000000).toFixed(value % 1000000 === 0 ? number : Math.max(1, number)) + (0, _infI18n2.default)('百万');
-            }
+            return (value / 10000).toFixed((value % 10000) === 0 ? number : Math.max(1, number)) + Object(__WEBPACK_IMPORTED_MODULE_0_inf_i18n__["default"])('万');
+        }
+        else if (value < 10000000) {
+            return (value / 1000000).toFixed((value % 1000000) === 0 ? number : Math.max(1, number)) + Object(__WEBPACK_IMPORTED_MODULE_0_inf_i18n__["default"])('百万');
+        }
 
-        return (value / 10000000.0).toFixed(value % 10000000 === 0 ? number : Math.max(1, number)) + (0, _infI18n2.default)('千万');
+        return (value / 10000000.0).toFixed((value % 10000000) === 0 ? number : Math.max(1, number)) + Object(__WEBPACK_IMPORTED_MODULE_0_inf_i18n__["default"])('千万');
     }
-};
+});
+
 
 /***/ }),
 
-/***/ 425:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1360,7 +1380,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 /**
- * @file examples/bcmData.es6
+ * @file examples/bcmData.js
  * @author leeight
  */
 
@@ -2550,4 +2570,4 @@ var Data8 = exports.Data8 = {
 
 /***/ })
 
-},[420])});;
+},[426])});;

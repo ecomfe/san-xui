@@ -1,5 +1,5 @@
 /**
- * @file demos/xui-as-table.es6
+ * @file demos/xui-as-table.js
  * @author leeight
  */
 

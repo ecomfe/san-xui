@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([33],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([32],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 456:
+/***/ 464:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-radioselect\n   
 /* eslint-enable */
 
 /**
- * @file demos/xui-radioselect.es6
+ * @file demos/xui-radioselect.js
  * @author leeight
  */
 
@@ -54,4 +54,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[456])});;
+},[464])});;

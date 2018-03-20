@@ -1,5 +1,5 @@
 /**
- * @file forms/FormItem.es6
+ * @file forms/FormItem.js
  * @author leeight
  */
 
