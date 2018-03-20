@@ -12,12 +12,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const kBaseDir = path.resolve(__dirname, '..', '..');
 
 function entries() {
-    const files = glob.sync('./src/x/demos/xui-*.es6');
+    const files = glob.sync('./src/x/demos/xui-*.js');
     const config = {
-        app: './src/x/demos/app.es6'
+        app: './src/x/demos/app.js'
     };
     files.forEach(f => {
-        const key = path.basename(f, '.es6');
+        const key = path.basename(f, '.js');
         config[key] = f;
     });
     return config;
@@ -54,7 +54,6 @@ module.exports = {
         host: '0.0.0.0'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.es6'],
         mainFiles: ['index', 'main'],
         alias: {
             'eoo': alias('@ecomfe/eoo'),
@@ -95,9 +94,9 @@ module.exports = {
             template: './src/x/demos/index.html'
         }),
         new CopyWebpackPlugin([
-            {from: './src/x/demos/xui-*.es6', to: 'assets/demos/[name].txt'},
-            {from: './src/x/components/*.es6', to: 'assets/components/[name].txt'},
-            {from: './src/x/forms/*.es6', to: 'assets/forms/[name].txt'}
+            {from: './src/x/demos/xui-*.js', to: 'assets/demos/[name].txt'},
+            {from: './src/x/components/*.js', to: 'assets/components/[name].txt'},
+            {from: './src/x/forms/*.js', to: 'assets/forms/[name].txt'}
         ])
     ],
     module: {
@@ -130,15 +129,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.es6$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env', 'stage-0']
-                    }
-                }
             },
             {
                 test: /\.js$/,

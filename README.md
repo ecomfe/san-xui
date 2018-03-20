@@ -61,7 +61,6 @@ function alias(name) {
 module.exports = {
     ...
     resolve: {
-        extensions: ['.js', '.jsx', '.es6'],
         mainFiles: ['index', 'main'],
         alias: {
             'eoo': alias('@ecomfe/eoo'),
@@ -103,15 +102,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.es6$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env', 'stage-0']
-                    }
-                }
             },
             {
                 test: /\.js$/,
