@@ -117,7 +117,8 @@ export const blocks = [
                 text: 'xui-chart'
             },
             {
-                text: 'xui-bcmchart'
+                text: 'xui-bcmchart',
+                disabled: true
             }
         ]
     },
@@ -176,13 +177,16 @@ export const blocks = [
         title: '业务组件',
         items: [
             {
-                text: 'xui-filter'
+                text: 'xui-filter',
+                disabled: true
             },
             {
-                text: 'xui-toolbar'
+                text: 'xui-toolbar',
+                disabled: true
             },
             {
-                text: 'xui-right-toolbar'
+                text: 'xui-right-toolbar',
+                disabled: true
             },
             {
                 text: 'xui-bulk-actions',
@@ -216,7 +220,8 @@ export const blocks = [
                 text: 'xui-go'
             },
             {
-                text: 'xui-actionloader'
+                text: 'xui-actionloader',
+                disabled: true
             },
             {
                 text: 'xui-sidebar',

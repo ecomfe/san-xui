@@ -4,7 +4,6 @@
  */
 
 import {DataTypes, defineComponent} from 'san';
-import _ from 'inf-i18n';
 import XClipboard from 'clipboard';
 
 import {create} from './util';
@@ -30,7 +29,7 @@ export default defineComponent({
     },
     initData() {
         return {
-            ariaLabel: _('复制到剪贴板'),
+            ariaLabel: '复制到剪贴板',
             tipPosition: 's', // 'n', 'e', 's', 'w'
             text: null
         };
@@ -63,13 +62,13 @@ export default defineComponent({
         });
         this.client.on('beforecopy', () => this.fire('beforecopy'));
         this.client.on('success', () => {
-            this.data.set('ariaLabel', _('复制成功'));
+            this.data.set('ariaLabel', '复制成功');
             this.fire('aftercopy');
         });
         this.client.on('error', () => this.fire('error'));
     },
     onMouseLeave() {
-        this.data.set('ariaLabel', _('复制到剪贴板'));
+        this.data.set('ariaLabel', '复制到剪贴板');
     }
 });
 

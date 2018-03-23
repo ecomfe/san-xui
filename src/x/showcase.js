@@ -9,8 +9,6 @@ import $ from 'jquery';
 import u from 'lodash';
 import Promise from 'promise';
 import {defineComponent} from 'san';
-import _ from 'inf-i18n';
-import i18nConfig from 'inf-i18n/config';
 
 import Icon from './components/Icon';
 import Aside from './Aside';
@@ -18,15 +16,6 @@ import AppExplorer from './AppExplorer';
 import {blocks} from './demos/config';
 
 const kUrl = 'https://github.com/ecomfe/san-xui';
-
-function activateI18n() {
-    // 设置 i18n 相关的配置
-    i18nConfig.url = 'https://console-i18n.bj.bcebos.com/console.%s';
-    i18nConfig.sourceType = 'amd';
-    let locale = /locale=([a-zA-Z\-]+)/g.exec(location.search);
-    let toSet = (locale || [])[1];
-    return _.activate(toSet || _.getLanguage());
-}
 
 /* eslint-disable */
 const template = `<div class="showcase">
@@ -103,8 +92,8 @@ const App = defineComponent({   // eslint-disable-line
         this.data.set('aside.expand', !expand);
     },
     onItemSelected(item) {
-        let demosModulePrefix = '\x69nf-ui/x/demos/';
-        let demosCodePrefix = '\x69nf-ui/x/demos/';
+        let demosModulePrefix = 'san-xui/x/demos/';
+        let demosCodePrefix = 'san-xui/x/demos/';
         if (typeof G_PREFIX === 'object') {
             if (G_PREFIX.demosModule != null) {
                 demosModulePrefix = G_PREFIX.demosModule;
@@ -138,10 +127,8 @@ const App = defineComponent({   // eslint-disable-line
 });
 
 export function start() {
-    activateI18n().then(() => {
-        const app = new App();
-        app.attach(document.getElementById('root'));
-    });
+    const app = new App();
+    app.attach(document.getElementById('root'));
 }
 
 

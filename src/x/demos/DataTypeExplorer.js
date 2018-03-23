@@ -66,7 +66,7 @@ export default defineComponent({
             const ext = typeof G_SOURCE_EXT === 'string' ? G_SOURCE_EXT : '.js';
             let moduleId = typeof G_PREFIX === 'object'
                 ? `${G_PREFIX.componentsCode}${compName}`
-                : `\x69nf-ui/x/components/${compName}`;
+                : `san-xui/x/components/${compName}`;
             const folder = folderMap[compName];
             if (folder) {
                 moduleId = moduleId.replace('components', folder);

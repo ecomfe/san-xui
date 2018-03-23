@@ -4,8 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Tip, Dialog, Button, Select, Toast, AlertDialog} from 'san-xui';
-import {alert, confirm, plain} from 'san-xui/x/biz/helper';
+import {alert, confirm, plain, Tip, Dialog, Button, Select, Toast, AlertDialog} from 'san-xui';
 
 import Row from './Row';
 

@@ -56,11 +56,7 @@ module.exports = {
     resolve: {
         mainFiles: ['index', 'main'],
         alias: {
-            'eoo': alias('@ecomfe/eoo'),
-            'mini-event': alias('@ecomfe/mini-event'),
-            'er': alias('@ecomfe/er'),
             'inf-ria': alias('@ecomfe/inf-ria'),
-            'inf-i18n': alias('@ecomfe/inf-i18n'),
             'san-xui': path.join(__dirname, 'src')
         }
     },

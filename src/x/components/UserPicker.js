@@ -4,9 +4,9 @@
  */
 
 import _ from 'lodash';
+import axios from 'axios';
 import {DataTypes, defineComponent} from 'san';
 
-import {$post} from '../../mixins/ajax';
 import {hasUnit, create} from './util';
 import {asInput} from './asInput';
 import TextBox from './TextBox';
@@ -323,7 +323,7 @@ const UUAP = defineComponent({
         }
 
         const payload = {[keywordName]: keyword};
-        return $post(searchApi, payload)
+        return axios.post(searchApi, payload)
         .then(result => {
             if (this.data.get('keyword') !== keyword) {
                 return;

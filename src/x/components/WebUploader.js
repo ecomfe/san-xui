@@ -4,7 +4,6 @@
  */
 import u from 'lodash';
 import $ from 'jquery';
-import _ from 'inf-i18n';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
@@ -14,9 +13,9 @@ import Loading from './Loading';
 const cx = create('ui-webuploader');
 
 const kDefaultErrorMessages = {
-    F_EXCEED_SIZE: _('文件大小超出限制！'),
-    Q_EXCEED_SIZE_LIMIT: _('队列文件总量大小超出限制！'),
-    Q_ZERO_SIZE_LIMIT: _('不支持0字节的文件上传')
+    F_EXCEED_SIZE: '文件大小超出限制！',
+    Q_EXCEED_SIZE_LIMIT: '队列文件总量大小超出限制！',
+    Q_ZERO_SIZE_LIMIT: '不支持0字节的文件上传'
 };
 
 /* eslint-disable */
@@ -167,7 +166,7 @@ export default defineComponent({
             // 出列时要判断是否还有文件在队列中,如果一个没有finished变成true的初始状态
             const activeFiles = u.filter(uploader.getFiles(), file => file.getStatus() !== 'cancelled');
             if (activeFiles.length === 0) {
-                this.data.set('finished', true)
+                this.data.set('finished', true);
             }
         });
         // 显示loading
@@ -190,13 +189,13 @@ export default defineComponent({
         uploader.on('error', (errorType, evt) => {
             let errorMessage = kDefaultErrorMessages[errorType] || errorType;
             if (errorType === 'Q_TYPE_DENIED') {
-                errorMessage = _(`不支持 “${evt.name}” 的文件类型：“${evt.ext}”`);
+                errorMessage = `不支持 “${evt.name}” 的文件类型：“${evt.ext}”`;
             }
             else if (errorType === 'F_DUPLICATE') {
-                errorMessage = _(`文件 “${evt.name}” 已存在`);
+                errorMessage = `文件 “${evt.name}” 已存在`;
             }
             else if (errorType === 'Q_EXCEED_NUM_LIMIT') {
-                errorMessage = _(`队列文件数量超出限制！当前最多上传${evt}个文件`);
+                errorMessage = `队列文件数量超出限制！当前最多上传${evt}个文件`;
             }
             this.data.set('error', errorMessage);
             this.fire('error', {type: errorType, evt, errorMessage});

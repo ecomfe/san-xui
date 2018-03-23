@@ -9,7 +9,7 @@ const tagName = 'ui-form-item-sub-form';
 
 export default {
     type: 'sub-form',
-    tagName,
+    tagName, // eslint-disable-line
     Component: SubForm,
     builder(item, prefix) {
         return `

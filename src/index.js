@@ -3,13 +3,10 @@
  * @author leeight
  */
 export {default as ACEEditor} from './x/components/ACEEditor';
-// export {default as ActionLoader} from './x/components/ActionLoader';
 export {default as AlertDialog} from './x/components/AlertDialog';
-// export {default as BcmChart} from './x/components/BcmChart';
 export {default as BosUploader} from './x/components/BosUploader';
 export {default as BoxGroup} from './x/components/BoxGroup';
 export {default as Breadcrumbs} from './x/components/Breadcrumbs';
-// export {default as BulkActions} from './x/components/BulkActions';
 export {default as Button} from './x/components/Button';
 export {default as ButtonMenu} from './x/components/ButtonMenu';
 export {default as BuyBucket} from './x/components/BuyBucket';
@@ -65,7 +62,7 @@ export {default as Voice} from './x/components/Voice';
 export {default as WebUploader} from './x/components/WebUploader';
 export {default as asDrawer} from './x/components/asDrawer';
 export {default as Uploader} from './x/forms/Uploader';
-export {create, html} from './x/components/util';
+export {create, html, confirm, alert, plain} from './x/components/util';
 export {asInput} from './x/components/asInput';
 export {asForm, registerFormItem} from './x/forms/asForm';
 export {createForm} from './x/forms/createForm';

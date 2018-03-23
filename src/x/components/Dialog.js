@@ -7,7 +7,6 @@ import {DataTypes, defineComponent} from 'san';
 
 import {create, nextZindex} from './util';
 import Button from './Button';
-import {i18n} from '../../mixins/filters';
 import {opacity} from './fx/opacity';
 import {getScrollTop, getViewHeight} from '../esui/page';
 
@@ -27,8 +26,8 @@ const template = `<template>
     </div>
     <div class="${cx('foot', 'foot-panel')}" s-if="foot">
         <slot name="foot">
-            <ui-button on-click="onConfirmDialog" skin="primary">{{'确认'|i18n}}</ui-button>
-            <ui-button on-click="onCloseDialog">{{'取消'|i18n}}</ui-button>
+            <ui-button on-click="onConfirmDialog" skin="primary">{{'确认'}}</ui-button>
+            <ui-button on-click="onCloseDialog">{{'取消'}}</ui-button>
         </slot>
     </div>
 </div>
@@ -41,9 +40,6 @@ export default defineComponent({
     $fxOpacity: opacity(5),
     components: {
         'ui-button': Button
-    },
-    filters: {
-        i18n
     },
     initData() {
         const zIndex = nextZindex();

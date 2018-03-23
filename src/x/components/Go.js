@@ -1,15 +1,10 @@
 /**
- * @file components/Go.js
+ * @file san-xui/x/components/Go.js
  * @author leeight
  */
 import $ from 'jquery';
 import Promise from 'promise';
 import {defineComponent} from 'san';
-
-// import Service from 'common/service';
-// import R from 'common/region';
-
-// import {createClient, errorHandler} from './helper';
 
 const template = `<a on-click="switchTo($event)"
     target="{{target}}"
@@ -32,34 +27,6 @@ const Go = defineComponent({    // eslint-disable-line
 
         Go.switchHandler(event, this)
             .catch(() => location.href = this.data.get('href'));
-
-        /**
-        const regionId = this.data.get('region');
-        if (regionId) {
-            // 切换之前先切 region
-            return createClient()
-                .then(client => client.setRegion({regionId}))
-                .then(() => R.setCurrentRegion(regionId))
-                .then(() => {
-                    const rv = Service.current().switchTo(event);
-                    if (!rv) {
-                        // 因为之前组织的浏览器的默认行为，如果没有切换过去，就用暴力一些的方式。
-                        // 比如 /iot2/viz|apollo 之类的路径
-                        location.href = this.data.get('href');
-                    }
-                })
-                .fail(error => {
-                    errorHandler(this, error);
-                    location.href = this.data.get('href');
-                });
-        }
-
-        const rv = Service.current().switchTo(event);
-        // 如果失败了，返回 null/undefined，链接正常跳转
-        if (!rv) {
-            location.href = this.data.get('href');
-        }
-        */
     }
 });
 
