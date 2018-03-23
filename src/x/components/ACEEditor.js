@@ -3,11 +3,10 @@
  * @author leeight
  */
 
-/* global ace */
-
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
+import {loadThirdParty} from './helper';
 import Loading from './Loading';
 import {asInput} from './asInput';
 
@@ -98,7 +97,7 @@ const ACEEditor = defineComponent({
         });
     },
     attached() {
-        window.require(['inf-ria/js!' + kUrl], () => {
+        loadThirdParty('ace', ['inf-ria/js!' + kUrl]).then(ace => {
             this.data.set('loading', false);
             this.nextTick(() => {
                 const ghost = this.ref('ghost');

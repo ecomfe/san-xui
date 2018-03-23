@@ -3,11 +3,11 @@
  * @author leeight
  */
 
-import Promise from 'promise';
 import {DataTypes, defineComponent} from 'san';
 
 import ResizeObserver from './ResizeObserver';
 import {create} from './util';
+import {loadThirdParty} from './helper';
 
 const cx = create('ui-chart');
 
@@ -59,7 +59,7 @@ export default defineComponent({
     },
 
     __drawEmptyRing(echarts) {
-        // 这里把 echarts 当做参数传递进来，是因为不想直接写 imports echarts from 'inf-ria/echarts'
+        // 这里把 echarts 当做参数传递进来，是因为不想直接写 import echarts from 'inf-ria/echarts'
         // 这样子导致初始化 echarts+zrender 的时候有 300ms ~ 500ms 的延迟
         // 所以改成了异步的加载 echarts
         return () => {
@@ -85,12 +85,6 @@ export default defineComponent({
         };
     },
 
-    __loadEcharts(delay = 300) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => window.require(['inf-ria/echarts', 'zrender/vml/vml'], resolve), delay);
-        });
-    },
-
     attached() {
         this.watch('loading', loading => {
             if (this.chart) {
@@ -105,7 +99,7 @@ export default defineComponent({
             }
         });
 
-        this.__loadEcharts().then(echarts => {
+        loadThirdParty('echarts', ['inf-ria/echarts', 'zrender/vml/vml'], 300).then(echarts => {
             this.drawEmptyRing = this.__drawEmptyRing(echarts);
 
             this.data.set('loading', false);

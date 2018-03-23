@@ -7,6 +7,18 @@
     <link rel="icon" type="image/x-icon" href="https://cdn.bdstatic.com/san/favicon.ico">
     <link rel="stylesheet" href="https://cdn.bdstatic.com/iconfont/iconfont.css">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js"></script>
+    <script src="https://cdn.bdstatic.com/ckeditor/4.8.0/ckeditor.js"></script>
+    <script src="https://cdn.bdstatic.com/console/dep/c42ae776/ueditor/1.4.3/ueditor.all.min.js"></script>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+    <script src="https://cdn.bdstatic.com/console/dist/ef68d9f/dep/zeroclipboard/2.2.0/ZeroClipboard.2.2.0.max.js"></script>
+    <script src="https://cdn.staticfile.org/webuploader/0.1.0/webuploader.js"></script>
+    <script src="https://cdn.bdstatic.com/console/highlight.js/9.12.0/highlight.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bdstatic.com/console/highlight.js/9.12.0/styles/default.min.css" />
+    <script src="https://cdn.bdstatic.com/bce-bos-uploader-lite/1.0.5/bce-bos-uploader-lite.min.js"></script>
+
     <script src="https://cdn.bdstatic.com/ecom/esl/2-1-6/esl.js"></script>
     <script>
     /* eslint-disable */
@@ -23,128 +35,14 @@
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(hm, s);
     })();
-    define('inf-ria/echarts', ['exports', 'module', 'echarts/chart/pie', 'echarts/chart/bar', 'echarts/chart/line', 'echarts/chart/lines', 'echarts/chart/map', 'echarts/chart/scatter', 'echarts/component/legendScroll', 'echarts/component/legend', 'echarts/component/dataZoom', 'echarts/component/tooltip', 'echarts/component/title', 'echarts/component/grid', 'echarts/component/toolbox', 'echarts/component/markPoint', 'echarts/component/markLine', 'echarts'], function (exports, module, _echartsChartPie, _echartsChartBar, _echartsChartLine, _echartsChartLines, _echartsChartMap, _echartsChartScatter, _echartsComponentLegendScroll, _echartsComponentLegend, _echartsComponentDataZoom, _echartsComponentTooltip, _echartsComponentTitle, _echartsComponentGrid, _echartsComponentToolbox, _echartsComponentMarkPoint, _echartsComponentMarkLine, _echarts) {
-        var _echarts2 = _echarts;
-
-        var IS_V3 = /^3\./.test(_echarts2.version);
-
-        _echarts2.IS_V3 = IS_V3;
-
-        _echarts2.infGetColor = function (chart, name) {
-            var defaultColor = arguments.length <= 2 || arguments[2] === undefined ? '#000' : arguments[2];
-
-            if (IS_V3) {
-                try {
-                    var colorMap = chart.getModel().getComponent('legend').ecModel._colorNameMap;
-                    return colorMap[name] || defaultColor;
-                } catch (ex) {
-                    return defaultColor;
-                }
-            }
-
-            return chart.component.legend.getColor(name);
-        };
-
-        module.exports = _echarts2;
-    });
-    define('inf-ria/js', {
-        load: function (resourceId, req, load) {
-            var script = document.createElement('script');
-            script.src = req.toUrl(resourceId);
-            script.async = true;
-            if (script.readyState) {
-                script.onreadystatechange = onload;
-            }
-            else {
-                script.onload = onload;
-            }
-            function onload() {
-                var readyState = script.readyState;
-                if (typeof readyState === 'undefined' || /^(loaded|complete)$/.test(readyState)) {
-                    script.onload = script.onreadystatechange = null;
-                    script = null;
-                    load(true);
-                }
-            }
-            var parent = document.getElementsByTagName('head')[0] || document.body;
-            parent.appendChild(script);
-            parent = null;
-        }
-    });
-    define('inf-ria/css', {
-        load: function (resourceId, req, load) {
-            var link = document.createElement('link');
-            link.setAttribute('rel', 'stylesheet');
-            link.setAttribute('type', 'text/css');
-            link.setAttribute('href', req.toUrl(resourceId));
-            var parent = document.getElementsByTagName('head')[0] || document.body;
-            parent.appendChild(link);
-            parent = null;
-            link = null;
-            load(true);
-        }
-    });
     /* eslint-enable */
     </script>
     <script>
     require.config({
-        urlArgs: {
-            'san': '',
-            'webuploader': '',
-            'webuploader/webuploader': '',
-            'webuploader/Uploader': '',
-            'ueditor': '',
-            'echarts': '',
-            'echarts/../map/js': '',
-            'Raven': ''
-        },
-        bundles: {
-            echarts: [
-                'zrender/vml/vml',
-                'echarts/chart/pie',
-                'echarts/chart/bar',
-                'echarts/chart/line',
-                'echarts/chart/lines',
-                'echarts/chart/map',
-                'echarts/chart/scatter',
-                'echarts/chart/graph',
-                'echarts/chart/effectScatter',
-                'echarts/component/legendScroll',
-                'echarts/component/legend',
-                'echarts/component/dataZoom',
-                'echarts/component/tooltip',
-                'echarts/component/title',
-                'echarts/component/grid',
-                'echarts/component/toolbox',
-                'echarts/component/markPoint',
-                'echarts/component/markLine',
-                'echarts/component/markArea',
-                'echarts/component/visualMap',
-                'echarts/component/geo'
-            ]
-        },
         paths: {
-            'x-config': 'https://bj.bcebos.com/bce-cdn/console/config',
-            'san': 'https://cdn.bdstatic.com/san/3.4.1/san',
+            'san': 'https://cdn.bdstatic.com/san/3.4.3/san',
             'san-types': 'https://cdn.bdstatic.com/san-types/1.0.0/main',
-            'ace-builds': 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict',
-            'ckeditor': 'https://cdn.bdstatic.com/ckeditor/4.8.0',
-            'iconfont': 'https://cdn.bdstatic.com/iconfont',
-            'jquery': 'https://cdn.bdstatic.com/console/dist/be03539/dep/jquery/1.9.1/jquery.min',
-            'zeroclipboard': 'https://cdn.bdstatic.com/console/dep/05cfee93/zeroclipboard/ZeroClipboard',
-            'hljs': 'https://cdn.bdstatic.com/console/highlight.js/9.12.0',
-            'hljs/highlight': 'https://cdn.bdstatic.com/console/highlight.js/9.12.0/highlight.min',
-            'baidubce': 'https://cdn.bdstatic.com/bce-bos-uploader-lite/1.0.5/bce-bos-uploader-lite.min',
-            'SheetJS': 'https://cdn.bdstatic.com/console/SheetJS/0.0.0/',
-            'SheetJS/XLSX': 'https://cdn.bdstatic.com/console/SheetJS/0.0.0/xlsx.full.min',
-            'webuploader': 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/webuploader.min',
-            'webuploader/webuploader': 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/webuploader',
-            'webuploader/Uploader': 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/Uploader',
-            'ueditor': 'https://cdn.bdstatic.com/console/dep/c42ae776/ueditor/1.4.3',
-            'ueditor/dialogs': '/src/dep/ueditor/1.4.3/dialogs',
-            'echarts': 'https://cdn.bdstatic.com/console/dist/affaebd/dep/echarts/3.7.0/echarts+zrender.min',
-            'echarts/../map/js': 'https://cdn.bdstatic.com/echarts/3.6.2/map/js',
-            'Raven': 'https://cdn.bdstatic.com/console/ravenjs/3.23.1/raven.min'
+            'jquery': 'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min'
         }
     });
     </script>

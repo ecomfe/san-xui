@@ -8,6 +8,7 @@ import humanize from 'humanize';
 import {DataTypes, defineComponent} from 'san';
 
 import {nexUuid, create} from './util';
+import {loadThirdParty} from './helper';
 import Button from './Button';
 
 const cx = create('ui-bos-uploader');
@@ -344,7 +345,8 @@ export default defineComponent({
         });
     },
     attached() {
-        window.require(['baidubce'], baidubce => this.initializeUploader(baidubce));
+        loadThirdParty('baidubce', ['baidubce'])
+            .then(baidubce => this.initializeUploader(baidubce));
     },
     startUpload() {
         if (this.uploader) {

@@ -3,7 +3,7 @@
  * @author leeight
  */
 
-/* global _hmt, G_PREFIX, G_SOURCE_EXT */
+/* global _hmt, G_PREFIX, G_SOURCE_EXT, GIT_VERSION */
 
 import $ from 'jquery';
 import u from 'lodash';
@@ -44,7 +44,7 @@ if (typeof Promise.onReject === 'function'
 
 const kVersion = typeof GIT_VERSION === 'undefined'
     ? ''
-    : ' (' + GIT_VERSION + ')'
+    : ' (' + GIT_VERSION + ')';
 
 const App = defineComponent({   // eslint-disable-line
     template,

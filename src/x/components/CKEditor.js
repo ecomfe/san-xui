@@ -3,12 +3,11 @@
  * @author leeight
  */
 
-/* global CKEDITOR */
-
 import {DataTypes, defineComponent} from 'san';
 
-import {create} from './util';
 import Loading from './Loading';
+import {create} from './util';
+import {loadThirdParty} from './helper';
 
 const cx = create('ui-ckeditor');
 
@@ -70,7 +69,7 @@ export default defineComponent({
         */
     },
     attached() {
-        window.require(['inf-ria/js!ckeditor/ckeditor.js'], () => {
+        loadThirdParty('CKEDITOR', ['inf-ria/js!ckeditor/ckeditor.js']).then(CKEDITOR => {
             this.data.set('loading', false);
             const ghost = this.ref('ghost');
             const options = this.data.get('options');

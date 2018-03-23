@@ -6,6 +6,7 @@
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
+import {loadThirdParty} from './helper';
 
 const cx = create('ui-hljs');
 
@@ -48,11 +49,11 @@ export default defineComponent({
         }
     },
     attached() {
-        const amdModules = ['hljs/highlight', 'inf-ria/css!hljs/styles/default.min.css'];
-        window.require(amdModules, hljs => {
-            this.watch('code', () => this.__updateHighlightedCode(hljs));
-            this.watch('lang', () => this.__updateHighlightedCode(hljs));
-            this.__updateHighlightedCode(hljs);
-        });
+        loadThirdParty('hljs', ['hljs/highlight', 'inf-ria/css!hljs/styles/default.min.css'])
+            .then(hljs => {
+                this.watch('code', () => this.__updateHighlightedCode(hljs));
+                this.watch('lang', () => this.__updateHighlightedCode(hljs));
+                this.__updateHighlightedCode(hljs);
+            });
     }
 });
