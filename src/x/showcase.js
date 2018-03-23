@@ -19,7 +19,7 @@ const kUrl = 'https://github.com/ecomfe/san-xui';
 
 /* eslint-disable */
 const template = `<div class="showcase">
-    <h1><ui-icon name="collapse" on-click="native:onToggleAside($event)" /><a href="${kUrl}" target="_blank">San UI Library</a></h1>
+    <h1><ui-icon name="collapse" on-click="native:onToggleAside($event)" /><a href="${kUrl}" target="_blank">{{title}}</a></h1>
     <main>
         <ui-aside
             class="{{aside.expand ? 'aside-expand' : ''}}"
@@ -42,6 +42,10 @@ if (typeof Promise.onReject === 'function'
     Promise.onReject(u.noop);   // eslint-disable-line
 }
 
+const kVersion = typeof GIT_VERSION === 'undefined'
+    ? ''
+    : ' (' + GIT_VERSION + ')'
+
 const App = defineComponent({   // eslint-disable-line
     template,
     components: {
@@ -52,6 +56,7 @@ const App = defineComponent({   // eslint-disable-line
     initData() {
         return {
             blocks,
+            title: 'San UI Library' + kVersion,
             aside: {
                 expand: false
             },

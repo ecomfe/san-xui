@@ -3,6 +3,7 @@
  * @author leeight
  */
 
+const {execSync} = require('child_process');
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
@@ -10,6 +11,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const kBaseDir = path.resolve(__dirname, '..', '..');
+const kGitVersion = execSync('git rev-parse --short HEAD').toString().trim();
 
 function entries() {
     const files = glob.sync('./src/x/demos/xui-*.js');
@@ -61,6 +63,9 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.DefinePlugin({
+            GIT_VERSION: JSON.stringify(kGitVersion)
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             // (the commons chunk name)
