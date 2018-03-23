@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Voice, ToastLabel} from 'san-xui';
-
-import Row from './Row';
+import {Row, Voice, ToastLabel} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

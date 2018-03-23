@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {TextBox, Toast} from 'san-xui';
-
-import Row from './Row';
+import {Row, TextBox, Toast} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

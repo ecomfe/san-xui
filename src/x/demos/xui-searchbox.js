@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {SearchBox, Button, CheckBox, RadioBox} from 'san-xui';
-
-import Row from './Row';
+import {Row, SearchBox, Button, CheckBox, RadioBox} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

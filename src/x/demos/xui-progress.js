@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Progress} from 'san-xui';
-
-import Row from './Row';
+import {Row, Progress} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

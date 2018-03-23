@@ -2,6 +2,7 @@
  * @file san-xui/index.js
  * @author leeight
  */
+
 export {default as ACEEditor} from './x/components/ACEEditor';
 export {default as AlertDialog} from './x/components/AlertDialog';
 export {default as BosUploader} from './x/components/BosUploader';
@@ -62,8 +63,11 @@ export {default as Voice} from './x/components/Voice';
 export {default as WebUploader} from './x/components/WebUploader';
 export {default as asDrawer} from './x/components/asDrawer';
 export {default as Uploader} from './x/forms/Uploader';
-export {create, html, confirm, alert, plain} from './x/components/util';
+export {default as Row} from './x/demos/Row';
+export {create, html, hasSlot, nexUuid, nextZindex} from './x/components/util';
+export {confirm, alert, plain} from './x/components/helper';
 export {asInput} from './x/components/asInput';
+export {asDialog} from './x/components/asDialog';
 export {asForm, registerFormItem} from './x/forms/asForm';
 export {createForm} from './x/forms/createForm';
 export {default as FormDialog} from './x/forms/FormDialog';

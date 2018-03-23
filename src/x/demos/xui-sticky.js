@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Sticky} from 'san-xui';
-
-import Row from './Row';
+import {Row, Sticky} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

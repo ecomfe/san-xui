@@ -7,10 +7,9 @@ import {defineComponent} from 'san';
 
 import Dialog from './Dialog';
 import Button from './Button';
-import {html} from './util';
 
 export default defineComponent({
-    template: html`<template>
+    template: `<template>
     <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">
         <span slot="head">{{title}}</span>
         <div class="ui-dialog-icon ui-dialog-icon-warning"></div>

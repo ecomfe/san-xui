@@ -7,7 +7,7 @@
 
 import {DataTypes, defineComponent} from 'san';
 
-import {create, html} from './util';
+import {create} from './util';
 import Loading from './Loading';
 import {asInput} from './asInput';
 
@@ -17,7 +17,7 @@ const kUrl = typeof window.require === 'function'
     : 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
 
 /* eslint-disable */
-const template = html`
+const template = `
 <div class="{{mainClass}}">
     <div class="${cx('error')}" s-if="error">{{error}}</div>
     <ui-loading s-if="loading" />

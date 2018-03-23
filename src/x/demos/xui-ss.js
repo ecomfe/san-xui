@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {StopScroll} from 'san-xui';
-
-import Row from './Row';
+import {Row, StopScroll} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

@@ -5,9 +5,7 @@
 
 import Promise from 'promise';
 import {defineComponent} from 'san';
-import {InstantEditor, TextBox, Select} from 'san-xui';
-
-import Row from './Row';
+import {Row, InstantEditor, TextBox, Select} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

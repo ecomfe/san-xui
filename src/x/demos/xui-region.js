@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Region} from 'san-xui';
-
-import Row from './Row';
+import {Row, Region} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

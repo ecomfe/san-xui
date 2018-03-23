@@ -5,13 +5,13 @@
 
 import {DataTypes, defineComponent} from 'san';
 
-import {create, html} from './util';
+import {create} from './util';
 import Loading from './Loading';
 
 const cx = create('ui-button');
 
 /* eslint-disable */
-const template = html`
+const template = `
 <div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">
     <i class="{{'iconfont icon-' + icon}}" s-if="icon"></i>
     <span class="${cx('label')}" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>

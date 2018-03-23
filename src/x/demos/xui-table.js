@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Table, TableColumnToggle, FrozenColumnTable, SearchBox, BoxGroup, Button} from 'san-xui';
-
-import Row from './Row';
+import {Row, Table, TableColumnToggle, FrozenColumnTable, SearchBox, BoxGroup, Button} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

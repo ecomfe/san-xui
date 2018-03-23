@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {NumberTextline} from 'san-xui';
-
-import Row from './Row';
+import {Row, NumberTextline} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

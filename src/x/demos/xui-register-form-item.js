@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {ToastLabel, registerFormItem, createForm} from 'san-xui';
-
-import Row from './Row';
+import {Row, ToastLabel, registerFormItem, createForm} from 'san-xui';
 
 /**
  * 注册一个 type: 'color' 类型的组件，一般来说，为了命名避免冲突，建议加上业务的前缀比较稳妥

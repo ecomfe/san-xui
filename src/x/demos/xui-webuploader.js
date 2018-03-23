@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {WebUploader, Switch, Toast, Button, ToastLabel} from 'san-xui';
-
-import Row from './Row';
+import {Row, WebUploader, Switch, Toast, Button, ToastLabel} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

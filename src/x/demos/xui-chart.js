@@ -5,10 +5,9 @@
 
 import u from 'lodash';
 import {defineComponent} from 'san';
-import {Chart} from 'san-xui';
+import {Row, Chart} from 'san-xui';
 
 import {metrics} from './config';
-import Row from './Row';
 
 /* eslint-disable */
 const template = `<template>

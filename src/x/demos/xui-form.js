@@ -7,9 +7,8 @@ import {defineComponent} from 'san';
 import * as AsyncValidator from 'async-validator';
 import Form from 'san-xui/x/forms/Form';
 import FormItem from 'san-xui/x/forms/FormItem';
-import {Toast, TextBox, SMSCodeBox, Button, Select, BoxGroup} from 'san-xui';
+import {Row, Toast, TextBox, SMSCodeBox, Button, Select, BoxGroup} from 'san-xui';
 
-import Row from './Row';
 import * as rules from './rules';
 
 const Schema = AsyncValidator.default;

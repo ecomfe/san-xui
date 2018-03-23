@@ -4,9 +4,8 @@
  */
 
 import {defineComponent} from 'san';
-import {createForm, ToastLabel, ACEEditor, SyntaxHighlighter, Button, Select, Switch, Toast} from 'san-xui';
+import {createForm, Row, ToastLabel, ACEEditor, SyntaxHighlighter, Button, Select, Switch, Toast} from 'san-xui';
 
-import Row from './Row';
 /* eslint-disable */
 import {
     kDefaultSchema, kSchema$eq, kSchema$in,

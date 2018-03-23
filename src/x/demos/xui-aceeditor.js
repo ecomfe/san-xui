@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {ACEEditor} from 'san-xui';
-
-import Row from './Row';
+import {Row, ACEEditor} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>
