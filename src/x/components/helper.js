@@ -7,6 +7,74 @@ import ConfirmDialog from './ConfirmDialog';
 import AlertDialog from './AlertDialog';
 import PlainDialog from './PlainDialog';
 
+const kAmdPluginId = 'san-xui-loader-' + new Date().getTime().toString(36);
+
+function jsLoader() {
+    return {
+        load(resourceId, req, load) {
+            let script = document.createElement('script');
+            script.src = req.toUrl(resourceId);
+            script.async = true;
+            if (script.readyState) {
+                script.onreadystatechange = onload;
+            }
+            else {
+                script.onload = onload;
+            }
+
+            function onload() {
+                let readyState = script.readyState;
+                if (
+                    typeof readyState === 'undefined'
+                    || /^(loaded|complete)$/.test(readyState)
+                ) {
+                    script.onload = script.onreadystatechange = null;
+                    script = null;
+                    load(true);
+                }
+            }
+
+            let parent = document.getElementsByTagName('head')[0]
+                || document.body;
+            parent.appendChild(script);
+            parent = null;
+        }
+    };
+}
+
+function cssLoader() {
+    return {
+        load(resourceId, req, load) {
+            let link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('type', 'text/css');
+            link.setAttribute('href', req.toUrl(resourceId));
+
+            let parent = document.getElementsByTagName('head')[0]
+                || document.body;
+            parent.appendChild(link);
+
+            parent = null;
+            link = null;
+
+            load(true);
+        }
+    };
+}
+
+if (typeof window.define === 'function' && window.define.amd) {
+    window.define(`${kAmdPluginId}/js`, jsLoader);
+    window.define(`${kAmdPluginId}/css`, cssLoader);
+}
+
+export function js(resourceId) {
+    return `${kAmdPluginId}/js!${resourceId}`;
+}
+
+export function css(resourceId) {
+    return `${kAmdPluginId}/css!${resourceId}`;
+}
+
 export function loadThirdParty(globalKey, amdModules, delay = 0) {
     // 首先检查是否已经直接在页面中引入了，如果引入了，就直接使用全局的对象即可
     // 比如 echarts, WebUploader 等等
@@ -43,7 +111,7 @@ export function loadThirdParty(globalKey, amdModules, delay = 0) {
             const globalVars = [];
             for (let i = 0; i < modules.length; i++) {
                 const key = keys[i];
-                // 优先考虑 window 下面的内容，因为有时候 amdModule 是 inf-ria/js! 这种类型的模块
+                // 优先考虑 window 下面的内容，因为有时候 amdModule 是 js() 这种类型的模块
                 globalVars.push(window[key] || modules[i]);
             }
             if (keys.length > 1) {

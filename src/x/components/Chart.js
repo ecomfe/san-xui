@@ -99,7 +99,26 @@ export default defineComponent({
             }
         });
 
-        loadThirdParty('echarts', ['inf-ria/echarts', 'zrender/vml/vml'], 300).then(echarts => {
+        const amdModules = [
+            'echarts',
+            'zrender/vml/vml',
+            'echarts/chart/pie',
+            'echarts/chart/bar',
+            'echarts/chart/line',
+            'echarts/chart/lines',
+            'echarts/chart/map',
+            'echarts/chart/scatter',
+            'echarts/component/legendScroll',
+            'echarts/component/legend',
+            'echarts/component/dataZoom',
+            'echarts/component/tooltip',
+            'echarts/component/title',
+            'echarts/component/grid',
+            'echarts/component/toolbox',
+            'echarts/component/markPoint',
+            'echarts/component/markLine'
+        ];
+        loadThirdParty('echarts', amdModules, 300).then(echarts => {
             this.drawEmptyRing = this.__drawEmptyRing(echarts);
 
             this.data.set('loading', false);

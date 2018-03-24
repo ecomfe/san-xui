@@ -7,7 +7,7 @@ import $ from 'jquery';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
-import {loadThirdParty} from './helper';
+import {loadThirdParty, css} from './helper';
 import Button from './Button';
 import Loading from './Loading';
 
@@ -240,7 +240,7 @@ export default defineComponent({
     },
 
     attached() {
-        loadThirdParty('WebUploader', ['webuploader'])
+        loadThirdParty('WebUploader', ['webuploader', css('webuploader/webuploader.css')])
             .then(WebUploader => this.initializeUploader(WebUploader));
     },
     disposed() {

@@ -8,7 +8,7 @@ import u from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
-import {loadThirdParty} from './helper';
+import {loadThirdParty, js} from './helper';
 import {asInput} from './asInput';
 import Loading from './Loading';
 
@@ -116,7 +116,7 @@ const RichTextEditor = defineComponent({
         */
     },
     attached() {
-        loadThirdParty(['ZeroClipboard', 'UE'], ['zeroclipboard', 'inf-ria/js!ueditor/ueditor.all.min.js'])
+        loadThirdParty(['ZeroClipboard', 'UE'], ['zeroclipboard', js('ueditor/ueditor.all.min.js')])
         .then(([ZeroClipboard, UE]) => {
             this.data.set('loading', false);
 

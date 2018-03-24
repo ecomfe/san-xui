@@ -6,7 +6,7 @@
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
-import {loadThirdParty} from './helper';
+import {loadThirdParty, css} from './helper';
 
 const cx = create('ui-hljs');
 
@@ -49,7 +49,7 @@ export default defineComponent({
         }
     },
     attached() {
-        loadThirdParty('hljs', ['hljs/highlight', 'inf-ria/css!hljs/styles/default.min.css'])
+        loadThirdParty('hljs', ['hljs/highlight', css('hljs/styles/default.min.css')])
             .then(hljs => {
                 this.watch('code', () => this.__updateHighlightedCode(hljs));
                 this.watch('lang', () => this.__updateHighlightedCode(hljs));

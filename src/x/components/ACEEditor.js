@@ -6,7 +6,7 @@
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
-import {loadThirdParty} from './helper';
+import {loadThirdParty, js} from './helper';
 import Loading from './Loading';
 import {asInput} from './asInput';
 
@@ -97,7 +97,7 @@ const ACEEditor = defineComponent({
         });
     },
     attached() {
-        loadThirdParty('ace', ['inf-ria/js!' + kUrl]).then(ace => {
+        loadThirdParty('ace', [js(kUrl)]).then(ace => {
             this.data.set('loading', false);
             this.nextTick(() => {
                 const ghost = this.ref('ghost');

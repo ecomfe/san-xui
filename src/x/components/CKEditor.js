@@ -7,7 +7,7 @@ import {DataTypes, defineComponent} from 'san';
 
 import Loading from './Loading';
 import {create} from './util';
-import {loadThirdParty} from './helper';
+import {loadThirdParty, js} from './helper';
 
 const cx = create('ui-ckeditor');
 
@@ -69,7 +69,7 @@ export default defineComponent({
         */
     },
     attached() {
-        loadThirdParty('CKEDITOR', ['inf-ria/js!ckeditor/ckeditor.js']).then(CKEDITOR => {
+        loadThirdParty('CKEDITOR', [js('ckeditor/ckeditor.js')]).then(CKEDITOR => {
             this.data.set('loading', false);
             const ghost = this.ref('ghost');
             const options = this.data.get('options');

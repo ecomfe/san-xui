@@ -5,12 +5,29 @@
 
 import u from 'lodash';
 import {defineComponent} from 'san';
-import {Row, Chart} from 'san-xui';
+import {Row, Chart, ToastLabel} from 'san-xui';
 
 import {metrics} from './config';
 
 /* eslint-disable */
 const template = `<template>
+<xui-toastlabel>
+需要在页面中引入 echarts 的代码，有两种方式：<pre>
+1. 手工引入
+<code>&lt;script src="http://echarts.baidu.com/dist/echarts.min.js"&gt;&lt;/script&gt;</code>
+
+2. AMD Loader自动引入 <strong style="color:red"> esl 的版本需要是2.2.0+ 才可以在 bundles 里面支持正则表达式的配置 </strong>
+<code>require.config({
+  bundles: {
+    echarts: [/^(echarts|zrender)/]
+  },
+  paths: {
+    'echarts': 'https://cdn.bdstatic.com/console/dist/affaebd/dep/echarts/3.7.0/echarts+zrender.min'
+  }
+});</code>
+</pre>
+</xui-toastlabel>
+
 <x-row label="[default]">
     <xui-chart
         loading="{{chart.loading}}",
@@ -35,6 +52,7 @@ export default defineComponent({
     template,
     components: {
         'x-row': Row,
+        'xui-toastlabel': ToastLabel,
         'xui-chart': Chart
     },
     filters: {
