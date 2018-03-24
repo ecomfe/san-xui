@@ -19,6 +19,69 @@ npm i --save san-xui
 
 ## 使用
 
+### AMD
+
+这里使用的是 [esl](https://github.com/ecomfe/esl) 作为 AMD Loader，使用之前需要配置一下 paths 和 packages，如下：
+
+```html
+<script src="https://cdn.bdstatic.com/ecom/esl/2.2.0-rc.2/esl.js"></script>
+<script>
+require.config({
+  paths: {
+    san: "https://cdn.bdstatic.com/san/3.5.1-rc.1/san",
+    jquery: "https://unpkg.com/jquery@3.3.1/dist/jquery",
+    humanize: "https://unpkg.com/humanize@0.0.9/humanize",
+    lodash: "https://unpkg.com/lodash@4.17.5/lodash",
+    moment: "https://unpkg.com/moment@2.21.0/moment",
+    axios: "https://unpkg.com/axios@0.18.0/dist/axios",
+    clipboard: "https://unpkg.com/clipboard@2.0.0/dist/clipboard",
+    "async-validator": "https://cdn.bdstatic.com/console/async-validator/0.0.0/async-validator.bundle",
+    "big.js": "https://unpkg.com/big.js@5.0.3/big"
+  },
+  packages: [
+    {
+      name: "san-xui",
+      location: "https://unpkg.com/san-xui@0.2.0/lib",
+      main: "index"
+    }
+  ]
+});
+</script>
+```
+
+引入所需要的样式代码：
+
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.bdstatic.com/iconfont/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/san-xui@0.2.0/dist/xui.css" />
+```
+
+最后是应用的代码：
+
+```js
+define(function(require) {
+  const san = require("san");
+  const { Button, alert } = require("san-xui");
+
+  const App = san.defineComponent({
+    template: `<template><ui-button on-click="onBtnClick">Hello san-xui</ui-button></template>`,
+    components: {
+      "ui-button": Button
+    },
+    onBtnClick() {
+      alert("Button clicked");
+    }
+  });
+
+  function start() {
+    const app = new App();
+    app.attach(document.getElementById("root"));
+  }
+
+  return { start };
+});
+```
+
 ### Webpack
 
 通过 named import 导入所需要使用的组件
