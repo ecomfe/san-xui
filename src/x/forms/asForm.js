@@ -5,7 +5,6 @@
 
 import _ from 'lodash';
 import moment from 'moment';
-import Promise from 'promise';
 import * as AsyncValidator from 'async-validator';
 import {defineComponent} from 'san';
 

@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import Promise from 'promise';
 import {defineComponent} from 'san';
 import {Row, InstantEditor, TextBox, Select} from 'san-xui';
 

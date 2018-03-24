@@ -7,7 +7,6 @@
 
 import $ from 'jquery';
 import u from 'lodash';
-import Promise from 'promise';
 import {defineComponent} from 'san';
 
 import Icon from './components/Icon';

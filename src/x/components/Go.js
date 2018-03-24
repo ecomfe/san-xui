@@ -3,7 +3,6 @@
  * @author leeight
  */
 import $ from 'jquery';
-import Promise from 'promise';
 import {defineComponent} from 'san';
 
 const template = `<a on-click="switchTo($event)"

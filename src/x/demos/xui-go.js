@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import Promise from 'promise';
 import {defineComponent} from 'san';
 import {Go, ToastLabel} from 'san-xui';
 

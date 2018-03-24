@@ -4,7 +4,6 @@
  */
 
 import {defineComponent, DataTypes} from 'san';
-import Promise from 'promise';
 
 import {create} from '../components/util';
 

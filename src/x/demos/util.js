@@ -3,8 +3,6 @@
  * @author leeight
  */
 
-import Promise from 'promise';
-
 class SimpleAction {
     constructor(actionContext) {
         this.context = actionContext;
