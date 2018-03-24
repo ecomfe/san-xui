@@ -61,10 +61,7 @@ function alias(name) {
 module.exports = {
     ...
     resolve: {
-        mainFiles: ['index', 'main'],
-        alias: {
-            'inf-ria': alias('@ecomfe/inf-ria'),
-        }
+        mainFiles: ['index', 'main']
     },
     module: {
         rules: [

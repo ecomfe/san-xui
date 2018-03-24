@@ -58,7 +58,6 @@ module.exports = {
     resolve: {
         mainFiles: ['index', 'main'],
         alias: {
-            'inf-ria': alias('@ecomfe/inf-ria'),
             'san-xui': path.join(__dirname, 'src')
         }
     },
