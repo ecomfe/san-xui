@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([5],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([3],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,193 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 438:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _lodash = __webpack_require__(5);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _san = __webpack_require__(0);
-
-var _sanXui = __webpack_require__(3);
-
-var _config = __webpack_require__(47);
-
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* eslint-disable */
-var template = '<template>\n<x-row label="[default]">\n    <xui-chart\n        loading="{{chart.loading}}",\n        width="{{chart.width}}"\n        height="{{chart.height}}"\n        option="{{chart.metrics|gen_options_line}}"\n    />\n</x-row>\n<x-row label="auto-resize">\n    <xui-chart\n        auto-resize\n        loading="{{chart.loading}}",\n        width="{{chart.width}}"\n        height="{{chart.height}}"\n        option="{{chart.metrics|gen_options_line}}"\n    />\n</x-row>\n</template>';
-/* eslint-enable */
-
-/**
- * @file demos/xui-chart.js
- * @author leeight
- */
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'x-row': _Row2.default,
-        'xui-chart': _sanXui.Chart
-    },
-    filters: {
-        gen_options_line: function gen_options_line(metrics) {
-            // eslint-disable-line
-            var xAxis = _lodash2.default.map(metrics, function (o) {
-                return o.date;
-            });
-            var yAxisValue = _lodash2.default.map(metrics, function (item) {
-                var value = _lodash2.default.reduce(item.metrics, function (prev, o) {
-                    return prev + o.value;
-                }, 0);
-                return +value.toFixed(2);
-            });
-
-            var yAxis = [{
-                color: 'rgb(21, 148, 242)',
-                label: '消费趋势',
-                value: yAxisValue
-            }];
-            var series = _lodash2.default.map(yAxis, function (item) {
-                return {
-                    name: item.label,
-                    type: 'line',
-                    smooth: !!item.smooth,
-                    itemStyle: {
-                        normal: {
-                            color: item.color
-                        }
-                    },
-                    areaStyle: {
-                        normal: {
-                            opacity: 1,
-                            color: {
-                                x: 0,
-                                y: 0,
-                                x2: 0,
-                                y2: 1,
-                                type: 'linear',
-                                global: false,
-                                colorStops: [{
-                                    offset: 0,
-                                    color: 'rgba(185, 221, 251, 0.5)'
-                                }, {
-                                    offset: 1,
-                                    color: 'rgba(255, 255, 255, 0.5)'
-                                }]
-                            }
-                        }
-                    },
-                    data: item.value
-                };
-            });
-
-            var option = {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        lineStyle: {
-                            color: '#108cee'
-                        }
-                    },
-                    position: function position(pt) {
-                        return [pt[0], '10%'];
-                    },
-
-                    backgroundColor: '#fff',
-                    textStyle: {
-                        color: '#333'
-                    },
-                    enterable: false,
-                    extraCssText: 'border-radius:0;' + 'padding:0;' + 'background-color:rgba(255,255,255,.95);' + 'box-shadow:3px 3px 9px 3px rgba(16,140,238,.3);',
-                    formatter: function formatter(params, ticket, callback) {
-                        var _params$ = params[0],
-                            axisValue = _params$.axisValue,
-                            data = _params$.data;
-
-                        var itemMetrics = [];
-                        // TODO(leeight) 后期支持 现金，代金券，退款 之后再打开
-                        // u.map(metrics[dataIndex].metrics,
-                        //    o => `<div>${o.name}<span>￥${o.value.toFixed(2)}</span></div>`);
-                        /* eslint-disable */
-                        return '<dl class="x-c-t-tooltip">' + ('<dt>' + axisValue + ' \u6D88\u8D39\u8BE6\u60C5</dt>') + '<dd>' + ('<div><strong>\u603B\u989D<span>\uFFE5' + data + '</span></strong></div>') + itemMetrics.join('') + '</dd>' + '</dl>';
-                        /* eslint-enable */
-                    }
-                },
-                grid: {
-                    show: true,
-                    top: 0,
-                    left: 0,
-                    bottom: 20,
-                    right: 0
-                },
-                xAxis: {
-                    type: 'category',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        textStyle: {
-                            align: 'left',
-                            color: 'rgb(153, 153, 153)'
-                        }
-                    },
-                    data: xAxis
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: false
-                    },
-                    splitLine: {
-                        show: true,
-                        lineStyle: {
-                            color: ['rgb(240, 240, 240)']
-                        }
-                    }
-                },
-                series: series
-            };
-
-            return option;
-        }
-    },
-    initData: function initData() {
-        return {
-            chart: {
-                loading: true,
-                width: 500,
-                height: 300,
-                metrics: _config.metrics
-            }
-        };
-    }
-});
-
-/***/ }),
-
-/***/ 47:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -282,7 +96,8 @@ var blocks = exports.blocks = [{
     items: [{
         text: 'xui-chart'
     }, {
-        text: 'xui-bcmchart'
+        text: 'xui-bcmchart',
+        disabled: true
     }]
 }, {
     title: '语音识别',
@@ -319,11 +134,14 @@ var blocks = exports.blocks = [{
 }, {
     title: '业务组件',
     items: [{
-        text: 'xui-filter'
+        text: 'xui-filter',
+        disabled: true
     }, {
-        text: 'xui-toolbar'
+        text: 'xui-toolbar',
+        disabled: true
     }, {
-        text: 'xui-right-toolbar'
+        text: 'xui-right-toolbar',
+        disabled: true
     }, {
         text: 'xui-bulk-actions',
         disabled: true
@@ -346,7 +164,8 @@ var blocks = exports.blocks = [{
     }, {
         text: 'xui-go'
     }, {
-        text: 'xui-actionloader'
+        text: 'xui-actionloader',
+        disabled: true
     }, {
         text: 'xui-sidebar',
         disabled: true
@@ -950,6 +769,189 @@ var metrics = exports.metrics = [{
     metrics: []
 }];
 
+/***/ }),
+
+/***/ 402:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(4);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _sanXui = __webpack_require__(3);
+
+var _config = __webpack_require__(40);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable */
+/**
+ * @file demos/xui-chart.js
+ * @author leeight
+ */
+
+var template = '<template>\n<xui-toastlabel>\n\u9700\u8981\u5728\u9875\u9762\u4E2D\u5F15\u5165 echarts \u7684\u4EE3\u7801\uFF0C\u6709\u4E24\u79CD\u65B9\u5F0F\uFF1A<pre>\n1. \u624B\u5DE5\u5F15\u5165\n<code>&lt;script src="http://echarts.baidu.com/dist/echarts.min.js"&gt;&lt;/script&gt;</code>\n\n2. AMD Loader\u81EA\u52A8\u5F15\u5165 <strong style="color:red"> esl \u7684\u7248\u672C\u9700\u8981\u662F2.2.0+ \u624D\u53EF\u4EE5\u5728 bundles \u91CC\u9762\u652F\u6301\u6B63\u5219\u8868\u8FBE\u5F0F\u7684\u914D\u7F6E </strong>\n<code>require.config({\n  bundles: {\n    echarts: [/^(echarts|zrender)/]\n  },\n  paths: {\n    \'echarts\': \'https://cdn.bdstatic.com/console/dist/affaebd/dep/echarts/3.7.0/echarts+zrender.min\'\n  }\n});</code>\n</pre>\n</xui-toastlabel>\n\n<x-row label="[default]">\n    <xui-chart\n        loading="{{chart.loading}}",\n        width="{{chart.width}}"\n        height="{{chart.height}}"\n        option="{{chart.metrics|gen_options_line}}"\n    />\n</x-row>\n<x-row label="auto-resize">\n    <xui-chart\n        auto-resize\n        loading="{{chart.loading}}",\n        width="{{chart.width}}"\n        height="{{chart.height}}"\n        option="{{chart.metrics|gen_options_line}}"\n    />\n</x-row>\n</template>';
+/* eslint-enable */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'x-row': _sanXui.Row,
+        'xui-toastlabel': _sanXui.ToastLabel,
+        'xui-chart': _sanXui.Chart
+    },
+    filters: {
+        gen_options_line: function gen_options_line(metrics) {
+            // eslint-disable-line
+            var xAxis = _lodash2.default.map(metrics, function (o) {
+                return o.date;
+            });
+            var yAxisValue = _lodash2.default.map(metrics, function (item) {
+                var value = _lodash2.default.reduce(item.metrics, function (prev, o) {
+                    return prev + o.value;
+                }, 0);
+                return +value.toFixed(2);
+            });
+
+            var yAxis = [{
+                color: 'rgb(21, 148, 242)',
+                label: '消费趋势',
+                value: yAxisValue
+            }];
+            var series = _lodash2.default.map(yAxis, function (item) {
+                return {
+                    name: item.label,
+                    type: 'line',
+                    smooth: !!item.smooth,
+                    itemStyle: {
+                        normal: {
+                            color: item.color
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            opacity: 1,
+                            color: {
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                type: 'linear',
+                                global: false,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(185, 221, 251, 0.5)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(255, 255, 255, 0.5)'
+                                }]
+                            }
+                        }
+                    },
+                    data: item.value
+                };
+            });
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        lineStyle: {
+                            color: '#108cee'
+                        }
+                    },
+                    position: function position(pt) {
+                        return [pt[0], '10%'];
+                    },
+
+                    backgroundColor: '#fff',
+                    textStyle: {
+                        color: '#333'
+                    },
+                    enterable: false,
+                    extraCssText: 'border-radius:0;' + 'padding:0;' + 'background-color:rgba(255,255,255,.95);' + 'box-shadow:3px 3px 9px 3px rgba(16,140,238,.3);',
+                    formatter: function formatter(params, ticket, callback) {
+                        var _params$ = params[0],
+                            axisValue = _params$.axisValue,
+                            data = _params$.data;
+
+                        var itemMetrics = [];
+                        // TODO(leeight) 后期支持 现金，代金券，退款 之后再打开
+                        // u.map(metrics[dataIndex].metrics,
+                        //    o => `<div>${o.name}<span>￥${o.value.toFixed(2)}</span></div>`);
+                        /* eslint-disable */
+                        return '<dl class="x-c-t-tooltip">' + ('<dt>' + axisValue + ' \u6D88\u8D39\u8BE6\u60C5</dt>') + '<dd>' + ('<div><strong>\u603B\u989D<span>\uFFE5' + data + '</span></strong></div>') + itemMetrics.join('') + '</dd>' + '</dl>';
+                        /* eslint-enable */
+                    }
+                },
+                grid: {
+                    show: true,
+                    top: 0,
+                    left: 0,
+                    bottom: 20,
+                    right: 0
+                },
+                xAxis: {
+                    type: 'category',
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            align: 'left',
+                            color: 'rgb(153, 153, 153)'
+                        }
+                    },
+                    data: xAxis
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLabel: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: ['rgb(240, 240, 240)']
+                        }
+                    }
+                },
+                series: series
+            };
+
+            return option;
+        }
+    },
+    initData: function initData() {
+        return {
+            chart: {
+                loading: true,
+                width: 500,
+                height: 300,
+                metrics: _config.metrics
+            }
+        };
+    }
+});
+
 /***/ })
 
-},[438])});;
+},[402])});;

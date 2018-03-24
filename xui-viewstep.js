@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([11],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 489:
+/***/ 447:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,25 +21,19 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* eslint-disable */
-var template = '<template>\n<x-row label="[default]">\n    <xui-viewstep\n        steps="{{steps}}" />\n</x-row>\n\n<x-row label="step-index=3">\n    <xui-viewstep\n        step-index="{{3}}"\n        steps="{{steps}}" />\n</x-row>\n</template>';
-/* eslint-enable */
-
 /**
  * @file demos/xui-viewstep.js
  * @author leeight
  */
 
+var template = '<template>\n<x-row label="[default]">\n    <xui-viewstep\n        steps="{{steps}}" />\n</x-row>\n\n<x-row label="step-index=3">\n    <xui-viewstep\n        step-index="{{3}}"\n        steps="{{steps}}" />\n</x-row>\n</template>';
+/* eslint-enable */
+
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-viewstep': _sanXui.ViewStep
     },
     initData: function initData() {
@@ -51,4 +45,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[489])});;
+},[447])});;

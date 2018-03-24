@@ -4,9 +4,7 @@
  */
 
 import {nextTick, defineComponent} from 'san';
-import {Tab, TabPanel, Button, MonthView} from 'san-xui';
-
-import Row from './Row';
+import {Row, Tab, TabPanel, Button, MonthView} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import _ from 'inf-i18n';
 import {defineComponent} from 'san';
 
 import Dialog from './Dialog';
@@ -23,7 +22,7 @@ export default defineComponent({
         return {
             open: true,
             width: 500,
-            title: _('请确认')
+            title: '请确认'
         };
     },
     onCloseDialog() {

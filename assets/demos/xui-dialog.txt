@@ -4,10 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Tip, Dialog, Button, Select, Toast, AlertDialog} from 'san-xui';
-import {alert, confirm, plain} from 'san-xui/x/biz/helper';
-
-import Row from './Row';
+import {alert, confirm, plain, Row, Tip, Dialog, Button, Select, Toast, AlertDialog} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

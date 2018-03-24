@@ -3,13 +3,12 @@
  * @author leeight
  */
 
-/* global UE */
-
 import $ from 'jquery';
 import u from 'lodash';
 import {DataTypes, defineComponent} from 'san';
 
 import {create} from './util';
+import {loadThirdParty, js} from './helper';
 import {asInput} from './asInput';
 import Loading from './Loading';
 
@@ -117,7 +116,8 @@ const RichTextEditor = defineComponent({
         */
     },
     attached() {
-        window.require(['zeroclipboard', 'inf-ria/js!ueditor/ueditor.all.min.js'], ZeroClipboard => {
+        loadThirdParty(['ZeroClipboard', 'UE'], ['zeroclipboard', js('ueditor/ueditor.all.min.js')])
+        .then(([ZeroClipboard, UE]) => {
             this.data.set('loading', false);
 
             // TODO(leeight) FIX ZeroClipboard

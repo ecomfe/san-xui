@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {createForm, FormDialog, ToastLabel, SyntaxHighlighter, Button} from 'san-xui';
-
-import Row from './Row';
+import {Row, createForm, FormDialog, ToastLabel, SyntaxHighlighter, Button} from 'san-xui';
 
 function toList(...args) {
     return args.map(v => {

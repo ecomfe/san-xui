@@ -4,11 +4,8 @@
  */
 
 import _ from 'lodash';
-import Promise from 'promise';
 import {defineComponent} from 'san';
-import {Toast, Button, ToastLabel, Table, Loading} from 'san-xui';
-
-import Row from './Row';
+import {Row, Toast, Button, ToastLabel, Table, Loading} from 'san-xui';
 
 const kTableColumns = [
     {name: 'name', label: '姓名', labelClassName: 'col-name'},

@@ -34,7 +34,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		61: 0
+/******/ 		56: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -1996,7 +1996,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(263)("./" + name);
+            __webpack_require__(238)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4688,7 +4688,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60)(module)))
 
 /***/ }),
 /* 2 */
@@ -4713,7 +4713,7 @@ exports.arrayTreeFilterIndex = arrayTreeFilterIndex;
 exports.arrayTreeFilter = arrayTreeFilter;
 exports.arrayTreeCompact = arrayTreeCompact;
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -4729,7 +4729,7 @@ function hasUnit(value) {
     return (/%|px|auto/.test(value)
     );
 } /**
-   * @file util.js
+   * @file san-xui/x/components/util.js
    * @author leeight
    */
 
@@ -5019,7 +5019,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ACEEditor = __webpack_require__(196);
+var _ACEEditor = __webpack_require__(190);
 
 Object.defineProperty(exports, 'ACEEditor', {
   enumerable: true,
@@ -5028,7 +5028,7 @@ Object.defineProperty(exports, 'ACEEditor', {
   }
 });
 
-var _AlertDialog = __webpack_require__(197);
+var _AlertDialog = __webpack_require__(186);
 
 Object.defineProperty(exports, 'AlertDialog', {
   enumerable: true,
@@ -5037,7 +5037,7 @@ Object.defineProperty(exports, 'AlertDialog', {
   }
 });
 
-var _BosUploader = __webpack_require__(199);
+var _BosUploader = __webpack_require__(191);
 
 Object.defineProperty(exports, 'BosUploader', {
   enumerable: true,
@@ -5046,7 +5046,7 @@ Object.defineProperty(exports, 'BosUploader', {
   }
 });
 
-var _BoxGroup = __webpack_require__(200);
+var _BoxGroup = __webpack_require__(192);
 
 Object.defineProperty(exports, 'BoxGroup', {
   enumerable: true,
@@ -5055,7 +5055,7 @@ Object.defineProperty(exports, 'BoxGroup', {
   }
 });
 
-var _Breadcrumbs = __webpack_require__(270);
+var _Breadcrumbs = __webpack_require__(250);
 
 Object.defineProperty(exports, 'Breadcrumbs', {
   enumerable: true,
@@ -5073,7 +5073,7 @@ Object.defineProperty(exports, 'Button', {
   }
 });
 
-var _ButtonMenu = __webpack_require__(271);
+var _ButtonMenu = __webpack_require__(251);
 
 Object.defineProperty(exports, 'ButtonMenu', {
   enumerable: true,
@@ -5082,7 +5082,7 @@ Object.defineProperty(exports, 'ButtonMenu', {
   }
 });
 
-var _BuyBucket = __webpack_require__(272);
+var _BuyBucket = __webpack_require__(252);
 
 Object.defineProperty(exports, 'BuyBucket', {
   enumerable: true,
@@ -5091,7 +5091,7 @@ Object.defineProperty(exports, 'BuyBucket', {
   }
 });
 
-var _CKEditor = __webpack_require__(201);
+var _CKEditor = __webpack_require__(193);
 
 Object.defineProperty(exports, 'CKEditor', {
   enumerable: true,
@@ -5100,7 +5100,7 @@ Object.defineProperty(exports, 'CKEditor', {
   }
 });
 
-var _Calendar = __webpack_require__(48);
+var _Calendar = __webpack_require__(194);
 
 Object.defineProperty(exports, 'Calendar', {
   enumerable: true,
@@ -5109,7 +5109,7 @@ Object.defineProperty(exports, 'Calendar', {
   }
 });
 
-var _Chart = __webpack_require__(202);
+var _Chart = __webpack_require__(253);
 
 Object.defineProperty(exports, 'Chart', {
   enumerable: true,
@@ -5118,7 +5118,7 @@ Object.defineProperty(exports, 'Chart', {
   }
 });
 
-var _CheckBox = __webpack_require__(50);
+var _CheckBox = __webpack_require__(42);
 
 Object.defineProperty(exports, 'CheckBox', {
   enumerable: true,
@@ -5127,7 +5127,7 @@ Object.defineProperty(exports, 'CheckBox', {
   }
 });
 
-var _Clipboard = __webpack_require__(274);
+var _Clipboard = __webpack_require__(255);
 
 Object.defineProperty(exports, 'Clipboard', {
   enumerable: true,
@@ -5136,7 +5136,7 @@ Object.defineProperty(exports, 'Clipboard', {
   }
 });
 
-var _ConfirmDialog = __webpack_require__(203);
+var _ConfirmDialog = __webpack_require__(185);
 
 Object.defineProperty(exports, 'ConfirmDialog', {
   enumerable: true,
@@ -5145,7 +5145,7 @@ Object.defineProperty(exports, 'ConfirmDialog', {
   }
 });
 
-var _Dialog = __webpack_require__(19);
+var _Dialog = __webpack_require__(20);
 
 Object.defineProperty(exports, 'Dialog', {
   enumerable: true,
@@ -5154,7 +5154,7 @@ Object.defineProperty(exports, 'Dialog', {
   }
 });
 
-var _Dragger = __webpack_require__(204);
+var _Dragger = __webpack_require__(195);
 
 Object.defineProperty(exports, 'Dragger', {
   enumerable: true,
@@ -5163,7 +5163,7 @@ Object.defineProperty(exports, 'Dragger', {
   }
 });
 
-var _Filter = __webpack_require__(283);
+var _Filter = __webpack_require__(264);
 
 Object.defineProperty(exports, 'Filter', {
   enumerable: true,
@@ -5172,7 +5172,7 @@ Object.defineProperty(exports, 'Filter', {
   }
 });
 
-var _FrozenColumnTable = __webpack_require__(284);
+var _FrozenColumnTable = __webpack_require__(265);
 
 Object.defineProperty(exports, 'FrozenColumnTable', {
   enumerable: true,
@@ -5181,7 +5181,7 @@ Object.defineProperty(exports, 'FrozenColumnTable', {
   }
 });
 
-var _Ghost = __webpack_require__(286);
+var _Ghost = __webpack_require__(267);
 
 Object.defineProperty(exports, 'Ghost', {
   enumerable: true,
@@ -5190,7 +5190,7 @@ Object.defineProperty(exports, 'Ghost', {
   }
 });
 
-var _Go = __webpack_require__(287);
+var _Go = __webpack_require__(268);
 
 Object.defineProperty(exports, 'Go', {
   enumerable: true,
@@ -5199,7 +5199,7 @@ Object.defineProperty(exports, 'Go', {
   }
 });
 
-var _Icon = __webpack_require__(18);
+var _Icon = __webpack_require__(19);
 
 Object.defineProperty(exports, 'Icon', {
   enumerable: true,
@@ -5208,7 +5208,7 @@ Object.defineProperty(exports, 'Icon', {
   }
 });
 
-var _InfiniteScroll = __webpack_require__(288);
+var _InfiniteScroll = __webpack_require__(269);
 
 Object.defineProperty(exports, 'InfiniteScroll', {
   enumerable: true,
@@ -5217,7 +5217,7 @@ Object.defineProperty(exports, 'InfiniteScroll', {
   }
 });
 
-var _InstantEditor = __webpack_require__(289);
+var _InstantEditor = __webpack_require__(270);
 
 Object.defineProperty(exports, 'InstantEditor', {
   enumerable: true,
@@ -5226,7 +5226,7 @@ Object.defineProperty(exports, 'InstantEditor', {
   }
 });
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 Object.defineProperty(exports, 'Layer', {
   enumerable: true,
@@ -5235,7 +5235,7 @@ Object.defineProperty(exports, 'Layer', {
   }
 });
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 Object.defineProperty(exports, 'Loading', {
   enumerable: true,
@@ -5244,7 +5244,7 @@ Object.defineProperty(exports, 'Loading', {
   }
 });
 
-var _MonthView = __webpack_require__(49);
+var _MonthView = __webpack_require__(41);
 
 Object.defineProperty(exports, 'MonthView', {
   enumerable: true,
@@ -5253,7 +5253,7 @@ Object.defineProperty(exports, 'MonthView', {
   }
 });
 
-var _MultiPicker = __webpack_require__(51);
+var _MultiPicker = __webpack_require__(43);
 
 Object.defineProperty(exports, 'MultiPicker', {
   enumerable: true,
@@ -5262,7 +5262,7 @@ Object.defineProperty(exports, 'MultiPicker', {
   }
 });
 
-var _NumberTextline = __webpack_require__(207);
+var _NumberTextline = __webpack_require__(198);
 
 Object.defineProperty(exports, 'NumberTextline', {
   enumerable: true,
@@ -5271,7 +5271,7 @@ Object.defineProperty(exports, 'NumberTextline', {
   }
 });
 
-var _Pager = __webpack_require__(291);
+var _Pager = __webpack_require__(272);
 
 Object.defineProperty(exports, 'Pager', {
   enumerable: true,
@@ -5280,7 +5280,7 @@ Object.defineProperty(exports, 'Pager', {
   }
 });
 
-var _PlainDialog = __webpack_require__(208);
+var _PlainDialog = __webpack_require__(187);
 
 Object.defineProperty(exports, 'PlainDialog', {
   enumerable: true,
@@ -5289,7 +5289,7 @@ Object.defineProperty(exports, 'PlainDialog', {
   }
 });
 
-var _Progress = __webpack_require__(292);
+var _Progress = __webpack_require__(273);
 
 Object.defineProperty(exports, 'Progress', {
   enumerable: true,
@@ -5298,7 +5298,7 @@ Object.defineProperty(exports, 'Progress', {
   }
 });
 
-var _RadioBox = __webpack_require__(293);
+var _RadioBox = __webpack_require__(274);
 
 Object.defineProperty(exports, 'RadioBox', {
   enumerable: true,
@@ -5307,7 +5307,7 @@ Object.defineProperty(exports, 'RadioBox', {
   }
 });
 
-var _RadioSelect = __webpack_require__(52);
+var _RadioSelect = __webpack_require__(199);
 
 Object.defineProperty(exports, 'RadioSelect', {
   enumerable: true,
@@ -5316,7 +5316,7 @@ Object.defineProperty(exports, 'RadioSelect', {
   }
 });
 
-var _RangeCalendar = __webpack_require__(53);
+var _RangeCalendar = __webpack_require__(200);
 
 Object.defineProperty(exports, 'RangeCalendar', {
   enumerable: true,
@@ -5325,7 +5325,7 @@ Object.defineProperty(exports, 'RangeCalendar', {
   }
 });
 
-var _Region = __webpack_require__(209);
+var _Region = __webpack_require__(201);
 
 Object.defineProperty(exports, 'Region', {
   enumerable: true,
@@ -5334,7 +5334,7 @@ Object.defineProperty(exports, 'Region', {
   }
 });
 
-var _RichTextEditor = __webpack_require__(210);
+var _RichTextEditor = __webpack_require__(202);
 
 Object.defineProperty(exports, 'RichTextEditor', {
   enumerable: true,
@@ -5343,7 +5343,7 @@ Object.defineProperty(exports, 'RichTextEditor', {
   }
 });
 
-var _SMSCodeBox = __webpack_require__(295);
+var _SMSCodeBox = __webpack_require__(276);
 
 Object.defineProperty(exports, 'SMSCodeBox', {
   enumerable: true,
@@ -5352,7 +5352,7 @@ Object.defineProperty(exports, 'SMSCodeBox', {
   }
 });
 
-var _ScrollIntoView = __webpack_require__(194);
+var _ScrollIntoView = __webpack_require__(183);
 
 Object.defineProperty(exports, 'ScrollIntoView', {
   enumerable: true,
@@ -5361,7 +5361,7 @@ Object.defineProperty(exports, 'ScrollIntoView', {
   }
 });
 
-var _SearchBox = __webpack_require__(44);
+var _SearchBox = __webpack_require__(62);
 
 Object.defineProperty(exports, 'SearchBox', {
   enumerable: true,
@@ -5370,7 +5370,7 @@ Object.defineProperty(exports, 'SearchBox', {
   }
 });
 
-var _Select = __webpack_require__(22);
+var _Select = __webpack_require__(28);
 
 Object.defineProperty(exports, 'Select', {
   enumerable: true,
@@ -5379,7 +5379,7 @@ Object.defineProperty(exports, 'Select', {
   }
 });
 
-var _StopScroll = __webpack_require__(32);
+var _StopScroll = __webpack_require__(29);
 
 Object.defineProperty(exports, 'StopScroll', {
   enumerable: true,
@@ -5388,7 +5388,7 @@ Object.defineProperty(exports, 'StopScroll', {
   }
 });
 
-var _Switch = __webpack_require__(211);
+var _Switch = __webpack_require__(203);
 
 Object.defineProperty(exports, 'Switch', {
   enumerable: true,
@@ -5397,7 +5397,7 @@ Object.defineProperty(exports, 'Switch', {
   }
 });
 
-var _Sticky = __webpack_require__(296);
+var _Sticky = __webpack_require__(277);
 
 Object.defineProperty(exports, 'Sticky', {
   enumerable: true,
@@ -5406,7 +5406,7 @@ Object.defineProperty(exports, 'Sticky', {
   }
 });
 
-var _SyntaxHighlighter = __webpack_require__(195);
+var _SyntaxHighlighter = __webpack_require__(184);
 
 Object.defineProperty(exports, 'SyntaxHighlighter', {
   enumerable: true,
@@ -5415,7 +5415,7 @@ Object.defineProperty(exports, 'SyntaxHighlighter', {
   }
 });
 
-var _Tab = __webpack_require__(297);
+var _Tab = __webpack_require__(278);
 
 Object.defineProperty(exports, 'Tab', {
   enumerable: true,
@@ -5424,7 +5424,7 @@ Object.defineProperty(exports, 'Tab', {
   }
 });
 
-var _TabPanel = __webpack_require__(298);
+var _TabPanel = __webpack_require__(279);
 
 Object.defineProperty(exports, 'TabPanel', {
   enumerable: true,
@@ -5433,7 +5433,7 @@ Object.defineProperty(exports, 'TabPanel', {
   }
 });
 
-var _Table = __webpack_require__(205);
+var _Table = __webpack_require__(196);
 
 Object.defineProperty(exports, 'Table', {
   enumerable: true,
@@ -5442,7 +5442,7 @@ Object.defineProperty(exports, 'Table', {
   }
 });
 
-var _TableColumnToggle = __webpack_require__(212);
+var _TableColumnToggle = __webpack_require__(280);
 
 Object.defineProperty(exports, 'TableColumnToggle', {
   enumerable: true,
@@ -5451,7 +5451,7 @@ Object.defineProperty(exports, 'TableColumnToggle', {
   }
 });
 
-var _TableFilter = __webpack_require__(206);
+var _TableFilter = __webpack_require__(197);
 
 Object.defineProperty(exports, 'TableFilter', {
   enumerable: true,
@@ -5460,7 +5460,7 @@ Object.defineProperty(exports, 'TableFilter', {
   }
 });
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 Object.defineProperty(exports, 'TextBox', {
   enumerable: true,
@@ -5469,7 +5469,7 @@ Object.defineProperty(exports, 'TextBox', {
   }
 });
 
-var _Tip = __webpack_require__(54);
+var _Tip = __webpack_require__(204);
 
 Object.defineProperty(exports, 'Tip', {
   enumerable: true,
@@ -5478,7 +5478,7 @@ Object.defineProperty(exports, 'Tip', {
   }
 });
 
-var _Toast = __webpack_require__(213);
+var _Toast = __webpack_require__(281);
 
 Object.defineProperty(exports, 'Toast', {
   enumerable: true,
@@ -5487,7 +5487,7 @@ Object.defineProperty(exports, 'Toast', {
   }
 });
 
-var _ToastLabel = __webpack_require__(299);
+var _ToastLabel = __webpack_require__(282);
 
 Object.defineProperty(exports, 'ToastLabel', {
   enumerable: true,
@@ -5496,7 +5496,7 @@ Object.defineProperty(exports, 'ToastLabel', {
   }
 });
 
-var _Tree = __webpack_require__(300);
+var _Tree = __webpack_require__(283);
 
 Object.defineProperty(exports, 'Tree', {
   enumerable: true,
@@ -5505,7 +5505,7 @@ Object.defineProperty(exports, 'Tree', {
   }
 });
 
-var _UserPicker = __webpack_require__(223);
+var _UserPicker = __webpack_require__(205);
 
 Object.defineProperty(exports, 'UserPicker', {
   enumerable: true,
@@ -5514,7 +5514,7 @@ Object.defineProperty(exports, 'UserPicker', {
   }
 });
 
-var _ViewStep = __webpack_require__(334);
+var _ViewStep = __webpack_require__(304);
 
 Object.defineProperty(exports, 'ViewStep', {
   enumerable: true,
@@ -5523,7 +5523,7 @@ Object.defineProperty(exports, 'ViewStep', {
   }
 });
 
-var _Voice = __webpack_require__(335);
+var _Voice = __webpack_require__(305);
 
 Object.defineProperty(exports, 'Voice', {
   enumerable: true,
@@ -5532,7 +5532,7 @@ Object.defineProperty(exports, 'Voice', {
   }
 });
 
-var _WebUploader = __webpack_require__(338);
+var _WebUploader = __webpack_require__(308);
 
 Object.defineProperty(exports, 'WebUploader', {
   enumerable: true,
@@ -5541,7 +5541,7 @@ Object.defineProperty(exports, 'WebUploader', {
   }
 });
 
-var _asDrawer = __webpack_require__(339);
+var _asDrawer = __webpack_require__(309);
 
 Object.defineProperty(exports, 'asDrawer', {
   enumerable: true,
@@ -5550,12 +5550,21 @@ Object.defineProperty(exports, 'asDrawer', {
   }
 });
 
-var _Uploader = __webpack_require__(230);
+var _Uploader = __webpack_require__(211);
 
 Object.defineProperty(exports, 'Uploader', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Uploader).default;
+  }
+});
+
+var _Row = __webpack_require__(310);
+
+Object.defineProperty(exports, 'Row', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Row).default;
   }
 });
 
@@ -5573,8 +5582,47 @@ Object.defineProperty(exports, 'html', {
     return _util.html;
   }
 });
+Object.defineProperty(exports, 'hasSlot', {
+  enumerable: true,
+  get: function get() {
+    return _util.hasSlot;
+  }
+});
+Object.defineProperty(exports, 'nexUuid', {
+  enumerable: true,
+  get: function get() {
+    return _util.nexUuid;
+  }
+});
+Object.defineProperty(exports, 'nextZindex', {
+  enumerable: true,
+  get: function get() {
+    return _util.nextZindex;
+  }
+});
 
-var _asInput = __webpack_require__(7);
+var _helper = __webpack_require__(14);
+
+Object.defineProperty(exports, 'confirm', {
+  enumerable: true,
+  get: function get() {
+    return _helper.confirm;
+  }
+});
+Object.defineProperty(exports, 'alert', {
+  enumerable: true,
+  get: function get() {
+    return _helper.alert;
+  }
+});
+Object.defineProperty(exports, 'plain', {
+  enumerable: true,
+  get: function get() {
+    return _helper.plain;
+  }
+});
+
+var _asInput = __webpack_require__(5);
 
 Object.defineProperty(exports, 'asInput', {
   enumerable: true,
@@ -5583,7 +5631,16 @@ Object.defineProperty(exports, 'asInput', {
   }
 });
 
-var _asForm = __webpack_require__(35);
+var _asDialog = __webpack_require__(311);
+
+Object.defineProperty(exports, 'asDialog', {
+  enumerable: true,
+  get: function get() {
+    return _asDialog.asDialog;
+  }
+});
+
+var _asForm = __webpack_require__(30);
 
 Object.defineProperty(exports, 'asForm', {
   enumerable: true,
@@ -5598,7 +5655,7 @@ Object.defineProperty(exports, 'registerFormItem', {
   }
 });
 
-var _createForm = __webpack_require__(395);
+var _createForm = __webpack_require__(367);
 
 Object.defineProperty(exports, 'createForm', {
   enumerable: true,
@@ -5607,7 +5664,7 @@ Object.defineProperty(exports, 'createForm', {
   }
 });
 
-var _FormDialog = __webpack_require__(246);
+var _FormDialog = __webpack_require__(227);
 
 Object.defineProperty(exports, 'FormDialog', {
   enumerable: true,
@@ -5620,26 +5677,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-exports.default = (0, _san.defineComponent)({
-    template: '<div class="x-row">\n        <div class="label" s-if="label">{{label}}</div>\n        <div class="content"><slot/></div>\n    </div>'
-}); /**
-     * @file demos/Row.js
-     * @author leeight
-     */
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -22728,7 +22765,65 @@ exports.default = (0, _san.defineComponent)({
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43), __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59), __webpack_require__(60)(module)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+exports.asInput = asInput;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * @file components/asInput.js
+ * @author leeight
+ */
+
+function asInput(Klass) {
+    return function (_Klass) {
+        _inherits(_class, _Klass);
+
+        function _class() {
+            _classCallCheck(this, _class);
+
+            return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+        }
+
+        _createClass(_class, [{
+            key: 'fire',
+            value: function fire(name, event) {
+                var _this2 = this;
+
+                _get(_class.prototype.__proto__ || Object.getPrototypeOf(_class.prototype), 'fire', this).call(this, name, event);
+
+                if (name === 'change' && event.value != null || name === 'input') {
+                    this.nextTick(function () {
+                        var value = _this2.data.get('value');
+                        _this2.dispatch('input-comp-value-changed', { value: value });
+                    });
+                }
+            }
+        }]);
+
+        return _class;
+    }(Klass);
+}
 
 /***/ }),
 /* 6 */
@@ -22741,27 +22836,25 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="', '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="', '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>'], ['\n<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="', '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="', '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>']);
-
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
-                                                                                                                                                   * @file components/Button.js
-                                                                                                                                                   * @author leeight
-                                                                                                                                                   */
-
 var cx = (0, _util.create)('ui-button');
 
 /* eslint-disable */
-var template = (0, _util.html)(_templateObject, cx('label'), cx('label'));
+/**
+ * @file components/Button.js
+ * @author leeight
+ */
+
+var template = '\n<div on-click="onClick($event)" class="{{mainClass}}" style="{{mainStyle}}" aria-label="{{ariaLabel}}">\n    <i class="{{\'iconfont icon-\' + icon}}" s-if="icon"></i>\n    <span class="' + cx('label') + '" san-if="label"><ui-loading s-if="loading" size="small" />{{label}}</span>\n    <div s-ref="slotHost" class="' + cx('label') + '" san-else><ui-loading s-if="loading" size="small" /><slot /></div>\n</div>';
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -22862,64 +22955,6 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-exports.asInput = asInput;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/**
- * @file components/asInput.js
- * @author leeight
- */
-
-function asInput(Klass) {
-    return function (_Klass) {
-        _inherits(_class, _Klass);
-
-        function _class() {
-            _classCallCheck(this, _class);
-
-            return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
-        }
-
-        _createClass(_class, [{
-            key: 'fire',
-            value: function fire(name, event) {
-                var _this2 = this;
-
-                _get(_class.prototype.__proto__ || Object.getPrototypeOf(_class.prototype), 'fire', this).call(this, name, event);
-
-                if (name === 'change' && event.value != null || name === 'input') {
-                    this.nextTick(function () {
-                        var value = _this2.data.get('value');
-                        _this2.dispatch('input-comp-value-changed', { value: value });
-                    });
-                }
-            }
-        }]);
-
-        return _class;
-    }(Klass);
-}
-
-/***/ }),
-/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22930,9 +22965,9 @@ function asInput(Klass) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = asyncMap;
 /* harmony export (immutable) */ __webpack_exports__["b"] = complementError;
 /* harmony export (immutable) */ __webpack_exports__["c"] = deepMerge;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__);
 
 
@@ -23122,7 +23157,34 @@ function deepMerge(target, source) {
   }
   return target;
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(33)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(45)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__required__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__whitespace__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__range__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enum__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pattern__ = __webpack_require__(350);
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  required: __WEBPACK_IMPORTED_MODULE_0__required__["a" /* default */],
+  whitespace: __WEBPACK_IMPORTED_MODULE_1__whitespace__["a" /* default */],
+  type: __WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */],
+  range: __WEBPACK_IMPORTED_MODULE_3__range__["a" /* default */],
+  'enum': __WEBPACK_IMPORTED_MODULE_4__enum__["a" /* default */],
+  pattern: __WEBPACK_IMPORTED_MODULE_5__pattern__["a" /* default */]
+});
 
 /***/ }),
 /* 9 */
@@ -33391,16 +33453,6 @@ return jQuery;
 "use strict";
 
 
-module.exports = __webpack_require__(254)
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -33464,241 +33516,14 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__required__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__whitespace__ = __webpack_require__(374);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__range__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enum__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pattern__ = __webpack_require__(378);
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  required: __WEBPACK_IMPORTED_MODULE_0__required__["a" /* default */],
-  whitespace: __WEBPACK_IMPORTED_MODULE_1__whitespace__["a" /* default */],
-  type: __WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */],
-  range: __WEBPACK_IMPORTED_MODULE_3__range__["a" /* default */],
-  'enum': __WEBPACK_IMPORTED_MODULE_4__enum__["a" /* default */],
-  pattern: __WEBPACK_IMPORTED_MODULE_5__pattern__["a" /* default */]
-});
-
-/***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var cx = (0, _util.create)('ui-textbox');
-
-/* eslint-disable */
-/**
- * @file TextBox.js
- * @author leeight
- */
-
-var template = '<div class="{{mainClass}}">\n    <div s-if="addon && addonPosition === \'begin\'" class="' + cx('addon') + '">{{addon}}</div>\n    <textarea s-if="multiline"\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}"></textarea>\n    <input s-else\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        on-focus="onFocus($event)"\n        on-blur="onBlur($event)"\n        on-click="onClick($event)"\n        value="{=value=}"\n        min="{{min}}",\n        max="{{max}}"\n        step="{{step}}"\n        type="{{type}}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}" />\n    <div s-if="addon && addonPosition === \'end\'" class="' + cx('addon', 'addon-end') + '">{{addon}}</div>\n</div>';
-/* eslint-enable */
-
-var TextBox = (0, _san.defineComponent)({
-    template: template,
-    computed: {
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        },
-        textboxStyle: function textboxStyle() {
-            return cx.mainStyle(this);
-        }
-    },
-    initData: function initData() {
-        return {
-            disabled: false,
-            autofocus: false,
-            focusPosition: 'end', // 'end' | 'begin' | 'all'
-            type: 'text',
-            multiline: false,
-            skin: '',
-            placeholder: '',
-            addon: '',
-            addonPosition: 'begin', // 'begin' | 'end'
-            width: null,
-            height: null
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 控件的禁用状态
-         *
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 是否默认获取焦点
-         *
-         * @default false
-         */
-        autofocus: _san.DataTypes.bool,
-
-        /**
-         * 光标出现的位置
-         *
-         * @default end
-         */
-        focusPosition: _san.DataTypes.string,
-
-        /**
-         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
-         *
-         * @default text
-         */
-        type: _san.DataTypes.string,
-
-        /**
-         * 获取或者设置控件的值
-         *
-         * @bindx
-         */
-        value: _san.DataTypes.string,
-
-        /**
-         * 是否展示成多行输入的文本框(textarea)
-         *
-         * @default false
-         */
-        multiline: _san.DataTypes.bool,
-
-        /**
-         * 皮肤样式
-         */
-        skin: _san.DataTypes.string,
-
-        /**
-         * 设置 placeholder 的内容
-         */
-        placeholder: _san.DataTypes.string,
-
-        /**
-         * 输入框的前缀或者后缀文案
-         */
-        addon: _san.DataTypes.string,
-
-        /**
-         * addon 文案的位置，可以设置 begin 或者 end
-         *
-         * @default begin
-         */
-        addonPosition: _san.DataTypes.string,
-
-        /**
-         * 输入框的宽度
-         */
-        width: _san.DataTypes.number,
-
-        /**
-         * 输入框的高度
-         */
-        height: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        min: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        max: _san.DataTypes.number,
-
-        /**
-         * 当 type 设置成 number 的时候，有效
-         */
-        step: _san.DataTypes.number
-    },
-    attached: function attached() {
-        var autofocus = this.data.get('autofocus');
-        if (autofocus) {
-            this.focus();
-        }
-    },
-    focus: function focus() {
-        var inputEl = this.ref('inputEl');
-        var focusPosition = this.data.get('focusPosition');
-        if (inputEl) {
-            if (document.activeElement === inputEl) {
-                return;
-            }
-            if (typeof inputEl.selectionStart === 'number') {
-                if (focusPosition === 'end') {
-                    // 光标在内容的后面
-                    inputEl.selectionStart = inputEl.selectionEnd = this.data.get('value').length;
-                } else if (focusPosition === 'all') {
-                    // 全选
-                    inputEl.selectionStart = 0;
-                    inputEl.selectionEnd = this.data.get('value').length;
-                }
-            }
-            inputEl.focus();
-        }
-    },
-    onInput: function onInput() {
-        var value = this.data.get('value');
-        this.fire('input', { value: value });
-    },
-    onFocus: function onFocus(e) {
-        this.fire('focus', e);
-    },
-    onBlur: function onBlur(e) {
-        this.fire('blur', e);
-    },
-    onKeyUp: function onKeyUp(e) {
-        this.fire('keyup', e);
-    },
-    onKeyDown: function onKeyDown(e) {
-        this.fire('keydown', e);
-    },
-    onKeyPress: function onKeyPress(e) {
-        var keyCode = e.which || e.keyCode;
-        if (keyCode === 13) {
-            this.fire('enter', e);
-        }
-        this.fire('keypress', e);
-    },
-    onClick: function onClick(e) {
-        this.fire('click', e);
-    }
-});
-
-exports.default = (0, _asInput.asInput)(TextBox);
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var bind = __webpack_require__(225);
-var isBuffer = __webpack_require__(317);
+var bind = __webpack_require__(206);
+var isBuffer = __webpack_require__(287);
 
 /*global toString:true*/
 
@@ -34001,39 +33826,207 @@ module.exports = {
 
 
 /***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _asInput = __webpack_require__(5);
+
+var cx = (0, _util.create)('ui-textbox');
+
+/* eslint-disable */
 /**
- * @file 默认的加载器的主入口
- * @author Leo Wang(leowang721@gmail.com)
+ * @file TextBox.js
+ * @author leeight
  */
 
+var template = '<div class="{{mainClass}}">\n    <div s-if="addon && addonPosition === \'begin\'" class="' + cx('addon') + '">{{addon}}</div>\n    <textarea s-if="multiline"\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}"></textarea>\n    <input s-else\n        s-ref="inputEl"\n        on-input="onInput"\n        on-keyup="onKeyUp($event)"\n        on-keydown="onKeyDown($event)"\n        on-keypress="onKeyPress($event)"\n        on-focus="onFocus($event)"\n        on-blur="onBlur($event)"\n        on-click="onClick($event)"\n        value="{=value=}"\n        min="{{min}}",\n        max="{{max}}"\n        step="{{step}}"\n        type="{{type}}"\n        disabled="{{disabled}}"\n        placeholder="{{placeholder}}"\n        style="{{textboxStyle}}" />\n    <div s-if="addon && addonPosition === \'end\'" class="' + cx('addon', 'addon-end') + '">{{addon}}</div>\n</div>';
+/* eslint-enable */
 
+var TextBox = (0, _san.defineComponent)({
+    template: template,
+    computed: {
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        },
+        textboxStyle: function textboxStyle() {
+            return cx.mainStyle(this);
+        }
+    },
+    initData: function initData() {
+        return {
+            disabled: false,
+            autofocus: false,
+            focusPosition: 'end', // 'end' | 'begin' | 'all'
+            type: 'text',
+            multiline: false,
+            skin: '',
+            placeholder: '',
+            addon: '',
+            addonPosition: 'begin', // 'begin' | 'end'
+            width: null,
+            height: null
+        };
+    },
 
-/**
- * 默认的主入口
- *
- * @param {string} keyword 要i18n化的字面
- *
- * @return {string} i18n化后的字面，如果没有match，则使用原字面
- */
-function getText(keyword) {
-    return keyword;
-}
+    dataTypes: {
+        /**
+         * 控件的禁用状态
+         *
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
 
-getText.activate = () => __WEBPACK_IMPORTED_MODULE_0_promise___default.a.resolve();
-getText.getLanguage = () => 'zh-cn';
+        /**
+         * 是否默认获取焦点
+         *
+         * @default false
+         */
+        autofocus: _san.DataTypes.bool,
 
-/* harmony default export */ __webpack_exports__["default"] = (getText);
+        /**
+         * 光标出现的位置
+         *
+         * @default end
+         */
+        focusPosition: _san.DataTypes.string,
 
+        /**
+         * 单行文本框的输入类型，可以控制输入 email, number, url 等格式
+         *
+         * @default text
+         */
+        type: _san.DataTypes.string,
+
+        /**
+         * 获取或者设置控件的值
+         *
+         * @bindx
+         */
+        value: _san.DataTypes.string,
+
+        /**
+         * 是否展示成多行输入的文本框(textarea)
+         *
+         * @default false
+         */
+        multiline: _san.DataTypes.bool,
+
+        /**
+         * 皮肤样式
+         */
+        skin: _san.DataTypes.string,
+
+        /**
+         * 设置 placeholder 的内容
+         */
+        placeholder: _san.DataTypes.string,
+
+        /**
+         * 输入框的前缀或者后缀文案
+         */
+        addon: _san.DataTypes.string,
+
+        /**
+         * addon 文案的位置，可以设置 begin 或者 end
+         *
+         * @default begin
+         */
+        addonPosition: _san.DataTypes.string,
+
+        /**
+         * 输入框的宽度
+         */
+        width: _san.DataTypes.number,
+
+        /**
+         * 输入框的高度
+         */
+        height: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        min: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        max: _san.DataTypes.number,
+
+        /**
+         * 当 type 设置成 number 的时候，有效
+         */
+        step: _san.DataTypes.number
+    },
+    attached: function attached() {
+        var autofocus = this.data.get('autofocus');
+        if (autofocus) {
+            this.focus();
+        }
+    },
+    focus: function focus() {
+        var inputEl = this.ref('inputEl');
+        var focusPosition = this.data.get('focusPosition');
+        if (inputEl) {
+            if (document.activeElement === inputEl) {
+                return;
+            }
+            if (typeof inputEl.selectionStart === 'number') {
+                if (focusPosition === 'end') {
+                    // 光标在内容的后面
+                    inputEl.selectionStart = inputEl.selectionEnd = this.data.get('value').length;
+                } else if (focusPosition === 'all') {
+                    // 全选
+                    inputEl.selectionStart = 0;
+                    inputEl.selectionEnd = this.data.get('value').length;
+                }
+            }
+            inputEl.focus();
+        }
+    },
+    onInput: function onInput() {
+        var value = this.data.get('value');
+        this.fire('input', { value: value });
+    },
+    onFocus: function onFocus(e) {
+        this.fire('focus', e);
+    },
+    onBlur: function onBlur(e) {
+        this.fire('blur', e);
+    },
+    onKeyUp: function onKeyUp(e) {
+        this.fire('keyup', e);
+    },
+    onKeyDown: function onKeyDown(e) {
+        this.fire('keydown', e);
+    },
+    onKeyPress: function onKeyPress(e) {
+        var keyCode = e.which || e.keyCode;
+        if (keyCode === 13) {
+            this.fire('enter', e);
+        }
+        this.fire('keypress', e);
+    },
+    onClick: function onClick(e) {
+        this.fire('click', e);
+    }
+});
+
+exports.default = (0, _asInput.asInput)(TextBox);
 
 /***/ }),
-/* 16 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34047,7 +34040,7 @@ var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -34055,11 +34048,11 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _opacity = __webpack_require__(193);
+var _opacity = __webpack_require__(182);
 
-var _dom = __webpack_require__(45);
+var _dom = __webpack_require__(38);
 
-var _page = __webpack_require__(46);
+var _page = __webpack_require__(39);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34380,7 +34373,195 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 17 */
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.js = js;
+exports.css = css;
+exports.loadThirdParty = loadThirdParty;
+exports.asPromise = asPromise;
+exports.displayDialog = displayDialog;
+exports.plain = plain;
+exports.alert = alert;
+exports.confirm = confirm;
+
+var _ConfirmDialog = __webpack_require__(185);
+
+var _ConfirmDialog2 = _interopRequireDefault(_ConfirmDialog);
+
+var _AlertDialog = __webpack_require__(186);
+
+var _AlertDialog2 = _interopRequireDefault(_AlertDialog);
+
+var _PlainDialog = __webpack_require__(187);
+
+var _PlainDialog2 = _interopRequireDefault(_PlainDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var kAmdPluginId = 'san-xui-loader-' + new Date().getTime().toString(36); /**
+                                                                           * @file san-xui/x/components/helper.js
+                                                                           * @author leeight
+                                                                           */
+
+function jsLoader() {
+    return {
+        load: function load(resourceId, req, _load) {
+            var script = document.createElement('script');
+            script.src = req.toUrl(resourceId);
+            script.async = true;
+            if (script.readyState) {
+                script.onreadystatechange = onload;
+            } else {
+                script.onload = onload;
+            }
+
+            function onload() {
+                var readyState = script.readyState;
+                if (typeof readyState === 'undefined' || /^(loaded|complete)$/.test(readyState)) {
+                    script.onload = script.onreadystatechange = null;
+                    script = null;
+                    _load(true);
+                }
+            }
+
+            var parent = document.getElementsByTagName('head')[0] || document.body;
+            parent.appendChild(script);
+            parent = null;
+        }
+    };
+}
+
+function cssLoader() {
+    return {
+        load: function load(resourceId, req, _load2) {
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('type', 'text/css');
+            link.setAttribute('href', req.toUrl(resourceId));
+
+            var parent = document.getElementsByTagName('head')[0] || document.body;
+            parent.appendChild(link);
+
+            parent = null;
+            link = null;
+
+            _load2(true);
+        }
+    };
+}
+
+if (typeof window.define === 'function' && window.define.amd) {
+    window.define(kAmdPluginId + '/js', jsLoader);
+    window.define(kAmdPluginId + '/css', cssLoader);
+}
+
+function js(resourceId) {
+    return kAmdPluginId + '/js!' + resourceId;
+}
+
+function css(resourceId) {
+    return kAmdPluginId + '/css!' + resourceId;
+}
+
+function loadThirdParty(globalKey, amdModules) {
+    var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+    // 首先检查是否已经直接在页面中引入了，如果引入了，就直接使用全局的对象即可
+    // 比如 echarts, WebUploader 等等
+    var keys = typeof globalKey === 'string' ? [globalKey] : globalKey;
+    var globalVars = [];
+    for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var globalVar = window[key];
+        if (globalVar != null) {
+            globalVars.push(globalVar);
+        } else {
+            // 存在一些没有加载成功的情况，直接忽略掉吧
+            globalVars.length = 0;
+            break;
+        }
+    }
+
+    if (globalVars.length) {
+        return new Promise(function (resolve) {
+            if (keys.length > 1) {
+                resolve(globalVars);
+            } else {
+                resolve(globalVars[0]);
+            }
+        });
+    }
+
+    return new Promise(function (resolve, reject) {
+        // 因为 amd 加载成功之后会 cache，所以后续执行的时候不会发请求
+        // 所以不需要往 window 下面添加新的对象
+        setTimeout(function () {
+            return window.require(amdModules, function () {
+                for (var _len = arguments.length, modules = Array(_len), _key = 0; _key < _len; _key++) {
+                    modules[_key] = arguments[_key];
+                }
+
+                var globalVars = [];
+                for (var _i = 0; _i < modules.length; _i++) {
+                    var _key2 = keys[_i];
+                    // 优先考虑 window 下面的内容，因为有时候 amdModule 是 js() 这种类型的模块
+                    globalVars.push(window[_key2] || modules[_i]);
+                }
+                if (keys.length > 1) {
+                    resolve(globalVars);
+                } else {
+                    resolve(globalVars[0]);
+                }
+            });
+        }, delay);
+    });
+}
+
+function asPromise(dialog) {
+    return new Promise(function (resolve, reject) {
+        dialog.on('confirm', function () {
+            resolve();
+            dialog.dispose();
+        });
+        dialog.on('close', function () {
+            reject();
+            dialog.dispose();
+        });
+    });
+}
+
+function displayDialog(DialogComponent) {
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    if (typeof data === 'string') {
+        data = { message: data };
+    }
+    var dialog = new DialogComponent({ data: data });
+    dialog.attach(document.body);
+    return asPromise(dialog);
+}
+
+function plain(data) {
+    return displayDialog(_PlainDialog2.default, data);
+}
+
+function alert(data) {
+    return displayDialog(_AlertDialog2.default, data);
+}
+
+function confirm(data) {
+    return displayDialog(_ConfirmDialog2.default, data);
+}
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -34392,242 +34573,17 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 18 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+module.exports = __webpack_require__(230)
 
-var _san = __webpack_require__(0);
-
-exports.default = (0, _san.defineComponent)({
-  template: '<i tip="{{title}}" class="iconfont icon-{{name}}"></i>',
-  dataTypes: {
-    /**
-     * ICON的名称
-     */
-    name: _san.DataTypes.string.isRequired,
-
-    /**
-     * ICON的tip信息
-     */
-    title: _san.DataTypes.string
-  }
-}); /**
-     * @file Icon.js
-     * @author leeight
-     */
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _jquery = __webpack_require__(9);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _filters = __webpack_require__(198);
-
-var _opacity = __webpack_require__(193);
-
-var _page = __webpack_require__(46);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('ui-dialog');
-
-/* eslint-disable */
-/**
- * @file components/Dialog.js
- * @author leeight
- */
-var template = '<template>\n<div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">\n    <div class="' + cx('head', 'head-panel') + '" s-if="head">\n        <div class="' + cx('title') + '">\n            <slot name="head">{{title}}</slot>\n        </div>\n        <div class="' + cx('close-icon') + '" on-click="onCloseDialog"></div>\n    </div>\n    <div class="' + cx('body', 'body-panel') + '" style="{{dialogBodyStyle}}">\n        <slot />\n    </div>\n    <div class="' + cx('foot', 'foot-panel') + '" s-if="foot">\n        <slot name="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u8BA4\'|i18n}}</ui-button>\n            <ui-button on-click="onCloseDialog">{{\'\u53D6\u6D88\'|i18n}}</ui-button>\n        </slot>\n    </div>\n</div>\n<div s-if="open && mask" on-click="onClickMask" class="' + cx('mask', 'mask-x') + '" style="{{maskStyle}}"></div>\n</template>';
-/* eslint-enable */
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    $fxOpacity: (0, _opacity.opacity)(5),
-    components: {
-        'ui-button': _Button2.default
-    },
-    filters: {
-        i18n: _filters.i18n
-    },
-    initData: function initData() {
-        var zIndex = (0, _util.nextZindex)();
-        return {
-            draggable: false,
-            closeOnClickMask: false,
-            maskZindex: zIndex,
-            dialogZindex: zIndex + 1,
-            width: 'auto',
-            height: 'auto',
-            title: 'Title',
-            left: null,
-            top: '-10000px',
-            open: false,
-            mask: true,
-            foot: true,
-            head: true
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 是否支持拖动(暂未实现)
-         * @default false
-         */
-        draggable: _san.DataTypes.bool,
-
-        /**
-         * 点击遮罩层的时候，是否关闭对话框
-         * @default false
-         */
-        closeOnClickMask: _san.DataTypes.bool,
-
-        /**
-         * 是否显示遮罩层
-         * @default true
-         */
-        mask: _san.DataTypes.bool,
-
-        /**
-         * 是否显示Footer
-         * @default true
-         */
-        foot: _san.DataTypes.bool,
-
-        /**
-         * 是否显示Header
-         * @default true
-         */
-        head: _san.DataTypes.bool,
-
-        /**
-         * 对话框宽度
-         * @default auto
-         */
-        width: _san.DataTypes.any,
-
-        /**
-         * 对话框内容区域的高度
-         * @default auto
-         */
-        height: _san.DataTypes.any
-    },
-    computed: {
-        mainClass: function mainClass() {
-            var klass = [cx(), cx('x')];
-            var draggable = this.data.get('draggable');
-            if (draggable) {
-                klass.push('state-draggable');
-                klass.push(cx('draggable'));
-            }
-            var skin = this.data.get('skin');
-            if (skin) {
-                klass.push('skin-' + skin);
-                klass.push('skin-' + skin + '-dialog');
-            }
-            return klass;
-        },
-        maskStyle: function maskStyle() {
-            return {
-                'z-index': this.data.get('maskZindex')
-            };
-        },
-        dialogBodyStyle: function dialogBodyStyle() {
-            var styles = {};
-            var height = this.data.get('height');
-            if (height !== 'auto') {
-                styles.height = height + 'px';
-            }
-            return styles;
-        },
-        dialogStyle: function dialogStyle() {
-            var width = this.data.get('width');
-            var left = this.data.get('left');
-            var top = this.data.get('top');
-            var styles = { 'opacity': 1, 'z-index': this.data.get('dialogZindex') };
-            if (width !== 'auto') {
-                styles.width = width + 'px';
-            }
-            if (left != null) {
-                styles.left = left;
-            }
-            if (top != null) {
-                styles.top = top;
-            }
-            return styles;
-        }
-    },
-    onCloseDialog: function onCloseDialog() {
-        this.data.set('open', false);
-        this.fire('close');
-    },
-    onConfirmDialog: function onConfirmDialog() {
-        this.data.set('open', false);
-        this.fire('confirm');
-    },
-    onClickMask: function onClickMask() {
-        if (this.data.get('closeOnClickMask')) {
-            this.data.set('open', false);
-            this.fire('close');
-        }
-    },
-    __resize: function __resize() {
-        var _this = this;
-
-        var open = this.data.get('open');
-        if (!open) {
-            return;
-        }
-        this.data.set('maskZindex', (0, _util.nextZindex)());
-        this.data.set('dialogZindex', (0, _util.nextZindex)());
-        this.nextTick(function () {
-            var main = (0, _jquery2.default)(_this.el).find('> .ui-dialog-x');
-            var top = (0, _page.getScrollTop)() + Math.max(((0, _page.getViewHeight)() - main.prop('offsetHeight')) / 2, 0);
-            _this.data.set('top', top + 'px');
-        });
-    },
-    inited: function inited() {
-        var _this2 = this;
-
-        this.watch('open', function () {
-            return _this2.__resize();
-        });
-    },
-    attached: function attached() {
-        if (this.el.parentNode !== document.body) {
-            document.body.appendChild(this.el);
-        }
-        this.__resize();
-    },
-    detached: function detached() {
-        (0, _jquery2.default)(this.el).remove();
-    }
-});
-
-/***/ }),
-/* 20 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -34637,13 +34593,13 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 21 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var asap = __webpack_require__(73);
+var asap = __webpack_require__(61);
 
 function noop() {}
 
@@ -34857,7 +34813,38 @@ function doResolve(fn, promise) {
 
 
 /***/ }),
-/* 22 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _san = __webpack_require__(0);
+
+exports.default = (0, _san.defineComponent)({
+  template: '<i tip="{{title}}" class="iconfont icon-{{name}}"></i>',
+  dataTypes: {
+    /**
+     * ICON的名称
+     */
+    name: _san.DataTypes.string.isRequired,
+
+    /**
+     * ICON的tip信息
+     */
+    title: _san.DataTypes.string
+  }
+}); /**
+     * @file Icon.js
+     * @author leeight
+     */
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34867,7 +34854,303 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _jquery = __webpack_require__(9);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _opacity = __webpack_require__(182);
+
+var _page = __webpack_require__(39);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/Dialog.js
+ * @author leeight
+ */
+var cx = (0, _util.create)('ui-dialog');
+
+/* eslint-disable */
+var template = '<template>\n<div s-if="open" s-transition="$fxOpacity" class="{{mainClass}}" style="{{dialogStyle}}">\n    <div class="' + cx('head', 'head-panel') + '" s-if="head">\n        <div class="' + cx('title') + '">\n            <slot name="head">{{title}}</slot>\n        </div>\n        <div class="' + cx('close-icon') + '" on-click="onCloseDialog"></div>\n    </div>\n    <div class="' + cx('body', 'body-panel') + '" style="{{dialogBodyStyle}}">\n        <slot />\n    </div>\n    <div class="' + cx('foot', 'foot-panel') + '" s-if="foot">\n        <slot name="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u8BA4\'}}</ui-button>\n            <ui-button on-click="onCloseDialog">{{\'\u53D6\u6D88\'}}</ui-button>\n        </slot>\n    </div>\n</div>\n<div s-if="open && mask" on-click="onClickMask" class="' + cx('mask', 'mask-x') + '" style="{{maskStyle}}"></div>\n</template>';
+/* eslint-enable */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    $fxOpacity: (0, _opacity.opacity)(5),
+    components: {
+        'ui-button': _Button2.default
+    },
+    initData: function initData() {
+        var zIndex = (0, _util.nextZindex)();
+        return {
+            draggable: false,
+            closeOnClickMask: false,
+            maskZindex: zIndex,
+            dialogZindex: zIndex + 1,
+            width: 'auto',
+            height: 'auto',
+            title: 'Title',
+            left: null,
+            top: '-10000px',
+            open: false,
+            mask: true,
+            foot: true,
+            head: true
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 是否支持拖动(暂未实现)
+         * @default false
+         */
+        draggable: _san.DataTypes.bool,
+
+        /**
+         * 点击遮罩层的时候，是否关闭对话框
+         * @default false
+         */
+        closeOnClickMask: _san.DataTypes.bool,
+
+        /**
+         * 是否显示遮罩层
+         * @default true
+         */
+        mask: _san.DataTypes.bool,
+
+        /**
+         * 是否显示Footer
+         * @default true
+         */
+        foot: _san.DataTypes.bool,
+
+        /**
+         * 是否显示Header
+         * @default true
+         */
+        head: _san.DataTypes.bool,
+
+        /**
+         * 对话框宽度
+         * @default auto
+         */
+        width: _san.DataTypes.any,
+
+        /**
+         * 对话框内容区域的高度
+         * @default auto
+         */
+        height: _san.DataTypes.any
+    },
+    computed: {
+        mainClass: function mainClass() {
+            var klass = [cx(), cx('x')];
+            var draggable = this.data.get('draggable');
+            if (draggable) {
+                klass.push('state-draggable');
+                klass.push(cx('draggable'));
+            }
+            var skin = this.data.get('skin');
+            if (skin) {
+                klass.push('skin-' + skin);
+                klass.push('skin-' + skin + '-dialog');
+            }
+            return klass;
+        },
+        maskStyle: function maskStyle() {
+            return {
+                'z-index': this.data.get('maskZindex')
+            };
+        },
+        dialogBodyStyle: function dialogBodyStyle() {
+            var styles = {};
+            var height = this.data.get('height');
+            if (height !== 'auto') {
+                styles.height = height + 'px';
+            }
+            return styles;
+        },
+        dialogStyle: function dialogStyle() {
+            var width = this.data.get('width');
+            var left = this.data.get('left');
+            var top = this.data.get('top');
+            var styles = { 'opacity': 1, 'z-index': this.data.get('dialogZindex') };
+            if (width !== 'auto') {
+                styles.width = width + 'px';
+            }
+            if (left != null) {
+                styles.left = left;
+            }
+            if (top != null) {
+                styles.top = top;
+            }
+            return styles;
+        }
+    },
+    onCloseDialog: function onCloseDialog() {
+        this.data.set('open', false);
+        this.fire('close');
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.data.set('open', false);
+        this.fire('confirm');
+    },
+    onClickMask: function onClickMask() {
+        if (this.data.get('closeOnClickMask')) {
+            this.data.set('open', false);
+            this.fire('close');
+        }
+    },
+    __resize: function __resize() {
+        var _this = this;
+
+        var open = this.data.get('open');
+        if (!open) {
+            return;
+        }
+        this.data.set('maskZindex', (0, _util.nextZindex)());
+        this.data.set('dialogZindex', (0, _util.nextZindex)());
+        this.nextTick(function () {
+            var main = (0, _jquery2.default)(_this.el).find('> .ui-dialog-x');
+            var top = (0, _page.getScrollTop)() + Math.max(((0, _page.getViewHeight)() - main.prop('offsetHeight')) / 2, 0);
+            _this.data.set('top', top + 'px');
+        });
+    },
+    inited: function inited() {
+        var _this2 = this;
+
+        this.watch('open', function () {
+            return _this2.__resize();
+        });
+    },
+    attached: function attached() {
+        if (this.el.parentNode !== document.body) {
+            document.body.appendChild(this.el);
+        }
+        this.__resize();
+    },
+    detached: function detached() {
+        (0, _jquery2.default)(this.el).remove();
+    }
+});
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(22);
+var createDesc = __webpack_require__(33);
+module.exports = __webpack_require__(23) ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(32);
+var IE8_DOM_DEFINE = __webpack_require__(215);
+var toPrimitive = __webpack_require__(47);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(23) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(27)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(218);
+var defined = __webpack_require__(48);
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__(51)('wks');
+var uid = __webpack_require__(35);
+var Symbol = __webpack_require__(15).Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -34875,21 +35158,21 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
-var _ScrollIntoView = __webpack_require__(194);
+var _ScrollIntoView = __webpack_require__(183);
 
 var _ScrollIntoView2 = _interopRequireDefault(_ScrollIntoView);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _StopScroll = __webpack_require__(32);
+var _StopScroll = __webpack_require__(29);
 
 var _StopScroll2 = _interopRequireDefault(_StopScroll);
 
@@ -35217,333 +35500,7 @@ var Select = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Select);
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 提供事件相关操作的基类
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(57);
-        var Event = __webpack_require__(218);
-        var EventQueue = __webpack_require__(307);
-
-        /**
-         * 提供事件相关操作的基类
-         *
-         * 可以让某个类继承此类，获得事件的相关功能：
-         *
-         *     function MyClass() {
-         *         // 此处可以不调用EventTarget构造函数
-         *     }
-         *
-         *     inherits(MyClass, EventTarget);
-         *
-         *     var instance = new MyClass();
-         *     instance.on('foo', executeFoo);
-         *     instance.fire('foo', { bar: 'Hello World' });
-         *
-         * 当然也可以使用`Object.create`方法：
-         *
-         *     var instance = Object.create(EventTarget.prototype);
-         *     instance.on('foo', executeFoo);
-         *     instance.fire('foo', { bar: 'Hello World' });
-         *
-         * 还可以使用`enable`方法让一个静态的对象拥有事件功能：
-         *
-         *     var instance = {};
-         *     EventTarget.enable(instance);
-         *
-         *     // 同样可以使用事件
-         *     instance.on('foo', executeFoo);
-         *     instance.fire('foo', { bar: 'Hello World' });
-         *
-         * @constructor
-         */
-        function EventTarget() {
-        }
-
-        /**
-         * 注册一个事件处理函数
-         *
-         * @param {string} type 事件的类型
-         * @param {Function | boolean} fn 事件的处理函数，
-         * 特殊地，如果此参数为`false`，将被视为特殊的事件处理函数，
-         * 其效果等于`preventDefault()`及`stopPropagation()`
-         * @param {Mixed} [thisObject] 事件执行时`this`对象
-         * @param {Object} [options] 事件相关配置项
-         * @param {boolean} [options.once=false] 控制事件仅执行一次
-         */
-        EventTarget.prototype.on = function (type, fn, thisObject, options) {
-            if (!this.miniEventPool) {
-                this.miniEventPool = {};
-            }
-
-            if (!this.miniEventPool.hasOwnProperty(type)) {
-                this.miniEventPool[type] = new EventQueue();
-            }
-
-            var queue = this.miniEventPool[type];
-
-            options = lib.extend({}, options);
-            if (thisObject) {
-                options.thisObject = thisObject;
-            }
-
-            queue.add(fn, options);
-        };
-
-        /**
-         * 注册一个仅执行一次的处理函数
-         *
-         * @param {string} type 事件的类型
-         * @param {Function} fn 事件的处理函数
-         * @param {Mixed} [thisObject] 事件执行时`this`对象
-         * @param {Object} [options] 事件相关配置项
-         */
-        EventTarget.prototype.once = function (type, fn, thisObject, options) {
-            options = lib.extend({}, options);
-            options.once = true;
-            this.on(type, fn, thisObject, options);
-        };
-
-        /**
-         * 注销一个事件处理函数
-         *
-         * @param {string} type 事件的类型，
-         * 如果值为`*`仅会注销通过`*`为类型注册的事件，并不会将所有事件注销
-         * @param {Function} [handler] 事件的处理函数，
-         * 无此参数则注销`type`指定类型的所有事件处理函数
-         * @param {Mixed} [thisObject] 处理函数对应的`this`对象，
-         * 无此参数则注销`type`与`handler`符合要求，且未挂载`this`对象的处理函数
-         */
-        EventTarget.prototype.un = function (type, handler, thisObject) {
-            if (!this.miniEventPool
-                || !this.miniEventPool.hasOwnProperty(type)
-            ) {
-                return;
-            }
-
-            var queue = this.miniEventPool[type];
-            queue.remove(handler, thisObject);
-        };
-
-        /**
-         * 触发指定类型的事件
-         *
-         * 3个重载：
-         *
-         * - `.fire(type)`
-         * - `.fire(args)`
-         * - `.fire(type, args)`
-         *
-         * @param {string | Mixed} type 事件类型
-         * @param {Mixed} [args] 事件对象
-         * @return {Event} 事件传递过程中的`Event`对象
-         */
-        EventTarget.prototype.fire = function (type, args) {
-            // 只提供一个对象作为参数，则是`.fire(args)`的形式，需要加上type
-            if (arguments.length === 1 && typeof type === 'object') {
-                args = type;
-                type = args.type;
-            }
-
-            if (!type) {
-                throw new Error('No event type specified');
-            }
-
-            if (type === '*') {
-                throw new Error('Cannot fire global event');
-            }
-
-            var event = args instanceof Event
-                ? args
-                : new Event(type, args);
-            event.target = this;
-            // 有时候 type 和 args.type 是不一样的，这个时候强制设置成 type
-            if (type && type !== '*' && event.type !== type) {
-                event.type = type;
-            }
-
-            // 无论`this.miniEventPool`有没有被初始化，
-            // 如果有直接挂在对象上的方法是要触发的
-            var inlineHandler = this['on' + type];
-            if (typeof inlineHandler === 'function') {
-                inlineHandler.call(this, event);
-            }
-
-            // 在此处可能没有`miniEventPool`，这是指对象整个就没初始化，
-            // 即一个事件也没注册过就`fire`了，这是正常现象
-            if (this.miniEventPool && this.miniEventPool.hasOwnProperty(type)) {
-                var queue = this.miniEventPool[type];
-                queue.execute(event, this);
-            }
-
-            // 同时也有可能在上面执行标准事件队列的时候，把这个`EventTarget`给销毁了，
-            // 此时`miniEventPool`就没了，这种情况是正常的不能抛异常，要特别处理
-            if (this.miniEventPool && this.miniEventPool.hasOwnProperty('*')) {
-                var globalQueue = this.miniEventPool['*'];
-                globalQueue.execute(event, this);
-            }
-
-            return event;
-        };
-
-        /**
-         * 销毁所有事件
-         */
-        EventTarget.prototype.destroyEvents = function () {
-            if (!this.miniEventPool) {
-                return;
-            }
-
-            for (var name in this.miniEventPool) {
-                if (this.miniEventPool.hasOwnProperty(name)) {
-                    this.miniEventPool[name].dispose();
-                }
-            }
-
-            this.miniEventPool = null;
-        };
-
-        /**
-         * 在无继承关系的情况下，使一个对象拥有事件处理的功能
-         *
-         * @param {Mixed} target 需要支持事件处理功能的对象
-         * @static
-         */
-        EventTarget.enable = function (target) {
-            target.miniEventPool = {};
-            lib.extend(target, EventTarget.prototype);
-        };
-
-        return EventTarget;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP = __webpack_require__(25);
-var createDesc = __webpack_require__(38);
-module.exports = __webpack_require__(26) ? function (object, key, value) {
-  return dP.f(object, key, createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(37);
-var IE8_DOM_DEFINE = __webpack_require__(234);
-var toPrimitive = __webpack_require__(60);
-var dP = Object.defineProperty;
-
-exports.f = __webpack_require__(26) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(31)(function () {
-  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(237);
-var defined = __webpack_require__(61);
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var store = __webpack_require__(64)('wks');
-var uid = __webpack_require__(40);
-var Symbol = __webpack_require__(17).Symbol;
-var USE_SYMBOL = typeof Symbol == 'function';
-
-var $exports = module.exports = function (name) {
-  return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-};
-
-$exports.store = store;
-
-
-/***/ }),
 /* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/main.js
- * @author Created by exodia on 14-8-28.
- */
-
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var oo = __webpack_require__(305);
-    oo.defineAccessor = __webpack_require__(306);
-
-    return oo;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return !!exec();
-  } catch (e) {
-    return true;
-  }
-};
-
-
-/***/ }),
-/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35595,383 +35552,7 @@ exports.default = (0, _san.defineComponent)({
      */
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 事件中心
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /**
-         * @class EventBus
-         *
-         * 事件总线类
-         *
-         * 通过`require('er/events').EventBus`访问该类构造函数，其中`require('er/events')`是该类的全局实例
-         *
-         * @extends mini-event.EventTarget
-         * @constructor
-         */
-        var exports = {};
-
-        /**
-         * 通知一个错误的产生
-         *
-         * @param {Mixed} error 错误对象，如果是字符串则会被封装为一个Error对象
-         */
-        exports.notifyError = function (error) {
-            if (typeof error === 'string') {
-                error = new Error(error);
-            }
-
-            this.fire('error', { error: error });
-
-            return error;
-        };
-
-        var EventBus = __webpack_require__(29).create(__webpack_require__(23), exports);
-        var instance = new EventBus();
-        instance.EventBus = EventBus;
-        return instance;
-
-        /**
-         * @event error
-         * @member EventBus
-         *
-         * 接收到错误时触发
-         *
-         * @param {Mixed} error 抛出的错误对象
-         */
-
-        /**
-         * @event forwardaction
-         * @member EventBus
-         *
-         * 在重定向前往一个Action时，但执行任何Action查找、进入等逻辑前触发
-         *
-         * @param {URL} url 当前访问的URL
-         * @param {string} container 指定渲染Action的容器元素的id
-         * @param {boolean} isChildAction 是否为子Action
-         * @param {URL} [referrer] 来源URL
-         */
-
-        /**
-         * @event actionmoved
-         * @member EventBus
-         *
-         * 发现一个Action通过{@link meta.ActionConfig#movedTo}配置为移动后触发
-         *
-         * @param {URL} url 当前访问的URL
-         * @param {meta.ActionConfig} config 查找到的Action配置对象
-         * @param {string} movedTo 移动的目标地址
-         */
-
-        /**
-         * @event actionnotfound
-         * @member EventBus
-         *
-         * 发现一个Action通过{@link meta.ActionConfig#movedTo}配置为移动后触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {string} failType 失败类型，始终为`"NotFound"`
-         * @param {string} reason 失败原因，始终为`"Not Found"`
-         */
-
-        /**
-         * @event permissiondenied
-         * @member EventBus
-         *
-         * 发现访问一个没有权限的Action时触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {string} failType 失败类型，始终为`"PermissionDenied"`
-         * @param {string} reason 失败原因，始终为`"Permission denied"`
-         */
-
-        /**
-         * @event actionabort
-         * @member EventBus
-         *
-         * 发现访问一个没有权限的Action时触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         */
-
-        /**
-         * @event actionfail
-         * @member EventBus
-         *
-         * 发现访问一个没有权限的Action时触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {string} failType 失败类型，可能有2个值：
-         *
-         * - `"NoModule"`：表示根据{@link meta.ActionConfig#type}加载不到对应的模块
-         * - `"InvalidFactory"`：表示加载得到一个Action工厂但是无法用其生产Action实例
-         *
-         * @param {string} reason 失败原因
-         * @param {meta.ActionConfig} config 当前Action的配置项
-         * @param {Object} action 当`failType`为`"InvalidFactory"`时存在，值为当前加载的被认为是Action工厂的对象
-         */
-
-        /**
-         * @event actionloaded
-         * @member EventBus
-         *
-         * 当Action模块加载完毕后触发
-         *
-         * @param {URL} url 当前访问的地址
-         * @param {meta.ActionConfig} config 当前的Action配置项
-         * @param {Function} action 当前的Action构造函数
-         */
-
-        /**
-         * @event leaveaction
-         * @member EventBus
-         *
-         * 当离开一个Action时触发，触发后调用{@link Action#method-leave}方法
-         *
-         * @param {Action} action 当前的Action对象
-         * @param {meta.ActionContext} to 离开后前往的下一个Action的上下文
-         */
-
-        /**
-         * @event enteraction
-         * @member EventBus
-         *
-         * 在进入一个Action时触发，触发后调用{@link Action#method-enter}方法
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {Action} action 当前的Action对象
-         */
-
-        /**
-         * @event enteractioncomplete
-         * @member EventBus
-         *
-         * 在一个Action完成进入，即{@link Action#method-enter}的生命周期完成之后触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {Action} action 当前的Action对象
-         */
-
-        /**
-         * @event enteractionfail
-         * @member EventBus
-         *
-         * 在进入一个Action的过程中出现错误时触发
-         *
-         * 事件对象提供{@link meta.ActionContext}中的各属性
-         *
-         * @param {string} failType 失败类型，始终为`"EnterFail"`
-         * @param {string} reasone 失败原因
-         */
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 35 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35983,7 +35564,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.registerFormItem = registerFormItem;
 exports.asForm = asForm;
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -35991,11 +35572,11 @@ var _moment = __webpack_require__(1);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _promise = __webpack_require__(10);
+var _promise = __webpack_require__(16);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _asyncValidator = __webpack_require__(232);
+var _asyncValidator = __webpack_require__(213);
 
 var AsyncValidator = _interopRequireWildcard(_asyncValidator);
 
@@ -36003,9 +35584,9 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _ExpressionEvaluator = __webpack_require__(393);
+var _ExpressionEvaluator = __webpack_require__(365);
 
-var _buildValidator = __webpack_require__(394);
+var _buildValidator = __webpack_require__(366);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -36609,7 +36190,7 @@ function asForm(schema) {
 }
 
 /***/ }),
-/* 36 */
+/* 31 */
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.5.3' };
@@ -36617,10 +36198,10 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 37 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(30);
+var isObject = __webpack_require__(26);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -36628,7 +36209,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 38 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -36642,12 +36223,12 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 39 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(236);
-var enumBugKeys = __webpack_require__(65);
+var $keys = __webpack_require__(217);
+var enumBugKeys = __webpack_require__(52);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -36655,7 +36236,7 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 40 */
+/* 35 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -36666,14 +36247,14 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 41 */
+/* 36 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 42 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36681,11 +36262,11 @@ exports.f = {}.propertyIsEnumerable;
 
 exports.__esModule = true;
 
-var _iterator = __webpack_require__(349);
+var _iterator = __webpack_require__(321);
 
 var _iterator2 = _interopRequireDefault(_iterator);
 
-var _symbol = __webpack_require__(361);
+var _symbol = __webpack_require__(333);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -36700,199 +36281,7 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 };
 
 /***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _lodash = __webpack_require__(5);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _TextBox = __webpack_require__(13);
-
-var _TextBox2 = _interopRequireDefault(_TextBox);
-
-var _Select = __webpack_require__(22);
-
-var _Select2 = _interopRequireDefault(_Select);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @file SearchBox.js
- * @author leeight
- */
-
-var cx = (0, _util.create)('ui-searchbox');
-
-/* eslint-disable */
-var template = '<div class="{{mainClass}}">\n    <ui-select\n        s-if="datasource.length"\n        on-change="onKeywordTypeChanged($event)"\n        datasource="{{datasource}}"\n        layer-offset-top="{{1}}"\n        layer-offset-left="{{-1}}"\n        layer-width="{{layerWidth}}"\n        value="{=keywordType=}"\n        />\n    <ui-textbox\n        on-enter="onSearch"\n        on-focus="onFocus"\n        on-blur="onBlur"\n        placeholder="{{placeholder}}"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        width="{{width}}"\n        />\n    <ui-button on-click="onSearch" icon="magnifier" disabled="{{disabled}}" s-if="searchBtn" />\n</div>';
-/* eslint-enable */
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'ui-select': _Select2.default,
-        'ui-textbox': _TextBox2.default,
-        'ui-button': _Button2.default
-    },
-    initData: function initData() {
-        return {
-            disabled: false,
-            active: false,
-            value: '',
-            searchBtn: true,
-            placeholder: '',
-            datasource: null,
-            keywordType: null,
-            width: null,
-            layerWidth: null
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 用户输入的内容
-         * @bindx
-         * @default ''
-         */
-        value: _san.DataTypes.string,
-
-        /**
-         * 组件的聚焦状态
-         * @default false
-         */
-        active: _san.DataTypes.bool,
-
-        /**
-         * 是否展示搜索按钮
-         * @default true
-         */
-        searchBtn: _san.DataTypes.bool,
-
-        /**
-         * 搜索框的 placeholder
-         * @default ''
-         */
-        placeholder: _san.DataTypes.string,
-
-        /**
-         * Select 的数据源，每一项的格式如下：
-         * <pre><code>{
-         *   text: string,
-         *   value: any,
-         *   disabled?: bool
-         * }</code></pre>
-         */
-        datasource: _san.DataTypes.array,
-
-        /**
-         * 设置或者获取 Select 的值
-         * @bindx
-         */
-        keywordType: _san.DataTypes.any,
-
-        /**
-         * 输入框的宽度
-         */
-        width: _san.DataTypes.number,
-
-        /**
-         * layer的宽度
-         */
-        layerWidth: _san.DataTypes.number
-    },
-    computed: {
-        mainClass: function mainClass() {
-            var klass = cx.mainClass(this);
-            var searchBtn = this.data.get('searchBtn');
-            if (!searchBtn) {
-                klass.push(cx('nobtn'));
-            }
-            var active = this.data.get('active');
-            if (active) {
-                klass.push('state-active');
-                klass.push(cx('active'));
-                klass.push(cx('x-active'));
-            }
-            return klass;
-        }
-    },
-    attached: function attached() {
-        var keywordType = this.data.get('keywordType');
-        this.__updatePlaceholder(keywordType);
-    },
-    onKeywordTypeChanged: function onKeywordTypeChanged(_ref) {
-        var value = _ref.value;
-
-        this.__updatePlaceholder(value);
-    },
-    __updatePlaceholder: function __updatePlaceholder(keywordType) {
-        var _this = this;
-
-        var datasource = this.data.get('datasource');
-        if (datasource && keywordType) {
-            _lodash2.default.each(datasource, function (item) {
-                if (item.value === keywordType) {
-                    _this.data.set('placeholder', '\u8BF7\u8F93\u5165' + item.text + '\u8FDB\u884C\u641C\u7D22');
-                }
-            });
-        }
-    },
-    onSearch: function onSearch() {
-        this.fire('search');
-    },
-    onFocus: function onFocus() {
-        this.data.set('active', true);
-    },
-    onBlur: function onBlur() {
-        this.data.set('active', false);
-    }
-});
-
-/***/ }),
-/* 45 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36952,7 +36341,7 @@ function getOffset(element) {
 }
 
 /***/ }),
-/* 46 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37058,206 +36447,8 @@ function getClientLeft() {
 }
 
 /***/ }),
-/* 47 */,
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _moment = __webpack_require__(1);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var _Layer = __webpack_require__(16);
-
-var _Layer2 = _interopRequireDefault(_Layer);
-
-var _MonthView = __webpack_require__(49);
-
-var _MonthView2 = _interopRequireDefault(_MonthView);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('ui-calendar'); /**
-                                            * @file Calendar.js
-                                            * @author leeight
-                                            */
-
-var kDefaultRange = { begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4) };
-
-/* eslint-disable */
-var template = '<div class="' + cx('xx') + '">\n<ui-button on-click="prevDay" disabled="{{prevDisabled}}" s-if="prev"><</ui-button>\n<div on-click="toggleLayer" class="{{mainClass}}">\n    <div class="' + cx('text') + '">{{text}}</div>\n    <div class="' + cx('arrow') + '"></div>\n    <ui-layer open="{=active=}" s-ref="layer" follow-scroll="{{false}}">\n        <div class="' + cx('layer') + '">\n            <ui-monthview value="{=value=}" time="{{time}}" range="{{range}}" on-change="onChange"/>\n        </div>\n    </ui-layer>\n</div>\n<ui-button on-click="nextDay" disabled="{{nextDisabled}}" s-if="next">></ui-button>\n</div>\n';
-/* eslint-enable */
-
-var Calendar = (0, _san.defineComponent)({ // eslint-disable-line
-    template: template,
-    components: {
-        'ui-button': _Button2.default,
-        'ui-layer': _Layer2.default,
-        'ui-monthview': _MonthView2.default
-    },
-    computed: {
-        text: function text() {
-            var value = this.data.get('value');
-            var valueText = (0, _moment2.default)(value).format(this.data.get('format'));
-            return '' + valueText;
-        },
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        },
-        prevDisabled: function prevDisabled() {
-            var disabled = this.data.get('disabled');
-            var range = this.data.get('range');
-            var value = this.data.get('value');
-            // computed的执行早于了inted，所以需要判断下range
-            return disabled || range && (0, _moment2.default)(range.begin).unix() >= (0, _moment2.default)(value).add(-1, 'day').unix();
-        },
-        nextDisabled: function nextDisabled() {
-            var disabled = this.data.get('disabled');
-            var range = this.data.get('range');
-            var value = this.data.get('value');
-            // computed的执行早于了inted，所以需要判断下range
-            return disabled || range && (0, _moment2.default)(range.end).unix() <= (0, _moment2.default)(value).unix();
-        }
-    },
-    initData: function initData() {
-        return {
-            value: new Date(),
-            time: false,
-            prev: false,
-            next: false,
-            active: false,
-            range: kDefaultRange,
-            format: 'YYYY-MM-DD',
-            closeOnChange: false
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 选择日期之后是否关闭浮层
-         * @default false
-         */
-        closeOnChange: _san.DataTypes.bool,
-
-        /**
-         * 是否可以编辑 HH:mm:ss
-         * @default false
-         */
-        time: _san.DataTypes.bool,
-
-        /**
-         * 是否展示前一天的按钮
-         * @default false
-         */
-        prev: _san.DataTypes.bool,
-
-        /**
-         * 是否展示后一天的按钮
-         * @default false
-         */
-        next: _san.DataTypes.bool,
-
-        /**
-         * 浮层的展开状态
-         * @bindx
-         * @default false
-         */
-        active: _san.DataTypes.bool,
-
-        /**
-         * 组件的值
-         * @bindx
-         * @default new Date()
-         */
-        value: _san.DataTypes.date,
-
-        /**
-         * 文案格式化日期的时候默认格式
-         * @default YYYY-MM-DD
-         */
-        format: _san.DataTypes.string
-    },
-    inited: function inited() {
-        var _this = this;
-
-        var _data$get = this.data.get(),
-            value = _data$get.value,
-            range = _data$get.range;
-        // 外部有可能传过来的range为undefined
-
-
-        if (!range) {
-            this.data.set('range', kDefaultRange);
-        }
-        if (!value) {
-            value = new Date();
-        } else if (value && typeof value === 'string') {
-            value = new Date(value);
-        }
-        // 只有 new Date(value), 数据才会同步到外部的组件里面去
-        this.data.set('value', new Date(value));
-        this.watch('value', function (value) {
-            _this.fire('change', { value: value });
-
-            var closeOnChange = _this.data.get('closeOnChange');
-            if (closeOnChange) {
-                _this.data.set('active', false);
-            }
-        });
-    },
-    nextDay: function nextDay() {
-        var value = this.data.get('value');
-        var newValue = (0, _moment2.default)(value).add(1, 'day').toDate();
-        this.data.set('value', newValue);
-    },
-    prevDay: function prevDay() {
-        var value = this.data.get('value');
-        var newValue = (0, _moment2.default)(value).subtract(1, 'day').toDate();
-        this.data.set('value', newValue);
-    },
-    toggleLayer: function toggleLayer() {
-        var disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-        var active = this.data.get('active');
-        this.data.set('active', !active);
-    },
-    onChange: function onChange(_ref) {
-        var value = _ref.value;
-
-        if (value !== this.data.get('value')) {
-            this.data.set('value', value);
-        }
-    }
-});
-
-exports.default = (0, _asInput.asInput)(Calendar);
-
-/***/ }),
-/* 49 */
+/* 40 */,
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37271,17 +36462,17 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Select = __webpack_require__(22);
+var _Select = __webpack_require__(28);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -37563,7 +36754,7 @@ var MonthView = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(MonthView);
 
 /***/ }),
-/* 50 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37577,7 +36768,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var cx = (0, _util.create)('ui-checkbox');
 
@@ -37634,7 +36825,7 @@ var CheckBox = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(CheckBox);
 
 /***/ }),
-/* 51 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37644,7 +36835,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -37652,21 +36843,21 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
-var _Icon = __webpack_require__(18);
+var _Icon = __webpack_require__(19);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _StopScroll = __webpack_require__(32);
+var _StopScroll = __webpack_require__(29);
 
 var _StopScroll2 = _interopRequireDefault(_StopScroll);
 
@@ -37910,1002 +37101,14 @@ var MultiPicker = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(MultiPicker);
 
 /***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var cx = (0, _util.create)('ui-radioselect'); /**
-                                               * @file RadioSelect.js
-                                               * @author leeight
-                                               */
-
-var cx2 = (0, _util.create)('ui-radio');
-
-/* eslint-disable */
-var template = '<div class="{{mainClass}}">\n    <ul>\n        <li on-click="onItemClick(item)"\n            class="{{item | itemClass(value)}}"\n            s-for="item in datasource">\n          <div class="' + cx2('item-hover') + '" s-if="item.tip">{{item.tip}}<br/></div>\n          <div class="arrow-down" s-if="item.tip"><i></i></div>\n          {{item.text}}\n        </li>\n    </ul>\n</div>';
-/* eslint-enable */
-
-var RadioSelect = (0, _san.defineComponent)({
-    template: template,
-    computed: {
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-    filters: {
-        itemClass: function itemClass(item, value) {
-            var klass = [cx2('block')];
-
-            if (item.disabled) {
-                klass.push(cx2('disabled'));
-            }
-
-            if (item.value === value) {
-                klass.push(cx2('selected'));
-            }
-
-            return klass;
-        }
-    },
-    initData: function initData() {
-        return {
-            value: null,
-            datasource: []
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 组件当前的值
-         * @bindx
-         */
-        value: _san.DataTypes.any,
-
-        /**
-         * 组件的数据源
-         * <pre><code>{
-         *   text: string,
-         *   value: any,
-         *   tip?: string
-         * }</code></pre>
-         */
-        datasource: _san.DataTypes.array
-    },
-    onItemClick: function onItemClick(item) {
-        var disabled = this.data.get('disabled');
-        if (item.disabled || disabled) {
-            return;
-        }
-        this.data.set('value', item.value);
-        this.fire('change', item);
-    }
-});
-
-exports.default = (0, _asInput.asInput)(RadioSelect);
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _moment = __webpack_require__(1);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Layer = __webpack_require__(16);
-
-var _Layer2 = _interopRequireDefault(_Layer);
-
-var _MonthView = __webpack_require__(49);
-
-var _MonthView2 = _interopRequireDefault(_MonthView);
-
-var _asInput = __webpack_require__(7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('ui-rangecalendar'); /**
-                                                 * @file RangeCalendar.js
-                                                 * @author leeight
-                                                 */
-
-
-function getDayValue() {
-    var bd = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-    var ed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-
-    return function () {
-        var begin = (0, _moment2.default)().subtract(bd, 'day').toDate();
-        var end = (0, _moment2.default)().subtract(ed, 'day').endOf('day').toDate();
-        return { begin: begin, end: end };
-    };
-}
-
-function getLastWeekValue() {
-    return function () {
-        var now = new Date();
-        var begin = new Date(now);
-        var end = new Date(now);
-
-        var startOfWeek = 1; // 周一为第一天;
-
-        if (begin.getDay() < startOfWeek % 7) {
-            begin.setDate(begin.getDate() - 14 + startOfWeek - begin.getDay());
-        } else {
-            begin.setDate(begin.getDate() - 7 - begin.getDay() + startOfWeek % 7);
-        }
-        begin.setHours(0, 0, 0, 0);
-
-        end.setFullYear(begin.getFullYear(), begin.getMonth(), begin.getDate() + 6);
-        end.setHours(23, 59, 59, 999);
-
-        return { begin: begin, end: end };
-    };
-}
-
-function getMonthValue() {
-    return function () {
-        var begin = (0, _moment2.default)().startOf('month').toDate();
-        var end = (0, _moment2.default)().endOf('day').toDate();
-        return { begin: begin, end: end };
-    };
-}
-
-function getLastMonthValue() {
-    return function () {
-        var begin = (0, _moment2.default)().subtract('month', 1).startOf('month').toDate();
-        var end = (0, _moment2.default)().startOf('month').subtract('day', 1).endOf('day').toDate();
-        return { begin: begin, end: end };
-    };
-}
-
-function getLastQuarterValue() {
-    return function () {
-        var now = new Date();
-        var begin = (0, _moment2.default)().subtract('month', now.getMonth() % 3 + 3).startOf('month').toDate();
-        var end = (0, _moment2.default)().subtract('month', now.getMonth() % 3).startOf('month').subtract('day', 1).endOf('day').toDate();
-        return { begin: begin, end: end };
-    };
-}
-
-/* eslint-disable */
-var template = '<div on-click="toggleLayer" class="{{mainClass}}">\n    <div class="' + cx('text') + '">{{text}}</div>\n    <div class="' + cx('arrow') + '"></div>\n    <ui-layer open="{=active=}" s-ref="layer" follow-scroll="{{false}}">\n        <div class="' + cx('layer') + '">\n            <div class="' + cx('shortcut') + '" s-if="shortcut">\n                <span on-click="onShortcutSelect(item)"\n                    class="' + cx('shortcut-item') + '"\n                    s-for="item in shortcutItems">{{item.text}}</span>\n            </div>\n            <div class="' + cx('body') + '">\n                <div class="' + cx('begin') + '">\n                    <div class="' + cx('label') + '"><h3>\u5F00\u59CB\u65E5\u671F</h3></div>\n                    <div class="' + cx('begin-cal') + '">\n                        <ui-monthview value="{=begin.value=}" range="{{range}}" time="{{time}}" />\n                    </div>\n                </div>\n                <div class="' + cx('end') + '">\n                    <div class="' + cx('label') + '"><h3>\u7ED3\u675F\u65E5\u671F</h3></div>\n                    <div class="' + cx('end-cal') + '">\n                        <ui-monthview value="{=end.value=}" range="{{range}}" time="{{time}}" end-of-day />\n                    </div>\n                </div>\n            </div>\n            <div class="' + cx('foot') + '">\n                <ui-button on-click="onSelect" skin="ok" class="' + cx('okBtn') + '">\u786E\u5B9A</ui-button>\n                <ui-button on-click="closeLayer" skin="cancel" class="' + cx('cancelBtn') + '">\u53D6\u6D88</ui-button>\n            </div>\n        </div>\n    </ui-layer>\n</div>';
-/* eslint-enable */
-
-var RangeCalendar = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'ui-layer': _Layer2.default,
-        'ui-monthview': _MonthView2.default,
-        'ui-button': _Button2.default
-    },
-    computed: {
-        text: function text() {
-            var value = this.data.get('value');
-            if (!value) {
-                return '-';
-            }
-            var begin = value.begin,
-                end = value.end;
-
-            var format = this.data.get('time') ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
-            var beginText = (0, _moment2.default)(begin).format(format);
-            var endText = (0, _moment2.default)(end).format(format);
-            return beginText + ' - ' + endText;
-        },
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-    initData: function initData() {
-        return {
-            value: {
-                begin: new Date(),
-                end: new Date()
-            },
-            time: null,
-            range: { begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4) },
-            // BEGIN 临时的数据
-            begin: {
-                value: null
-            },
-            end: {
-                value: null
-            },
-            // E N D 临时的数据
-            active: false,
-            shortcut: true,
-            shortcutItems: [{ text: '昨天', value: getDayValue(1, 1) }, { text: '最近7天', value: getDayValue(6, 0) }, { text: '上周', value: getLastWeekValue() }, { text: '本月', value: getMonthValue() }, { text: '上个月', value: getLastMonthValue() }, { text: '上个季度', value: getLastQuarterValue() }]
-        };
-    },
-
-    dataTypes: {
-        /**
-         * 获取或者设置组件的值
-         * @bindx
-         * @default {begin: new Date(), end: new Date()}
-         */
-        value: _san.DataTypes.object,
-
-        /**
-         * 日期可以选择的范围
-         * @default {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)}
-         */
-        range: _san.DataTypes.object,
-
-        /**
-         * 组件的禁用状态
-         * @default false
-         */
-        disabled: _san.DataTypes.bool,
-
-        /**
-         * 是否启用选择日期的快捷方式
-         * @default true
-         */
-        shortcut: _san.DataTypes.bool,
-
-        /**
-         * 浮层的打开状态
-         * @bindx
-         * @default false
-         */
-        active: _san.DataTypes.bool,
-
-        /**
-         * 是否可以编辑 HH:mm:ss
-         * @default false
-         */
-        time: _san.DataTypes.bool
-    },
-    inited: function inited() {
-        var _this = this;
-
-        var _data$get = this.data.get('value'),
-            begin = _data$get.begin,
-            end = _data$get.end;
-
-        if (!begin) {
-            begin = new Date();
-        } else if (typeof begin === 'string') {
-            // utc to date
-            begin = new Date(begin);
-        }
-
-        if (!end) {
-            end = new Date();
-        } else if (typeof end === 'string') {
-            // utc to date
-            end = new Date(end);
-        }
-
-        this.data.set('value', { begin: begin, end: end });
-        this.watch('value', function (value) {
-            return _this.fire('change', { value: value });
-        });
-    },
-    onShortcutSelect: function onShortcutSelect(item) {
-        var _ref = typeof item.value === 'function' ? item.value() : item.value,
-            begin = _ref.begin,
-            end = _ref.end;
-
-        this.data.set('begin.value', begin);
-        this.data.set('end.value', end);
-    },
-    onSelect: function onSelect() {
-        var begin = this.data.get('begin.value');
-        var end = this.data.get('end.value');
-        this.data.set('value', begin > end ? { begin: end, end: begin } : { begin: begin, end: end });
-        this.closeLayer();
-    },
-    closeLayer: function closeLayer() {
-        this.data.set('active', false);
-    },
-    toggleLayer: function toggleLayer() {
-        var disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-        var active = this.data.get('active');
-        if (!active) {
-            var _data$get2 = this.data.get('value'),
-                begin = _data$get2.begin,
-                end = _data$get2.end;
-
-            this.data.set('begin.value', new Date(begin));
-            this.data.set('end.value', new Date(end));
-        }
-        this.data.set('active', !active);
-    }
-});
-
-exports.default = (0, _asInput.asInput)(RangeCalendar);
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _dom = __webpack_require__(45);
-
-var _util = __webpack_require__(2);
-
-var _Layer = __webpack_require__(16);
-
-var _Layer2 = _interopRequireDefault(_Layer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @file Tip.js
- * @author leeight
- */
-var cx = (0, _util.create)('ui-tip');
-var cx2 = (0, _util.create)('ui-tiplayer');
-
-/* eslint-disable */
-var template = '<template>\n    <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">\n        <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer" follow-scroll="{{false}}">\n            <div class="{{tiplayerClass}}" s-ref="layer-body">\n                <div class="' + cx2('body-panel') + '" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">\n                    <div class="' + cx2('body') + '" s-if="message" style="{{messageStyle}}">\n                        {{message | raw}}\n                    </div>\n                    <div class="' + cx2('body') + '" s-else>\n                        <slot />\n                    </div>\n                </div>\n                <div class="{{arrowClass}}"></div>\n            </div>\n        </ui-layer>\n    </div>\n</template>';
-/* eslint-enable */
-
-exports.default = (0, _san.defineComponent)({ // eslint-disable-line
-    template: template,
-    components: {
-        'ui-layer': _Layer2.default
-    },
-    computed: {
-        style: function style() {
-            return {};
-        },
-        tiplayerClass: function tiplayerClass() {
-            var position = this.data.get('position');
-            var klass = [cx2(), cx2('x'), cx2(position)];
-            return klass;
-        },
-        arrowClass: function arrowClass() {
-            var position = this.data.get('position');
-            var klass = [cx2('arrow'), cx2('arrow-' + position)];
-            return klass;
-        },
-        mainClass: function mainClass() {
-            var klass = [cx(), cx('x')];
-            return klass;
-        },
-        messageStyle: function messageStyle() {
-            var style = {};
-            var width = this.data.get('width');
-            if (width != null) {
-                style.width = (0, _util.hasUnit)(width) ? width : width + 'px';
-            }
-            return style;
-        }
-    },
-    initData: function initData() {
-        return {
-            message: null,
-            position: 'lt', // 'lt' | 'tc' | 'rt' | 'bc'
-            active: false,
-            duration: 500
-        };
-    },
-
-    dataTypes: {
-        /**
-         * Tip 需要展示的内容，如果设置了 message，那么就忽略 default slot 的内容
-         */
-        message: _san.DataTypes.string,
-
-        /**
-         * Tip 的位置，可选的内容有：lt, tc, rt, bc
-         * @default lt
-         */
-        position: _san.DataTypes.string,
-
-        /**
-         * Tip 打开的状态
-         * @bindx
-         * @default false
-         */
-        active: _san.DataTypes.bool,
-
-        /**
-         * 默认的延迟(ms)
-         * @default 500
-         */
-        duration: _san.DataTypes.number
-    },
-    inited: function inited() {
-        this.timer = null;
-    },
-    attached: function attached() {},
-    positionLayer: function positionLayer() {
-        var layer = this.ref('layer');
-        var layerBody = this.ref('layer-body');
-        var position = this.data.get('position');
-        if (layerBody) {
-            var rect = this.el.getBoundingClientRect();
-            var offset = (0, _dom.getOffset)(this.el);
-            var offsetHeight = layerBody.offsetHeight,
-                offsetWidth = layerBody.offsetWidth;
-
-            var style = { 'z-index': (0, _util.nextZindex)() };
-            if (position === 'lt') {
-                style.top = offset.top - (offsetHeight - rect.height) / 2 + 'px';
-                style.left = offset.right + 'px';
-            } else if (position === 'bc') {
-                style.left = offset.left - (offsetWidth - rect.width) / 2 + 'px';
-                style.top = offset.top + rect.height + 11 + 'px';
-            } else if (position === 'rt') {
-                style.top = offset.top - (offsetHeight - rect.height) / 2 + 'px';
-                style.left = offset.left - offsetWidth + 'px';
-            } else if (position === 'tc') {
-                style.left = offset.left - (offsetWidth - rect.width) / 2 + 'px';
-                style.top = offset.top - rect.height - offsetHeight + 'px';
-            }
-            layer.data.set('layerStyle', style);
-        }
-    },
-    updated: function updated() {
-        var active = this.data.get('active');
-        if (active) {
-            this.positionLayer();
-        }
-    },
-    showLayer: function showLayer() {
-        var _this = this;
-
-        this.cancelTimer();
-        this.timer = setTimeout(function () {
-            _this.timer = null;
-            _this.data.set('active', true);
-        }, this.data.get('duration'));
-    },
-    cancelTimer: function cancelTimer() {
-        if (this.timer) {
-            clearTimeout(this.timer);
-            this.timer = null;
-        }
-    },
-    hideLayer: function hideLayer() {
-        var _this2 = this;
-
-        this.cancelTimer();
-        var active = this.data.get('active');
-        if (!active) {
-            return;
-        }
-        this.timer = setTimeout(function () {
-            _this2.timer = null;
-            _this2.data.set('active', false);
-        }, this.data.get('duration'));
-    }
-});
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.Ghost = exports.Page = undefined;
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @file san-xui/x/biz/helper.js
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @author leeight
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
-
-exports.asPromise = asPromise;
-exports.displayDialog = displayDialog;
-exports.buildDialog = buildDialog;
-exports.plain = plain;
-exports.alert = alert;
-exports.confirm = confirm;
-exports.waitActionDialog = waitActionDialog;
-exports.createPayload = createPayload;
-exports.createToolbar = createToolbar;
-exports.matchAll = matchAll;
-exports.valueTransform = valueTransform;
-
-var _lodash = __webpack_require__(5);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _moment = __webpack_require__(1);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _promise = __webpack_require__(10);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-var _ConfirmDialog = __webpack_require__(203);
-
-var _ConfirmDialog2 = _interopRequireDefault(_ConfirmDialog);
-
-var _AlertDialog = __webpack_require__(197);
-
-var _AlertDialog2 = _interopRequireDefault(_AlertDialog);
-
-var _PlainDialog = __webpack_require__(208);
-
-var _PlainDialog2 = _interopRequireDefault(_PlainDialog);
-
-var _asDialog = __webpack_require__(214);
-
-var _LegacyActionAdapter = __webpack_require__(302);
-
-var _LegacyActionAdapter2 = _interopRequireDefault(_LegacyActionAdapter);
-
-var _Page2 = __webpack_require__(312);
-
-var _Page3 = _interopRequireDefault(_Page2);
-
-var _Ghost2 = __webpack_require__(314);
-
-var _Ghost3 = _interopRequireDefault(_Ghost2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Page = exports.Page = _Page3.default;
-var Ghost = exports.Ghost = _Ghost3.default;
-
-function asPromise(dialog) {
-    return new _promise2.default(function (resolve, reject) {
-        dialog.on('confirm', function () {
-            resolve();
-            dialog.dispose();
-        });
-        dialog.on('close', function () {
-            reject();
-            dialog.dispose();
-        });
-    });
-}
-
-function displayDialog(DialogComponent) {
-    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    if (typeof data === 'string') {
-        data = { message: data };
-    }
-    var dialog = new DialogComponent({ data: data });
-    dialog.attach(document.body);
-    return asPromise(dialog);
-}
-
-function buildDialog(Klass) {
-    return (0, _asDialog.asDialog)(Klass);
-}
-
-function plain(data) {
-    return displayDialog(_PlainDialog2.default, data);
-}
-
-function alert(data) {
-    return displayDialog(_AlertDialog2.default, data);
-}
-
-function confirm(data) {
-    return displayDialog(_ConfirmDialog2.default, data);
-}
-
-function waitActionDialog(dialogOptions, actionOptions) {
-    var myOptions = _lodash2.default.extend({
-        open: true,
-        width: 'auto',
-        height: 'auto',
-        title: 'Dialog Title'
-    }, dialogOptions);
-    myOptions.options = actionOptions;
-
-    var component = new _LegacyActionAdapter2.default({
-        data: {
-            dialog: true,
-            actionOptions: myOptions
-        }
-    });
-    component.attach(document.body);
-    return component;
-}
-
-function createPayload(payload, fields, extra) {
-    // fields: ['a', 'b', 'c'] -> u.pick(payload, fields);
-    // fields: ['a', ['id', 'userId'], 'c'] ->
-    var requestPayload = fields ? {} : _lodash2.default.extend({}, payload);
-    _lodash2.default.each(fields, function (key) {
-        if (_lodash2.default.isArray(key)) {
-            var _key = _slicedToArray(key, 2),
-                a = _key[0],
-                b = _key[1];
-
-            requestPayload[b] = payload[a];
-        } else if (_lodash2.default.isString(key)) {
-            requestPayload[key] = payload[key];
-        }
-    });
-    return _lodash2.default.extend(requestPayload, extra);
-}
-
-function createToolbar(toolbar) {
-    return _lodash2.default.map(toolbar, function (item) {
-        if (item.type === 'button') {
-            var btn = _lodash2.default.clone(item);
-            if (btn.primary) {
-                btn.skin = 'primary';
-            }
-            return btn;
-        } else if (item.type === 'button-group') {
-            var btnGroup = {
-                type: item.type,
-                value: item.$value || item.buttons[0].$value,
-                datasource: _lodash2.default.map(item.buttons, function (btn) {
-                    var label = btn.label,
-                        $value = btn.$value;
-
-                    var props = _lodash2.default.omit(btn, 'label', '$value');
-                    return _lodash2.default.extend({ text: label, value: $value }, props);
-                })
-            };
-            return btnGroup;
-        }
-        return item;
-    });
-}
-
-function matchAll(compProxy, when) {
-    var keys = _lodash2.default.keys(when);
-    for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
-        var value = when[key];
-        if (compProxy.data.get(key) !== value) {
-            return false;
-        }
-    }
-    return true;
-}
-
-function valueTransform(formData) {
-    var transformedData = {};
-    var keyMap = formData.__s_key || [];
-    _lodash2.default.each(formData, function (v, k) {
-        if (/^__key_(.*)$/.test(k)) {
-            var config = keyMap[+RegExp.$1];
-            if (!config) {
-                return;
-            }
-            if (config.type === 'p') {
-                // 没有对应的 key，把 v 直接合并到 transformedData 里面去
-                _lodash2.default.extend(transformedData, v);
-            } else if (config.type === 'j') {
-                // 对应的 key 是 JSON，重新处理恢复一下
-                //
-                // 针对 type: rangecalendar 的特殊情况
-                // name: {
-                //   begin: 'beginTime',
-                //   end: 'endTime'
-                // },
-                // value: {
-                //   begin: ...,
-                //   end: ...
-                // }
-                _lodash2.default.each(config.value, function (name, valueKey) {
-                    var value = v[valueKey];
-                    if (value != null) {
-                        transformedData[name] = value;
-                    }
-                });
-            }
-        } else if (k !== '__s_key') {
-            transformedData[k] = v;
-        }
-    });
-
-    _lodash2.default.each(transformedData, function (v, k) {
-        if (_lodash2.default.isDate(v)) {
-            transformedData[k] = (0, _moment2.default)(v).utc().format('YYYY-MM-DDTHH:mm:ss') + 'Z';
-        }
-    });
-
-    return transformedData;
-}
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 杂而乱的工具对象
- * @author otakustay, errorrik
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-        var now = +new Date();
-
-        /**
-         * @class util
-         *
-         * 工具模块，放一些杂七杂八的东西
-         *
-         * @singleton
-         */
-        var util = {};
-
-        /**
-         * 获取一个唯一的ID
-         *
-         * @return {string} 一个唯一的ID
-         */
-        util.guid = function () {
-            return 'er' + now++;
-        };
-
-        /**
-         * 混合多个对象
-         *
-         * @param {Object} source 源对象
-         * @param {Object...} destinations 用于混合的对象
-         * @return 返回混合了`destintions`属性的`source`对象
-         */
-        util.mix = function (source) {
-            for (var i = 1; i < arguments.length; i++) {
-                var destination = arguments[i];
-
-                // 就怕有人传**null**之类的进来
-                if (!destination) {
-                    continue;
-                }
-
-                // 这里如果`destination`是字符串的话，会遍历出下标索引来，
-                // 认为这是调用者希望的效果，所以不作处理
-                for (var key in destination) {
-                    if (destination.hasOwnProperty(key)) {
-                        source[key] = destination[key];
-                    }
-                }
-            }
-            return source;
-        };
-
-        // `bind`的实现特别使用引擎原生的，
-        // 因为自己实现的`bind`很会影响调试时的单步调试，
-        // 跳进一个函数的时候还要经过这个`bind`几步很烦，原生的就不会
-        var nativeBind = Function.prototype.bind;
-        /**
-         * 固定函数的`this`变量和若干参数
-         *
-         * @param {Function} fn 操作的目标函数
-         * @param {Mixed} context 函数的`this`变量
-         * @param {Mixed...} args 固定的参数
-         * @return {Function} 固定了`this`变量和若干参数后的新函数对象
-         */
-        util.bind = nativeBind
-            ? function (fn) {
-                return nativeBind.apply(fn, [].slice.call(arguments, 1));
-            }
-            : function (fn, context) {
-                var extraArgs = [].slice.call(arguments, 2);
-                return function () {
-                    var args = extraArgs.concat([].slice.call(arguments));
-                    return fn.apply(context, args);
-                };
-            };
-
-        /**
-         * 空函数
-         *
-         * @property
-         * @type {Function}
-         */
-        util.noop = function () {};
-
-        var dontEnumBug = !(({ toString: 1 }).propertyIsEnumerable('toString'));
-
-        /**
-         * 设置继承关系
-         *
-         * @param {Function} type 子类
-         * @param {Function} superType 父类
-         * @return {Function} 子类
-         */
-        util.inherits = function (type, superType) {
-            var Empty = function () {};
-            Empty.prototype = superType.prototype;
-            var proto = new Empty();
-
-            var originalPrototype = type.prototype;
-            type.prototype = proto;
-
-            for (var key in originalPrototype) {
-                proto[key] = originalPrototype[key];
-            }
-            if (dontEnumBug) {
-                // 其实还有好多其它的，但应该不会撞上吧(╯‵□′)╯︵┻━┻
-                if (originalPrototype.hasOwnProperty('toString')) {
-                    proto.toString = originalPrototype.toString;
-                }
-                if (originalPrototype.hasOwnProperty('valueOf')) {
-                    proto.valueOf = originalPrototype.valueOf;
-                }
-            }
-            type.prototype.constructor = type;
-
-            return type;
-        };
-
-        /**
-         * 将一段文本变为JSON对象
-         *
-         * @param {string} text 文本内容
-         * @return {Mixed} 对应的JSON对象
-         */
-        util.parseJSON = function (text) {
-            if (!text) {
-                return undefined;
-            }
-
-            if (window.JSON && typeof JSON.parse === 'function') {
-                return JSON.parse(text);
-            }
-            else {
-                /* jshint evil: true */
-                return new Function('return (' + text + ');')();
-            }
-        };
-
-        var whitespace = /(^[\s\t\xa0\u3000]+)|([\u3000\xa0\s\t]+$)/g;
-
-        /**
-         * 移除字符串前后空格字符
-         *
-         * @param {string} source 源字符串
-         * @return {string} 移除前后空格后的字符串
-         */
-        util.trim = function (source) {
-            return source.replace(whitespace, '');
-        };
-
-        /**
-         * 对字符中进行HTML编码
-         *
-         * @param {string} source 源字符串
-         * @param {string} HTML编码后的字符串
-         */
-        util.encodeHTML = function (source) {
-            source = source + '';
-            return source
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        };
-
-        /**
-         * 兼容性获取一个元素
-         *
-         * @param {HTMLElement | string} element 元素或元素的id
-         * @return {HTMLElement}
-         */
-        util.getElement = function (element) {
-            if (typeof element === 'string') {
-                element = document.getElementById(element);
-            }
-            return element;
-        };
-
-        return util;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 工具库，仅供内部使用
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /**
-         * 工具库模块
-         *
-         * 此模块为内部使用，不保证API的稳定性， *不要* 直接引用此模块
-         *
-         * @class lib
-         * @singleton
-         */
-        var lib = {};
-
-        /**
-         * 扩展对象
-         *
-         * @param {Object} source 源对象
-         * @param {Object...} additions 扩展的对象
-         * @return {Object} 返回扩展后的`source`对象
-         */
-        lib.extend = function (source) {
-            for (var i = 1; i < arguments.length; i++) {
-                var addition = arguments[i];
-
-                if (!addition) {
-                    continue;
-                }
-
-                for (var key in addition) {
-                    if (addition.hasOwnProperty(key)) {
-                        source[key] = addition[key];
-                    }
-                }
-            }
-
-            return source;
-        };
-
-        return lib;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 58 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(14);
-var normalizeHeaderName = __webpack_require__(319);
+var utils = __webpack_require__(11);
+var normalizeHeaderName = __webpack_require__(289);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -38921,10 +37124,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(226);
+    adapter = __webpack_require__(207);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(226);
+    adapter = __webpack_require__(207);
   }
   return adapter;
 }
@@ -38995,16 +37198,206 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
 
 /***/ }),
-/* 59 */
+/* 45 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(17);
-var core = __webpack_require__(36);
-var ctx = __webpack_require__(343);
-var hide = __webpack_require__(24);
+var global = __webpack_require__(15);
+var core = __webpack_require__(31);
+var ctx = __webpack_require__(315);
+var hide = __webpack_require__(21);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -39065,11 +37458,11 @@ module.exports = $export;
 
 
 /***/ }),
-/* 60 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(30);
+var isObject = __webpack_require__(26);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -39083,7 +37476,7 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 61 */
+/* 48 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -39094,7 +37487,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 62 */
+/* 49 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -39106,21 +37499,21 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 63 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(64)('keys');
-var uid = __webpack_require__(40);
+var shared = __webpack_require__(51)('keys');
+var uid = __webpack_require__(35);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 64 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(17);
+var global = __webpack_require__(15);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 module.exports = function (key) {
@@ -39129,7 +37522,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 65 */
+/* 52 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -39139,33 +37532,33 @@ module.exports = (
 
 
 /***/ }),
-/* 66 */
+/* 53 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 67 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 68 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 
 /***/ }),
-/* 69 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(25).f;
-var has = __webpack_require__(20);
-var TAG = __webpack_require__(28)('toStringTag');
+var def = __webpack_require__(22).f;
+var has = __webpack_require__(17);
+var TAG = __webpack_require__(25)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -39173,21 +37566,21 @@ module.exports = function (it, tag, stat) {
 
 
 /***/ }),
-/* 70 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.f = __webpack_require__(28);
+exports.f = __webpack_require__(25);
 
 
 /***/ }),
-/* 71 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(17);
-var core = __webpack_require__(36);
-var LIBRARY = __webpack_require__(67);
-var wksExt = __webpack_require__(70);
-var defineProperty = __webpack_require__(25).f;
+var global = __webpack_require__(15);
+var core = __webpack_require__(31);
+var LIBRARY = __webpack_require__(54);
+var wksExt = __webpack_require__(57);
+var defineProperty = __webpack_require__(22).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -39195,7 +37588,34 @@ module.exports = function (name) {
 
 
 /***/ }),
-/* 72 */
+/* 59 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -39223,7 +37643,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 73 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39451,10 +37871,175 @@ rawAsap.makeRequestCallFromTimer = makeRequestCallFromTimer;
 // back into ASAP proper.
 // https://github.com/tildeio/rsvp.js/blob/cddf7232546a9cf858524b75cde6f9edf72620a7/lib/rsvp/asap.js
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59)))
 
 /***/ }),
-/* 74 */
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _lodash = __webpack_require__(4);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _TextBox = __webpack_require__(12);
+
+var _TextBox2 = _interopRequireDefault(_TextBox);
+
+var _Select = __webpack_require__(28);
+
+var _Select2 = _interopRequireDefault(_Select);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file SearchBox.js
+ * @author leeight
+ */
+
+var cx = (0, _util.create)('ui-searchbox');
+
+/* eslint-disable */
+var template = '<div class="{{mainClass}}">\n    <ui-select\n        s-if="datasource.length"\n        on-change="onKeywordTypeChanged($event)"\n        datasource="{{datasource}}"\n        layer-offset-top="{{1}}"\n        layer-offset-left="{{-1}}"\n        layer-width="{{layerWidth}}"\n        value="{=keywordType=}"\n        />\n    <ui-textbox\n        on-enter="onSearch"\n        on-focus="onFocus"\n        on-blur="onBlur"\n        placeholder="{{placeholder}}"\n        value="{=value=}"\n        disabled="{{disabled}}"\n        width="{{width}}"\n        />\n    <ui-button on-click="onSearch" icon="magnifier" disabled="{{disabled}}" s-if="searchBtn" />\n</div>';
+/* eslint-enable */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'ui-select': _Select2.default,
+        'ui-textbox': _TextBox2.default,
+        'ui-button': _Button2.default
+    },
+    initData: function initData() {
+        return {
+            disabled: false,
+            active: false,
+            value: '',
+            searchBtn: true,
+            placeholder: '',
+            datasource: null,
+            keywordType: null,
+            width: null,
+            layerWidth: null
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 用户输入的内容
+         * @bindx
+         * @default ''
+         */
+        value: _san.DataTypes.string,
+
+        /**
+         * 组件的聚焦状态
+         * @default false
+         */
+        active: _san.DataTypes.bool,
+
+        /**
+         * 是否展示搜索按钮
+         * @default true
+         */
+        searchBtn: _san.DataTypes.bool,
+
+        /**
+         * 搜索框的 placeholder
+         * @default ''
+         */
+        placeholder: _san.DataTypes.string,
+
+        /**
+         * Select 的数据源，每一项的格式如下：
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   disabled?: bool
+         * }</code></pre>
+         */
+        datasource: _san.DataTypes.array,
+
+        /**
+         * 设置或者获取 Select 的值
+         * @bindx
+         */
+        keywordType: _san.DataTypes.any,
+
+        /**
+         * 输入框的宽度
+         */
+        width: _san.DataTypes.number,
+
+        /**
+         * layer的宽度
+         */
+        layerWidth: _san.DataTypes.number
+    },
+    computed: {
+        mainClass: function mainClass() {
+            var klass = cx.mainClass(this);
+            var searchBtn = this.data.get('searchBtn');
+            if (!searchBtn) {
+                klass.push(cx('nobtn'));
+            }
+            var active = this.data.get('active');
+            if (active) {
+                klass.push('state-active');
+                klass.push(cx('active'));
+                klass.push(cx('x-active'));
+            }
+            return klass;
+        }
+    },
+    attached: function attached() {
+        var keywordType = this.data.get('keywordType');
+        this.__updatePlaceholder(keywordType);
+    },
+    onKeywordTypeChanged: function onKeywordTypeChanged(_ref) {
+        var value = _ref.value;
+
+        this.__updatePlaceholder(value);
+    },
+    __updatePlaceholder: function __updatePlaceholder(keywordType) {
+        var _this = this;
+
+        var datasource = this.data.get('datasource');
+        if (datasource && keywordType) {
+            _lodash2.default.each(datasource, function (item) {
+                if (item.value === keywordType) {
+                    _this.data.set('placeholder', '\u8BF7\u8F93\u5165' + item.text + '\u8FDB\u884C\u641C\u7D22');
+                }
+            });
+        }
+    },
+    onSearch: function onSearch() {
+        this.fire('search');
+    },
+    onFocus: function onFocus() {
+        this.data.set('active', true);
+    },
+    onBlur: function onBlur() {
+        this.data.set('active', false);
+    }
+});
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39533,7 +38118,7 @@ return af;
 
 
 /***/ }),
-/* 75 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39681,7 +38266,7 @@ return ar;
 
 
 /***/ }),
-/* 76 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39746,7 +38331,7 @@ return arDz;
 
 
 /***/ }),
-/* 77 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39811,7 +38396,7 @@ return arKw;
 
 
 /***/ }),
-/* 78 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -39943,7 +38528,7 @@ return arLy;
 
 
 /***/ }),
-/* 79 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40009,7 +38594,7 @@ return arMa;
 
 
 /***/ }),
-/* 80 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40120,7 +38705,7 @@ return arSa;
 
 
 /***/ }),
-/* 81 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40185,7 +38770,7 @@ return arTn;
 
 
 /***/ }),
-/* 82 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40296,7 +38881,7 @@ return az;
 
 
 /***/ }),
-/* 83 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40436,7 +39021,7 @@ return be;
 
 
 /***/ }),
-/* 84 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40532,7 +39117,7 @@ return bg;
 
 
 /***/ }),
-/* 85 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40597,7 +39182,7 @@ return bm;
 
 
 /***/ }),
-/* 86 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40722,7 +39307,7 @@ return bn;
 
 
 /***/ }),
-/* 87 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40847,7 +39432,7 @@ return bo;
 
 
 /***/ }),
-/* 88 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -40961,7 +39546,7 @@ return br;
 
 
 /***/ }),
-/* 89 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41119,7 +39704,7 @@ return bs;
 
 
 /***/ }),
-/* 90 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41213,7 +39798,7 @@ return ca;
 
 
 /***/ }),
-/* 91 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41398,7 +39983,7 @@ return cs;
 
 
 /***/ }),
-/* 92 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41467,7 +40052,7 @@ return cv;
 
 
 /***/ }),
-/* 93 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41554,7 +40139,7 @@ return cy;
 
 
 /***/ }),
-/* 94 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41620,7 +40205,7 @@ return da;
 
 
 /***/ }),
-/* 95 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41704,7 +40289,7 @@ return de;
 
 
 /***/ }),
-/* 96 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41789,7 +40374,7 @@ return deAt;
 
 
 /***/ }),
-/* 97 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41873,7 +40458,7 @@ return deCh;
 
 
 /***/ }),
-/* 98 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -41979,7 +40564,7 @@ return dv;
 
 
 /***/ }),
-/* 99 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42085,7 +40670,7 @@ return el;
 
 
 /***/ }),
-/* 100 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42158,7 +40743,7 @@ return enAu;
 
 
 /***/ }),
-/* 101 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42227,7 +40812,7 @@ return enCa;
 
 
 /***/ }),
-/* 102 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42300,7 +40885,7 @@ return enGb;
 
 
 /***/ }),
-/* 103 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42373,7 +40958,7 @@ return enIe;
 
 
 /***/ }),
-/* 104 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42446,7 +41031,7 @@ return enNz;
 
 
 /***/ }),
-/* 105 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42525,7 +41110,7 @@ return eo;
 
 
 /***/ }),
-/* 106 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42623,7 +41208,7 @@ return es;
 
 
 /***/ }),
-/* 107 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42720,7 +41305,7 @@ return esDo;
 
 
 /***/ }),
-/* 108 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42809,7 +41394,7 @@ return esUs;
 
 
 /***/ }),
-/* 109 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42896,7 +41481,7 @@ return et;
 
 
 /***/ }),
-/* 110 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -42968,7 +41553,7 @@ return eu;
 
 
 /***/ }),
-/* 111 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43081,7 +41666,7 @@ return fa;
 
 
 /***/ }),
-/* 112 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43196,7 +41781,7 @@ return fi;
 
 
 /***/ }),
-/* 113 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43262,7 +41847,7 @@ return fo;
 
 
 /***/ }),
-/* 114 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43351,7 +41936,7 @@ return fr;
 
 
 /***/ }),
-/* 115 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43431,7 +42016,7 @@ return frCa;
 
 
 /***/ }),
-/* 116 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43515,7 +42100,7 @@ return frCh;
 
 
 /***/ }),
-/* 117 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43596,7 +42181,7 @@ return fy;
 
 
 /***/ }),
-/* 118 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43678,7 +42263,7 @@ return gd;
 
 
 /***/ }),
-/* 119 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43761,7 +42346,7 @@ return gl;
 
 
 /***/ }),
-/* 120 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -43890,7 +42475,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 121 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44020,7 +42605,7 @@ return gu;
 
 
 /***/ }),
-/* 122 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44125,7 +42710,7 @@ return he;
 
 
 /***/ }),
-/* 123 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44255,7 +42840,7 @@ return hi;
 
 
 /***/ }),
-/* 124 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44415,7 +43000,7 @@ return hr;
 
 
 /***/ }),
-/* 125 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44531,7 +43116,7 @@ return hu;
 
 
 /***/ }),
-/* 126 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44632,7 +43217,7 @@ return hyAm;
 
 
 /***/ }),
-/* 127 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44721,7 +43306,7 @@ return id;
 
 
 /***/ }),
-/* 128 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44859,7 +43444,7 @@ return is;
 
 
 /***/ }),
-/* 129 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -44935,7 +43520,7 @@ return it;
 
 
 /***/ }),
-/* 130 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45021,7 +43606,7 @@ return ja;
 
 
 /***/ }),
-/* 131 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45110,7 +43695,7 @@ return jv;
 
 
 /***/ }),
-/* 132 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45205,7 +43790,7 @@ return ka;
 
 
 /***/ }),
-/* 133 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45298,7 +43883,7 @@ return kk;
 
 
 /***/ }),
-/* 134 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45362,7 +43947,7 @@ return km;
 
 
 /***/ }),
-/* 135 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45494,7 +44079,7 @@ return kn;
 
 
 /***/ }),
-/* 136 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45582,7 +44167,7 @@ return ko;
 
 
 /***/ }),
-/* 137 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45676,7 +44261,7 @@ return ky;
 
 
 /***/ }),
-/* 138 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45819,7 +44404,7 @@ return lb;
 
 
 /***/ }),
-/* 139 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -45895,7 +44480,7 @@ return lo;
 
 
 /***/ }),
-/* 140 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46019,7 +44604,7 @@ return lt;
 
 
 /***/ }),
-/* 141 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46123,7 +44708,7 @@ return lv;
 
 
 /***/ }),
-/* 142 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46241,7 +44826,7 @@ return me;
 
 
 /***/ }),
-/* 143 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46311,7 +44896,7 @@ return mi;
 
 
 /***/ }),
-/* 144 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46407,7 +44992,7 @@ return mk;
 
 
 /***/ }),
-/* 145 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46494,7 +45079,7 @@ return ml;
 
 
 /***/ }),
-/* 146 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46661,7 +45246,7 @@ return mr;
 
 
 /***/ }),
-/* 147 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46749,7 +45334,7 @@ return ms;
 
 
 /***/ }),
-/* 148 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46838,7 +45423,7 @@ return msMy;
 
 
 /***/ }),
-/* 149 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -46904,7 +45489,7 @@ return mt;
 
 
 /***/ }),
-/* 150 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47006,7 +45591,7 @@ return my;
 
 
 /***/ }),
-/* 151 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47075,7 +45660,7 @@ return nb;
 
 
 /***/ }),
-/* 152 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47204,7 +45789,7 @@ return ne;
 
 
 /***/ }),
-/* 153 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47298,7 +45883,7 @@ return nl;
 
 
 /***/ }),
-/* 154 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47392,7 +45977,7 @@ return nlBe;
 
 
 /***/ }),
-/* 155 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47458,7 +46043,7 @@ return nn;
 
 
 /***/ }),
-/* 156 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47588,7 +46173,7 @@ return paIn;
 
 
 /***/ }),
-/* 157 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47720,7 +46305,7 @@ return pl;
 
 
 /***/ }),
-/* 158 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47791,7 +46376,7 @@ return pt;
 
 
 /***/ }),
-/* 159 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47858,7 +46443,7 @@ return ptBr;
 
 
 /***/ }),
-/* 160 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -47940,7 +46525,7 @@ return ro;
 
 
 /***/ }),
-/* 161 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48130,7 +46715,7 @@ return ru;
 
 
 /***/ }),
-/* 162 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48234,7 +46819,7 @@ return sd;
 
 
 /***/ }),
-/* 163 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48301,7 +46886,7 @@ return se;
 
 
 /***/ }),
-/* 164 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48378,7 +46963,7 @@ return si;
 
 
 /***/ }),
-/* 165 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48541,7 +47126,7 @@ return sk;
 
 
 /***/ }),
-/* 166 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48720,7 +47305,7 @@ return sl;
 
 
 /***/ }),
-/* 167 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48796,7 +47381,7 @@ return sq;
 
 
 /***/ }),
-/* 168 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -48913,7 +47498,7 @@ return sr;
 
 
 /***/ }),
-/* 169 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49030,7 +47615,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 170 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49125,7 +47710,7 @@ return ss;
 
 
 /***/ }),
-/* 171 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49200,7 +47785,7 @@ return sv;
 
 
 /***/ }),
-/* 172 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49265,7 +47850,7 @@ return sw;
 
 
 /***/ }),
-/* 173 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49401,7 +47986,7 @@ return ta;
 
 
 /***/ }),
-/* 174 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49496,7 +48081,7 @@ return te;
 
 
 /***/ }),
-/* 175 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49570,7 +48155,7 @@ return tet;
 
 
 /***/ }),
-/* 176 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49643,7 +48228,7 @@ return th;
 
 
 /***/ }),
-/* 177 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49711,7 +48296,7 @@ return tlPh;
 
 
 /***/ }),
-/* 178 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49839,7 +48424,7 @@ return tlh;
 
 
 /***/ }),
-/* 179 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -49935,7 +48520,7 @@ return tr;
 
 
 /***/ }),
-/* 180 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50033,7 +48618,7 @@ return tzl;
 
 
 /***/ }),
-/* 181 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50097,7 +48682,7 @@ return tzm;
 
 
 /***/ }),
-/* 182 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50161,7 +48746,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 183 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50319,7 +48904,7 @@ return uk;
 
 
 /***/ }),
-/* 184 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50424,7 +49009,7 @@ return ur;
 
 
 /***/ }),
-/* 185 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50488,7 +49073,7 @@ return uz;
 
 
 /***/ }),
-/* 186 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50552,7 +49137,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 187 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50637,7 +49222,7 @@ return vi;
 
 
 /***/ }),
-/* 188 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50711,7 +49296,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 189 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50777,7 +49362,7 @@ return yo;
 
 
 /***/ }),
-/* 190 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -50894,7 +49479,7 @@ return zhCn;
 
 
 /***/ }),
-/* 191 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51005,7 +49590,7 @@ return zhHk;
 
 
 /***/ }),
-/* 192 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51115,7 +49700,7 @@ return zhTw;
 
 
 /***/ }),
-/* 193 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51169,7 +49754,7 @@ function opacity() {
 }
 
 /***/ }),
-/* 194 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51198,7 +49783,7 @@ exports.default = (0, _san.defineComponent)({
      */
 
 /***/ }),
-/* 195 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51212,14 +49797,16 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
+var _helper = __webpack_require__(14);
+
+var cx = (0, _util.create)('ui-hljs');
+
+/* eslint-disable */
 /**
  * @file components/SyntaxHighlighter.js
  * @author leeight
  */
 
-var cx = (0, _util.create)('ui-hljs');
-
-/* eslint-disable */
 var template = '<div class="' + cx() + '">\n<pre><code class="{{lang}}">{{highlightedCode|raw}}</code></pre>\n</div>';
 /* eslint-enable */
 
@@ -51258,8 +49845,7 @@ exports.default = (0, _san.defineComponent)({
     attached: function attached() {
         var _this = this;
 
-        var amdModules = ['hljs/highlight', 'inf-ria/css!hljs/styles/default.min.css'];
-        window.require(amdModules, function (hljs) {
+        (0, _helper.loadThirdParty)('hljs', ['hljs/highlight', (0, _helper.css)('hljs/styles/default.min.css')]).then(function (hljs) {
             _this.watch('code', function () {
                 return _this.__updateHighlightedCode(hljs);
             });
@@ -51272,7 +49858,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 196 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51282,32 +49868,172 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>'], ['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>']);
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(20);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/ConfirmDialog.js
+ * @author leeight
+ */
+
+exports.default = (0, _san.defineComponent)({
+    template: '<template>\n    <ui-dialog open="{=open=}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-confirm"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n    </ui-dialog>\n    </template>',
+    components: {
+        'ui-dialog': _Dialog2.default
+    },
+    initData: function initData() {
+        return {
+            open: true,
+            width: 500,
+            title: '请确认'
+        };
+    },
+    onCloseDialog: function onCloseDialog() {
+        this.fire('close');
+        this.data.set('open', false);
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
+    }
+});
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(20);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _san.defineComponent)({
+    template: '<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
+    components: {
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
+    },
+    initData: function initData() {
+        return {
+            open: true,
+            width: 500,
+            title: '确认'
+        };
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
+    }
+}); /**
+     * @file components/AlertDialog.js
+     * @author leeight
+     */
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(20);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _san.defineComponent)({
+    template: '<template>\n    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n        <span slot="head">{{title}}</span>\n        {{message | raw}}\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
+    components: {
+        'ui-button': _Button2.default,
+        'ui-dialog': _Dialog2.default
+    },
+    initData: function initData() {
+        return {
+            open: true,
+            width: 500,
+            title: '确认',
+            foot: {
+                okBtn: {
+                    label: '确定'
+                }
+            }
+        };
+    },
+    onConfirmDialog: function onConfirmDialog() {
+        this.fire('confirm');
+        this.data.set('open', false);
+    }
+}); /**
+     * @file components/PlainDialog.js
+     * @author leeight
+     */
+
+/***/ }),
+/* 188 */,
+/* 189 */,
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Loading = __webpack_require__(11);
+var _helper = __webpack_require__(14);
+
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
-                                                                                                                                                   * @file components/ACEEditor.js
-                                                                                                                                                   * @author leeight
-                                                                                                                                                   */
+var cx = (0, _util.create)('ui-aceeditor'); /**
+                                             * @file components/ACEEditor.js
+                                             * @author leeight
+                                             */
 
-/* global ace */
-
-var cx = (0, _util.create)('ui-aceeditor');
 var kUrl = typeof window.require === 'function' ? window.require.toUrl('ace-builds/ace.js').replace(/\?.*/, '') : 'https://cdn.bdstatic.com/ace-builds/src-min-noconflict/ace.js';
 
 /* eslint-disable */
-var template = (0, _util.html)(_templateObject, cx('error'));
+var template = '\n<div class="{{mainClass}}">\n    <div class="' + cx('error') + '" s-if="error">{{error}}</div>\n    <ui-loading s-if="loading" />\n    <div s-else s-ref="ghost" style="{{mainStyle}}"></div>\n</div>';
 /* eslint-enable */
 
 var ACEEditor = (0, _san.defineComponent)({
@@ -51388,7 +50114,7 @@ var ACEEditor = (0, _san.defineComponent)({
     attached: function attached() {
         var _this2 = this;
 
-        window.require(['inf-ria/js!' + kUrl], function () {
+        (0, _helper.loadThirdParty)('ace', [(0, _helper.js)(kUrl)]).then(function (ace) {
             _this2.data.set('loading', false);
             _this2.nextTick(function () {
                 var ghost = _this2.ref('ghost');
@@ -51434,104 +50160,7 @@ var ACEEditor = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(ACEEditor);
 
 /***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _templateObject = _taggedTemplateLiteral(['<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'|i18n}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>'], ['<template>\n    <ui-dialog open="{=open=}" skin="alert" width="{{width}}" s-ref="dialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-warning"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{\'\u786E\u5B9A\'|i18n}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>']);
-
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _filters = __webpack_require__(198);
-
-var _util = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
-                                                                                                                                                   * @file components/AlertDialog.js
-                                                                                                                                                   * @author leeight
-                                                                                                                                                   */
-
-exports.default = (0, _san.defineComponent)({
-    template: (0, _util.html)(_templateObject),
-    components: {
-        'ui-button': _Button2.default,
-        'ui-dialog': _Dialog2.default
-    },
-    filters: {
-        i18n: _filters.i18n
-    },
-    initData: function initData() {
-        return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('确认')
-        };
-    },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
-    }
-});
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.i18n = i18n;
-
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function i18n(value) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
-    }
-
-    if (args.length === 0) {
-        return (0, _infI18n2.default)(value);
-    }
-
-    var counter = 0;
-    return String(value).replace(/%s/g, function (word) {
-        return args[counter++];
-    });
-} /**
-   * @file mixins/filters.js
-   * @author chenbo09
-   *
-   */
-
-/***/ }),
-/* 199 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51547,13 +50176,15 @@ var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _humanize = __webpack_require__(269);
+var _humanize = __webpack_require__(249);
 
 var _humanize2 = _interopRequireDefault(_humanize);
 
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
+
+var _helper = __webpack_require__(14);
 
 var _Button = __webpack_require__(6);
 
@@ -51870,7 +50501,7 @@ exports.default = (0, _san.defineComponent)({
     attached: function attached() {
         var _this3 = this;
 
-        window.require(['baidubce'], function (baidubce) {
+        (0, _helper.loadThirdParty)('baidubce', ['baidubce']).then(function (baidubce) {
             return _this3.initializeUploader(baidubce);
         });
     },
@@ -51882,7 +50513,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 200 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51892,7 +50523,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -51900,7 +50531,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52111,7 +50742,7 @@ var BoxGroup = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(BoxGroup);
 
 /***/ }),
-/* 201 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52123,24 +50754,24 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _util = __webpack_require__(2);
-
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
+var _util = __webpack_require__(2);
+
+var _helper = __webpack_require__(14);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var cx = (0, _util.create)('ui-ckeditor');
-
-/* eslint-disable */
 /**
  * @file components/CKEditor.js
  * @author leeight
  */
 
-/* global CKEDITOR */
+var cx = (0, _util.create)('ui-ckeditor');
 
+/* eslint-disable */
 var template = '<template>\n<div class="' + cx() + '">\n    <ui-loading s-if="loading" />\n    <div class="' + cx('error') + '" s-if="error">{{error}}</div>\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>\n</template>';
 /* eslint-enable */
 
@@ -52195,7 +50826,7 @@ exports.default = (0, _san.defineComponent)({
     attached: function attached() {
         var _this = this;
 
-        window.require(['inf-ria/js!ckeditor/ckeditor.js'], function () {
+        (0, _helper.loadThirdParty)('CKEDITOR', [(0, _helper.js)('ckeditor/ckeditor.js')]).then(function (CKEDITOR) {
             _this.data.set('loading', false);
             var ghost = _this.ref('ghost');
             var options = _this.data.get('options');
@@ -52224,7 +50855,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 202 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52234,226 +50865,195 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _promise = __webpack_require__(10);
+var _moment = __webpack_require__(1);
 
-var _promise2 = _interopRequireDefault(_promise);
+var _moment2 = _interopRequireDefault(_moment);
 
 var _san = __webpack_require__(0);
 
-var _ResizeObserver = __webpack_require__(273);
-
-var _ResizeObserver2 = _interopRequireDefault(_ResizeObserver);
-
 var _util = __webpack_require__(2);
+
+var _asInput = __webpack_require__(5);
+
+var _Layer = __webpack_require__(13);
+
+var _Layer2 = _interopRequireDefault(_Layer);
+
+var _MonthView = __webpack_require__(41);
+
+var _MonthView2 = _interopRequireDefault(_MonthView);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @file components/Chart.js
- * @author leeight
- */
+var cx = (0, _util.create)('ui-calendar'); /**
+                                            * @file Calendar.js
+                                            * @author leeight
+                                            */
 
-var cx = (0, _util.create)('ui-chart');
+var kDefaultRange = { begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4) };
 
-var template = '<div class="{{mainClass}}" style="{{mainStyle}}"></div>';
+/* eslint-disable */
+var template = '<div class="' + cx('xx') + '">\n<ui-button on-click="prevDay" disabled="{{prevDisabled}}" s-if="prev"><</ui-button>\n<div on-click="toggleLayer" class="{{mainClass}}">\n    <div class="' + cx('text') + '">{{text}}</div>\n    <div class="' + cx('arrow') + '"></div>\n    <ui-layer open="{=active=}" s-ref="layer" follow-scroll="{{false}}">\n        <div class="' + cx('layer') + '">\n            <ui-monthview value="{=value=}" time="{{time}}" range="{{range}}" on-change="onChange"/>\n        </div>\n    </ui-layer>\n</div>\n<ui-button on-click="nextDay" disabled="{{nextDisabled}}" s-if="next">></ui-button>\n</div>\n';
+/* eslint-enable */
 
-exports.default = (0, _san.defineComponent)({
+var Calendar = (0, _san.defineComponent)({ // eslint-disable-line
     template: template,
+    components: {
+        'ui-button': _Button2.default,
+        'ui-layer': _Layer2.default,
+        'ui-monthview': _MonthView2.default
+    },
     computed: {
-        mainStyle: function mainStyle() {
-            var width = this.data.get('width');
-            var height = this.data.get('height');
-            return {
-                'width': width + 'px',
-                'height': height + 'px',
-                'line-height': height + 'px'
-            };
+        text: function text() {
+            var value = this.data.get('value');
+            var valueText = (0, _moment2.default)(value).format(this.data.get('format'));
+            return '' + valueText;
         },
         mainClass: function mainClass() {
             return cx.mainClass(this);
+        },
+        prevDisabled: function prevDisabled() {
+            var disabled = this.data.get('disabled');
+            var range = this.data.get('range');
+            var value = this.data.get('value');
+            // computed的执行早于了inted，所以需要判断下range
+            return disabled || range && (0, _moment2.default)(range.begin).unix() >= (0, _moment2.default)(value).add(-1, 'day').unix();
+        },
+        nextDisabled: function nextDisabled() {
+            var disabled = this.data.get('disabled');
+            var range = this.data.get('range');
+            var value = this.data.get('value');
+            // computed的执行早于了inted，所以需要判断下range
+            return disabled || range && (0, _moment2.default)(range.end).unix() <= (0, _moment2.default)(value).unix();
         }
     },
     initData: function initData() {
         return {
-            loading: true,
-            autoResize: false,
-            width: 300,
-            height: 300,
-            option: {},
-            notMerge: false
+            value: new Date(),
+            time: false,
+            prev: false,
+            next: false,
+            active: false,
+            range: kDefaultRange,
+            format: 'YYYY-MM-DD',
+            closeOnChange: false
         };
     },
 
     dataTypes: {
-        loading: _san.DataTypes.bool,
-        autoResize: _san.DataTypes.bool,
-        width: _san.DataTypes.number,
-        height: _san.DataTypes.number,
-        option: _san.DataTypes.object,
-        notMerge: _san.DataTypes.bool
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 选择日期之后是否关闭浮层
+         * @default false
+         */
+        closeOnChange: _san.DataTypes.bool,
+
+        /**
+         * 是否可以编辑 HH:mm:ss
+         * @default false
+         */
+        time: _san.DataTypes.bool,
+
+        /**
+         * 是否展示前一天的按钮
+         * @default false
+         */
+        prev: _san.DataTypes.bool,
+
+        /**
+         * 是否展示后一天的按钮
+         * @default false
+         */
+        next: _san.DataTypes.bool,
+
+        /**
+         * 浮层的展开状态
+         * @bindx
+         * @default false
+         */
+        active: _san.DataTypes.bool,
+
+        /**
+         * 组件的值
+         * @bindx
+         * @default new Date()
+         */
+        value: _san.DataTypes.date,
+
+        /**
+         * 文案格式化日期的时候默认格式
+         * @default YYYY-MM-DD
+         */
+        format: _san.DataTypes.string
     },
-    getChart: function getChart() {
-        return this.chart;
-    },
-    clearEmptyRing: function clearEmptyRing() {
-        if (this.chart && this.ring) {
-            this.chart.getZr().remove(this.ring);
-            this.ring = null;
-        }
-    },
-    __drawEmptyRing: function __drawEmptyRing(echarts) {
+    inited: function inited() {
         var _this = this;
 
-        // 这里把 echarts 当做参数传递进来，是因为不想直接写 imports echarts from 'inf-ria/echarts'
-        // 这样子导致初始化 echarts+zrender 的时候有 300ms ~ 500ms 的延迟
-        // 所以改成了异步的加载 echarts
-        return function () {
-            var chart = _this.chart;
-            var width = chart.getWidth();
-            var height = chart.getHeight();
-            var size = Math.min(width, height) / 2;
-            var minRadius = echarts.number.parsePercent('50%', size);
-            var maxRadius = echarts.number.parsePercent('80%', size);
-            _this.ring = new echarts.graphic.Ring({
-                shape: {
-                    r0: minRadius,
-                    r: maxRadius,
-                    cx: width / 2,
-                    cy: height / 2
-                },
-                style: {
-                    stroke: '#ccc',
-                    fill: 'none'
-                }
-            });
-            chart.getZr().add(_this.ring);
-        };
-    },
-    __loadEcharts: function __loadEcharts() {
-        var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 300;
+        var _data$get = this.data.get(),
+            value = _data$get.value,
+            range = _data$get.range;
+        // 外部有可能传过来的range为undefined
 
-        return new _promise2.default(function (resolve, reject) {
-            setTimeout(function () {
-                return window.require(['inf-ria/echarts', 'zrender/vml/vml'], resolve);
-            }, delay);
-        });
-    },
-    attached: function attached() {
-        var _this2 = this;
 
-        this.watch('loading', function (loading) {
-            if (_this2.chart) {
-                loading ? _this2.chart.showLoading() : _this2.chart.hideLoading();
-            }
-        });
-
-        this.watch('option', function (option) {
-            if (_this2.chart && option) {
-                _this2.chart.setOption(option, !!_this2.data.get('notMerge'));
-                _this2.chart.hideLoading();
-            }
-        });
-
-        this.__loadEcharts().then(function (echarts) {
-            _this2.drawEmptyRing = _this2.__drawEmptyRing(echarts);
-
-            _this2.data.set('loading', false);
-            _this2.chart = echarts.init(_this2.el);
-            _this2.chart.showLoading();
-            var option = _this2.data.get('option');
-            if (option) {
-                _this2.chart.setOption(option);
-                _this2.chart.hideLoading();
-            }
-
-            if (_this2.data.get('autoResize')) {
-                var _el$parentNode = _this2.el.parentNode,
-                    clientWidth = _el$parentNode.clientWidth,
-                    clientHeight = _el$parentNode.clientHeight;
-
-                _this2.chart.resize({
-                    width: clientWidth,
-                    height: clientHeight
-                });
-            }
-
-            _this2.fire('chart-initialized');
-        });
-
-        if (this.data.get('autoResize')) {
-            this.observer = new _ResizeObserver2.default(function (entries) {
-                if (_this2.chart && _this2.chart.resize) {
-                    var entry = entries[0];
-                    _this2.chart.resize({
-                        width: entry.clientWidth(),
-                        height: entry.clientHeight()
-                    });
-                }
-            }).observe(this.el.parentNode);
+        if (!range) {
+            this.data.set('range', kDefaultRange);
         }
-    },
-    disposed: function disposed() {
-        if (this.observer) {
-            this.observer.disconnect();
+        if (!value) {
+            value = new Date();
+        } else if (value && typeof value === 'string') {
+            value = new Date(value);
         }
+        // 只有 new Date(value), 数据才会同步到外部的组件里面去
+        this.data.set('value', new Date(value));
+        this.watch('value', function (value) {
+            _this.fire('change', { value: value });
 
-        if (this.chart) {
-            this.chart.dispose();
-            this.chart = null;
+            var closeOnChange = _this.data.get('closeOnChange');
+            if (closeOnChange) {
+                _this.data.set('active', false);
+            }
+        });
+    },
+    nextDay: function nextDay() {
+        var value = this.data.get('value');
+        var newValue = (0, _moment2.default)(value).add(1, 'day').toDate();
+        this.data.set('value', newValue);
+    },
+    prevDay: function prevDay() {
+        var value = this.data.get('value');
+        var newValue = (0, _moment2.default)(value).subtract(1, 'day').toDate();
+        this.data.set('value', newValue);
+    },
+    toggleLayer: function toggleLayer() {
+        var disabled = this.data.get('disabled');
+        if (disabled) {
+            return;
+        }
+        var active = this.data.get('active');
+        this.data.set('active', !active);
+    },
+    onChange: function onChange(_ref) {
+        var value = _ref.value;
+
+        if (value !== this.data.get('value')) {
+            this.data.set('value', value);
         }
     }
 });
 
-/***/ }),
-/* 203 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = (0, _san.defineComponent)({
-    template: '<template>\n    <ui-dialog open="{=open=}" s-ref="dialog" skin="confirm" width="{{width}}" on-close="onCloseDialog" on-confirm="onConfirmDialog">\n        <span slot="head">{{title}}</span>\n        <div class="ui-dialog-icon ui-dialog-icon-confirm"></div>\n        <div class="ui-dialog-text">{{message | raw}}</div>\n    </ui-dialog>\n    </template>',
-    components: {
-        'ui-dialog': _Dialog2.default
-    },
-    initData: function initData() {
-        return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('请确认')
-        };
-    },
-    onCloseDialog: function onCloseDialog() {
-        this.fire('close');
-        this.data.set('open', false);
-    },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
-    }
-}); /**
-     * @file components/ConfirmDialog.js
-     * @author leeight
-     */
+exports.default = (0, _asInput.asInput)(Calendar);
 
 /***/ }),
-/* 204 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52471,11 +51071,11 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52724,7 +51324,7 @@ var Dragger = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Dragger);
 
 /***/ }),
-/* 205 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52734,7 +51334,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _asTable = __webpack_require__(285);
+var _asTable = __webpack_require__(266);
 
 exports.default = (0, _asTable.asTable)(); /**
                                             * @file san-xui/x/components/Table.js
@@ -52742,7 +51342,7 @@ exports.default = (0, _asTable.asTable)(); /**
                                             */
 
 /***/ }),
-/* 206 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52756,7 +51356,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
@@ -52792,7 +51392,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 207 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52802,7 +51402,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _big = __webpack_require__(290);
+var _big = __webpack_require__(271);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -52812,13 +51412,13 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52962,7 +51562,7 @@ var NumberTextline = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(NumberTextline);
 
 /***/ }),
-/* 208 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52972,53 +51572,341 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _infI18n = __webpack_require__(15);
+var _san = __webpack_require__(0);
 
-var _infI18n2 = _interopRequireDefault(_infI18n);
+var _util = __webpack_require__(2);
+
+var _asInput = __webpack_require__(5);
+
+var cx = (0, _util.create)('ui-radioselect'); /**
+                                               * @file RadioSelect.js
+                                               * @author leeight
+                                               */
+
+var cx2 = (0, _util.create)('ui-radio');
+
+/* eslint-disable */
+var template = '<div class="{{mainClass}}">\n    <ul>\n        <li on-click="onItemClick(item)"\n            class="{{item | itemClass(value)}}"\n            s-for="item in datasource">\n          <div class="' + cx2('item-hover') + '" s-if="item.tip">{{item.tip}}<br/></div>\n          <div class="arrow-down" s-if="item.tip"><i></i></div>\n          {{item.text}}\n        </li>\n    </ul>\n</div>';
+/* eslint-enable */
+
+var RadioSelect = (0, _san.defineComponent)({
+    template: template,
+    computed: {
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        }
+    },
+    filters: {
+        itemClass: function itemClass(item, value) {
+            var klass = [cx2('block')];
+
+            if (item.disabled) {
+                klass.push(cx2('disabled'));
+            }
+
+            if (item.value === value) {
+                klass.push(cx2('selected'));
+            }
+
+            return klass;
+        }
+    },
+    initData: function initData() {
+        return {
+            value: null,
+            datasource: []
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 组件当前的值
+         * @bindx
+         */
+        value: _san.DataTypes.any,
+
+        /**
+         * 组件的数据源
+         * <pre><code>{
+         *   text: string,
+         *   value: any,
+         *   tip?: string
+         * }</code></pre>
+         */
+        datasource: _san.DataTypes.array
+    },
+    onItemClick: function onItemClick(item) {
+        var disabled = this.data.get('disabled');
+        if (item.disabled || disabled) {
+            return;
+        }
+        this.data.set('value', item.value);
+        this.fire('change', item);
+    }
+});
+
+exports.default = (0, _asInput.asInput)(RadioSelect);
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _moment = __webpack_require__(1);
+
+var _moment2 = _interopRequireDefault(_moment);
 
 var _san = __webpack_require__(0);
 
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
+var _util = __webpack_require__(2);
 
 var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _Layer = __webpack_require__(13);
+
+var _Layer2 = _interopRequireDefault(_Layer);
+
+var _MonthView = __webpack_require__(41);
+
+var _MonthView2 = _interopRequireDefault(_MonthView);
+
+var _asInput = __webpack_require__(5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * @file components/PlainDialog.js
- * @author leeight
- */
+var cx = (0, _util.create)('ui-rangecalendar'); /**
+                                                 * @file RangeCalendar.js
+                                                 * @author leeight
+                                                 */
 
-exports.default = (0, _san.defineComponent)({
-    template: '<template>\n    <ui-dialog open="{=open=}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n        <span slot="head">{{title}}</span>\n        {{message | raw}}\n        <div slot="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n        </div>\n    </ui-dialog>\n    </template>',
+
+function getDayValue() {
+    var bd = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    var ed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+
+    return function () {
+        var begin = (0, _moment2.default)().subtract(bd, 'day').toDate();
+        var end = (0, _moment2.default)().subtract(ed, 'day').endOf('day').toDate();
+        return { begin: begin, end: end };
+    };
+}
+
+function getLastWeekValue() {
+    return function () {
+        var now = new Date();
+        var begin = new Date(now);
+        var end = new Date(now);
+
+        var startOfWeek = 1; // 周一为第一天;
+
+        if (begin.getDay() < startOfWeek % 7) {
+            begin.setDate(begin.getDate() - 14 + startOfWeek - begin.getDay());
+        } else {
+            begin.setDate(begin.getDate() - 7 - begin.getDay() + startOfWeek % 7);
+        }
+        begin.setHours(0, 0, 0, 0);
+
+        end.setFullYear(begin.getFullYear(), begin.getMonth(), begin.getDate() + 6);
+        end.setHours(23, 59, 59, 999);
+
+        return { begin: begin, end: end };
+    };
+}
+
+function getMonthValue() {
+    return function () {
+        var begin = (0, _moment2.default)().startOf('month').toDate();
+        var end = (0, _moment2.default)().endOf('day').toDate();
+        return { begin: begin, end: end };
+    };
+}
+
+function getLastMonthValue() {
+    return function () {
+        var begin = (0, _moment2.default)().subtract('month', 1).startOf('month').toDate();
+        var end = (0, _moment2.default)().startOf('month').subtract('day', 1).endOf('day').toDate();
+        return { begin: begin, end: end };
+    };
+}
+
+function getLastQuarterValue() {
+    return function () {
+        var now = new Date();
+        var begin = (0, _moment2.default)().subtract('month', now.getMonth() % 3 + 3).startOf('month').toDate();
+        var end = (0, _moment2.default)().subtract('month', now.getMonth() % 3).startOf('month').subtract('day', 1).endOf('day').toDate();
+        return { begin: begin, end: end };
+    };
+}
+
+/* eslint-disable */
+var template = '<div on-click="toggleLayer" class="{{mainClass}}">\n    <div class="' + cx('text') + '">{{text}}</div>\n    <div class="' + cx('arrow') + '"></div>\n    <ui-layer open="{=active=}" s-ref="layer" follow-scroll="{{false}}">\n        <div class="' + cx('layer') + '">\n            <div class="' + cx('shortcut') + '" s-if="shortcut">\n                <span on-click="onShortcutSelect(item)"\n                    class="' + cx('shortcut-item') + '"\n                    s-for="item in shortcutItems">{{item.text}}</span>\n            </div>\n            <div class="' + cx('body') + '">\n                <div class="' + cx('begin') + '">\n                    <div class="' + cx('label') + '"><h3>\u5F00\u59CB\u65E5\u671F</h3></div>\n                    <div class="' + cx('begin-cal') + '">\n                        <ui-monthview value="{=begin.value=}" range="{{range}}" time="{{time}}" />\n                    </div>\n                </div>\n                <div class="' + cx('end') + '">\n                    <div class="' + cx('label') + '"><h3>\u7ED3\u675F\u65E5\u671F</h3></div>\n                    <div class="' + cx('end-cal') + '">\n                        <ui-monthview value="{=end.value=}" range="{{range}}" time="{{time}}" end-of-day />\n                    </div>\n                </div>\n            </div>\n            <div class="' + cx('foot') + '">\n                <ui-button on-click="onSelect" skin="ok" class="' + cx('okBtn') + '">\u786E\u5B9A</ui-button>\n                <ui-button on-click="closeLayer" skin="cancel" class="' + cx('cancelBtn') + '">\u53D6\u6D88</ui-button>\n            </div>\n        </div>\n    </ui-layer>\n</div>';
+/* eslint-enable */
+
+var RangeCalendar = (0, _san.defineComponent)({
+    template: template,
     components: {
-        'ui-button': _Button2.default,
-        'ui-dialog': _Dialog2.default
+        'ui-layer': _Layer2.default,
+        'ui-monthview': _MonthView2.default,
+        'ui-button': _Button2.default
+    },
+    computed: {
+        text: function text() {
+            var value = this.data.get('value');
+            if (!value) {
+                return '-';
+            }
+            var begin = value.begin,
+                end = value.end;
+
+            var format = this.data.get('time') ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
+            var beginText = (0, _moment2.default)(begin).format(format);
+            var endText = (0, _moment2.default)(end).format(format);
+            return beginText + ' - ' + endText;
+        },
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        }
     },
     initData: function initData() {
         return {
-            open: true,
-            width: 500,
-            title: (0, _infI18n2.default)('确认'),
-            foot: {
-                okBtn: {
-                    label: (0, _infI18n2.default)('确定')
-                }
-            }
+            value: {
+                begin: new Date(),
+                end: new Date()
+            },
+            time: null,
+            range: { begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4) },
+            // BEGIN 临时的数据
+            begin: {
+                value: null
+            },
+            end: {
+                value: null
+            },
+            // E N D 临时的数据
+            active: false,
+            shortcut: true,
+            shortcutItems: [{ text: '昨天', value: getDayValue(1, 1) }, { text: '最近7天', value: getDayValue(6, 0) }, { text: '上周', value: getLastWeekValue() }, { text: '本月', value: getMonthValue() }, { text: '上个月', value: getLastMonthValue() }, { text: '上个季度', value: getLastQuarterValue() }]
         };
     },
-    onConfirmDialog: function onConfirmDialog() {
-        this.fire('confirm');
-        this.data.set('open', false);
+
+    dataTypes: {
+        /**
+         * 获取或者设置组件的值
+         * @bindx
+         * @default {begin: new Date(), end: new Date()}
+         */
+        value: _san.DataTypes.object,
+
+        /**
+         * 日期可以选择的范围
+         * @default {begin: new Date(2014, 1, 1), end: new Date(2046, 10, 4)}
+         */
+        range: _san.DataTypes.object,
+
+        /**
+         * 组件的禁用状态
+         * @default false
+         */
+        disabled: _san.DataTypes.bool,
+
+        /**
+         * 是否启用选择日期的快捷方式
+         * @default true
+         */
+        shortcut: _san.DataTypes.bool,
+
+        /**
+         * 浮层的打开状态
+         * @bindx
+         * @default false
+         */
+        active: _san.DataTypes.bool,
+
+        /**
+         * 是否可以编辑 HH:mm:ss
+         * @default false
+         */
+        time: _san.DataTypes.bool
+    },
+    inited: function inited() {
+        var _this = this;
+
+        var _data$get = this.data.get('value'),
+            begin = _data$get.begin,
+            end = _data$get.end;
+
+        if (!begin) {
+            begin = new Date();
+        } else if (typeof begin === 'string') {
+            // utc to date
+            begin = new Date(begin);
+        }
+
+        if (!end) {
+            end = new Date();
+        } else if (typeof end === 'string') {
+            // utc to date
+            end = new Date(end);
+        }
+
+        this.data.set('value', { begin: begin, end: end });
+        this.watch('value', function (value) {
+            return _this.fire('change', { value: value });
+        });
+    },
+    onShortcutSelect: function onShortcutSelect(item) {
+        var _ref = typeof item.value === 'function' ? item.value() : item.value,
+            begin = _ref.begin,
+            end = _ref.end;
+
+        this.data.set('begin.value', begin);
+        this.data.set('end.value', end);
+    },
+    onSelect: function onSelect() {
+        var begin = this.data.get('begin.value');
+        var end = this.data.get('end.value');
+        this.data.set('value', begin > end ? { begin: end, end: begin } : { begin: begin, end: end });
+        this.closeLayer();
+    },
+    closeLayer: function closeLayer() {
+        this.data.set('active', false);
+    },
+    toggleLayer: function toggleLayer() {
+        var disabled = this.data.get('disabled');
+        if (disabled) {
+            return;
+        }
+        var active = this.data.get('active');
+        if (!active) {
+            var _data$get2 = this.data.get('value'),
+                begin = _data$get2.begin,
+                end = _data$get2.end;
+
+            this.data.set('begin.value', new Date(begin));
+            this.data.set('end.value', new Date(end));
+        }
+        this.data.set('active', !active);
     }
 });
 
+exports.default = (0, _asInput.asInput)(RangeCalendar);
+
 /***/ }),
-/* 209 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53030,15 +51918,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _MultiPicker = __webpack_require__(51);
+var _MultiPicker = __webpack_require__(43);
 
 var _MultiPicker2 = _interopRequireDefault(_MultiPicker);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var _util = __webpack_require__(2);
 
-var _regions = __webpack_require__(294);
+var _regions = __webpack_require__(275);
 
 var _regions2 = _interopRequireDefault(_regions);
 
@@ -53103,7 +51991,7 @@ var Region = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(Region);
 
 /***/ }),
-/* 210 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53113,11 +52001,16 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @file components/RichTextEditor.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @author leeight
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
+
 var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -53125,20 +52018,15 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _helper = __webpack_require__(14);
 
-var _Loading = __webpack_require__(11);
+var _asInput = __webpack_require__(5);
+
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @file components/RichTextEditor.js
- * @author leeight
- */
-
-/* global UE */
 
 var cx = (0, _util.create)('ui-richtexteditor');
 var kLinkUrl = typeof window.require === 'function' ? window.require.toUrl('ueditor/dialogs/link/link.html') : null;
@@ -53225,7 +52113,11 @@ var RichTextEditor = (0, _san.defineComponent)({
     attached: function attached() {
         var _this = this;
 
-        window.require(['zeroclipboard', 'inf-ria/js!ueditor/ueditor.all.min.js'], function (ZeroClipboard) {
+        (0, _helper.loadThirdParty)(['ZeroClipboard', 'UE'], ['zeroclipboard', (0, _helper.js)('ueditor/ueditor.all.min.js')]).then(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+                ZeroClipboard = _ref2[0],
+                UE = _ref2[1];
+
             _this.data.set('loading', false);
 
             // TODO(leeight) FIX ZeroClipboard
@@ -53274,7 +52166,7 @@ var RichTextEditor = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(RichTextEditor);
 
 /***/ }),
-/* 211 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53288,7 +52180,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var cx = (0, _util.create)('ui-togglebutton');
 
@@ -53357,7 +52249,7 @@ var Switch = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Switch);
 
 /***/ }),
-/* 212 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53369,213 +52261,162 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
+var _dom = __webpack_require__(38);
+
 var _util = __webpack_require__(2);
 
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * @file components/TableColumnToggle.js
+ * @file Tip.js
  * @author leeight
  */
-
-var cx = (0, _util.create)('ui-table-column-toggle');
-var cx2 = (0, _util.create)('ui-select');
+var cx = (0, _util.create)('ui-tip');
+var cx2 = (0, _util.create)('ui-tiplayer');
 
 /* eslint-disable */
-var template = '<div class="' + cx() + '">\n<ui-button disabled="{{disabled}}" icon="iot-device-list" on-click="toggleLayer" />\n<ui-layer\n    follow-scroll="{{false}}"\n    open="{=active=}"\n    offset-left="{{layerOffsetLeft}}"\n    offset-top="{{layerOffsetTop}}"\n    align="{{layerAlign}}"\n    width="{{layerWidth}}">\n    <ul class="' + cx2('layer') + ' ' + cx2('layer-x') + '" style="{{layerStyle}}">\n        <li class="{{item | itemClass}}"\n            on-click="onItemClick(item)"\n            s-for="item in datasource">\n            <label>\n                <input type="checkbox"\n                    value="{{item.value}}"\n                    class="' + cx2('selected-box') + '"\n                    disabled="{{item.disabled}}"\n                    checked="{=value=}" />\n                <span>{{item.text}}</span>\n            </label>\n        </li>\n    </ul>\n</ui-layer>\n</div>';
+var template = '<template>\n    <div on-mouseover="showLayer" on-mouseout="hideLayer" class="{{mainClass}}">\n        <ui-layer open="{=active=}" auto-position="{{false}}" s-ref="layer" follow-scroll="{{false}}">\n            <div class="{{tiplayerClass}}" s-ref="layer-body">\n                <div class="' + cx2('body-panel') + '" on-mouseenter="cancelTimer" on-mouseleave="hideLayer">\n                    <div class="' + cx2('body') + '" s-if="message" style="{{messageStyle}}">\n                        {{message | raw}}\n                    </div>\n                    <div class="' + cx2('body') + '" s-else>\n                        <slot />\n                    </div>\n                </div>\n                <div class="{{arrowClass}}"></div>\n            </div>\n        </ui-layer>\n    </div>\n</template>';
 /* eslint-enable */
 
-exports.default = (0, _san.defineComponent)({
+exports.default = (0, _san.defineComponent)({ // eslint-disable-line
     template: template,
     components: {
-        'ui-button': _Button2.default,
         'ui-layer': _Layer2.default
     },
-    initData: function initData() {
-        return {
-            active: false,
-            disabled: false,
-            layerAlign: 'left',
-            layerWidth: 200,
-            layerOffsetLeft: 0,
-            layerOffsetTop: 0,
-            // 0, 1, 2, 3
-            value: [],
-            // item.text, item.value, item.disabled
-            datasource: []
-        };
-    },
-
-    computed: {
-        layerStyle: function layerStyle() {
-            var style = {};
-            var layerWidth = this.data.get('layerWidth');
-            if (layerWidth != null) {
-                style.width = (0, _util.hasUnit)(layerWidth) ? layerWidth : layerWidth + 'px';
-            }
-            return style;
-        }
-    },
-    filters: {
-        itemClass: function itemClass(item) {
-            var klass = [cx2('item', 'item-multi')];
-            // TODO(leeight) 针对 multi 的情况，还未处理
-            if (item.disabled) {
-                klass.push(cx2('item-disabled'));
-            }
-            return klass;
-        }
-    },
-    toggleLayer: function toggleLayer() {
-        var disabled = this.data.get('disabled');
-        if (disabled) {
-            return;
-        }
-        var active = this.data.get('active');
-        this.data.set('active', !active);
-    },
-    onItemClick: function onItemClick(item) {
-        var _this = this;
-
-        if (item.disabled) {
-            return;
-        }
-        this.nextTick(function () {
-            return _this.fire('change');
-        });
-    }
-});
-
-/***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _jquery = __webpack_require__(9);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('ui-toast'); /**
-                                         * @file Toast.js
-                                         * @author leeight
-                                         */
-
-var kToastContainerId = cx('container') + '-' + new Date().getTime();
-
-/* eslint-disable */
-var template = '<template>\n    <div class="{{mainClass}}" style="{{style}}">\n        {{message | raw}}\n    </div>\n</template>';
-/* eslint-enable */
-
-var Toast = (0, _san.defineComponent)({ // eslint-disable-line
-    template: template,
-    components: {},
     computed: {
         style: function style() {
             return {};
         },
+        tiplayerClass: function tiplayerClass() {
+            var position = this.data.get('position');
+            var klass = [cx2(), cx2('x'), cx2(position)];
+            return klass;
+        },
+        arrowClass: function arrowClass() {
+            var position = this.data.get('position');
+            var klass = [cx2('arrow'), cx2('arrow-' + position)];
+            return klass;
+        },
         mainClass: function mainClass() {
             var klass = [cx(), cx('x')];
-            var level = this.data.get('level');
-            if (level) {
-                klass.push(cx(level));
-            }
             return klass;
+        },
+        messageStyle: function messageStyle() {
+            var style = {};
+            var width = this.data.get('width');
+            if (width != null) {
+                style.width = (0, _util.hasUnit)(width) ? width : width + 'px';
+            }
+            return style;
         }
     },
     initData: function initData() {
         return {
             message: null,
-            duration: 5000,
-            level: 'success' // 'success' | 'info' | 'warning' | 'error'
+            position: 'lt', // 'lt' | 'tc' | 'rt' | 'bc'
+            active: false,
+            duration: 500
         };
     },
 
     dataTypes: {
         /**
-         * 需要展示的信息
+         * Tip 需要展示的内容，如果设置了 message，那么就忽略 default slot 的内容
          */
         message: _san.DataTypes.string,
 
         /**
-         * 最长展示的时间
-         * @default 5000
+         * Tip 的位置，可选的内容有：lt, tc, rt, bc
+         * @default lt
          */
-        duration: _san.DataTypes.number,
+        position: _san.DataTypes.string,
 
         /**
-         * 组件的样式，可选的参数有 success, info, warning, error
-         * @default success
+         * Tip 打开的状态
+         * @bindx
+         * @default false
          */
-        level: _san.DataTypes.string
+        active: _san.DataTypes.bool,
+
+        /**
+         * 默认的延迟(ms)
+         * @default 500
+         */
+        duration: _san.DataTypes.number
     },
-    attached: function attached() {
+    inited: function inited() {
+        this.timer = null;
+    },
+    attached: function attached() {},
+    positionLayer: function positionLayer() {
+        var layer = this.ref('layer');
+        var layerBody = this.ref('layer-body');
+        var position = this.data.get('position');
+        if (layerBody) {
+            var rect = this.el.getBoundingClientRect();
+            var offset = (0, _dom.getOffset)(this.el);
+            var offsetHeight = layerBody.offsetHeight,
+                offsetWidth = layerBody.offsetWidth;
+
+            var style = { 'z-index': (0, _util.nextZindex)() };
+            if (position === 'lt') {
+                style.top = offset.top - (offsetHeight - rect.height) / 2 + 'px';
+                style.left = offset.right + 'px';
+            } else if (position === 'bc') {
+                style.left = offset.left - (offsetWidth - rect.width) / 2 + 'px';
+                style.top = offset.top + rect.height + 11 + 'px';
+            } else if (position === 'rt') {
+                style.top = offset.top - (offsetHeight - rect.height) / 2 + 'px';
+                style.left = offset.left - offsetWidth + 'px';
+            } else if (position === 'tc') {
+                style.left = offset.left - (offsetWidth - rect.width) / 2 + 'px';
+                style.top = offset.top - rect.height - offsetHeight + 'px';
+            }
+            layer.data.set('layerStyle', style);
+        }
+    },
+    updated: function updated() {
+        var active = this.data.get('active');
+        if (active) {
+            this.positionLayer();
+        }
+    },
+    showLayer: function showLayer() {
         var _this = this;
 
-        setTimeout(function () {
-            (0, _jquery2.default)(_this.el).fadeOut({
-                duration: 1000,
-                easing: 'swing',
-                complete: function complete() {
-                    return _this.dispose();
-                }
-            });
+        this.cancelTimer();
+        this.timer = setTimeout(function () {
+            _this.timer = null;
+            _this.data.set('active', true);
+        }, this.data.get('duration'));
+    },
+    cancelTimer: function cancelTimer() {
+        if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = null;
+        }
+    },
+    hideLayer: function hideLayer() {
+        var _this2 = this;
+
+        this.cancelTimer();
+        var active = this.data.get('active');
+        if (!active) {
+            return;
+        }
+        this.timer = setTimeout(function () {
+            _this2.timer = null;
+            _this2.data.set('active', false);
         }, this.data.get('duration'));
     }
 });
 
-function getToastContainer() {
-    var container = document.getElementById(kToastContainerId);
-    if (!container) {
-        container = document.createElement('DIV');
-        container.id = kToastContainerId;
-        container.className = cx('container');
-        document.body.appendChild(container);
-    }
-    return container;
-}
-
-function toastBuilder(level) {
-    return function (message) {
-        var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
-
-        var comp = new Toast({ data: { message: message, level: level, duration: duration } });
-        var container = getToastContainer();
-        container.style.zIndex = (0, _util.nextZindex)();
-        comp.attach(container);
-    };
-}
-
-Toast.success = toastBuilder('success');
-Toast.info = toastBuilder('info');
-Toast.warning = toastBuilder('warning');
-Toast.error = toastBuilder('error');
-Toast.alert = toastBuilder('warning'); // 兼容历史用法
-Toast.normal = toastBuilder('success'); // 兼容bat-ria/mvc/FormAction里调用Toast的方式
-
-exports.default = Toast;
-
 /***/ }),
-/* 214 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53584,2818 +52425,30 @@ exports.default = Toast;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.asDialog = asDialog;
 
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _san = __webpack_require__(0);
+var _axios = __webpack_require__(285);
 
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function asDialog(Klass) {
-    if (Klass.__dialogComponent) {
-        return Klass.__dialogComponent;
-    }
-    var dataTypes = _lodash2.default.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
-    var klassTemplate = dataTypes.length <= 0 ? '<x-biz payload="{{payload}}" />' : '<x-biz ' + _lodash2.default.map(dataTypes, function (prop) {
-        return prop + '="{{payload.' + prop + '}}"';
-    }).join(' ') + ' />';
-
-    var WrappedComponent = (0, _san.defineComponent)({
-        template: '<template>\n        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n            <span slot="head">{{title}}</span>\n            ' + klassTemplate + '\n            <div slot="foot" s-if="foot">\n                <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n            </div>\n        </ui-dialog>\n        </template>',
-        components: {
-            'x-biz': Klass,
-            'ui-button': _Button2.default,
-            'ui-dialog': _Dialog2.default
-        },
-        initData: function initData() {
-            return {
-                open: true,
-                title: (0, _infI18n2.default)('确认'),
-                payload: null
-            };
-        },
-        inited: function inited() {
-            // 设置foot默认值
-            if (this.data.get('foot') === undefined) {
-                this.data.set('foot', {
-                    okBtn: {
-                        label: (0, _infI18n2.default)('确定')
-                    }
-                });
-            }
-        },
-
-        messages: {
-            resize: function resize() {
-                this.ref('dialog').__resize();
-            }
-        },
-        onConfirmDialog: function onConfirmDialog() {
-            this.fire('confirm');
-            this.data.set('open', false);
-        }
-    });
-    Klass.__dialogComponent = WrappedComponent;
-
-    return WrappedComponent;
-} /**
-   * @file components/asDialog.js
-   * @author leeight
-   */
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _templateObject = _taggedTemplateLiteral(['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error"><pre>{{error}}</pre></div>\n    <ui-loading s-if="loading" />\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>'], ['\n<div class="{{mainClass}}">\n    <div class="', '" s-if="error"><pre>{{error}}</pre></div>\n    <ui-loading s-if="loading" />\n    <div s-ref="ghost" style="{{mainStyle}}"></div>\n</div>']);
+var _axios2 = _interopRequireDefault(_axios);
 
 var _san = __webpack_require__(0);
-
-var _Deferred = __webpack_require__(216);
-
-var _Deferred2 = _interopRequireDefault(_Deferred);
-
-var _events = __webpack_require__(34);
-
-var _events2 = _interopRequireDefault(_events);
-
-var _miniEvent = __webpack_require__(308);
-
-var _miniEvent2 = _interopRequireDefault(_miniEvent);
-
-var _controller = __webpack_require__(219);
-
-var _controller2 = _interopRequireDefault(_controller);
-
-var _helper = __webpack_require__(311);
 
 var _util = __webpack_require__(2);
 
-var _Loading = __webpack_require__(11);
+var _asInput = __webpack_require__(5);
 
-var _Loading2 = _interopRequireDefault(_Loading);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
-                                                                                                                                                   * 之前的 ActionPanel 的功能
-                                                                                                                                                   * @file components/ActionLoader.js
-                                                                                                                                                   * @author leeight
-                                                                                                                                                   */
-
-
-var cx = (0, _util.create)('ui-actionloader');
-
-/* eslint-disable */
-var template = (0, _util.html)(_templateObject, cx('error'));
-/* eslint-enable */
-
-function delegateActionEvent(e) {
-    var event = _miniEvent2.default.fromEvent(e, { preserveData: true, syncState: true });
-    event.type = 'action-' + e.type;
-    this.fire(event);
-}
-
-function attachAction(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    var action = this.action = e.action;
-
-    // 代理所有的子Action的事件
-    if (typeof action.on === 'function') {
-        action.on('*', delegateActionEvent, this);
-    }
-
-    this.fire('actionattach', e);
-}
-
-function notifyActionLoadComplete(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-    this.data.set('loading', false);
-    this.data.set('error', null);
-    this.fire('actionloaded', e);
-}
-
-function notifyActionLoadFailed(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    var url = this.data.get('url');
-
-    this.action = null;
-    this.data.set('loading', false);
-    this.data.set('error', new Error('Action Enter Failed, Url = ' + url + ', Reason: ' + e.reason));
-    this.fire('actionloadfail', { failType: e.failType, reason: e.reason });
-}
-
-function notifyActionLoadAborted(e) {
-    if (!this.actionMatched(e)) {
-        return;
-    }
-
-    this.data.set('loading', false);
-    this.data.set('error', new Error('Action Load Aborted'));
-    this.fire('actionloadabort', e);
-}
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'ui-loading': _Loading2.default
-    },
-    initData: function initData() {
-        return {
-            loading: true,
-            error: null,
-            width: '100%',
-            height: null,
-            url: null,
-            options: null
-        };
-    },
-
-    computed: {
-        mainStyle: function mainStyle() {
-            var loading = this.data.get('loading');
-            var error = this.data.get('error');
-            var style = cx.mainStyle(this);
-            style.display = loading || error ? 'none' : 'block';
-            return style;
-        },
-        mainClass: function mainClass() {
-            return cx.mainClass(this);
-        }
-    },
-
-    inited: function inited() {
-        var _this = this;
-
-        var url = this.data.get('url');
-        if (!url) {
-            this.data.set('error', new Error('action-url MUST be provided.'));
-        }
-
-        this.watch('url', function (url) {
-            _this.disposeAction();
-            _this.data.set('loading', true);
-            _this.data.set('error', null);
-            _this.reloadAction();
-        });
-
-        _events2.default.on('enteraction', attachAction, this);
-        _events2.default.on('enteractioncomplete', notifyActionLoadComplete, this);
-        _events2.default.on('actionnotfound', notifyActionLoadFailed, this);
-        _events2.default.on('permissiondenied', notifyActionLoadFailed, this);
-        _events2.default.on('actionfail', notifyActionLoadFailed, this);
-        _events2.default.on('enteractionfail', notifyActionLoadFailed, this);
-        _events2.default.on('actionabort', notifyActionLoadAborted, this);
-    },
-    attached: function attached() {
-        this.reloadAction();
-    },
-    actionMatched: function actionMatched(e) {
-        var ghost = this.ref('ghost');
-        return e.isChildAction && ghost && ghost.id === e.container;
-    },
-    reloadAction: function reloadAction() {
-        var _this2 = this;
-
-        var module = this.data.get('module');
-        if (module) {
-            (0, _helper.loadAppInBackground)(module).then(function () {
-                return _this2.renderAction();
-            });
-        } else {
-            this.renderAction();
-        }
-    },
-    renderAction: function renderAction() {
-        var _data$get = this.data.get(),
-            url = _data$get.url,
-            options = _data$get.options;
-
-        var ghost = this.ref('ghost');
-        var action = this.action = _controller2.default.renderChildAction(url, ghost.id, options);
-
-        // 如果发生错误，因为事件是同步触发的，
-        // 因此先执行`notifyActionLoadFailed`再赋值，导致没清掉。
-        // 错误时返回的`Promise`对象是没有`abort`方法的，
-        // 这种对象我们也不需要，因此直接清掉
-        if (typeof action.abort !== 'function') {
-            action.abort = null;
-        }
-    },
-    disposeAction: function disposeAction() {
-        var action = this.action;
-        if (!action) {
-            return;
-        }
-
-        if (_Deferred2.default.isPromise(action) && typeof action.abort === 'function') {
-            action.abort();
-        } else {
-            if (typeof action.un === 'function') {
-                action.un('*', delegateActionEvent, this);
-            }
-            if (typeof action.leave === 'function') {
-                action.leave();
-            }
-        }
-    },
-    dispose: function dispose(dontDetach) {
-        this.disposeAction();
-        _events2.default.un('enteraction', attachAction, this);
-        _events2.default.un('enteractioncomplete', notifyActionLoadComplete, this);
-        _events2.default.un('actionnotfound', notifyActionLoadFailed, this);
-        _events2.default.un('permissiondenied', notifyActionLoadFailed, this);
-        _events2.default.un('actionfail', notifyActionLoadFailed, this);
-        _events2.default.un('enteractionfail', notifyActionLoadFailed, this);
-        _events2.default.un('actionabort', notifyActionLoadAborted, this);
-        _san.Component.prototype.dispose.call(this, dontDetach);
-    }
-});
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(setImmediate) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file Deferred类实现
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /* jshint nomen: false */
-        var util = __webpack_require__(56);
-        var assert = __webpack_require__(217);
-
-        var setImmediate = typeof window.setImmediate === 'function'
-            ? function (fn) { window.setImmediate(fn); }
-            : function (fn) { window.setTimeout(fn, 0); };
-
-        /**
-         * 尝试执行相关的回调函数
-         *
-         * 当`deferred`处于非`pending`状态时，根据其状态，
-         * 立即异步地运行对应的回调函数
-         *
-         * @param {Deferred} deferred 需要处理的`Deferred`实例
-         * @ignore
-         */
-        function tryFlush(deferred) {
-            if (deferred.state === 'pending') {
-                return;
-            }
-
-            var callbacks = deferred.state === 'resolved'
-                ? deferred._doneCallbacks.slice()
-                : deferred._failCallbacks.slice();
-
-            function flush() {
-                for (var i = 0; i < callbacks.length; i++) {
-                    var callback = callbacks[i];
-                    try {
-                        // 回调时的this应该是`Promise`，没有`resolve`等方法
-                        callback.apply(deferred.promise, deferred._args);
-                    }
-                    catch (ex) {
-                    }
-                }
-            }
-
-            if (deferred.syncModeEnabled) {
-                flush();
-            }
-            else {
-                setImmediate(flush);
-            }
-
-            deferred._doneCallbacks = [];
-            deferred._failCallbacks = [];
-        }
-
-        /**
-         * 将一个原有的`Deferred`与一个新的`Deferred`对象连接起来
-         *
-         * 该方法作为`then`方法的核心
-         *
-         * @param {Deferred} original 原`Deferred`对象
-         * @param {Deferred} deferred 新`Deferred`对象
-         * @param {callback} 当`original`运行完毕后，需要执行的函数
-         * @param {string} actionType 关联的动作类型，`"resolve"`或`"reject"`
-         * @return {Function} 关联函数，可注册在`original`的相关回调函数上
-         * @ignore
-         */
-        function pipe(original, deferred, callback, actionType) {
-            return function () {
-                // `.then(done)`及`.then(null, fail)`时使用
-                //
-                // 根据`callback`的行为，进行以下处理：
-                //
-                // - 如果`callback`返回值，则用该值改`deferred`为`resolved`
-                // - 如果`callback`抛出异常，则用异常改`deferred`为`rejected`
-                if (typeof callback === 'function') {
-                    var resolver = deferred.resolver;
-                    try {
-                        var returnValue = callback.apply(original.promise, arguments);
-
-                        if (Deferred.isPromise(returnValue)) {
-                            returnValue.then(resolver.resolve, resolver.reject);
-                        }
-                        else {
-                            resolver.resolve(returnValue);
-                        }
-                    }
-                    catch (error) {
-                        /**
-                         * @event exception
-                         *
-                         * 当回调函数执行出现错误时触发，在此事件后会再触发{@link Deferred#event-reject}事件
-                         *
-                         *
-                         * @param {Deferred} deferred 当前的{@link Deferred}对象
-                         * @param {Array} args 抛出的错误对象形成的数组，肯定只有1项
-                         * @param {Mixed} reason 抛出的错误对象
-                         * @member Deferred
-                         * @static
-                         */
-                        Deferred.fire(
-                            'exception',
-                            {
-                                deferred: original,
-                                args: [error],
-                                reason: error
-                            }
-                        );
-                        resolver.reject(error);
-                    }
-                }
-                // `.then()`及`.then(done, null)`时使用
-                //
-                // 直接使用原`Deferred`保存的参数将`deferred`改为对应状态
-                else {
-                    deferred[actionType].apply(deferred, original._args);
-                }
-            };
-        }
-
-        /**
-         * @class Deferred
-         *
-         * 类似于jQuery的`Deferred`对象，是对异步操作的一种封装
-         *
-         * 一个`Deferred`对象是一个{@link meta.Resolver}对象
-         * 和一个{@link meta.Promise}的组合，同时提供两者的功能
-         *
-         * 当创建一个`Deferred`对象后，通过其中的{@link meta.Resolver}对象定义的方法
-         * 来控制状态的流转，并将{@link Deferred#promise}返回给调用者来追加回调
-         *
-         * @mixins mini-event.EventTarget
-         * @constructor
-         */
-        var exports = {};
-
-        exports.constructor = function () {
-            /**
-             * @property {string} state
-             *
-             * 当前对象的状态
-             *
-             * 一个`Deferred`对象一共有3个状态：
-             *
-             * - `pending`：还处在等待状态，并没有明确最终结果
-             * - `resolved`：任务已经完成，处在成功状态
-             * - `rejected`：任务已经完成，处在失败状态
-             */
-            this.state = 'pending';
-            this._args = null;
-            this._doneCallbacks = [];
-            this._failCallbacks = [];
-
-            /**
-             * @property {meta.Promise} promise
-             *
-             * 与当前对象关联的{@link meta.Promise}对象
-             */
-            this.promise =  {
-                done: util.bind(this.done, this),
-                fail: util.bind(this.fail, this),
-                ensure: util.bind(this.ensure, this),
-                then: util.bind(this.then, this)
-            };
-            // 形成环引用，保证`.promise.promise`能运行
-            this.promise.promise = this.promise;
-
-
-            /**
-             * @property {meta.Resolver} resolver
-             *
-             * 与当前对象关联的{@link meta.Resolver}对象
-             */
-            this.resolver = {
-                resolve: util.bind(this.resolve, this),
-                reject: util.bind(this.reject, this)
-            };
-        };
-
-        /**
-         * 是否启用同步模式。
-         *
-         * 在同步模式下，`Deferred`对象并不符合Promise/A规范，
-         * 当对象进入或处于`resolved`或`rejected`状态时，
-         * 添加的回调函数会 **立即** 、 **同步** 地被执行。
-         *
-         * @type {boolean}
-         */
-        exports.syncModeEnabled = false;
-
-        /**
-         * @inheritdoc meta.Resolver#resolve
-         */
-        exports.resolve = function () {
-            if (this.state !== 'pending') {
-                return;
-            }
-
-            this.state = 'resolved';
-            this._args = [].slice.call(arguments);
-
-            /**
-             * @event resolve
-             *
-             * 当任意一个`Deferred`对象进入`resolved`状态时触发
-             *
-             * @param {Deferred} deferred 当前的{@link Deferred}对象
-             * @param {Array} args 改变状态时提供的参数
-             * @param {Mixed} reason 相当于`args[0]`，供多数场景下快速访问
-             * @member Deferred
-             * @static
-             */
-            Deferred.fire(
-                'resolve',
-                {
-                    deferred: this,
-                    args: this._args,
-                    reason: this._args[0]
-                }
-            );
-
-            tryFlush(this);
-        };
-
-        /**
-         * @inheritdoc meta.Resolver#reject
-         */
-        exports.reject = function () {
-            if (this.state !== 'pending') {
-                return;
-            }
-
-            this.state = 'rejected';
-            this._args = [].slice.call(arguments);
-
-            /**
-             * @event reject
-             *
-             * 当任意一个`Deferred`对象进入`rejected`状态时触发
-             *
-             * @param {Deferred} deferred 当前的{@link Deferred}对象
-             * @param {Array} args 改变状态时提供的参数
-             * @param {Mixed} reason 相当于`args[0]`，供多数场景下快速访问
-             * @member Deferred
-             * @static
-             */
-            Deferred.fire(
-                'reject',
-                {
-                    deferred: this,
-                    args: this._args,
-                    reason: this._args[0]
-                }
-            );
-
-            tryFlush(this);
-        };
-
-        /**
-         * @inheritdoc meta.Promise#done
-         */
-        exports.done = function (callback) {
-            return this.then(callback);
-        };
-
-        /**
-         * @inheritdoc meta.Promise#fail
-         */
-        exports.fail = function (callback) {
-            return this.then(null, callback);
-        };
-
-        /**
-         * @inheritdoc meta.Promise#ensure
-         */
-        exports.ensure = function (callback) {
-            return this.then(callback, callback);
-        };
-
-        /**
-         * @inheritdoc meta.Promise#then
-         */
-        exports.then = function (done, fail) {
-            var deferred = new Deferred();
-            deferred.syncModeEnabled = this.syncModeEnabled;
-
-            this._doneCallbacks.push(pipe(this, deferred, done, 'resolve'));
-            this._failCallbacks.push(pipe(this, deferred, fail, 'reject'));
-
-            tryFlush(this);
-
-            return deferred.promise;
-        };
-
-        // 暂不支持`progress`，
-        // 社区对`progress`处理函数的返回值和异常的传递还在讨论中
-
-        var Deferred = __webpack_require__(29).create(exports);
-        __webpack_require__(23).enable(Deferred);
-
-        /**
-         * 判断一个对象是否是一个{@link meta.Promise}对象
-         *
-         * 该方法采用灵活的判断方式，并非要求`value`为`Deferred`的实例
-         *
-         * @param {Mixed} value 需要判断的对象
-         * @return {boolean} 如果`value`是{@link meta.Promise}对象，则返回`true`
-         */
-        Deferred.isPromise = function (value) {
-            return value && typeof value.then === 'function';
-        };
-
-        /**
-         * 生成一个新的{@link meta.Promise}对象，当所有给定的{@link meta.Promise}对象完成后触发
-         *
-         * 其触发逻辑如下：
-         *
-         * - 如果所有给定的{@link meta.Promise}对象均进入`resolved`状态，则该{@link meta.Promise}对象进入`resolved`状态
-         * - 如果有至少一个{@link meta.Promise}对象进入`rejected`状态，则该{@link meta.Promise}对象进入`rejected`状态
-         *
-         * 当新的{@link meta.Promise}对象触发时，将按照传入的{@link meta.Promise}对象的顺序，
-         * 依次提供参数，且根据原{@link meta.Promise}对象的回调参数，有以下情况：
-         *
-         * - 如果给定参数只有一个，使用这一个参数
-         * - 如果给定多个参数，则提供一个数组包含这些参数
-         *
-         * 本方法对参数的方法与`Array.prototyp.concat`相同，任意一个参数是数组则会展开
-         *
-         * @param {meta.Promise... | meta.Promise[]...} args 需要组合的对象
-         * @return {meta.Promise}
-         * @static
-         */
-        Deferred.all = function () {
-            // 典型的异步并发归并问题，使用计数器来解决
-            var workingUnits = [].concat.apply([], arguments);
-            var workingCount = workingUnits.length;
-
-            // 如果没有任何任务，直接给处理完的
-            if (!workingCount) {
-                return Deferred.resolved();
-            }
-
-            var actionType = 'resolve';
-            var result = [];
-
-            var jointDeferred = new Deferred();
-
-            function resolveOne(whichToFill) {
-                workingCount--;
-
-                assert.greaterThanOrEquals(workingCount, 0, 'workingCount should be positive');
-
-                var unitResult = [].slice.call(arguments, 1);
-                // 如果给定的结果只有一个，不要再组装成数组
-                if (unitResult.length <= 1) {
-                    unitResult = unitResult[0];
-                }
-                result[whichToFill] = unitResult;
-
-                if (workingCount === 0) {
-                    jointDeferred[actionType].apply(jointDeferred, result);
-                }
-            }
-
-            function rejectOne() {
-                actionType = 'reject';
-                resolveOne.apply(this, arguments);
-            }
-
-            for (var i = 0; i < workingUnits.length; i++) {
-                var unit = workingUnits[i];
-                unit.then(
-                    util.bind(resolveOne, unit, i),
-                    util.bind(rejectOne, unit, i)
-                );
-            }
-
-            return jointDeferred.promise;
-        };
-
-        /**
-         * 返回一个已经处于`resolved`状态的{@link meta.Promise}对象
-         *
-         * @param {Mixed...} args 用于调用{@link meta.Resolver#resolve}方法的参数
-         * @return {meta.Promise}
-         * @static
-         */
-        Deferred.resolved = function () {
-            var deferred = new Deferred();
-            deferred.resolve.apply(deferred, arguments);
-            return deferred.promise;
-        };
-
-        /**
-         * 返回一个已经处于`rejected`状态的{@link meta.Promise}对象
-         *
-         * @param {Mixed...} args 用于调用{@link meta.Resolver#reject}方法的参数
-         * @return {meta.Promise}
-         * @static
-         */
-        Deferred.rejected = function () {
-            var deferred = new Deferred();
-            deferred.reject.apply(deferred, arguments);
-            return deferred.promise;
-        };
-
-        /**
-         * 返回一个以给定值为结果的`resolved`状态的{@link meta.Promise}对象，
-         * 该方法可用于统一同步和异步编程模型
-         *
-         * @param {Mixed} value 给定的值
-         * @return {meta.Promise} 如果`value`本身是一个{@link meta.Promise}，则直接返回其本身。
-         * 如果`value`是普通对象，则返回一个 **同步** 的处于`resolved`状态的{@link meta.Promise}，
-         * 该{@link meta.Promise}以`value`为值进入`resolved`状态
-         * @static
-         */
-        Deferred.when = function (value) {
-            if (Deferred.isPromise(value)) {
-                return value;
-            }
-
-            // `when`返回的`Promise`必须开启同步模式，以便保留堆栈供单步调试
-            var deferred = new Deferred();
-            deferred.syncModeEnabled = true;
-            deferred.resolve(value);
-            return deferred.promise;
-        };
-
-        /**
-         * 返回一个{@link meta.Promise}对象，
-         * 当指定的模块被AMD加载器加载后，进入`resolved`状态
-         *
-         * @param {string[]} modules 需要加载的模块列表
-         * @return {meta.Promise}
-         * @static
-         */
-        Deferred.require = function (modules) {
-            var deferred = new Deferred();
-
-            window.require(modules, deferred.resolver.resolve);
-
-            deferred.promise.abort = deferred.resolver.reject;
-
-            return deferred.promise;
-        };
-
-        return Deferred;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(303).setImmediate))
-
-/***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 简单的，仅调试期有效的断言库
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-        if (window.DEBUG) {
-            /**
-             * @class assert
-             *
-             * 断言函数
-             *
-             * 断言函数仅在开发期有效，当`window.DEBUG`属性为`true`时，
-             * 断言失败会抛出异常，其它情况下断言无任何作用
-             *
-             * 断言是[契约式编程](http://en.wikipedia.org/wiki/Design_by_contract)
-             * 中很重要的一块，使用得当可以有效地提高程序的质量，因此ER提供了此功能
-             *
-             * @param {boolean} condition 断言结果
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @singleton
-             */
-            var assert = function (condition, message) {
-                if (!condition) {
-                    throw new Error(message);
-                }
-            };
-
-            /**
-             * 断言一个对象有值（不为`null`或`undefined`）
-             *
-             * @param {Mixed} obj 用于判断的对象
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.has = function (obj, message) {
-                assert(obj != null, message);
-            };
-
-
-            /**
-             * 断言两个对象相等
-             *
-             * @param {Mixed} x 用于判断相等的左值
-             * @param {Mixed} y 用于判断相等的右值
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.equals = function (x, y, message) {
-                assert(x === y, message);
-            };
-
-            /**
-             * 断言一个对象包含指定名称的属性
-             *
-             * @param {Mixed} obj 用户断言的对象
-             * @param {string} propertyName 属性的名称
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.hasProperty = function (obj, propertyName, message) {
-                assert(obj[propertyName] != null, message);
-            };
-
-            /**
-             * 断言一个对象小于另一个对象
-             *
-             * @param {Mixed} value 用于判断的左值
-             * @param {Mixed} max 用于判断的右值
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.lessThan = function (value, max, message) {
-                assert(value < max, message);
-            };
-
-            /**
-             * 断言一个对象大于另一个对象
-             *
-             * @param {Mixed} value 用于判断的左值
-             * @param {Mixed} min 用于判断的右值
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.greaterThan = function (value, min, message) {
-                assert(value > min, message);
-            };
-
-            /**
-             * 断言一个对象小于等于另一个对象
-             *
-             * @param {Mixed} value 用于判断的左值
-             * @param {Mixed} max 用于判断的右值
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.lessThanOrEquals = function (value, max, message) {
-                assert(value <= max, message);
-            };
-
-            /**
-             * 断言一个对象大于等于另一个对象
-             *
-             * @param {Mixed} value 用于判断的左值
-             * @param {Mixed} min 用于判断的右值
-             * @param {string} message 断言结果为`false`时提示的信息
-             * @member assert
-             */
-            assert.greaterThanOrEquals = function (value, min, message) {
-                assert(value >= min, message);
-            };
-
-            return assert;
-        }
-        else {
-            var assert = function () {};
-            assert.has = assert;
-            assert.equals = assert;
-            assert.hasProperty = assert;
-            assert.lessThan = assert;
-            assert.greaterThan = assert;
-            assert.lessThanOrEquals = assert;
-            assert.greaterThanOrEquals = assert;
-            return assert;
-        }
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 218 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 事件对象类
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(57);
-
-        function returnTrue() {
-            return true;
-        }
-        function returnFalse() {
-            return false;
-        }
-
-        function isObject(target) {
-            return Object.prototype.toString.call(target) === '[object Object]';
-        }
-
-        /**
-         * 事件对象类
-         *
-         * 3个重载：
-         *      - `new Event(type)`
-         *      - `new Event(args)`
-         *      - `new Event(type, args)`
-         * 只提供一个对象作为参数，则是`new Event(args)`的形式，需要加上type
-         *
-         * @constructor
-         * @param {string | Mixed} [type] 事件类型
-         * @param {Mixed} [args] 事件中的数据，如果此参数为一个对象，
-         * 则将参数扩展到`Event`实例上。如果参数是非对象类型，则作为实例的`data`属性使用
-         */
-        function Event(type, args) {
-            // 如果第1个参数是对象，则就当是`new Event(args)`形式
-            if (typeof type === 'object') {
-                args = type;
-                type = args.type;
-            }
-
-            if (isObject(args)) {
-                lib.extend(this, args);
-            }
-            else if (args) {
-                this.data = args;
-            }
-
-            if (type) {
-                this.type = type;
-            }
-        }
-
-        /**
-         * 判断默认行为是否已被阻止
-         *
-         * @return {boolean}
-         */
-        Event.prototype.isDefaultPrevented = returnFalse;
-
-        /**
-         * 阻止默认行为
-         */
-        Event.prototype.preventDefault = function () {
-            this.isDefaultPrevented = returnTrue;
-        };
-
-        /**
-         * 判断事件传播是否已被阻止
-         *
-         * @return {boolean}
-         */
-        Event.prototype.isPropagationStopped = returnFalse;
-
-        /**
-         * 阻止事件传播
-         */
-        Event.prototype.stopPropagation = function () {
-            this.isPropagationStopped = returnTrue;
-        };
-
-        /**
-         * 判断事件的立即传播是否已被阻止
-         *
-         * @return {boolean}
-         */
-        Event.prototype.isImmediatePropagationStopped = returnFalse;
-
-        /**
-         * 立即阻止事件传播
-         */
-        Event.prototype.stopImmediatePropagation = function () {
-            this.isImmediatePropagationStopped = returnTrue;
-
-            this.stopPropagation();
-        };
-
-        var globalWindow = (function () {
-            return this;
-        }());
-
-        /**
-         * 从DOM事件对象生成一个Event对象
-         *
-         * @param {Event} domEvent DOM事件对象
-         * @param {string} [type] 事件类型
-         * @param {Mixed} [args] 事件数据
-         * @return {Event}
-         * @static
-         */
-        Event.fromDOMEvent = function (domEvent, type, args) {
-            domEvent = domEvent || globalWindow.event;
-            type = type || domEvent.type;
-
-            var event = new Event(type, args);
-
-            event.preventDefault = function () {
-                if (domEvent.preventDefault) {
-                    domEvent.preventDefault();
-                }
-                else {
-                    domEvent.returnValue = false;
-                }
-
-                Event.prototype.preventDefault.call(this);
-            };
-
-            event.stopPropagation = function () {
-                if (domEvent.stopPropagation) {
-                    domEvent.stopPropagation();
-                }
-                else {
-                    domEvent.cancelBubble = true;
-                }
-
-                Event.prototype.stopPropagation.call(this);
-            };
-
-            event.stopImmediatePropagation = function () {
-                if (domEvent.stopImmediatePropagation) {
-                    domEvent.stopImmediatePropagation();
-                }
-
-                Event.prototype.stopImmediatePropagation.call(this);
-            };
-
-            return event;
-        };
-
-        // 复制事件属性的时候不复制这几个
-        var EVENT_PROPERTY_BLACK_LIST = {
-            type: true, target: true,
-            preventDefault: true, isDefaultPrevented: true,
-            stopPropagation: true, isPropagationStopped: true,
-            stopImmediatePropagation: true, isImmediatePropagationStopped: true
-        };
-
-        /**
-         * 从一个已有事件对象生成一个新的事件对象
-         *
-         * @param {Event} originalEvent 作为源的已有事件对象
-         * @param {Object} [options] 配置项
-         * @param {string} [options.type] 新事件对象的类型，不提供则保留原类型
-         * @param {boolean} [options.preserveData=false] 是否保留事件的信息
-         * @param {boolean} [options.syncState=false] 是否让2个事件状态同步，
-         * 状态包括 **阻止传播** 、 **立即阻止传播** 和 **阻止默认行为**
-         * @param {Object} [options.extend] 提供事件对象的更多属性
-         * @static
-         */
-        Event.fromEvent = function (originalEvent, options) {
-            var defaults = {
-                type: originalEvent.type,
-                preserveData: false,
-                syncState: false
-            };
-            options = lib.extend(defaults, options);
-
-            var newEvent = new Event(options.type);
-            // 如果保留数据，则把数据复制过去
-            if (options.preserveData) {
-                // 要去掉一些可能出现的杂质，因此不用`lib.extend`
-                for (var key in originalEvent) {
-                    if (originalEvent.hasOwnProperty(key)
-                        && !EVENT_PROPERTY_BLACK_LIST.hasOwnProperty(key)
-                    ) {
-                        newEvent[key] = originalEvent[key];
-                    }
-                }
-            }
-
-            // 如果有扩展属性，加上去
-            if (options.extend) {
-                lib.extend(newEvent, options.extend);
-            }
-
-            // 如果要同步状态，把和状态相关的方法挂接上
-            if (options.syncState) {
-                newEvent.preventDefault = function () {
-                    originalEvent.preventDefault();
-
-                    Event.prototype.preventDefault.call(this);
-                };
-
-                newEvent.stopPropagation = function () {
-                    originalEvent.stopPropagation();
-
-                    Event.prototype.stopPropagation.call(this);
-                };
-
-                newEvent.stopImmediatePropagation = function () {
-                    originalEvent.stopImmediatePropagation();
-
-                    Event.prototype.stopImmediatePropagation.call(this);
-                };
-            }
-
-            return newEvent;
-        };
-
-        /**
-         * 将一个对象的事件代理到另一个对象
-         *
-         * @param {EventTarget} from 事件提供方
-         * @param {EventTarget | string} fromType 为字符串表示提供方事件类型；
-         * 为可监听对象则表示接收方，此时事件类型由第3个参数提供
-         * @param {EventTarget | string} to 为字符串则表示提供方和接收方事件类型一致，
-         * 由此参数作为事件类型；为可监听对象则表示接收方，此时第2个参数必须为字符串
-         * @param {string} [toType] 接收方的事件类型
-         * @param {Object} [options] 配置项
-         * @param {boolean} [options.preserveData=false] 是否保留事件的信息
-         * @param {boolean} [options.syncState=false] 是否让2个事件状态同步，
-         * 状态包括**阻止传播**、**立即阻止传播**和**阻止默认行为**
-         * @param {Object} [options.extend] 提供事件对象的更多属性
-         *
-         *     // 当`label`触发`click`事件时，自身也触发`click`事件
-         *     Event.delegate(label, this, 'click');
-         *
-         *     // 当`label`触发`click`事件时，自身触发`labelclick`事件
-         *     Event.delegate(label, 'click', this, 'labelclick');
-         * @static
-         */
-        Event.delegate = function (from, fromType, to, toType, options) {
-            // 重载：
-            //
-            // 1. `.delegate(from, fromType, to, toType)`
-            // 2. `.delegate(from, fromType, to, toType, options)`
-            // 3. `.delegate(from, to, type)`
-            // 4. `.delegate(from, to, type, options)
-
-            // 重点在于第2个参数的类型，如果为字符串则肯定是1或2，否则为3或4
-            var useDifferentType = typeof fromType === 'string';
-            var source = {
-                object: from,
-                type: useDifferentType ? fromType : to
-            };
-            var target = {
-                object: useDifferentType ? to : fromType,
-                type: useDifferentType ? toType : to
-            };
-            var config = useDifferentType ? options : toType;
-            config = lib.extend({ preserveData: false }, config);
-
-            // 如果提供方不能注册事件，或接收方不能触发事件，那就不用玩了
-            if (typeof source.object.on !== 'function'
-                || typeof target.object.on !== 'function'
-                || typeof target.object.fire !== 'function'
-            ) {
-                return;
-            }
-
-            var delegator = function (originalEvent) {
-                var event = Event.fromEvent(originalEvent, config);
-                // 修正`type`和`target`属性
-                event.type = target.type;
-                event.target = target.object;
-
-                target.object.fire(target.type, event);
-            };
-
-            source.object.on(source.type, delegator);
-        };
-
-        return Event;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 控制器实现
- * @author otakustay, erik
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var Deferred = __webpack_require__(216);
-        var URL = __webpack_require__(220);
-        var config = __webpack_require__(221);
-        var util = __webpack_require__(56);
-        var assert = __webpack_require__(217);
-
-        /**
-         * @class Controller
-         *
-         * 控制器类，负责URL与Action的调度，将URL映射到具体的一个{@link Action}的执行上
-         *
-         * 通过`require('er/controller').Controller`访问该类构造函数，其中`require('er/controller')`是该类的全局实例
-         *
-         * @extends mini-event.EventTarget
-         * @constructor
-         */
-        var exports = {};
-
-        exports.constructor = function () {
-            this.actionPathMapping = {};
-            this.childActionMapping = {};
-            this.currentURL = null;
-            this.currentAction = null;
-            this.globalActionLoader = null;
-            this.childActionLoaders = {};
-        };
-
-        /**
-         * 注册一个或一系列Action
-         *
-         * @param {meta.ActionConfig | meta.ActionConfig[]} actionConfigs Action的相关配置
-         */
-        exports.registerAction = function (actionConfigs) {
-            if (!actionConfigs.hasOwnProperty('length')) {
-                actionConfigs = [actionConfigs];
-            }
-
-            for (var i = 0; i < actionConfigs.length; i++) {
-                var actionConfig = actionConfigs[i];
-
-                assert.hasProperty(actionConfig, 'path', 'action config should contains a "path" property');
-
-                this.actionPathMapping[actionConfig.path] = actionConfig;
-            }
-        };
-
-        /**
-         * 获取当前实例控制的{@link Action}的默认标题，当一个{@link meta.ActionConfig}未提供`title`属性时，将使用此属性
-         *
-         * @return {string}
-         * @protected
-         */
-        exports.getDefaultTitle = function () {
-            return this.defaultTitle;
-        };
-
-        /**
-         * 设置当前实例控制的{@link Action}的默认标题
-         *
-         * @param {string} title 默认的标题
-         */
-        exports.setDefaultTitle = function (title) {
-            this.defaultTitle = title;
-        };
-
-        /**
-         * 获取当前实例使用的{@link Router}对象
-         *
-         * @return {Router}
-         * @protected
-         */
-        exports.getRouter = function () {
-            return this.router;
-        };
-
-        /**
-         * 设置当前实例使用的{@link Router}对象
-         *
-         * @param {Router} router 关联的{@link Router}实例
-         */
-        exports.setRouter = function (router) {
-            this.router = router;
-        };
-
-        /**
-         * 获取当前实例使用的{@link locator}对象
-         *
-         * @return {locator}
-         * @protected
-         */
-        exports.getLocator = function () {
-            return this.locator;
-        };
-
-        /**
-         * 设置当前实例使用的{@link locator}对象
-         *
-         * 可以为任意对象，按{@link locator#event-redirect}实现此事件即可
-         *
-         * @param {locator} locator 关联的{@link locator}实例
-         */
-        exports.setLocator = function (locator) {
-            this.locator = locator;
-        };
-
-        /**
-         * 获取当前实例使用的事件总线
-         *
-         * @return {mini-event.EventTarget}
-         * @protected
-         */
-        exports.getEventBus = function () {
-            return this.eventBus;
-        };
-
-        /**
-         * 设置当前实例使用的事件总线
-         *
-         * 事件总线可以是任何对象，只要实现`fire`方法供事件触发即可
-         *
-         * @param {mini-event.EventTarget} eventBus 事件总线对象
-         */
-        exports.setEventBus = function (eventBus) {
-            this.eventBus = eventBus;
-        };
-
-        /**
-         * 获取当前实例使用的权限控制对象
-         *
-         * @return {permission}
-         * @protected
-         */
-        exports.getPermissionProvider = function () {
-            return this.permissionProvider;
-        };
-
-        /**
-         * 设置当前实例使用的权限控制对象
-         *
-         * @param {permission} permissionProvider 关联的权限控制对象
-         */
-        exports.setPermissionProvider = function (permissionProvider) {
-            this.permissionProvider = permissionProvider;
-        };
-
-        /**
-         * 获取主Action的容器元素id
-         *
-         * @return {string}
-         * @protected
-         */
-        exports.getMainContainer = function () {
-            return this.mainContainer || config.mainElement;
-        };
-
-        /**
-         * 设置主Action的容器元素id
-         *
-         * @param {string} mainContainer 主Action的容器元素id
-         */
-        exports.setMainContainer = function (mainContainer) {
-            this.mainContainer = mainContainer;
-        };
-
-        /**
-         * 获取默认的无权限页URL
-         *
-         * @return {string}
-         * @protected
-         */
-        exports.getNoAuthorityLocation = function () {
-            return this.noAuthorityLocation || config.noAuthorityLocation;
-        };
-
-        /**
-         * 设置默认的无权限页URL
-         *
-         * @param {string} noAuthorityLocation 无权限页的URL
-         */
-        exports.setNoAuthorityLocation = function (noAuthorityLocation) {
-            this.noAuthorityLocation = noAuthorityLocation;
-        };
-
-        /**
-         * 获取当一个URL对应的Action未定义时的跳转URL
-         *
-         * @return {string}
-         * @protected
-         */
-        exports.getNotFoundLocation = function () {
-            return this.notFoundLocation || config.notFoundLocation;
-        };
-
-        /**
-         * 设置当一个URL对应的Action未定义时的跳转URL
-         *
-         * @param {string} notFoundLocation 跳转URL
-         */
-        exports.setNotFoundLocation = function (notFoundLocation) {
-            this.notFoundLocation = notFoundLocation;
-        };
-
-        /**
-         * 开始`controller`对象的工作
-         */
-        exports.start = function () {
-            if (!this.getDefaultTitle()) {
-                this.setDefaultTitle(config.systemName || document.title);
-            }
-
-            // 干脆接管所有路由
-            this.getRouter().setBackup(util.bind(this.renderAction, this));
-        };
-
-        /**
-         * 根据上下文查找适合的{@link meta.ActionConfig}对象
-         *
-         * @param {meta.ActionContext} actionContext 当前的执行上下文对象
-         * @return {meta.ActionConfig | null} 找到的配置对象，找不到返回`null`
-         * @protected
-         */
-        exports.findActionConfig = function (actionContext) {
-            var path = actionContext.url.getPath();
-            var actionConfig = this.actionPathMapping[path];
-            return actionConfig;
-        };
-
-        /**
-         * 处理{@link meta.ActionConfig}配置，
-         * 在`controller`按默认逻辑查找Action配置后，
-         * 会将查找到的配置，以及进入时的{@link meta.ActionContext}参数交给该方法，
-         * 该方法可以额外进行一些操作，如在未找到配置时提供默认的映射规则
-         *
-         * @param {meta.ActionConfig | null} actionConfig 找到的Action配置
-         * @param {meta.ActionContext} actionContext 进入流程时提供的参数
-         * @return {meta.ActionConfig | null} 一个有效的Action配置对象，
-         * 如果确定不存在需要的配置，则返回null
-         * @protected
-         */
-        exports.resolveActionConfig = function (actionConfig, actionContext) {
-            return actionConfig;
-        };
-
-        /**
-         * 检查是否拥有权限
-         *
-         * 关于框架的默认权限配置及判断策略，
-         * 请参考{@link meta.ActionConfig#authority}属性的说明
-         *
-         * 对于有复杂权限场景的系统，可通过重写此方法来判断权限
-         *
-         * @param {meta.ActionConfig} actionConfig 查找到的`Action`配置信息
-         * @param {meta.ActionContext} actionContext 进入当前`Action`的上下文
-         * @return {boolean} 有权限返回`true`，无权限则返回`false`
-         * @protected
-         */
-        exports.checkAuthority = function (actionConfig, actionContext) {
-            var authority = actionConfig.authority;
-
-            if (!authority) {
-                return true;
-            }
-
-            var permissionProvider = this.getPermissionProvider();
-
-            if (typeof authority === 'function') {
-                return authority(actionContext, actionConfig, permissionProvider);
-            }
-
-            if (typeof authority === 'string') {
-                authority = authority.split('|');
-            }
-
-            for (var i = 0; i < authority.length; i++) {
-                if (permissionProvider.isAllow(util.trim(authority[i]))) {
-                    return true;
-                }
-            }
-
-            return false;
-        };
-
-        /**
-         * 查找Action配置
-         *
-         * @param {meta.ActionContext} actionContext 进入Action时的参数
-         * @return {meta.ActionConfig | null} 对应的Action配置
-         * @protected
-         */
-        exports.findEligibleActionConfig = function (actionContext) {
-            var actionConfig = this.findActionConfig(actionContext);
-
-            // 判断优先级：
-            // movedTo > childActionOnly > 404 > authority
-
-            // 检查Action的跳转，类似302跳转，但地址栏URL不会变，主要用于系统升级迁移
-            if (actionConfig && actionConfig.movedTo) {
-                this.getEventBus().fire(
-                    'actionmoved',
-                    {
-                        controller: this,
-                        url: actionContext.url,
-                        config: actionConfig,
-                        movedTo: actionConfig.movedTo
-                    }
-                );
-
-                actionContext.originalURL = actionContext.url;
-                actionContext.url = URL.parse(actionConfig.movedTo);
-                return this.findEligibleActionConfig(actionContext);
-            }
-
-            // 如果只允许子Action访问但当前是主Action，就当没找到
-            if (actionConfig && (actionConfig.childActionOnly && !actionContext.isChildAction)) {
-                actionConfig = null;
-            }
-
-            // 关于actionConfig配置项，参考{@link meta.ActionConfig}
-
-            // 以下所有和跳转相关的逻辑均不能用`redirect`，因为一但有重定向，会在历史记录里多一帧，
-            // 此后使用浏览器的后退功能，又会进入重定向逻辑，变成死循环，因此在此处保持路径不变，但加载另一个Action
-
-            // 同时，和跳转相关的逻辑均不能调用`forward`函数，
-            // 一但调用`forward`函数，`currentURL`和`referrer`都会变化，这并不是希望实现的逻辑
-
-            // 如果没有Action的配置，则跳转到404页面
-            if (!actionConfig) {
-                this.getEventBus().fire(
-                    'actionnotfound',
-                    util.mix(
-                        {
-                            controller: this,
-                            failType: 'NotFound',
-                            reason: 'Not found'
-                        },
-                        actionContext
-                    )
-                );
-
-                actionContext.originalURL = actionContext.url;
-                actionContext.url = URL.parse(this.getNotFoundLocation());
-
-                // 对于404页面，是一切未找到的URL最终归宿，因此如果404对应的Action没有配置，会进入死循环，
-                // 需要对这个配置进行特殊处理，如果没有404对应的Action，就返回null
-                if (!this.actionPathMapping[actionContext.url.getPath()]) {
-                    return null;
-                }
-
-                return this.findEligibleActionConfig(actionContext);
-            }
-
-            // 检查权限，如果没有权限的话，根据Action或全局配置跳转
-            var hasAuthority = this.checkAuthority(actionConfig, actionContext);
-            if (!hasAuthority) {
-                this.getEventBus().fire(
-                    'permissiondenied',
-                    util.mix(
-                        {
-                            controller: this,
-                            failType: 'PermissionDenied',
-                            reason: 'Permission denied',
-                            config: actionConfig
-                        },
-                        actionContext
-                    )
-                );
-
-                var location = actionConfig.noAuthorityLocation || this.getNoAuthorityLocation();
-                actionContext.originalURL = actionContext.url;
-                actionContext.url = URL.parse(location);
-                return this.findEligibleActionConfig(actionContext);
-            }
-
-            return actionConfig;
-        };
-
-        /**
-         * 根据URL加载对应的Action对象
-         *
-         * @param {meta.ActionContext} actionContext 调用Action的初始化参数
-         * @return {meta.Promise} 如果有相应的Action配置，返回一个{@link meta.Promise}对象。
-         * 如果正确创建了{@link Action}对象，则该{@link meta.Promise}对象进入`resolved`状态。
-         * 如果没找到{@link Action}的配置或者加载{@link Action}失败，则该{@link meta.Promise}进入`rejected`状态
-         * @protected
-         */
-        exports.loadAction = function (actionContext) {
-            var actionConfig = this.findEligibleActionConfig(actionContext);
-            // 通过`resolveActionConfig`可以配置默认映射关系等，提供扩展点
-            actionConfig = this.resolveActionConfig(actionConfig, actionContext);
-            if (!actionConfig) {
-                var failed = new Deferred();
-                failed.syncModeEnabled = false;
-                failed.reject('no action configured for url ' + actionContext.url.getPath());
-                return failed.promise;
-            }
-
-            // 几个后续需要使用的配置项
-            if (actionConfig.title) {
-                actionContext.title = actionConfig.title;
-                actionContext.args.title = actionConfig.title;
-            }
-            if (actionConfig.documentTitle) {
-                actionContext.documentTitle = actionConfig.documentTitle;
-                actionContext.args.documentTitle = actionConfig.documentTitle;
-            }
-
-            // 可在`registerAction`的时候通过`args`属性添加固定的参数，
-            // 在`Action`中就可以通过`enter`时的`context`参数里拿到，对应用框架的话就可以在`model`中拿到
-            if (actionConfig.args) {
-                // 由于子Action可以传额外参数，可能会和这里的冲突，
-                // 这种情况下以`renderChildAction`传过来的参数为优先，因此不能直接覆盖，要先判断是否存在
-                //
-                // 同时为了保持向后兼容，`args`中的东西要直接放到`actionContext`下面，同样考虑相互覆盖的问题
-                for (var name in actionConfig.args) {
-                    if (actionConfig.args.hasOwnProperty(name)) {
-                        if (!actionContext.args.hasOwnProperty(name)) {
-                            actionContext.args[name] = actionConfig.args[name];
-                        }
-                        if (!actionContext.hasOwnProperty(name)) {
-                            actionContext[name] = actionConfig.args[name];
-                        }
-                    }
-                }
-            }
-
-            var loading = new Deferred();
-            // 别的地方无所谓，但`controller`用的`Deferred`对象必须是异步的，否则已经加载的Action会变成同步加载，造成不一致性，
-            // 导致有些地方等Action加载完触发个事件的，很可能在事件绑上以前就触发了，比如这种：
-            //
-            //     function ActionLoader() {
-            //          var loading = controller.renderChildAction(...);
-            //          loading.done(this.fire.bind(this, 'actionloaded'));
-            //     }
-            //
-            //     var loader = new ActionLoader();
-            //     loader.on('actionloaded', ...); // 这里会错过触发
-            loading.syncModeEnabled = false;
-
-            // 让loadAction返回一个特殊的Promise，可以通过调用`abort()`取消Action加载完的后续执行
-            var loader = loading.promise;
-            var aborted = false;
-            var abort = function () {
-                if (!aborted) {
-                    aborted = true;
-                    this.getEventBus().fire('actionabort', util.mix({controller: this}, actionContext));
-                }
-            };
-            loader.abort = util.bind(abort, this);
-
-            if (!actionContext.isChildAction) {
-                this.currentURL = actionContext.url;
-            }
-
-            var callback = function (SpecificAction) {
-                if (aborted) {
-                    return;
-                }
-
-                // 没有Action配置的`type`属性对应的模块实现
-                if (!SpecificAction) {
-                    var reason = 'No action implement for ' + actionConfig.type;
-
-                    var error = util.mix(
-                        {
-                            controller: this,
-                            failType: 'NoModule',
-                            config: actionConfig,
-                            reason: reason
-                        },
-                        actionContext
-                    );
-                    this.getEventBus().fire('actionfail', error);
-                    this.getEventBus().notifyError(error);
-
-                    loading.reject(reason);
-                    return;
-                }
-
-                this.getEventBus().fire(
-                    'actionloaded',
-                    {
-                        controller: this,
-                        url: actionContext.url,
-                        config: actionConfig,
-                        action: SpecificAction
-                    }
-                );
-
-                // 对获得的类型的处理逻辑：
-                //
-                // 1. 如果是一个函数，则认为是`Action`类构造函数，直接使用`new`生成实例
-                // 2. 如果是一个普通的对象，则
-                //     1. 如果对象没有`createRuntimeAction`方法，则认为是`Action`实例直接使用
-                //     2. 如果有`createRuntimeAction`方法，则认为是一个工厂，调用此方法获得`Action`实例，则
-                //         1. 如果工厂方法返回一个普通的对象，则直接作为`Action`实例使用
-                //         2. 如果工厂方法返回一个`Promise`，则等待`resolve`之后获取`Action`实例使用
-
-                // 如果是个函数，则认为是Action的构造函数
-                if (typeof SpecificAction === 'function') {
-                    loading.resolve(new SpecificAction(), actionContext);
-                }
-                // 处理Action工厂，Action工厂是一个对象，它能生产出一个Action对象，有`createRuntimeAction`方法的对象即为Action工厂
-                else if (typeof SpecificAction.createRuntimeAction === 'function') {
-                    // `createRuntimeAction`可能返回`Promise`，统一处理
-                    var resolveActionInstance = function (action) {
-                        if (!action) {
-                            var reason = 'Action factory returns non-action';
-
-                            var error = util.mix(
-                                {
-                                    controller: this,
-                                    failType: 'InvalidFactory',
-                                    config: actionConfig,
-                                    reason: reason,
-                                    action: action
-                                },
-                                actionContext
-                            );
-                            this.getEventBus().fire('actionfail', error);
-                            this.getEventBus().notifyError(error);
-
-                            loading.reject(reason);
-                        }
-                        else {
-                            loading.resolve(action, actionContext);
-                        }
-                    };
-                    resolveActionInstance = util.bind(resolveActionInstance, this);
-                    var actionFactoryProduct = SpecificAction.createRuntimeAction(actionContext);
-                    Deferred.when(actionFactoryProduct).then(resolveActionInstance);
-                }
-                // 直接是个`Action`实例
-                else {
-                    loading.resolve(SpecificAction, actionContext);
-                }
-            };
-            callback = util.bind(callback, this);
-
-            // 如果`type`配置的直接是一个对象或者一个函数，则认为是一个已经加载了的模块
-            if (typeof actionConfig.type === 'string') {
-                window.require([actionConfig.type], callback);
-            }
-            else {
-                callback(actionConfig.type);
-            }
-
-            return loader;
-        };
-
-        /**
-         * 进入Action的执行周期
-         *
-         * @param {Action} action {@link Action}对象
-         * @param {meta.ActionContext} actionContext Action执行的上下文
-         * @return {Promise}
-         * @protected
-         */
-        exports.enterAction = function (action, actionContext) {
-            if (!actionContext.isChildAction) {
-                // 未防止在加载Action模块的时候，用户的操作导致进入其它模块，
-                // 这里需要判断当前的URL是否依旧是加载时指定的URL。
-                // 如果URL发生了变化，则应当不对Action模块作实例化处理。
-                //
-                // 对于ActionA -> ActionB -> ActionA这样的情况，
-                // 由于这里的URL是个对象，引用变化判等失败，
-                // 因此不用担心ActionA被初始化2次的情况出现
-                //
-                // 该判断仅在主Action时有效，子Action需要外部逻辑自己控制
-                if (actionContext.url !== this.currentURL) {
-                    return;
-                }
-
-                // 是主Action的话，要销毁前面用的那个，并设定当前Action实例
-                if (this.currentAction) {
-                    this.getEventBus().fire(
-                        'leaveaction',
-                        {
-                            controller: this,
-                            action: this.currentAction,
-                            to: util.mix({}, actionContext)
-                        }
-                    );
-
-                    if (typeof this.currentAction.leave === 'function') {
-                        this.currentAction.leave();
-                    }
-                }
-                this.currentAction = action;
-
-                // 只有主Action才有资格改`document.title`
-                document.title = actionContext.title || actionContext.documentTitle || this.getDefaultTitle();
-            }
-
-            this.getEventBus().fire(
-                'enteraction',
-                util.mix({controller: this, action: action}, actionContext)
-            );
-
-            var notifyEnterComplete = function () {
-                this.getEventBus().fire(
-                    'enteractioncomplete',
-                    util.mix({controller: this, action: action}, actionContext)
-                );
-            };
-            notifyEnterComplete = util.bind(notifyEnterComplete, this);
-
-            var notifyEnterFail = function (reason) {
-                var message = '';
-                if (!reason) {
-                    message = 'Invoke action.enter() causes error';
-                }
-                // 普通异常
-                else if (reason.message) {
-                    message = reason.message;
-                    if (reason.stack) {
-                        message += '\n' + reason.stack;
-                    }
-                }
-                // 能够序列化
-                else if (window.JSON && typeof JSON.stringify === 'function') {
-                    try {
-                        message = JSON.stringify(reason);
-                    }
-                    catch (parseJSONError) {
-                        message = reason;
-                    }
-                }
-                else {
-                    message = reason;
-                }
-
-                var error = util.mix(
-                    {
-                        failType: 'EnterFail',
-                        reason: message
-                    },
-                    actionContext
-                );
-                this.getEventBus().fire('enteractionfail', error);
-                this.getEventBus().notifyError(error);
-            };
-            notifyEnterFail = util.bind(notifyEnterFail, this);
-
-            var entering = action.enter(actionContext);
-            entering.then(notifyEnterComplete, notifyEnterFail);
-
-            return entering;
-        };
-
-        /**
-         * 将URL变更转换到Action的加载
-         *
-         * `forward`方法是核心方法，{@link Controller#renderAction}和{@link Controller#renderChildAction}最终都调用此方法
-         *
-         * @param {URL} url 当前的URL对象
-         * @param {string} container 指定容器元素的id
-         * @param {Object | null | undefined} options 额外的参数
-         * @param {boolean} isChildAction 标识是否为子Action
-         * @return {meta.Promise} 一个特殊的{@link meta.Promise}对象，该对象可以通过`abort()`取消Action加载完成后的执行
-         * @protected
-         */
-        exports.forward = function (url, container, options, isChildAction) {
-            // 如果想要把这个方法暴露出去的话，需要判断URL与currentURL是否相同（正常情况下`locator`层有判断）
-            var actionContext = {
-                url: url,
-                container: container,
-                isChildAction: !!isChildAction
-            };
-
-            // 如果是子Action的话，从保存的之前的`ActionContext`中拿到`referrer`
-            if (isChildAction) {
-                var referrerInfo = this.childActionMapping[container];
-                actionContext.referrer = referrerInfo ? referrerInfo.url : null;
-            }
-            else {
-                actionContext.referrer = this.currentURL;
-            }
-
-            // 为了向后兼容性，`options`中的东西要放到`actionContext`上
-            util.mix(actionContext, options);
-
-            // `args`有一份和`actionContext`一模一样的数据
-            actionContext.args = util.mix({}, actionContext);
-
-            // 除此之外，再把URL中的参数和作为子Action传过来的参数都放进`args`属性里
-            util.mix(actionContext.args, url.getQuery());
-
-            var evt = this.getEventBus().fire('forwardaction', util.mix({controller: this}, actionContext));
-            if (evt && evt.isDefaultPrevented() === true) {
-                return Deferred.rejected();
-            }
-
-            var loader = this.loadAction(actionContext);
-
-            assert.has(loader, 'loadAction should always return a Promise');
-
-            return loader;
-        };
-
-        /**
-         * 在主Action区域加载并渲染指定URL对应的Action
-         *
-         * @param {string|URL} url 需要加载的URL
-         * @return {Promise}
-         */
-        exports.renderAction = function (url) {
-            if (typeof url === 'string') {
-                url = URL.parse(url);
-            }
-            if (this.globalActionLoader && typeof this.globalActionLoader.abort === 'function') {
-                this.globalActionLoader.abort();
-            }
-
-            if (this.currentAction
-                && typeof this.currentAction.filterRedirect === 'function'
-                && this.currentAction.filterRedirect(url) === false
-            ) {
-                return Deferred.rejected('Redirect aborted by previous action');
-            }
-
-            this.globalActionLoader = this.forward(url, this.getMainContainer(), null, false);
-            var events = this.getEventBus();
-            return this.globalActionLoader
-                .then(util.bind(this.enterAction, this))
-                .fail(util.bind(events.notifyError, events));
-        };
-
-        /**
-         * 移除指定容器上的子Action
-         *
-         * @param {Controller} controller 对应的控制器实例
-         * @param {HTMLElement} container 指定的容器
-         * @param {meta.ActionContext} [targetContext] 如果是因跳转引起的移除操作，则传递目标{@link meta.ActionContext}对象
-         * @ignore
-         */
-        function removeChildAction(controller, container, targetContext) {
-            var info = controller.childActionMapping[container.id];
-            if (!info) {
-                return;
-            }
-
-            controller.childActionMapping[container.id] = undefined;
-
-            // 把挂在容器上的拦截`click`事件的处理函数去掉
-            if (info.hijack) {
-                if (container.removeEventListener) {
-                    container.removeEventListener('click', info.hijack, false);
-                }
-                else {
-                    container.detachEvent('onclick', info.hijack);
-                }
-            }
-
-            if (info.action) {
-                if (!targetContext) {
-                    targetContext = {
-                        url: null,
-                        referrer: info.url,
-                        container: container.id,
-                        isChildAction: true
-                    };
-                }
-                controller.getEventBus().fire(
-                    'leaveaction',
-                    {controller: controller, action: info.action, to: targetContext}
-                );
-
-                if (typeof info.action.leave === 'function') {
-                    info.action.leave();
-                }
-            }
-        }
-
-        /**
-         * 向指定容器添加一个子Action
-         *
-         * @param {Controller} controller 对应的控制器实例
-         * @param {HTMLElement} container 指定的容器
-         * @param {Object} action 对应的Action对象
-         * @param {Function} hijack 一个用来拦截子Action内部点击的处理函数
-         * @param {meta.ActionContext} context 对应的Action上下文
-         * @ignore
-         */
-        function addChildAction(controller, container, action, hijack, context) {
-            // 如果发现还有老的信息绑在容器上，先去掉，这个老的不能留，
-            // 一般来说，因为`redirect`和`leave`上都有销毁原Action的逻辑，所以一般上面不会留着东西了。
-            // 唯一留着的可能性是，Action是一个普通对象（没有`leave`事件），
-            // 而且不是使用`redirect`跳转或用`renderChildAction`再次在这个容器上渲染，而是直接销毁了那个Action。
-            removeChildAction(controller, container, context);
-
-            // 添加拦截`click`事件的处理函数
-            if (container.addEventListener) {
-                container.addEventListener('click', hijack, false);
-            }
-            else {
-                container.attachEvent('onclick', hijack);
-            }
-
-            var info = {
-                url: context.url,
-                container: container.id,
-                action: action,
-                hijack: hijack
-            };
-            controller.childActionMapping[container.id] = info;
-
-            var EventTarget = __webpack_require__(23);
-            if (action instanceof EventTarget) {
-                // 在Action销毁的时候要取消掉
-                action.on(
-                    'leave',
-                    function () {
-                        removeChildAction(controller, container);
-                    }
-                );
-            }
-        }
-
-        /**
-         * 进入子Action
-         *
-         * @param {Action} action 子Action实例
-         * @param {meta.ActionContext} actionContext Action执行上下文
-         * @return {Promise}
-         * @protected
-         */
-        exports.enterChildAction = function (action, actionContext) {
-            // 把加载用的`loader`去掉回收内存
-            this.childActionLoaders[actionContext.container] = null;
-
-            var container = document.getElementById(actionContext.container);
-            if (!container) {
-                return;
-            }
-
-            // 这个函数里有`context.container`和`container`两个东西，区别在于：
-            // - `context.container`是容器的id，是个字符串，
-            // - `container`是一个容器DOM元素
-
-            // 用于处理子Action中跳转的特殊`redirect`方法，接口与`locator.redirect`保持一致，
-            // 但由于`renderChildAction`可以传额外参数，因此也再加一个参数
-            var locator = this.getLocator();
-            var currentController = this;
-            function redirect(url, options, extra) {
-                options = options || {};
-                url = locator.resolveURL(url, options);
-
-                // 强制全局跳转，直接使用`locator`即可，但在这之前要把原来的`Action`灭掉
-                if (options.global) {
-                    var container = document.getElementById(actionContext.container);
-
-                    var globalRedirectPerformed = locator.redirect(url, options);
-                    // 如果因为URL相等的原因没有完成跳转，那就别销毁子Action，相当于点击没任何效果
-                    if (globalRedirectPerformed && container) {
-                        removeChildAction(currentController, container);
-                    }
-                    return globalRedirectPerformed;
-                }
-
-                var childActionInfo = currentController.childActionMapping[actionContext.container];
-                var changed = url.toString() !== childActionInfo.url.toString();
-                var shouldPerformRedirect = changed || options.force;
-                if (shouldPerformRedirect) {
-                    // 静默跳转只要改掉原来映射的URL就行，为了下一次跳转的`referrer`
-                    if (options.silent) {
-                        childActionInfo.url = url;
-                    }
-                    else {
-                        // `renderChildAction`中会把原来的Action销毁
-                        currentController.renderChildAction(url, childActionInfo.container, extra);
-                    }
-                }
-
-                return shouldPerformRedirect;
-            }
-
-            // 判断一个子Action中链接点击是否已经由对应的子Action处理了跳转,
-            // 如果是2层以上的子Action嵌套，下层Action处理完跳转后，因为没有（也不能）阻止冒泡，
-            // 所以上层的Action容器也会抓到这个事件，此时再去跳转是不合理的，需要有个判断
-            function isChildActionRedirected(e) {
-                // 除低版本IE外，其它浏览器是可以在事件对象上加自定义属性的，IE每次都生成新的事件对象所以保留不了这些属性，
-                // 在这里优先用自定义属性控制，避免对DOM树无意义的遍历，只有在没有属性的时候，才向后兼容至DOM树的遍历
-                if (e.isChildActionRedirected) {
-                    return true;
-                }
-
-                var innermostContainer = e.target || e.srcElement;
-                while (innermostContainer) {
-                    // 是Action容器的元素肯定符合以下条件：
-                    //
-                    // - 有个`id`，因为没有`id`不能渲染子Action
-                    // - 这个`id`在`childActionMapping`里是有对应的值的
-                    if (innermostContainer.id && currentController.childActionMapping[innermostContainer.id]) {
-                        break;
-                    }
-
-                    innermostContainer = innermostContainer.parentNode;
-                }
-                // 如果最接近被点击的链接的Action容器是不是当前的这个容器，就说明在当前容器和链接之间还有一层以上的子Action，
-                // 那么这个子Action肯定会处理掉这个链接的跳转，不需要这里处理了
-                if (innermostContainer.id !== actionContext.container) {
-                    e.isChildActionRedirected = true;
-                    return true;
-                }
-
-                return false;
-            }
-
-            // 需要把`container`上的链接点击全部拦截下来，如果是hash跳转，则转到controller上来
-            function hijack(e) {
-                // 下面两行是以主流浏览器为主，兼容IE的事件属性操作
-                e = e || window.event;
-                var target = e.target || e.srcElement;
-
-                // 担心有人在`<span>`之类的上面放`href`属性，还是判断一下标签
-                if (target.nodeName.toLowerCase() !== 'a') {
-                    return;
-                }
-
-                // `<a>`元素也可能没有`href`属性
-                var href = target.getAttribute('href', 2) || '';
-                // 是hash跳转的链接就取消掉默认的跳转行为
-                if (href.charAt(0) !== '#') {
-                    return;
-                }
-                // 如果有下面的子Action处理了跳转，那这里就啥也不干了
-                if (isChildActionRedirected(e)) {
-                    return;
-                }
-
-                if (e.preventDefault) {
-                    e.preventDefault();
-                }
-                else {
-                    e.returnValue = false;
-                }
-
-                // 转到`renderChildAction`上
-                var url = href.substring(1);
-
-                // 直接使用专供子Action上的`redirect`方法，
-                // 会自动处理`hijack`的解绑定、URL比对、进入子Action等事，
-                // 为免Action重写`redirect`方法，这里用闭包内的这个
-                var redirectAttributes = (target.getAttribute('data-redirect') || '').split(/[,\s]/);
-                var redirectOptions = {};
-                for (var i = 0; i < redirectAttributes.length; i++) {
-                    var redirectAttributeName = util.trim(redirectAttributes[i]);
-                    redirectOptions[redirectAttributeName] = true;
-                }
-                redirect(url, redirectOptions);
-            }
-
-            // 把子Action的`redirect`方法改掉，以免影响全局主Action，
-            // 这样通过js编码的跳转也会转到`renderChildAction`逻辑上
-            action.redirect = redirect;
-            // 同样增加`reload`方法
-            action.reload = function (extra) {
-                this.redirect(actionContext.url, {force: true}, extra);
-            };
-            // 同样增加`back`方法
-            action.back = function (defaultURL, extra) {
-                var referrer = this.context && this.context.referrer;
-                var url = referrer || defaultURL;
-                this.redirect(url, null, extra);
-            };
-
-            addChildAction(this, container, action, hijack, actionContext);
-
-            return this.enterAction(action, actionContext);
-        };
-
-        /**
-         * 在指定的元素中渲染一个子Action
-         *
-         * @param {string|URL} url Action对应的url
-         * @param {string} container 指定容器元素的id
-         * @param {Object} [options] 交给{@link Action}的额外参数
-         * @return {meta.Promise} 一个可取消的{@link meta.Promise}对象，当渲染完成后进行`resolved`状态，但可在之前调用`abort()`取消
-         */
-        exports.renderChildAction = function (url, container, options) {
-            assert.has(container);
-
-            if (typeof url === 'string') {
-                url = URL.parse(url);
-            }
-
-            var previousLoader = this.childActionLoaders[container];
-            if (previousLoader && typeof previousLoader.abort === 'function') {
-                previousLoader.abort();
-            }
-
-            var actionInfo = this.childActionMapping[container];
-            var previousAction = actionInfo && actionInfo.action;
-            if (previousAction
-                && typeof previousAction.filterRedirect === 'function'
-                && previousAction.filterRedirect(url) === false
-            ) {
-                return Deferred.rejected('Redirect aborted by previous action');
-            }
-
-            var loader = this.forward(url, container, options, true);
-            var events = this.getEventBus();
-            var loadingChildAction = loader
-                .then(util.bind(this.enterChildAction, this))
-                .fail(util.bind(events.notifyError, events));
-            // `then`方法会返回一个新的`Promise`，但原来的`loader`上有个`abort`方法，要把这个方法留下来
-            loadingChildAction.abort = loader.abort;
-            this.childActionLoaders[container] = loadingChildAction;
-            return loadingChildAction;
-        };
-
-        var Controller = __webpack_require__(29).create(__webpack_require__(23), exports);
-        var instance = new Controller();
-        instance.setLocator(__webpack_require__(222));
-        instance.setRouter(__webpack_require__(309));
-        instance.setEventBus(__webpack_require__(34));
-        instance.setPermissionProvider(__webpack_require__(310));
-        instance.Controller = Controller;
-        return instance;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 220 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file URL封装类
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var util = __webpack_require__(56);
-
-        /**
-         * @class URL
-         *
-         * URL信息类
-         *
-         * 该类是一个不可变类型，构建后可以读取其中的内容，但不能修改
-         *
-         * **不建议** 使用该类的构造函数，
-         * 如果需要获得URL实例，通过`parse`和`withQuery`工厂方法生成
-         *
-         * 该类的默认规则不同于普通的URL协议，具体体现如下：
-         *
-         * - 不分解protocol、host、port、hash部分，仅包含path和search
-         * - path和search的分隔符默认为`~`字符
-         *
-         * @param {string} [path] URL中的path部分
-         * @param {string} [search] URL中的search部分
-         * @param {string} [searchSeparator="~"] 分隔path与search的分隔符
-         * @constructor
-         */
-        var exports = {};
-
-        exports.constructor = function (path, search, searchSeparator) {
-            path = path || '/';
-            search = search || '';
-            searchSeparator = searchSeparator || '~';
-
-            /**
-             * @method toString
-             *
-             * 获取完整URL字符串
-             *
-             * @return {string} 当前URL的完整字符串表示
-             * @override
-             */
-            this.toString = function () {
-                return search ? (path + searchSeparator + search) : path;
-            };
-
-            /**
-             * @method getPath
-             *
-             * 获取path部分
-             *
-             * @return {string} URL中的path部分
-             */
-            this.getPath = function () {
-                return path;
-            };
-
-            /**
-             * @method getSearch
-             *
-             * 获取search部分
-             *
-             * @return {string} URL中的search部分
-             */
-            this.getSearch = function () {
-                return search;
-            };
-
-            var query = null;
-
-            /**
-             * @method getQuery
-             *
-             * 获取参数对象或指定参数的值
-             *
-             * @param {string} [key] 指定参数的名称，不传该参数则返回整个参数对象
-             * @return {string | Object} 如果有`key`参数则返回对应值，
-             * 否则返回参数对象的副本
-             */
-            this.getQuery = function (key) {
-                if (!query) {
-                    query = URL.parseQuery(search);
-                }
-                return key ? query[key] : util.mix({}, query);
-            };
-        };
-
-        /**
-         * 对比2个URL的差异
-         *
-         * @param {string | URL} another 另一个URL
-         * @return {meta.URLDifference}
-         */
-        exports.compare = function (another) {
-            if (typeof another === 'string') {
-                another = URL.parse(another);
-            }
-
-            var result = {};
-
-            var thisPath = this.getPath();
-            var anotherPath = another.getPath();
-            if (thisPath === anotherPath) {
-                result.path = false;
-            }
-            else {
-                result.path = {
-                    key: 'path',
-                    self: thisPath,
-                    other: anotherPath
-                };
-            }
-
-            var thisQuery = this.getQuery();
-            var anotherQuery = another.getQuery();
-            var queryDifferenceIndex = {};
-            var queryDifference = [];
-            var hasQueryDifference = false;
-            for (var key in thisQuery) {
-                if (thisQuery.hasOwnProperty(key)) {
-                    var thisValue = thisQuery[key];
-                    var anotherValue = anotherQuery[key];
-                    if (thisValue !== anotherValue) {
-                        hasQueryDifference = true;
-                        var diff = {
-                            key: key,
-                            self: thisValue,
-                            other: anotherValue
-                        };
-                        queryDifference.push(diff);
-                        queryDifferenceIndex[key] = diff;
-                    }
-                }
-            }
-            // 再把`another`有的自身没有的加进去
-            for (var key in anotherQuery) {
-                if (anotherQuery.hasOwnProperty(key) && !thisQuery.hasOwnProperty(key)) {
-                    hasQueryDifference = true;
-                    var diff = {
-                        key: key,
-                        self: undefined,
-                        other: anotherQuery[key]
-                    };
-                    queryDifference.push(diff);
-                    queryDifferenceIndex[key] = diff;
-                }
-            }
-            result.queryDifference = queryDifference;
-            result.query = hasQueryDifference ? queryDifferenceIndex : false;
-
-            return result;
-        };
-
-        var URL = __webpack_require__(29).create(exports);
-
-        /**
-         * 解析完整的URL
-         *
-         * 该函数仅解析`path`、`search`和`query`
-         *
-         * @param {string} url 完整的URL
-         * @param {Object} [options] 控制解析行为的相关参数
-         * @param {string} [options.querySeparator="~"] 用于分隔path和search的字符
-         * @return {URL} 一个URL对象
-         * @static
-         */
-        URL.parse = function (url, options) {
-            var defaults = { querySeparator: '~' };
-            options = util.mix(defaults, options);
-
-            // 考虑到未转义的参数的影响，此处不使用`split`函数
-            var querySeparatorIndex = url.indexOf(options.querySeparator);
-            if (querySeparatorIndex >= 0) {
-                return new URL(
-                    url.slice(0, querySeparatorIndex),
-                    url.slice(querySeparatorIndex + 1),
-                    options.querySeparator
-                );
-            }
-            else {
-                return new URL(url, '', options.querySeparator);
-            }
-        };
-
-        /**
-         * 根据`path`和给定的`query`对象生成URL对象
-         *
-         * @param {string | URL} path 已经存在的URL
-         * @param {Object} query URL的参数对象
-         * @param {Object} [options] 控制解析行为的相关参数
-         * @param {string} [options.querySeparator="~"] 用于分隔path和search的字符
-         * @return {URL} 一个URL对象
-         * @static
-         */
-        URL.withQuery = function (path, query, options) {
-            path = path + '';
-            var defaults = { querySeparator: '~' };
-            options = util.mix(defaults, options);
-
-            var separator = path.indexOf(options.querySeparator) < 0
-                ? options.querySeparator
-                : '&';
-            var search = URL.serialize(query);
-            var url = path + separator + search;
-
-            return URL.parse(url, options);
-        };
-
-        /**
-         * 根据`query`规则解析字符串并返回参数对象
-         *
-         * @param {string} str query字符串， *不能* 有起始的`?`或`#`字符
-         * @return {Object} 从`str`解析得到的参数对象
-         * @static
-         */
-        URL.parseQuery = function (str) {
-            var pairs = str.split('&');
-            var query = {};
-            for (var i = 0; i < pairs.length; i++) {
-                // 考虑到有可能因为未处理转义问题，
-                // 导致value中存在**=**字符，因此不使用`split`函数
-                var pair = pairs[i];
-                if (!pair) {
-                    continue;
-                }
-                var index = pair.indexOf('=');
-                // 没有**=**字符则认为值是**true**
-                var key = index < 0
-                    ? decodeURIComponent(pair)
-                    : decodeURIComponent(pair.slice(0, index));
-                var value = index < 0
-                    ? true
-                    : decodeURIComponent(pair.slice(index + 1));
-
-                // 已经存在这个参数，且新的值不为空时，把原来的值变成数组
-                if (query.hasOwnProperty(key)) {
-                    if (value !== true) {
-                        query[key] = [].concat(query[key], value);
-                    }
-                }
-                else {
-                    query[key] = value;
-                }
-            }
-            return query;
-        };
-
-        /**
-         * 将参数对象转换为URL字符串
-         *
-         * @param {Object} query 参数对象
-         * @return {string} 转换后的URL字符串，相当于`search`部分
-         * @static
-         */
-        URL.serialize = function (query) {
-            if (!query) {
-                return '';
-            }
-
-            var search = '';
-            for (var key in query) {
-                if (query.hasOwnProperty(key)) {
-                    var value = query[key];
-                    // 如果`value`是数组，其`toString`会自动转为逗号分隔的字符串
-                    search += '&' + encodeURIComponent(key) + '=' + encodeURIComponent(value);
-                }
-            }
-
-            return search.slice(1);
-        };
-
-        /**
-         * 空的URL实例，用于减少对`new URL()`的调用
-         *
-         * @type {URL}
-         * @static
-         */
-        URL.empty = new URL();
-
-        return URL;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 系统相关配置
- * @author otakustay
- */
-!(module.exports = {
-        /**
-         * 应用主DOM容器或其id，所有的主Action会渲染在此容器内
-         *
-         * @type {string | HTMLElement}
-         */
-        mainElement: 'main',
-
-        /**
-         * 起始路径
-         *
-         * @type {string}
-         */
-        indexURL: '/',
-
-        /**
-         * 系统名称，当访问一个没有配置{@link meta.ActionContext#title}的Action时，
-         * 会默认使用此配置的值作为`document.title`显示
-         *
-         * @type {string}
-         */
-        systemName: '',
-
-        /**
-         * 无权限访问某个Action时的跳转路径
-         *
-         * @type {string}
-         */
-        noAuthorityLocation: '/401',
-
-        /**
-         * 找不到Action时的跳转路径
-         *
-         * @type {string}
-         */
-        notFoundLocation: '/404'
-    });
-
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 地址监听器对象
- * @author otakustay, erik
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /**
-         * @class locator
-         *
-         * 地址监听对象
-         *
-         * 该对象用于监听地址中的`hash`部分的变化，以及根据要求更新`hash`值
-         *
-         * `locator`的基本工作流程：
-         *
-         * 1. 监听`hash`的变化
-         * 2. 当`hash`变化时，如果确实发生变化（与上一次的值不同），则执行逻辑
-         * 3. 保存当前的地址信息（高版本浏览器此时自动记录历史项）
-         * 4. 触发{@link locator#event-redirect}事件
-         *
-         * @mixins mini-event.EventTarget
-         * @singleton
-         */
-        var locator = {};
-        var currentLocation = '';
-
-        /**
-         * 获取URL中的hash值
-         *
-         * @return {string} 当前URL中的hash值
-         * @ignore
-         */
-        function getLocation() {
-            // Firefox下`location.hash`存在自动解码的情况，
-            // 比如hash的值是**abc%3def**，
-            // 在Firefox下获取会成为**abc=def**
-            // 为了避免这一情况，需要从`location.href`中分解
-            var index = location.href.indexOf('#');
-            var url = index === -1 ? '' : location.href.slice(index);
-
-            return url;
-        }
-
-        /**
-         * 执行hash变更的相关逻辑
-         * @ignore
-         */
-        function forwardHash() {
-            var url = getLocation();
-            locator.redirect(url);
-        }
-
-        var rollTimer = 0;
-        var startupTimer = 1;
-
-        function start(firstTime) {
-            // 如果有hashchange事件则使用事件，否则定时监听
-            if (window.addEventListener) {
-                window.addEventListener('hashchange', forwardHash, false);
-            }
-            else if ('onhashchange' in window && document.documentMode > 7) {
-                window.attachEvent('onhashchange', forwardHash);
-            }
-            else {
-                rollTimer = setInterval(forwardHash, 100);
-            }
-
-            // 处理初次进入的hash
-            if (firstTime) {
-                startupTimer = setTimeout(forwardHash, 0);
-            }
-        }
-
-        function stop() {
-            if (rollTimer) {
-                clearInterval(rollTimer);
-                rollTimer = null;
-            }
-            if (startupTimer) {
-                clearTimeout(startupTimer);
-                startupTimer = null;
-            }
-
-            if (window.removeEventListener) {
-                window.removeEventListener('hashchange', forwardHash, false);
-            }
-            else if ('onhashchange' in window && document.documentMode > 7) {
-                window.detachEvent('onhashchange', forwardHash);
-            }
-        }
-
-        /**
-         * 更新当前的`hash`值，同时在历史记录中添加该项
-         *
-         * 如果hash值与当前的地址相同则不会进行更新
-         *
-         * 注意该函数不会触发`redirect`事件，需要跳转请使用`forward`方法，
-         * 直接使用`updateURL`修改地址**后果自负**
-         *
-         * @param {string} url 需要进行更新的hash值
-         * @param {Object} options 配置项
-         * @return {boolean} 如果地址有过变更则返回true
-         * @ignore
-         */
-        function updateURL(url, options) {
-            var changed = currentLocation !== url;
-
-            // 存储当前信息
-            //
-            // Opera下，相同的hash重复写入会在历史堆栈中重复记录，
-            // 需要再行与当前的hash比较
-            if (changed && getLocation() !== url) {
-                if (options.silent) {
-                    stop();
-                    location.hash = url;
-                    start(false);
-                }
-                else {
-                    location.hash = url;
-                }
-            }
-
-            currentLocation = url;
-            return changed;
-        }
-
-        /**
-         * 使对象开始工作对象的工作
-         */
-        locator.start = function () {
-            start(true);
-        };
-
-        locator.stop = stop;
-
-        /**
-         * 根据输入的URL，进行处理后获取真实应该跳转的URL地址
-         *
-         * @param {string | URL} url 重定向的地址
-         */
-        locator.resolveURL = function (url) {
-            // 当类型为URL时，使用`toString`可转为正常的url字符串
-            url = url + '';
-            // 如果直接获取`location.hash`，则会有开始处的**#**符号需要去除
-            if (url.indexOf('#') === 0) {
-                url = url.slice(1);
-            }
-
-            // 未给定url时，指向起始页
-            if (!url || url === '/') {
-                url = __webpack_require__(221).indexURL;
-            }
-
-            return url;
-        };
-
-        /**
-         * 执行重定向逻辑
-         *
-         * @param {string | URL} url 重定向的地址
-         * @param {meta.RedirectOption} options 额外附加的参数对象
-         */
-        locator.redirect = function (url, options) {
-            options = options || {};
-            url = locator.resolveURL(url);
-
-            var referrer = currentLocation;
-            var isLocationChanged = updateURL(url, options);
-            var shouldPerformRedirect = isLocationChanged || options.force;
-            if (shouldPerformRedirect) {
-                if (!options.silent) {
-                    /**
-                     * URL跳转时触发
-                     *
-                     * @event redirect
-                     * @param {Object} e 事件对象
-                     * @param {string} e.url 当前的URL
-                     */
-                    locator.fire(
-                        'redirect',
-                        { url: url, referrer: referrer }
-                    );
-                }
-
-                __webpack_require__(34).fire(
-                    'redirect',
-                    { url: url, referrer: referrer }
-                );
-            }
-
-            return shouldPerformRedirect;
-        };
-
-        /**
-         * 刷新当前地址
-         */
-        locator.reload = function () {
-            if (currentLocation) {
-                locator.redirect(currentLocation, { force: true });
-            }
-        };
-
-        __webpack_require__(23).enable(locator);
-        return locator;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 223 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _lodash = __webpack_require__(5);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _san = __webpack_require__(0);
-
-var _ajax = __webpack_require__(224);
-
-var _util = __webpack_require__(2);
-
-var _asInput = __webpack_require__(7);
-
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
@@ -56683,7 +52736,7 @@ var UUAP = (0, _san.defineComponent)({
         }
 
         var payload = _defineProperty({}, keywordName, keyword);
-        return (0, _ajax.$post)(searchApi, payload).then(function (result) {
+        return _axios2.default.post(searchApi, payload).then(function (result) {
             if (_this2.data.get('keyword') !== keyword) {
                 return;
             }
@@ -56807,32 +52860,7 @@ var UUAP = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(UUAP);
 
 /***/ }),
-/* 224 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.$post = $post;
-
-var _axios = __webpack_require__(315);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function $post(url, data, options) {
-  return _axios2.default.post(url, data, options);
-} /**
-   * @file mixins/ajax.js
-   * @author leeight
-   */
-
-/***/ }),
-/* 225 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56850,19 +52878,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 226 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(14);
-var settle = __webpack_require__(320);
-var buildURL = __webpack_require__(322);
-var parseHeaders = __webpack_require__(323);
-var isURLSameOrigin = __webpack_require__(324);
-var createError = __webpack_require__(227);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(325);
+var utils = __webpack_require__(11);
+var settle = __webpack_require__(290);
+var buildURL = __webpack_require__(292);
+var parseHeaders = __webpack_require__(293);
+var isURLSameOrigin = __webpack_require__(294);
+var createError = __webpack_require__(208);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(295);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -56959,7 +52987,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(326);
+      var cookies = __webpack_require__(296);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -57035,16 +53063,16 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
 
 /***/ }),
-/* 227 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(321);
+var enhanceError = __webpack_require__(291);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -57063,7 +53091,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 228 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57075,7 +53103,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 229 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57101,7 +53129,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 230 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57113,13 +53141,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _BosUploader = __webpack_require__(199);
+var _BosUploader = __webpack_require__(191);
 
 var _BosUploader2 = _interopRequireDefault(_BosUploader);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
-var _uuid = __webpack_require__(231);
+var _uuid = __webpack_require__(212);
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
@@ -57207,7 +53235,7 @@ var Uploader = (0, _san.defineComponent)({ // eslint-disable-line
 exports.default = (0, _asInput.asInput)(Uploader);
 
 /***/ }),
-/* 231 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57574,18 +53602,18 @@ UUID.makeBackwardCompatible = function () {
 exports.default = UUID;
 
 /***/ }),
-/* 232 */
+/* 213 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_typeof__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validator___ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages__ = __webpack_require__(392);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validator___ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages__ = __webpack_require__(364);
 
 
 
@@ -57850,7 +53878,7 @@ Schema.messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
 /* harmony default export */ __webpack_exports__["default"] = (Schema);
 
 /***/ }),
-/* 233 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57858,7 +53886,7 @@ Schema.messages = __WEBPACK_IMPORTED_MODULE_4__messages__["a" /* messages */];
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(340);
+var _assign = __webpack_require__(312);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -57879,20 +53907,20 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 234 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(26) && !__webpack_require__(31)(function () {
-  return Object.defineProperty(__webpack_require__(235)('div'), 'a', { get: function () { return 7; } }).a != 7;
+module.exports = !__webpack_require__(23) && !__webpack_require__(27)(function () {
+  return Object.defineProperty(__webpack_require__(216)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 235 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(30);
-var document = __webpack_require__(17).document;
+var isObject = __webpack_require__(26);
+var document = __webpack_require__(15).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -57901,13 +53929,13 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 236 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(20);
-var toIObject = __webpack_require__(27);
-var arrayIndexOf = __webpack_require__(346)(false);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+var has = __webpack_require__(17);
+var toIObject = __webpack_require__(24);
+var arrayIndexOf = __webpack_require__(318)(false);
+var IE_PROTO = __webpack_require__(50)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -57924,11 +53952,11 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 237 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(238);
+var cof = __webpack_require__(219);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -57936,7 +53964,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 238 */
+/* 219 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -57947,32 +53975,32 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 239 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(61);
+var defined = __webpack_require__(48);
 module.exports = function (it) {
   return Object(defined(it));
 };
 
 
 /***/ }),
-/* 240 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(67);
-var $export = __webpack_require__(59);
-var redefine = __webpack_require__(241);
-var hide = __webpack_require__(24);
-var has = __webpack_require__(20);
-var Iterators = __webpack_require__(68);
-var $iterCreate = __webpack_require__(353);
-var setToStringTag = __webpack_require__(69);
-var getPrototypeOf = __webpack_require__(356);
-var ITERATOR = __webpack_require__(28)('iterator');
+var LIBRARY = __webpack_require__(54);
+var $export = __webpack_require__(46);
+var redefine = __webpack_require__(222);
+var hide = __webpack_require__(21);
+var has = __webpack_require__(17);
+var Iterators = __webpack_require__(55);
+var $iterCreate = __webpack_require__(325);
+var setToStringTag = __webpack_require__(56);
+var getPrototypeOf = __webpack_require__(328);
+var ITERATOR = __webpack_require__(25)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -58035,34 +54063,34 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 241 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(24);
+module.exports = __webpack_require__(21);
 
 
 /***/ }),
-/* 242 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(37);
-var dPs = __webpack_require__(354);
-var enumBugKeys = __webpack_require__(65);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+var anObject = __webpack_require__(32);
+var dPs = __webpack_require__(326);
+var enumBugKeys = __webpack_require__(52);
+var IE_PROTO = __webpack_require__(50)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(235)('iframe');
+  var iframe = __webpack_require__(216)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(355).appendChild(iframe);
+  __webpack_require__(327).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -58089,12 +54117,12 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 243 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(236);
-var hiddenKeys = __webpack_require__(65).concat('length', 'prototype');
+var $keys = __webpack_require__(217);
+var hiddenKeys = __webpack_require__(52).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return $keys(O, hiddenKeys);
@@ -58102,11 +54130,11 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 244 */
+/* 225 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
 
 
 /**
@@ -58129,7 +54157,7 @@ function required(rule, value, source, errors, options, type) {
 /* harmony default export */ __webpack_exports__["a"] = (required);
 
 /***/ }),
-/* 245 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58139,7 +54167,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -58226,7 +54254,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 246 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58242,11 +54270,11 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _StopScroll = __webpack_require__(32);
+var _StopScroll = __webpack_require__(29);
 
 var _StopScroll2 = _interopRequireDefault(_StopScroll);
 
-var _Dialog = __webpack_require__(19);
+var _Dialog = __webpack_require__(20);
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -58380,35 +54408,30 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */
+/* 228 */,
+/* 229 */,
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(21);
-__webpack_require__(255);
-__webpack_require__(256);
-__webpack_require__(257);
-__webpack_require__(258);
-__webpack_require__(260);
+module.exports = __webpack_require__(18);
+__webpack_require__(231);
+__webpack_require__(232);
+__webpack_require__(233);
+__webpack_require__(234);
+__webpack_require__(236);
 
 
 /***/ }),
-/* 255 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Promise = __webpack_require__(21);
+var Promise = __webpack_require__(18);
 
 module.exports = Promise;
 Promise.prototype.done = function (onFulfilled, onRejected) {
@@ -58422,13 +54445,13 @@ Promise.prototype.done = function (onFulfilled, onRejected) {
 
 
 /***/ }),
-/* 256 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Promise = __webpack_require__(21);
+var Promise = __webpack_require__(18);
 
 module.exports = Promise;
 Promise.prototype['finally'] = function (f) {
@@ -58445,7 +54468,7 @@ Promise.prototype['finally'] = function (f) {
 
 
 /***/ }),
-/* 257 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58453,7 +54476,7 @@ Promise.prototype['finally'] = function (f) {
 
 //This file contains the ES6 extensions to the core Promises/A+ API
 
-var Promise = __webpack_require__(21);
+var Promise = __webpack_require__(18);
 
 module.exports = Promise;
 
@@ -58559,7 +54582,7 @@ Promise.prototype['catch'] = function (onRejected) {
 
 
 /***/ }),
-/* 258 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58568,8 +54591,8 @@ Promise.prototype['catch'] = function (onRejected) {
 // This file contains then/promise specific extensions that are only useful
 // for node.js interop
 
-var Promise = __webpack_require__(21);
-var asap = __webpack_require__(259);
+var Promise = __webpack_require__(18);
+var asap = __webpack_require__(235);
 
 module.exports = Promise;
 
@@ -58696,14 +54719,14 @@ Promise.prototype.nodeify = function (callback, ctx) {
 
 
 /***/ }),
-/* 259 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // rawAsap provides everything we need except exception management.
-var rawAsap = __webpack_require__(73);
+var rawAsap = __webpack_require__(61);
 // RawTasks are recycled to reduce GC churn.
 var freeTasks = [];
 // We queue errors to ensure they are thrown in right order (FIFO).
@@ -58769,13 +54792,13 @@ RawTask.prototype.call = function () {
 
 
 /***/ }),
-/* 260 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Promise = __webpack_require__(21);
+var Promise = __webpack_require__(18);
 
 module.exports = Promise;
 Promise.enableSynchronous = function () {
@@ -58838,250 +54861,249 @@ Promise.disableSynchronous = function() {
 
 
 /***/ }),
-/* 261 */,
-/* 262 */,
-/* 263 */
+/* 237 */,
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 74,
-	"./af.js": 74,
-	"./ar": 75,
-	"./ar-dz": 76,
-	"./ar-dz.js": 76,
-	"./ar-kw": 77,
-	"./ar-kw.js": 77,
-	"./ar-ly": 78,
-	"./ar-ly.js": 78,
-	"./ar-ma": 79,
-	"./ar-ma.js": 79,
-	"./ar-sa": 80,
-	"./ar-sa.js": 80,
-	"./ar-tn": 81,
-	"./ar-tn.js": 81,
-	"./ar.js": 75,
-	"./az": 82,
-	"./az.js": 82,
-	"./be": 83,
-	"./be.js": 83,
-	"./bg": 84,
-	"./bg.js": 84,
-	"./bm": 85,
-	"./bm.js": 85,
-	"./bn": 86,
-	"./bn.js": 86,
-	"./bo": 87,
-	"./bo.js": 87,
-	"./br": 88,
-	"./br.js": 88,
-	"./bs": 89,
-	"./bs.js": 89,
-	"./ca": 90,
-	"./ca.js": 90,
-	"./cs": 91,
-	"./cs.js": 91,
-	"./cv": 92,
-	"./cv.js": 92,
-	"./cy": 93,
-	"./cy.js": 93,
-	"./da": 94,
-	"./da.js": 94,
-	"./de": 95,
-	"./de-at": 96,
-	"./de-at.js": 96,
-	"./de-ch": 97,
-	"./de-ch.js": 97,
-	"./de.js": 95,
-	"./dv": 98,
-	"./dv.js": 98,
-	"./el": 99,
-	"./el.js": 99,
-	"./en-au": 100,
-	"./en-au.js": 100,
-	"./en-ca": 101,
-	"./en-ca.js": 101,
-	"./en-gb": 102,
-	"./en-gb.js": 102,
-	"./en-ie": 103,
-	"./en-ie.js": 103,
-	"./en-nz": 104,
-	"./en-nz.js": 104,
-	"./eo": 105,
-	"./eo.js": 105,
-	"./es": 106,
-	"./es-do": 107,
-	"./es-do.js": 107,
-	"./es-us": 108,
-	"./es-us.js": 108,
-	"./es.js": 106,
-	"./et": 109,
-	"./et.js": 109,
-	"./eu": 110,
-	"./eu.js": 110,
-	"./fa": 111,
-	"./fa.js": 111,
-	"./fi": 112,
-	"./fi.js": 112,
-	"./fo": 113,
-	"./fo.js": 113,
-	"./fr": 114,
-	"./fr-ca": 115,
-	"./fr-ca.js": 115,
-	"./fr-ch": 116,
-	"./fr-ch.js": 116,
-	"./fr.js": 114,
-	"./fy": 117,
-	"./fy.js": 117,
-	"./gd": 118,
-	"./gd.js": 118,
-	"./gl": 119,
-	"./gl.js": 119,
-	"./gom-latn": 120,
-	"./gom-latn.js": 120,
-	"./gu": 121,
-	"./gu.js": 121,
-	"./he": 122,
-	"./he.js": 122,
-	"./hi": 123,
-	"./hi.js": 123,
-	"./hr": 124,
-	"./hr.js": 124,
-	"./hu": 125,
-	"./hu.js": 125,
-	"./hy-am": 126,
-	"./hy-am.js": 126,
-	"./id": 127,
-	"./id.js": 127,
-	"./is": 128,
-	"./is.js": 128,
-	"./it": 129,
-	"./it.js": 129,
-	"./ja": 130,
-	"./ja.js": 130,
-	"./jv": 131,
-	"./jv.js": 131,
-	"./ka": 132,
-	"./ka.js": 132,
-	"./kk": 133,
-	"./kk.js": 133,
-	"./km": 134,
-	"./km.js": 134,
-	"./kn": 135,
-	"./kn.js": 135,
-	"./ko": 136,
-	"./ko.js": 136,
-	"./ky": 137,
-	"./ky.js": 137,
-	"./lb": 138,
-	"./lb.js": 138,
-	"./lo": 139,
-	"./lo.js": 139,
-	"./lt": 140,
-	"./lt.js": 140,
-	"./lv": 141,
-	"./lv.js": 141,
-	"./me": 142,
-	"./me.js": 142,
-	"./mi": 143,
-	"./mi.js": 143,
-	"./mk": 144,
-	"./mk.js": 144,
-	"./ml": 145,
-	"./ml.js": 145,
-	"./mr": 146,
-	"./mr.js": 146,
-	"./ms": 147,
-	"./ms-my": 148,
-	"./ms-my.js": 148,
-	"./ms.js": 147,
-	"./mt": 149,
-	"./mt.js": 149,
-	"./my": 150,
-	"./my.js": 150,
-	"./nb": 151,
-	"./nb.js": 151,
-	"./ne": 152,
-	"./ne.js": 152,
-	"./nl": 153,
-	"./nl-be": 154,
-	"./nl-be.js": 154,
-	"./nl.js": 153,
-	"./nn": 155,
-	"./nn.js": 155,
-	"./pa-in": 156,
-	"./pa-in.js": 156,
-	"./pl": 157,
-	"./pl.js": 157,
-	"./pt": 158,
-	"./pt-br": 159,
-	"./pt-br.js": 159,
-	"./pt.js": 158,
-	"./ro": 160,
-	"./ro.js": 160,
-	"./ru": 161,
-	"./ru.js": 161,
-	"./sd": 162,
-	"./sd.js": 162,
-	"./se": 163,
-	"./se.js": 163,
-	"./si": 164,
-	"./si.js": 164,
-	"./sk": 165,
-	"./sk.js": 165,
-	"./sl": 166,
-	"./sl.js": 166,
-	"./sq": 167,
-	"./sq.js": 167,
-	"./sr": 168,
-	"./sr-cyrl": 169,
-	"./sr-cyrl.js": 169,
-	"./sr.js": 168,
-	"./ss": 170,
-	"./ss.js": 170,
-	"./sv": 171,
-	"./sv.js": 171,
-	"./sw": 172,
-	"./sw.js": 172,
-	"./ta": 173,
-	"./ta.js": 173,
-	"./te": 174,
-	"./te.js": 174,
-	"./tet": 175,
-	"./tet.js": 175,
-	"./th": 176,
-	"./th.js": 176,
-	"./tl-ph": 177,
-	"./tl-ph.js": 177,
-	"./tlh": 178,
-	"./tlh.js": 178,
-	"./tr": 179,
-	"./tr.js": 179,
-	"./tzl": 180,
-	"./tzl.js": 180,
-	"./tzm": 181,
-	"./tzm-latn": 182,
-	"./tzm-latn.js": 182,
-	"./tzm.js": 181,
-	"./uk": 183,
-	"./uk.js": 183,
-	"./ur": 184,
-	"./ur.js": 184,
-	"./uz": 185,
-	"./uz-latn": 186,
-	"./uz-latn.js": 186,
-	"./uz.js": 185,
-	"./vi": 187,
-	"./vi.js": 187,
-	"./x-pseudo": 188,
-	"./x-pseudo.js": 188,
-	"./yo": 189,
-	"./yo.js": 189,
-	"./zh-cn": 190,
-	"./zh-cn.js": 190,
-	"./zh-hk": 191,
-	"./zh-hk.js": 191,
-	"./zh-tw": 192,
-	"./zh-tw.js": 192
+	"./af": 63,
+	"./af.js": 63,
+	"./ar": 64,
+	"./ar-dz": 65,
+	"./ar-dz.js": 65,
+	"./ar-kw": 66,
+	"./ar-kw.js": 66,
+	"./ar-ly": 67,
+	"./ar-ly.js": 67,
+	"./ar-ma": 68,
+	"./ar-ma.js": 68,
+	"./ar-sa": 69,
+	"./ar-sa.js": 69,
+	"./ar-tn": 70,
+	"./ar-tn.js": 70,
+	"./ar.js": 64,
+	"./az": 71,
+	"./az.js": 71,
+	"./be": 72,
+	"./be.js": 72,
+	"./bg": 73,
+	"./bg.js": 73,
+	"./bm": 74,
+	"./bm.js": 74,
+	"./bn": 75,
+	"./bn.js": 75,
+	"./bo": 76,
+	"./bo.js": 76,
+	"./br": 77,
+	"./br.js": 77,
+	"./bs": 78,
+	"./bs.js": 78,
+	"./ca": 79,
+	"./ca.js": 79,
+	"./cs": 80,
+	"./cs.js": 80,
+	"./cv": 81,
+	"./cv.js": 81,
+	"./cy": 82,
+	"./cy.js": 82,
+	"./da": 83,
+	"./da.js": 83,
+	"./de": 84,
+	"./de-at": 85,
+	"./de-at.js": 85,
+	"./de-ch": 86,
+	"./de-ch.js": 86,
+	"./de.js": 84,
+	"./dv": 87,
+	"./dv.js": 87,
+	"./el": 88,
+	"./el.js": 88,
+	"./en-au": 89,
+	"./en-au.js": 89,
+	"./en-ca": 90,
+	"./en-ca.js": 90,
+	"./en-gb": 91,
+	"./en-gb.js": 91,
+	"./en-ie": 92,
+	"./en-ie.js": 92,
+	"./en-nz": 93,
+	"./en-nz.js": 93,
+	"./eo": 94,
+	"./eo.js": 94,
+	"./es": 95,
+	"./es-do": 96,
+	"./es-do.js": 96,
+	"./es-us": 97,
+	"./es-us.js": 97,
+	"./es.js": 95,
+	"./et": 98,
+	"./et.js": 98,
+	"./eu": 99,
+	"./eu.js": 99,
+	"./fa": 100,
+	"./fa.js": 100,
+	"./fi": 101,
+	"./fi.js": 101,
+	"./fo": 102,
+	"./fo.js": 102,
+	"./fr": 103,
+	"./fr-ca": 104,
+	"./fr-ca.js": 104,
+	"./fr-ch": 105,
+	"./fr-ch.js": 105,
+	"./fr.js": 103,
+	"./fy": 106,
+	"./fy.js": 106,
+	"./gd": 107,
+	"./gd.js": 107,
+	"./gl": 108,
+	"./gl.js": 108,
+	"./gom-latn": 109,
+	"./gom-latn.js": 109,
+	"./gu": 110,
+	"./gu.js": 110,
+	"./he": 111,
+	"./he.js": 111,
+	"./hi": 112,
+	"./hi.js": 112,
+	"./hr": 113,
+	"./hr.js": 113,
+	"./hu": 114,
+	"./hu.js": 114,
+	"./hy-am": 115,
+	"./hy-am.js": 115,
+	"./id": 116,
+	"./id.js": 116,
+	"./is": 117,
+	"./is.js": 117,
+	"./it": 118,
+	"./it.js": 118,
+	"./ja": 119,
+	"./ja.js": 119,
+	"./jv": 120,
+	"./jv.js": 120,
+	"./ka": 121,
+	"./ka.js": 121,
+	"./kk": 122,
+	"./kk.js": 122,
+	"./km": 123,
+	"./km.js": 123,
+	"./kn": 124,
+	"./kn.js": 124,
+	"./ko": 125,
+	"./ko.js": 125,
+	"./ky": 126,
+	"./ky.js": 126,
+	"./lb": 127,
+	"./lb.js": 127,
+	"./lo": 128,
+	"./lo.js": 128,
+	"./lt": 129,
+	"./lt.js": 129,
+	"./lv": 130,
+	"./lv.js": 130,
+	"./me": 131,
+	"./me.js": 131,
+	"./mi": 132,
+	"./mi.js": 132,
+	"./mk": 133,
+	"./mk.js": 133,
+	"./ml": 134,
+	"./ml.js": 134,
+	"./mr": 135,
+	"./mr.js": 135,
+	"./ms": 136,
+	"./ms-my": 137,
+	"./ms-my.js": 137,
+	"./ms.js": 136,
+	"./mt": 138,
+	"./mt.js": 138,
+	"./my": 139,
+	"./my.js": 139,
+	"./nb": 140,
+	"./nb.js": 140,
+	"./ne": 141,
+	"./ne.js": 141,
+	"./nl": 142,
+	"./nl-be": 143,
+	"./nl-be.js": 143,
+	"./nl.js": 142,
+	"./nn": 144,
+	"./nn.js": 144,
+	"./pa-in": 145,
+	"./pa-in.js": 145,
+	"./pl": 146,
+	"./pl.js": 146,
+	"./pt": 147,
+	"./pt-br": 148,
+	"./pt-br.js": 148,
+	"./pt.js": 147,
+	"./ro": 149,
+	"./ro.js": 149,
+	"./ru": 150,
+	"./ru.js": 150,
+	"./sd": 151,
+	"./sd.js": 151,
+	"./se": 152,
+	"./se.js": 152,
+	"./si": 153,
+	"./si.js": 153,
+	"./sk": 154,
+	"./sk.js": 154,
+	"./sl": 155,
+	"./sl.js": 155,
+	"./sq": 156,
+	"./sq.js": 156,
+	"./sr": 157,
+	"./sr-cyrl": 158,
+	"./sr-cyrl.js": 158,
+	"./sr.js": 157,
+	"./ss": 159,
+	"./ss.js": 159,
+	"./sv": 160,
+	"./sv.js": 160,
+	"./sw": 161,
+	"./sw.js": 161,
+	"./ta": 162,
+	"./ta.js": 162,
+	"./te": 163,
+	"./te.js": 163,
+	"./tet": 164,
+	"./tet.js": 164,
+	"./th": 165,
+	"./th.js": 165,
+	"./tl-ph": 166,
+	"./tl-ph.js": 166,
+	"./tlh": 167,
+	"./tlh.js": 167,
+	"./tr": 168,
+	"./tr.js": 168,
+	"./tzl": 169,
+	"./tzl.js": 169,
+	"./tzm": 170,
+	"./tzm-latn": 171,
+	"./tzm-latn.js": 171,
+	"./tzm.js": 170,
+	"./uk": 172,
+	"./uk.js": 172,
+	"./ur": 173,
+	"./ur.js": 173,
+	"./uz": 174,
+	"./uz-latn": 175,
+	"./uz-latn.js": 175,
+	"./uz.js": 174,
+	"./vi": 176,
+	"./vi.js": 176,
+	"./x-pseudo": 177,
+	"./x-pseudo.js": 177,
+	"./yo": 178,
+	"./yo.js": 178,
+	"./zh-cn": 179,
+	"./zh-cn.js": 179,
+	"./zh-hk": 180,
+	"./zh-hk.js": 180,
+	"./zh-tw": 181,
+	"./zh-tw.js": 181
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -59097,15 +55119,20 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 263;
+webpackContext.id = 238;
 
 /***/ }),
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -59585,7 +55612,7 @@ webpackContext.id = 263;
 
 
 /***/ }),
-/* 270 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59620,7 +55647,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 271 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59638,11 +55665,11 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
-var _Icon = __webpack_require__(18);
+var _Icon = __webpack_require__(19);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -59702,7 +55729,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 272 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59762,7 +55789,178 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 273 */
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _ResizeObserver = __webpack_require__(254);
+
+var _ResizeObserver2 = _interopRequireDefault(_ResizeObserver);
+
+var _util = __webpack_require__(2);
+
+var _helper = __webpack_require__(14);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/Chart.js
+ * @author leeight
+ */
+
+var cx = (0, _util.create)('ui-chart');
+
+var template = '<div class="{{mainClass}}" style="{{mainStyle}}"></div>';
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    computed: {
+        mainStyle: function mainStyle() {
+            var width = this.data.get('width');
+            var height = this.data.get('height');
+            return {
+                'width': width + 'px',
+                'height': height + 'px',
+                'line-height': height + 'px'
+            };
+        },
+        mainClass: function mainClass() {
+            return cx.mainClass(this);
+        }
+    },
+    initData: function initData() {
+        return {
+            loading: true,
+            autoResize: false,
+            width: 300,
+            height: 300,
+            option: {},
+            notMerge: false
+        };
+    },
+
+    dataTypes: {
+        loading: _san.DataTypes.bool,
+        autoResize: _san.DataTypes.bool,
+        width: _san.DataTypes.number,
+        height: _san.DataTypes.number,
+        option: _san.DataTypes.object,
+        notMerge: _san.DataTypes.bool
+    },
+    getChart: function getChart() {
+        return this.chart;
+    },
+    clearEmptyRing: function clearEmptyRing() {
+        if (this.chart && this.ring) {
+            this.chart.getZr().remove(this.ring);
+            this.ring = null;
+        }
+    },
+    __drawEmptyRing: function __drawEmptyRing(echarts) {
+        var _this = this;
+
+        // 这里把 echarts 当做参数传递进来，是因为不想直接写 import echarts from 'inf-ria/echarts'
+        // 这样子导致初始化 echarts+zrender 的时候有 300ms ~ 500ms 的延迟
+        // 所以改成了异步的加载 echarts
+        return function () {
+            var chart = _this.chart;
+            var width = chart.getWidth();
+            var height = chart.getHeight();
+            var size = Math.min(width, height) / 2;
+            var minRadius = echarts.number.parsePercent('50%', size);
+            var maxRadius = echarts.number.parsePercent('80%', size);
+            _this.ring = new echarts.graphic.Ring({
+                shape: {
+                    r0: minRadius,
+                    r: maxRadius,
+                    cx: width / 2,
+                    cy: height / 2
+                },
+                style: {
+                    stroke: '#ccc',
+                    fill: 'none'
+                }
+            });
+            chart.getZr().add(_this.ring);
+        };
+    },
+    attached: function attached() {
+        var _this2 = this;
+
+        this.watch('loading', function (loading) {
+            if (_this2.chart) {
+                loading ? _this2.chart.showLoading() : _this2.chart.hideLoading();
+            }
+        });
+
+        this.watch('option', function (option) {
+            if (_this2.chart && option) {
+                _this2.chart.setOption(option, !!_this2.data.get('notMerge'));
+                _this2.chart.hideLoading();
+            }
+        });
+
+        var amdModules = ['echarts', 'zrender/vml/vml', 'echarts/chart/pie', 'echarts/chart/bar', 'echarts/chart/line', 'echarts/chart/lines', 'echarts/chart/map', 'echarts/chart/scatter', 'echarts/component/legendScroll', 'echarts/component/legend', 'echarts/component/dataZoom', 'echarts/component/tooltip', 'echarts/component/title', 'echarts/component/grid', 'echarts/component/toolbox', 'echarts/component/markPoint', 'echarts/component/markLine'];
+        (0, _helper.loadThirdParty)('echarts', amdModules, 300).then(function (echarts) {
+            _this2.drawEmptyRing = _this2.__drawEmptyRing(echarts);
+
+            _this2.data.set('loading', false);
+            _this2.chart = echarts.init(_this2.el);
+            _this2.chart.showLoading();
+            var option = _this2.data.get('option');
+            if (option) {
+                _this2.chart.setOption(option);
+                _this2.chart.hideLoading();
+            }
+
+            if (_this2.data.get('autoResize')) {
+                var _el$parentNode = _this2.el.parentNode,
+                    clientWidth = _el$parentNode.clientWidth,
+                    clientHeight = _el$parentNode.clientHeight;
+
+                _this2.chart.resize({
+                    width: clientWidth,
+                    height: clientHeight
+                });
+            }
+
+            _this2.fire('chart-initialized');
+        });
+
+        if (this.data.get('autoResize')) {
+            this.observer = new _ResizeObserver2.default(function (entries) {
+                if (_this2.chart && _this2.chart.resize) {
+                    var entry = entries[0];
+                    _this2.chart.resize({
+                        width: entry.clientWidth(),
+                        height: entry.clientHeight()
+                    });
+                }
+            }).observe(this.el.parentNode);
+        }
+    },
+    disposed: function disposed() {
+        if (this.observer) {
+            this.observer.disconnect();
+        }
+
+        if (this.chart) {
+            this.chart.dispose();
+            this.chart = null;
+        }
+    }
+});
+
+/***/ }),
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59932,7 +56130,7 @@ setFrameWait(frameHandler);
 exports.default = ResizeObserver;
 
 /***/ }),
-/* 274 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59944,11 +56142,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
-var _clipboard = __webpack_require__(275);
+var _clipboard = __webpack_require__(256);
 
 var _clipboard2 = _interopRequireDefault(_clipboard);
 
@@ -59956,14 +56150,14 @@ var _util = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var cx = (0, _util.create)('ui-clipboard');
+
+/* eslint-disable */
 /**
  * @file Clipboard.js
  * @author leeight
  */
 
-var cx = (0, _util.create)('ui-clipboard');
-
-/* eslint-disable */
 var template = '<div on-mouseleave="onMouseLeave" class="{{mainClass}}" aria-label="{{ariaLabel}}"><slot/></div>';
 /* eslint-enable */
 
@@ -59982,7 +56176,7 @@ exports.default = (0, _san.defineComponent)({
     },
     initData: function initData() {
         return {
-            ariaLabel: (0, _infI18n2.default)('复制到剪贴板'),
+            ariaLabel: '复制到剪贴板',
             tipPosition: 's', // 'n', 'e', 's', 'w'
             text: null
         };
@@ -60024,7 +56218,7 @@ exports.default = (0, _san.defineComponent)({
             return _this.fire('beforecopy');
         });
         this.client.on('success', function () {
-            _this.data.set('ariaLabel', (0, _infI18n2.default)('复制成功'));
+            _this.data.set('ariaLabel', '复制成功');
             _this.fire('aftercopy');
         });
         this.client.on('error', function () {
@@ -60032,17 +56226,17 @@ exports.default = (0, _san.defineComponent)({
         });
     },
     onMouseLeave: function onMouseLeave() {
-        this.data.set('ariaLabel', (0, _infI18n2.default)('复制到剪贴板'));
+        this.data.set('ariaLabel', '复制到剪贴板');
     }
 });
 
 /***/ }),
-/* 275 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(276), __webpack_require__(278), __webpack_require__(279)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(257), __webpack_require__(259), __webpack_require__(260)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -60252,12 +56446,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 276 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(277)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(258)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -60489,7 +56683,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 277 */
+/* 258 */
 /***/ (function(module, exports) {
 
 function select(element) {
@@ -60538,7 +56732,7 @@ module.exports = select;
 
 
 /***/ }),
-/* 278 */
+/* 259 */
 /***/ (function(module, exports) {
 
 function E () {
@@ -60610,11 +56804,11 @@ module.exports = E;
 
 
 /***/ }),
-/* 279 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var is = __webpack_require__(280);
-var delegate = __webpack_require__(281);
+var is = __webpack_require__(261);
+var delegate = __webpack_require__(262);
 
 /**
  * Validates all params and calls the right
@@ -60711,7 +56905,7 @@ module.exports = listen;
 
 
 /***/ }),
-/* 280 */
+/* 261 */
 /***/ (function(module, exports) {
 
 /**
@@ -60766,10 +56960,10 @@ exports.fn = function(value) {
 
 
 /***/ }),
-/* 281 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var closest = __webpack_require__(282);
+var closest = __webpack_require__(263);
 
 /**
  * Delegates event to a selector.
@@ -60850,7 +57044,7 @@ module.exports = delegate;
 
 
 /***/ }),
-/* 282 */
+/* 263 */
 /***/ (function(module, exports) {
 
 var DOCUMENT_NODE_TYPE = 9;
@@ -60889,7 +57083,7 @@ module.exports = closest;
 
 
 /***/ }),
-/* 283 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60911,7 +57105,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 284 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60921,7 +57115,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -60933,11 +57127,11 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Table = __webpack_require__(205);
+var _Table = __webpack_require__(196);
 
 var _Table2 = _interopRequireDefault(_Table);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
@@ -61182,7 +57376,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 285 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61193,7 +57387,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.asTable = asTable;
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -61205,11 +57399,11 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
-var _TableFilter = __webpack_require__(206);
+var _TableFilter = __webpack_require__(197);
 
 var _TableFilter2 = _interopRequireDefault(_TableFilter);
 
@@ -61484,7 +57678,7 @@ function asTable(columns) {
 }
 
 /***/ }),
-/* 286 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61507,7 +57701,7 @@ exports.default = (0, _san.defineComponent)({
      */
 
 /***/ }),
-/* 287 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61521,7 +57715,7 @@ var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _promise = __webpack_require__(10);
+var _promise = __webpack_require__(16);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -61529,13 +57723,8 @@ var _san = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Service from 'common/service';
-// import R from 'common/region';
-
-// import {createClient, errorHandler} from './helper';
-
 var template = '<a on-click="switchTo($event)"\n    target="{{target}}"\n    title="{{title}}"\n    href="{{href}}"><slot/></a>'; /**
-                                                                                                                                   * @file components/Go.js
+                                                                                                                                   * @file san-xui/x/components/Go.js
                                                                                                                                    * @author leeight
                                                                                                                                    */
 
@@ -61558,33 +57747,6 @@ var Go = (0, _san.defineComponent)({ // eslint-disable-line
         Go.switchHandler(event, this).catch(function () {
             return location.href = _this.data.get('href');
         });
-
-        /**
-        const regionId = this.data.get('region');
-        if (regionId) {
-            // 切换之前先切 region
-            return createClient()
-                .then(client => client.setRegion({regionId}))
-                .then(() => R.setCurrentRegion(regionId))
-                .then(() => {
-                    const rv = Service.current().switchTo(event);
-                    if (!rv) {
-                        // 因为之前组织的浏览器的默认行为，如果没有切换过去，就用暴力一些的方式。
-                        // 比如 /iot2/viz|apollo 之类的路径
-                        location.href = this.data.get('href');
-                    }
-                })
-                .fail(error => {
-                    errorHandler(this, error);
-                    location.href = this.data.get('href');
-                });
-        }
-         const rv = Service.current().switchTo(event);
-        // 如果失败了，返回 null/undefined，链接正常跳转
-        if (!rv) {
-            location.href = this.data.get('href');
-        }
-        */
     }
 });
 
@@ -61601,7 +57763,7 @@ Go.setSwitchHandler = function (handler) {
 exports.default = Go; // eslint-disable-line
 
 /***/ }),
-/* 288 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61613,7 +57775,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
@@ -61672,7 +57834,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 289 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61682,7 +57844,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -61690,7 +57852,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _Layer = __webpack_require__(16);
+var _Layer = __webpack_require__(13);
 
 var _Layer2 = _interopRequireDefault(_Layer);
 
@@ -61776,7 +57938,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 290 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/big.js/LICENCE */
@@ -62929,7 +59091,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/bi
 
 
 /***/ }),
-/* 291 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63044,7 +59206,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 292 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63113,7 +59275,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 293 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63127,7 +59289,7 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var cx = (0, _util.create)('ui-radiobox');
 
@@ -63187,7 +59349,7 @@ var RadioBox = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(RadioBox);
 
 /***/ }),
-/* 294 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63204,7 +59366,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = [{ value: 110000, text: '北京市', children: [{ value: 110100, text: '市辖区', children: [{ value: 110101, text: '东城区' }, { value: 110102, text: '西城区' }, { value: 110103, text: '崇文区' }, { value: 110104, text: '宣武区' }, { value: 110105, text: '朝阳区' }, { value: 110106, text: '丰台区' }, { value: 110107, text: '石景山区' }, { value: 110108, text: '海淀区' }, { value: 110109, text: '门头沟区' }, { value: 110111, text: '房山区' }, { value: 110112, text: '通州区' }, { value: 110113, text: '顺义区' }, { value: 110114, text: '昌平区' }, { value: 110115, text: '大兴区' }, { value: 110116, text: '怀柔区' }, { value: 110117, text: '平谷区' }] }, { value: 110200, text: '县', children: [{ value: 110228, text: '密云县' }, { value: 110229, text: '延庆县' }] }] }, { value: 120000, text: '天津市', children: [{ value: 120100, text: '市辖区', children: [{ value: 120101, text: '和平区' }, { value: 120102, text: '河东区' }, { value: 120103, text: '河西区' }, { value: 120104, text: '南开区' }, { value: 120105, text: '河北区' }, { value: 120106, text: '红桥区' }, { value: 120110, text: '东丽区' }, { value: 120111, text: '西青区' }, { value: 120112, text: '津南区' }, { value: 120113, text: '北辰区' }, { value: 120114, text: '武清区' }, { value: 120115, text: '宝坻区' }, { value: 120116, text: '滨海新区' }] }, { value: 120200, text: '县', children: [{ value: 120221, text: '宁河县' }, { value: 120223, text: '静海县' }, { value: 120225, text: '蓟县' }] }] }, { value: 130000, text: '河北省', children: [{ value: 130100, text: '石家庄市', children: [{ value: 130101, text: '市辖区' }, { value: 130102, text: '长安区' }, { value: 130103, text: '桥东区' }, { value: 130104, text: '桥西区' }, { value: 130105, text: '新华区' }, { value: 130107, text: '井陉矿区' }, { value: 130108, text: '裕华区' }, { value: 130121, text: '井陉县' }, { value: 130123, text: '正定县' }, { value: 130124, text: '栾城县' }, { value: 130125, text: '行唐县' }, { value: 130126, text: '灵寿县' }, { value: 130127, text: '高邑县' }, { value: 130128, text: '深泽县' }, { value: 130129, text: '赞皇县' }, { value: 130130, text: '无极县' }, { value: 130131, text: '平山县' }, { value: 130132, text: '元氏县' }, { value: 130133, text: '赵县' }, { value: 130181, text: '辛集市' }, { value: 130182, text: '藁城市' }, { value: 130183, text: '晋州市' }, { value: 130184, text: '新乐市' }, { value: 130185, text: '鹿泉市' }] }, { value: 130200, text: '唐山市', children: [{ value: 130201, text: '市辖区' }, { value: 130202, text: '路南区' }, { value: 130203, text: '路北区' }, { value: 130204, text: '古冶区' }, { value: 130205, text: '开平区' }, { value: 130207, text: '丰南区' }, { value: 130208, text: '丰润区' }, { value: 130223, text: '滦县' }, { value: 130224, text: '滦南县' }, { value: 130225, text: '乐亭县' }, { value: 130227, text: '迁西县' }, { value: 130229, text: '玉田县' }, { value: 130230, text: '唐海县' }, { value: 130281, text: '遵化市' }, { value: 130283, text: '迁安市' }] }, { value: 130300, text: '秦皇岛市', children: [{ value: 130301, text: '市辖区' }, { value: 130302, text: '海港区' }, { value: 130303, text: '山海关区' }, { value: 130304, text: '北戴河区' }, { value: 130321, text: '青龙满族自治县' }, { value: 130322, text: '昌黎县' }, { value: 130323, text: '抚宁县' }, { value: 130324, text: '卢龙县' }] }, { value: 130400, text: '邯郸市', children: [{ value: 130401, text: '市辖区' }, { value: 130402, text: '邯山区' }, { value: 130403, text: '丛台区' }, { value: 130404, text: '复兴区' }, { value: 130406, text: '峰峰矿区' }, { value: 130421, text: '邯郸县' }, { value: 130423, text: '临漳县' }, { value: 130424, text: '成安县' }, { value: 130425, text: '大名县' }, { value: 130426, text: '涉县' }, { value: 130427, text: '磁县' }, { value: 130428, text: '肥乡县' }, { value: 130429, text: '永年县' }, { value: 130430, text: '邱县' }, { value: 130431, text: '鸡泽县' }, { value: 130432, text: '广平县' }, { value: 130433, text: '馆陶县' }, { value: 130434, text: '魏县' }, { value: 130435, text: '曲周县' }, { value: 130481, text: '武安市' }] }, { value: 130500, text: '邢台市', children: [{ value: 130501, text: '市辖区' }, { value: 130502, text: '桥东区' }, { value: 130503, text: '桥西区' }, { value: 130521, text: '邢台县' }, { value: 130522, text: '临城县' }, { value: 130523, text: '内丘县' }, { value: 130524, text: '柏乡县' }, { value: 130525, text: '隆尧县' }, { value: 130526, text: '任县' }, { value: 130527, text: '南和县' }, { value: 130528, text: '宁晋县' }, { value: 130529, text: '巨鹿县' }, { value: 130530, text: '新河县' }, { value: 130531, text: '广宗县' }, { value: 130532, text: '平乡县' }, { value: 130533, text: '威县' }, { value: 130534, text: '清河县' }, { value: 130535, text: '临西县' }, { value: 130581, text: '南宫市' }, { value: 130582, text: '沙河市' }] }, { value: 130600, text: '保定市', children: [{ value: 130601, text: '市辖区' }, { value: 130602, text: '新市区' }, { value: 130603, text: '北市区' }, { value: 130604, text: '南市区' }, { value: 130621, text: '满城县' }, { value: 130622, text: '清苑县' }, { value: 130623, text: '涞水县' }, { value: 130624, text: '阜平县' }, { value: 130625, text: '徐水县' }, { value: 130626, text: '定兴县' }, { value: 130627, text: '唐县' }, { value: 130628, text: '高阳县' }, { value: 130629, text: '容城县' }, { value: 130630, text: '涞源县' }, { value: 130631, text: '望都县' }, { value: 130632, text: '安新县' }, { value: 130633, text: '易县' }, { value: 130634, text: '曲阳县' }, { value: 130635, text: '蠡县' }, { value: 130636, text: '顺平县' }, { value: 130637, text: '博野县' }, { value: 130638, text: '雄县' }, { value: 130681, text: '涿州市' }, { value: 130682, text: '定州市' }, { value: 130683, text: '安国市' }, { value: 130684, text: '高碑店市' }] }, { value: 130700, text: '张家口市', children: [{ value: 130701, text: '市辖区' }, { value: 130702, text: '桥东区' }, { value: 130703, text: '桥西区' }, { value: 130705, text: '宣化区' }, { value: 130706, text: '下花园区' }, { value: 130721, text: '宣化县' }, { value: 130722, text: '张北县' }, { value: 130723, text: '康保县' }, { value: 130724, text: '沽源县' }, { value: 130725, text: '尚义县' }, { value: 130726, text: '蔚县' }, { value: 130727, text: '阳原县' }, { value: 130728, text: '怀安县' }, { value: 130729, text: '万全县' }, { value: 130730, text: '怀来县' }, { value: 130731, text: '涿鹿县' }, { value: 130732, text: '赤城县' }, { value: 130733, text: '崇礼县' }] }, { value: 130800, text: '承德市', children: [{ value: 130801, text: '市辖区' }, { value: 130802, text: '双桥区' }, { value: 130803, text: '双滦区' }, { value: 130804, text: '鹰手营子矿区' }, { value: 130821, text: '承德县' }, { value: 130822, text: '兴隆县' }, { value: 130823, text: '平泉县' }, { value: 130824, text: '滦平县' }, { value: 130825, text: '隆化县' }, { value: 130826, text: '丰宁满族自治县' }, { value: 130827, text: '宽城满族自治县' }, { value: 130828, text: '围场满族蒙古族自治县' }] }, { value: 130900, text: '沧州市', children: [{ value: 130901, text: '市辖区' }, { value: 130902, text: '新华区' }, { value: 130903, text: '运河区' }, { value: 130921, text: '沧县' }, { value: 130922, text: '青县' }, { value: 130923, text: '东光县' }, { value: 130924, text: '海兴县' }, { value: 130925, text: '盐山县' }, { value: 130926, text: '肃宁县' }, { value: 130927, text: '南皮县' }, { value: 130928, text: '吴桥县' }, { value: 130929, text: '献县' }, { value: 130930, text: '孟村回族自治县' }, { value: 130981, text: '泊头市' }, { value: 130982, text: '任丘市' }, { value: 130983, text: '黄骅市' }, { value: 130984, text: '河间市' }] }, { value: 131000, text: '廊坊市', children: [{ value: 131001, text: '市辖区' }, { value: 131002, text: '安次区' }, { value: 131003, text: '广阳区' }, { value: 131022, text: '固安县' }, { value: 131023, text: '永清县' }, { value: 131024, text: '香河县' }, { value: 131025, text: '大城县' }, { value: 131026, text: '文安县' }, { value: 131028, text: '大厂回族自治县' }, { value: 131081, text: '霸州市' }, { value: 131082, text: '三河市' }] }, { value: 131100, text: '衡水市', children: [{ value: 131101, text: '市辖区' }, { value: 131102, text: '桃城区' }, { value: 131121, text: '枣强县' }, { value: 131122, text: '武邑县' }, { value: 131123, text: '武强县' }, { value: 131124, text: '饶阳县' }, { value: 131125, text: '安平县' }, { value: 131126, text: '故城县' }, { value: 131127, text: '景县' }, { value: 131128, text: '阜城县' }, { value: 131181, text: '冀州市' }, { value: 131182, text: '深州市' }] }] }, { value: 140000, text: '山西省', children: [{ value: 140100, text: '太原市', children: [{ value: 140101, text: '市辖区' }, { value: 140105, text: '小店区' }, { value: 140106, text: '迎泽区' }, { value: 140107, text: '杏花岭区' }, { value: 140108, text: '尖草坪区' }, { value: 140109, text: '万柏林区' }, { value: 140110, text: '晋源区' }, { value: 140121, text: '清徐县' }, { value: 140122, text: '阳曲县' }, { value: 140123, text: '娄烦县' }, { value: 140181, text: '古交市' }] }, { value: 140200, text: '大同市', children: [{ value: 140201, text: '市辖区' }, { value: 140202, text: '城区' }, { value: 140203, text: '矿区' }, { value: 140211, text: '南郊区' }, { value: 140212, text: '新荣区' }, { value: 140221, text: '阳高县' }, { value: 140222, text: '天镇县' }, { value: 140223, text: '广灵县' }, { value: 140224, text: '灵丘县' }, { value: 140225, text: '浑源县' }, { value: 140226, text: '左云县' }, { value: 140227, text: '大同县' }] }, { value: 140300, text: '阳泉市', children: [{ value: 140301, text: '市辖区' }, { value: 140302, text: '城区' }, { value: 140303, text: '矿区' }, { value: 140311, text: '郊区' }, { value: 140321, text: '平定县' }, { value: 140322, text: '盂县' }] }, { value: 140400, text: '长治市', children: [{ value: 140401, text: '市辖区' }, { value: 140402, text: '城区' }, { value: 140411, text: '郊区' }, { value: 140421, text: '长治县' }, { value: 140423, text: '襄垣县' }, { value: 140424, text: '屯留县' }, { value: 140425, text: '平顺县' }, { value: 140426, text: '黎城县' }, { value: 140427, text: '壶关县' }, { value: 140428, text: '长子县' }, { value: 140429, text: '武乡县' }, { value: 140430, text: '沁县' }, { value: 140431, text: '沁源县' }, { value: 140481, text: '潞城市' }] }, { value: 140500, text: '晋城市', children: [{ value: 140501, text: '市辖区' }, { value: 140502, text: '城区' }, { value: 140521, text: '沁水县' }, { value: 140522, text: '阳城县' }, { value: 140524, text: '陵川县' }, { value: 140525, text: '泽州县' }, { value: 140581, text: '高平市' }] }, { value: 140600, text: '朔州市', children: [{ value: 140601, text: '市辖区' }, { value: 140602, text: '朔城区' }, { value: 140603, text: '平鲁区' }, { value: 140621, text: '山阴县' }, { value: 140622, text: '应县' }, { value: 140623, text: '右玉县' }, { value: 140624, text: '怀仁县' }] }, { value: 140700, text: '晋中市', children: [{ value: 140701, text: '市辖区' }, { value: 140702, text: '榆次区' }, { value: 140721, text: '榆社县' }, { value: 140722, text: '左权县' }, { value: 140723, text: '和顺县' }, { value: 140724, text: '昔阳县' }, { value: 140725, text: '寿阳县' }, { value: 140726, text: '太谷县' }, { value: 140727, text: '祁县' }, { value: 140728, text: '平遥县' }, { value: 140729, text: '灵石县' }, { value: 140781, text: '介休市' }] }, { value: 140800, text: '运城市', children: [{ value: 140801, text: '市辖区' }, { value: 140802, text: '盐湖区' }, { value: 140821, text: '临猗县' }, { value: 140822, text: '万荣县' }, { value: 140823, text: '闻喜县' }, { value: 140824, text: '稷山县' }, { value: 140825, text: '新绛县' }, { value: 140826, text: '绛县' }, { value: 140827, text: '垣曲县' }, { value: 140828, text: '夏县' }, { value: 140829, text: '平陆县' }, { value: 140830, text: '芮城县' }, { value: 140881, text: '永济市' }, { value: 140882, text: '河津市' }] }, { value: 140900, text: '忻州市', children: [{ value: 140901, text: '市辖区' }, { value: 140902, text: '忻府区' }, { value: 140921, text: '定襄县' }, { value: 140922, text: '五台县' }, { value: 140923, text: '代县' }, { value: 140924, text: '繁峙县' }, { value: 140925, text: '宁武县' }, { value: 140926, text: '静乐县' }, { value: 140927, text: '神池县' }, { value: 140928, text: '五寨县' }, { value: 140929, text: '岢岚县' }, { value: 140930, text: '河曲县' }, { value: 140931, text: '保德县' }, { value: 140932, text: '偏关县' }, { value: 140981, text: '原平市' }] }, { value: 141000, text: '临汾市', children: [{ value: 141001, text: '市辖区' }, { value: 141002, text: '尧都区' }, { value: 141021, text: '曲沃县' }, { value: 141022, text: '翼城县' }, { value: 141023, text: '襄汾县' }, { value: 141024, text: '洪洞县' }, { value: 141025, text: '古县' }, { value: 141026, text: '安泽县' }, { value: 141027, text: '浮山县' }, { value: 141028, text: '吉县' }, { value: 141029, text: '乡宁县' }, { value: 141030, text: '大宁县' }, { value: 141031, text: '隰县' }, { value: 141032, text: '永和县' }, { value: 141033, text: '蒲县' }, { value: 141034, text: '汾西县' }, { value: 141081, text: '侯马市' }, { value: 141082, text: '霍州市' }] }, { value: 141100, text: '吕梁市', children: [{ value: 141101, text: '市辖区' }, { value: 141102, text: '离石区' }, { value: 141121, text: '文水县' }, { value: 141122, text: '交城县' }, { value: 141123, text: '兴县' }, { value: 141124, text: '临县' }, { value: 141125, text: '柳林县' }, { value: 141126, text: '石楼县' }, { value: 141127, text: '岚县' }, { value: 141128, text: '方山县' }, { value: 141129, text: '中阳县' }, { value: 141130, text: '交口县' }, { value: 141181, text: '孝义市' }, { value: 141182, text: '汾阳市' }] }] }, { value: 150000, text: '内蒙古自治区', children: [{ value: 150100, text: '呼和浩特市', children: [{ value: 150101, text: '市辖区' }, { value: 150102, text: '新城区' }, { value: 150103, text: '回民区' }, { value: 150104, text: '玉泉区' }, { value: 150105, text: '赛罕区' }, { value: 150121, text: '土默特左旗' }, { value: 150122, text: '托克托县' }, { value: 150123, text: '和林格尔县' }, { value: 150124, text: '清水河县' }, { value: 150125, text: '武川县' }] }, { value: 150200, text: '包头市', children: [{ value: 150201, text: '市辖区' }, { value: 150202, text: '东河区' }, { value: 150203, text: '昆都仑区' }, { value: 150204, text: '青山区' }, { value: 150205, text: '石拐区' }, { value: 150206, text: '白云矿区' }, { value: 150207, text: '九原区' }, { value: 150221, text: '土默特右旗' }, { value: 150222, text: '固阳县' }, { value: 150223, text: '达尔罕茂明安联合旗' }] }, { value: 150300, text: '乌海市', children: [{ value: 150301, text: '市辖区' }, { value: 150302, text: '海勃湾区' }, { value: 150303, text: '海南区' }, { value: 150304, text: '乌达区' }] }, { value: 150400, text: '赤峰市', children: [{ value: 150401, text: '市辖区' }, { value: 150402, text: '红山区' }, { value: 150403, text: '元宝山区' }, { value: 150404, text: '松山区' }, { value: 150421, text: '阿鲁科尔沁旗' }, { value: 150422, text: '巴林左旗' }, { value: 150423, text: '巴林右旗' }, { value: 150424, text: '林西县' }, { value: 150425, text: '克什克腾旗' }, { value: 150426, text: '翁牛特旗' }, { value: 150428, text: '喀喇沁旗' }, { value: 150429, text: '宁城县' }, { value: 150430, text: '敖汉旗' }] }, { value: 150500, text: '通辽市', children: [{ value: 150501, text: '市辖区' }, { value: 150502, text: '科尔沁区' }, { value: 150521, text: '科尔沁左翼中旗' }, { value: 150522, text: '科尔沁左翼后旗' }, { value: 150523, text: '开鲁县' }, { value: 150524, text: '库伦旗' }, { value: 150525, text: '奈曼旗' }, { value: 150526, text: '扎鲁特旗' }, { value: 150581, text: '霍林郭勒市' }] }, { value: 150600, text: '鄂尔多斯市', children: [{ value: 150602, text: '东胜区' }, { value: 150621, text: '达拉特旗' }, { value: 150622, text: '准格尔旗' }, { value: 150623, text: '鄂托克前旗' }, { value: 150624, text: '鄂托克旗' }, { value: 150625, text: '杭锦旗' }, { value: 150626, text: '乌审旗' }, { value: 150627, text: '伊金霍洛旗' }] }, { value: 150700, text: '呼伦贝尔市', children: [{ value: 150701, text: '市辖区' }, { value: 150702, text: '海拉尔区' }, { value: 150721, text: '阿荣旗' }, { value: 150722, text: '莫力达瓦达斡尔族自治旗' }, { value: 150723, text: '鄂伦春自治旗' }, { value: 150724, text: '鄂温克族自治旗' }, { value: 150725, text: '陈巴尔虎旗' }, { value: 150726, text: '新巴尔虎左旗' }, { value: 150727, text: '新巴尔虎右旗' }, { value: 150781, text: '满洲里市' }, { value: 150782, text: '牙克石市' }, { value: 150783, text: '扎兰屯市' }, { value: 150784, text: '额尔古纳市' }, { value: 150785, text: '根河市' }] }, { value: 150800, text: '巴彦淖尔市', children: [{ value: 150801, text: '市辖区' }, { value: 150802, text: '临河区' }, { value: 150821, text: '五原县' }, { value: 150822, text: '磴口县' }, { value: 150823, text: '乌拉特前旗' }, { value: 150824, text: '乌拉特中旗' }, { value: 150825, text: '乌拉特后旗' }, { value: 150826, text: '杭锦后旗' }] }, { value: 150900, text: '乌兰察布市', children: [{ value: 150901, text: '市辖区' }, { value: 150902, text: '集宁区' }, { value: 150921, text: '卓资县' }, { value: 150922, text: '化德县' }, { value: 150923, text: '商都县' }, { value: 150924, text: '兴和县' }, { value: 150925, text: '凉城县' }, { value: 150926, text: '察哈尔右翼前旗' }, { value: 150927, text: '察哈尔右翼中旗' }, { value: 150928, text: '察哈尔右翼后旗' }, { value: 150929, text: '四子王旗' }, { value: 150981, text: '丰镇市' }] }, { value: 152200, text: '兴安盟', children: [{ value: 152201, text: '乌兰浩特市' }, { value: 152202, text: '阿尔山市' }, { value: 152221, text: '科尔沁右翼前旗' }, { value: 152222, text: '科尔沁右翼中旗' }, { value: 152223, text: '扎赉特旗' }, { value: 152224, text: '突泉县' }] }, { value: 152500, text: '锡林郭勒盟', children: [{ value: 152501, text: '二连浩特市' }, { value: 152502, text: '锡林浩特市' }, { value: 152522, text: '阿巴嘎旗' }, { value: 152523, text: '苏尼特左旗' }, { value: 152524, text: '苏尼特右旗' }, { value: 152525, text: '东乌珠穆沁旗' }, { value: 152526, text: '西乌珠穆沁旗' }, { value: 152527, text: '太仆寺旗' }, { value: 152528, text: '镶黄旗' }, { value: 152529, text: '正镶白旗' }, { value: 152530, text: '正蓝旗' }, { value: 152531, text: '多伦县' }] }, { value: 152900, text: '阿拉善盟', children: [{ value: 152921, text: '阿拉善左旗' }, { value: 152922, text: '阿拉善右旗' }, { value: 152923, text: '额济纳旗' }] }] }, { value: 210000, text: '辽宁省', children: [{ value: 210100, text: '沈阳市', children: [{ value: 210101, text: '市辖区' }, { value: 210102, text: '和平区' }, { value: 210103, text: '沈河区' }, { value: 210104, text: '大东区' }, { value: 210105, text: '皇姑区' }, { value: 210106, text: '铁西区' }, { value: 210111, text: '苏家屯区' }, { value: 210112, text: '东陵区' }, { value: 210113, text: '沈北新区' }, { value: 210114, text: '于洪区' }, { value: 210122, text: '辽中县' }, { value: 210123, text: '康平县' }, { value: 210124, text: '法库县' }, { value: 210181, text: '新民市' }] }, { value: 210200, text: '大连市', children: [{ value: 210201, text: '市辖区' }, { value: 210202, text: '中山区' }, { value: 210203, text: '西岗区' }, { value: 210204, text: '沙河口区' }, { value: 210211, text: '甘井子区' }, { value: 210212, text: '旅顺口区' }, { value: 210213, text: '金州区' }, { value: 210224, text: '长海县' }, { value: 210281, text: '瓦房店市' }, { value: 210282, text: '普兰店市' }, { value: 210283, text: '庄河市' }] }, { value: 210300, text: '鞍山市', children: [{ value: 210301, text: '市辖区' }, { value: 210302, text: '铁东区' }, { value: 210303, text: '铁西区' }, { value: 210304, text: '立山区' }, { value: 210311, text: '千山区' }, { value: 210321, text: '台安县' }, { value: 210323, text: '岫岩满族自治县' }, { value: 210381, text: '海城市' }] }, { value: 210400, text: '抚顺市', children: [{ value: 210401, text: '市辖区' }, { value: 210402, text: '新抚区' }, { value: 210403, text: '东洲区' }, { value: 210404, text: '望花区' }, { value: 210411, text: '顺城区' }, { value: 210421, text: '抚顺县' }, { value: 210422, text: '新宾满族自治县' }, { value: 210423, text: '清原满族自治县' }] }, { value: 210500, text: '本溪市', children: [{ value: 210501, text: '市辖区' }, { value: 210502, text: '平山区' }, { value: 210503, text: '溪湖区' }, { value: 210504, text: '明山区' }, { value: 210505, text: '南芬区' }, { value: 210521, text: '本溪满族自治县' }, { value: 210522, text: '桓仁满族自治县' }] }, { value: 210600, text: '丹东市', children: [{ value: 210601, text: '市辖区' }, { value: 210602, text: '元宝区' }, { value: 210603, text: '振兴区' }, { value: 210604, text: '振安区' }, { value: 210624, text: '宽甸满族自治县' }, { value: 210681, text: '东港市' }, { value: 210682, text: '凤城市' }] }, { value: 210700, text: '锦州市', children: [{ value: 210701, text: '市辖区' }, { value: 210702, text: '古塔区' }, { value: 210703, text: '凌河区' }, { value: 210711, text: '太和区' }, { value: 210726, text: '黑山县' }, { value: 210727, text: '义县' }, { value: 210781, text: '凌海市' }, { value: 210782, text: '北镇市' }] }, { value: 210800, text: '营口市', children: [{ value: 210801, text: '市辖区' }, { value: 210802, text: '站前区' }, { value: 210803, text: '西市区' }, { value: 210804, text: '鲅鱼圈区' }, { value: 210811, text: '老边区' }, { value: 210881, text: '盖州市' }, { value: 210882, text: '大石桥市' }] }, { value: 210900, text: '阜新市', children: [{ value: 210901, text: '市辖区' }, { value: 210902, text: '海州区' }, { value: 210903, text: '新邱区' }, { value: 210904, text: '太平区' }, { value: 210905, text: '清河门区' }, { value: 210911, text: '细河区' }, { value: 210921, text: '阜新蒙古族自治县' }, { value: 210922, text: '彰武县' }] }, { value: 211000, text: '辽阳市', children: [{ value: 211001, text: '市辖区' }, { value: 211002, text: '白塔区' }, { value: 211003, text: '文圣区' }, { value: 211004, text: '宏伟区' }, { value: 211005, text: '弓长岭区' }, { value: 211011, text: '太子河区' }, { value: 211021, text: '辽阳县' }, { value: 211081, text: '灯塔市' }] }, { value: 211100, text: '盘锦市', children: [{ value: 211101, text: '市辖区' }, { value: 211102, text: '双台子区' }, { value: 211103, text: '兴隆台区' }, { value: 211121, text: '大洼县' }, { value: 211122, text: '盘山县' }] }, { value: 211200, text: '铁岭市', children: [{ value: 211201, text: '市辖区' }, { value: 211202, text: '银州区' }, { value: 211204, text: '清河区' }, { value: 211221, text: '铁岭县' }, { value: 211223, text: '西丰县' }, { value: 211224, text: '昌图县' }, { value: 211281, text: '调兵山市' }, { value: 211282, text: '开原市' }] }, { value: 211300, text: '朝阳市', children: [{ value: 211301, text: '市辖区' }, { value: 211302, text: '双塔区' }, { value: 211303, text: '龙城区' }, { value: 211321, text: '朝阳县' }, { value: 211322, text: '建平县' }, { value: 211324, text: '喀喇沁左翼蒙古族自治县' }, { value: 211381, text: '北票市' }, { value: 211382, text: '凌源市' }] }, { value: 211400, text: '葫芦岛市', children: [{ value: 211401, text: '市辖区' }, { value: 211402, text: '连山区' }, { value: 211403, text: '龙港区' }, { value: 211404, text: '南票区' }, { value: 211421, text: '绥中县' }, { value: 211422, text: '建昌县' }, { value: 211481, text: '兴城市' }] }] }, { value: 220000, text: '吉林省', children: [{ value: 220100, text: '长春市', children: [{ value: 220101, text: '市辖区' }, { value: 220102, text: '南关区' }, { value: 220103, text: '宽城区' }, { value: 220104, text: '朝阳区' }, { value: 220105, text: '二道区' }, { value: 220106, text: '绿园区' }, { value: 220112, text: '双阳区' }, { value: 220122, text: '农安县' }, { value: 220181, text: '九台市' }, { value: 220182, text: '榆树市' }, { value: 220183, text: '德惠市' }] }, { value: 220200, text: '吉林市', children: [{ value: 220201, text: '市辖区' }, { value: 220202, text: '昌邑区' }, { value: 220203, text: '龙潭区' }, { value: 220204, text: '船营区' }, { value: 220211, text: '丰满区' }, { value: 220221, text: '永吉县' }, { value: 220281, text: '蛟河市' }, { value: 220282, text: '桦甸市' }, { value: 220283, text: '舒兰市' }, { value: 220284, text: '磐石市' }] }, { value: 220300, text: '四平市', children: [{ value: 220301, text: '市辖区' }, { value: 220302, text: '铁西区' }, { value: 220303, text: '铁东区' }, { value: 220322, text: '梨树县' }, { value: 220323, text: '伊通满族自治县' }, { value: 220381, text: '公主岭市' }, { value: 220382, text: '双辽市' }] }, { value: 220400, text: '辽源市', children: [{ value: 220401, text: '市辖区' }, { value: 220402, text: '龙山区' }, { value: 220403, text: '西安区' }, { value: 220421, text: '东丰县' }, { value: 220422, text: '东辽县' }] }, { value: 220500, text: '通化市', children: [{ value: 220501, text: '市辖区' }, { value: 220502, text: '东昌区' }, { value: 220503, text: '二道江区' }, { value: 220521, text: '通化县' }, { value: 220523, text: '辉南县' }, { value: 220524, text: '柳河县' }, { value: 220581, text: '梅河口市' }, { value: 220582, text: '集安市' }] }, { value: 220600, text: '白山市', children: [{ value: 220601, text: '市辖区' }, { value: 220602, text: '八道江区' }, { value: 220604, text: '江源区' }, { value: 220621, text: '抚松县' }, { value: 220622, text: '靖宇县' }, { value: 220623, text: '长白朝鲜族自治县' }, { value: 220681, text: '临江市' }] }, { value: 220700, text: '松原市', children: [{ value: 220701, text: '市辖区' }, { value: 220702, text: '宁江区' }, { value: 220721, text: '前郭尔罗斯蒙古族自治县' }, { value: 220722, text: '长岭县' }, { value: 220723, text: '乾安县' }, { value: 220724, text: '扶余县' }] }, { value: 220800, text: '白城市', children: [{ value: 220801, text: '市辖区' }, { value: 220802, text: '洮北区' }, { value: 220821, text: '镇赉县' }, { value: 220822, text: '通榆县' }, { value: 220881, text: '洮南市' }, { value: 220882, text: '大安市' }] }, { value: 222400, text: '延边朝鲜族自治州', children: [{ value: 222401, text: '延吉市' }, { value: 222402, text: '图们市' }, { value: 222403, text: '敦化市' }, { value: 222404, text: '珲春市' }, { value: 222405, text: '龙井市' }, { value: 222406, text: '和龙市' }, { value: 222424, text: '汪清县' }, { value: 222426, text: '安图县' }] }] }, { value: 230000, text: '黑龙江省', children: [{ value: 230100, text: '哈尔滨市', children: [{ value: 230101, text: '市辖区' }, { value: 230102, text: '道里区' }, { value: 230103, text: '南岗区' }, { value: 230104, text: '道外区' }, { value: 230108, text: '平房区' }, { value: 230109, text: '松北区' }, { value: 230110, text: '香坊区' }, { value: 230111, text: '呼兰区' }, { value: 230112, text: '阿城区' }, { value: 230123, text: '依兰县' }, { value: 230124, text: '方正县' }, { value: 230125, text: '宾县' }, { value: 230126, text: '巴彦县' }, { value: 230127, text: '木兰县' }, { value: 230128, text: '通河县' }, { value: 230129, text: '延寿县' }, { value: 230182, text: '双城市' }, { value: 230183, text: '尚志市' }, { value: 230184, text: '五常市' }] }, { value: 230200, text: '齐齐哈尔市', children: [{ value: 230201, text: '市辖区' }, { value: 230202, text: '龙沙区' }, { value: 230203, text: '建华区' }, { value: 230204, text: '铁锋区' }, { value: 230205, text: '昂昂溪区' }, { value: 230206, text: '富拉尔基区' }, { value: 230207, text: '碾子山区' }, { value: 230208, text: '梅里斯达斡尔族区' }, { value: 230221, text: '龙江县' }, { value: 230223, text: '依安县' }, { value: 230224, text: '泰来县' }, { value: 230225, text: '甘南县' }, { value: 230227, text: '富裕县' }, { value: 230229, text: '克山县' }, { value: 230230, text: '克东县' }, { value: 230231, text: '拜泉县' }, { value: 230281, text: '讷河市' }] }, { value: 230300, text: '鸡西市', children: [{ value: 230301, text: '市辖区' }, { value: 230302, text: '鸡冠区' }, { value: 230303, text: '恒山区' }, { value: 230304, text: '滴道区' }, { value: 230305, text: '梨树区' }, { value: 230306, text: '城子河区' }, { value: 230307, text: '麻山区' }, { value: 230321, text: '鸡东县' }, { value: 230381, text: '虎林市' }, { value: 230382, text: '密山市' }] }, { value: 230400, text: '鹤岗市', children: [{ value: 230401, text: '市辖区' }, { value: 230402, text: '向阳区' }, { value: 230403, text: '工农区' }, { value: 230404, text: '南山区' }, { value: 230405, text: '兴安区' }, { value: 230406, text: '东山区' }, { value: 230407, text: '兴山区' }, { value: 230421, text: '萝北县' }, { value: 230422, text: '绥滨县' }] }, { value: 230500, text: '双鸭山市', children: [{ value: 230501, text: '市辖区' }, { value: 230502, text: '尖山区' }, { value: 230503, text: '岭东区' }, { value: 230505, text: '四方台区' }, { value: 230506, text: '宝山区' }, { value: 230521, text: '集贤县' }, { value: 230522, text: '友谊县' }, { value: 230523, text: '宝清县' }, { value: 230524, text: '饶河县' }] }, { value: 230600, text: '大庆市', children: [{ value: 230601, text: '市辖区' }, { value: 230602, text: '萨尔图区' }, { value: 230603, text: '龙凤区' }, { value: 230604, text: '让胡路区' }, { value: 230605, text: '红岗区' }, { value: 230606, text: '大同区' }, { value: 230621, text: '肇州县' }, { value: 230622, text: '肇源县' }, { value: 230623, text: '林甸县' }, { value: 230624, text: '杜尔伯特蒙古族自治县' }] }, { value: 230700, text: '伊春市', children: [{ value: 230701, text: '市辖区' }, { value: 230702, text: '伊春区' }, { value: 230703, text: '南岔区' }, { value: 230704, text: '友好区' }, { value: 230705, text: '西林区' }, { value: 230706, text: '翠峦区' }, { value: 230707, text: '新青区' }, { value: 230708, text: '美溪区' }, { value: 230709, text: '金山屯区' }, { value: 230710, text: '五营区' }, { value: 230711, text: '乌马河区' }, { value: 230712, text: '汤旺河区' }, { value: 230713, text: '带岭区' }, { value: 230714, text: '乌伊岭区' }, { value: 230715, text: '红星区' }, { value: 230716, text: '上甘岭区' }, { value: 230722, text: '嘉荫县' }, { value: 230781, text: '铁力市' }] }, { value: 230800, text: '佳木斯市', children: [{ value: 230801, text: '市辖区' }, { value: 230803, text: '向阳区' }, { value: 230804, text: '前进区' }, { value: 230805, text: '东风区' }, { value: 230811, text: '郊区' }, { value: 230822, text: '桦南县' }, { value: 230826, text: '桦川县' }, { value: 230828, text: '汤原县' }, { value: 230833, text: '抚远县' }, { value: 230881, text: '同江市' }, { value: 230882, text: '富锦市' }] }, { value: 230900, text: '七台河市', children: [{ value: 230901, text: '市辖区' }, { value: 230902, text: '新兴区' }, { value: 230903, text: '桃山区' }, { value: 230904, text: '茄子河区' }, { value: 230921, text: '勃利县' }] }, { value: 231000, text: '牡丹江市', children: [{ value: 231001, text: '市辖区' }, { value: 231002, text: '东安区' }, { value: 231003, text: '阳明区' }, { value: 231004, text: '爱民区' }, { value: 231005, text: '西安区' }, { value: 231024, text: '东宁县' }, { value: 231025, text: '林口县' }, { value: 231081, text: '绥芬河市' }, { value: 231083, text: '海林市' }, { value: 231084, text: '宁安市' }, { value: 231085, text: '穆棱市' }] }, { value: 231100, text: '黑河市', children: [{ value: 231101, text: '市辖区' }, { value: 231102, text: '爱辉区' }, { value: 231121, text: '嫩江县' }, { value: 231123, text: '逊克县' }, { value: 231124, text: '孙吴县' }, { value: 231181, text: '北安市' }, { value: 231182, text: '五大连池市' }] }, { value: 231200, text: '绥化市', children: [{ value: 231201, text: '市辖区' }, { value: 231202, text: '北林区' }, { value: 231221, text: '望奎县' }, { value: 231222, text: '兰西县' }, { value: 231223, text: '青冈县' }, { value: 231224, text: '庆安县' }, { value: 231225, text: '明水县' }, { value: 231226, text: '绥棱县' }, { value: 231281, text: '安达市' }, { value: 231282, text: '肇东市' }, { value: 231283, text: '海伦市' }] }, { value: 232700, text: '大兴安岭地区', children: [{ value: 232701, text: '加格达奇区' }, { value: 232702, text: '松岭区' }, { value: 232703, text: '新林区' }, { value: 232704, text: '呼中区' }, { value: 232721, text: '呼玛县' }, { value: 232722, text: '塔河县' }, { value: 232723, text: '漠河县' }] }] }, { value: 310000, text: '上海市', children: [{ value: 310100, text: '市辖区', children: [{ value: 310101, text: '黄浦区' }, { value: 310103, text: '卢湾区' }, { value: 310104, text: '徐汇区' }, { value: 310105, text: '长宁区' }, { value: 310106, text: '静安区' }, { value: 310107, text: '普陀区' }, { value: 310108, text: '闸北区' }, { value: 310109, text: '虹口区' }, { value: 310110, text: '杨浦区' }, { value: 310112, text: '闵行区' }, { value: 310113, text: '宝山区' }, { value: 310114, text: '嘉定区' }, { value: 310115, text: '浦东新区' }, { value: 310116, text: '金山区' }, { value: 310117, text: '松江区' }, { value: 310118, text: '青浦区' }, { value: 310119, text: '南汇区' }, { value: 310120, text: '奉贤区' }] }, { value: 310200, text: '县', children: [{ value: 310230, text: '崇明县' }] }] }, { value: 320000, text: '江苏省', children: [{ value: 320100, text: '南京市', children: [{ value: 320101, text: '市辖区' }, { value: 320102, text: '玄武区' }, { value: 320103, text: '白下区' }, { value: 320104, text: '秦淮区' }, { value: 320105, text: '建邺区' }, { value: 320106, text: '鼓楼区' }, { value: 320107, text: '下关区' }, { value: 320111, text: '浦口区' }, { value: 320113, text: '栖霞区' }, { value: 320114, text: '雨花台区' }, { value: 320115, text: '江宁区' }, { value: 320116, text: '六合区' }, { value: 320124, text: '溧水县' }, { value: 320125, text: '高淳县' }] }, { value: 320200, text: '无锡市', children: [{ value: 320201, text: '市辖区' }, { value: 320202, text: '崇安区' }, { value: 320203, text: '南长区' }, { value: 320204, text: '北塘区' }, { value: 320205, text: '锡山区' }, { value: 320206, text: '惠山区' }, { value: 320211, text: '滨湖区' }, { value: 320281, text: '江阴市' }, { value: 320282, text: '宜兴市' }] }, { value: 320300, text: '徐州市', children: [{ value: 320301, text: '市辖区' }, { value: 320302, text: '鼓楼区' }, { value: 320303, text: '云龙区' }, { value: 320304, text: '九里区' }, { value: 320305, text: '贾汪区' }, { value: 320311, text: '泉山区' }, { value: 320321, text: '丰县' }, { value: 320322, text: '沛县' }, { value: 320323, text: '铜山县' }, { value: 320324, text: '睢宁县' }, { value: 320381, text: '新沂市' }, { value: 320382, text: '邳州市' }] }, { value: 320400, text: '常州市', children: [{ value: 320401, text: '市辖区' }, { value: 320402, text: '天宁区' }, { value: 320404, text: '钟楼区' }, { value: 320405, text: '戚墅堰区' }, { value: 320411, text: '新北区' }, { value: 320412, text: '武进区' }, { value: 320481, text: '溧阳市' }, { value: 320482, text: '金坛市' }] }, { value: 320500, text: '苏州市', children: [{ value: 320501, text: '市辖区' }, { value: 320502, text: '沧浪区' }, { value: 320503, text: '平江区' }, { value: 320504, text: '金阊区' }, { value: 320505, text: '虎丘区' }, { value: 320506, text: '吴中区' }, { value: 320507, text: '相城区' }, { value: 320581, text: '常熟市' }, { value: 320582, text: '张家港市' }, { value: 320583, text: '昆山市' }, { value: 320584, text: '吴江市' }, { value: 320585, text: '太仓市' }] }, { value: 320600, text: '南通市', children: [{ value: 320601, text: '市辖区' }, { value: 320602, text: '崇川区' }, { value: 320611, text: '港闸区' }, { value: 320621, text: '海安县' }, { value: 320623, text: '如东县' }, { value: 320681, text: '启东市' }, { value: 320682, text: '如皋市' }, { value: 320683, text: '通州市' }, { value: 320684, text: '海门市' }] }, { value: 320700, text: '连云港市', children: [{ value: 320701, text: '市辖区' }, { value: 320703, text: '连云区' }, { value: 320705, text: '新浦区' }, { value: 320706, text: '海州区' }, { value: 320721, text: '赣榆县' }, { value: 320722, text: '东海县' }, { value: 320723, text: '灌云县' }, { value: 320724, text: '灌南县' }] }, { value: 320800, text: '淮安市', children: [{ value: 320801, text: '市辖区' }, { value: 320802, text: '清河区' }, { value: 320803, text: '楚州区' }, { value: 320804, text: '淮阴区' }, { value: 320811, text: '清浦区' }, { value: 320826, text: '涟水县' }, { value: 320829, text: '洪泽县' }, { value: 320830, text: '盱眙县' }, { value: 320831, text: '金湖县' }] }, { value: 320900, text: '盐城市', children: [{ value: 320901, text: '市辖区' }, { value: 320902, text: '亭湖区' }, { value: 320903, text: '盐都区' }, { value: 320921, text: '响水县' }, { value: 320922, text: '滨海县' }, { value: 320923, text: '阜宁县' }, { value: 320924, text: '射阳县' }, { value: 320925, text: '建湖县' }, { value: 320981, text: '东台市' }, { value: 320982, text: '大丰市' }] }, { value: 321000, text: '扬州市', children: [{ value: 321001, text: '市辖区' }, { value: 321002, text: '广陵区' }, { value: 321003, text: '邗江区' }, { value: 321011, text: '维扬区' }, { value: 321023, text: '宝应县' }, { value: 321081, text: '仪征市' }, { value: 321084, text: '高邮市' }, { value: 321088, text: '江都市' }] }, { value: 321100, text: '镇江市', children: [{ value: 321101, text: '市辖区' }, { value: 321102, text: '京口区' }, { value: 321111, text: '润州区' }, { value: 321112, text: '丹徒区' }, { value: 321181, text: '丹阳市' }, { value: 321182, text: '扬中市' }, { value: 321183, text: '句容市' }] }, { value: 321200, text: '泰州市', children: [{ value: 321201, text: '市辖区' }, { value: 321202, text: '海陵区' }, { value: 321203, text: '高港区' }, { value: 321281, text: '兴化市' }, { value: 321282, text: '靖江市' }, { value: 321283, text: '泰兴市' }, { value: 321284, text: '姜堰市' }] }, { value: 321300, text: '宿迁市', children: [{ value: 321301, text: '市辖区' }, { value: 321302, text: '宿城区' }, { value: 321311, text: '宿豫区' }, { value: 321322, text: '沭阳县' }, { value: 321323, text: '泗阳县' }, { value: 321324, text: '泗洪县' }] }] }, { value: 330000, text: '浙江省', children: [{ value: 330100, text: '杭州市', children: [{ value: 330101, text: '市辖区' }, { value: 330102, text: '上城区' }, { value: 330103, text: '下城区' }, { value: 330104, text: '江干区' }, { value: 330105, text: '拱墅区' }, { value: 330106, text: '西湖区' }, { value: 330108, text: '滨江区' }, { value: 330109, text: '萧山区' }, { value: 330110, text: '余杭区' }, { value: 330122, text: '桐庐县' }, { value: 330127, text: '淳安县' }, { value: 330182, text: '建德市' }, { value: 330183, text: '富阳市' }, { value: 330185, text: '临安市' }] }, { value: 330200, text: '宁波市', children: [{ value: 330201, text: '市辖区' }, { value: 330203, text: '海曙区' }, { value: 330204, text: '江东区' }, { value: 330205, text: '江北区' }, { value: 330206, text: '北仑区' }, { value: 330211, text: '镇海区' }, { value: 330212, text: '鄞州区' }, { value: 330225, text: '象山县' }, { value: 330226, text: '宁海县' }, { value: 330281, text: '余姚市' }, { value: 330282, text: '慈溪市' }, { value: 330283, text: '奉化市' }] }, { value: 330300, text: '温州市', children: [{ value: 330301, text: '市辖区' }, { value: 330302, text: '鹿城区' }, { value: 330303, text: '龙湾区' }, { value: 330304, text: '瓯海区' }, { value: 330322, text: '洞头县' }, { value: 330324, text: '永嘉县' }, { value: 330326, text: '平阳县' }, { value: 330327, text: '苍南县' }, { value: 330328, text: '文成县' }, { value: 330329, text: '泰顺县' }, { value: 330381, text: '瑞安市' }, { value: 330382, text: '乐清市' }] }, { value: 330400, text: '嘉兴市', children: [{ value: 330401, text: '市辖区' }, { value: 330402, text: '秀城区' }, { value: 330411, text: '秀洲区' }, { value: 330421, text: '嘉善县' }, { value: 330424, text: '海盐县' }, { value: 330481, text: '海宁市' }, { value: 330482, text: '平湖市' }, { value: 330483, text: '桐乡市' }] }, { value: 330500, text: '湖州市', children: [{ value: 330501, text: '市辖区' }, { value: 330502, text: '吴兴区' }, { value: 330503, text: '南浔区' }, { value: 330521, text: '德清县' }, { value: 330522, text: '长兴县' }, { value: 330523, text: '安吉县' }] }, { value: 330600, text: '绍兴市', children: [{ value: 330601, text: '市辖区' }, { value: 330602, text: '越城区' }, { value: 330621, text: '绍兴县' }, { value: 330624, text: '新昌县' }, { value: 330681, text: '诸暨市' }, { value: 330682, text: '上虞市' }, { value: 330683, text: '嵊州市' }] }, { value: 330700, text: '金华市', children: [{ value: 330701, text: '市辖区' }, { value: 330702, text: '婺城区' }, { value: 330703, text: '金东区' }, { value: 330723, text: '武义县' }, { value: 330726, text: '浦江县' }, { value: 330727, text: '磐安县' }, { value: 330781, text: '兰溪市' }, { value: 330782, text: '义乌市' }, { value: 330783, text: '东阳市' }, { value: 330784, text: '永康市' }] }, { value: 330800, text: '衢州市', children: [{ value: 330801, text: '市辖区' }, { value: 330802, text: '柯城区' }, { value: 330803, text: '衢江区' }, { value: 330822, text: '常山县' }, { value: 330824, text: '开化县' }, { value: 330825, text: '龙游县' }, { value: 330881, text: '江山市' }] }, { value: 330900, text: '舟山市', children: [{ value: 330901, text: '市辖区' }, { value: 330902, text: '定海区' }, { value: 330903, text: '普陀区' }, { value: 330921, text: '岱山县' }, { value: 330922, text: '嵊泗县' }] }, { value: 331000, text: '台州市', children: [{ value: 331001, text: '市辖区' }, { value: 331002, text: '椒江区' }, { value: 331003, text: '黄岩区' }, { value: 331004, text: '路桥区' }, { value: 331021, text: '玉环县' }, { value: 331022, text: '三门县' }, { value: 331023, text: '天台县' }, { value: 331024, text: '仙居县' }, { value: 331081, text: '温岭市' }, { value: 331082, text: '临海市' }] }, { value: 331100, text: '丽水市', children: [{ value: 331101, text: '市辖区' }, { value: 331102, text: '莲都区' }, { value: 331121, text: '青田县' }, { value: 331122, text: '缙云县' }, { value: 331123, text: '遂昌县' }, { value: 331124, text: '松阳县' }, { value: 331125, text: '云和县' }, { value: 331126, text: '庆元县' }, { value: 331127, text: '景宁畲族自治县' }, { value: 331181, text: '龙泉市' }] }] }, { value: 340000, text: '安徽省', children: [{ value: 340100, text: '合肥市', children: [{ value: 340101, text: '市辖区' }, { value: 340102, text: '瑶海区' }, { value: 340103, text: '庐阳区' }, { value: 340104, text: '蜀山区' }, { value: 340111, text: '包河区' }, { value: 340121, text: '长丰县' }, { value: 340122, text: '肥东县' }, { value: 340123, text: '肥西县' }] }, { value: 340200, text: '芜湖市', children: [{ value: 340201, text: '市辖区' }, { value: 340202, text: '镜湖区' }, { value: 340203, text: '弋江区' }, { value: 340207, text: '鸠江区' }, { value: 340208, text: '三山区' }, { value: 340221, text: '芜湖县' }, { value: 340222, text: '繁昌县' }, { value: 340223, text: '南陵县' }] }, { value: 340300, text: '蚌埠市', children: [{ value: 340301, text: '市辖区' }, { value: 340302, text: '龙子湖区' }, { value: 340303, text: '蚌山区' }, { value: 340304, text: '禹会区' }, { value: 340311, text: '淮上区' }, { value: 340321, text: '怀远县' }, { value: 340322, text: '五河县' }, { value: 340323, text: '固镇县' }] }, { value: 340400, text: '淮南市', children: [{ value: 340401, text: '市辖区' }, { value: 340402, text: '大通区' }, { value: 340403, text: '田家庵区' }, { value: 340404, text: '谢家集区' }, { value: 340405, text: '八公山区' }, { value: 340406, text: '潘集区' }, { value: 340421, text: '凤台县' }] }, { value: 340500, text: '马鞍山市', children: [{ value: 340501, text: '市辖区' }, { value: 340502, text: '金家庄区' }, { value: 340503, text: '花山区' }, { value: 340504, text: '雨山区' }, { value: 340521, text: '当涂县' }] }, { value: 340600, text: '淮北市', children: [{ value: 340601, text: '市辖区' }, { value: 340602, text: '杜集区' }, { value: 340603, text: '相山区' }, { value: 340604, text: '烈山区' }, { value: 340621, text: '濉溪县' }] }, { value: 340700, text: '铜陵市', children: [{ value: 340701, text: '市辖区' }, { value: 340702, text: '铜官山区' }, { value: 340703, text: '狮子山区' }, { value: 340711, text: '郊区' }, { value: 340721, text: '铜陵县' }] }, { value: 340800, text: '安庆市', children: [{ value: 340801, text: '市辖区' }, { value: 340802, text: '迎江区' }, { value: 340803, text: '大观区' }, { value: 340811, text: '宜秀区' }, { value: 340822, text: '怀宁县' }, { value: 340823, text: '枞阳县' }, { value: 340824, text: '潜山县' }, { value: 340825, text: '太湖县' }, { value: 340826, text: '宿松县' }, { value: 340827, text: '望江县' }, { value: 340828, text: '岳西县' }, { value: 340881, text: '桐城市' }] }, { value: 341000, text: '黄山市', children: [{ value: 341001, text: '市辖区' }, { value: 341002, text: '屯溪区' }, { value: 341003, text: '黄山区' }, { value: 341004, text: '徽州区' }, { value: 341021, text: '歙县' }, { value: 341022, text: '休宁县' }, { value: 341023, text: '黟县' }, { value: 341024, text: '祁门县' }] }, { value: 341100, text: '滁州市', children: [{ value: 341101, text: '市辖区' }, { value: 341102, text: '琅琊区' }, { value: 341103, text: '南谯区' }, { value: 341122, text: '来安县' }, { value: 341124, text: '全椒县' }, { value: 341125, text: '定远县' }, { value: 341126, text: '凤阳县' }, { value: 341181, text: '天长市' }, { value: 341182, text: '明光市' }] }, { value: 341200, text: '阜阳市', children: [{ value: 341201, text: '市辖区' }, { value: 341202, text: '颍州区' }, { value: 341203, text: '颍东区' }, { value: 341204, text: '颍泉区' }, { value: 341221, text: '临泉县' }, { value: 341222, text: '太和县' }, { value: 341225, text: '阜南县' }, { value: 341226, text: '颍上县' }, { value: 341282, text: '界首市' }] }, { value: 341300, text: '宿州市', children: [{ value: 341301, text: '市辖区' }, { value: 341302, text: '埇桥区' }, { value: 341321, text: '砀山县' }, { value: 341322, text: '萧县' }, { value: 341323, text: '灵璧县' }, { value: 341324, text: '泗县' }] }, { value: 341400, text: '巢湖市', children: [{ value: 341401, text: '市辖区' }, { value: 341402, text: '居巢区' }, { value: 341421, text: '庐江县' }, { value: 341422, text: '无为县' }, { value: 341423, text: '含山县' }, { value: 341424, text: '和县' }] }, { value: 341500, text: '六安市', children: [{ value: 341501, text: '市辖区' }, { value: 341502, text: '金安区' }, { value: 341503, text: '裕安区' }, { value: 341521, text: '寿县' }, { value: 341522, text: '霍邱县' }, { value: 341523, text: '舒城县' }, { value: 341524, text: '金寨县' }, { value: 341525, text: '霍山县' }] }, { value: 341600, text: '亳州市', children: [{ value: 341601, text: '市辖区' }, { value: 341602, text: '谯城区' }, { value: 341621, text: '涡阳县' }, { value: 341622, text: '蒙城县' }, { value: 341623, text: '利辛县' }] }, { value: 341700, text: '池州市', children: [{ value: 341701, text: '市辖区' }, { value: 341702, text: '贵池区' }, { value: 341721, text: '东至县' }, { value: 341722, text: '石台县' }, { value: 341723, text: '青阳县' }] }, { value: 341800, text: '宣城市', children: [{ value: 341801, text: '市辖区' }, { value: 341802, text: '宣州区' }, { value: 341821, text: '郎溪县' }, { value: 341822, text: '广德县' }, { value: 341823, text: '泾县' }, { value: 341824, text: '绩溪县' }, { value: 341825, text: '旌德县' }, { value: 341881, text: '宁国市' }] }] }, { value: 350000, text: '福建省', children: [{ value: 350100, text: '福州市', children: [{ value: 350101, text: '市辖区' }, { value: 350102, text: '鼓楼区' }, { value: 350103, text: '台江区' }, { value: 350104, text: '仓山区' }, { value: 350105, text: '马尾区' }, { value: 350111, text: '晋安区' }, { value: 350121, text: '闽侯县' }, { value: 350122, text: '连江县' }, { value: 350123, text: '罗源县' }, { value: 350124, text: '闽清县' }, { value: 350125, text: '永泰县' }, { value: 350128, text: '平潭县' }, { value: 350181, text: '福清市' }, { value: 350182, text: '长乐市' }] }, { value: 350200, text: '厦门市', children: [{ value: 350201, text: '市辖区' }, { value: 350203, text: '思明区' }, { value: 350205, text: '海沧区' }, { value: 350206, text: '湖里区' }, { value: 350211, text: '集美区' }, { value: 350212, text: '同安区' }, { value: 350213, text: '翔安区' }] }, { value: 350300, text: '莆田市', children: [{ value: 350301, text: '市辖区' }, { value: 350302, text: '城厢区' }, { value: 350303, text: '涵江区' }, { value: 350304, text: '荔城区' }, { value: 350305, text: '秀屿区' }, { value: 350322, text: '仙游县' }] }, { value: 350400, text: '三明市', children: [{ value: 350401, text: '市辖区' }, { value: 350402, text: '梅列区' }, { value: 350403, text: '三元区' }, { value: 350421, text: '明溪县' }, { value: 350423, text: '清流县' }, { value: 350424, text: '宁化县' }, { value: 350425, text: '大田县' }, { value: 350426, text: '尤溪县' }, { value: 350427, text: '沙县' }, { value: 350428, text: '将乐县' }, { value: 350429, text: '泰宁县' }, { value: 350430, text: '建宁县' }, { value: 350481, text: '永安市' }] }, { value: 350500, text: '泉州市', children: [{ value: 350501, text: '市辖区' }, { value: 350502, text: '鲤城区' }, { value: 350503, text: '丰泽区' }, { value: 350504, text: '洛江区' }, { value: 350505, text: '泉港区' }, { value: 350521, text: '惠安县' }, { value: 350524, text: '安溪县' }, { value: 350525, text: '永春县' }, { value: 350526, text: '德化县' }, { value: 350527, text: '金门县' }, { value: 350581, text: '石狮市' }, { value: 350582, text: '晋江市' }, { value: 350583, text: '南安市' }] }, { value: 350600, text: '漳州市', children: [{ value: 350601, text: '市辖区' }, { value: 350602, text: '芗城区' }, { value: 350603, text: '龙文区' }, { value: 350622, text: '云霄县' }, { value: 350623, text: '漳浦县' }, { value: 350624, text: '诏安县' }, { value: 350625, text: '长泰县' }, { value: 350626, text: '东山县' }, { value: 350627, text: '南靖县' }, { value: 350628, text: '平和县' }, { value: 350629, text: '华安县' }, { value: 350681, text: '龙海市' }] }, { value: 350700, text: '南平市', children: [{ value: 350701, text: '市辖区' }, { value: 350702, text: '延平区' }, { value: 350721, text: '顺昌县' }, { value: 350722, text: '浦城县' }, { value: 350723, text: '光泽县' }, { value: 350724, text: '松溪县' }, { value: 350725, text: '政和县' }, { value: 350781, text: '邵武市' }, { value: 350782, text: '武夷山市' }, { value: 350783, text: '建瓯市' }, { value: 350784, text: '建阳市' }] }, { value: 350800, text: '龙岩市', children: [{ value: 350801, text: '市辖区' }, { value: 350802, text: '新罗区' }, { value: 350821, text: '长汀县' }, { value: 350822, text: '永定县' }, { value: 350823, text: '上杭县' }, { value: 350824, text: '武平县' }, { value: 350825, text: '连城县' }, { value: 350881, text: '漳平市' }] }, { value: 350900, text: '宁德市', children: [{ value: 350901, text: '市辖区' }, { value: 350902, text: '蕉城区' }, { value: 350921, text: '霞浦县' }, { value: 350922, text: '古田县' }, { value: 350923, text: '屏南县' }, { value: 350924, text: '寿宁县' }, { value: 350925, text: '周宁县' }, { value: 350926, text: '柘荣县' }, { value: 350981, text: '福安市' }, { value: 350982, text: '福鼎市' }] }] }, { value: 360000, text: '江西省', children: [{ value: 360100, text: '南昌市', children: [{ value: 360101, text: '市辖区' }, { value: 360102, text: '东湖区' }, { value: 360103, text: '西湖区' }, { value: 360104, text: '青云谱区' }, { value: 360105, text: '湾里区' }, { value: 360111, text: '青山湖区' }, { value: 360121, text: '南昌县' }, { value: 360122, text: '新建县' }, { value: 360123, text: '安义县' }, { value: 360124, text: '进贤县' }] }, { value: 360200, text: '景德镇市', children: [{ value: 360201, text: '市辖区' }, { value: 360202, text: '昌江区' }, { value: 360203, text: '珠山区' }, { value: 360222, text: '浮梁县' }, { value: 360281, text: '乐平市' }] }, { value: 360300, text: '萍乡市', children: [{ value: 360301, text: '市辖区' }, { value: 360302, text: '安源区' }, { value: 360313, text: '湘东区' }, { value: 360321, text: '莲花县' }, { value: 360322, text: '上栗县' }, { value: 360323, text: '芦溪县' }] }, { value: 360400, text: '九江市', children: [{ value: 360401, text: '市辖区' }, { value: 360402, text: '庐山区' }, { value: 360403, text: '浔阳区' }, { value: 360421, text: '九江县' }, { value: 360423, text: '武宁县' }, { value: 360424, text: '修水县' }, { value: 360425, text: '永修县' }, { value: 360426, text: '德安县' }, { value: 360427, text: '星子县' }, { value: 360428, text: '都昌县' }, { value: 360429, text: '湖口县' }, { value: 360430, text: '彭泽县' }, { value: 360481, text: '瑞昌市' }] }, { value: 360500, text: '新余市', children: [{ value: 360501, text: '市辖区' }, { value: 360502, text: '渝水区' }, { value: 360521, text: '分宜县' }] }, { value: 360600, text: '鹰潭市', children: [{ value: 360601, text: '市辖区' }, { value: 360602, text: '月湖区' }, { value: 360622, text: '余江县' }, { value: 360681, text: '贵溪市' }] }, { value: 360700, text: '赣州市', children: [{ value: 360701, text: '市辖区' }, { value: 360702, text: '章贡区' }, { value: 360721, text: '赣县' }, { value: 360722, text: '信丰县' }, { value: 360723, text: '大余县' }, { value: 360724, text: '上犹县' }, { value: 360725, text: '崇义县' }, { value: 360726, text: '安远县' }, { value: 360727, text: '龙南县' }, { value: 360728, text: '定南县' }, { value: 360729, text: '全南县' }, { value: 360730, text: '宁都县' }, { value: 360731, text: '于都县' }, { value: 360732, text: '兴国县' }, { value: 360733, text: '会昌县' }, { value: 360734, text: '寻乌县' }, { value: 360735, text: '石城县' }, { value: 360781, text: '瑞金市' }, { value: 360782, text: '南康市' }] }, { value: 360800, text: '吉安市', children: [{ value: 360801, text: '市辖区' }, { value: 360802, text: '吉州区' }, { value: 360803, text: '青原区' }, { value: 360821, text: '吉安县' }, { value: 360822, text: '吉水县' }, { value: 360823, text: '峡江县' }, { value: 360824, text: '新干县' }, { value: 360825, text: '永丰县' }, { value: 360826, text: '泰和县' }, { value: 360827, text: '遂川县' }, { value: 360828, text: '万安县' }, { value: 360829, text: '安福县' }, { value: 360830, text: '永新县' }, { value: 360881, text: '井冈山市' }] }, { value: 360900, text: '宜春市', children: [{ value: 360901, text: '市辖区' }, { value: 360902, text: '袁州区' }, { value: 360921, text: '奉新县' }, { value: 360922, text: '万载县' }, { value: 360923, text: '上高县' }, { value: 360924, text: '宜丰县' }, { value: 360925, text: '靖安县' }, { value: 360926, text: '铜鼓县' }, { value: 360981, text: '丰城市' }, { value: 360982, text: '樟树市' }, { value: 360983, text: '高安市' }] }, { value: 361000, text: '抚州市', children: [{ value: 361001, text: '市辖区' }, { value: 361002, text: '临川区' }, { value: 361021, text: '南城县' }, { value: 361022, text: '黎川县' }, { value: 361023, text: '南丰县' }, { value: 361024, text: '崇仁县' }, { value: 361025, text: '乐安县' }, { value: 361026, text: '宜黄县' }, { value: 361027, text: '金溪县' }, { value: 361028, text: '资溪县' }, { value: 361029, text: '东乡县' }, { value: 361030, text: '广昌县' }] }, { value: 361100, text: '上饶市', children: [{ value: 361101, text: '市辖区' }, { value: 361102, text: '信州区' }, { value: 361121, text: '上饶县' }, { value: 361122, text: '广丰县' }, { value: 361123, text: '玉山县' }, { value: 361124, text: '铅山县' }, { value: 361125, text: '横峰县' }, { value: 361126, text: '弋阳县' }, { value: 361127, text: '余干县' }, { value: 361128, text: '鄱阳县' }, { value: 361129, text: '万年县' }, { value: 361130, text: '婺源县' }, { value: 361181, text: '德兴市' }] }] }, { value: 370000, text: '山东省', children: [{ value: 370100, text: '济南市', children: [{ value: 370101, text: '市辖区' }, { value: 370102, text: '历下区' }, { value: 370103, text: '市中区' }, { value: 370104, text: '槐荫区' }, { value: 370105, text: '天桥区' }, { value: 370112, text: '历城区' }, { value: 370113, text: '长清区' }, { value: 370124, text: '平阴县' }, { value: 370125, text: '济阳县' }, { value: 370126, text: '商河县' }, { value: 370181, text: '章丘市' }] }, { value: 370200, text: '青岛市', children: [{ value: 370201, text: '市辖区' }, { value: 370202, text: '市南区' }, { value: 370203, text: '市北区' }, { value: 370205, text: '四方区' }, { value: 370211, text: '黄岛区' }, { value: 370212, text: '崂山区' }, { value: 370213, text: '李沧区' }, { value: 370214, text: '城阳区' }, { value: 370281, text: '胶州市' }, { value: 370282, text: '即墨市' }, { value: 370283, text: '平度市' }, { value: 370284, text: '胶南市' }, { value: 370285, text: '莱西市' }] }, { value: 370300, text: '淄博市', children: [{ value: 370301, text: '市辖区' }, { value: 370302, text: '淄川区' }, { value: 370303, text: '张店区' }, { value: 370304, text: '博山区' }, { value: 370305, text: '临淄区' }, { value: 370306, text: '周村区' }, { value: 370321, text: '桓台县' }, { value: 370322, text: '高青县' }, { value: 370323, text: '沂源县' }] }, { value: 370400, text: '枣庄市', children: [{ value: 370401, text: '市辖区' }, { value: 370402, text: '市中区' }, { value: 370403, text: '薛城区' }, { value: 370404, text: '峄城区' }, { value: 370405, text: '台儿庄区' }, { value: 370406, text: '山亭区' }, { value: 370481, text: '滕州市' }] }, { value: 370500, text: '东营市', children: [{ value: 370501, text: '市辖区' }, { value: 370502, text: '东营区' }, { value: 370503, text: '河口区' }, { value: 370521, text: '垦利县' }, { value: 370522, text: '利津县' }, { value: 370523, text: '广饶县' }] }, { value: 370600, text: '烟台市', children: [{ value: 370601, text: '市辖区' }, { value: 370602, text: '芝罘区' }, { value: 370611, text: '福山区' }, { value: 370612, text: '牟平区' }, { value: 370613, text: '莱山区' }, { value: 370634, text: '长岛县' }, { value: 370681, text: '龙口市' }, { value: 370682, text: '莱阳市' }, { value: 370683, text: '莱州市' }, { value: 370684, text: '蓬莱市' }, { value: 370685, text: '招远市' }, { value: 370686, text: '栖霞市' }, { value: 370687, text: '海阳市' }] }, { value: 370700, text: '潍坊市', children: [{ value: 370701, text: '市辖区' }, { value: 370702, text: '潍城区' }, { value: 370703, text: '寒亭区' }, { value: 370704, text: '坊子区' }, { value: 370705, text: '奎文区' }, { value: 370724, text: '临朐县' }, { value: 370725, text: '昌乐县' }, { value: 370781, text: '青州市' }, { value: 370782, text: '诸城市' }, { value: 370783, text: '寿光市' }, { value: 370784, text: '安丘市' }, { value: 370785, text: '高密市' }, { value: 370786, text: '昌邑市' }] }, { value: 370800, text: '济宁市', children: [{ value: 370801, text: '市辖区' }, { value: 370802, text: '市中区' }, { value: 370811, text: '任城区' }, { value: 370826, text: '微山县' }, { value: 370827, text: '鱼台县' }, { value: 370828, text: '金乡县' }, { value: 370829, text: '嘉祥县' }, { value: 370830, text: '汶上县' }, { value: 370831, text: '泗水县' }, { value: 370832, text: '梁山县' }, { value: 370881, text: '曲阜市' }, { value: 370882, text: '兖州市' }, { value: 370883, text: '邹城市' }] }, { value: 370900, text: '泰安市', children: [{ value: 370901, text: '市辖区' }, { value: 370902, text: '泰山区' }, { value: 370903, text: '岱岳区' }, { value: 370921, text: '宁阳县' }, { value: 370923, text: '东平县' }, { value: 370982, text: '新泰市' }, { value: 370983, text: '肥城市' }] }, { value: 371000, text: '威海市', children: [{ value: 371001, text: '市辖区' }, { value: 371002, text: '环翠区' }, { value: 371081, text: '文登市' }, { value: 371082, text: '荣成市' }, { value: 371083, text: '乳山市' }] }, { value: 371100, text: '日照市', children: [{ value: 371101, text: '市辖区' }, { value: 371102, text: '东港区' }, { value: 371103, text: '岚山区' }, { value: 371121, text: '五莲县' }, { value: 371122, text: '莒县' }] }, { value: 371200, text: '莱芜市', children: [{ value: 371201, text: '市辖区' }, { value: 371202, text: '莱城区' }, { value: 371203, text: '钢城区' }] }, { value: 371300, text: '临沂市', children: [{ value: 371301, text: '市辖区' }, { value: 371302, text: '兰山区' }, { value: 371311, text: '罗庄区' }, { value: 371312, text: '河东区' }, { value: 371321, text: '沂南县' }, { value: 371322, text: '郯城县' }, { value: 371323, text: '沂水县' }, { value: 371324, text: '苍山县' }, { value: 371325, text: '费县' }, { value: 371326, text: '平邑县' }, { value: 371327, text: '莒南县' }, { value: 371328, text: '蒙阴县' }, { value: 371329, text: '临沭县' }] }, { value: 371400, text: '德州市', children: [{ value: 371401, text: '市辖区' }, { value: 371402, text: '德城区' }, { value: 371421, text: '陵县' }, { value: 371422, text: '宁津县' }, { value: 371423, text: '庆云县' }, { value: 371424, text: '临邑县' }, { value: 371425, text: '齐河县' }, { value: 371426, text: '平原县' }, { value: 371427, text: '夏津县' }, { value: 371428, text: '武城县' }, { value: 371481, text: '乐陵市' }, { value: 371482, text: '禹城市' }] }, { value: 371500, text: '聊城市', children: [{ value: 371501, text: '市辖区' }, { value: 371502, text: '东昌府区' }, { value: 371521, text: '阳谷县' }, { value: 371522, text: '莘县' }, { value: 371523, text: '茌平县' }, { value: 371524, text: '东阿县' }, { value: 371525, text: '冠县' }, { value: 371526, text: '高唐县' }, { value: 371581, text: '临清市' }] }, { value: 371600, text: '滨州市', children: [{ value: 371601, text: '市辖区' }, { value: 371602, text: '滨城区' }, { value: 371621, text: '惠民县' }, { value: 371622, text: '阳信县' }, { value: 371623, text: '无棣县' }, { value: 371624, text: '沾化县' }, { value: 371625, text: '博兴县' }, { value: 371626, text: '邹平县' }] }, { value: 371700, text: '菏泽市', children: [{ value: 371701, text: '市辖区' }, { value: 371702, text: '牡丹区' }, { value: 371721, text: '曹县' }, { value: 371722, text: '单县' }, { value: 371723, text: '成武县' }, { value: 371724, text: '巨野县' }, { value: 371725, text: '郓城县' }, { value: 371726, text: '鄄城县' }, { value: 371727, text: '定陶县' }, { value: 371728, text: '东明县' }] }] }, { value: 410000, text: '河南省', children: [{ value: 410100, text: '郑州市', children: [{ value: 410101, text: '市辖区' }, { value: 410102, text: '中原区' }, { value: 410103, text: '二七区' }, { value: 410104, text: '管城回族区' }, { value: 410105, text: '金水区' }, { value: 410106, text: '上街区' }, { value: 410108, text: '惠济区' }, { value: 410122, text: '中牟县' }, { value: 410181, text: '巩义市' }, { value: 410182, text: '荥阳市' }, { value: 410183, text: '新密市' }, { value: 410184, text: '新郑市' }, { value: 410185, text: '登封市' }] }, { value: 410200, text: '开封市', children: [{ value: 410201, text: '市辖区' }, { value: 410202, text: '龙亭区' }, { value: 410203, text: '顺河回族区' }, { value: 410204, text: '鼓楼区' }, { value: 410205, text: '禹王台区' }, { value: 410211, text: '金明区' }, { value: 410221, text: '杞县' }, { value: 410222, text: '通许县' }, { value: 410223, text: '尉氏县' }, { value: 410224, text: '开封县' }, { value: 410225, text: '兰考县' }] }, { value: 410300, text: '洛阳市', children: [{ value: 410301, text: '市辖区' }, { value: 410302, text: '老城区' }, { value: 410303, text: '西工区' }, { value: 410304, text: '廛河回族区' }, { value: 410305, text: '涧西区' }, { value: 410306, text: '吉利区' }, { value: 410307, text: '洛龙区' }, { value: 410322, text: '孟津县' }, { value: 410323, text: '新安县' }, { value: 410324, text: '栾川县' }, { value: 410325, text: '嵩县' }, { value: 410326, text: '汝阳县' }, { value: 410327, text: '宜阳县' }, { value: 410328, text: '洛宁县' }, { value: 410329, text: '伊川县' }, { value: 410381, text: '偃师市' }] }, { value: 410400, text: '平顶山市', children: [{ value: 410401, text: '市辖区' }, { value: 410402, text: '新华区' }, { value: 410403, text: '卫东区' }, { value: 410404, text: '石龙区' }, { value: 410411, text: '湛河区' }, { value: 410421, text: '宝丰县' }, { value: 410422, text: '叶县' }, { value: 410423, text: '鲁山县' }, { value: 410425, text: '郏县' }, { value: 410481, text: '舞钢市' }, { value: 410482, text: '汝州市' }] }, { value: 410500, text: '安阳市', children: [{ value: 410501, text: '市辖区' }, { value: 410502, text: '文峰区' }, { value: 410503, text: '北关区' }, { value: 410505, text: '殷都区' }, { value: 410506, text: '龙安区' }, { value: 410522, text: '安阳县' }, { value: 410523, text: '汤阴县' }, { value: 410526, text: '滑县' }, { value: 410527, text: '内黄县' }, { value: 410581, text: '林州市' }] }, { value: 410600, text: '鹤壁市', children: [{ value: 410601, text: '市辖区' }, { value: 410602, text: '鹤山区' }, { value: 410603, text: '山城区' }, { value: 410611, text: '淇滨区' }, { value: 410621, text: '浚县' }, { value: 410622, text: '淇县' }] }, { value: 410700, text: '新乡市', children: [{ value: 410701, text: '市辖区' }, { value: 410702, text: '红旗区' }, { value: 410703, text: '卫滨区' }, { value: 410704, text: '凤泉区' }, { value: 410711, text: '牧野区' }, { value: 410721, text: '新乡县' }, { value: 410724, text: '获嘉县' }, { value: 410725, text: '原阳县' }, { value: 410726, text: '延津县' }, { value: 410727, text: '封丘县' }, { value: 410728, text: '长垣县' }, { value: 410781, text: '卫辉市' }, { value: 410782, text: '辉县市' }] }, { value: 410800, text: '焦作市', children: [{ value: 410801, text: '市辖区' }, { value: 410802, text: '解放区' }, { value: 410803, text: '中站区' }, { value: 410804, text: '马村区' }, { value: 410811, text: '山阳区' }, { value: 410821, text: '修武县' }, { value: 410822, text: '博爱县' }, { value: 410823, text: '武陟县' }, { value: 410825, text: '温县' }, { value: 410881, text: '济源市' }, { value: 410882, text: '沁阳市' }, { value: 410883, text: '孟州市' }] }, { value: 410900, text: '濮阳市', children: [{ value: 410901, text: '市辖区' }, { value: 410902, text: '华龙区' }, { value: 410922, text: '清丰县' }, { value: 410923, text: '南乐县' }, { value: 410926, text: '范县' }, { value: 410927, text: '台前县' }, { value: 410928, text: '濮阳县' }] }, { value: 411000, text: '许昌市', children: [{ value: 411001, text: '市辖区' }, { value: 411002, text: '魏都区' }, { value: 411023, text: '许昌县' }, { value: 411024, text: '鄢陵县' }, { value: 411025, text: '襄城县' }, { value: 411081, text: '禹州市' }, { value: 411082, text: '长葛市' }] }, { value: 411100, text: '漯河市', children: [{ value: 411101, text: '市辖区' }, { value: 411102, text: '源汇区' }, { value: 411103, text: '郾城区' }, { value: 411104, text: '召陵区' }, { value: 411121, text: '舞阳县' }, { value: 411122, text: '临颍县' }] }, { value: 411200, text: '三门峡市', children: [{ value: 411201, text: '市辖区' }, { value: 411202, text: '湖滨区' }, { value: 411221, text: '渑池县' }, { value: 411222, text: '陕县' }, { value: 411224, text: '卢氏县' }, { value: 411281, text: '义马市' }, { value: 411282, text: '灵宝市' }] }, { value: 411300, text: '南阳市', children: [{ value: 411301, text: '市辖区' }, { value: 411302, text: '宛城区' }, { value: 411303, text: '卧龙区' }, { value: 411321, text: '南召县' }, { value: 411322, text: '方城县' }, { value: 411323, text: '西峡县' }, { value: 411324, text: '镇平县' }, { value: 411325, text: '内乡县' }, { value: 411326, text: '淅川县' }, { value: 411327, text: '社旗县' }, { value: 411328, text: '唐河县' }, { value: 411329, text: '新野县' }, { value: 411330, text: '桐柏县' }, { value: 411381, text: '邓州市' }] }, { value: 411400, text: '商丘市', children: [{ value: 411401, text: '市辖区' }, { value: 411402, text: '梁园区' }, { value: 411403, text: '睢阳区' }, { value: 411421, text: '民权县' }, { value: 411422, text: '睢县' }, { value: 411423, text: '宁陵县' }, { value: 411424, text: '柘城县' }, { value: 411425, text: '虞城县' }, { value: 411426, text: '夏邑县' }, { value: 411481, text: '永城市' }] }, { value: 411500, text: '信阳市', children: [{ value: 411501, text: '市辖区' }, { value: 411502, text: '浉河区' }, { value: 411503, text: '平桥区' }, { value: 411521, text: '罗山县' }, { value: 411522, text: '光山县' }, { value: 411523, text: '新县' }, { value: 411524, text: '商城县' }, { value: 411525, text: '固始县' }, { value: 411526, text: '潢川县' }, { value: 411527, text: '淮滨县' }, { value: 411528, text: '息县' }] }, { value: 411600, text: '周口市', children: [{ value: 411601, text: '市辖区' }, { value: 411602, text: '川汇区' }, { value: 411621, text: '扶沟县' }, { value: 411622, text: '西华县' }, { value: 411623, text: '商水县' }, { value: 411624, text: '沈丘县' }, { value: 411625, text: '郸城县' }, { value: 411626, text: '淮阳县' }, { value: 411627, text: '太康县' }, { value: 411628, text: '鹿邑县' }, { value: 411681, text: '项城市' }] }, { value: 411700, text: '驻马店市', children: [{ value: 411701, text: '市辖区' }, { value: 411702, text: '驿城区' }, { value: 411721, text: '西平县' }, { value: 411722, text: '上蔡县' }, { value: 411723, text: '平舆县' }, { value: 411724, text: '正阳县' }, { value: 411725, text: '确山县' }, { value: 411726, text: '泌阳县' }, { value: 411727, text: '汝南县' }, { value: 411728, text: '遂平县' }, { value: 411729, text: '新蔡县' }] }] }, { value: 420000, text: '湖北省', children: [{ value: 420100, text: '武汉市', children: [{ value: 420101, text: '市辖区' }, { value: 420102, text: '江岸区' }, { value: 420103, text: '江汉区' }, { value: 420104, text: '硚口区' }, { value: 420105, text: '汉阳区' }, { value: 420106, text: '武昌区' }, { value: 420107, text: '青山区' }, { value: 420111, text: '洪山区' }, { value: 420112, text: '东西湖区' }, { value: 420113, text: '汉南区' }, { value: 420114, text: '蔡甸区' }, { value: 420115, text: '江夏区' }, { value: 420116, text: '黄陂区' }, { value: 420117, text: '新洲区' }] }, { value: 420200, text: '黄石市', children: [{ value: 420201, text: '市辖区' }, { value: 420202, text: '黄石港区' }, { value: 420203, text: '西塞山区' }, { value: 420204, text: '下陆区' }, { value: 420205, text: '铁山区' }, { value: 420222, text: '阳新县' }, { value: 420281, text: '大冶市' }] }, { value: 420300, text: '十堰市', children: [{ value: 420301, text: '市辖区' }, { value: 420302, text: '茅箭区' }, { value: 420303, text: '张湾区' }, { value: 420321, text: '郧县' }, { value: 420322, text: '郧西县' }, { value: 420323, text: '竹山县' }, { value: 420324, text: '竹溪县' }, { value: 420325, text: '房县' }, { value: 420381, text: '丹江口市' }] }, { value: 420500, text: '宜昌市', children: [{ value: 420501, text: '市辖区' }, { value: 420502, text: '西陵区' }, { value: 420503, text: '伍家岗区' }, { value: 420504, text: '点军区' }, { value: 420505, text: '猇亭区' }, { value: 420506, text: '夷陵区' }, { value: 420525, text: '远安县' }, { value: 420526, text: '兴山县' }, { value: 420527, text: '秭归县' }, { value: 420528, text: '长阳土家族自治县' }, { value: 420529, text: '五峰土家族自治县' }, { value: 420581, text: '宜都市' }, { value: 420582, text: '当阳市' }, { value: 420583, text: '枝江市' }] }, { value: 420600, text: '襄樊市', children: [{ value: 420601, text: '市辖区' }, { value: 420602, text: '襄城区' }, { value: 420606, text: '樊城区' }, { value: 420607, text: '襄阳区' }, { value: 420624, text: '南漳县' }, { value: 420625, text: '谷城县' }, { value: 420626, text: '保康县' }, { value: 420682, text: '老河口市' }, { value: 420683, text: '枣阳市' }, { value: 420684, text: '宜城市' }] }, { value: 420700, text: '鄂州市', children: [{ value: 420701, text: '市辖区' }, { value: 420702, text: '梁子湖区' }, { value: 420703, text: '华容区' }, { value: 420704, text: '鄂城区' }] }, { value: 420800, text: '荆门市', children: [{ value: 420801, text: '市辖区' }, { value: 420802, text: '东宝区' }, { value: 420804, text: '掇刀区' }, { value: 420821, text: '京山县' }, { value: 420822, text: '沙洋县' }, { value: 420881, text: '钟祥市' }] }, { value: 420900, text: '孝感市', children: [{ value: 420901, text: '市辖区' }, { value: 420902, text: '孝南区' }, { value: 420921, text: '孝昌县' }, { value: 420922, text: '大悟县' }, { value: 420923, text: '云梦县' }, { value: 420981, text: '应城市' }, { value: 420982, text: '安陆市' }, { value: 420984, text: '汉川市' }] }, { value: 421000, text: '荆州市', children: [{ value: 421001, text: '市辖区' }, { value: 421002, text: '沙市区' }, { value: 421003, text: '荆州区' }, { value: 421022, text: '公安县' }, { value: 421023, text: '监利县' }, { value: 421024, text: '江陵县' }, { value: 421081, text: '石首市' }, { value: 421083, text: '洪湖市' }, { value: 421087, text: '松滋市' }] }, { value: 421100, text: '黄冈市', children: [{ value: 421101, text: '市辖区' }, { value: 421102, text: '黄州区' }, { value: 421121, text: '团风县' }, { value: 421122, text: '红安县' }, { value: 421123, text: '罗田县' }, { value: 421124, text: '英山县' }, { value: 421125, text: '浠水县' }, { value: 421126, text: '蕲春县' }, { value: 421127, text: '黄梅县' }, { value: 421181, text: '麻城市' }, { value: 421182, text: '武穴市' }] }, { value: 421200, text: '咸宁市', children: [{ value: 421201, text: '市辖区' }, { value: 421202, text: '咸安区' }, { value: 421221, text: '嘉鱼县' }, { value: 421222, text: '通城县' }, { value: 421223, text: '崇阳县' }, { value: 421224, text: '通山县' }, { value: 421281, text: '赤壁市' }] }, { value: 421300, text: '随州市', children: [{ value: 421301, text: '市辖区' }, { value: 421302, text: '曾都区' }, { value: 421381, text: '广水市' }] }, { value: 422800, text: '恩施土家族苗族自治州', children: [{ value: 422801, text: '恩施市' }, { value: 422802, text: '利川市' }, { value: 422822, text: '建始县' }, { value: 422823, text: '巴东县' }, { value: 422825, text: '宣恩县' }, { value: 422826, text: '咸丰县' }, { value: 422827, text: '来凤县' }, { value: 422828, text: '鹤峰县' }] }, { value: 429000, text: '省直辖行政单位', children: [{ value: 429004, text: '仙桃市' }, { value: 429005, text: '潜江市' }, { value: 429006, text: '天门市' }, { value: 429021, text: '神农架林区' }] }] }, { value: 430000, text: '湖南省', children: [{ value: 430100, text: '长沙市', children: [{ value: 430101, text: '市辖区' }, { value: 430102, text: '芙蓉区' }, { value: 430103, text: '天心区' }, { value: 430104, text: '岳麓区' }, { value: 430105, text: '开福区' }, { value: 430111, text: '雨花区' }, { value: 430121, text: '长沙县' }, { value: 430122, text: '望城县' }, { value: 430124, text: '宁乡县' }, { value: 430181, text: '浏阳市' }] }, { value: 430200, text: '株洲市', children: [{ value: 430201, text: '市辖区' }, { value: 430202, text: '荷塘区' }, { value: 430203, text: '芦淞区' }, { value: 430204, text: '石峰区' }, { value: 430211, text: '天元区' }, { value: 430221, text: '株洲县' }, { value: 430223, text: '攸县' }, { value: 430224, text: '茶陵县' }, { value: 430225, text: '炎陵县' }, { value: 430281, text: '醴陵市' }] }, { value: 430300, text: '湘潭市', children: [{ value: 430301, text: '市辖区' }, { value: 430302, text: '雨湖区' }, { value: 430304, text: '岳塘区' }, { value: 430321, text: '湘潭县' }, { value: 430381, text: '湘乡市' }, { value: 430382, text: '韶山市' }] }, { value: 430400, text: '衡阳市', children: [{ value: 430401, text: '市辖区' }, { value: 430405, text: '珠晖区' }, { value: 430406, text: '雁峰区' }, { value: 430407, text: '石鼓区' }, { value: 430408, text: '蒸湘区' }, { value: 430412, text: '南岳区' }, { value: 430421, text: '衡阳县' }, { value: 430422, text: '衡南县' }, { value: 430423, text: '衡山县' }, { value: 430424, text: '衡东县' }, { value: 430426, text: '祁东县' }, { value: 430481, text: '耒阳市' }, { value: 430482, text: '常宁市' }] }, { value: 430500, text: '邵阳市', children: [{ value: 430501, text: '市辖区' }, { value: 430502, text: '双清区' }, { value: 430503, text: '大祥区' }, { value: 430511, text: '北塔区' }, { value: 430521, text: '邵东县' }, { value: 430522, text: '新邵县' }, { value: 430523, text: '邵阳县' }, { value: 430524, text: '隆回县' }, { value: 430525, text: '洞口县' }, { value: 430527, text: '绥宁县' }, { value: 430528, text: '新宁县' }, { value: 430529, text: '城步苗族自治县' }, { value: 430581, text: '武冈市' }] }, { value: 430600, text: '岳阳市', children: [{ value: 430601, text: '市辖区' }, { value: 430602, text: '岳阳楼区' }, { value: 430603, text: '云溪区' }, { value: 430611, text: '君山区' }, { value: 430621, text: '岳阳县' }, { value: 430623, text: '华容县' }, { value: 430624, text: '湘阴县' }, { value: 430626, text: '平江县' }, { value: 430681, text: '汨罗市' }, { value: 430682, text: '临湘市' }] }, { value: 430700, text: '常德市', children: [{ value: 430701, text: '市辖区' }, { value: 430702, text: '武陵区' }, { value: 430703, text: '鼎城区' }, { value: 430721, text: '安乡县' }, { value: 430722, text: '汉寿县' }, { value: 430723, text: '澧县' }, { value: 430724, text: '临澧县' }, { value: 430725, text: '桃源县' }, { value: 430726, text: '石门县' }, { value: 430781, text: '津市市' }] }, { value: 430800, text: '张家界市', children: [{ value: 430801, text: '市辖区' }, { value: 430802, text: '永定区' }, { value: 430811, text: '武陵源区' }, { value: 430821, text: '慈利县' }, { value: 430822, text: '桑植县' }] }, { value: 430900, text: '益阳市', children: [{ value: 430901, text: '市辖区' }, { value: 430902, text: '资阳区' }, { value: 430903, text: '赫山区' }, { value: 430921, text: '南县' }, { value: 430922, text: '桃江县' }, { value: 430923, text: '安化县' }, { value: 430981, text: '沅江市' }] }, { value: 431000, text: '郴州市', children: [{ value: 431001, text: '市辖区' }, { value: 431002, text: '北湖区' }, { value: 431003, text: '苏仙区' }, { value: 431021, text: '桂阳县' }, { value: 431022, text: '宜章县' }, { value: 431023, text: '永兴县' }, { value: 431024, text: '嘉禾县' }, { value: 431025, text: '临武县' }, { value: 431026, text: '汝城县' }, { value: 431027, text: '桂东县' }, { value: 431028, text: '安仁县' }, { value: 431081, text: '资兴市' }] }, { value: 431100, text: '永州市', children: [{ value: 431101, text: '市辖区' }, { value: 431102, text: '零陵区' }, { value: 431103, text: '冷水滩区' }, { value: 431121, text: '祁阳县' }, { value: 431122, text: '东安县' }, { value: 431123, text: '双牌县' }, { value: 431124, text: '道县' }, { value: 431125, text: '江永县' }, { value: 431126, text: '宁远县' }, { value: 431127, text: '蓝山县' }, { value: 431128, text: '新田县' }, { value: 431129, text: '江华瑶族自治县' }] }, { value: 431200, text: '怀化市', children: [{ value: 431201, text: '市辖区' }, { value: 431202, text: '鹤城区' }, { value: 431221, text: '中方县' }, { value: 431222, text: '沅陵县' }, { value: 431223, text: '辰溪县' }, { value: 431224, text: '溆浦县' }, { value: 431225, text: '会同县' }, { value: 431226, text: '麻阳苗族自治县' }, { value: 431227, text: '新晃侗族自治县' }, { value: 431228, text: '芷江侗族自治县' }, { value: 431229, text: '靖州苗族侗族自治县' }, { value: 431230, text: '通道侗族自治县' }, { value: 431281, text: '洪江市' }] }, { value: 431300, text: '娄底市', children: [{ value: 431301, text: '市辖区' }, { value: 431302, text: '娄星区' }, { value: 431321, text: '双峰县' }, { value: 431322, text: '新化县' }, { value: 431381, text: '冷水江市' }, { value: 431382, text: '涟源市' }] }, { value: 433100, text: '湘西土家族苗族自治州', children: [{ value: 433101, text: '吉首市' }, { value: 433122, text: '泸溪县' }, { value: 433123, text: '凤凰县' }, { value: 433124, text: '花垣县' }, { value: 433125, text: '保靖县' }, { value: 433126, text: '古丈县' }, { value: 433127, text: '永顺县' }, { value: 433130, text: '龙山县' }] }] }, { value: 440000, text: '广东省', children: [{ value: 440100, text: '广州市', children: [{ value: 440101, text: '市辖区' }, { value: 440103, text: '荔湾区' }, { value: 440104, text: '越秀区' }, { value: 440105, text: '海珠区' }, { value: 440106, text: '天河区' }, { value: 440111, text: '白云区' }, { value: 440112, text: '黄埔区' }, { value: 440113, text: '番禺区' }, { value: 440114, text: '花都区' }, { value: 440115, text: '南沙区' }, { value: 440116, text: '萝岗区' }, { value: 440183, text: '增城市' }, { value: 440184, text: '从化市' }] }, { value: 440200, text: '韶关市', children: [{ value: 440201, text: '市辖区' }, { value: 440203, text: '武江区' }, { value: 440204, text: '浈江区' }, { value: 440205, text: '曲江区' }, { value: 440222, text: '始兴县' }, { value: 440224, text: '仁化县' }, { value: 440229, text: '翁源县' }, { value: 440232, text: '乳源瑶族自治县' }, { value: 440233, text: '新丰县' }, { value: 440281, text: '乐昌市' }, { value: 440282, text: '南雄市' }] }, { value: 440300, text: '深圳市', children: [{ value: 440301, text: '市辖区' }, { value: 440303, text: '罗湖区' }, { value: 440304, text: '福田区' }, { value: 440305, text: '南山区' }, { value: 440306, text: '宝安区' }, { value: 440307, text: '龙岗区' }, { value: 440308, text: '盐田区' }] }, { value: 440400, text: '珠海市', children: [{ value: 440401, text: '市辖区' }, { value: 440402, text: '香洲区' }, { value: 440403, text: '斗门区' }, { value: 440404, text: '金湾区' }] }, { value: 440500, text: '汕头市', children: [{ value: 440501, text: '市辖区' }, { value: 440507, text: '龙湖区' }, { value: 440511, text: '金平区' }, { value: 440512, text: '濠江区' }, { value: 440513, text: '潮阳区' }, { value: 440514, text: '潮南区' }, { value: 440515, text: '澄海区' }, { value: 440523, text: '南澳县' }] }, { value: 440600, text: '佛山市', children: [{ value: 440601, text: '市辖区' }, { value: 440604, text: '禅城区' }, { value: 440605, text: '南海区' }, { value: 440606, text: '顺德区' }, { value: 440607, text: '三水区' }, { value: 440608, text: '高明区' }] }, { value: 440700, text: '江门市', children: [{ value: 440701, text: '市辖区' }, { value: 440703, text: '蓬江区' }, { value: 440704, text: '江海区' }, { value: 440705, text: '新会区' }, { value: 440781, text: '台山市' }, { value: 440783, text: '开平市' }, { value: 440784, text: '鹤山市' }, { value: 440785, text: '恩平市' }] }, { value: 440800, text: '湛江市', children: [{ value: 440801, text: '市辖区' }, { value: 440802, text: '赤坎区' }, { value: 440803, text: '霞山区' }, { value: 440804, text: '坡头区' }, { value: 440811, text: '麻章区' }, { value: 440823, text: '遂溪县' }, { value: 440825, text: '徐闻县' }, { value: 440881, text: '廉江市' }, { value: 440882, text: '雷州市' }, { value: 440883, text: '吴川市' }] }, { value: 440900, text: '茂名市', children: [{ value: 440901, text: '市辖区' }, { value: 440902, text: '茂南区' }, { value: 440903, text: '茂港区' }, { value: 440923, text: '电白县' }, { value: 440981, text: '高州市' }, { value: 440982, text: '化州市' }, { value: 440983, text: '信宜市' }] }, { value: 441200, text: '肇庆市', children: [{ value: 441201, text: '市辖区' }, { value: 441202, text: '端州区' }, { value: 441203, text: '鼎湖区' }, { value: 441223, text: '广宁县' }, { value: 441224, text: '怀集县' }, { value: 441225, text: '封开县' }, { value: 441226, text: '德庆县' }, { value: 441283, text: '高要市' }, { value: 441284, text: '四会市' }] }, { value: 441300, text: '惠州市', children: [{ value: 441301, text: '市辖区' }, { value: 441302, text: '惠城区' }, { value: 441303, text: '惠阳区' }, { value: 441322, text: '博罗县' }, { value: 441323, text: '惠东县' }, { value: 441324, text: '龙门县' }] }, { value: 441400, text: '梅州市', children: [{ value: 441401, text: '市辖区' }, { value: 441402, text: '梅江区' }, { value: 441421, text: '梅县' }, { value: 441422, text: '大埔县' }, { value: 441423, text: '丰顺县' }, { value: 441424, text: '五华县' }, { value: 441426, text: '平远县' }, { value: 441427, text: '蕉岭县' }, { value: 441481, text: '兴宁市' }] }, { value: 441500, text: '汕尾市', children: [{ value: 441501, text: '市辖区' }, { value: 441502, text: '城区' }, { value: 441521, text: '海丰县' }, { value: 441523, text: '陆河县' }, { value: 441581, text: '陆丰市' }] }, { value: 441600, text: '河源市', children: [{ value: 441601, text: '市辖区' }, { value: 441602, text: '源城区' }, { value: 441621, text: '紫金县' }, { value: 441622, text: '龙川县' }, { value: 441623, text: '连平县' }, { value: 441624, text: '和平县' }, { value: 441625, text: '东源县' }] }, { value: 441700, text: '阳江市', children: [{ value: 441701, text: '市辖区' }, { value: 441702, text: '江城区' }, { value: 441721, text: '阳西县' }, { value: 441723, text: '阳东县' }, { value: 441781, text: '阳春市' }] }, { value: 441800, text: '清远市', children: [{ value: 441801, text: '市辖区' }, { value: 441802, text: '清城区' }, { value: 441821, text: '佛冈县' }, { value: 441823, text: '阳山县' }, { value: 441825, text: '连山壮族瑶族自治县' }, { value: 441826, text: '连南瑶族自治县' }, { value: 441827, text: '清新县' }, { value: 441881, text: '英德市' }, { value: 441882, text: '连州市' }] }, { value: 441900, text: '东莞市', children: [{ value: 441901, text: '东莞市市辖区' }] }, { value: 442000, text: '中山市', children: [{ value: 442001, text: '中山市市辖区' }] }, { value: 445100, text: '潮州市', children: [{ value: 445101, text: '市辖区' }, { value: 445102, text: '湘桥区' }, { value: 445121, text: '潮安县' }, { value: 445122, text: '饶平县' }] }, { value: 445200, text: '揭阳市', children: [{ value: 445201, text: '市辖区' }, { value: 445202, text: '榕城区' }, { value: 445221, text: '揭东县' }, { value: 445222, text: '揭西县' }, { value: 445224, text: '惠来县' }, { value: 445281, text: '普宁市' }] }, { value: 445300, text: '云浮市', children: [{ value: 445301, text: '市辖区' }, { value: 445302, text: '云城区' }, { value: 445321, text: '新兴县' }, { value: 445322, text: '郁南县' }, { value: 445323, text: '云安县' }, { value: 445381, text: '罗定市' }] }] }, { value: 450000, text: '广西壮族自治区', children: [{ value: 450100, text: '南宁市', children: [{ value: 450101, text: '市辖区' }, { value: 450102, text: '兴宁区' }, { value: 450103, text: '青秀区' }, { value: 450105, text: '江南区' }, { value: 450107, text: '西乡塘区' }, { value: 450108, text: '良庆区' }, { value: 450109, text: '邕宁区' }, { value: 450122, text: '武鸣县' }, { value: 450123, text: '隆安县' }, { value: 450124, text: '马山县' }, { value: 450125, text: '上林县' }, { value: 450126, text: '宾阳县' }, { value: 450127, text: '横县' }] }, { value: 450200, text: '柳州市', children: [{ value: 450201, text: '市辖区' }, { value: 450202, text: '城中区' }, { value: 450203, text: '鱼峰区' }, { value: 450204, text: '柳南区' }, { value: 450205, text: '柳北区' }, { value: 450221, text: '柳江县' }, { value: 450222, text: '柳城县' }, { value: 450223, text: '鹿寨县' }, { value: 450224, text: '融安县' }, { value: 450225, text: '融水苗族自治县' }, { value: 450226, text: '三江侗族自治县' }] }, { value: 450300, text: '桂林市', children: [{ value: 450301, text: '市辖区' }, { value: 450302, text: '秀峰区' }, { value: 450303, text: '叠彩区' }, { value: 450304, text: '象山区' }, { value: 450305, text: '七星区' }, { value: 450311, text: '雁山区' }, { value: 450321, text: '阳朔县' }, { value: 450322, text: '临桂县' }, { value: 450323, text: '灵川县' }, { value: 450324, text: '全州县' }, { value: 450325, text: '兴安县' }, { value: 450326, text: '永福县' }, { value: 450327, text: '灌阳县' }, { value: 450328, text: '龙胜各族自治县' }, { value: 450329, text: '资源县' }, { value: 450330, text: '平乐县' }, { value: 450331, text: '荔蒲县' }, { value: 450332, text: '恭城瑶族自治县' }] }, { value: 450400, text: '梧州市', children: [{ value: 450401, text: '市辖区' }, { value: 450403, text: '万秀区' }, { value: 450404, text: '蝶山区' }, { value: 450405, text: '长洲区' }, { value: 450421, text: '苍梧县' }, { value: 450422, text: '藤县' }, { value: 450423, text: '蒙山县' }, { value: 450481, text: '岑溪市' }] }, { value: 450500, text: '北海市', children: [{ value: 450501, text: '市辖区' }, { value: 450502, text: '海城区' }, { value: 450503, text: '银海区' }, { value: 450512, text: '铁山港区' }, { value: 450521, text: '合浦县' }] }, { value: 450600, text: '防城港市', children: [{ value: 450601, text: '市辖区' }, { value: 450602, text: '港口区' }, { value: 450603, text: '防城区' }, { value: 450621, text: '上思县' }, { value: 450681, text: '东兴市' }] }, { value: 450700, text: '钦州市', children: [{ value: 450701, text: '市辖区' }, { value: 450702, text: '钦南区' }, { value: 450703, text: '钦北区' }, { value: 450721, text: '灵山县' }, { value: 450722, text: '浦北县' }] }, { value: 450800, text: '贵港市', children: [{ value: 450801, text: '市辖区' }, { value: 450802, text: '港北区' }, { value: 450803, text: '港南区' }, { value: 450804, text: '覃塘区' }, { value: 450821, text: '平南县' }, { value: 450881, text: '桂平市' }] }, { value: 450900, text: '玉林市', children: [{ value: 450901, text: '市辖区' }, { value: 450902, text: '玉州区' }, { value: 450921, text: '容县' }, { value: 450922, text: '陆川县' }, { value: 450923, text: '博白县' }, { value: 450924, text: '兴业县' }, { value: 450981, text: '北流市' }] }, { value: 451000, text: '百色市', children: [{ value: 451001, text: '市辖区' }, { value: 451002, text: '右江区' }, { value: 451021, text: '田阳县' }, { value: 451022, text: '田东县' }, { value: 451023, text: '平果县' }, { value: 451024, text: '德保县' }, { value: 451025, text: '靖西县' }, { value: 451026, text: '那坡县' }, { value: 451027, text: '凌云县' }, { value: 451028, text: '乐业县' }, { value: 451029, text: '田林县' }, { value: 451030, text: '西林县' }, { value: 451031, text: '隆林各族自治县' }] }, { value: 451100, text: '贺州市', children: [{ value: 451101, text: '市辖区' }, { value: 451102, text: '八步区' }, { value: 451121, text: '昭平县' }, { value: 451122, text: '钟山县' }, { value: 451123, text: '富川瑶族自治县' }] }, { value: 451200, text: '河池市', children: [{ value: 451201, text: '市辖区' }, { value: 451202, text: '金城江区' }, { value: 451221, text: '南丹县' }, { value: 451222, text: '天峨县' }, { value: 451223, text: '凤山县' }, { value: 451224, text: '东兰县' }, { value: 451225, text: '罗城仫佬族自治县' }, { value: 451226, text: '环江毛南族自治县' }, { value: 451227, text: '巴马瑶族自治县' }, { value: 451228, text: '都安瑶族自治县' }, { value: 451229, text: '大化瑶族自治县' }, { value: 451281, text: '宜州市' }] }, { value: 451300, text: '来宾市', children: [{ value: 451301, text: '市辖区' }, { value: 451302, text: '兴宾区' }, { value: 451321, text: '忻城县' }, { value: 451322, text: '象州县' }, { value: 451323, text: '武宣县' }, { value: 451324, text: '金秀瑶族自治县' }, { value: 451381, text: '合山市' }] }, { value: 451400, text: '崇左市', children: [{ value: 451401, text: '市辖区' }, { value: 451402, text: '江洲区' }, { value: 451421, text: '扶绥县' }, { value: 451422, text: '宁明县' }, { value: 451423, text: '龙州县' }, { value: 451424, text: '大新县' }, { value: 451425, text: '天等县' }, { value: 451481, text: '凭祥市' }] }] }, { value: 460000, text: '海南省', children: [{ value: 460100, text: '海口市', children: [{ value: 460101, text: '市辖区' }, { value: 460105, text: '秀英区' }, { value: 460106, text: '龙华区' }, { value: 460107, text: '琼山区' }, { value: 460108, text: '美兰区' }] }, { value: 460200, text: '三亚市', children: [{ value: 460201, text: '市辖区' }] }, { value: 469000, text: '省直辖县级行政单位', children: [{ value: 469001, text: '五指山市' }, { value: 469002, text: '琼海市' }, { value: 469003, text: '儋州市' }, { value: 469005, text: '文昌市' }, { value: 469006, text: '万宁市' }, { value: 469007, text: '东方市' }, { value: 469025, text: '定安县' }, { value: 469026, text: '屯昌县' }, { value: 469027, text: '澄迈县' }, { value: 469028, text: '临高县' }, { value: 469030, text: '白沙黎族自治县' }, { value: 469031, text: '昌江黎族自治县' }, { value: 469033, text: '乐东黎族自治县' }, { value: 469034, text: '陵水黎族自治县' }, { value: 469035, text: '保亭黎族苗族自治县' }, { value: 469036, text: '琼中黎族苗族自治县' }, { value: 469037, text: '西沙群岛' }, { value: 469038, text: '南沙群岛' }, { value: 469039, text: '中沙群岛的岛礁及其海域' }] }] }, { value: 500000, text: '重庆市', children: [{ value: 500100, text: '市辖区', children: [{ value: 500101, text: '万州区' }, { value: 500102, text: '涪陵区' }, { value: 500103, text: '渝中区' }, { value: 500104, text: '大渡口区' }, { value: 500105, text: '江北区' }, { value: 500106, text: '沙坪坝区' }, { value: 500107, text: '九龙坡区' }, { value: 500108, text: '南岸区' }, { value: 500109, text: '北碚区' }, { value: 500110, text: '万盛区' }, { value: 500111, text: '双桥区' }, { value: 500112, text: '渝北区' }, { value: 500113, text: '巴南区' }, { value: 500114, text: '黔江区' }, { value: 500115, text: '长寿区' }, { value: 500116, text: '江津区' }, { value: 500117, text: '合川区' }, { value: 500118, text: '永川区' }, { value: 500119, text: '南川区' }] }, { value: 500200, text: '县', children: [{ value: 500222, text: '綦江县' }, { value: 500223, text: '潼南县' }, { value: 500224, text: '铜梁县' }, { value: 500225, text: '大足县' }, { value: 500226, text: '荣昌县' }, { value: 500227, text: '璧山县' }, { value: 500228, text: '梁平县' }, { value: 500229, text: '城口县' }, { value: 500230, text: '丰都县' }, { value: 500231, text: '垫江县' }, { value: 500232, text: '武隆县' }, { value: 500233, text: '忠县' }, { value: 500234, text: '开县' }, { value: 500235, text: '云阳县' }, { value: 500236, text: '奉节县' }, { value: 500237, text: '巫山县' }, { value: 500238, text: '巫溪县' }, { value: 500240, text: '石柱土家族自治县' }, { value: 500241, text: '秀山土家族苗族自治县' }, { value: 500242, text: '酉阳土家族苗族自治县' }, { value: 500243, text: '彭水苗族土家族自治县' }] }] }, { value: 510000, text: '四川省', children: [{ value: 510100, text: '成都市', children: [{ value: 510101, text: '市辖区' }, { value: 510104, text: '锦江区' }, { value: 510105, text: '青羊区' }, { value: 510106, text: '金牛区' }, { value: 510107, text: '武侯区' }, { value: 510108, text: '成华区' }, { value: 510112, text: '龙泉驿区' }, { value: 510113, text: '青白江区' }, { value: 510114, text: '新都区' }, { value: 510115, text: '温江区' }, { value: 510121, text: '金堂县' }, { value: 510122, text: '双流县' }, { value: 510124, text: '郫县' }, { value: 510129, text: '大邑县' }, { value: 510131, text: '蒲江县' }, { value: 510132, text: '新津县' }, { value: 510181, text: '都江堰市' }, { value: 510182, text: '彭州市' }, { value: 510183, text: '邛崃市' }, { value: 510184, text: '崇州市' }] }, { value: 510300, text: '自贡市', children: [{ value: 510301, text: '市辖区' }, { value: 510302, text: '自流井区' }, { value: 510303, text: '贡井区' }, { value: 510304, text: '大安区' }, { value: 510311, text: '沿滩区' }, { value: 510321, text: '荣县' }, { value: 510322, text: '富顺县' }] }, { value: 510400, text: '攀枝花市', children: [{ value: 510401, text: '市辖区' }, { value: 510402, text: '东区' }, { value: 510403, text: '西区' }, { value: 510411, text: '仁和区' }, { value: 510421, text: '米易县' }, { value: 510422, text: '盐边县' }] }, { value: 510500, text: '泸州市', children: [{ value: 510501, text: '市辖区' }, { value: 510502, text: '江阳区' }, { value: 510503, text: '纳溪区' }, { value: 510504, text: '龙马潭区' }, { value: 510521, text: '泸县' }, { value: 510522, text: '合江县' }, { value: 510524, text: '叙永县' }, { value: 510525, text: '古蔺县' }] }, { value: 510600, text: '德阳市', children: [{ value: 510601, text: '市辖区' }, { value: 510603, text: '旌阳区' }, { value: 510623, text: '中江县' }, { value: 510626, text: '罗江县' }, { value: 510681, text: '广汉市' }, { value: 510682, text: '什邡市' }, { value: 510683, text: '绵竹市' }] }, { value: 510700, text: '绵阳市', children: [{ value: 510701, text: '市辖区' }, { value: 510703, text: '涪城区' }, { value: 510704, text: '游仙区' }, { value: 510722, text: '三台县' }, { value: 510723, text: '盐亭县' }, { value: 510724, text: '安县' }, { value: 510725, text: '梓潼县' }, { value: 510726, text: '北川羌族自治县' }, { value: 510727, text: '平武县' }, { value: 510781, text: '江油市' }] }, { value: 510800, text: '广元市', children: [{ value: 510801, text: '市辖区' }, { value: 510802, text: '市中区' }, { value: 510811, text: '元坝区' }, { value: 510812, text: '朝天区' }, { value: 510821, text: '旺苍县' }, { value: 510822, text: '青川县' }, { value: 510823, text: '剑阁县' }, { value: 510824, text: '苍溪县' }] }, { value: 510900, text: '遂宁市', children: [{ value: 510901, text: '市辖区' }, { value: 510903, text: '船山区' }, { value: 510904, text: '安居区' }, { value: 510921, text: '蓬溪县' }, { value: 510922, text: '射洪县' }, { value: 510923, text: '大英县' }] }, { value: 511000, text: '内江市', children: [{ value: 511001, text: '市辖区' }, { value: 511002, text: '市中区' }, { value: 511011, text: '东兴区' }, { value: 511024, text: '威远县' }, { value: 511025, text: '资中县' }, { value: 511028, text: '隆昌县' }] }, { value: 511100, text: '乐山市', children: [{ value: 511101, text: '市辖区' }, { value: 511102, text: '市中区' }, { value: 511111, text: '沙湾区' }, { value: 511112, text: '五通桥区' }, { value: 511113, text: '金口河区' }, { value: 511123, text: '犍为县' }, { value: 511124, text: '井研县' }, { value: 511126, text: '夹江县' }, { value: 511129, text: '沐川县' }, { value: 511132, text: '峨边彝族自治县' }, { value: 511133, text: '马边彝族自治县' }, { value: 511181, text: '峨眉山市' }] }, { value: 511300, text: '南充市', children: [{ value: 511301, text: '市辖区' }, { value: 511302, text: '顺庆区' }, { value: 511303, text: '高坪区' }, { value: 511304, text: '嘉陵区' }, { value: 511321, text: '南部县' }, { value: 511322, text: '营山县' }, { value: 511323, text: '蓬安县' }, { value: 511324, text: '仪陇县' }, { value: 511325, text: '西充县' }, { value: 511381, text: '阆中市' }] }, { value: 511400, text: '眉山市', children: [{ value: 511401, text: '市辖区' }, { value: 511402, text: '东坡区' }, { value: 511421, text: '仁寿县' }, { value: 511422, text: '彭山县' }, { value: 511423, text: '洪雅县' }, { value: 511424, text: '丹棱县' }, { value: 511425, text: '青神县' }] }, { value: 511500, text: '宜宾市', children: [{ value: 511501, text: '市辖区' }, { value: 511502, text: '翠屏区' }, { value: 511521, text: '宜宾县' }, { value: 511522, text: '南溪县' }, { value: 511523, text: '江安县' }, { value: 511524, text: '长宁县' }, { value: 511525, text: '高县' }, { value: 511526, text: '珙县' }, { value: 511527, text: '筠连县' }, { value: 511528, text: '兴文县' }, { value: 511529, text: '屏山县' }] }, { value: 511600, text: '广安市', children: [{ value: 511601, text: '市辖区' }, { value: 511602, text: '广安区' }, { value: 511621, text: '岳池县' }, { value: 511622, text: '武胜县' }, { value: 511623, text: '邻水县' }, { value: 511681, text: '华蓥市' }] }, { value: 511700, text: '达州市', children: [{ value: 511701, text: '市辖区' }, { value: 511702, text: '通川区' }, { value: 511721, text: '达县' }, { value: 511722, text: '宣汉县' }, { value: 511723, text: '开江县' }, { value: 511724, text: '大竹县' }, { value: 511725, text: '渠县' }, { value: 511781, text: '万源市' }] }, { value: 511800, text: '雅安市', children: [{ value: 511801, text: '市辖区' }, { value: 511802, text: '雨城区' }, { value: 511821, text: '名山县' }, { value: 511822, text: '荥经县' }, { value: 511823, text: '汉源县' }, { value: 511824, text: '石棉县' }, { value: 511825, text: '天全县' }, { value: 511826, text: '芦山县' }, { value: 511827, text: '宝兴县' }] }, { value: 511900, text: '巴中市', children: [{ value: 511901, text: '市辖区' }, { value: 511902, text: '巴州区' }, { value: 511921, text: '通江县' }, { value: 511922, text: '南江县' }, { value: 511923, text: '平昌县' }] }, { value: 512000, text: '资阳市', children: [{ value: 512001, text: '市辖区' }, { value: 512002, text: '雁江区' }, { value: 512021, text: '安岳县' }, { value: 512022, text: '乐至县' }, { value: 512081, text: '简阳市' }] }, { value: 513200, text: '阿坝藏族羌族自治州', children: [{ value: 513221, text: '汶川县' }, { value: 513222, text: '理县' }, { value: 513223, text: '茂县' }, { value: 513224, text: '松潘县' }, { value: 513225, text: '九寨沟县' }, { value: 513226, text: '金川县' }, { value: 513227, text: '小金县' }, { value: 513228, text: '黑水县' }, { value: 513229, text: '马尔康县' }, { value: 513230, text: '壤塘县' }, { value: 513231, text: '阿坝县' }, { value: 513232, text: '若尔盖县' }, { value: 513233, text: '红原县' }] }, { value: 513300, text: '甘孜藏族自治州', children: [{ value: 513321, text: '康定县' }, { value: 513322, text: '泸定县' }, { value: 513323, text: '丹巴县' }, { value: 513324, text: '九龙县' }, { value: 513325, text: '雅江县' }, { value: 513326, text: '道孚县' }, { value: 513327, text: '炉霍县' }, { value: 513328, text: '甘孜县' }, { value: 513329, text: '新龙县' }, { value: 513330, text: '德格县' }, { value: 513331, text: '白玉县' }, { value: 513332, text: '石渠县' }, { value: 513333, text: '色达县' }, { value: 513334, text: '理塘县' }, { value: 513335, text: '巴塘县' }, { value: 513336, text: '乡城县' }, { value: 513337, text: '稻城县' }, { value: 513338, text: '得荣县' }] }, { value: 513400, text: '凉山彝族自治州', children: [{ value: 513401, text: '西昌市' }, { value: 513422, text: '木里藏族自治县' }, { value: 513423, text: '盐源县' }, { value: 513424, text: '德昌县' }, { value: 513425, text: '会理县' }, { value: 513426, text: '会东县' }, { value: 513427, text: '宁南县' }, { value: 513428, text: '普格县' }, { value: 513429, text: '布拖县' }, { value: 513430, text: '金阳县' }, { value: 513431, text: '昭觉县' }, { value: 513432, text: '喜德县' }, { value: 513433, text: '冕宁县' }, { value: 513434, text: '越西县' }, { value: 513435, text: '甘洛县' }, { value: 513436, text: '美姑县' }, { value: 513437, text: '雷波县' }] }] }, { value: 520000, text: '贵州省', children: [{ value: 520100, text: '贵阳市', children: [{ value: 520101, text: '市辖区' }, { value: 520102, text: '南明区' }, { value: 520103, text: '云岩区' }, { value: 520111, text: '花溪区' }, { value: 520112, text: '乌当区' }, { value: 520113, text: '白云区' }, { value: 520114, text: '小河区' }, { value: 520121, text: '开阳县' }, { value: 520122, text: '息烽县' }, { value: 520123, text: '修文县' }, { value: 520181, text: '清镇市' }] }, { value: 520200, text: '六盘水市', children: [{ value: 520201, text: '钟山区' }, { value: 520203, text: '六枝特区' }, { value: 520221, text: '水城县' }, { value: 520222, text: '盘县' }] }, { value: 520300, text: '遵义市', children: [{ value: 520301, text: '市辖区' }, { value: 520302, text: '红花岗区' }, { value: 520303, text: '汇川区' }, { value: 520321, text: '遵义县' }, { value: 520322, text: '桐梓县' }, { value: 520323, text: '绥阳县' }, { value: 520324, text: '正安县' }, { value: 520325, text: '道真仡佬族苗族自治县' }, { value: 520326, text: '务川仡佬族苗族自治县' }, { value: 520327, text: '凤冈县' }, { value: 520328, text: '湄潭县' }, { value: 520329, text: '余庆县' }, { value: 520330, text: '习水县' }, { value: 520381, text: '赤水市' }, { value: 520382, text: '仁怀市' }] }, { value: 520400, text: '安顺市', children: [{ value: 520401, text: '市辖区' }, { value: 520402, text: '西秀区' }, { value: 520421, text: '平坝县' }, { value: 520422, text: '普定县' }, { value: 520423, text: '镇宁布依族苗族自治县' }, { value: 520424, text: '关岭布依族苗族自治县' }, { value: 520425, text: '紫云苗族布依族自治县' }] }, { value: 522200, text: '铜仁地区', children: [{ value: 522201, text: '铜仁市' }, { value: 522222, text: '江口县' }, { value: 522223, text: '玉屏侗族自治县' }, { value: 522224, text: '石阡县' }, { value: 522225, text: '思南县' }, { value: 522226, text: '印江土家族苗族自治县' }, { value: 522227, text: '德江县' }, { value: 522228, text: '沿河土家族自治县' }, { value: 522229, text: '松桃苗族自治县' }, { value: 522230, text: '万山特区' }] }, { value: 522300, text: '黔西南布依族苗族自治州', children: [{ value: 522301, text: '兴义市' }, { value: 522322, text: '兴仁县' }, { value: 522323, text: '普安县' }, { value: 522324, text: '晴隆县' }, { value: 522325, text: '贞丰县' }, { value: 522326, text: '望谟县' }, { value: 522327, text: '册亨县' }, { value: 522328, text: '安龙县' }] }, { value: 522400, text: '毕节地区', children: [{ value: 522401, text: '毕节市' }, { value: 522422, text: '大方县' }, { value: 522423, text: '黔西县' }, { value: 522424, text: '金沙县' }, { value: 522425, text: '织金县' }, { value: 522426, text: '纳雍县' }, { value: 522427, text: '威宁彝族回族苗族自治县' }, { value: 522428, text: '赫章县' }] }, { value: 522600, text: '黔东南苗族侗族自治州', children: [{ value: 522601, text: '凯里市' }, { value: 522622, text: '黄平县' }, { value: 522623, text: '施秉县' }, { value: 522624, text: '三穗县' }, { value: 522625, text: '镇远县' }, { value: 522626, text: '岑巩县' }, { value: 522627, text: '天柱县' }, { value: 522628, text: '锦屏县' }, { value: 522629, text: '剑河县' }, { value: 522630, text: '台江县' }, { value: 522631, text: '黎平县' }, { value: 522632, text: '榕江县' }, { value: 522633, text: '从江县' }, { value: 522634, text: '雷山县' }, { value: 522635, text: '麻江县' }, { value: 522636, text: '丹寨县' }] }, { value: 522700, text: '黔南布依族苗族自治州', children: [{ value: 522701, text: '都匀市' }, { value: 522702, text: '福泉市' }, { value: 522722, text: '荔波县' }, { value: 522723, text: '贵定县' }, { value: 522725, text: '瓮安县' }, { value: 522726, text: '独山县' }, { value: 522727, text: '平塘县' }, { value: 522728, text: '罗甸县' }, { value: 522729, text: '长顺县' }, { value: 522730, text: '龙里县' }, { value: 522731, text: '惠水县' }, { value: 522732, text: '三都水族自治县' }] }] }, { value: 530000, text: '云南省', children: [{ value: 530100, text: '昆明市', children: [{ value: 530101, text: '市辖区' }, { value: 530102, text: '五华区' }, { value: 530103, text: '盘龙区' }, { value: 530111, text: '官渡区' }, { value: 530112, text: '西山区' }, { value: 530113, text: '东川区' }, { value: 530121, text: '呈贡县' }, { value: 530122, text: '晋宁县' }, { value: 530124, text: '富民县' }, { value: 530125, text: '宜良县' }, { value: 530126, text: '石林彝族自治县' }, { value: 530127, text: '嵩明县' }, { value: 530128, text: '禄劝彝族苗族自治县' }, { value: 530129, text: '寻甸回族彝族自治县' }, { value: 530181, text: '安宁市' }] }, { value: 530300, text: '曲靖市', children: [{ value: 530301, text: '市辖区' }, { value: 530302, text: '麒麟区' }, { value: 530321, text: '马龙县' }, { value: 530322, text: '陆良县' }, { value: 530323, text: '师宗县' }, { value: 530324, text: '罗平县' }, { value: 530325, text: '富源县' }, { value: 530326, text: '会泽县' }, { value: 530328, text: '沾益县' }, { value: 530381, text: '宣威市' }] }, { value: 530400, text: '玉溪市', children: [{ value: 530401, text: '市辖区' }, { value: 530402, text: '红塔区' }, { value: 530421, text: '江川县' }, { value: 530422, text: '澄江县' }, { value: 530423, text: '通海县' }, { value: 530424, text: '华宁县' }, { value: 530425, text: '易门县' }, { value: 530426, text: '峨山彝族自治县' }, { value: 530427, text: '新平彝族傣族自治县' }, { value: 530428, text: '元江哈尼族彝族傣族自治县' }] }, { value: 530500, text: '保山市', children: [{ value: 530501, text: '市辖区' }, { value: 530502, text: '隆阳区' }, { value: 530521, text: '施甸县' }, { value: 530522, text: '腾冲县' }, { value: 530523, text: '龙陵县' }, { value: 530524, text: '昌宁县' }] }, { value: 530600, text: '昭通市', children: [{ value: 530601, text: '市辖区' }, { value: 530602, text: '昭阳区' }, { value: 530621, text: '鲁甸县' }, { value: 530622, text: '巧家县' }, { value: 530623, text: '盐津县' }, { value: 530624, text: '大关县' }, { value: 530625, text: '永善县' }, { value: 530626, text: '绥江县' }, { value: 530627, text: '镇雄县' }, { value: 530628, text: '彝良县' }, { value: 530629, text: '威信县' }, { value: 530630, text: '水富县' }] }, { value: 530700, text: '丽江市', children: [{ value: 530701, text: '市辖区' }, { value: 530702, text: '古城区' }, { value: 530721, text: '玉龙纳西族自治县' }, { value: 530722, text: '永胜县' }, { value: 530723, text: '华坪县' }, { value: 530724, text: '宁蒗彝族自治县' }] }, { value: 530800, text: '普洱市      ', children: [{ value: 530801, text: '市辖区' }, { value: 530802, text: '思茅区      ' }, { value: 530821, text: '宁洱哈尼族彝族自治县      ' }, { value: 530822, text: '墨江哈尼族自治县' }, { value: 530823, text: '景东彝族自治县' }, { value: 530824, text: '景谷傣族彝族自治县' }, { value: 530825, text: '镇沅彝族哈尼族拉祜族自治县' }, { value: 530826, text: '江城哈尼族彝族自治县' }, { value: 530827, text: '孟连傣族拉祜族佤族自治县' }, { value: 530828, text: '澜沧拉祜族自治县' }, { value: 530829, text: '西盟佤族自治县' }] }, { value: 530900, text: '临沧市', children: [{ value: 530901, text: '市辖区' }, { value: 530902, text: '临翔区' }, { value: 530921, text: '凤庆县' }, { value: 530922, text: '云县' }, { value: 530923, text: '永德县' }, { value: 530924, text: '镇康县' }, { value: 530925, text: '双江拉祜族佤族布朗族傣族自治县' }, { value: 530926, text: '耿马傣族佤族自治县' }, { value: 530927, text: '沧源佤族自治县' }] }, { value: 532300, text: '楚雄彝族自治州', children: [{ value: 532301, text: '楚雄市' }, { value: 532322, text: '双柏县' }, { value: 532323, text: '牟定县' }, { value: 532324, text: '南华县' }, { value: 532325, text: '姚安县' }, { value: 532326, text: '大姚县' }, { value: 532327, text: '永仁县' }, { value: 532328, text: '元谋县' }, { value: 532329, text: '武定县' }, { value: 532331, text: '禄丰县' }] }, { value: 532500, text: '红河哈尼族彝族自治州', children: [{ value: 532501, text: '个旧市' }, { value: 532502, text: '开远市' }, { value: 532522, text: '蒙自县' }, { value: 532523, text: '屏边苗族自治县' }, { value: 532524, text: '建水县' }, { value: 532525, text: '石屏县' }, { value: 532526, text: '弥勒县' }, { value: 532527, text: '泸西县' }, { value: 532528, text: '元阳县' }, { value: 532529, text: '红河县' }, { value: 532530, text: '金平苗族瑶族傣族自治县' }, { value: 532531, text: '绿春县' }, { value: 532532, text: '河口瑶族自治县' }] }, { value: 532600, text: '文山壮族苗族自治州', children: [{ value: 532621, text: '文山县' }, { value: 532622, text: '砚山县' }, { value: 532623, text: '西畴县' }, { value: 532624, text: '麻栗坡县' }, { value: 532625, text: '马关县' }, { value: 532626, text: '丘北县' }, { value: 532627, text: '广南县' }, { value: 532628, text: '富宁县' }] }, { value: 532800, text: '西双版纳傣族自治州', children: [{ value: 532801, text: '景洪市' }, { value: 532822, text: '勐海县' }, { value: 532823, text: '勐腊县' }] }, { value: 532900, text: '大理白族自治州', children: [{ value: 532901, text: '大理市' }, { value: 532922, text: '漾濞彝族自治县' }, { value: 532923, text: '祥云县' }, { value: 532924, text: '宾川县' }, { value: 532925, text: '弥渡县' }, { value: 532926, text: '南涧彝族自治县' }, { value: 532927, text: '巍山彝族回族自治县' }, { value: 532928, text: '永平县' }, { value: 532929, text: '云龙县' }, { value: 532930, text: '洱源县' }, { value: 532931, text: '剑川县' }, { value: 532932, text: '鹤庆县' }] }, { value: 533100, text: '德宏傣族景颇族自治州', children: [{ value: 533102, text: '瑞丽市' }, { value: 533103, text: '潞西市' }, { value: 533122, text: '梁河县' }, { value: 533123, text: '盈江县' }, { value: 533124, text: '陇川县' }] }, { value: 533300, text: '怒江傈僳族自治州', children: [{ value: 533321, text: '泸水县' }, { value: 533323, text: '福贡县' }, { value: 533324, text: '贡山独龙族怒族自治县' }, { value: 533325, text: '兰坪白族普米族自治县' }] }, { value: 533400, text: '迪庆藏族自治州', children: [{ value: 533421, text: '香格里拉县' }, { value: 533422, text: '德钦县' }, { value: 533423, text: '维西傈僳族自治县' }] }] }, { value: 540000, text: '西藏自治区', children: [{ value: 540100, text: '拉萨市', children: [{ value: 540101, text: '市辖区' }, { value: 540102, text: '城关区' }, { value: 540121, text: '林周县' }, { value: 540122, text: '当雄县' }, { value: 540123, text: '尼木县' }, { value: 540124, text: '曲水县' }, { value: 540125, text: '堆龙德庆县' }, { value: 540126, text: '达孜县' }, { value: 540127, text: '墨竹工卡县' }] }, { value: 542100, text: '昌都地区', children: [{ value: 542121, text: '昌都县' }, { value: 542122, text: '江达县' }, { value: 542123, text: '贡觉县' }, { value: 542124, text: '类乌齐县' }, { value: 542125, text: '丁青县' }, { value: 542126, text: '察雅县' }, { value: 542127, text: '八宿县' }, { value: 542128, text: '左贡县' }, { value: 542129, text: '芒康县' }, { value: 542132, text: '洛隆县' }, { value: 542133, text: '边坝县' }] }, { value: 542200, text: '山南地区', children: [{ value: 542221, text: '乃东县' }, { value: 542222, text: '扎囊县' }, { value: 542223, text: '贡嘎县' }, { value: 542224, text: '桑日县' }, { value: 542225, text: '琼结县' }, { value: 542226, text: '曲松县' }, { value: 542227, text: '措美县' }, { value: 542228, text: '洛扎县' }, { value: 542229, text: '加查县' }, { value: 542231, text: '隆子县' }, { value: 542232, text: '错那县' }, { value: 542233, text: '浪卡子县' }] }, { value: 542300, text: '日喀则地区', children: [{ value: 542301, text: '日喀则市' }, { value: 542322, text: '南木林县' }, { value: 542323, text: '江孜县' }, { value: 542324, text: '定日县' }, { value: 542325, text: '萨迦县' }, { value: 542326, text: '拉孜县' }, { value: 542327, text: '昂仁县' }, { value: 542328, text: '谢通门县' }, { value: 542329, text: '白朗县' }, { value: 542330, text: '仁布县' }, { value: 542331, text: '康马县' }, { value: 542332, text: '定结县' }, { value: 542333, text: '仲巴县' }, { value: 542334, text: '亚东县' }, { value: 542335, text: '吉隆县' }, { value: 542336, text: '聂拉木县' }, { value: 542337, text: '萨嘎县' }, { value: 542338, text: '岗巴县' }] }, { value: 542400, text: '那曲地区', children: [{ value: 542421, text: '那曲县' }, { value: 542422, text: '嘉黎县' }, { value: 542423, text: '比如县' }, { value: 542424, text: '聂荣县' }, { value: 542425, text: '安多县' }, { value: 542426, text: '申扎县' }, { value: 542427, text: '索县' }, { value: 542428, text: '班戈县' }, { value: 542429, text: '巴青县' }, { value: 542430, text: '尼玛县' }] }, { value: 542500, text: '阿里地区', children: [{ value: 542521, text: '普兰县' }, { value: 542522, text: '札达县' }, { value: 542523, text: '噶尔县' }, { value: 542524, text: '日土县' }, { value: 542525, text: '革吉县' }, { value: 542526, text: '改则县' }, { value: 542527, text: '措勤县' }] }, { value: 542600, text: '林芝地区', children: [{ value: 542621, text: '林芝县' }, { value: 542622, text: '工布江达县' }, { value: 542623, text: '米林县' }, { value: 542624, text: '墨脱县' }, { value: 542625, text: '波密县' }, { value: 542626, text: '察隅县' }, { value: 542627, text: '朗县' }] }] }, { value: 610000, text: '陕西省', children: [{ value: 610100, text: '西安市', children: [{ value: 610101, text: '市辖区' }, { value: 610102, text: '新城区' }, { value: 610103, text: '碑林区' }, { value: 610104, text: '莲湖区' }, { value: 610111, text: '灞桥区' }, { value: 610112, text: '未央区' }, { value: 610113, text: '雁塔区' }, { value: 610114, text: '阎良区' }, { value: 610115, text: '临潼区' }, { value: 610116, text: '长安区' }, { value: 610122, text: '蓝田县' }, { value: 610124, text: '周至县' }, { value: 610125, text: '户县' }, { value: 610126, text: '高陵县' }] }, { value: 610200, text: '铜川市', children: [{ value: 610201, text: '市辖区' }, { value: 610202, text: '王益区' }, { value: 610203, text: '印台区' }, { value: 610204, text: '耀州区' }, { value: 610222, text: '宜君县' }] }, { value: 610300, text: '宝鸡市', children: [{ value: 610301, text: '市辖区' }, { value: 610302, text: '渭滨区' }, { value: 610303, text: '金台区' }, { value: 610304, text: '陈仓区' }, { value: 610322, text: '凤翔县' }, { value: 610323, text: '岐山县' }, { value: 610324, text: '扶风县' }, { value: 610326, text: '眉县' }, { value: 610327, text: '陇县' }, { value: 610328, text: '千阳县' }, { value: 610329, text: '麟游县' }, { value: 610330, text: '凤县' }, { value: 610331, text: '太白县' }] }, { value: 610400, text: '咸阳市', children: [{ value: 610401, text: '市辖区' }, { value: 610402, text: '秦都区' }, { value: 610403, text: '杨凌区' }, { value: 610404, text: '渭城区' }, { value: 610422, text: '三原县' }, { value: 610423, text: '泾阳县' }, { value: 610424, text: '乾县' }, { value: 610425, text: '礼泉县' }, { value: 610426, text: '永寿县' }, { value: 610427, text: '彬县' }, { value: 610428, text: '长武县' }, { value: 610429, text: '旬邑县' }, { value: 610430, text: '淳化县' }, { value: 610431, text: '武功县' }, { value: 610481, text: '兴平市' }] }, { value: 610500, text: '渭南市', children: [{ value: 610501, text: '市辖区' }, { value: 610502, text: '临渭区' }, { value: 610521, text: '华县' }, { value: 610522, text: '潼关县' }, { value: 610523, text: '大荔县' }, { value: 610524, text: '合阳县' }, { value: 610525, text: '澄城县' }, { value: 610526, text: '蒲城县' }, { value: 610527, text: '白水县' }, { value: 610528, text: '富平县' }, { value: 610581, text: '韩城市' }, { value: 610582, text: '华阴市' }] }, { value: 610600, text: '延安市', children: [{ value: 610601, text: '市辖区' }, { value: 610602, text: '宝塔区' }, { value: 610621, text: '延长县' }, { value: 610622, text: '延川县' }, { value: 610623, text: '子长县' }, { value: 610624, text: '安塞县' }, { value: 610625, text: '志丹县' }, { value: 610626, text: '吴起县' }, { value: 610627, text: '甘泉县' }, { value: 610628, text: '富县' }, { value: 610629, text: '洛川县' }, { value: 610630, text: '宜川县' }, { value: 610631, text: '黄龙县' }, { value: 610632, text: '黄陵县' }] }, { value: 610700, text: '汉中市', children: [{ value: 610701, text: '市辖区' }, { value: 610702, text: '汉台区' }, { value: 610721, text: '南郑县' }, { value: 610722, text: '城固县' }, { value: 610723, text: '洋县' }, { value: 610724, text: '西乡县' }, { value: 610725, text: '勉县' }, { value: 610726, text: '宁强县' }, { value: 610727, text: '略阳县' }, { value: 610728, text: '镇巴县' }, { value: 610729, text: '留坝县' }, { value: 610730, text: '佛坪县' }] }, { value: 610800, text: '榆林市', children: [{ value: 610801, text: '市辖区' }, { value: 610802, text: '榆阳区' }, { value: 610821, text: '神木县' }, { value: 610822, text: '府谷县' }, { value: 610823, text: '横山县' }, { value: 610824, text: '靖边县' }, { value: 610825, text: '定边县' }, { value: 610826, text: '绥德县' }, { value: 610827, text: '米脂县' }, { value: 610828, text: '佳县' }, { value: 610829, text: '吴堡县' }, { value: 610830, text: '清涧县' }, { value: 610831, text: '子洲县' }] }, { value: 610900, text: '安康市', children: [{ value: 610901, text: '市辖区' }, { value: 610902, text: '汉滨区' }, { value: 610921, text: '汉阴县' }, { value: 610922, text: '石泉县' }, { value: 610923, text: '宁陕县' }, { value: 610924, text: '紫阳县' }, { value: 610925, text: '岚皋县' }, { value: 610926, text: '平利县' }, { value: 610927, text: '镇坪县' }, { value: 610928, text: '旬阳县' }, { value: 610929, text: '白河县' }] }, { value: 611000, text: '商洛市', children: [{ value: 611001, text: '市辖区' }, { value: 611002, text: '商州区' }, { value: 611021, text: '洛南县' }, { value: 611022, text: '丹凤县' }, { value: 611023, text: '商南县' }, { value: 611024, text: '山阳县' }, { value: 611025, text: '镇安县' }, { value: 611026, text: '柞水县' }] }] }, { value: 620000, text: '甘肃省', children: [{ value: 620100, text: '兰州市', children: [{ value: 620101, text: '市辖区' }, { value: 620102, text: '城关区' }, { value: 620103, text: '七里河区' }, { value: 620104, text: '西固区' }, { value: 620105, text: '安宁区' }, { value: 620111, text: '红古区' }, { value: 620121, text: '永登县' }, { value: 620122, text: '皋兰县' }, { value: 620123, text: '榆中县' }] }, { value: 620200, text: '嘉峪关市', children: [{ value: 620201, text: '市辖区' }] }, { value: 620300, text: '金昌市', children: [{ value: 620301, text: '市辖区' }, { value: 620302, text: '金川区' }, { value: 620321, text: '永昌县' }] }, { value: 620400, text: '白银市', children: [{ value: 620401, text: '市辖区' }, { value: 620402, text: '白银区' }, { value: 620403, text: '平川区' }, { value: 620421, text: '靖远县' }, { value: 620422, text: '会宁县' }, { value: 620423, text: '景泰县' }] }, { value: 620500, text: '天水市', children: [{ value: 620501, text: '市辖区' }, { value: 620502, text: '秦城区' }, { value: 620503, text: '北道区' }, { value: 620521, text: '清水县' }, { value: 620522, text: '秦安县' }, { value: 620523, text: '甘谷县' }, { value: 620524, text: '武山县' }, { value: 620525, text: '张家川回族自治县' }] }, { value: 620600, text: '武威市', children: [{ value: 620601, text: '市辖区' }, { value: 620602, text: '凉州区' }, { value: 620621, text: '民勤县' }, { value: 620622, text: '古浪县' }, { value: 620623, text: '天祝藏族自治县' }] }, { value: 620700, text: '张掖市', children: [{ value: 620701, text: '市辖区' }, { value: 620702, text: '甘州区' }, { value: 620721, text: '肃南裕固族自治县' }, { value: 620722, text: '民乐县' }, { value: 620723, text: '临泽县' }, { value: 620724, text: '高台县' }, { value: 620725, text: '山丹县' }] }, { value: 620800, text: '平凉市', children: [{ value: 620801, text: '市辖区' }, { value: 620802, text: '崆峒区' }, { value: 620821, text: '泾川县' }, { value: 620822, text: '灵台县' }, { value: 620823, text: '崇信县' }, { value: 620824, text: '华亭县' }, { value: 620825, text: '庄浪县' }, { value: 620826, text: '静宁县' }] }, { value: 620900, text: '酒泉市', children: [{ value: 620901, text: '市辖区' }, { value: 620902, text: '肃州区' }, { value: 620921, text: '金塔县' }, { value: 620922, text: '瓜州县' }, { value: 620923, text: '肃北蒙古族自治县' }, { value: 620924, text: '阿克塞哈萨克族自治县' }, { value: 620981, text: '玉门市' }, { value: 620982, text: '敦煌市' }] }, { value: 621000, text: '庆阳市', children: [{ value: 621001, text: '市辖区' }, { value: 621002, text: '西峰区' }, { value: 621021, text: '庆城县' }, { value: 621022, text: '环县' }, { value: 621023, text: '华池县' }, { value: 621024, text: '合水县' }, { value: 621025, text: '正宁县' }, { value: 621026, text: '宁县' }, { value: 621027, text: '镇原县' }] }, { value: 621100, text: '定西市', children: [{ value: 621101, text: '市辖区' }, { value: 621102, text: '安定区' }, { value: 621121, text: '通渭县' }, { value: 621122, text: '陇西县' }, { value: 621123, text: '渭源县' }, { value: 621124, text: '临洮县' }, { value: 621125, text: '漳县' }, { value: 621126, text: '岷县' }] }, { value: 621200, text: '陇南市', children: [{ value: 621201, text: '市辖区' }, { value: 621202, text: '武都区' }, { value: 621221, text: '成县' }, { value: 621222, text: '文县' }, { value: 621223, text: '宕昌县' }, { value: 621224, text: '康县' }, { value: 621225, text: '西和县' }, { value: 621226, text: '礼县' }, { value: 621227, text: '徽县' }, { value: 621228, text: '两当县' }] }, { value: 622900, text: '临夏回族自治州', children: [{ value: 622901, text: '临夏市' }, { value: 622921, text: '临夏县' }, { value: 622922, text: '康乐县' }, { value: 622923, text: '永靖县' }, { value: 622924, text: '广河县' }, { value: 622925, text: '和政县' }, { value: 622926, text: '东乡族自治县' }, { value: 622927, text: '积石山保安族东乡族撒拉族自治县' }] }, { value: 623000, text: '甘南藏族自治州', children: [{ value: 623001, text: '合作市' }, { value: 623021, text: '临潭县' }, { value: 623022, text: '卓尼县' }, { value: 623023, text: '舟曲县' }, { value: 623024, text: '迭部县' }, { value: 623025, text: '玛曲县' }, { value: 623026, text: '碌曲县' }, { value: 623027, text: '夏河县' }] }] }, { value: 630000, text: '青海省', children: [{ value: 630100, text: '西宁市', children: [{ value: 630101, text: '市辖区' }, { value: 630102, text: '城东区' }, { value: 630103, text: '城中区' }, { value: 630104, text: '城西区' }, { value: 630105, text: '城北区' }, { value: 630121, text: '大通回族土族自治县' }, { value: 630122, text: '湟中县' }, { value: 630123, text: '湟源县' }] }, { value: 632100, text: '海东地区', children: [{ value: 632121, text: '平安县' }, { value: 632122, text: '民和回族土族自治县' }, { value: 632123, text: '乐都县' }, { value: 632126, text: '互助土族自治县' }, { value: 632127, text: '化隆回族自治县' }, { value: 632128, text: '循化撒拉族自治县' }] }, { value: 632200, text: '海北藏族自治州', children: [{ value: 632221, text: '门源回族自治县' }, { value: 632222, text: '祁连县' }, { value: 632223, text: '海晏县' }, { value: 632224, text: '刚察县' }] }, { value: 632300, text: '黄南藏族自治州', children: [{ value: 632321, text: '同仁县' }, { value: 632322, text: '尖扎县' }, { value: 632323, text: '泽库县' }, { value: 632324, text: '河南蒙古族自治县' }] }, { value: 632500, text: '海南藏族自治州', children: [{ value: 632521, text: '共和县' }, { value: 632522, text: '同德县' }, { value: 632523, text: '贵德县' }, { value: 632524, text: '兴海县' }, { value: 632525, text: '贵南县' }] }, { value: 632600, text: '果洛藏族自治州', children: [{ value: 632621, text: '玛沁县' }, { value: 632622, text: '班玛县' }, { value: 632623, text: '甘德县' }, { value: 632624, text: '达日县' }, { value: 632625, text: '久治县' }, { value: 632626, text: '玛多县' }] }, { value: 632700, text: '玉树藏族自治州', children: [{ value: 632721, text: '玉树县' }, { value: 632722, text: '杂多县' }, { value: 632723, text: '称多县' }, { value: 632724, text: '治多县' }, { value: 632725, text: '囊谦县' }, { value: 632726, text: '曲麻莱县' }] }, { value: 632800, text: '海西蒙古族藏族自治州', children: [{ value: 632801, text: '格尔木市' }, { value: 632802, text: '德令哈市' }, { value: 632821, text: '乌兰县' }, { value: 632822, text: '都兰县' }, { value: 632823, text: '天峻县' }, { value: 632824, text: '芒崖            ' }, { value: 632825, text: '冷湖' }, { value: 632826, text: '大柴旦      ' }] }] }, { value: 640000, text: '宁夏回族自治区', children: [{ value: 640100, text: '银川市', children: [{ value: 640101, text: '市辖区' }, { value: 640104, text: '兴庆区' }, { value: 640105, text: '西夏区' }, { value: 640106, text: '金凤区' }, { value: 640121, text: '永宁县' }, { value: 640122, text: '贺兰县' }, { value: 640181, text: '灵武市' }] }, { value: 640200, text: '石嘴山市', children: [{ value: 640201, text: '市辖区' }, { value: 640202, text: '大武口区' }, { value: 640205, text: '惠农区' }, { value: 640221, text: '平罗县' }] }, { value: 640300, text: '吴忠市', children: [{ value: 640301, text: '市辖区' }, { value: 640302, text: '利通区' }, { value: 640323, text: '盐池县' }, { value: 640324, text: '同心县' }, { value: 640381, text: '青铜峡市' }] }, { value: 640400, text: '固原市', children: [{ value: 640401, text: '市辖区' }, { value: 640402, text: '原州区' }, { value: 640422, text: '西吉县' }, { value: 640423, text: '隆德县' }, { value: 640424, text: '泾源县' }, { value: 640425, text: '彭阳县' }] }, { value: 640500, text: '中卫市', children: [{ value: 640501, text: '市辖区' }, { value: 640502, text: '沙坡头区' }, { value: 640521, text: '中宁县' }, { value: 640522, text: '海原县' }] }] }, { value: 650000, text: '新疆维吾尔自治区', children: [{ value: 650100, text: '乌鲁木齐市', children: [{ value: 650101, text: '市辖区' }, { value: 650102, text: '天山区' }, { value: 650103, text: '沙依巴克区' }, { value: 650104, text: '新市区' }, { value: 650105, text: '水磨沟区' }, { value: 650106, text: '头屯河区' }, { value: 650107, text: '达坂城区' }, { value: 650108, text: '东山区' }, { value: 650121, text: '乌鲁木齐县' }] }, { value: 650200, text: '克拉玛依市', children: [{ value: 650201, text: '市辖区' }, { value: 650202, text: '独山子区' }, { value: 650203, text: '克拉玛依区' }, { value: 650204, text: '白碱滩区' }, { value: 650205, text: '乌尔禾区' }] }, { value: 650300, text: '石河子市' }, { value: 652100, text: '吐鲁番地区', children: [{ value: 652101, text: '吐鲁番市' }, { value: 652122, text: '鄯善县' }, { value: 652123, text: '托克逊县' }] }, { value: 652200, text: '哈密地区', children: [{ value: 652201, text: '哈密市' }, { value: 652222, text: '巴里坤哈萨克自治县' }, { value: 652223, text: '伊吾县' }] }, { value: 652300, text: '昌吉回族自治州', children: [{ value: 652301, text: '昌吉市' }, { value: 652302, text: '阜康市' }, { value: 652303, text: '米泉市' }, { value: 652323, text: '呼图壁县' }, { value: 652324, text: '玛纳斯县' }, { value: 652325, text: '奇台县' }, { value: 652327, text: '吉木萨尔县' }, { value: 652328, text: '木垒哈萨克自治县' }] }, { value: 652700, text: '博尔塔拉蒙古自治州', children: [{ value: 652701, text: '博乐市' }, { value: 652722, text: '精河县' }, { value: 652723, text: '温泉县' }] }, { value: 652800, text: '巴音郭楞蒙古自治州', children: [{ value: 652801, text: '库尔勒市' }, { value: 652822, text: '轮台县' }, { value: 652823, text: '尉犁县' }, { value: 652824, text: '若羌县' }, { value: 652825, text: '且末县' }, { value: 652826, text: '焉耆回族自治县' }, { value: 652827, text: '和静县' }, { value: 652828, text: '和硕县' }, { value: 652829, text: '博湖县' }] }, { value: 652900, text: '阿克苏地区', children: [{ value: 652901, text: '阿克苏市' }, { value: 652922, text: '温宿县' }, { value: 652923, text: '库车县' }, { value: 652924, text: '沙雅县' }, { value: 652925, text: '新和县' }, { value: 652926, text: '拜城县' }, { value: 652927, text: '乌什县' }, { value: 652928, text: '阿瓦提县' }, { value: 652929, text: '柯坪县' }] }, { value: 653000, text: '克孜勒苏柯尔克孜自治州', children: [{ value: 653001, text: '阿图什市' }, { value: 653022, text: '阿克陶县' }, { value: 653023, text: '阿合奇县' }, { value: 653024, text: '乌恰县' }] }, { value: 653100, text: '喀什地区', children: [{ value: 653101, text: '喀什市' }, { value: 653121, text: '疏附县' }, { value: 653122, text: '疏勒县' }, { value: 653123, text: '英吉沙县' }, { value: 653124, text: '泽普县' }, { value: 653125, text: '莎车县' }, { value: 653126, text: '叶城县' }, { value: 653127, text: '麦盖提县' }, { value: 653128, text: '岳普湖县' }, { value: 653129, text: '伽师县' }, { value: 653130, text: '巴楚县' }, { value: 653131, text: '塔什库尔干塔吉克自治县' }] }, { value: 653200, text: '和田地区', children: [{ value: 653201, text: '和田市' }, { value: 653221, text: '和田县' }, { value: 653222, text: '墨玉县' }, { value: 653223, text: '皮山县' }, { value: 653224, text: '洛浦县' }, { value: 653225, text: '策勒县' }, { value: 653226, text: '于田县' }, { value: 653227, text: '民丰县' }] }, { value: 654000, text: '伊犁哈萨克自治州', children: [{ value: 654002, text: '伊宁市' }, { value: 654003, text: '奎屯市' }, { value: 654021, text: '伊宁县' }, { value: 654022, text: '察布查尔锡伯自治县' }, { value: 654023, text: '霍城县' }, { value: 654024, text: '巩留县' }, { value: 654025, text: '新源县' }, { value: 654026, text: '昭苏县' }, { value: 654027, text: '特克斯县' }, { value: 654028, text: '尼勒克县' }] }, { value: 654200, text: '塔城地区', children: [{ value: 654201, text: '塔城市' }, { value: 654202, text: '乌苏市' }, { value: 654221, text: '额敏县' }, { value: 654223, text: '沙湾县' }, { value: 654224, text: '托里县' }, { value: 654225, text: '裕民县' }, { value: 654226, text: '和布克赛尔蒙古自治县' }] }, { value: 654300, text: '阿勒泰地区', children: [{ value: 654301, text: '阿勒泰市' }, { value: 654321, text: '布尔津县' }, { value: 654322, text: '富蕴县' }, { value: 654323, text: '福海县' }, { value: 654324, text: '哈巴河县' }, { value: 654325, text: '青河县' }, { value: 654326, text: '吉木乃县' }] }, { value: 659000, text: '省直辖行政单位', children: [{ value: 659001, text: '石河子市' }, { value: 659002, text: '阿拉尔市' }, { value: 659003, text: '图木舒克市' }, { value: 659004, text: '五家渠市' }] }] }];
 
 /***/ }),
-/* 295 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63222,11 +59384,11 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63331,7 +59493,7 @@ var SMSCodeBox = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(SMSCodeBox);
 
 /***/ }),
-/* 296 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63341,31 +59503,29 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>'], ['<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>']);
-
 var _san = __webpack_require__(0);
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _dom = __webpack_require__(45);
+var _dom = __webpack_require__(38);
 
-var _page = __webpack_require__(46);
+var _page = __webpack_require__(39);
 
 var _util = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } /**
-                                                                                                                                                   * @file components/Sticky.js
-                                                                                                                                                   * @author liyuan
-                                                                                                                                                   */
-
 var cx = (0, _util.create)('ui-sticky');
 
 /* eslint-disable */
-var template = (0, _util.html)(_templateObject);
+/**
+ * @file components/Sticky.js
+ * @author liyuan
+ */
+
+var template = '<template>\n<div class="{{mainClass}}" style="{{mainStyle}}">\n    <div class="sticky" style="{{stickElementStyle}}">\n        <slot name="sticky"></slot>\n    </div>\n    <slot><slot>\n</div>\n</template>';
 /* eslint-enable */
 
 exports.default = (0, _san.defineComponent)({
@@ -63489,7 +59649,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 297 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63499,7 +59659,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -63607,7 +59767,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 298 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63650,7 +59810,225 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 299 */
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Layer = __webpack_require__(13);
+
+var _Layer2 = _interopRequireDefault(_Layer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/TableColumnToggle.js
+ * @author leeight
+ */
+
+var cx = (0, _util.create)('ui-table-column-toggle');
+var cx2 = (0, _util.create)('ui-select');
+
+/* eslint-disable */
+var template = '<div class="' + cx() + '">\n<ui-button disabled="{{disabled}}" icon="iot-device-list" on-click="toggleLayer" />\n<ui-layer\n    follow-scroll="{{false}}"\n    open="{=active=}"\n    offset-left="{{layerOffsetLeft}}"\n    offset-top="{{layerOffsetTop}}"\n    align="{{layerAlign}}"\n    width="{{layerWidth}}">\n    <ul class="' + cx2('layer') + ' ' + cx2('layer-x') + '" style="{{layerStyle}}">\n        <li class="{{item | itemClass}}"\n            on-click="onItemClick(item)"\n            s-for="item in datasource">\n            <label>\n                <input type="checkbox"\n                    value="{{item.value}}"\n                    class="' + cx2('selected-box') + '"\n                    disabled="{{item.disabled}}"\n                    checked="{=value=}" />\n                <span>{{item.text}}</span>\n            </label>\n        </li>\n    </ul>\n</ui-layer>\n</div>';
+/* eslint-enable */
+
+exports.default = (0, _san.defineComponent)({
+    template: template,
+    components: {
+        'ui-button': _Button2.default,
+        'ui-layer': _Layer2.default
+    },
+    initData: function initData() {
+        return {
+            active: false,
+            disabled: false,
+            layerAlign: 'left',
+            layerWidth: 200,
+            layerOffsetLeft: 0,
+            layerOffsetTop: 0,
+            // 0, 1, 2, 3
+            value: [],
+            // item.text, item.value, item.disabled
+            datasource: []
+        };
+    },
+
+    computed: {
+        layerStyle: function layerStyle() {
+            var style = {};
+            var layerWidth = this.data.get('layerWidth');
+            if (layerWidth != null) {
+                style.width = (0, _util.hasUnit)(layerWidth) ? layerWidth : layerWidth + 'px';
+            }
+            return style;
+        }
+    },
+    filters: {
+        itemClass: function itemClass(item) {
+            var klass = [cx2('item', 'item-multi')];
+            // TODO(leeight) 针对 multi 的情况，还未处理
+            if (item.disabled) {
+                klass.push(cx2('item-disabled'));
+            }
+            return klass;
+        }
+    },
+    toggleLayer: function toggleLayer() {
+        var disabled = this.data.get('disabled');
+        if (disabled) {
+            return;
+        }
+        var active = this.data.get('active');
+        this.data.set('active', !active);
+    },
+    onItemClick: function onItemClick(item) {
+        var _this = this;
+
+        if (item.disabled) {
+            return;
+        }
+        this.nextTick(function () {
+            return _this.fire('change');
+        });
+    }
+});
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _jquery = __webpack_require__(9);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _san = __webpack_require__(0);
+
+var _util = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var cx = (0, _util.create)('ui-toast'); /**
+                                         * @file Toast.js
+                                         * @author leeight
+                                         */
+
+var kToastContainerId = cx('container') + '-' + new Date().getTime();
+
+/* eslint-disable */
+var template = '<template>\n    <div class="{{mainClass}}" style="{{style}}">\n        {{message | raw}}\n    </div>\n</template>';
+/* eslint-enable */
+
+var Toast = (0, _san.defineComponent)({ // eslint-disable-line
+    template: template,
+    components: {},
+    computed: {
+        style: function style() {
+            return {};
+        },
+        mainClass: function mainClass() {
+            var klass = [cx(), cx('x')];
+            var level = this.data.get('level');
+            if (level) {
+                klass.push(cx(level));
+            }
+            return klass;
+        }
+    },
+    initData: function initData() {
+        return {
+            message: null,
+            duration: 5000,
+            level: 'success' // 'success' | 'info' | 'warning' | 'error'
+        };
+    },
+
+    dataTypes: {
+        /**
+         * 需要展示的信息
+         */
+        message: _san.DataTypes.string,
+
+        /**
+         * 最长展示的时间
+         * @default 5000
+         */
+        duration: _san.DataTypes.number,
+
+        /**
+         * 组件的样式，可选的参数有 success, info, warning, error
+         * @default success
+         */
+        level: _san.DataTypes.string
+    },
+    attached: function attached() {
+        var _this = this;
+
+        setTimeout(function () {
+            (0, _jquery2.default)(_this.el).fadeOut({
+                duration: 1000,
+                easing: 'swing',
+                complete: function complete() {
+                    return _this.dispose();
+                }
+            });
+        }, this.data.get('duration'));
+    }
+});
+
+function getToastContainer() {
+    var container = document.getElementById(kToastContainerId);
+    if (!container) {
+        container = document.createElement('DIV');
+        container.id = kToastContainerId;
+        container.className = cx('container');
+        document.body.appendChild(container);
+    }
+    return container;
+}
+
+function toastBuilder(level) {
+    return function (message) {
+        var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
+
+        var comp = new Toast({ data: { message: message, level: level, duration: duration } });
+        var container = getToastContainer();
+        container.style.zIndex = (0, _util.nextZindex)();
+        comp.attach(container);
+    };
+}
+
+Toast.success = toastBuilder('success');
+Toast.info = toastBuilder('info');
+Toast.warning = toastBuilder('warning');
+Toast.error = toastBuilder('error');
+Toast.alert = toastBuilder('warning'); // 兼容历史用法
+Toast.normal = toastBuilder('success'); // 兼容bat-ria/mvc/FormAction里调用Toast的方式
+
+exports.default = Toast;
+
+/***/ }),
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63705,7 +60083,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 300 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63717,11 +60095,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _TreeNode = __webpack_require__(301);
+var _TreeNode = __webpack_require__(284);
 
 var _TreeNode2 = _interopRequireDefault(_TreeNode);
 
@@ -63934,7 +60312,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 301 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63944,19 +60322,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _san = __webpack_require__(0);
-
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _helper = __webpack_require__(55);
+var _san = __webpack_require__(0);
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
-var _CheckBox = __webpack_require__(50);
+var _CheckBox = __webpack_require__(42);
 
 var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
@@ -63964,13 +60340,13 @@ var _util = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var cx = (0, _util.create)('ui-tree');
+
+/* eslint-disable */
 /**
  * @file TreeNode.js Tree节点
  * @author zhangzhe(zhangzhe@baidu.com)
  */
-var cx = (0, _util.create)('ui-tree');
-
-/* eslint-disable */
 var commonTemplate = '\n<div class="' + cx('content-wrapper') + '" on-click="onNodeClick($event)">\n    <span class="{{indicatorClass}}"></span>\n    <div s-if="multi && !isUpdating" class="' + cx('item-content') + '">\n        <ui-checkbox\n            checked="{=isSelected=}"\n            title="{{text}}"\n            on-change="onCheckboxChange($event)"\n            on-click="onCheckboxClick" />\n    </div>\n    <div s-if="!multi && !isUpdating" class="' + cx('item-content') + '">{{text}}</div>\n    <ui-textbox s-if="isUpdating"\n        class="' + cx('edit-input') + '"\n        autofocus="{{true}}"\n        focus-position="all"\n        value="{{text}}"\n        width="{{100}}"\n        on-enter="onTextboxEnter"\n        on-click="onTextboxClick"\n        on-blur="onTextboxBlur" />\n    <div s-if="edit" class="' + cx('edit-content') + '">\n        <a class="create" href="javascript:;" on-click="onCreate" title="\u6DFB\u52A0"><i class="iconfont icon-icon-test"></i></a>\n        <a class="update" href="javascript:;" on-click="onUpdate" title="\u66F4\u65B0"><i class="iconfont icon-business-consult"></i></a>\n        <a class="delete" href="javascript:;" on-click="onDelete" title="\u5220\u9664"><i class="iconfont icon-close"></i></a>\n    </div>\n</div>\n<ul s-if="hasChildren" class="' + cx('sub-root') + ' ' + cx('sub-root-{{expandedFlag}}') + '">\n    <ui-tree-node s-for="node in children"\n        value="{{node.value}}"\n        text="{{node.text}}"\n        level="{{level + 1}}"\n        children="{{node.children}}"\n        expand-all="{{expandAll}}"\n        multi="{{multi}}"\n        edit="{=edit=}"\n        isUpdating="{{node.isUpdating}}"\n        parents="{{newParents}}"\n        tree-value="{{treeValue}}"\n        active-value="{{activeValue}}" />\n</ul>';
 
 var template = '<template>\n<div s-if="isRoot" class="{{mainClass}}" data-value="{{value}}" data-level="{{level}}">' + commonTemplate + '</div>\n<li s-else class="{{mainClass}}" data-value="{{value}}" data-level="{{level}}">' + commonTemplate + '</li>\n</template>';
@@ -64138,7 +60514,7 @@ exports.default = (0, _san.defineComponent)({
         var text = this.data.get('text');
         var title = '提示';
         var message = '\u662F\u5426\u786E\u8BA4\u5220\u9664\u8282\u70B9\u201C' + text + '\u201C' + (this.data.get('hasChildren') ? '及其所有的子孙节点' : '') + '？';
-        (0, _helper.confirm)({ title: title, message: message, width: 600 }).then(function () {
+        (0, _util.confirm)({ title: title, message: message, width: 600 }).then(function () {
             return _this.dispatch('delete', node);
         });
     },
@@ -64181,1369 +60557,22 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 302 */
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(286);
+
+/***/ }),
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _Dialog = __webpack_require__(19);
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Button = __webpack_require__(6);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Toast = __webpack_require__(213);
-
-var _Toast2 = _interopRequireDefault(_Toast);
-
-var _ActionLoader = __webpack_require__(215);
-
-var _ActionLoader2 = _interopRequireDefault(_ActionLoader);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* eslint-disable */
-var template = '<template>\n    <ui-dialog\n        s-if="dialog"\n        s-ref="dialog"\n        open="{=actionOptions.open=}"\n        height="{{actionOptions.height}}"\n        width="{{actionOptions.width}}"\n        foot="{{foot}}"\n        on-close="onCloseDialog">\n        <span slot="head">{{actionOptions.title}}</span>\n        <ui-actionloader\n            on-actionloaded="onActionLoaded($event)"\n            url="{{actionOptions.url}}"\n            module="{{actionOptions.module}}"\n            options="{{actionOptions.options}}" />\n        <div slot="foot" s-if="foot">\n            <ui-button on-click="onConfirmDialog" skin="primary" disabled="{{confirm.disabled}}">{{confirm.label}}</ui-button>\n            <ui-button on-click="onCloseDialog">\u53D6\u6D88</ui-button>\n        </div>\n    </ui-dialog>\n    <ui-actionloader\n        s-else\n        on-actionloaded="onActionLoaded($event)"\n        url="{{actionOptions.url}}"\n        options="{{actionOptions.options}}"\n        module="{{actionOptions.module}}" />\n</template>';
-/* eslint-enable */
-
-/**
- * @file san-xui/x/biz/LegacyActionAdapter.js
- * @author leeight
- */
-
-function isSanPage(erAction) {
-    return !!(erAction && erAction.page && erAction.SanPage);
-}
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    components: {
-        'ui-actionloader': _ActionLoader2.default,
-        'ui-button': _Button2.default,
-        'ui-dialog': _Dialog2.default
-    },
-    dataTypes: {
-        dialog: _san.DataTypes.bool,
-        foot: _san.DataTypes.bool,
-        confirm: _san.DataTypes.objectOf({
-            label: _san.DataTypes.string,
-            disabled: _san.DataTypes.bool
-        }),
-        actionOptions: _san.DataTypes.objectOf({
-            open: _san.DataTypes.bool,
-            width: _san.DataTypes.number,
-            height: _san.DataTypes.number,
-            title: _san.DataTypes.string,
-            url: _san.DataTypes.string,
-            module: _san.DataTypes.string,
-            needFoot: _san.DataTypes.bool,
-            options: _san.DataTypes.objectOf({
-                parentAction: _san.DataTypes.object
-            })
-        })
-    },
-    initData: function initData() {
-        return {
-            dialog: false,
-            foot: true,
-            confirm: {
-                label: '确定',
-                disabled: false
-            },
-            actionOptions: {
-                open: false
-            }
-        };
-    },
-    inited: function inited() {
-        this.erAction = null;
-        // 支持actionOptions.needFoot设置来隐藏foot
-        var actionOptions = this.data.get('actionOptions');
-        if (actionOptions && actionOptions.needFoot === false) {
-            this.data.set('foot', false);
-        }
-    },
-    closeDialog: function closeDialog() {
-        this.data.set('actionOptions.open', false);
-    },
-    onActionLoaded: function onActionLoaded(e) {
-        var _this = this;
-
-        var erAction = e.action;
-        var compInstance = isSanPage(erAction) ? erAction.page.children[0] : erAction;
-        compInstance.on('legacyactioncustomevent', function (e) {
-            var type = e.legacyActionFireCustomType;
-            // 用owner判断是动态还是声明式 1.声明式的fire事件 通过on- 2.动态调用使用dispatch ，通过messages来处理
-            erAction.owner ? _this.fire(type, e.value) : _this.dispatch(type, e.value);
-        });
-        this.erAction = erAction;
-        // action加载完成调整dialog位置
-        if (this.data.get('dialog')) {
-            this.ref('dialog').__resize();
-        }
-        this.fire('actionloaded', e);
-    },
-    onConfirmDialog: function onConfirmDialog(e) {
-        var _this2 = this;
-
-        this.fire('beforeok', { action: this.erAction, e: e });
-        // TODO 判断默认事件是否被阻止 (ER的isDefaultPrevented)
-        if (e.defaultPrevented) {
-            return;
-        }
-        var erAction = this.erAction;
-        var isSan = isSanPage(erAction);
-        var compInstance = isSan ? erAction.page.children[0] : erAction;
-        if (compInstance && typeof compInstance.doSubmit === 'function') {
-            this.data.set('confirm.label', '处理中...');
-            this.data.set('confirm.disabled', true);
-            return compInstance.doSubmit().then(function () {
-                _this2.data.set('confirm.label', '确定');
-                _this2.data.set('confirm.disabled', false);
-                _this2.closeDialog();
-                _this2.fire('ok');
-            }).then(null, function () {
-                var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-                // san
-                // 1. doSubmit 不一定有专门写catch来弹窗给用户错误信息，此处兜底。
-                if (isSan && error.global) {
-                    _Toast2.default.error(error.global);
-                }
-                // er
-                // 1. 如果发送请求前校验失败 因为er中对每个输入组件已有相应的提示，所以不必再弹出Toast.error
-                // 2. 如果触发了返回的数据中的错误信息触发了serverIO的弹框， 此时再弹出Toast.error已经冗余
-                // 3. 如果后端返回message.field 指定了错误字段，因为错误都在此处处理，故执行view.notifyErrors
-                if (!isSan && error.field) {
-                    compInstance.view && compInstance.view.notifyErrors && compInstance.view.notifyErrors(error.field);
-                }
-
-                _this2.data.set('confirm.label', '确定');
-                _this2.data.set('confirm.disabled', false);
-            });
-        }
-        this.closeDialog();
-        this.fire('ok');
-    },
-    onCloseDialog: function onCloseDialog() {
-        this.fire('beforeclose', { action: this.erAction });
-        this.closeDialog();
-        this.fire('close');
-    }
-});
-
-/***/ }),
-/* 303 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var apply = Function.prototype.apply;
-
-// DOM APIs, for completeness
-
-exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
-};
-exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
-};
-exports.clearTimeout =
-exports.clearInterval = function(timeout) {
-  if (timeout) {
-    timeout.close();
-  }
-};
-
-function Timeout(id, clearFn) {
-  this._id = id;
-  this._clearFn = clearFn;
-}
-Timeout.prototype.unref = Timeout.prototype.ref = function() {};
-Timeout.prototype.close = function() {
-  this._clearFn.call(window, this._id);
-};
-
-// Does not start the time, just sets up the members needed.
-exports.enroll = function(item, msecs) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = msecs;
-};
-
-exports.unenroll = function(item) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = -1;
-};
-
-exports._unrefActive = exports.active = function(item) {
-  clearTimeout(item._idleTimeoutId);
-
-  var msecs = item._idleTimeout;
-  if (msecs >= 0) {
-    item._idleTimeoutId = setTimeout(function onTimeout() {
-      if (item._onTimeout)
-        item._onTimeout();
-    }, msecs);
-  }
-};
-
-// setimmediate attaches itself to the global object
-__webpack_require__(304);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
-
-
-/***/ }),
-/* 304 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
-
-    if (global.setImmediate) {
-        return;
-    }
-
-    var nextHandle = 1; // Spec says greater than zero
-    var tasksByHandle = {};
-    var currentlyRunningATask = false;
-    var doc = global.document;
-    var registerImmediate;
-
-    function setImmediate(callback) {
-      // Callback can either be a function or a string
-      if (typeof callback !== "function") {
-        callback = new Function("" + callback);
-      }
-      // Copy function arguments
-      var args = new Array(arguments.length - 1);
-      for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i + 1];
-      }
-      // Store and register the task
-      var task = { callback: callback, args: args };
-      tasksByHandle[nextHandle] = task;
-      registerImmediate(nextHandle);
-      return nextHandle++;
-    }
-
-    function clearImmediate(handle) {
-        delete tasksByHandle[handle];
-    }
-
-    function run(task) {
-        var callback = task.callback;
-        var args = task.args;
-        switch (args.length) {
-        case 0:
-            callback();
-            break;
-        case 1:
-            callback(args[0]);
-            break;
-        case 2:
-            callback(args[0], args[1]);
-            break;
-        case 3:
-            callback(args[0], args[1], args[2]);
-            break;
-        default:
-            callback.apply(undefined, args);
-            break;
-        }
-    }
-
-    function runIfPresent(handle) {
-        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
-        // So if we're currently running a task, we'll need to delay this invocation.
-        if (currentlyRunningATask) {
-            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
-            // "too much recursion" error.
-            setTimeout(runIfPresent, 0, handle);
-        } else {
-            var task = tasksByHandle[handle];
-            if (task) {
-                currentlyRunningATask = true;
-                try {
-                    run(task);
-                } finally {
-                    clearImmediate(handle);
-                    currentlyRunningATask = false;
-                }
-            }
-        }
-    }
-
-    function installNextTickImplementation() {
-        registerImmediate = function(handle) {
-            process.nextTick(function () { runIfPresent(handle); });
-        };
-    }
-
-    function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
-        // where `global.postMessage` means something completely different and can't be used for this purpose.
-        if (global.postMessage && !global.importScripts) {
-            var postMessageIsAsynchronous = true;
-            var oldOnMessage = global.onmessage;
-            global.onmessage = function() {
-                postMessageIsAsynchronous = false;
-            };
-            global.postMessage("", "*");
-            global.onmessage = oldOnMessage;
-            return postMessageIsAsynchronous;
-        }
-    }
-
-    function installPostMessageImplementation() {
-        // Installs an event handler on `global` for the `message` event: see
-        // * https://developer.mozilla.org/en/DOM/window.postMessage
-        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
-
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
-        var onGlobalMessage = function(event) {
-            if (event.source === global &&
-                typeof event.data === "string" &&
-                event.data.indexOf(messagePrefix) === 0) {
-                runIfPresent(+event.data.slice(messagePrefix.length));
-            }
-        };
-
-        if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
-        } else {
-            global.attachEvent("onmessage", onGlobalMessage);
-        }
-
-        registerImmediate = function(handle) {
-            global.postMessage(messagePrefix + handle, "*");
-        };
-    }
-
-    function installMessageChannelImplementation() {
-        var channel = new MessageChannel();
-        channel.port1.onmessage = function(event) {
-            var handle = event.data;
-            runIfPresent(handle);
-        };
-
-        registerImmediate = function(handle) {
-            channel.port2.postMessage(handle);
-        };
-    }
-
-    function installReadyStateChangeImplementation() {
-        var html = doc.documentElement;
-        registerImmediate = function(handle) {
-            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
-            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
-            script.onreadystatechange = function () {
-                runIfPresent(handle);
-                script.onreadystatechange = null;
-                html.removeChild(script);
-                script = null;
-            };
-            html.appendChild(script);
-        };
-    }
-
-    function installSetTimeoutImplementation() {
-        registerImmediate = function(handle) {
-            setTimeout(runIfPresent, 0, handle);
-        };
-    }
-
-    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
-    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
-    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
-
-    // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
-        // For Node.js before 0.9
-        installNextTickImplementation();
-
-    } else if (canUsePostMessage()) {
-        // For non-IE10 modern browsers
-        installPostMessageImplementation();
-
-    } else if (global.MessageChannel) {
-        // For web workers, where supported
-        installMessageChannelImplementation();
-
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
-        // For IE 6–8
-        installReadyStateChangeImplementation();
-
-    } else {
-        // For older browsers
-        installSetTimeoutImplementation();
-    }
-
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
-}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43), __webpack_require__(33)))
-
-/***/ }),
-/* 305 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/oo.js
- * @author somebody
- */
-
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var Empty = function () { };
-    var NAME_PROPERTY_NAME = '__eooName__';
-    var OWNER_PROPERTY_NAME = '__eooOwner__';
-
-    /**
-     * 简单的 js oo 库
-     *
-     * 用法:
-     *      @example
-     *      // 来个简单的基类，最简单的是 var Super = Class();
-     *      var Super = Class({
-     *          superProp1: 'superProp1',
-     *          superProp2: 'superProp2',
-     *          method: function(){
-     *              alert(this.superProp1);
-     *          },
-     *          superMethod2: function(){
-     *              alert(this.superProp2);
-     *          }
-     *      })
-     *
-     *      // 来个派生类，继承 Super
-     *      var Sub = Class(Super, {
-     *          // constructor 会在实例化时调用
-     *          constructor: function(prop){
-     *             // $super 会自动调用父类的同名方法
-     *             this.$super(arguments)
-     *             this.subProp = prop
-     *             alert("Sub init")
-     *          },
-     *          method: function(){
-     *              this.$super(arguments);
-     *              alert(this.subProp);
-     *          }
-     *      })
-     *
-     *      var Sub1 = Class(Sub, {
-     *          constructor: function(prop1, prop2){
-     *             this.$super(arguments)
-     *             this.sub1Prop = prop2;
-     *             alert("Sub1 init")
-     *          },
-     *          method: function(){
-     *              this.$super(arguments)
-     *              alert(this.sub1Prop)
-     *          }
-     *      })
-     *
-     *      var superIns = new Super();
-     *      var sub = new Sub('Sub'); // alert: Sub init
-     *      var sub1 = new Sub1('Sub', 'Sub1') // alert: Sub init, Sub1 init
-     *      superIns.method() // alert: superProp1
-     *      sub.method() // alert: superProp1, Sub
-     *      sub1.method() // alert: superProp1, Sub, Sub1
-     *      sub.superMethod() // alert: superProp2
-     *      sub1.superMethod() // alert: superProp2
-     *
-     */
-
-    /**
-     * Class构造函数
-     *
-     * @class Class
-     * @constructor
-     * @param {Function | Object} [BaseClass] 基类
-     * @param {Object} [overrides] 重写基类属性的对象
-     * @return {Function}
-     */
-    function Class() {
-        return Class.create.apply(Class, arguments);
-    }
-
-    /**
-     * 创建基类的继承类
-     *
-     * 3种重载方式
-     *
-     * - '.create()'
-     * - '.create(overrides)'
-     * - '.create(BaseClass, overrides)'
-     *
-     * @static
-     * @param {Function | Object} [BaseClass] 基类
-     * @param {Object} [overrides] 重写基类属性的对象
-     * @return {Function}
-     */
-    Class.create = function (BaseClass, overrides) {
-        overrides = overrides || {};
-        BaseClass = BaseClass || Class;
-        if (typeof BaseClass === 'object') {
-            overrides = BaseClass;
-            BaseClass = Class;
-        }
-
-        var kclass = inherit(BaseClass);
-        var proto = kclass.prototype;
-        eachObject(
-            overrides,
-            function (value, key) {
-                if (typeof value === 'function') {
-                    value[NAME_PROPERTY_NAME] = key;
-                    value[OWNER_PROPERTY_NAME] = kclass;
-                }
-
-                proto[key] = value;
-            }
-        );
-
-        kclass.toString = toString;
-
-        return kclass;
-    };
-
-    /**
-     * Class.static
-     *
-     * @type {Function} creates a new object with the specified prototype object and properties.
-     *  Just equals `Object.create` method.
-     * @param {Object} o The object which should be the prototype of the newly-created object.
-     * @return {Object}
-     */
-    Class.static = typeof Object.create === 'function'
-        ? Object.create
-        : function (o) {
-            if (arguments.length > 1) {
-                throw new Error('Second argument not supported');
-            }
-            if (!(o instanceof Object)) {
-                throw new TypeError('Argument must be an object');
-            }
-            Empty.prototype = o;
-            return new Empty();
-        };
-
-    /**
-     * 创建类的方法
-     *
-     * @param {Function} BaseClass 类构造函数
-     * @param {Object} [exports] 类属性的对象
-     */
-    Class.defineMembers = function (BaseClass, exports) {
-        exports = exports || {};
-        if (typeof BaseClass !== 'function') {
-            throw new TypeError('First argument must be a function');
-        }
-
-        var proto = BaseClass.prototype;
-        eachObject(
-            exports,
-            function (value, key) {
-                if (typeof value === 'function') {
-                    value[NAME_PROPERTY_NAME] = key;
-                    value[OWNER_PROPERTY_NAME] = BaseClass;
-                }
-                proto[key] = value;
-            }
-        );
-    };
-
-    /**
-     * 统一 toString 执行结果
-     *
-     * @static
-     * @return {string}
-     */
-    Class.toString = function () {
-        return 'function Class() { [native code] }';
-    };
-
-    Class.prototype = {
-        constructor: function () {},
-        $self: Class,
-        $superClass: Object,
-        $super: function (args) {
-            var method = this.$super.caller;
-            var name = method[NAME_PROPERTY_NAME];
-            var superClass = method[OWNER_PROPERTY_NAME].$superClass;
-            var superMethod = superClass.prototype[name];
-
-            if (typeof superMethod !== 'function') {
-                throw new TypeError('Call the super class\'s ' + name + ', but it is not a function!');
-            }
-
-            return superMethod.apply(this, args);
-        }
-    };
-
-    /**
-     * 返回基类的一个继承对象
-     *
-     * @ignore
-     * @param {Function} BaseClass 基类
-     * @return {Function}
-     */
-    function inherit(BaseClass) {
-        var kclass = function () {
-            // 若未进行 constructor 的重写，则klass.prototype.constructor指向BaseClass.prototype.constructor
-            return kclass.prototype.constructor.apply(this, arguments);
-        };
-
-        Empty.prototype = BaseClass.prototype;
-
-        var proto = kclass.prototype = new Empty();   // eslint-disable-line
-        proto.$self = kclass;
-        if (!('$super' in proto)) {
-            proto.$super = Class.prototype.$super;
-        }
-
-        kclass.$superClass = BaseClass;
-
-        return kclass;
-    }
-
-    var hasEnumBug = !({toString: 1}.propertyIsEnumerable('toString'));
-    var enumProperties = [
-        'constructor',
-        'hasOwnProperty',
-        'isPrototypeOf',
-        'propertyIsEnumerable',
-        'toString',
-        'toLocaleString',
-        'valueOf'
-    ];
-
-    /**
-     * hasOwnProperty函数的封装
-     *
-     * @ignore
-     * @param {Object} obj 对象
-     * @param {string} key 属性名
-     * @return {boolean}
-     */
-    function hasOwnProperty(obj, key) {
-        return Object.prototype.hasOwnProperty.call(obj, key);
-    }
-
-    /**
-     * 遍历对象操作
-     *
-     * @ignore
-     * @param {Object} obj 目标对象
-     * @param {Function} fn 遍历操作
-     */
-    function eachObject(obj, fn) {
-        for (var k in obj) {
-            hasOwnProperty(obj, k) && fn(obj[k], k, obj);
-        }
-        // ie6-8 enum bug
-        if (hasEnumBug) {
-            for (var i = enumProperties.length - 1; i > -1; --i) {
-                var key = enumProperties[i];
-                hasOwnProperty(obj, key) && fn(obj[key], key, obj);
-            }
-        }
-    }
-
-    /**
-     * toString method
-     *
-     * @ignore
-     * @return {string}
-     */
-    function toString() {
-        return this.prototype.constructor.toString();
-    }
-
-    return Class;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 306 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @file eoo/0.1.4/src/defineAccessor.js
- * @author Created by exodia on 14-8-28.
- */
-
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-    var MEMBERS = '__eooPrivateMembers__';
-
-    function simpleGetter(name) {
-        var body = 'return typeof this.' + MEMBERS + ' === \'object\' ? this.'
-            + MEMBERS + '[\'' + name + '\'] : undefined;';
-        return new Function(body);
-    }
-
-    function simpleSetter(name) {
-        var body = 'this.' + MEMBERS + ' = this.' + MEMBERS + ' || {};\n'
-            + 'this.' + MEMBERS + '[\'' + name + '\'] = value;';
-        return new Function('value', body);
-    }
-
-    /**
-     * 根据指定的属性名生成对应的accessor
-     *
-     * @param {Object | Function} obj 需要生成 accessor 的对象
-     * @param {string} name 需要生成 accessor 的属性名称
-     * @param {Object | Function} [accessor] 自定义的 getter 和 setter 配置
-     * @param {Function} [accessor.get] 自定义的 getter 函数, 配置了accessor，但未设置 get，则不会生成 getter
-     * @param {Function} [accessor.set] 自定义的 setter 函数, 配置了accessor，但未设置 set，则不会生成 setter
-     */
-    return function (obj, name, accessor) {
-        var upperName = name.charAt(0).toUpperCase() + name.slice(1);
-        var getter = 'get' + upperName;
-        var setter = 'set' + upperName;
-
-        if (!accessor) {
-            obj[getter] = !accessor || typeof accessor.get !== 'function' ? simpleGetter(name) : accessor.get;
-            obj[setter] = !accessor || typeof accessor.set !== 'function' ? simpleSetter(name) : accessor.set;
-        }
-        else {
-            typeof accessor.get === 'function' && (obj[getter] = accessor.get);
-            typeof accessor.set === 'function' && (obj[setter] = accessor.set);
-        }
-    };
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 307 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 事件队列
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var lib = __webpack_require__(57);
-
-        /**
-         * 判断已有的一个事件上下文对象是否和提供的参数等同
-         *
-         * @param {Object} context 在队列中已有的事件上下文对象
-         * @param {Function | boolean} handler 处理函数，可以是`false`
-         * @param {Mixed} [thisObject] 处理函数的`this`对象
-         * @return {boolean}
-         * @ignore
-         */
-        function isContextIdentical(context, handler, thisObject) {
-            // `thisObject`为`null`和`undefined`时认为等同，所以用`==`
-            return context
-                && context.handler === handler
-                && context.thisObject == thisObject;
-        }
-
-        /**
-         * 事件队列
-         *
-         * @constructor
-         */
-        function EventQueue() {
-            this.queue = [];
-        }
-
-        /**
-         * 添加一个事件处理函数
-         *
-         * @param {Function | boolean} handler 处理函数，
-         * 可以传递`false`作为特殊的处理函数，参考{@link EventTarget#on}
-         * @param {Object} [options] 相关配置
-         * @param {Mixed} [options.thisObject] 执行处理函数时的`this`对象
-         * @param {boolean} [options.once=false] 设定函数仅执行一次
-         */
-        EventQueue.prototype.add = function (handler, options) {
-            if (handler !== false && typeof handler !== 'function') {
-                throw new Error(
-                    'event handler must be a function or const false');
-            }
-
-            var wrapper = {
-                handler: handler
-            };
-            lib.extend(wrapper, options);
-
-            for (var i = 0; i < this.queue.length; i++) {
-                var context = this.queue[i];
-                // 同样的处理函数，不同的`this`对象，相当于外面`bind`了一把再添加，
-                // 此时认为这是完全不同的2个处理函数，但`null`和`undefined`认为是一样的
-                if (isContextIdentical(context, handler, wrapper.thisObject)) {
-                    return;
-                }
-            }
-
-            this.queue.push(wrapper);
-        };
-
-        /**
-         * 移除一个或全部处理函数
-         *
-         * @param {Function | boolean} [handler] 指定移除的处理函数，
-         * 如不提供则移除全部处理函数，可以传递`false`作为特殊的处理函数
-         * @param {Mixed} [thisObject] 指定函数对应的`this`对象，
-         * 不提供则仅移除没有挂载`this`对象的那些处理函数
-         */
-        EventQueue.prototype.remove = function (handler, thisObject) {
-            // 如果没提供`handler`，则直接清空
-            if (!handler) {
-                this.clear();
-                return;
-            }
-
-            for (var i = 0; i < this.queue.length; i++) {
-                var context = this.queue[i];
-
-                if (isContextIdentical(context, handler, thisObject)) {
-                    // 为了让`execute`过程中调用的`remove`工作正常，
-                    // 这里不能用`splice`直接删除，仅设为`null`留下这个空间
-                    this.queue[i] = null;
-
-                    // 完全符合条件的处理函数在`add`时会去重，因此这里肯定只有一个
-                    return;
-                }
-            }
-        };
-
-        /**
-         * 移除全部处理函数，如果队列执行时调用这个函数，会导致剩余的处理函数不再执行
-         */
-        EventQueue.prototype.clear = function () {
-            this.queue.length = 0;
-        };
-
-        /**
-         * 执行所有处理函数
-         *
-         * @param {Event} event 事件对象
-         * @param {Mixed} thisObject 函数执行时的`this`对象
-         */
-        EventQueue.prototype.execute = function (event, thisObject) {
-            // 如果执行过程中销毁，`dispose`会把`this.queue`弄掉，所以这里留一个引用，
-            // 在`dispose`中会额外把数组清空，因此不用担心后续的函数会执行
-            var queue = this.queue;
-            for (var i = 0; i < queue.length; i++) {
-                if (typeof event.isImmediatePropagationStopped === 'function'
-                    && event.isImmediatePropagationStopped()
-                ) {
-                    return;
-                }
-
-                var context = queue[i];
-
-                // 移除事件时设置为`null`，因此可能无值
-                if (!context) {
-                    continue;
-                }
-
-                var handler = context.handler;
-
-                // `false`等同于两个方法的调用
-                if (handler === false) {
-                    if (typeof event.preventDefault === 'function') {
-                        event.preventDefault();
-                    }
-                    if (typeof event.stopPropagation === 'function') {
-                        event.stopPropagation();
-                    }
-                }
-                else {
-                    // 这里不需要做去重处理了，在`on`的时候会去重，因此这里不可能重复
-                    handler.call(context.thisObject || thisObject, event);
-                }
-
-                if (context.once) {
-                    this.remove(context.handler, context.thisObject);
-                }
-            }
-        };
-
-        /**
-         * 获取队列的长度
-         *
-         * @reutrn {number}
-         */
-        EventQueue.prototype.getLength = function () {
-            var count = 0;
-            for (var i = 0; i < this.queue.length; i++) {
-                if (this.queue[i]) {
-                    count++;
-                }
-            }
-            return count;
-        };
-
-        /**
-         * 获取队列的长度，与{@link EventQueue#getLength}相同
-         *
-         * @method
-         * @reutrn {number}
-         */
-        EventQueue.prototype.length = EventQueue.prototype.getLength;
-
-        /**
-         * 销毁
-         *
-         * 如果在队列执行的过程中销毁了对象，则在对象销毁后，剩余的处理函数不会再执行了
-         */
-        EventQueue.prototype.dispose = function () {
-            // 在执行过程中被销毁的情况下，这里`length`置为0，循环就走不下去了
-            this.clear();
-            this.queue = null;
-        };
-
-        return EventQueue;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 308 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * mini-event
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 入口
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        var Event = __webpack_require__(218);
-
-        /**
-         * @class main
-         * @singleton
-         */
-        return {
-            /**
-             * 版本号
-             *
-             * @type {string}
-             */
-            version: '1.0.2',
-
-            /**
-             * {@link Event}类
-             *
-             * @type {Function}
-             */
-            Event: Event,
-
-            /**
-             * 参考{@link Event#fromDOMEvent}
-             */
-            fromDOMEvent: Event.fromDOMEvent,
-
-            /**
-             * 参考{@link Event#fromEvent}
-             */
-            fromEvent: Event.fromEvent,
-
-            /**
-             * 参考{@link Event#delegate}
-             */
-            delegate: Event.delegate
-        };
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 309 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 路由器对象
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function (require) {
-        /**
-         * @class Router
-         *
-         * 路由类
-         *
-         * 通过`require('er/router').Router`访问该类构造函数，其中`require('er/router')`是该类的全局实例
-         *
-         * 路由用于将特定的URL对应到特定的函数上，
-         * 并在URL变化（{@link locator}对象支持）时，执行相应的函数
-         *
-         * URL与函数的对应规则有3种形式：
-         *
-         * - 当使用字符串作为规则时，URL的`path`部分与字符串完全匹配
-         * - 当使用正则表达式作为规则时，URL的`path`部分匹配该正则
-         * - 当所有路由规则均不匹配某个URL时，会调用{@link Router#setBackup}提供的函数
-         *
-         * @extends mini-event.EventTarget
-         * @constructor
-         */
-        var exports = {};
-
-        var started = false;
-
-        exports.constructor = function () {
-            this.routes = [];
-            this.backup = null;
-        };
-
-        /**
-         * 在{{@locator#redirect}事件中，执行路由逻辑
-         *
-         * @param {mini-event.Event} e 事件对象
-         * @param {string} e.url 当前的URL
-         * @ignore
-         */
-        function executeRoute(e) {
-            var url = __webpack_require__(220).parse(e.url);
-            var path = url.getPath();
-            for (var i = 0; i < this.routes.length; i++) {
-                var route = this.routes[i];
-
-                if ((route.rule instanceof RegExp && route.rule.test(path)) || route.rule === path) {
-                    route.handler.call(this, url);
-                    return;
-                }
-            }
-
-            if (this.backup) {
-                this.backup(url);
-            }
-
-            this.getEventBus().fire('route', {url: url, router: this});
-        }
-
-        /**
-         * 添加一条路由规则
-         *
-         * @param {string | RegExp} rule 匹配URL的`path`部分的字符串或正则表达式
-         * @param {Function} handler 匹配成功时执行的函数
-         */
-        exports.add = function (rule, handler) {
-            this.routes.push({rule: rule, handler: handler});
-        };
-
-        /**
-         * 添加后备处理函数，当一个路径无规则命中时，将执行此函数
-         *
-         * @param {Function} handler 后备处理函数
-         */
-        exports.setBackup = function (handler) {
-            this.backup = handler;
-        };
-
-        /**
-         * 获取当前实例使用的{@link locator}对象
-         *
-         * @return {locator}
-         * @protected
-         */
-        exports.getLocator = function () {
-            return this.locator;
-        };
-
-        /**
-         * 设置当前实例使用的{@link locator}对象
-         *
-         * 可以为任意对象，按{@link locator#event-redirect}实现此事件即可
-         *
-         * @param {locator} locator 关联的{@link locator}实例
-         */
-        exports.setLocator = function (locator) {
-            this.locator = locator;
-        };
-
-        /**
-         * 获取当前实例使用的事件总线
-         *
-         * @return {mini-event.EventTarget}
-         * @protected
-         */
-        exports.getEventBus = function () {
-            return this.eventBus;
-        };
-
-        /**
-         * 设置当前实例使用的事件总线
-         *
-         * 事件总线可以是任何对象，只要实现`fire`方法供事件触发即可
-         *
-         * @param {mini-event.EventTarget} eventBus 事件总线对象
-         */
-        exports.setEventBus = function (eventBus) {
-            this.eventBus = eventBus;
-        };
-
-        /**
-         * 开始`router`对象的工作
-         */
-        exports.start = function () {
-            if (started) {
-                return;
-            }
-            started = true;
-            this.getLocator().on('redirect', executeRoute, this);
-        };
-
-        var Router = __webpack_require__(29).create(__webpack_require__(23), exports);
-        var instance = new Router();
-        instance.setLocator(__webpack_require__(222));
-        instance.setEventBus(__webpack_require__(34));
-        instance.Router = Router;
-        return instance;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 310 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * ER (Enterprise RIA)
- * Copyright 2013 Baidu Inc. All rights reserved.
- *
- * @ignore
- * @file 权限管理对象
- * @author otakustay
- */
-!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-        var authorities = {};
-
-        /**
-         * @class permission
-         *
-         * 权限管理器，提供权限的注册和判断功能
-         *
-         * @singleton
-         */
-        var permssion = {
-            /**
-             * 添加权限
-             *
-             * 权限以字符串作为名称，添加权限说明时，传递一个对象，
-             * 其中的健为权限名称，值为是否拥有该权限
-             *
-             * 权限说明可以嵌套，如：
-             *
-             *     {
-             *         books: { VIEW_BOOK: true, EDIT_BOOK: false },
-             *         authors: { VIEW_AUTHOR: true, EDIT_AUTHOR: true }
-             *     }
-             *
-             * @param {Object} data 权限说明
-             */
-            add: function (data) {
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        var value = data[key];
-                        if (typeof value === 'object') {
-                            this.add(value);
-                        }
-                        else {
-                            authorities[key] = value;
-                        }
-                    }
-                }
-            },
-
-            /**
-             * 判断是否拥有指定权限
-             *
-             * @param {string} name 权限名称
-             * @return {boolean} 是否拥有`name`表示的权限
-             */
-            isAllow: function (name) {
-                return !!authorities[name];
-            }
-        };
-
-        return permssion;
-    }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ }),
-/* 311 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["loadAppInBackground"] = loadAppInBackground;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_promise__);
-/**
- * @file inf-ria/helper.es6
- * @author leeight
- */
-
-
-
-function loadAppInBackground() {
-    return __WEBPACK_IMPORTED_MODULE_0_promise___default.a.resolve();
-}
-
-
-/***/ }),
-/* 312 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-var _Breadcrumbs = __webpack_require__(313);
-
-var _Breadcrumbs2 = _interopRequireDefault(_Breadcrumbs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cx = (0, _util.create)('list-page'); /**
-                                          * @file san-xui/x/biz/Page.js
-                                          * @author leeight
-                                          */
-
-exports.default = (0, _san.defineComponent)({ // eslint-disable-line
-    template: '<div class="{{mainClass}}">\n        <breadcrumbs s-if="breadcrumbs" items="{{breadcrumbs}}" />\n\n        <div class="' + cx('body') + '">\n            <div class="' + cx('title') + '" s-if="title || navs">\n                <h2 s-if="title">{{title}}<span s-if="remark">{{remark | raw}}</span></h2>\n                <div class="ui-tab ui-tab-x" s-elif="navs">\n                    <ul class="ui-tab-navigator">\n                        <li\n                            s-for="item in navs"\n                            class="{{item.active ? \'ui-tab-item ui-tab-item-active\' : \'ui-tab-item\'}}"\n                        >\n                            <a href="{{item.link}}" s-if="item.link">{{item.text}}</a>\n                            <span s-else>{{item.text}}</span>\n                        </li>\n                    </ul>\n                </div>\n                <slot name="helps" />\n            </div>\n            <div class="' + cx('content') + '">\n                <div class="' + cx('tip') + '" s-if="withTip">\n                    <slot name="tip" />\n                </div>\n\n                <slot name="filter" />\n\n                <div class="' + cx('toolbar') + '" s-if="withToolbar">\n                    <div class="' + cx('tb-left') + '">\n                        <slot name="tb-left" />\n                        <slot name="tb-filter" />\n                    </div>\n                    <div class="' + cx('tb-right') + '">\n                        <slot name="tb-right" />\n                    </div>\n                </div>\n                <slot/>\n            </div>\n        </div>\n    </div>',
-    components: {
-        breadcrumbs: _Breadcrumbs2.default
-    },
-    initData: function initData() {
-        return {
-            withSidebar: false,
-            withTip: false,
-            withToolbar: true,
-            title: null,
-            navs: null,
-            remark: null,
-            breadcrumbs: null
-        };
-    },
-
-    computed: {
-        mainClass: function mainClass() {
-            var klass = [cx()];
-            var withSidebar = this.data.get('withSidebar');
-            if (withSidebar) {
-                klass.push(cx('with-sidebar'));
-            }
-
-            return klass;
-        }
-    },
-    hasSlot: function hasSlot(name) {
-        return (0, _util.hasSlot)(this, name);
-    },
-    attached: function attached() {
-        var withToolbar = this.hasSlot('tb-left') || this.hasSlot('tb-right') || this.hasSlot('tb-filter');
-        this.data.set('withToolbar', withToolbar);
-    }
-});
-
-/***/ }),
-/* 313 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _san = __webpack_require__(0);
-
-var _util = __webpack_require__(2);
-
-/**
- * @file san-xui/x/biz/Breadcrumbs.js
- * @author leeight
- */
-
-var cx = (0, _util.create)('ui-breadcrumbs');
-
-/* eslint-disable */
-var template = '<div class="' + cx() + '">\n    <div class="' + cx('item') + '" san-for="item, index in items">\n        <span class="' + cx('divider') + '" san-if="index > 0">/</span>\n        <a href="{{item.href}}" s-if="item.href">{{item.text}}</a>\n        <span s-else class="' + cx('label') + '">{{item.text}}</span>\n    </div>\n</div>';
-/* eslint-enable */
-
-exports.default = (0, _san.defineComponent)({
-    template: template,
-    initData: function initData() {
-        return {
-            items: []
-        };
-    }
-});
-
-/***/ }),
-/* 314 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _san = __webpack_require__(0);
-
-exports.default = (0, _san.defineComponent)({
-  template: '<template><slot/></template>'
-}); /**
-     * @file biz/Ghost.js
-     * @author leeight
-     */
-
-/***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(316);
-
-/***/ }),
-/* 316 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(14);
-var bind = __webpack_require__(225);
-var Axios = __webpack_require__(318);
-var defaults = __webpack_require__(58);
+var utils = __webpack_require__(11);
+var bind = __webpack_require__(206);
+var Axios = __webpack_require__(288);
+var defaults = __webpack_require__(44);
 
 /**
  * Create an instance of Axios
@@ -65576,15 +60605,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(229);
-axios.CancelToken = __webpack_require__(332);
-axios.isCancel = __webpack_require__(228);
+axios.Cancel = __webpack_require__(210);
+axios.CancelToken = __webpack_require__(302);
+axios.isCancel = __webpack_require__(209);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(333);
+axios.spread = __webpack_require__(303);
 
 module.exports = axios;
 
@@ -65593,7 +60622,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 317 */
+/* 287 */
 /***/ (function(module, exports) {
 
 /*!
@@ -65620,16 +60649,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 318 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(58);
-var utils = __webpack_require__(14);
-var InterceptorManager = __webpack_require__(327);
-var dispatchRequest = __webpack_require__(328);
+var defaults = __webpack_require__(44);
+var utils = __webpack_require__(11);
+var InterceptorManager = __webpack_require__(297);
+var dispatchRequest = __webpack_require__(298);
 
 /**
  * Create a new instance of Axios
@@ -65706,13 +60735,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 319 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -65725,13 +60754,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 320 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(227);
+var createError = __webpack_require__(208);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -65758,7 +60787,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 321 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65786,13 +60815,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 322 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -65861,13 +60890,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 323 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -65921,13 +60950,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 324 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -65996,7 +61025,7 @@ module.exports = (
 
 
 /***/ }),
-/* 325 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66039,13 +61068,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 326 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -66099,13 +61128,13 @@ module.exports = (
 
 
 /***/ }),
-/* 327 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -66158,18 +61187,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 328 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
-var transformData = __webpack_require__(329);
-var isCancel = __webpack_require__(228);
-var defaults = __webpack_require__(58);
-var isAbsoluteURL = __webpack_require__(330);
-var combineURLs = __webpack_require__(331);
+var utils = __webpack_require__(11);
+var transformData = __webpack_require__(299);
+var isCancel = __webpack_require__(209);
+var defaults = __webpack_require__(44);
+var isAbsoluteURL = __webpack_require__(300);
+var combineURLs = __webpack_require__(301);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -66251,13 +61280,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 329 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(14);
+var utils = __webpack_require__(11);
 
 /**
  * Transform the data for a request or a response
@@ -66278,7 +61307,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 330 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66299,7 +61328,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 331 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66320,13 +61349,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 332 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(229);
+var Cancel = __webpack_require__(210);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -66384,7 +61413,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 333 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66418,7 +61447,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 334 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66484,7 +61513,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 335 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66500,13 +61529,13 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Recorder = __webpack_require__(336);
+var _Recorder = __webpack_require__(306);
 
 var _Recorder2 = _interopRequireDefault(_Recorder);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -66606,7 +61635,7 @@ var Voice = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(Voice);
 
 /***/ }),
-/* 336 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66620,7 +61649,7 @@ var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _RecorderWorker = __webpack_require__(337);
+var _RecorderWorker = __webpack_require__(307);
 
 var _RecorderWorker2 = _interopRequireDefault(_RecorderWorker);
 
@@ -66942,7 +61971,7 @@ Recorder.init = function (t) {
 exports.default = Recorder;
 
 /***/ }),
-/* 337 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66958,7 +61987,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = "\nfunction str2uint8(e) {\n    var t = new ArrayBuffer(e.length),\n        n = new Uint8Array(t);\n    for (var r = 0; r < e.length; r++) n[r] = e.charCodeAt(r);\n    return n;\n}\nfunction init(e) {\n    (sampleRate = e.sampleRate),\n        (outputChannels = e.outputChannels),\n        (outputSampleRate = e.outputSampleRate),\n        (uid = e.uid),\n        uid || (uid = 'test_uid');\n}\nfunction record(e) {\n    recBuffersL.push(e[0]), outputChannels == 2 && recBuffersR.push(e[1]);\n}\nfunction exportWAV(e) {\n    var t,\n        n = mergeBuffers(recBuffersL);\n    if (outputChannels == 2) {\n        var r = mergeBuffers(recBuffersR);\n        t = interleave(n, r);\n    } else t = n;\n    var i = encodeWAV(t),\n        s = new Blob([i], { type: e });\n    return s;\n}\nfunction getBuffer() {\n    var e = [];\n    return (\n        e.push(mergeBuffers(recBuffersL)),\n        outputChannels == 2 && e.push(mergeBuffers(recBuffersR)),\n        e\n    );\n}\nfunction getSendBuffer(e) {\n    var t = '-BD**VR+gzgzip',\n        n = '\\r\\n',\n        r = {\n            pfm: 'iOS&1&1&1&1',\n            ver: '1.0',\n            enc: 'utf-8',\n            rtn: 'json',\n            pdt: '818',\n            app_name: 'com.baidu.www.voice',\n            idx: sendIdx++ + '',\n            fun: '1',\n            glb: glb,\n            uid: uid\n        };\n    e && (r.idx = '-' + r.idx);\n    var i = JSON.stringify(r),\n        s = new Zlib.Gzip(str2uint8(i)),\n        o = s.compress();\n    if (sendOffset >= recBuffersL.length && !e) {\n        sendIdx--;\n        return null;\n    }\n    recBuffersL.slice(sendOffset);\n    var u = mergeBuffers(recBuffersL.slice(sendOffset));\n    sendOffset = recBuffersL.length;\n    var a = '--' + t,\n        f = new ArrayBuffer(\n            o.byteLength +\n                4 +\n                u.length * 2 +\n                (n.length + n.length + a.length) * 3 +\n                2\n        ),\n        l = new DataView(f),\n        c = 0;\n    return (\n        (c = writeString(l, c, n + a + n)),\n        (c = writeUint8Array(l, c, o)),\n        (c = writeString(l, c, n + a + n)),\n        l.setUint32(c, 1, !0),\n        (c += 4),\n        (c = writePcm(l, c, u)),\n        (c = writeString(l, c, n + a + '--' + n)),\n        { buffer: f, boundary: t, json: r }\n    );\n}\nfunction clear() {\n    (recBuffersL = []), (recBuffersR = []);\n}\nfunction mergeBuffers(e) {\n    var t = 0;\n    e.forEach(function(e) {\n        t += e.length;\n    });\n    var n = new Float32Array(t),\n        r = 0,\n        i;\n    for (i = 0; i < e.length; i++) n.set(e[i], r), (r += e[i].length);\n    var s = 0,\n        o = sampleRate / outputSampleRate,\n        u = Math.ceil(t * outputSampleRate / sampleRate),\n        a = new Float32Array(u);\n    for (i = 0; i < u; i++) (a[i] = n[Math.floor(s)]), (s += o);\n    return a;\n}\nfunction interleave(e, t) {\n    var n = e.length + t.length,\n        r = new Float32Array(n),\n        i = 0,\n        s = 0;\n    while (i < n) (r[i++] = e[s]), (r[i++] = t[s]), s++;\n    return r;\n}\nfunction floatTo16BitPCM(e, t, n) {\n    for (var r = 0; r < n.length; r++, t += 2) {\n        var i = Math.max(-1, Math.min(1, n[r]));\n        e.setInt16(t, i < 0 ? i * 32768 : i * 32767, !0);\n    }\n}\nfunction writeUint8Array(e, t, n) {\n    for (var r = 0; r < n.length; r++) e.setUint8(t + r, n[r]);\n    return t + n.length;\n}\nfunction writeString(e, t, n) {\n    for (var r = 0; r < n.length; r++) e.setUint8(t + r, n.charCodeAt(r));\n    return t + n.length;\n}\nfunction writePcm(e, t, n) {\n    return floatTo16BitPCM(e, t, n), t + n.length * 2;\n}\nfunction encodeWAV(e) {\n    var t = new ArrayBuffer(44 + e.length * 2),\n        n = new DataView(t);\n    return (\n        writeString(n, 0, 'RIFF'),\n        n.setUint32(4, 32 + e.length * 2, !0),\n        writeString(n, 8, 'WAVE'),\n        writeString(n, 12, 'fmt '),\n        n.setUint32(16, 16, !0),\n        n.setUint16(20, 1, !0),\n        n.setUint16(22, outputChannels, !0),\n        n.setUint32(24, outputSampleRate, !0),\n        n.setUint32(28, outputSampleRate, !0),\n        n.setUint16(32, outputChannels * 2, !0),\n        n.setUint16(34, 16, !0),\n        writeString(n, 36, 'data'),\n        n.setUint32(40, e.length * 2, !0),\n        floatTo16BitPCM(n, 44, e),\n        n\n    );\n}\n(function() {\n    'use strict';\n    function r(t, r) {\n        var i = t.split('.'),\n            s = n;\n        !(i[0] in s) && s.execScript && s.execScript('var ' + i[0]);\n        for (var o; i.length && (o = i.shift()); )\n            !i.length && r !== e ? (s[o] = r) : (s = s[o] ? s[o] : (s[o] = {}));\n    }\n    function s(e, t) {\n        (this.index = 'number' == typeof t ? t : 0),\n            (this.f = 0),\n            (this.buffer =\n                e instanceof (i ? Uint8Array : Array)\n                    ? e\n                    : new (i ? Uint8Array : Array)(32768));\n        if (2 * this.buffer.length <= this.index) throw Error('invalid index');\n        this.buffer.length <= this.index && o(this);\n    }\n    function o(e) {\n        var t = e.buffer,\n            n,\n            r = t.length,\n            s = new (i ? Uint8Array : Array)(r << 1);\n        if (i) s.set(t);\n        else for (n = 0; n < r; ++n) s[n] = t[n];\n        return (e.buffer = s);\n    }\n    function p(e, t, n) {\n        var r,\n            i = 'number' == typeof t ? t : (t = 0),\n            s = 'number' == typeof n ? n : e.length;\n        r = -1;\n        for (i = s & 7; i--; ++t) r = (r >>> 8) ^ v[(r ^ e[t]) & 255];\n        for (i = s >> 3; i--; t += 8)\n            (r = (r >>> 8) ^ v[(r ^ e[t]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 1]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 2]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 3]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 4]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 5]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 6]) & 255]),\n                (r = (r >>> 8) ^ v[(r ^ e[t + 7]) & 255]);\n        return (r ^ 4294967295) >>> 0;\n    }\n    function m(e) {\n        (this.buffer = new (i ? Uint16Array : Array)(2 * e)), (this.length = 0);\n    }\n    function g(e, t) {\n        (this.h = y),\n            (this.j = 0),\n            (this.input = i && e instanceof Array ? new Uint8Array(e) : e),\n            (this.c = 0),\n            t &&\n                (t.lazy && (this.j = t.lazy),\n                'number' == typeof t.compressionType &&\n                    (this.h = t.compressionType),\n                t.outputBuffer &&\n                    (this.a =\n                        i && t.outputBuffer instanceof Array\n                            ? new Uint8Array(t.outputBuffer)\n                            : t.outputBuffer),\n                'number' == typeof t.outputIndex && (this.c = t.outputIndex)),\n            this.a || (this.a = new (i ? Uint8Array : Array)(32768));\n    }\n    function E(e, t) {\n        (this.length = e), (this.k = t);\n    }\n    function T(n, r) {\n        function s(e, n) {\n            var r = e.k,\n                i = [],\n                s = 0,\n                o;\n            (o = x[e.length]),\n                (i[s++] = o & 65535),\n                (i[s++] = (o >> 16) & 255),\n                (i[s++] = o >> 24);\n            var u;\n            switch (t) {\n                case 1 === r:\n                    u = [0, r - 1, 0];\n                    break;\n                case 2 === r:\n                    u = [1, r - 2, 0];\n                    break;\n                case 3 === r:\n                    u = [2, r - 3, 0];\n                    break;\n                case 4 === r:\n                    u = [3, r - 4, 0];\n                    break;\n                case 6 >= r:\n                    u = [4, r - 5, 1];\n                    break;\n                case 8 >= r:\n                    u = [5, r - 7, 1];\n                    break;\n                case 12 >= r:\n                    u = [6, r - 9, 2];\n                    break;\n                case 16 >= r:\n                    u = [7, r - 13, 2];\n                    break;\n                case 24 >= r:\n                    u = [8, r - 17, 3];\n                    break;\n                case 32 >= r:\n                    u = [9, r - 25, 3];\n                    break;\n                case 48 >= r:\n                    u = [10, r - 33, 4];\n                    break;\n                case 64 >= r:\n                    u = [11, r - 49, 4];\n                    break;\n                case 96 >= r:\n                    u = [12, r - 65, 5];\n                    break;\n                case 128 >= r:\n                    u = [13, r - 97, 5];\n                    break;\n                case 192 >= r:\n                    u = [14, r - 129, 6];\n                    break;\n                case 256 >= r:\n                    u = [15, r - 193, 6];\n                    break;\n                case 384 >= r:\n                    u = [16, r - 257, 7];\n                    break;\n                case 512 >= r:\n                    u = [17, r - 385, 7];\n                    break;\n                case 768 >= r:\n                    u = [18, r - 513, 8];\n                    break;\n                case 1024 >= r:\n                    u = [19, r - 769, 8];\n                    break;\n                case 1536 >= r:\n                    u = [20, r - 1025, 9];\n                    break;\n                case 2048 >= r:\n                    u = [21, r - 1537, 9];\n                    break;\n                case 3072 >= r:\n                    u = [22, r - 2049, 10];\n                    break;\n                case 4096 >= r:\n                    u = [23, r - 3073, 10];\n                    break;\n                case 6144 >= r:\n                    u = [24, r - 4097, 11];\n                    break;\n                case 8192 >= r:\n                    u = [25, r - 6145, 11];\n                    break;\n                case 12288 >= r:\n                    u = [26, r - 8193, 12];\n                    break;\n                case 16384 >= r:\n                    u = [27, r - 12289, 12];\n                    break;\n                case 24576 >= r:\n                    u = [28, r - 16385, 13];\n                    break;\n                case 32768 >= r:\n                    u = [29, r - 24577, 13];\n                    break;\n                default:\n                    throw 'invalid distance';\n            }\n            (o = u), (i[s++] = o[0]), (i[s++] = o[1]), (i[s++] = o[2]);\n            var a, f;\n            a = 0;\n            for (f = i.length; a < f; ++a) v[m++] = i[a];\n            y[i[0]]++, b[i[3]]++, (g = e.length + n - 1), (d = null);\n        }\n        var o,\n            u,\n            a,\n            f,\n            l,\n            c = {},\n            h,\n            p,\n            d,\n            v = i ? new Uint16Array(2 * r.length) : [],\n            m = 0,\n            g = 0,\n            y = new (i ? Uint32Array : Array)(286),\n            b = new (i ? Uint32Array : Array)(30),\n            w = n.j,\n            E;\n        if (!i) {\n            for (a = 0; 285 >= a; ) y[a++] = 0;\n            for (a = 0; 29 >= a; ) b[a++] = 0;\n        }\n        (y[256] = 1), (o = 0);\n        for (u = r.length; o < u; ++o) {\n            a = l = 0;\n            for (f = 3; a < f && o + a !== u; ++a) l = (l << 8) | r[o + a];\n            c[l] === e && (c[l] = []), (h = c[l]);\n            if (!(0 < g--)) {\n                for (; 0 < h.length && 32768 < o - h[0]; ) h.shift();\n                if (o + 3 >= u) {\n                    d && s(d, -1), (a = 0);\n                    for (f = u - o; a < f; ++a)\n                        (E = r[o + a]), (v[m++] = E), ++y[E];\n                    break;\n                }\n                0 < h.length\n                    ? ((p = N(r, o, h)),\n                      d\n                          ? d.length < p.length\n                            ? ((E = r[o - 1]), (v[m++] = E), ++y[E], s(p, 0))\n                            : s(d, -1)\n                          : p.length < w ? (d = p) : s(p, 0))\n                    : d ? s(d, -1) : ((E = r[o]), (v[m++] = E), ++y[E]);\n            }\n            h.push(o);\n        }\n        return (\n            (v[m++] = 256),\n            y[256]++,\n            (n.n = y),\n            (n.m = b),\n            i ? v.subarray(0, m) : v\n        );\n    }\n    function N(e, t, n) {\n        var r,\n            i,\n            s = 0,\n            o,\n            u,\n            a,\n            f,\n            l = e.length;\n        (u = 0), (f = n.length);\n        e: for (; u < f; u++) {\n            (r = n[f - u - 1]), (o = 3);\n            if (3 < s) {\n                for (a = s; 3 < a; a--)\n                    if (e[r + a - 1] !== e[t + a - 1]) continue e;\n                o = s;\n            }\n            for (; 258 > o && t + o < l && e[r + o] === e[t + o]; ) ++o;\n            o > s && ((i = r), (s = o));\n            if (258 === o) break;\n        }\n        return new E(s, t - i);\n    }\n    function C(e, t) {\n        var n = e.length,\n            r = new m(572),\n            s = new (i ? Uint8Array : Array)(n),\n            o,\n            u,\n            a,\n            f,\n            l;\n        if (!i) for (f = 0; f < n; f++) s[f] = 0;\n        for (f = 0; f < n; ++f) 0 < e[f] && r.push(f, e[f]);\n        (o = Array(r.length / 2)),\n            (u = new (i ? Uint32Array : Array)(r.length / 2));\n        if (1 === o.length) return (s[r.pop().index] = 1), s;\n        f = 0;\n        for (l = r.length / 2; f < l; ++f)\n            (o[f] = r.pop()), (u[f] = o[f].value);\n        (a = k(u, u.length, t)), (f = 0);\n        for (l = o.length; f < l; ++f) s[o[f].index] = a[f];\n        return s;\n    }\n    function k(e, t, n) {\n        function r(e) {\n            var n = f[e][l[e]];\n            n === t ? (r(e + 1), r(e + 1)) : --u[n], ++l[e];\n        }\n        var s = new (i ? Uint16Array : Array)(n),\n            o = new (i ? Uint8Array : Array)(n),\n            u = new (i ? Uint8Array : Array)(t),\n            a = Array(n),\n            f = Array(n),\n            l = Array(n),\n            c = (1 << n) - t,\n            h = 1 << (n - 1),\n            p,\n            d,\n            v,\n            m,\n            g;\n        s[n - 1] = t;\n        for (d = 0; d < n; ++d)\n            c < h ? (o[d] = 0) : ((o[d] = 1), (c -= h)),\n                (c <<= 1),\n                (s[n - 2 - d] = ((s[n - 1 - d] / 2) | 0) + t);\n        (s[0] = o[0]), (a[0] = Array(s[0])), (f[0] = Array(s[0]));\n        for (d = 1; d < n; ++d)\n            s[d] > 2 * s[d - 1] + o[d] && (s[d] = 2 * s[d - 1] + o[d]),\n                (a[d] = Array(s[d])),\n                (f[d] = Array(s[d]));\n        for (p = 0; p < t; ++p) u[p] = n;\n        for (v = 0; v < s[n - 1]; ++v) (a[n - 1][v] = e[v]), (f[n - 1][v] = v);\n        for (p = 0; p < n; ++p) l[p] = 0;\n        1 === o[n - 1] && (--u[0], ++l[n - 1]);\n        for (d = n - 2; 0 <= d; --d) {\n            (m = p = 0), (g = l[d + 1]);\n            for (v = 0; v < s[d]; v++)\n                (m = a[d + 1][g] + a[d + 1][g + 1]),\n                    m > e[p]\n                        ? ((a[d][v] = m), (f[d][v] = t), (g += 2))\n                        : ((a[d][v] = e[p]), (f[d][v] = p), ++p);\n            (l[d] = 0), 1 === o[d] && r(d);\n        }\n        return u;\n    }\n    function L(e) {\n        var t = new (i ? Uint16Array : Array)(e.length),\n            n = [],\n            r = [],\n            s = 0,\n            o,\n            u,\n            a,\n            f;\n        o = 0;\n        for (u = e.length; o < u; o++) n[e[o]] = (n[e[o]] | 0) + 1;\n        o = 1;\n        for (u = 16; o <= u; o++) (r[o] = s), (s += n[o] | 0), (s <<= 1);\n        o = 0;\n        for (u = e.length; o < u; o++) {\n            (s = r[e[o]]), (r[e[o]] += 1), (a = t[o] = 0);\n            for (f = e[o]; a < f; a++)\n                (t[o] = (t[o] << 1) | (s & 1)), (s >>>= 1);\n        }\n        return t;\n    }\n    function A(e, t) {\n        (this.input = e),\n            (this.c = this.i = 0),\n            (this.d = {}),\n            t &&\n                (t.flags && (this.d = t.flags),\n                'string' == typeof t.filename && (this.filename = t.filename),\n                'string' == typeof t.comment && (this.l = t.comment),\n                t.deflateOptions && (this.e = t.deflateOptions)),\n            this.e || (this.e = {});\n    }\n    var e = void 0,\n        t = !0,\n        n = this,\n        i =\n            'undefined' != typeof Uint8Array &&\n            'undefined' != typeof Uint16Array &&\n            'undefined' != typeof Uint32Array &&\n            'undefined' != typeof DataView;\n    (s.prototype.b = function(e, t, n) {\n        var r = this.buffer,\n            i = this.index,\n            s = this.f,\n            u = r[i],\n            a;\n        n &&\n            1 < t &&\n            (e =\n                8 < t\n                    ? ((h[e & 255] << 24) |\n                          (h[(e >>> 8) & 255] << 16) |\n                          (h[(e >>> 16) & 255] << 8) |\n                          h[(e >>> 24) & 255]) >>\n                      (32 - t)\n                    : h[e] >> (8 - t));\n        if (8 > t + s) (u = (u << t) | e), (s += t);\n        else\n            for (a = 0; a < t; ++a)\n                (u = (u << 1) | ((e >> (t - a - 1)) & 1)),\n                    8 === ++s &&\n                        ((s = 0),\n                        (r[i++] = h[u]),\n                        (u = 0),\n                        i === r.length && (r = o(this)));\n        (r[i] = u), (this.buffer = r), (this.f = s), (this.index = i);\n    }),\n        (s.prototype.finish = function() {\n            var e = this.buffer,\n                t = this.index,\n                n;\n            return (\n                0 < this.f && ((e[t] <<= 8 - this.f), (e[t] = h[e[t]]), t++),\n                i ? (n = e.subarray(0, t)) : ((e.length = t), (n = e)),\n                n\n            );\n        });\n    var u = new (i ? Uint8Array : Array)(256),\n        a;\n    for (a = 0; 256 > a; ++a) {\n        for (var f = a, l = f, c = 7, f = f >>> 1; f; f >>>= 1)\n            (l <<= 1), (l |= f & 1), --c;\n        u[a] = ((l << c) & 255) >>> 0;\n    }\n    var h = u,\n        d = [\n            0,\n            1996959894,\n            3993919788,\n            2567524794,\n            124634137,\n            1886057615,\n            3915621685,\n            2657392035,\n            249268274,\n            2044508324,\n            3772115230,\n            2547177864,\n            162941995,\n            2125561021,\n            3887607047,\n            2428444049,\n            498536548,\n            1789927666,\n            4089016648,\n            2227061214,\n            450548861,\n            1843258603,\n            4107580753,\n            2211677639,\n            325883990,\n            1684777152,\n            4251122042,\n            2321926636,\n            335633487,\n            1661365465,\n            4195302755,\n            2366115317,\n            997073096,\n            1281953886,\n            3579855332,\n            2724688242,\n            1006888145,\n            1258607687,\n            3524101629,\n            2768942443,\n            901097722,\n            1119000684,\n            3686517206,\n            2898065728,\n            853044451,\n            1172266101,\n            3705015759,\n            2882616665,\n            651767980,\n            1373503546,\n            3369554304,\n            3218104598,\n            565507253,\n            1454621731,\n            3485111705,\n            3099436303,\n            671266974,\n            1594198024,\n            3322730930,\n            2970347812,\n            795835527,\n            1483230225,\n            3244367275,\n            3060149565,\n            1994146192,\n            31158534,\n            2563907772,\n            4023717930,\n            1907459465,\n            112637215,\n            2680153253,\n            3904427059,\n            2013776290,\n            251722036,\n            2517215374,\n            3775830040,\n            2137656763,\n            141376813,\n            2439277719,\n            3865271297,\n            1802195444,\n            476864866,\n            2238001368,\n            4066508878,\n            1812370925,\n            453092731,\n            2181625025,\n            4111451223,\n            1706088902,\n            314042704,\n            2344532202,\n            4240017532,\n            1658658271,\n            366619977,\n            2362670323,\n            4224994405,\n            1303535960,\n            984961486,\n            2747007092,\n            3569037538,\n            1256170817,\n            1037604311,\n            2765210733,\n            3554079995,\n            1131014506,\n            879679996,\n            2909243462,\n            3663771856,\n            1141124467,\n            855842277,\n            2852801631,\n            3708648649,\n            1342533948,\n            654459306,\n            3188396048,\n            3373015174,\n            1466479909,\n            544179635,\n            3110523913,\n            3462522015,\n            1591671054,\n            702138776,\n            2966460450,\n            3352799412,\n            1504918807,\n            783551873,\n            3082640443,\n            3233442989,\n            3988292384,\n            2596254646,\n            62317068,\n            1957810842,\n            3939845945,\n            2647816111,\n            81470997,\n            1943803523,\n            3814918930,\n            2489596804,\n            225274430,\n            2053790376,\n            3826175755,\n            2466906013,\n            167816743,\n            2097651377,\n            4027552580,\n            2265490386,\n            503444072,\n            1762050814,\n            4150417245,\n            2154129355,\n            426522225,\n            1852507879,\n            4275313526,\n            2312317920,\n            282753626,\n            1742555852,\n            4189708143,\n            2394877945,\n            397917763,\n            1622183637,\n            3604390888,\n            2714866558,\n            953729732,\n            1340076626,\n            3518719985,\n            2797360999,\n            1068828381,\n            1219638859,\n            3624741850,\n            2936675148,\n            906185462,\n            1090812512,\n            3747672003,\n            2825379669,\n            829329135,\n            1181335161,\n            3412177804,\n            3160834842,\n            628085408,\n            1382605366,\n            3423369109,\n            3138078467,\n            570562233,\n            1426400815,\n            3317316542,\n            2998733608,\n            733239954,\n            1555261956,\n            3268935591,\n            3050360625,\n            752459403,\n            1541320221,\n            2607071920,\n            3965973030,\n            1969922972,\n            40735498,\n            2617837225,\n            3943577151,\n            1913087877,\n            83908371,\n            2512341634,\n            3803740692,\n            2075208622,\n            213261112,\n            2463272603,\n            3855990285,\n            2094854071,\n            198958881,\n            2262029012,\n            4057260610,\n            1759359992,\n            534414190,\n            2176718541,\n            4139329115,\n            1873836001,\n            414664567,\n            2282248934,\n            4279200368,\n            1711684554,\n            285281116,\n            2405801727,\n            4167216745,\n            1634467795,\n            376229701,\n            2685067896,\n            3608007406,\n            1308918612,\n            956543938,\n            2808555105,\n            3495958263,\n            1231636301,\n            1047427035,\n            2932959818,\n            3654703836,\n            1088359270,\n            936918e3,\n            2847714899,\n            3736837829,\n            1202900863,\n            817233897,\n            3183342108,\n            3401237130,\n            1404277552,\n            615818150,\n            3134207493,\n            3453421203,\n            1423857449,\n            601450431,\n            3009837614,\n            3294710456,\n            1567103746,\n            711928724,\n            3020668471,\n            3272380065,\n            1510334235,\n            755167117\n        ],\n        v = i ? new Uint32Array(d) : d;\n    (m.prototype.getParent = function(e) {\n        return 2 * (((e - 2) / 4) | 0);\n    }),\n        (m.prototype.push = function(e, t) {\n            var n,\n                r,\n                i = this.buffer,\n                s;\n            (n = this.length), (i[this.length++] = t);\n            for (i[this.length++] = e; 0 < n; ) {\n                if (((r = this.getParent(n)), !(i[n] > i[r]))) break;\n                (s = i[n]),\n                    (i[n] = i[r]),\n                    (i[r] = s),\n                    (s = i[n + 1]),\n                    (i[n + 1] = i[r + 1]),\n                    (i[r + 1] = s),\n                    (n = r);\n            }\n            return this.length;\n        }),\n        (m.prototype.pop = function() {\n            var e,\n                t,\n                n = this.buffer,\n                r,\n                i,\n                s;\n            (t = n[0]),\n                (e = n[1]),\n                (this.length -= 2),\n                (n[0] = n[this.length]),\n                (n[1] = n[this.length + 1]);\n            for (s = 0; ; ) {\n                i = 2 * s + 2;\n                if (i >= this.length) break;\n                i + 2 < this.length && n[i + 2] > n[i] && (i += 2);\n                if (!(n[i] > n[s])) break;\n                (r = n[s]),\n                    (n[s] = n[i]),\n                    (n[i] = r),\n                    (r = n[s + 1]),\n                    (n[s + 1] = n[i + 1]),\n                    (n[i + 1] = r),\n                    (s = i);\n            }\n            return { index: e, value: t, length: this.length };\n        });\n    var y = 2,\n        b = [],\n        w;\n    for (w = 0; 288 > w; w++)\n        switch (t) {\n            case 143 >= w:\n                b.push([w + 48, 8]);\n                break;\n            case 255 >= w:\n                b.push([w - 144 + 400, 9]);\n                break;\n            case 279 >= w:\n                b.push([w - 256 + 0, 7]);\n                break;\n            case 287 >= w:\n                b.push([w - 280 + 192, 8]);\n                break;\n            default:\n                throw 'invalid literal: ' + w;\n        }\n    g.prototype.g = function() {\n        var n,\n            r,\n            o,\n            u,\n            a = this.input;\n        switch (this.h) {\n            case 0:\n                o = 0;\n                for (u = a.length; o < u; ) {\n                    (r = i ? a.subarray(o, o + 65535) : a.slice(o, o + 65535)),\n                        (o += r.length);\n                    var f = r,\n                        l = o === u,\n                        c = e,\n                        h = e,\n                        p = e,\n                        d = e,\n                        v = e,\n                        m = this.a,\n                        g = this.c;\n                    if (i) {\n                        for (\n                            m = new Uint8Array(this.a.buffer);\n                            m.length <= g + f.length + 5;\n\n                        )\n                            m = new Uint8Array(m.length << 1);\n                        m.set(this.a);\n                    }\n                    (c = l ? 1 : 0),\n                        (m[g++] = c | 0),\n                        (h = f.length),\n                        (p = (~h + 65536) & 65535),\n                        (m[g++] = h & 255),\n                        (m[g++] = (h >>> 8) & 255),\n                        (m[g++] = p & 255),\n                        (m[g++] = (p >>> 8) & 255);\n                    if (i) m.set(f, g), (g += f.length), (m = m.subarray(0, g));\n                    else {\n                        d = 0;\n                        for (v = f.length; d < v; ++d) m[g++] = f[d];\n                        m.length = g;\n                    }\n                    (this.c = g), (this.a = m);\n                }\n                break;\n            case 1:\n                var w = new s(\n                    i ? new Uint8Array(this.a.buffer) : this.a,\n                    this.c\n                );\n                w.b(1, 1, t), w.b(1, 2, t);\n                var E = T(this, a),\n                    S,\n                    x,\n                    N;\n                S = 0;\n                for (x = E.length; S < x; S++)\n                    if (((N = E[S]), s.prototype.b.apply(w, b[N]), 256 < N))\n                        w.b(E[++S], E[++S], t),\n                            w.b(E[++S], 5),\n                            w.b(E[++S], E[++S], t);\n                    else if (256 === N) break;\n                (this.a = w.finish()), (this.c = this.a.length);\n                break;\n            case y:\n                var k = new s(\n                        i ? new Uint8Array(this.a.buffer) : this.a,\n                        this.c\n                    ),\n                    A,\n                    O,\n                    M,\n                    _,\n                    D,\n                    P = [\n                        16,\n                        17,\n                        18,\n                        0,\n                        8,\n                        7,\n                        9,\n                        6,\n                        10,\n                        5,\n                        11,\n                        4,\n                        12,\n                        3,\n                        13,\n                        2,\n                        14,\n                        1,\n                        15\n                    ],\n                    H,\n                    B,\n                    j,\n                    I,\n                    q,\n                    R = Array(19),\n                    U,\n                    z,\n                    W,\n                    X,\n                    $;\n                (A = y),\n                    k.b(1, 1, t),\n                    k.b(A, 2, t),\n                    (O = T(this, a)),\n                    (H = C(this.n, 15)),\n                    (B = L(H)),\n                    (j = C(this.m, 7)),\n                    (I = L(j));\n                for (M = 286; 257 < M && 0 === H[M - 1]; M--);\n                for (_ = 30; 1 < _ && 0 === j[_ - 1]; _--);\n                var J = M,\n                    K = _,\n                    Q = new (i ? Uint32Array : Array)(J + K),\n                    G,\n                    Y,\n                    Z,\n                    et,\n                    tt = new (i ? Uint32Array : Array)(316),\n                    nt,\n                    rt,\n                    it = new (i ? Uint8Array : Array)(19);\n                for (G = Y = 0; G < J; G++) Q[Y++] = H[G];\n                for (G = 0; G < K; G++) Q[Y++] = j[G];\n                if (!i) {\n                    G = 0;\n                    for (et = it.length; G < et; ++G) it[G] = 0;\n                }\n                G = nt = 0;\n                for (et = Q.length; G < et; G += Y) {\n                    for (Y = 1; G + Y < et && Q[G + Y] === Q[G]; ++Y);\n                    Z = Y;\n                    if (0 === Q[G])\n                        if (3 > Z) for (; 0 < Z--; ) (tt[nt++] = 0), it[0]++;\n                        else\n                            for (; 0 < Z; )\n                                (rt = 138 > Z ? Z : 138),\n                                    rt > Z - 3 && rt < Z && (rt = Z - 3),\n                                    10 >= rt\n                                        ? ((tt[nt++] = 17),\n                                          (tt[nt++] = rt - 3),\n                                          it[17]++)\n                                        : ((tt[nt++] = 18),\n                                          (tt[nt++] = rt - 11),\n                                          it[18]++),\n                                    (Z -= rt);\n                    else if (((tt[nt++] = Q[G]), it[Q[G]]++, Z--, 3 > Z))\n                        for (; 0 < Z--; ) (tt[nt++] = Q[G]), it[Q[G]]++;\n                    else\n                        for (; 0 < Z; )\n                            (rt = 6 > Z ? Z : 6),\n                                rt > Z - 3 && rt < Z && (rt = Z - 3),\n                                (tt[nt++] = 16),\n                                (tt[nt++] = rt - 3),\n                                it[16]++,\n                                (Z -= rt);\n                }\n                (n = i ? tt.subarray(0, nt) : tt.slice(0, nt)), (q = C(it, 7));\n                for (X = 0; 19 > X; X++) R[X] = q[P[X]];\n                for (D = 19; 4 < D && 0 === R[D - 1]; D--);\n                (U = L(q)),\n                    k.b(M - 257, 5, t),\n                    k.b(_ - 1, 5, t),\n                    k.b(D - 4, 4, t);\n                for (X = 0; X < D; X++) k.b(R[X], 3, t);\n                X = 0;\n                for ($ = n.length; X < $; X++)\n                    if (((z = n[X]), k.b(U[z], q[z], t), 16 <= z)) {\n                        X++;\n                        switch (z) {\n                            case 16:\n                                W = 2;\n                                break;\n                            case 17:\n                                W = 3;\n                                break;\n                            case 18:\n                                W = 7;\n                                break;\n                            default:\n                                throw 'invalid code: ' + z;\n                        }\n                        k.b(n[X], W, t);\n                    }\n                var st = [B, H],\n                    ot = [I, j],\n                    ut,\n                    at,\n                    ft,\n                    lt,\n                    ct,\n                    ht,\n                    pt,\n                    dt;\n                (ct = st[0]),\n                    (ht = st[1]),\n                    (pt = ot[0]),\n                    (dt = ot[1]),\n                    (ut = 0);\n                for (at = O.length; ut < at; ++ut)\n                    if (((ft = O[ut]), k.b(ct[ft], ht[ft], t), 256 < ft))\n                        k.b(O[++ut], O[++ut], t),\n                            (lt = O[++ut]),\n                            k.b(pt[lt], dt[lt], t),\n                            k.b(O[++ut], O[++ut], t);\n                    else if (256 === ft) break;\n                (this.a = k.finish()), (this.c = this.a.length);\n                break;\n            default:\n                throw 'invalid compression type';\n        }\n        return this.a;\n    };\n    var S = (function() {\n            function e(e) {\n                switch (t) {\n                    case 3 === e:\n                        return [257, e - 3, 0];\n                    case 4 === e:\n                        return [258, e - 4, 0];\n                    case 5 === e:\n                        return [259, e - 5, 0];\n                    case 6 === e:\n                        return [260, e - 6, 0];\n                    case 7 === e:\n                        return [261, e - 7, 0];\n                    case 8 === e:\n                        return [262, e - 8, 0];\n                    case 9 === e:\n                        return [263, e - 9, 0];\n                    case 10 === e:\n                        return [264, e - 10, 0];\n                    case 12 >= e:\n                        return [265, e - 11, 1];\n                    case 14 >= e:\n                        return [266, e - 13, 1];\n                    case 16 >= e:\n                        return [267, e - 15, 1];\n                    case 18 >= e:\n                        return [268, e - 17, 1];\n                    case 22 >= e:\n                        return [269, e - 19, 2];\n                    case 26 >= e:\n                        return [270, e - 23, 2];\n                    case 30 >= e:\n                        return [271, e - 27, 2];\n                    case 34 >= e:\n                        return [272, e - 31, 2];\n                    case 42 >= e:\n                        return [273, e - 35, 3];\n                    case 50 >= e:\n                        return [274, e - 43, 3];\n                    case 58 >= e:\n                        return [275, e - 51, 3];\n                    case 66 >= e:\n                        return [276, e - 59, 3];\n                    case 82 >= e:\n                        return [277, e - 67, 4];\n                    case 98 >= e:\n                        return [278, e - 83, 4];\n                    case 114 >= e:\n                        return [279, e - 99, 4];\n                    case 130 >= e:\n                        return [280, e - 115, 4];\n                    case 162 >= e:\n                        return [281, e - 131, 5];\n                    case 194 >= e:\n                        return [282, e - 163, 5];\n                    case 226 >= e:\n                        return [283, e - 195, 5];\n                    case 257 >= e:\n                        return [284, e - 227, 5];\n                    case 258 === e:\n                        return [285, e - 258, 0];\n                    default:\n                        throw 'invalid length: ' + e;\n                }\n            }\n            var n = [],\n                r,\n                i;\n            for (r = 3; 258 >= r; r++)\n                (i = e(r)), (n[r] = (i[2] << 24) | (i[1] << 16) | i[0]);\n            return n;\n        })(),\n        x = i ? new Uint32Array(S) : S;\n    A.prototype.g = function() {\n        var t,\n            n,\n            r,\n            s,\n            o,\n            u,\n            a,\n            f,\n            l = new (i ? Uint8Array : Array)(32768),\n            c = 0,\n            h = this.input,\n            d = this.i,\n            v = this.filename,\n            m = this.l;\n        (l[c++] = 31),\n            (l[c++] = 139),\n            (l[c++] = 8),\n            (t = 0),\n            this.d.fname && (t |= _),\n            this.d.fcomment && (t |= D),\n            this.d.fhcrc && (t |= M),\n            (l[c++] = t),\n            (n = ((Date.now ? Date.now() : +new Date()) / 1e3) | 0),\n            (l[c++] = n & 255),\n            (l[c++] = (n >>> 8) & 255),\n            (l[c++] = (n >>> 16) & 255),\n            (l[c++] = (n >>> 24) & 255),\n            (l[c++] = 0),\n            (l[c++] = O);\n        if (this.d.fname !== e) {\n            a = 0;\n            for (f = v.length; a < f; ++a)\n                (u = v.charCodeAt(a)),\n                    255 < u && (l[c++] = (u >>> 8) & 255),\n                    (l[c++] = u & 255);\n            l[c++] = 0;\n        }\n        if (this.d.comment) {\n            a = 0;\n            for (f = m.length; a < f; ++a)\n                (u = m.charCodeAt(a)),\n                    255 < u && (l[c++] = (u >>> 8) & 255),\n                    (l[c++] = u & 255);\n            l[c++] = 0;\n        }\n        return (\n            this.d.fhcrc &&\n                ((r = p(l, 0, c) & 65535),\n                (l[c++] = r & 255),\n                (l[c++] = (r >>> 8) & 255)),\n            (this.e.outputBuffer = l),\n            (this.e.outputIndex = c),\n            (o = new g(h, this.e)),\n            (l = o.g()),\n            (c = o.c),\n            i &&\n                (c + 8 > l.buffer.byteLength\n                    ? ((this.a = new Uint8Array(c + 8)),\n                      this.a.set(new Uint8Array(l.buffer)),\n                      (l = this.a))\n                    : (l = new Uint8Array(l.buffer))),\n            (s = p(h, e, e)),\n            (l[c++] = s & 255),\n            (l[c++] = (s >>> 8) & 255),\n            (l[c++] = (s >>> 16) & 255),\n            (l[c++] = (s >>> 24) & 255),\n            (f = h.length),\n            (l[c++] = f & 255),\n            (l[c++] = (f >>> 8) & 255),\n            (l[c++] = (f >>> 16) & 255),\n            (l[c++] = (f >>> 24) & 255),\n            (this.i = d),\n            i && c < l.length && (this.a = l = l.subarray(0, c)),\n            l\n        );\n    };\n    var O = 255,\n        M = 2,\n        _ = 8,\n        D = 16;\n    r('Zlib.Gzip', A), r('Zlib.Gzip.prototype.compress', A.prototype.g);\n}.call(this));\nvar createUUID = (function(e, t) {\n        return function() {\n            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'\n                .replace(e, t)\n                .toUpperCase();\n        };\n    })(/[xy]/g, function(e) {\n        var t = (Math.random() * 16) | 0,\n            n = e == 'x' ? t : (t & 3) | 8;\n        return n.toString(16);\n    }),\n    recBuffersL = [],\n    recBuffersR = [],\n    outputChannels,\n    outputSampleRate,\n    sendOffset = 0,\n    glb = createUUID(),\n    sendIdx = 1,\n    uid = '',\n    sampleRate;\nthis.onmessage = function(e) {\n    var t;\n    switch (e.data.command) {\n        case 'reinit':\n            (recBuffersL = []),\n                (recBuffersR = []),\n                (sendOffset = 0),\n                (sendIdx = 1),\n                (glb = createUUID());\n            break;\n        case 'init':\n            init(e.data.config);\n            break;\n        case 'record':\n            record(e.data.buffer);\n            break;\n        case 'exportWAV':\n            (t = exportWAV(e.data.type)),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getBuffer':\n            (t = getBuffer()),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getSendBuffer':\n            (t = getSendBuffer()),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'getLastSendBuffer':\n            (t = getSendBuffer(!0)),\n                this.postMessage({ data: t, eventId: e.data.eventId });\n            break;\n        case 'clear':\n            clear();\n    }\n};\n";
 
 /***/ }),
-/* 338 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66968,7 +61997,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -66976,19 +62005,17 @@ var _jquery = __webpack_require__(9);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _infI18n = __webpack_require__(15);
-
-var _infI18n2 = _interopRequireDefault(_infI18n);
-
 var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
+
+var _helper = __webpack_require__(14);
 
 var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Loading = __webpack_require__(11);
+var _Loading = __webpack_require__(10);
 
 var _Loading2 = _interopRequireDefault(_Loading);
 
@@ -67001,12 +62028,9 @@ var cx = (0, _util.create)('ui-webuploader'); /**
 
 
 var kDefaultErrorMessages = {
-    F_EXCEED_SIZE: (0, _infI18n2.default)('文件大小超出限制！'),
-    Q_EXCEED_NUM_LIMIT: (0, _infI18n2.default)('队列文件数量超出限制！'),
-    Q_EXCEED_SIZE_LIMIT: (0, _infI18n2.default)('队列文件总量大小超出限制！'),
-    Q_ZERO_SIZE_LIMIT: (0, _infI18n2.default)('不支持0字节的文件上传'),
-    Q_TYPE_DENIED: (0, _infI18n2.default)('不支持 “${name}” 的文件类型：“${ext}”'),
-    F_DUPLICATE: (0, _infI18n2.default)('文件 “${name}” 已存在')
+    F_EXCEED_SIZE: '文件大小超出限制！',
+    Q_EXCEED_SIZE_LIMIT: '队列文件总量大小超出限制！',
+    Q_ZERO_SIZE_LIMIT: '不支持0字节的文件上传'
 };
 
 /* eslint-disable */
@@ -67121,7 +62145,6 @@ exports.default = (0, _san.defineComponent)({
             server: url,
             auto: autoStart,
             fileSingleSizeLimit: sizeLimit,
-
             swf: 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/Uploader.swf',
             disableWidgets: 'log', // 禁用log统计
             chunked: false,
@@ -67157,6 +62180,16 @@ exports.default = (0, _san.defineComponent)({
         uploader.on('filesQueued', function (files) {
             return _this.data.set('finished', false);
         });
+        // 从队列中删除文件
+        uploader.on('fileDequeued', function () {
+            // 出列时要判断是否还有文件在队列中,如果一个没有finished变成true的初始状态
+            var activeFiles = _lodash2.default.filter(uploader.getFiles(), function (file) {
+                return file.getStatus() !== 'cancelled';
+            });
+            if (activeFiles.length === 0) {
+                _this.data.set('finished', true);
+            }
+        });
         // 显示loading
         uploader.on('startUpload', function () {
             return _this.data.set('uploading', true);
@@ -67176,9 +62209,17 @@ exports.default = (0, _san.defineComponent)({
         uploader.on('uploadAccept', function (object, ret, fn, xhr) {
             _this.fire('accept', { object: object, ret: ret, fn: fn, xhr: xhr });
         });
-        uploader.on('error', function (errorType) {
+        uploader.on('error', function (errorType, evt) {
             var errorMessage = kDefaultErrorMessages[errorType] || errorType;
+            if (errorType === 'Q_TYPE_DENIED') {
+                errorMessage = '\u4E0D\u652F\u6301 \u201C' + evt.name + '\u201D \u7684\u6587\u4EF6\u7C7B\u578B\uFF1A\u201C' + evt.ext + '\u201D';
+            } else if (errorType === 'F_DUPLICATE') {
+                errorMessage = '\u6587\u4EF6 \u201C' + evt.name + '\u201D \u5DF2\u5B58\u5728';
+            } else if (errorType === 'Q_EXCEED_NUM_LIMIT') {
+                errorMessage = '\u961F\u5217\u6587\u4EF6\u6570\u91CF\u8D85\u51FA\u9650\u5236\uFF01\u5F53\u524D\u6700\u591A\u4E0A\u4F20' + evt + '\u4E2A\u6587\u4EF6';
+            }
             _this.data.set('error', errorMessage);
+            _this.fire('error', { type: errorType, evt: evt, errorMessage: errorMessage });
         });
     },
     inited: function inited() {
@@ -67217,8 +62258,8 @@ exports.default = (0, _san.defineComponent)({
     attached: function attached() {
         var _this3 = this;
 
-        window.require(['webuploader'], function (Uploader) {
-            return _this3.initializeUploader(Uploader);
+        (0, _helper.loadThirdParty)('WebUploader', ['webuploader', (0, _helper.css)('webuploader/webuploader.css')]).then(function (WebUploader) {
+            return _this3.initializeUploader(WebUploader);
         });
     },
     disposed: function disposed() {
@@ -67232,7 +62273,7 @@ exports.default = (0, _san.defineComponent)({
 });
 
 /***/ }),
-/* 339 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67242,7 +62283,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -67431,35 +62472,137 @@ exports.default = function (Klass) {
 };
 
 /***/ }),
-/* 340 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(341), __esModule: true };
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _san = __webpack_require__(0);
+
+exports.default = (0, _san.defineComponent)({
+    template: '<div class="x-row">\n        <div class="label" s-if="label">{{label}}</div>\n        <div class="content"><slot/></div>\n    </div>'
+}); /**
+     * @file demos/Row.js
+     * @author leeight
+     */
 
 /***/ }),
-/* 341 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(342);
-module.exports = __webpack_require__(36).Object.assign;
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.asDialog = asDialog;
+
+var _lodash = __webpack_require__(4);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _san = __webpack_require__(0);
+
+var _Dialog = __webpack_require__(20);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _Button = __webpack_require__(6);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @file components/asDialog.js
+ * @author leeight
+ */
+
+function asDialog(Klass) {
+    if (Klass.__dialogComponent) {
+        return Klass.__dialogComponent;
+    }
+    var dataTypes = _lodash2.default.keys(Klass.dataTypes || Klass.prototype.dataTypes || {});
+    var klassTemplate = dataTypes.length <= 0 ? '<x-biz payload="{{payload}}" />' : '<x-biz ' + _lodash2.default.map(dataTypes, function (prop) {
+        return prop + '="{{payload.' + prop + '}}"';
+    }).join(' ') + ' />';
+
+    var WrappedComponent = (0, _san.defineComponent)({
+        template: '<template>\n        <ui-dialog open="{{open}}" width="{{width}}" s-ref="dialog" foot="{{!!foot}}">\n            <span slot="head">{{title}}</span>\n            ' + klassTemplate + '\n            <div slot="foot" s-if="foot">\n                <ui-button on-click="onConfirmDialog" skin="primary">{{foot.okBtn.label || \'\u786E\u5B9A\'}}</ui-button>\n            </div>\n        </ui-dialog>\n        </template>',
+        components: {
+            'x-biz': Klass,
+            'ui-button': _Button2.default,
+            'ui-dialog': _Dialog2.default
+        },
+        initData: function initData() {
+            return {
+                open: true,
+                title: '确认',
+                payload: null
+            };
+        },
+        inited: function inited() {
+            // 设置foot默认值
+            if (this.data.get('foot') === undefined) {
+                this.data.set('foot', {
+                    okBtn: {
+                        label: '确定'
+                    }
+                });
+            }
+        },
+
+        messages: {
+            resize: function resize() {
+                this.ref('dialog').__resize();
+            }
+        },
+        onConfirmDialog: function onConfirmDialog() {
+            this.fire('confirm');
+            this.data.set('open', false);
+        }
+    });
+    Klass.__dialogComponent = WrappedComponent;
+
+    return WrappedComponent;
+}
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(313), __esModule: true };
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(314);
+module.exports = __webpack_require__(31).Object.assign;
 
 
 /***/ }),
-/* 342 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(59);
+var $export = __webpack_require__(46);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(345) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(317) });
 
 
 /***/ }),
-/* 343 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(344);
+var aFunction = __webpack_require__(316);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -67481,7 +62624,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 344 */
+/* 316 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -67491,21 +62634,21 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 345 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(39);
-var gOPS = __webpack_require__(66);
-var pIE = __webpack_require__(41);
-var toObject = __webpack_require__(239);
-var IObject = __webpack_require__(237);
+var getKeys = __webpack_require__(34);
+var gOPS = __webpack_require__(53);
+var pIE = __webpack_require__(36);
+var toObject = __webpack_require__(220);
+var IObject = __webpack_require__(218);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(31)(function () {
+module.exports = !$assign || __webpack_require__(27)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -67532,14 +62675,14 @@ module.exports = !$assign || __webpack_require__(31)(function () {
 
 
 /***/ }),
-/* 346 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(27);
-var toLength = __webpack_require__(347);
-var toAbsoluteIndex = __webpack_require__(348);
+var toIObject = __webpack_require__(24);
+var toLength = __webpack_require__(319);
+var toAbsoluteIndex = __webpack_require__(320);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -67561,11 +62704,11 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 347 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(62);
+var toInteger = __webpack_require__(49);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -67573,10 +62716,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 348 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(62);
+var toInteger = __webpack_require__(49);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -67586,30 +62729,30 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 349 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(350), __esModule: true };
+module.exports = { "default": __webpack_require__(322), __esModule: true };
 
 /***/ }),
-/* 350 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(351);
-__webpack_require__(357);
-module.exports = __webpack_require__(70).f('iterator');
+__webpack_require__(323);
+__webpack_require__(329);
+module.exports = __webpack_require__(57).f('iterator');
 
 
 /***/ }),
-/* 351 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(352)(true);
+var $at = __webpack_require__(324)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(240)(String, 'String', function (iterated) {
+__webpack_require__(221)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -67625,11 +62768,11 @@ __webpack_require__(240)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 352 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(62);
-var defined = __webpack_require__(61);
+var toInteger = __webpack_require__(49);
+var defined = __webpack_require__(48);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -67648,18 +62791,18 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 353 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(242);
-var descriptor = __webpack_require__(38);
-var setToStringTag = __webpack_require__(69);
+var create = __webpack_require__(223);
+var descriptor = __webpack_require__(33);
+var setToStringTag = __webpack_require__(56);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(24)(IteratorPrototype, __webpack_require__(28)('iterator'), function () { return this; });
+__webpack_require__(21)(IteratorPrototype, __webpack_require__(25)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -67668,14 +62811,14 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 354 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(25);
-var anObject = __webpack_require__(37);
-var getKeys = __webpack_require__(39);
+var dP = __webpack_require__(22);
+var anObject = __webpack_require__(32);
+var getKeys = __webpack_require__(34);
 
-module.exports = __webpack_require__(26) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(23) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -67687,21 +62830,21 @@ module.exports = __webpack_require__(26) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 355 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var document = __webpack_require__(17).document;
+var document = __webpack_require__(15).document;
 module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 356 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(20);
-var toObject = __webpack_require__(239);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+var has = __webpack_require__(17);
+var toObject = __webpack_require__(220);
+var IE_PROTO = __webpack_require__(50)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
@@ -67714,14 +62857,14 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 357 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(358);
-var global = __webpack_require__(17);
-var hide = __webpack_require__(24);
-var Iterators = __webpack_require__(68);
-var TO_STRING_TAG = __webpack_require__(28)('toStringTag');
+__webpack_require__(330);
+var global = __webpack_require__(15);
+var hide = __webpack_require__(21);
+var Iterators = __webpack_require__(55);
+var TO_STRING_TAG = __webpack_require__(25)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -67739,21 +62882,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 358 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(359);
-var step = __webpack_require__(360);
-var Iterators = __webpack_require__(68);
-var toIObject = __webpack_require__(27);
+var addToUnscopables = __webpack_require__(331);
+var step = __webpack_require__(332);
+var Iterators = __webpack_require__(55);
+var toIObject = __webpack_require__(24);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(240)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(221)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -67780,14 +62923,14 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 359 */
+/* 331 */
 /***/ (function(module, exports) {
 
 module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 360 */
+/* 332 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -67796,54 +62939,54 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 361 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(362), __esModule: true };
+module.exports = { "default": __webpack_require__(334), __esModule: true };
 
 /***/ }),
-/* 362 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(363);
-__webpack_require__(369);
-__webpack_require__(370);
-__webpack_require__(371);
-module.exports = __webpack_require__(36).Symbol;
+__webpack_require__(335);
+__webpack_require__(341);
+__webpack_require__(342);
+__webpack_require__(343);
+module.exports = __webpack_require__(31).Symbol;
 
 
 /***/ }),
-/* 363 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // ECMAScript 6 symbols shim
-var global = __webpack_require__(17);
-var has = __webpack_require__(20);
-var DESCRIPTORS = __webpack_require__(26);
-var $export = __webpack_require__(59);
-var redefine = __webpack_require__(241);
-var META = __webpack_require__(364).KEY;
-var $fails = __webpack_require__(31);
-var shared = __webpack_require__(64);
-var setToStringTag = __webpack_require__(69);
-var uid = __webpack_require__(40);
-var wks = __webpack_require__(28);
-var wksExt = __webpack_require__(70);
-var wksDefine = __webpack_require__(71);
-var enumKeys = __webpack_require__(365);
-var isArray = __webpack_require__(366);
-var anObject = __webpack_require__(37);
-var isObject = __webpack_require__(30);
-var toIObject = __webpack_require__(27);
-var toPrimitive = __webpack_require__(60);
-var createDesc = __webpack_require__(38);
-var _create = __webpack_require__(242);
-var gOPNExt = __webpack_require__(367);
-var $GOPD = __webpack_require__(368);
-var $DP = __webpack_require__(25);
-var $keys = __webpack_require__(39);
+var global = __webpack_require__(15);
+var has = __webpack_require__(17);
+var DESCRIPTORS = __webpack_require__(23);
+var $export = __webpack_require__(46);
+var redefine = __webpack_require__(222);
+var META = __webpack_require__(336).KEY;
+var $fails = __webpack_require__(27);
+var shared = __webpack_require__(51);
+var setToStringTag = __webpack_require__(56);
+var uid = __webpack_require__(35);
+var wks = __webpack_require__(25);
+var wksExt = __webpack_require__(57);
+var wksDefine = __webpack_require__(58);
+var enumKeys = __webpack_require__(337);
+var isArray = __webpack_require__(338);
+var anObject = __webpack_require__(32);
+var isObject = __webpack_require__(26);
+var toIObject = __webpack_require__(24);
+var toPrimitive = __webpack_require__(47);
+var createDesc = __webpack_require__(33);
+var _create = __webpack_require__(223);
+var gOPNExt = __webpack_require__(339);
+var $GOPD = __webpack_require__(340);
+var $DP = __webpack_require__(22);
+var $keys = __webpack_require__(34);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -67966,11 +63109,11 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(243).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(41).f = $propertyIsEnumerable;
-  __webpack_require__(66).f = $getOwnPropertySymbols;
+  __webpack_require__(224).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(36).f = $propertyIsEnumerable;
+  __webpack_require__(53).f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(67)) {
+  if (DESCRIPTORS && !__webpack_require__(54)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -68044,7 +63187,7 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(24)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(21)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
@@ -68054,18 +63197,18 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 364 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(40)('meta');
-var isObject = __webpack_require__(30);
-var has = __webpack_require__(20);
-var setDesc = __webpack_require__(25).f;
+var META = __webpack_require__(35)('meta');
+var isObject = __webpack_require__(26);
+var has = __webpack_require__(17);
+var setDesc = __webpack_require__(22).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !__webpack_require__(31)(function () {
+var FREEZE = !__webpack_require__(27)(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -68113,13 +63256,13 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 365 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(39);
-var gOPS = __webpack_require__(66);
-var pIE = __webpack_require__(41);
+var getKeys = __webpack_require__(34);
+var gOPS = __webpack_require__(53);
+var pIE = __webpack_require__(36);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -68134,23 +63277,23 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 366 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(238);
+var cof = __webpack_require__(219);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
 
 
 /***/ }),
-/* 367 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(27);
-var gOPN = __webpack_require__(243).f;
+var toIObject = __webpack_require__(24);
+var gOPN = __webpack_require__(224).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -68170,18 +63313,18 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 368 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE = __webpack_require__(41);
-var createDesc = __webpack_require__(38);
-var toIObject = __webpack_require__(27);
-var toPrimitive = __webpack_require__(60);
-var has = __webpack_require__(20);
-var IE8_DOM_DEFINE = __webpack_require__(234);
+var pIE = __webpack_require__(36);
+var createDesc = __webpack_require__(33);
+var toIObject = __webpack_require__(24);
+var toPrimitive = __webpack_require__(47);
+var has = __webpack_require__(17);
+var IE8_DOM_DEFINE = __webpack_require__(215);
 var gOPD = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(26) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+exports.f = __webpack_require__(23) ? gOPD : function getOwnPropertyDescriptor(O, P) {
   O = toIObject(O);
   P = toPrimitive(P, true);
   if (IE8_DOM_DEFINE) try {
@@ -68192,44 +63335,44 @@ exports.f = __webpack_require__(26) ? gOPD : function getOwnPropertyDescriptor(O
 
 
 /***/ }),
-/* 369 */
+/* 341 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 370 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(71)('asyncIterator');
+__webpack_require__(58)('asyncIterator');
 
 
 /***/ }),
-/* 371 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(71)('observable');
+__webpack_require__(58)('observable');
 
 
 /***/ }),
-/* 372 */
+/* 344 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__string__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__method__ = __webpack_require__(379);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(380);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boolean__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__regexp__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__integer__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__float__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__array__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__object__ = __webpack_require__(386);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__enum__ = __webpack_require__(387);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pattern__ = __webpack_require__(388);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__date__ = __webpack_require__(389);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__required__ = __webpack_require__(390);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__type__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__string__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__method__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boolean__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__regexp__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__integer__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__float__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__array__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__object__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__enum__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pattern__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__date__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__required__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__type__ = __webpack_require__(363);
 
 
 
@@ -68265,12 +63408,12 @@ __webpack_require__(71)('observable');
 });
 
 /***/ }),
-/* 373 */
+/* 345 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68307,11 +63450,11 @@ function string(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (string);
 
 /***/ }),
-/* 374 */
+/* 346 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
 
 
 /**
@@ -68334,14 +63477,14 @@ function whitespace(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (whitespace);
 
 /***/ }),
-/* 375 */
+/* 347 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__required__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__required__ = __webpack_require__(225);
 
 
 
@@ -68432,11 +63575,11 @@ function type(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (type);
 
 /***/ }),
-/* 376 */
+/* 348 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
 
 
 /**
@@ -68491,11 +63634,11 @@ function range(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (range);
 
 /***/ }),
-/* 377 */
+/* 349 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
 
 var ENUM = 'enum';
 
@@ -68520,11 +63663,11 @@ function enumerable(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (enumerable);
 
 /***/ }),
-/* 378 */
+/* 350 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
 
 
 /**
@@ -68560,12 +63703,12 @@ function pattern(rule, value, source, errors, options) {
 /* harmony default export */ __webpack_exports__["a"] = (pattern);
 
 /***/ }),
-/* 379 */
+/* 351 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68597,12 +63740,12 @@ function method(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (method);
 
 /***/ }),
-/* 380 */
+/* 352 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68635,12 +63778,12 @@ function number(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (number);
 
 /***/ }),
-/* 381 */
+/* 353 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rule___ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rule___ = __webpack_require__(8);
 
 
 
@@ -68672,12 +63815,12 @@ function boolean(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (boolean);
 
 /***/ }),
-/* 382 */
+/* 354 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68709,12 +63852,12 @@ function regexp(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (regexp);
 
 /***/ }),
-/* 383 */
+/* 355 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68747,12 +63890,12 @@ function integer(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (integer);
 
 /***/ }),
-/* 384 */
+/* 356 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68785,12 +63928,12 @@ function floatFn(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (floatFn);
 
 /***/ }),
-/* 385 */
+/* 357 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 /**
@@ -68822,12 +63965,12 @@ function array(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (array);
 
 /***/ }),
-/* 386 */
+/* 358 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68859,12 +64002,12 @@ function object(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (object);
 
 /***/ }),
-/* 387 */
+/* 359 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 var ENUM = 'enum';
@@ -68897,12 +64040,12 @@ function enumerable(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (enumerable);
 
 /***/ }),
-/* 388 */
+/* 360 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68937,12 +64080,12 @@ function pattern(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (pattern);
 
 /***/ }),
-/* 389 */
+/* 361 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -68969,13 +64112,13 @@ function date(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (date);
 
 /***/ }),
-/* 390 */
+/* 362 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rule___ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rule___ = __webpack_require__(8);
 
 
 
@@ -68989,12 +64132,12 @@ function required(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (required);
 
 /***/ }),
-/* 391 */
+/* 363 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rule___ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(7);
 
 
 
@@ -69017,7 +64160,7 @@ function type(rule, value, callback, source, options) {
 /* harmony default export */ __webpack_exports__["a"] = (type);
 
 /***/ }),
-/* 392 */
+/* 364 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69081,7 +64224,7 @@ function newMessages() {
 var messages = newMessages();
 
 /***/ }),
-/* 393 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69092,7 +64235,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.evalExpr = evalExpr;
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -69196,7 +64339,7 @@ function evalExpr(expression, scope) {
 }
 
 /***/ }),
-/* 394 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69213,7 +64356,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 exports.buildValidator = buildValidator;
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -69342,7 +64485,7 @@ function buildValidator(validations, validationErrors) {
 }
 
 /***/ }),
-/* 395 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69353,93 +64496,93 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.createForm = createForm;
 
-var _asForm = __webpack_require__(35);
+var _asForm = __webpack_require__(30);
 
-var _Number = __webpack_require__(396);
+var _Number = __webpack_require__(368);
 
 var _Number2 = _interopRequireDefault(_Number);
 
-var _Text = __webpack_require__(397);
+var _Text = __webpack_require__(369);
 
 var _Text2 = _interopRequireDefault(_Text);
 
-var _Select = __webpack_require__(398);
+var _Select = __webpack_require__(370);
 
 var _Select2 = _interopRequireDefault(_Select);
 
-var _Calendar = __webpack_require__(399);
+var _Calendar = __webpack_require__(371);
 
 var _Calendar2 = _interopRequireDefault(_Calendar);
 
-var _Uploader = __webpack_require__(400);
+var _Uploader = __webpack_require__(372);
 
 var _Uploader2 = _interopRequireDefault(_Uploader);
 
-var _Switch = __webpack_require__(401);
+var _Switch = __webpack_require__(373);
 
 var _Switch2 = _interopRequireDefault(_Switch);
 
-var _BoxGroup = __webpack_require__(402);
+var _BoxGroup = __webpack_require__(374);
 
 var _BoxGroup2 = _interopRequireDefault(_BoxGroup);
 
-var _RangeCalendar = __webpack_require__(403);
+var _RangeCalendar = __webpack_require__(375);
 
 var _RangeCalendar2 = _interopRequireDefault(_RangeCalendar);
 
-var _NumberTextline = __webpack_require__(404);
+var _NumberTextline = __webpack_require__(376);
 
 var _NumberTextline2 = _interopRequireDefault(_NumberTextline);
 
-var _Dragger = __webpack_require__(405);
+var _Dragger = __webpack_require__(377);
 
 var _Dragger2 = _interopRequireDefault(_Dragger);
 
-var _RadioSelect = __webpack_require__(406);
+var _RadioSelect = __webpack_require__(378);
 
 var _RadioSelect2 = _interopRequireDefault(_RadioSelect);
 
-var _Tip = __webpack_require__(407);
+var _Tip = __webpack_require__(379);
 
 var _Tip2 = _interopRequireDefault(_Tip);
 
-var _MultiPicker = __webpack_require__(408);
+var _MultiPicker = __webpack_require__(380);
 
 var _MultiPicker2 = _interopRequireDefault(_MultiPicker);
 
-var _Region = __webpack_require__(409);
+var _Region = __webpack_require__(381);
 
 var _Region2 = _interopRequireDefault(_Region);
 
-var _UserPicker = __webpack_require__(410);
+var _UserPicker = __webpack_require__(382);
 
 var _UserPicker2 = _interopRequireDefault(_UserPicker);
 
-var _ACEEditor = __webpack_require__(411);
+var _ACEEditor = __webpack_require__(383);
 
 var _ACEEditor2 = _interopRequireDefault(_ACEEditor);
 
-var _CKEditor = __webpack_require__(412);
+var _CKEditor = __webpack_require__(384);
 
 var _CKEditor2 = _interopRequireDefault(_CKEditor);
 
-var _RichTextEditor = __webpack_require__(413);
+var _RichTextEditor = __webpack_require__(385);
 
 var _RichTextEditor2 = _interopRequireDefault(_RichTextEditor);
 
-var _ComboForm = __webpack_require__(414);
+var _ComboForm = __webpack_require__(386);
 
 var _ComboForm2 = _interopRequireDefault(_ComboForm);
 
-var _StaticItem = __webpack_require__(416);
+var _StaticItem = __webpack_require__(388);
 
 var _StaticItem2 = _interopRequireDefault(_StaticItem);
 
-var _CheckBox = __webpack_require__(417);
+var _CheckBox = __webpack_require__(389);
 
 var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
-var _SubForm = __webpack_require__(418);
+var _SubForm = __webpack_require__(390);
 
 var _SubForm2 = _interopRequireDefault(_SubForm);
 
@@ -69478,7 +64621,7 @@ function createForm(schema) {
 }
 
 /***/ }),
-/* 396 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69488,7 +64631,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -69509,7 +64652,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 397 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69519,7 +64662,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _TextBox = __webpack_require__(13);
+var _TextBox = __webpack_require__(12);
 
 var _TextBox2 = _interopRequireDefault(_TextBox);
 
@@ -69540,7 +64683,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 398 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69550,7 +64693,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Select = __webpack_require__(22);
+var _Select = __webpack_require__(28);
 
 var _Select2 = _interopRequireDefault(_Select);
 
@@ -69571,7 +64714,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 399 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69581,7 +64724,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Calendar = __webpack_require__(48);
+var _Calendar = __webpack_require__(194);
 
 var _Calendar2 = _interopRequireDefault(_Calendar);
 
@@ -69602,7 +64745,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 400 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69612,7 +64755,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Uploader = __webpack_require__(230);
+var _Uploader = __webpack_require__(211);
 
 var _Uploader2 = _interopRequireDefault(_Uploader);
 
@@ -69633,7 +64776,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 401 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69643,7 +64786,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Switch = __webpack_require__(211);
+var _Switch = __webpack_require__(203);
 
 var _Switch2 = _interopRequireDefault(_Switch);
 
@@ -69664,7 +64807,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 402 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69674,7 +64817,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _BoxGroup = __webpack_require__(200);
+var _BoxGroup = __webpack_require__(192);
 
 var _BoxGroup2 = _interopRequireDefault(_BoxGroup);
 
@@ -69695,7 +64838,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 403 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69705,7 +64848,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RangeCalendar = __webpack_require__(53);
+var _RangeCalendar = __webpack_require__(200);
 
 var _RangeCalendar2 = _interopRequireDefault(_RangeCalendar);
 
@@ -69726,7 +64869,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 404 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69736,7 +64879,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _NumberTextline = __webpack_require__(207);
+var _NumberTextline = __webpack_require__(198);
 
 var _NumberTextline2 = _interopRequireDefault(_NumberTextline);
 
@@ -69757,7 +64900,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 405 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69767,7 +64910,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Dragger = __webpack_require__(204);
+var _Dragger = __webpack_require__(195);
 
 var _Dragger2 = _interopRequireDefault(_Dragger);
 
@@ -69788,7 +64931,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 406 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69798,7 +64941,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RadioSelect = __webpack_require__(52);
+var _RadioSelect = __webpack_require__(199);
 
 var _RadioSelect2 = _interopRequireDefault(_RadioSelect);
 
@@ -69819,7 +64962,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 407 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69829,7 +64972,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Tip = __webpack_require__(54);
+var _Tip = __webpack_require__(204);
 
 var _Tip2 = _interopRequireDefault(_Tip);
 
@@ -69850,7 +64993,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 408 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69860,7 +65003,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _MultiPicker = __webpack_require__(51);
+var _MultiPicker = __webpack_require__(43);
 
 var _MultiPicker2 = _interopRequireDefault(_MultiPicker);
 
@@ -69881,7 +65024,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 409 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69891,7 +65034,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Region = __webpack_require__(209);
+var _Region = __webpack_require__(201);
 
 var _Region2 = _interopRequireDefault(_Region);
 
@@ -69912,7 +65055,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 410 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69922,7 +65065,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _UserPicker = __webpack_require__(223);
+var _UserPicker = __webpack_require__(205);
 
 var _UserPicker2 = _interopRequireDefault(_UserPicker);
 
@@ -69943,7 +65086,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 411 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69953,7 +65096,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _ACEEditor = __webpack_require__(196);
+var _ACEEditor = __webpack_require__(190);
 
 var _ACEEditor2 = _interopRequireDefault(_ACEEditor);
 
@@ -69974,7 +65117,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 412 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69984,7 +65127,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _CKEditor = __webpack_require__(201);
+var _CKEditor = __webpack_require__(193);
 
 var _CKEditor2 = _interopRequireDefault(_CKEditor);
 
@@ -70005,7 +65148,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 413 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70015,7 +65158,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _RichTextEditor = __webpack_require__(210);
+var _RichTextEditor = __webpack_require__(202);
 
 var _RichTextEditor2 = _interopRequireDefault(_RichTextEditor);
 
@@ -70036,7 +65179,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 414 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70046,7 +65189,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _ComboForm = __webpack_require__(415);
+var _ComboForm = __webpack_require__(387);
 
 var _ComboForm2 = _interopRequireDefault(_ComboForm);
 
@@ -70067,7 +65210,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 415 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70077,7 +65220,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -70085,15 +65228,15 @@ var _san = __webpack_require__(0);
 
 var _util = __webpack_require__(2);
 
-var _asInput = __webpack_require__(7);
+var _asInput = __webpack_require__(5);
 
 var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _asForm = __webpack_require__(35);
+var _asForm = __webpack_require__(30);
 
-var _StaticItem = __webpack_require__(245);
+var _StaticItem = __webpack_require__(226);
 
 var _StaticItem2 = _interopRequireDefault(_StaticItem);
 
@@ -70261,7 +65404,7 @@ var ComboForm = (0, _san.defineComponent)({
 exports.default = (0, _asInput.asInput)(ComboForm);
 
 /***/ }),
-/* 416 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70271,7 +65414,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _StaticItem = __webpack_require__(245);
+var _StaticItem = __webpack_require__(226);
 
 var _StaticItem2 = _interopRequireDefault(_StaticItem);
 
@@ -70292,7 +65435,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 417 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70302,7 +65445,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _CheckBox = __webpack_require__(50);
+var _CheckBox = __webpack_require__(42);
 
 var _CheckBox2 = _interopRequireDefault(_CheckBox);
 
@@ -70323,7 +65466,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 418 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70333,7 +65476,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _SubForm = __webpack_require__(419);
+var _SubForm = __webpack_require__(391);
 
 var _SubForm2 = _interopRequireDefault(_SubForm);
 
@@ -70346,7 +65489,7 @@ var tagName = 'ui-form-item-sub-form'; /**
 
 exports.default = {
     type: 'sub-form',
-    tagName: tagName,
+    tagName: tagName, // eslint-disable-line
     Component: _SubForm2.default,
     builder: function builder(item, prefix) {
         return '\n            <ui-form-item-sub-form\n                preview="{{preview}}"\n                title="{{' + prefix + '.form.title}}"\n                icon="{{' + prefix + '.icon}}"\n                button-label="{{' + prefix + '.buttonLabel}}"\n                button-width="{{' + prefix + '.buttonWidth}}"\n                width="{{' + prefix + '.width}}"\n                pick-name="{{' + prefix + '.pickName}}"\n                controls="{{' + prefix + '.form.controls}}"\n                formData="{=formData.' + item.name + '=}"\n            />';
@@ -70354,7 +65497,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 419 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70364,7 +65507,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -70374,9 +65517,9 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _asForm = __webpack_require__(35);
+var _asForm = __webpack_require__(30);
 
-var _FormDialog = __webpack_require__(246);
+var _FormDialog = __webpack_require__(227);
 
 var _FormDialog2 = _interopRequireDefault(_FormDialog);
 

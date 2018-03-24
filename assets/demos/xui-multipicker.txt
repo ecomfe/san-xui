@@ -5,9 +5,7 @@
 
 import Promise from 'promise';
 import {defineComponent} from 'san';
-import {MultiPicker} from 'san-xui';
-
-import Row from './Row';
+import {Row, MultiPicker} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

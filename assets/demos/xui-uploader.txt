@@ -4,13 +4,25 @@
  */
 
 import {defineComponent} from 'san';
-import {ToastLabel, Uploader} from 'san-xui';
-
-import Row from './Row';
+import {Row, ToastLabel, Uploader} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>
-<xui-toastlabel text="文件上传到 BOS，无需任何配置，开箱即用" />
+<xui-toastlabel>
+<strong style="color: red">文件上传到 BOS，无需任何配置，开箱即用</strong><br />
+需要在页面中引入 bce-bos-uploader-lite 的代码，有两种方式：<pre>
+1. 手工引入
+<code>&lt;script src="https://cdn.bdstatic.com/bce-bos-uploader-lite/1.0.5/bce-bos-uploader-lite.min.js"&gt;&lt;/script&gt;</code>
+
+2. AMD Loader自动引入
+<code>require.config({
+  paths: {
+    'baidubce': 'https://cdn.bdstatic.com/bce-bos-uploader-lite/1.0.5/bce-bos-uploader-lite.min'
+  }
+});</code>
+</pre>
+</xui-toastlabel>
+
 <x-row label="default">
     <div class="as-form-row">
         <div class="ui-form-item-content">

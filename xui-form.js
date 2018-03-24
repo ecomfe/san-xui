@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([2],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([1],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 447:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19,25 +19,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _asyncValidator = __webpack_require__(232);
+var _asyncValidator = __webpack_require__(213);
 
 var AsyncValidator = _interopRequireWildcard(_asyncValidator);
 
-var _Form = __webpack_require__(448);
+var _Form = __webpack_require__(410);
 
 var _Form2 = _interopRequireDefault(_Form);
 
-var _FormItem = __webpack_require__(449);
+var _FormItem = __webpack_require__(411);
 
 var _FormItem2 = _interopRequireDefault(_FormItem);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-var _rules = __webpack_require__(450);
+var _rules = __webpack_require__(412);
 
 var rules = _interopRequireWildcard(_rules);
 
@@ -45,10 +41,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var Schema = AsyncValidator.default; /**
-                                      * @file demos/xui-form.js
-                                      * @author leeight
-                                      */
+/**
+ * @file demos/xui-form.js
+ * @author leeight
+ */
+
+var Schema = AsyncValidator.default;
 
 var formValidator = new Schema({
     userName: [{ required: true, message: '用户名必填' }, { min: 6, max: 32, message: '用户名长度必须是 6 到 32 个字符之间' }, rules.noInvalidChar('用户名')],
@@ -69,7 +67,7 @@ var template = '<template>\n<x-row label="[default]">\n    <xui-form s-ref="form
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-select': _sanXui.Select,
         'xui-boxgroup': _sanXui.BoxGroup,
         'xui-textbox': _sanXui.TextBox,
@@ -112,7 +110,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 448:
+/***/ 410:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -124,7 +122,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _san = __webpack_require__(0);
 
-var _promise = __webpack_require__(10);
+var _promise = __webpack_require__(16);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -284,7 +282,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 449:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -420,7 +418,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 450:
+/***/ 412:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -478,4 +476,4 @@ function equals(key) {
 
 /***/ })
 
-},[447])});;
+},[409])});;

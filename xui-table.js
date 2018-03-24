@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([19],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([14],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 479:
+/***/ 439:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,25 +21,19 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* eslint-disable */
-var template = '<template>\n<x-row label="[default]">\n    <xui-table\n        schema="{{table.schema}}"\n        cell-builder="{{table.cellRenderer}}"\n        on-command="onCommand($event)"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}">\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n</x-row>\n\n<x-row label="select=multi">\n    <div class="xui-table-demo-toolbar">\n        <xui-searchbox search-btn="{{false}}" />\n        <xui-table-column-toggle\n            on-change="toggleTableColumns"\n            layer-align="right"\n            value="{=tct.value=}"\n            datasource="{{tct.datasource}}"\n            />\n    </div>\n\n    <xui-table select="multi"\n        schema="{{table.schema}}"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}"\n        selected-index="{=table.selectedIndex=}"\n        on-selected-change="onTableRowSelected($event)">\n\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n    <p>Table Selected Index: {{table.selectedIndex}}</p>\n</x-row>\n\n<x-row label="select=single">\n    <xui-table select="single"\n        schema="{{table.schema}}"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}"\n        on-selected-change="onTableRowSelected($event)">\n\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n</x-row>\n\n<x-row label="select=multi,freezed,\u5DE6\u51BB\u7ED3\u5217">\n    <xui-frozen-column-table\n        select="multi"\n        selected-index="{=freezedLeftTable.selectedIndex=}"\n        schema="{{freezedLeftTable.schema}}"\n        datasource="{{freezedLeftTable.datasource}}"\n        />\n    <p>Table Selected Index: {{freezedLeftTable.selectedIndex}}</p>\n</x-row>\n\n<x-row label="select=multi,freezed,\u5DE6\u53F3\u51BB\u7ED3\u5217">\n    <div class="xui-table-demo-toolbar">\n        <xui-button on-click="resetFreezedTableDatasource">Reset Datasource</xui-button>\n    </div>\n    <xui-frozen-column-table\n        select="multi"\n        selected-index="{=freezedTable.selectedIndex=}"\n        schema="{{freezedTable.schema}}"\n        datasource="{{freezedTable.datasource}}"\n        />\n    <p>Table Selected Index: {{freezedTable.selectedIndex}}</p>\n</x-row>\n\n</template>';
-/* eslint-enable */
-
 /**
  * @file demos/xui-table.es
  * @author leeight
  */
 
+var template = '<template>\n<x-row label="[default]">\n    <xui-table\n        schema="{{table.schema}}"\n        cell-builder="{{table.cellRenderer}}"\n        on-command="onCommand($event)"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}">\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n</x-row>\n\n<x-row label="select=multi">\n    <div class="xui-table-demo-toolbar">\n        <xui-searchbox search-btn="{{false}}" />\n        <xui-table-column-toggle\n            on-change="toggleTableColumns"\n            layer-align="right"\n            value="{=tct.value=}"\n            datasource="{{tct.datasource}}"\n            />\n    </div>\n\n    <xui-table select="multi"\n        schema="{{table.schema}}"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}"\n        selected-index="{=table.selectedIndex=}"\n        on-selected-change="onTableRowSelected($event)">\n\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n    <p>Table Selected Index: {{table.selectedIndex}}</p>\n</x-row>\n\n<x-row label="select=single">\n    <xui-table select="single"\n        schema="{{table.schema}}"\n        loading="{{table.loading}}"\n        error="{{table.error}}"\n        datasource="{{table.datasource}}"\n        on-selected-change="onTableRowSelected($event)">\n\n        <div class="ui-table-loading" slot="loading">\u81EA\u5B9A\u4E49\u52A0\u8F7D\u4E2D....</div>\n        <div class="ui-table-error" slot="error">\n            \u554A\u5440\uFF0C\u51FA\u9519\u4E86\uFF1F<a href="javascript:void(0)" on-click="refreshTable">\u91CD\u65B0\u52A0\u8F7D</a>\n        </div>\n    </xui-table>\n</x-row>\n\n<x-row label="select=multi,freezed,\u5DE6\u51BB\u7ED3\u5217">\n    <xui-frozen-column-table\n        select="multi"\n        selected-index="{=freezedLeftTable.selectedIndex=}"\n        schema="{{freezedLeftTable.schema}}"\n        datasource="{{freezedLeftTable.datasource}}"\n        />\n    <p>Table Selected Index: {{freezedLeftTable.selectedIndex}}</p>\n</x-row>\n\n<x-row label="select=multi,freezed,\u5DE6\u53F3\u51BB\u7ED3\u5217">\n    <div class="xui-table-demo-toolbar">\n        <xui-button on-click="resetFreezedTableDatasource">Reset Datasource</xui-button>\n    </div>\n    <xui-frozen-column-table\n        select="multi"\n        selected-index="{=freezedTable.selectedIndex=}"\n        schema="{{freezedTable.schema}}"\n        datasource="{{freezedTable.datasource}}"\n        />\n    <p>Table Selected Index: {{freezedTable.selectedIndex}}</p>\n</x-row>\n\n</template>';
+/* eslint-enable */
+
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-button': _sanXui.Button,
         'xui-boxgroup': _sanXui.BoxGroup,
         'xui-searchbox': _sanXui.SearchBox,
@@ -113,4 +107,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[479])});;
+},[439])});;

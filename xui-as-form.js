@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([4],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([2],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 423:
+/***/ 393:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,14 +21,12 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
+var _formSchemas = __webpack_require__(394);
 
-var _Row2 = _interopRequireDefault(_Row);
+/* eslint-enable */
 
-var _formSchemas = __webpack_require__(424);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+/* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-select width="300" on-change="onExampleChanged" datasource="{{examples.datasource}}"></xui-select>\n    <xui-button on-click="buildForm" skin="primary">\u751F\u6210\u8868\u5355</xui-button>\n    <br />\n    <br />\n    <xui-aceeditor s-if="schemaCode" value="{=schemaCode=}" mode="ace/mode/json" />\n    <br />\n    <table class="typedefs as-form-preview" s-if="schemaCode">\n        <colgroup>\n            <col width="700px" />\n            <col width="200px" />\n        </colgroup>\n        <tbody>\n            <tr><th>\u8868\u5355</th><th>\u8868\u5355\u6570\u636E</th></tr>\n            <tr>\n                <td class="as-form-instance">\n                    <div s-ref="form-container"></div>\n                    <div>\n                        \u5F00\u542F\u5B9E\u65F6\u9A8C\u8BC1\uFF1A<xui-switch checked="{=instantValidation=}" on-change="onInstantValidationChanged" />\n                        \u9884\u89C8\u6A21\u5F0F\uFF1A<xui-switch checked="{=preview=}" on-change="onPreviewChanged" />\n                        <xui-button skin="primary" on-click="validateForm">\u9A8C\u8BC1\u8868\u5355</xui-button>\n                    </div>\n                </td>\n                <td class="as-form-data"><xui-hljs code="{{formData | stringify}}" /></td>\n            </tr>\n        </tbody>\n    </table>\n</x-row>\n</template>';
 /* eslint-enable */
 
 /* eslint-disable */
@@ -37,14 +35,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @author leeight
  */
 
-var template = '<template>\n<x-row label="[default]">\n    <xui-select width="300" on-change="onExampleChanged" datasource="{{examples.datasource}}"></xui-select>\n    <xui-button on-click="buildForm" skin="primary">\u751F\u6210\u8868\u5355</xui-button>\n    <br />\n    <br />\n    <xui-aceeditor s-if="schemaCode" value="{=schemaCode=}" mode="ace/mode/json" />\n    <br />\n    <table class="typedefs as-form-preview" s-if="schemaCode">\n        <colgroup>\n            <col width="700px" />\n            <col width="200px" />\n        </colgroup>\n        <tbody>\n            <tr><th>\u8868\u5355</th><th>\u8868\u5355\u6570\u636E</th></tr>\n            <tr>\n                <td class="as-form-instance">\n                    <div s-ref="form-container"></div>\n                    <div>\n                        \u5F00\u542F\u5B9E\u65F6\u9A8C\u8BC1\uFF1A<xui-switch checked="{=instantValidation=}" on-change="onInstantValidationChanged" />\n                        \u9884\u89C8\u6A21\u5F0F\uFF1A<xui-switch checked="{=preview=}" on-change="onPreviewChanged" />\n                        <xui-button skin="primary" on-click="validateForm">\u9A8C\u8BC1\u8868\u5355</xui-button>\n                    </div>\n                </td>\n                <td class="as-form-data"><xui-hljs code="{{formData | stringify}}" /></td>\n            </tr>\n        </tbody>\n    </table>\n</x-row>\n</template>';
-/* eslint-enable */
-
-/* eslint-disable */
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-toastlabel': _sanXui.ToastLabel,
         'xui-select': _sanXui.Select,
         'xui-switch': _sanXui.Switch,
@@ -140,7 +134,7 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ }),
 
-/***/ 424:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -540,4 +534,4 @@ var kSchema$requiredOn = exports.kSchema$requiredOn = {
 
 /***/ })
 
-},[423])});;
+},[393])});;

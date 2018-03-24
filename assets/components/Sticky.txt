@@ -8,12 +8,12 @@ import _ from 'lodash';
 
 import {getOffset} from '../esui/dom';
 import {getScrollTop, getHeight} from '../esui/page';
-import {create, html} from './util';
+import {create} from './util';
 
 const cx = create('ui-sticky');
 
 /* eslint-disable */
-const template = html`<template>
+const template = `<template>
 <div class="{{mainClass}}" style="{{mainStyle}}">
     <div class="sticky" style="{{stickElementStyle}}">
         <slot name="sticky"></slot>

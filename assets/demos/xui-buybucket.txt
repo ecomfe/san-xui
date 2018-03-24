@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {BuyBucket} from 'san-xui';
-
-import Row from './Row';
+import {Row, BuyBucket} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

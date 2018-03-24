@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([29],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([24],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 467:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,22 +21,18 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * 注册一个 type: 'color' 类型的组件，一般来说，为了命名避免冲突，建议加上业务的前缀比较稳妥
  * 控件需要支持 value 属性的双绑
  */
+/**
+ * @file demos/xui-register-form-item.js
+ * @author leeight
+ */
+
 var Color = (0, _san.defineComponent)({
     template: '<template>\n    <div class="ui-color-picker">\n       <input type="color" value="{=value=}" />\n    </div>\n    </template>'
-}); /**
-     * @file demos/xui-register-form-item.js
-     * @author leeight
-     */
+});
 
 (0, _sanXui.registerFormItem)({
     type: 'color',
@@ -71,7 +67,7 @@ var kFormSchema = {
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-form': (0, _sanXui.createForm)(kFormSchema),
         'xui-toastlabel': _sanXui.ToastLabel
     },
@@ -94,4 +90,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[467])});;
+},[429])});;

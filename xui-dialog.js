@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([48],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([43],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 442:
+/***/ 406:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,14 +21,6 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _helper = __webpack_require__(55);
-
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* eslint-disable */
 /**
  * @file demos/xui-dialog.js
@@ -41,7 +33,7 @@ var template = '<template>\n<x-row label="[default]">\n<xui-button skin="primary
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-tip': _sanXui.Tip,
         'xui-select': _sanXui.Select,
         'xui-dialog': _sanXui.Dialog,
@@ -73,19 +65,19 @@ exports.default = (0, _san.defineComponent)({
         this.data.set('alertDialogOpened', true);
     },
     showAlertDialog: function showAlertDialog() {
-        (0, _helper.alert)({ message: 'Alert dialog (w=500)' }).then(function () {
+        (0, _sanXui.alert)({ message: 'Alert dialog (w=500)' }).then(function () {
             return _sanXui.Toast.success('OK');
         });
     },
     showConfirmDialog: function showConfirmDialog() {
-        (0, _helper.confirm)({ message: 'Confirm dialog (w=400)', width: 400 }).then(function () {
+        (0, _sanXui.confirm)({ message: 'Confirm dialog (w=400)', width: 400 }).then(function () {
             return _sanXui.Toast.success('OK');
         }).catch(function () {
             return _sanXui.Toast.warning('Canceled');
         });
     },
     showPlainDialog: function showPlainDialog() {
-        (0, _helper.plain)({ message: 'Plain dialog (w=500)' }).then(function () {
+        (0, _sanXui.plain)({ message: 'Plain dialog (w=500)' }).then(function () {
             return _sanXui.Toast.success('OK');
         });
     },
@@ -96,4 +88,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[442])});;
+},[406])});;

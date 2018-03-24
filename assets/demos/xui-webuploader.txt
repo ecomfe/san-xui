@@ -4,13 +4,27 @@
  */
 
 import {defineComponent} from 'san';
-import {WebUploader, Switch, Toast, Button, ToastLabel} from 'san-xui';
-
-import Row from './Row';
+import {Row, WebUploader, Switch, Toast, Button, ToastLabel} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>
-<xui-toastlabel>这个 demo 无法正常的工作，因为需要有一个在线的服务接收上传的请求，但是现在没有这个服务。</xui-toastlabel>
+<xui-toastlabel>
+<strong style="color:red">这个 demo 无法正常的工作，因为需要有一个在线的服务接收上传的请求，但是现在没有这个服务。</strong><br />
+需要在页面中引入 WebUploader 和 jQuery 的代码，有两种方式：<pre>
+1. 手工引入
+<code>&lt;script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.staticfile.org/webuploader/0.1.0/webuploader.js"&gt;&lt;/script&gt;</code>
+
+2. AMD Loader自动引入
+<code>require.config({
+  paths: {
+    'jquery': 'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min',
+    'webuploader': 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/WebUploader',
+    'webuploader/webuploader': 'https://cdn.bdstatic.com/console/dep/05cfee93/webuploader/webuploader'
+  }
+});</code>
+</pre>
+</xui-toastlabel>
 
 <x-row label="initialize error">
     <xui-webuploader />

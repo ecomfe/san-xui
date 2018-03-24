@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Tip, Layer, Button, Select, TextBox, MultiPicker, Toast, BoxGroup} from 'san-xui';
-
-import Row from './Row';
+import {Row, Tip, Layer, Button, Select, TextBox, MultiPicker, Toast, BoxGroup} from 'san-xui';
 
 /* eslint-disable */
 const template = `

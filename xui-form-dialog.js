@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([46],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([41],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 446:
+/***/ 408:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,11 +21,10 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/**
+ * @file demos/xui-form-dialog.js
+ * @author chenbo09
+ */
 
 function toList() {
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
@@ -38,10 +37,7 @@ function toList() {
             value: v
         };
     });
-} /**
-   * @file demos/xui-form-dialog.js
-   * @author chenbo09
-   */
+}
 
 var ClintInfo = {
     controls: [{
@@ -92,7 +88,7 @@ var template = '<template>\n    <xui-toastlabel>\n        FormDialog\u4F5C\u4E3A
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-form-dialog': _sanXui.FormDialog,
         'xui-toastlabel': _sanXui.ToastLabel,
         'xui-button': _sanXui.Button,
@@ -139,4 +135,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[446])});;
+},[408])});;

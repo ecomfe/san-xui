@@ -5,9 +5,7 @@
 
 import u from 'lodash';
 import {defineComponent} from 'san';
-import {Icon, Loading, TextBox} from 'san-xui';
-
-import Row from './Row';
+import {Row, Icon, Loading, TextBox} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

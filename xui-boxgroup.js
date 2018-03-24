@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([56],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([51],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 433:
+/***/ 397:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,25 +21,19 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* eslint-disable */
-var template = '<template>\n<x-row label="radio">\n    <xui-boxgroup\n        box-type="radio"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.radio=}"\n        />\n    <strong class="large">\n    Value is: {{boxgroup.radio | stringify}}\n    </strong>\n</x-row>\n\n<x-row label="checkbox">\n    <xui-boxgroup\n        box-type="checkbox"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.checkbox=}"\n        />\n    <strong class="large">\n    Value is: {{boxgroup.checkbox | stringify}}\n    </strong>\n</x-row>\n\n<x-row label="checkbox,col-count=3,item-width=100">\n    <xui-boxgroup\n        box-type="checkbox"\n        col-count="{{3}}"\n        item-width="{{100}}"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.checkbox=}"\n        />\n</x-row>\n</template>';
-/* eslint-enable */
-
 /**
  * @file demos/xui-boxgroup.js
  * @author leeight
  */
 
+var template = '<template>\n<x-row label="radio">\n    <xui-boxgroup\n        box-type="radio"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.radio=}"\n        />\n    <strong class="large">\n    Value is: {{boxgroup.radio | stringify}}\n    </strong>\n</x-row>\n\n<x-row label="checkbox">\n    <xui-boxgroup\n        box-type="checkbox"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.checkbox=}"\n        />\n    <strong class="large">\n    Value is: {{boxgroup.checkbox | stringify}}\n    </strong>\n</x-row>\n\n<x-row label="checkbox,col-count=3,item-width=100">\n    <xui-boxgroup\n        box-type="checkbox"\n        col-count="{{3}}"\n        item-width="{{100}}"\n        datasource="{{boxgroup.datasource}}"\n        value="{=boxgroup.checkbox=}"\n        />\n</x-row>\n</template>';
+/* eslint-enable */
+
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-boxgroup': _sanXui.BoxGroup
     },
     filters: {
@@ -58,4 +52,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[433])});;
+},[397])});;

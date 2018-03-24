@@ -3,7 +3,6 @@
  * @author leeight
  */
 
-import _ from 'inf-i18n';
 import u from 'lodash';
 import {defineComponent} from 'san';
 
@@ -37,7 +36,7 @@ export function asDialog(Klass) {
         initData() {
             return {
                 open: true,
-                title: _('确认'),
+                title: '确认',
                 payload: null
             };
         },
@@ -46,7 +45,7 @@ export function asDialog(Klass) {
             if (this.data.get('foot') === undefined) {
                 this.data.set('foot', {
                     okBtn: {
-                        label: _('确定')
+                        label: '确定'
                     }
                 });
             }

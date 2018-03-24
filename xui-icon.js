@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([43],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([38],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 453:
+/***/ 415:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _lodash = __webpack_require__(5);
+var _lodash = __webpack_require__(4);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -25,20 +25,16 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
+var template = '<template>\n<xui-loading s-if="loading" />\n<div s-else>\n    <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />\n    Total count: {{filteredIcons.length}}\n    <br />\n    <x-row label="{{g.name}} ({{g.icons.length}})" s-for="g in groupedIcons">\n        <div class="icons">\n            <div s-for="icon in g.icons" class="tooltipped tooltipped-n" aria-label="{{icon}}">\n                <xui-icon name="{{icon}}" /><br />{{icon}}\n            </div>\n        </div>\n    </x-row>\n</div>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-icon.js
  * @author leeight
  */
-
-var template = '<template>\n<xui-loading s-if="loading" />\n<div s-else>\n    <xui-textbox value="{=keyword=}" placeholder="Find icon by name" />\n    Total count: {{filteredIcons.length}}\n    <br />\n    <x-row label="{{g.name}} ({{g.icons.length}})" s-for="g in groupedIcons">\n        <div class="icons">\n            <div s-for="icon in g.icons" class="tooltipped tooltipped-n" aria-label="{{icon}}">\n                <xui-icon name="{{icon}}" /><br />{{icon}}\n            </div>\n        </div>\n    </x-row>\n</div>\n</template>';
-/* eslint-enable */
 
 function getIcons() {
     return fetch('https://cdn.bdstatic.com/iconfont/iconfont.css').then(function (response) {
@@ -83,7 +79,7 @@ function groupIcons(icons) {
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-loading': _sanXui.Loading,
         'xui-textbox': _sanXui.TextBox,
         'xui-icon': _sanXui.Icon
@@ -124,4 +120,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[453])});;
+},[415])});;

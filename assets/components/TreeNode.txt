@@ -2,13 +2,12 @@
  * @file TreeNode.js Tree节点
  * @author zhangzhe(zhangzhe@baidu.com)
  */
-import {DataTypes, defineComponent} from 'san';
 import _ from 'lodash';
-import {confirm} from '../biz/helper';
+import {DataTypes, defineComponent} from 'san';
 
 import TextBox from './TextBox';
 import CheckBox from './CheckBox';
-import {create} from './util';
+import {create, confirm} from './util';
 
 const cx = create('ui-tree');
 

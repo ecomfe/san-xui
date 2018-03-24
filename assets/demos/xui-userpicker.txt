@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {UserPicker} from 'san-xui';
-
-import Row from './Row';
+import {Row, UserPicker} from 'san-xui';
 
 function searchRequester(keyword) {
     return fetch('https://randomuser.me/api/?results=5')

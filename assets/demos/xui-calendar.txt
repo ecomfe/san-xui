@@ -5,9 +5,7 @@
 
 import moment from 'moment';
 import {defineComponent} from 'san';
-import {Calendar} from 'san-xui';
-
-import Row from './Row';
+import {Row, Calendar} from 'san-xui';
 
 /* eslint-disable */
 const template = `<template>

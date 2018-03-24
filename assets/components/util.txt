@@ -1,5 +1,5 @@
 /**
- * @file util.js
+ * @file san-xui/x/components/util.js
  * @author leeight
  */
 

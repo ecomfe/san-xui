@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([37],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([32],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 459:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _promise = __webpack_require__(10);
+var _promise = __webpack_require__(16);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -25,20 +25,16 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
+var template = '<template>\n<x-row label="[default]">\n    <xui-multipicker\n        datasource="{{mp.datasource}}"\n        value="{=mp.value=}"\n        />\n    <strong class="large">\n        Value is: {{mp.value}}\n    </strong>\n</x-row>\n\n<x-row label="\u64CD\u4F5C\u7CFB\u7EDF">\n    <xui-multipicker\n        datasource="{{os.datasource}}"\n        value="{=os.value=}"\n        />\n    <strong class="large">\n        \u64CD\u4F5C\u7CFB\u7EDF: {{os.value}}\n    </strong>\n</x-row>\n\n<x-row label="lazy-loading,loader">\n    <xui-multipicker\n        datasource="{{lazy.datasource}}"\n        loader="{{lazy.loader}}"\n        value="{=lazy.value=}"\n        />\n    <strong class="large">\n        \u64CD\u4F5C\u7CFB\u7EDF: {{lazy.value}}\n    </strong>\n</x-row>\n\n<x-row label="disabled">\n    <xui-multipicker\n        disabled\n        datasource="{{mp.datasource}}"\n        value="{=mp.value=}"\n        />\n    <strong class="large">\n        Value is: {{mp.value}}\n    </strong>\n</x-row>\n</template>';
+/* eslint-enable */
+
 /**
  * @file demos/xui-multipicker.js
  * @author leeight
  */
-
-var template = '<template>\n<x-row label="[default]">\n    <xui-multipicker\n        datasource="{{mp.datasource}}"\n        value="{=mp.value=}"\n        />\n    <strong class="large">\n        Value is: {{mp.value}}\n    </strong>\n</x-row>\n\n<x-row label="\u64CD\u4F5C\u7CFB\u7EDF">\n    <xui-multipicker\n        datasource="{{os.datasource}}"\n        value="{=os.value=}"\n        />\n    <strong class="large">\n        \u64CD\u4F5C\u7CFB\u7EDF: {{os.value}}\n    </strong>\n</x-row>\n\n<x-row label="lazy-loading,loader">\n    <xui-multipicker\n        datasource="{{lazy.datasource}}"\n        loader="{{lazy.loader}}"\n        value="{=lazy.value=}"\n        />\n    <strong class="large">\n        \u64CD\u4F5C\u7CFB\u7EDF: {{lazy.value}}\n    </strong>\n</x-row>\n\n<x-row label="disabled">\n    <xui-multipicker\n        disabled\n        datasource="{{mp.datasource}}"\n        value="{=mp.value=}"\n        />\n    <strong class="large">\n        Value is: {{mp.value}}\n    </strong>\n</x-row>\n</template>';
-/* eslint-enable */
 
 function getImages(osType) {
     switch (osType) {
@@ -58,7 +54,7 @@ function getImages(osType) {
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-multipicker': _sanXui.MultiPicker
     },
     initData: function initData() {
@@ -163,4 +159,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[459])});;
+},[421])});;

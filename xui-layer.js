@@ -1,4 +1,4 @@
-define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([40],{
+define(["san"], function(__WEBPACK_EXTERNAL_MODULE_0__) { return webpackJsonp([35],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 
-/***/ 456:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21,21 +21,15 @@ var _san = __webpack_require__(0);
 
 var _sanXui = __webpack_require__(3);
 
-var _Row = __webpack_require__(4);
-
-var _Row2 = _interopRequireDefault(_Row);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* eslint-disable */
-var template = '\n<template>\n<x-row label="center-to-view=true width=700 auto-hide-except-parent=false">\n<xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>\n<xui-layer class="demo-layer" center-to-view="{{true}}" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">\n    <x-row label="type=default">\n        <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>\n        <xui-button on-click="closeTheLayer">\u5173\u95ED.</xui-button>\n        <xui-button on-click="openNewLayer">\u6253\u5F00\u4E00\u4E2A\u65B0\u7684Layer.</xui-button>\n        <xui-select multi filter layer-width="300" datasource="{{select.datasource}}" value="{=select.value=}" />\n    </x-row>\n\n    <x-row label="type=text">\n        <xui-textbox placeholder="This is placeholder" value="{=text.value=}" on-enter="onPressEnterOnTextBox" />\n        <xui-textbox disabled placeholder="This is disabled textbox" />\n        Value is: {{text.value}}\n    </x-row>\n\n    <x-row label="type=password">\n        <xui-textbox width="{{100}}" type="password" placeholder="This is placeholder" value="{=password.value=}" />\n        <xui-textbox disabled width="300px" type="password" placeholder="This is disabled textbox" />\n        Password is: {{password.value}}\n    </x-row>\n\n    <x-row label="multiline">\n        <xui-textbox multiline placeholder="This is placeholder" value="{=textarea.value=}" />\n        <xui-textbox multiline disabled placeholder="This is disabled textbox" />\n        Value is: {{textarea.value}}\n    </x-row>\n</xui-layer>\n\n<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}">\n    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    <xui-button on-click="closeTheLayer">\u5173\u95ED\u4E0A\u4E00\u4E2ALayer</xui-button>\n</xui-layer>\n\n</x-row>\n\n<x-row label="follow-scroll=false offset-top=100 offset-left=100" class="layer-test-row">\n<xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>\n<xui-layer class="demo-layer" follow-scroll="{{false}}" offset-top="{{100}}" offset-left="{{100}}" open="{=layer.showLayer3=}">\n    <x-row label="radio">\n        <xui-boxgroup\n            box-type="radio"\n\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.radio=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.radio}}\n        </strong>\n\n    </x-row>\n\n    <x-row label="checkbox">\n        <xui-boxgroup\n            box-type="checkbox"\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.checkbox=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.checkbox}}\n        </strong>\n    </x-row>\n\n    <x-row label="checkbox,col-count=3">\n        <xui-boxgroup\n            box-type="checkbox"\n\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.checkbox=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.checkbox}}\n        </strong>\n    </x-row>\n\n    <x-row label="\u64CD\u4F5C\u7CFB\u7EDF">\n        <xui-multipicker\n            datasource="{{os.datasource}}"\n            value="{=os.value=}"/>\n        <strong class="large">\n            \u64CD\u4F5C\u7CFB\u7EDF: {{os.value}}\n        </strong>\n    </x-row>\n\n</xui-layer>\n</x-row>\n\n<x-row label="width=300 height=500">\n    <xui-button skin="primary" on-click="openFourthLayer">Show fourth Layer</xui-button>\n    <xui-layer class="demo-layer" width="{{300}}" height="{{500}}" open="{=layer.showLayer4=}">\n        <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    </xui-layer>\n</x-row>\n\n</template>';
-
-/* eslint-enable */
-
 /**
  * @file demos/xui-layer.js
  * @author chenbo09
  */
+
+var template = '\n<template>\n<x-row label="center-to-view=true width=700 auto-hide-except-parent=false">\n<xui-button skin="primary" on-click="onShowLayer">Show Layer</xui-button>\n<xui-layer class="demo-layer" center-to-view="{{true}}" auto-hide-except-parent="{{false}}" open="{=layer.showLayer=}">\n    <x-row label="type=default">\n        <xui-tip><xui-button>Button In Tip</xui-button></xui-tip>\n        <xui-button on-click="closeTheLayer">\u5173\u95ED.</xui-button>\n        <xui-button on-click="openNewLayer">\u6253\u5F00\u4E00\u4E2A\u65B0\u7684Layer.</xui-button>\n        <xui-select multi filter layer-width="300" datasource="{{select.datasource}}" value="{=select.value=}" />\n    </x-row>\n\n    <x-row label="type=text">\n        <xui-textbox placeholder="This is placeholder" value="{=text.value=}" on-enter="onPressEnterOnTextBox" />\n        <xui-textbox disabled placeholder="This is disabled textbox" />\n        Value is: {{text.value}}\n    </x-row>\n\n    <x-row label="type=password">\n        <xui-textbox width="{{100}}" type="password" placeholder="This is placeholder" value="{=password.value=}" />\n        <xui-textbox disabled width="300px" type="password" placeholder="This is disabled textbox" />\n        Password is: {{password.value}}\n    </x-row>\n\n    <x-row label="multiline">\n        <xui-textbox multiline placeholder="This is placeholder" value="{=textarea.value=}" />\n        <xui-textbox multiline disabled placeholder="This is disabled textbox" />\n        Value is: {{textarea.value}}\n    </x-row>\n</xui-layer>\n\n<xui-layer class="demo-layer" auto-hide-except-parent="{{false}}" open="{=layer.showLayer2=}">\n    <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    <xui-button on-click="closeTheLayer">\u5173\u95ED\u4E0A\u4E00\u4E2ALayer</xui-button>\n</xui-layer>\n\n</x-row>\n\n<x-row label="follow-scroll=false offset-top=100 offset-left=100" class="layer-test-row">\n<xui-button skin="primary" on-click="openThirdLayer">Show another Layer</xui-button>\n<xui-layer class="demo-layer" follow-scroll="{{false}}" offset-top="{{100}}" offset-left="{{100}}" open="{=layer.showLayer3=}">\n    <x-row label="radio">\n        <xui-boxgroup\n            box-type="radio"\n\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.radio=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.radio}}\n        </strong>\n\n    </x-row>\n\n    <x-row label="checkbox">\n        <xui-boxgroup\n            box-type="checkbox"\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.checkbox=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.checkbox}}\n        </strong>\n    </x-row>\n\n    <x-row label="checkbox,col-count=3">\n        <xui-boxgroup\n            box-type="checkbox"\n\n            datasource="{{boxgroup.datasource}}"\n            value="{=boxgroup.checkbox=}"/>\n        <strong class="large">\n            Value is: {{boxgroup.checkbox}}\n        </strong>\n    </x-row>\n\n    <x-row label="\u64CD\u4F5C\u7CFB\u7EDF">\n        <xui-multipicker\n            datasource="{{os.datasource}}"\n            value="{=os.value=}"/>\n        <strong class="large">\n            \u64CD\u4F5C\u7CFB\u7EDF: {{os.value}}\n        </strong>\n    </x-row>\n\n</xui-layer>\n</x-row>\n\n<x-row label="width=300 height=500">\n    <xui-button skin="primary" on-click="openFourthLayer">Show fourth Layer</xui-button>\n    <xui-layer class="demo-layer" width="{{300}}" height="{{500}}" open="{=layer.showLayer4=}">\n        <xui-select datasource="{{select.datasource}}" value="{=select.value=}" />\n    </xui-layer>\n</x-row>\n\n</template>';
+
+/* eslint-enable */
 
 function getImages(osType) {
     switch (osType) {
@@ -55,7 +49,7 @@ function getImages(osType) {
 exports.default = (0, _san.defineComponent)({
     template: template,
     components: {
-        'x-row': _Row2.default,
+        'x-row': _sanXui.Row,
         'xui-tip': _sanXui.Tip,
         'xui-select': _sanXui.Select,
         'xui-layer': _sanXui.Layer,
@@ -121,4 +115,4 @@ exports.default = (0, _san.defineComponent)({
 
 /***/ })
 
-},[456])});;
+},[418])});;

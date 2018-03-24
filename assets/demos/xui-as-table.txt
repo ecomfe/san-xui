@@ -4,9 +4,7 @@
  */
 
 import {defineComponent} from 'san';
-import {Tip, Toast, Button, ToastLabel, Table} from 'san-xui';
-
-import Row from './Row';
+import {Tip, Toast, Row, Button, ToastLabel, Table} from 'san-xui';
 
 const kTableColumns = [
     {name: 'name', label: '姓名', labelClassName: 'col-name'},
