@@ -82,6 +82,8 @@ define(function(require) {
 });
 ```
 
+最终的效果如下：<https://codepen.io/leeight/pen/QmMabe>
+
 ### Webpack
 
 通过 named import 导入所需要使用的组件
