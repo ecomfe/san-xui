@@ -6,7 +6,7 @@
 import {defineComponent} from 'san';
 import {Row, BosUploader, Toast, ToastLabel} from 'san-xui';
 
-import UUID from './uuid';
+import UUID from '../components/UUID';
 
 /* eslint-disable */
 const template = `<template>

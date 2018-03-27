@@ -1,5 +1,5 @@
 /**
- * @file demos/Row.js
+ * @file san-xui/x/components/Row.js
  * @author leeight
  */
 

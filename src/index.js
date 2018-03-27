@@ -63,7 +63,7 @@ export {default as Voice} from './x/components/Voice';
 export {default as WebUploader} from './x/components/WebUploader';
 export {default as asDrawer} from './x/components/asDrawer';
 export {default as Uploader} from './x/forms/Uploader';
-export {default as Row} from './x/demos/Row';
+export {default as Row} from './x/components/Row';
 export {create, html, hasSlot, nexUuid, nextZindex} from './x/components/util';
 export {confirm, alert, plain} from './x/components/helper';
 export {asInput} from './x/components/asInput';

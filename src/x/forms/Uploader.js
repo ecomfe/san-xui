@@ -7,7 +7,7 @@ import {DataTypes, defineComponent} from 'san';
 
 import BosUploader from '../components/BosUploader';
 import {asInput} from '../components/asInput';
-import UUID from '../demos/uuid';
+import UUID from '../components/UUID';
 
 /* eslint-disable */
 const template = `<template>
